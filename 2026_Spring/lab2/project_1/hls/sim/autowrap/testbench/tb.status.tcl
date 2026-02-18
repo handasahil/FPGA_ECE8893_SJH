@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/top.cpp_pre.cpp.tb.cpp

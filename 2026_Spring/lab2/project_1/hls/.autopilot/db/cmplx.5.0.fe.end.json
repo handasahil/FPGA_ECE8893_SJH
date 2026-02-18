@@ -1,0 +1,49 @@
+{
+    "1": {
+        "name": "top_kernel_Pipeline_VITIS_LOOP_35_4",
+        "file": "top.cpp",
+        "fileloc": "35",
+        "instructions": "26",
+        "total_instructions": "26",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "6",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "G": "2",
+            "L": "1"
+        },
+        "stores": {
+            "G": "2",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "top_kernel",
+        "file": "top.cpp",
+        "fileloc": "10",
+        "instructions": "279",
+        "total_instructions": "305",
+        "calls": "1",
+        "basicblocks": "31",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "2",
+        "loads": {
+            "G": "13",
+            "L": "3"
+        },
+        "stores": {
+            "G": "5",
+            "L": "6"
+        },
+        "loops": {
+            "L": "3",
+            "N": "7"
+        }
+    }
+}

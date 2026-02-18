@@ -33,6 +33,7 @@ void top_kernel(const data_t A_in[NX][NY],
     for (int t = 0; t < TSTEPS; t++) {
         // Copy boundaries unchanged
         for (int j = 0; j < NY; j++) {
+            #pragma HLS pipeline II=1
             nxt[0][j]      = cur[0][j];
             nxt[NX - 1][j] = cur[NX - 1][j];
         }
