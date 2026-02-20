@@ -1,26 +1,25 @@
 set SynModuleInfo {
   {SRCNAME entry_proc MODELNAME entry_proc RTLNAME top_kernel_entry_proc}
   {SRCNAME read_input MODELNAME read_input RTLNAME top_kernel_read_input}
-  {SRCNAME compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2 MODELNAME compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2
+  {SRCNAME compute_Pipeline_VITIS_LOOP_34_1_VITIS_LOOP_35_2 MODELNAME compute_Pipeline_VITIS_LOOP_34_1_VITIS_LOOP_35_2 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_34_1_VITIS_LOOP_35_2
     SUBMODULES {
       {MODELNAME top_kernel_flow_control_loop_pipe_sequential_init RTLNAME top_kernel_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME top_kernel_flow_control_loop_pipe_sequential_init_U}
     }
   }
   {SRCNAME compute_Pipeline_VITIS_LOOP_50_4 MODELNAME compute_Pipeline_VITIS_LOOP_50_4 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_50_4}
-  {SRCNAME compute_Pipeline_VITIS_LOOP_55_5 MODELNAME compute_Pipeline_VITIS_LOOP_55_5 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_55_5}
-  {SRCNAME compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7 MODELNAME compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7
+  {SRCNAME compute_Pipeline_VITIS_LOOP_60_5 MODELNAME compute_Pipeline_VITIS_LOOP_60_5 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_60_5}
+  {SRCNAME compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7 MODELNAME compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7
     SUBMODULES {
-      {MODELNAME top_kernel_mul_39s_24ns_63_1_1 RTLNAME top_kernel_mul_39s_24ns_63_1_1 BINDTYPE op TYPE mul IMPL dsp LATENCY 0 ALLOW_PRAGMA 1}
-      {MODELNAME top_kernel_mul_39s_26ns_65_1_1 RTLNAME top_kernel_mul_39s_26ns_65_1_1 BINDTYPE op TYPE mul IMPL dsp LATENCY 0 ALLOW_PRAGMA 1}
-      {MODELNAME top_kernel_add_41s_41s_41_1_1 RTLNAME top_kernel_add_41s_41s_41_1_1 BINDTYPE op TYPE add IMPL dsp LATENCY 0}
-      {MODELNAME top_kernel_add_42s_42s_42_1_1 RTLNAME top_kernel_add_42s_42s_42_1_1 BINDTYPE op TYPE add IMPL dsp LATENCY 0}
-      {MODELNAME top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_line_buf_1_RAM_AUTO_1R1W RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_line_buf_1_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_mul_39s_24ns_63_1_1 RTLNAME top_kernel_mul_39s_24ns_63_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_mul_39s_26ns_65_1_1 RTLNAME top_kernel_mul_39s_26ns_65_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7_line_buf_1_RAM_AUTO_1R1W RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7_line_buf_1_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
-  {SRCNAME compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10 MODELNAME compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10}
+  {SRCNAME compute_Pipeline_VITIS_LOOP_133_9_VITIS_LOOP_134_10 MODELNAME compute_Pipeline_VITIS_LOOP_133_9_VITIS_LOOP_134_10 RTLNAME top_kernel_compute_Pipeline_VITIS_LOOP_133_9_VITIS_LOOP_134_10}
   {SRCNAME compute MODELNAME compute RTLNAME top_kernel_compute
     SUBMODULES {
-      {MODELNAME top_kernel_compute_buffer_RAM_AUTO_1R1W RTLNAME top_kernel_compute_buffer_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_compute_bufferA_RAM_AUTO_1R1W RTLNAME top_kernel_compute_bufferA_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_compute_bufferB_RAM_AUTO_1R1W RTLNAME top_kernel_compute_bufferB_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME write_output MODELNAME write_output RTLNAME top_kernel_write_output

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'write_output'" level="0">
-<item name = "Date">Fri Feb 20 12:56:42 2026
+<item name = "Date">Fri Feb 20 13:28:04 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_142_1_VITIS_LOOP_143_2">65543, 65543, 9, 1, 1, 65536, yes</column>
+<column name="- VITIS_LOOP_145_1_VITIS_LOOP_146_2">65543, 65543, 9, 1, 1, 65536, yes</column>
 </table>
 </item>
 </section>
@@ -78,13 +78,13 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln142_fu_130_p2">+, 0, 0, 23, 16, 1</column>
+<column name="add_ln145_fu_130_p2">+, 0, 0, 23, 16, 1</column>
 <column name="ap_block_state2_pp0_stage0_iter1_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state3_io_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state9_pp0_stage0_iter8_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_273">and, 0, 0, 2, 1, 1</column>
 <column name="ap_condition_353">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln142_fu_136_p2">icmp, 0, 0, 23, 16, 2</column>
+<column name="icmp_ln145_fu_136_p2">icmp, 0, 0, 23, 16, 2</column>
 <column name="ap_block_pp0_stage0_01001_grp1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage0_11001_grp0">or, 0, 0, 2, 1, 1</column>
@@ -127,10 +127,10 @@
 <column name="first_iter_0_reg_110">1, 0, 1, 0</column>
 <column name="first_iter_0_reg_110_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="grid_final_read_reg_208">24, 0, 24, 0</column>
-<column name="icmp_ln142_reg_199">1, 0, 1, 0</column>
+<column name="icmp_ln145_reg_199">1, 0, 1, 0</column>
 <column name="indvar_flatten2_fu_70">16, 0, 16, 0</column>
 <column name="trunc_ln_reg_203">62, 0, 62, 0</column>
-<column name="icmp_ln142_reg_199">64, 32, 1, 0</column>
+<column name="icmp_ln145_reg_199">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

@@ -17,9 +17,6 @@ port (
     din1: in std_logic_vector(din1_WIDTH - 1 downto 0);
     dout: out std_logic_vector(dout_WIDTH - 1 downto 0));
 
- 
-    attribute use_dsp : string;
-    attribute use_dsp of top_kernel_mul_39s_26ns_65_1_1 : entity is "yes";
 
 end entity;
 

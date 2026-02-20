@@ -6523,7 +6523,9 @@ void read_input(const data_t A_in[256][256], data_t stream_out[256][256]) {
 
 void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
-    data_t buffer[2][256][256];
+
+    data_t bufferA[256][256];
+    data_t bufferB[256][256];
 
 
     data_t line_buf[2][256];
@@ -6536,48 +6538,61 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
     const data_t wa = (data_t)0.10;
     const data_t wd = (data_t)0.025;
 
-
-    VITIS_LOOP_33_1: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_34_2: for (int j = 0; j < 256; j++) {
+    VITIS_LOOP_34_1: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_35_2: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
- buffer[0][i][j] = stream_in[i][j];
+ bufferA[i][j] = stream_in[i][j];
         }
     }
 
 
-    VITIS_LOOP_41_3: for (int t = 0; t < 30; t++) {
+    VITIS_LOOP_42_3: for (int t = 0; t < 30; t++) {
 
 
 
 
-        int read_idx = t % 2;
-        int write_idx = (t + 1) % 2;
+        int readA = (t % 2 == 0) ? 1 : 0;
 
 
         VITIS_LOOP_50_4: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
- buffer[write_idx][0][j] = buffer[read_idx][0][j];
-            buffer[write_idx][256 - 1][j] = buffer[read_idx][256 - 1][j];
+ if (readA) {
+                bufferB[0][j] = bufferA[0][j];
+                bufferB[256 - 1][j] = bufferA[256 - 1][j];
+            } else {
+                bufferA[0][j] = bufferB[0][j];
+                bufferA[256 - 1][j] = bufferB[256 - 1][j];
+            }
         }
-        VITIS_LOOP_55_5: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_60_5: for (int i = 0; i < 256; i++) {
 #pragma HLS pipeline II=1
- buffer[write_idx][i][0] = buffer[read_idx][i][0];
-            buffer[write_idx][i][256 - 1] = buffer[read_idx][i][256 - 1];
+ if (readA) {
+                bufferB[i][0] = bufferA[i][0];
+                bufferB[i][256 - 1] = bufferA[i][256 - 1];
+            } else {
+                bufferA[i][0] = bufferB[i][0];
+                bufferA[i][256 - 1] = bufferB[i][256 - 1];
+            }
         }
 
 
-        VITIS_LOOP_62_6: for (int i = 0; i < 256; i++) {
-            VITIS_LOOP_63_7: for (int j = 0; j < 256; j++) {
+        VITIS_LOOP_72_6: for (int i = 0; i < 256; i++) {
+            VITIS_LOOP_73_7: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
 
 
- VITIS_LOOP_67_8: for (int r = 0; r < 3; r++) {
+ VITIS_LOOP_77_8: for (int r = 0; r < 3; r++) {
                     window[r][0] = window[r][1];
                     window[r][1] = window[r][2];
                 }
 
+                data_t new_pixel;
 
-                data_t new_pixel = buffer[read_idx][i][j];
+                if (readA) {
+                    new_pixel = bufferA[i][j];
+                } else {
+                    new_pixel = bufferB[i][j];
+                }
                 data_t top_pixel = line_buf[0][j];
                 data_t mid_pixel = line_buf[1][j];
 
@@ -6601,28 +6616,16 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
                     acc_t sum_diag = (acc_t)window[0][0] + (acc_t)window[0][2] +
                                      (acc_t)window[2][0] + (acc_t)window[2][2];
 
+                    acc_t center = (acc_t)window[1][1];
+
+                    acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
 
 
-                    acc_t out_a, out_b, out_c;
-
-#pragma HLS bind_op variable=out_a op=mul impl=dsp
-#pragma HLS bind_op variable=out_b op=mul impl=dsp
-#pragma HLS bind_op variable=out_c op=mul impl=dsp
-
- out_a = (acc_t)wc * (acc_t)window[1][1];
-                    out_b = (acc_t)wa * sum_axis;
-                    out_c = (acc_t)wd * sum_diag;
-
-                    acc_t out;
-
-#pragma HLS bind_op variable=out op=add impl=dsp
-
- out = out_a + out_b + out_c;
-
-
-
-
-                    buffer[write_idx][out_i][out_j] = (data_t)out;
+                    if (readA) {
+                        bufferB[out_i][out_j] = (data_t)out;
+                    } else {
+                        bufferA[out_i][out_j] = (data_t)out;
+                    }
                 }
             }
         }
@@ -6634,10 +6637,10 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
 
     int final_idx = 30 % 2;
-    VITIS_LOOP_130_9: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_131_10: for (int j = 0; j < 256; j++) {
+    VITIS_LOOP_133_9: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_134_10: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
- stream_out[i][j] = buffer[final_idx][i][j];
+ stream_out[i][j] = (final_idx == 0) ? bufferA[i][j] : bufferB[i][j];
         }
     }
 }
@@ -6646,8 +6649,8 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
 
 void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
-    VITIS_LOOP_142_1: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_143_2: for (int j = 0; j < 256; j++) {
+    VITIS_LOOP_145_1: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_146_2: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
  A_out[i][j] = stream_in[i][j];
         }
@@ -6660,7 +6663,7 @@ void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
 __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t A_in[256][256], data_t A_out[256][256]) {
 #line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl"
 #pragma HLSDIRECTIVE TOP name=top_kernel
-# 153 "top.cpp"
+# 156 "top.cpp"
 
 #pragma HLS interface m_axi port=A_in offset=slave bundle=A_in
 #pragma HLS interface m_axi port=A_out offset=slave bundle=A_out

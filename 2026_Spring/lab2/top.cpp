@@ -16,7 +16,9 @@ void read_input(const data_t A_in[NX][NY], data_t stream_out[NX][NY]) {
 // --------------------------------------------------------
 void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
     // 1. COMBINE INTO A 3D PING-PONG BUFFER
-    data_t buffer[2][NX][NY];
+    // data_t buffer[2][NX][NY];
+    data_t bufferA[NX][NY]; 
+    data_t bufferB[NX][NY];
 
     // Line Buffer and Window
     data_t line_buf[2][NY];
@@ -29,11 +31,10 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
     const data_t wa = (data_t)0.10;
     const data_t wd = (data_t)0.025;
 
-    // Initialize buffer[0] from the incoming channel
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
         #pragma HLS pipeline II=1    
-            buffer[0][i][j] = stream_in[i][j];
+            bufferA[i][j] = stream_in[i][j];
         }
     }
 
@@ -43,25 +44,34 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
         // 2. TOGGLE THE READ AND WRITE INDICES
         // Even t: read from 0, write to 1
         // Odd t:  read from 1, write to 0
-        int read_idx = t % 2;
-        int write_idx = (t + 1) % 2;
+        int readA = (t % 2 == 0) ? 1 : 0;
 
         // Copy boundaries unchanged
         for (int j = 0; j < NY; j++) {
         #pragma HLS pipeline II=1
-            buffer[write_idx][0][j]      = buffer[read_idx][0][j];
-            buffer[write_idx][NX - 1][j] = buffer[read_idx][NX - 1][j];
+            if (readA) {
+                bufferB[0][j] = bufferA[0][j];
+                bufferB[NX - 1][j] = bufferA[NX - 1][j];
+            } else {
+                bufferA[0][j] = bufferB[0][j];
+                bufferA[NX - 1][j] = bufferB[NX - 1][j];
+            }
         }
         for (int i = 0; i < NX; i++) {
         #pragma HLS pipeline II=1
-            buffer[write_idx][i][0]      = buffer[read_idx][i][0];
-            buffer[write_idx][i][NY - 1] = buffer[read_idx][i][NY - 1];
+            if (readA) {
+                bufferB[i][0]      = bufferA[i][0];
+                bufferB[i][NY - 1] = bufferA[i][NY - 1];
+            } else {
+                bufferA[i][0]      = bufferB[i][0];
+                bufferA[i][NY - 1] = bufferB[i][NY - 1];
+            }
         }
 
         // Update interior
         for (int i = 0; i < NX; i++) {
             for (int j = 0; j < NY; j++) {
-            #pragma HLS pipeline II=1
+                #pragma HLS pipeline II=1
                 
                 // Shift Window
                 for (int r = 0; r < 3; r++) {
@@ -69,8 +79,13 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
                     window[r][1] = window[r][2];
                 }
 
+                data_t new_pixel;
                 // 3. READ FROM THE CURRENT READ BUFFER
-                data_t new_pixel = buffer[read_idx][i][j];
+                if (readA) {
+                    new_pixel = bufferA[i][j];
+                } else {
+                    new_pixel = bufferB[i][j];
+                }
                 data_t top_pixel = line_buf[0][j];
                 data_t mid_pixel = line_buf[1][j];
 
@@ -94,28 +109,16 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
                     acc_t sum_diag = (acc_t)window[0][0] + (acc_t)window[0][2] +
                                      (acc_t)window[2][0] + (acc_t)window[2][2];
 
-                    // acc_t center = (acc_t)window[1][1];
+                    acc_t center = (acc_t)window[1][1];
 
-                    acc_t out_a, out_b, out_c;
-
-                #pragma HLS bind_op variable=out_a op=mul impl=dsp
-                #pragma HLS bind_op variable=out_b op=mul impl=dsp
-                #pragma HLS bind_op variable=out_c op=mul impl=dsp
-                    
-                    out_a = (acc_t)wc * (acc_t)window[1][1];
-                    out_b = (acc_t)wa * sum_axis;
-                    out_c = (acc_t)wd * sum_diag;
-
-                    acc_t out; 
-                
-                #pragma HLS bind_op variable=out op=add impl=dsp
-                    
-                    out = out_a + out_b + out_c;
-
-                    // acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
+                    acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
                     
                     // 4. WRITE TO THE CURRENT WRITE BUFFER
-                    buffer[write_idx][out_i][out_j] = (data_t)out;
+                    if (readA) {
+                        bufferB[out_i][out_j] = (data_t)out;
+                    } else {
+                        bufferA[out_i][out_j] = (data_t)out;
+                    }
                 }
             }
         }
@@ -130,7 +133,7 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
         #pragma HLS pipeline II=1
-            stream_out[i][j] = buffer[final_idx][i][j];
+            stream_out[i][j] = (final_idx == 0) ? bufferA[i][j] : bufferB[i][j];
         }
     }
 }

@@ -1,50 +1,50 @@
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 169, Column: 2 }
+DebugLoc:        { File: top.cpp, Line: 172, Column: 2 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
     DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 170, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 173, Column: 5 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'compute(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
     DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 171, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 174, Column: 5 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 141, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 144, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: top.cpp, Line: 67, Column: 19 }
+DebugLoc:        { File: top.cpp, Line: 77, Column: 19 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_67_8
+  - LoopName:        VITIS_LOOP_77_8
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
@@ -54,9 +54,9 @@ DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_67_8
+  - LoopName:        VITIS_LOOP_77_8
   - String:          ''' ('
-  - LoopLoc:         'top.cpp:67:19'
+  - LoopLoc:         'top.cpp:77:19'
   - String:          ') '
   - String:          'in function '''
   - String:          compute
@@ -66,40 +66,40 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 169, Column: 2 }
+DebugLoc:        { File: top.cpp, Line: 172, Column: 2 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
     DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 170, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 173, Column: 5 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'compute(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
     DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 171, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 174, Column: 5 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 141, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 144, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -108,7 +108,7 @@ Name:            NeverInline
 Function:        apatb_top_kernel_ir
 Args:            
   - Callee:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_top_kernel_ir
   - String:          ' because it should never be inlined (cost=never)'
@@ -116,7 +116,7 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: top.cpp, Line: 22, Column: 12 }
+DebugLoc:        { File: top.cpp, Line: 24, Column: 12 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Applying '
@@ -194,7 +194,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: top.cpp, Line: 142, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
 Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Sequential '
@@ -208,16 +208,16 @@ Args:
   - String:          ' '
   - BundleName:      A_out
   - String:          ' '
-  - LoopName:        VITIS_LOOP_142_1
+  - LoopName:        VITIS_LOOP_145_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:142:23'
+  - LoopLoc:         'top.cpp:145:23'
   - String:          ' '
   - Function:        'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 141, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 144, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: top.cpp, Line: 145, Column: 14 }
+    DebugLoc:        { File: top.cpp, Line: 148, Column: 14 }
   - OrigDirection:   write
   - OrigID:          for.inc.store.9
 ...
@@ -251,7 +251,7 @@ Args:
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: top.cpp, Line: 142, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
 Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Could not widen since type '
@@ -260,46 +260,46 @@ Args:
   - Threshold:       '0'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: top.cpp, Line: 142, Column: 23 }
+    DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
   - OrigDirection:   write
   - OrigID:          A_out1seq
   - ArrayName:       A_out
   - String:          ' '
   - BundleName:      A_out
   - String:          ' '
-  - LoopName:        VITIS_LOOP_143_2
+  - LoopName:        VITIS_LOOP_146_2
   - String:          ' '
-  - LoopLoc:         'top.cpp:143:27'
+  - LoopLoc:         'top.cpp:146:27'
   - String:          ' '
   - Function:        'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 141, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 144, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: top.cpp, Line: 19, Column: 12 }
+DebugLoc:        { File: top.cpp, Line: 20, Column: 12 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - PragmaType:      array_partition
   - String:          ' '
-  - PragmaOptions:   'dim=3 type=cyclic factor=2 variable=buffer'
+  - PragmaOptions:   'dim=1 type=cyclic factor=2 variable=bufferA'
   - String:          ' '
   - PragmaIsAuto:    '1'
   - String:          ' '
   - PragmaFunction:  compute
   - String:          ' '
-  - varLoc:          'top.cpp:19:12'
+  - varLoc:          'top.cpp:20:12'
   - String:          ' '
-  - PragmaSrcLoc:    'top.cpp:56:9'
-    DebugLoc:        { File: top.cpp, Line: 56, Column: 9 }
-  - VarName:         buffer
+  - PragmaSrcLoc:    'top.cpp:61:9'
+    DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
+  - VarName:         bufferA
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayXform
-DebugLoc:        { File: top.cpp, Line: 56, Column: 9 }
+DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Inferring pragma '''
@@ -309,9 +309,9 @@ Args:
   - String:          ' factor='
   - Factor:          '2'
   - String:          ' dim='
-  - Dim:             '3'
+  - Dim:             '1'
   - String:          ''' for array '''
-  - Name:            buffer
+  - Name:            bufferA
   - String:          ''''
   - String:          ' due to '
   - String:          pipeline
@@ -320,28 +320,28 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: top.cpp, Line: 19, Column: 12 }
+DebugLoc:        { File: top.cpp, Line: 20, Column: 12 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - PragmaType:      array_partition
   - String:          ' '
-  - PragmaOptions:   'dim=2 type=cyclic factor=2 variable=buffer'
+  - PragmaOptions:   'dim=2 type=cyclic factor=2 variable=bufferA'
   - String:          ' '
   - PragmaIsAuto:    '1'
   - String:          ' '
   - PragmaFunction:  compute
   - String:          ' '
-  - varLoc:          'top.cpp:19:12'
+  - varLoc:          'top.cpp:20:12'
   - String:          ' '
-  - PragmaSrcLoc:    'top.cpp:56:9'
-    DebugLoc:        { File: top.cpp, Line: 56, Column: 9 }
-  - VarName:         buffer
+  - PragmaSrcLoc:    'top.cpp:61:9'
+    DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
+  - VarName:         bufferA
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayXform
-DebugLoc:        { File: top.cpp, Line: 56, Column: 9 }
+DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Inferring pragma '''
@@ -353,7 +353,91 @@ Args:
   - String:          ' dim='
   - Dim:             '2'
   - String:          ''' for array '''
-  - Name:            buffer
+  - Name:            bufferA
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: top.cpp, Line: 21, Column: 12 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=2 variable=bufferB'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  compute
+  - String:          ' '
+  - varLoc:          'top.cpp:21:12'
+  - String:          ' '
+  - PragmaSrcLoc:    'top.cpp:61:9'
+    DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
+  - VarName:         bufferB
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            bufferB
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: top.cpp, Line: 21, Column: 12 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=2 variable=bufferB'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  compute
+  - String:          ' '
+  - varLoc:          'top.cpp:21:12'
+  - String:          ' '
+  - PragmaSrcLoc:    'top.cpp:61:9'
+    DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
+  - VarName:         bufferB
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: top.cpp, Line: 61, Column: 9 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            bufferB
   - String:          ''''
   - String:          ' due to '
   - String:          pipeline
@@ -362,14 +446,22 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: top.cpp, Line: 19, Column: 12 }
+DebugLoc:        { File: top.cpp, Line: 20, Column: 12 }
 Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          buffer
+  - UOName:          bufferA
   - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
   - String:          ' '
   - Mode:            Cyclic
   - String:          ' partitioning'
@@ -378,13 +470,33 @@ Args:
   - String:          ' on dimension '
   - Dim:             '2'
   - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: top.cpp, Line: 21, Column: 12 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          bufferB
+  - String:          ''':'
   - String:          ' '
   - Mode:            Cyclic
   - String:          ' partitioning'
   - String:          ' with factor '
   - Factor:          '2'
   - String:          ' on dimension '
-  - Dim:             '3'
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
   - String:          .
 ...
 --- !Missed
@@ -458,7 +570,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: top.cpp, Line: 142, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
 Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_.1
 Args:            
   - String:          'Multiple burst '
@@ -475,18 +587,18 @@ Args:
   - String:          ' '
   - BundleName:      A_out
   - String:          ' '
-  - LoopName:        VITIS_LOOP_142_1
+  - LoopName:        VITIS_LOOP_145_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:142:23'
+  - LoopLoc:         'top.cpp:145:23'
   - String:          ' '
   - Function:        'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 141, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 144, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: top.cpp, Line: 142, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
 Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_.1
 Args:            
   - String:          'Multiple burst '
@@ -496,9 +608,9 @@ Args:
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_142_1
+  - LoopName:        VITIS_LOOP_145_1
   - String:          '''('
-  - LoopLoc:         'top.cpp:142:23'
+  - LoopLoc:         'top.cpp:145:23'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      A_out
@@ -508,39 +620,39 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 169, Column: 2 }
+DebugLoc:        { File: top.cpp, Line: 172, Column: 2 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
     DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 170, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 173, Column: 5 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'compute(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
     DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 171, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 174, Column: 5 }
 Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - Callee:          'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 141, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 144, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 153, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 156, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...

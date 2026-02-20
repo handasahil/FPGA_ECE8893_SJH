@@ -72,49 +72,57 @@ set ArgLastReadFirstWriteLatency {
 	compute {
 		grid_initial {Type I LastRead 1 FirstWrite -1}
 		grid_final {Type O LastRead -1 FirstWrite 2}}
-	compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2 {
-		buffer_r {Type O LastRead -1 FirstWrite 1}
-		buffer_1 {Type O LastRead -1 FirstWrite 1}
-		buffer_2 {Type O LastRead -1 FirstWrite 1}
-		buffer_3 {Type O LastRead -1 FirstWrite 1}
+	compute_Pipeline_VITIS_LOOP_34_1_VITIS_LOOP_35_2 {
+		bufferA {Type O LastRead -1 FirstWrite 1}
+		bufferA_1 {Type O LastRead -1 FirstWrite 1}
+		bufferA_2 {Type O LastRead -1 FirstWrite 1}
+		bufferA_3 {Type O LastRead -1 FirstWrite 1}
 		grid_initial {Type I LastRead 1 FirstWrite -1}}
 	compute_Pipeline_VITIS_LOOP_50_4 {
-		empty_38 {Type I LastRead 0 FirstWrite -1}
-		buffer_r {Type IO LastRead 0 FirstWrite 1}
-		empty {Type I LastRead 0 FirstWrite -1}
-		buffer_1 {Type IO LastRead 0 FirstWrite 1}
-		buffer_2 {Type IO LastRead 0 FirstWrite 1}
-		buffer_3 {Type IO LastRead 0 FirstWrite 1}}
-	compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10 {
-		buffer_r {Type I LastRead 1 FirstWrite -1}
-		buffer_1 {Type I LastRead 1 FirstWrite -1}
-		buffer_2 {Type I LastRead 1 FirstWrite -1}
-		buffer_3 {Type I LastRead 1 FirstWrite -1}
+		bufferA {Type IO LastRead 0 FirstWrite 1}
+		bufferA_1 {Type IO LastRead 0 FirstWrite 1}
+		bufferA_2 {Type IO LastRead 0 FirstWrite 1}
+		bufferA_3 {Type IO LastRead 0 FirstWrite 1}
+		bufferB {Type IO LastRead 0 FirstWrite 1}
+		bufferB_1 {Type IO LastRead 0 FirstWrite 1}
+		bufferB_2 {Type IO LastRead 0 FirstWrite 1}
+		bufferB_3 {Type IO LastRead 0 FirstWrite 1}
+		empty {Type I LastRead 0 FirstWrite -1}}
+	compute_Pipeline_VITIS_LOOP_133_9_VITIS_LOOP_134_10 {
+		bufferA {Type I LastRead 1 FirstWrite -1}
+		bufferA_1 {Type I LastRead 1 FirstWrite -1}
+		bufferA_2 {Type I LastRead 1 FirstWrite -1}
+		bufferA_3 {Type I LastRead 1 FirstWrite -1}
 		grid_final {Type O LastRead -1 FirstWrite 2}}
-	compute_Pipeline_VITIS_LOOP_55_5 {
-		empty_37 {Type I LastRead 0 FirstWrite -1}
-		buffer_r {Type IO LastRead 0 FirstWrite 1}
+	compute_Pipeline_VITIS_LOOP_60_5 {
+		bufferA {Type IO LastRead 0 FirstWrite 1}
+		bufferA_1 {Type IO LastRead 0 FirstWrite 1}
+		bufferA_2 {Type IO LastRead 0 FirstWrite 1}
+		bufferA_3 {Type IO LastRead 0 FirstWrite 1}
+		bufferB {Type IO LastRead 0 FirstWrite 1}
+		bufferB_1 {Type IO LastRead 0 FirstWrite 1}
+		bufferB_2 {Type IO LastRead 0 FirstWrite 1}
+		bufferB_3 {Type IO LastRead 0 FirstWrite 1}
+		empty {Type I LastRead 0 FirstWrite -1}}
+	compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7 {
+		new_pixel_0_0_0_0_lcssa_lcssa80 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01302_lcssa_lcssa78 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01303_lcssa_lcssa76 {Type I LastRead 0 FirstWrite -1}
+		bufferA {Type IO LastRead 1 FirstWrite 4}
+		bufferA_1 {Type IO LastRead 1 FirstWrite 4}
+		bufferA_2 {Type IO LastRead 1 FirstWrite 4}
+		bufferA_3 {Type IO LastRead 1 FirstWrite 4}
+		bufferB {Type IO LastRead 1 FirstWrite 4}
+		bufferB_1 {Type IO LastRead 1 FirstWrite 4}
+		bufferB_2 {Type IO LastRead 1 FirstWrite 4}
+		bufferB_3 {Type IO LastRead 1 FirstWrite 4}
 		empty {Type I LastRead 0 FirstWrite -1}
-		buffer_1 {Type IO LastRead 0 FirstWrite 1}
-		buffer_2 {Type IO LastRead 0 FirstWrite 1}
-		buffer_3 {Type IO LastRead 0 FirstWrite 1}}
-	compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7 {
-		p_0_0_01527_lcssa_lcssa99 {Type I LastRead 0 FirstWrite -1}
-		p_0_0_01528_lcssa_lcssa97 {Type I LastRead 0 FirstWrite -1}
-		p_0_0_01529_lcssa_lcssa95 {Type I LastRead 0 FirstWrite -1}
-		tmp_25 {Type I LastRead 0 FirstWrite -1}
-		zext_ln52 {Type I LastRead 0 FirstWrite -1}
-		empty {Type I LastRead 0 FirstWrite -1}
-		buffer_r {Type IO LastRead 1 FirstWrite 4}
-		buffer_1 {Type IO LastRead 1 FirstWrite 4}
-		buffer_2 {Type IO LastRead 1 FirstWrite 4}
-		buffer_3 {Type IO LastRead 1 FirstWrite 4}
-		p_0_0_01534_281_out {Type O LastRead -1 FirstWrite 3}
-		p_0_0_01534_280_out {Type IO LastRead 2 FirstWrite 2}
-		p_0_0_01534_179_out {Type O LastRead -1 FirstWrite 3}
-		p_0_0_01534_178_out {Type IO LastRead 2 FirstWrite 2}
-		p_0_0_0153477_out {Type O LastRead -1 FirstWrite 3}
-		p_0_0_0153476_out {Type IO LastRead 2 FirstWrite 2}}}
+		p_0_0_01307_262_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01307_261_out {Type IO LastRead 2 FirstWrite 2}
+		p_0_0_01307_160_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01307_159_out {Type IO LastRead 2 FirstWrite 2}
+		p_0_0_0130758_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_0130757_out {Type IO LastRead 2 FirstWrite 2}}}
 
 set hasDtUnsupportedChannel 0
 

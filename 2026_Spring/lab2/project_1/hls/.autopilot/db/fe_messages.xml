@@ -1,84 +1,87 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:23:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:25:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=line_buf complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:26:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:28:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=window complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:35:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:36:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:51:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:56:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:61:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:64:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:74:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:101:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_a op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:102:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_b op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:103:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_c op=mul impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:111:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out op=add impl=dsp" ARG_PragmaType="bind_op" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:132:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:135:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:144:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:147:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="write_output" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl:22:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top_kernel" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:154:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:157:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A_in offset=slave bundle=A_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:155:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:158:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A_out offset=slave bundle=A_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:156:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:159:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:159:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:162:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:165:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:168:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=grid_initial depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:166:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:169:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=grid_final depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="top.cpp:67:19" msg_body="Loop 'VITIS_LOOP_67_8' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_67_8"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="top.cpp:77:19" msg_body="Loop 'VITIS_LOOP_77_8' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_77_8"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="top.cpp:17:0" msg_body="Unrolling loop 'VITIS_LOOP_67_8' (top.cpp:67:19) in function 'compute' completely with a factor of 3">
-        <args Factor="3" LoopLoc="top.cpp:67:19" LoopName="VITIS_LOOP_67_8"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="top.cpp:17:0" msg_body="Unrolling loop 'VITIS_LOOP_77_8' (top.cpp:77:19) in function 'compute' completely with a factor of 3">
+        <args Factor="3" LoopLoc="top.cpp:77:19" LoopName="VITIS_LOOP_77_8"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:22:12" msg_body="Applying array_partition to 'line_buf': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:24:12" msg_body="Applying array_partition to 'line_buf': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="line_buf"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:19:12" msg_body="array_partition dim=3 type=cyclic factor=2 variable=buffer 1 compute top.cpp:19:12 top.cpp:56:9buffer">
-        <args PragmaFunction="compute" PragmaIsAuto="1" PragmaOptions="dim=3 type=cyclic factor=2 variable=buffer" PragmaSrcLoc="top.cpp:56:9" PragmaSrcLoc-DebugLoc="File top.cpp Line 56 Column 9" PragmaType="array_partition" VarName="buffer" varLoc="top.cpp:19:12"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:20:12" msg_body="array_partition dim=1 type=cyclic factor=2 variable=bufferA 1 compute top.cpp:20:12 top.cpp:61:9bufferA">
+        <args PragmaFunction="compute" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=bufferA" PragmaSrcLoc="top.cpp:61:9" PragmaSrcLoc-DebugLoc="File top.cpp Line 61 Column 9" PragmaType="array_partition" VarName="bufferA" varLoc="top.cpp:20:12"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="top.cpp:56:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=3' for array 'buffer' due to pipeline pragma">
-        <args Dim="3" Factor="2" Mode="cyclic" Name="buffer" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="top.cpp:61:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'bufferA' due to pipeline pragma">
+        <args Dim="1" Factor="2" Mode="cyclic" Name="bufferA" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:19:12" msg_body="array_partition dim=2 type=cyclic factor=2 variable=buffer 1 compute top.cpp:19:12 top.cpp:56:9buffer">
-        <args PragmaFunction="compute" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=2 variable=buffer" PragmaSrcLoc="top.cpp:56:9" PragmaSrcLoc-DebugLoc="File top.cpp Line 56 Column 9" PragmaType="array_partition" VarName="buffer" varLoc="top.cpp:19:12"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:20:12" msg_body="array_partition dim=2 type=cyclic factor=2 variable=bufferA 1 compute top.cpp:20:12 top.cpp:61:9bufferA">
+        <args PragmaFunction="compute" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=2 variable=bufferA" PragmaSrcLoc="top.cpp:61:9" PragmaSrcLoc-DebugLoc="File top.cpp Line 61 Column 9" PragmaType="array_partition" VarName="bufferA" varLoc="top.cpp:20:12"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="top.cpp:56:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'buffer' due to pipeline pragma">
-        <args Dim="2" Factor="2" Mode="cyclic" Name="buffer" PragmaType="array_partition"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="top.cpp:61:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'bufferA' due to pipeline pragma">
+        <args Dim="2" Factor="2" Mode="cyclic" Name="bufferA" PragmaType="array_partition"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:19:12" msg_body="Applying array_partition to 'buffer': Cyclic partitioning with factor 2 on dimension 2. Cyclic partitioning with factor 2 on dimension 3.">
-        <args Dim="islist 2 3" Factor="islist 2 2" Mode="islist Cyclic Cyclic" UOName="buffer"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:21:12" msg_body="array_partition dim=1 type=cyclic factor=2 variable=bufferB 1 compute top.cpp:21:12 top.cpp:61:9bufferB">
+        <args PragmaFunction="compute" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=bufferB" PragmaSrcLoc="top.cpp:61:9" PragmaSrcLoc-DebugLoc="File top.cpp Line 61 Column 9" PragmaType="array_partition" VarName="bufferB" varLoc="top.cpp:21:12"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="top.cpp:61:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'bufferB' due to pipeline pragma">
+        <args Dim="1" Factor="2" Mode="cyclic" Name="bufferB" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:21:12" msg_body="array_partition dim=2 type=cyclic factor=2 variable=bufferB 1 compute top.cpp:21:12 top.cpp:61:9bufferB">
+        <args PragmaFunction="compute" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=2 variable=bufferB" PragmaSrcLoc="top.cpp:61:9" PragmaSrcLoc-DebugLoc="File top.cpp Line 61 Column 9" PragmaType="array_partition" VarName="bufferB" varLoc="top.cpp:21:12"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="top.cpp:61:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'bufferB' due to pipeline pragma">
+        <args Dim="2" Factor="2" Mode="cyclic" Name="bufferB" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:20:12" msg_body="Applying array_partition to 'bufferA': Cyclic partitioning with factor 2 on dimension 1. Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="islist 1 2" Factor="islist 2 2" Mode="islist Cyclic Cyclic" UOName="bufferA"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:21:12" msg_body="Applying array_partition to 'bufferB': Cyclic partitioning with factor 2 on dimension 1. Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="islist 1 2" Factor="islist 2 2" Mode="islist Cyclic Cyclic" UOName="bufferB"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

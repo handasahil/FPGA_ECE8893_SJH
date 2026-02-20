@@ -13,36 +13,63 @@ module top_kernel_compute_Pipeline_VITIS_LOOP_50_4 (
         ap_done,
         ap_idle,
         ap_ready,
-        empty_38,
-        buffer_r_address0,
-        buffer_r_ce0,
-        buffer_r_we0,
-        buffer_r_d0,
-        buffer_r_address1,
-        buffer_r_ce1,
-        buffer_r_q1,
-        empty,
-        buffer_1_address0,
-        buffer_1_ce0,
-        buffer_1_we0,
-        buffer_1_d0,
-        buffer_1_address1,
-        buffer_1_ce1,
-        buffer_1_q1,
-        buffer_2_address0,
-        buffer_2_ce0,
-        buffer_2_we0,
-        buffer_2_d0,
-        buffer_2_address1,
-        buffer_2_ce1,
-        buffer_2_q1,
-        buffer_3_address0,
-        buffer_3_ce0,
-        buffer_3_we0,
-        buffer_3_d0,
-        buffer_3_address1,
-        buffer_3_ce1,
-        buffer_3_q1
+        bufferA_address0,
+        bufferA_ce0,
+        bufferA_we0,
+        bufferA_d0,
+        bufferA_address1,
+        bufferA_ce1,
+        bufferA_q1,
+        bufferA_1_address0,
+        bufferA_1_ce0,
+        bufferA_1_we0,
+        bufferA_1_d0,
+        bufferA_1_address1,
+        bufferA_1_ce1,
+        bufferA_1_q1,
+        bufferA_2_address0,
+        bufferA_2_ce0,
+        bufferA_2_we0,
+        bufferA_2_d0,
+        bufferA_2_address1,
+        bufferA_2_ce1,
+        bufferA_2_q1,
+        bufferA_3_address0,
+        bufferA_3_ce0,
+        bufferA_3_we0,
+        bufferA_3_d0,
+        bufferA_3_address1,
+        bufferA_3_ce1,
+        bufferA_3_q1,
+        bufferB_address0,
+        bufferB_ce0,
+        bufferB_we0,
+        bufferB_d0,
+        bufferB_address1,
+        bufferB_ce1,
+        bufferB_q1,
+        bufferB_1_address0,
+        bufferB_1_ce0,
+        bufferB_1_we0,
+        bufferB_1_d0,
+        bufferB_1_address1,
+        bufferB_1_ce1,
+        bufferB_1_q1,
+        bufferB_2_address0,
+        bufferB_2_ce0,
+        bufferB_2_we0,
+        bufferB_2_d0,
+        bufferB_2_address1,
+        bufferB_2_ce1,
+        bufferB_2_q1,
+        bufferB_3_address0,
+        bufferB_3_ce0,
+        bufferB_3_we0,
+        bufferB_3_d0,
+        bufferB_3_address1,
+        bufferB_3_ce1,
+        bufferB_3_q1,
+        empty
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
@@ -53,36 +80,63 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [0:0] empty_38;
-output  [14:0] buffer_r_address0;
-output   buffer_r_ce0;
-output   buffer_r_we0;
-output  [23:0] buffer_r_d0;
-output  [14:0] buffer_r_address1;
-output   buffer_r_ce1;
-input  [23:0] buffer_r_q1;
+output  [13:0] bufferA_address0;
+output   bufferA_ce0;
+output   bufferA_we0;
+output  [23:0] bufferA_d0;
+output  [13:0] bufferA_address1;
+output   bufferA_ce1;
+input  [23:0] bufferA_q1;
+output  [13:0] bufferA_1_address0;
+output   bufferA_1_ce0;
+output   bufferA_1_we0;
+output  [23:0] bufferA_1_d0;
+output  [13:0] bufferA_1_address1;
+output   bufferA_1_ce1;
+input  [23:0] bufferA_1_q1;
+output  [13:0] bufferA_2_address0;
+output   bufferA_2_ce0;
+output   bufferA_2_we0;
+output  [23:0] bufferA_2_d0;
+output  [13:0] bufferA_2_address1;
+output   bufferA_2_ce1;
+input  [23:0] bufferA_2_q1;
+output  [13:0] bufferA_3_address0;
+output   bufferA_3_ce0;
+output   bufferA_3_we0;
+output  [23:0] bufferA_3_d0;
+output  [13:0] bufferA_3_address1;
+output   bufferA_3_ce1;
+input  [23:0] bufferA_3_q1;
+output  [13:0] bufferB_address0;
+output   bufferB_ce0;
+output   bufferB_we0;
+output  [23:0] bufferB_d0;
+output  [13:0] bufferB_address1;
+output   bufferB_ce1;
+input  [23:0] bufferB_q1;
+output  [13:0] bufferB_1_address0;
+output   bufferB_1_ce0;
+output   bufferB_1_we0;
+output  [23:0] bufferB_1_d0;
+output  [13:0] bufferB_1_address1;
+output   bufferB_1_ce1;
+input  [23:0] bufferB_1_q1;
+output  [13:0] bufferB_2_address0;
+output   bufferB_2_ce0;
+output   bufferB_2_we0;
+output  [23:0] bufferB_2_d0;
+output  [13:0] bufferB_2_address1;
+output   bufferB_2_ce1;
+input  [23:0] bufferB_2_q1;
+output  [13:0] bufferB_3_address0;
+output   bufferB_3_ce0;
+output   bufferB_3_we0;
+output  [23:0] bufferB_3_d0;
+output  [13:0] bufferB_3_address1;
+output   bufferB_3_ce1;
+input  [23:0] bufferB_3_q1;
 input  [0:0] empty;
-output  [14:0] buffer_1_address0;
-output   buffer_1_ce0;
-output   buffer_1_we0;
-output  [23:0] buffer_1_d0;
-output  [14:0] buffer_1_address1;
-output   buffer_1_ce1;
-input  [23:0] buffer_1_q1;
-output  [14:0] buffer_2_address0;
-output   buffer_2_ce0;
-output   buffer_2_we0;
-output  [23:0] buffer_2_d0;
-output  [14:0] buffer_2_address1;
-output   buffer_2_ce1;
-input  [23:0] buffer_2_q1;
-output  [14:0] buffer_3_address0;
-output   buffer_3_ce0;
-output   buffer_3_we0;
-output  [23:0] buffer_3_d0;
-output  [14:0] buffer_3_address1;
-output   buffer_3_ce1;
-input  [23:0] buffer_3_q1;
 
 reg ap_idle;
 
@@ -92,44 +146,60 @@ wire    ap_enable_reg_pp0_iter0;
 reg    ap_enable_reg_pp0_iter1;
 reg    ap_idle_pp0;
 wire    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln50_fu_174_p2;
+wire   [0:0] icmp_ln50_fu_206_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
+wire   [0:0] tmp_reg_308;
 wire    ap_block_pp0_stage0_11001;
-wire   [0:0] trunc_ln50_fu_186_p1;
-reg   [0:0] trunc_ln50_reg_303;
-wire   [6:0] lshr_ln2_fu_190_p4;
-reg   [6:0] lshr_ln2_reg_309;
-wire   [7:0] zext_ln50_fu_200_p1;
-reg   [7:0] zext_ln50_reg_314;
-wire   [63:0] zext_ln52_fu_214_p1;
+wire   [0:0] trunc_ln50_fu_218_p1;
+reg   [0:0] trunc_ln50_reg_315;
+reg   [13:0] bufferA_addr_1_reg_323;
+reg   [13:0] bufferA_1_addr_1_reg_329;
+reg   [13:0] bufferA_2_addr_1_reg_335;
+reg   [13:0] bufferA_3_addr_1_reg_341;
+reg   [13:0] bufferB_addr_reg_347;
+reg   [13:0] bufferB_1_addr_reg_353;
+reg   [13:0] bufferB_2_addr_reg_359;
+reg   [13:0] bufferB_3_addr_reg_365;
+wire   [63:0] zext_ln50_fu_232_p1;
 wire    ap_block_pp0_stage0;
-wire   [63:0] zext_ln53_fu_230_p1;
-wire   [63:0] zext_ln52_1_fu_249_p1;
-wire   [63:0] zext_ln53_1_fu_263_p1;
-reg   [8:0] j_fu_50;
-wire   [8:0] add_ln50_fu_180_p2;
+wire   [63:0] zext_ln57_fu_252_p1;
+reg   [8:0] j_fu_52;
+wire   [8:0] add_ln50_fu_212_p2;
 wire    ap_loop_init;
 reg   [8:0] ap_sig_allocacmp_j_1;
-reg    buffer_r_ce1_local;
-reg    buffer_r_we0_local;
-wire   [23:0] select_ln52_fu_269_p3;
-reg    buffer_r_ce0_local;
-reg    buffer_1_ce1_local;
-reg    buffer_1_we0_local;
-reg    buffer_1_ce0_local;
-reg    buffer_2_ce1_local;
-reg    buffer_2_we0_local;
-wire   [23:0] select_ln53_fu_278_p3;
-reg    buffer_2_ce0_local;
-reg    buffer_3_ce1_local;
-reg    buffer_3_we0_local;
-reg    buffer_3_ce0_local;
-wire   [14:0] tmp_s_fu_204_p4;
-wire   [14:0] tmp_24_fu_220_p4;
-wire   [14:0] tmp_23_fu_241_p4;
-wire   [14:0] tmp_25_fu_255_p4;
+reg    bufferA_ce1_local;
+reg    bufferA_we0_local;
+wire   [23:0] select_ln56_fu_283_p3;
+reg    bufferA_ce0_local;
+reg    bufferA_1_ce1_local;
+reg    bufferA_1_we0_local;
+reg    bufferA_1_ce0_local;
+reg    bufferA_2_ce1_local;
+reg    bufferA_2_we0_local;
+wire   [23:0] select_ln57_fu_292_p3;
+reg    bufferA_2_ce0_local;
+reg    bufferA_3_ce1_local;
+reg    bufferA_3_we0_local;
+reg    bufferA_3_ce0_local;
+reg    bufferB_ce1_local;
+reg    bufferB_we0_local;
+wire   [23:0] select_ln53_fu_265_p3;
+reg    bufferB_ce0_local;
+reg    bufferB_1_ce1_local;
+reg    bufferB_1_we0_local;
+reg    bufferB_1_ce0_local;
+reg    bufferB_2_ce1_local;
+reg    bufferB_2_we0_local;
+wire   [23:0] select_ln54_fu_274_p3;
+reg    bufferB_2_ce0_local;
+reg    bufferB_3_ce1_local;
+reg    bufferB_3_we0_local;
+reg    bufferB_3_ce0_local;
+wire   [6:0] lshr_ln2_fu_222_p4;
+wire   [7:0] tmp_s_fu_240_p3;
+wire  signed [13:0] sext_ln57_fu_248_p1;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -144,7 +214,7 @@ wire    ap_ce_reg;
 initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
-#0 j_fu_50 = 9'd0;
+#0 j_fu_52 = 9'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -197,24 +267,30 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln50_fu_174_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            j_fu_50 <= add_ln50_fu_180_p2;
+        if (((icmp_ln50_fu_206_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            j_fu_52 <= add_ln50_fu_212_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            j_fu_50 <= 9'd0;
+            j_fu_52 <= 9'd0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        lshr_ln2_reg_309 <= {{ap_sig_allocacmp_j_1[7:1]}};
-        trunc_ln50_reg_303 <= trunc_ln50_fu_186_p1;
-        zext_ln50_reg_314[6 : 0] <= zext_ln50_fu_200_p1[6 : 0];
+        bufferA_1_addr_1_reg_329[6 : 0] <= zext_ln50_fu_232_p1[6 : 0];
+        bufferA_2_addr_1_reg_335[6 : 0] <= zext_ln57_fu_252_p1[6 : 0];
+        bufferA_3_addr_1_reg_341[6 : 0] <= zext_ln57_fu_252_p1[6 : 0];
+        bufferA_addr_1_reg_323[6 : 0] <= zext_ln50_fu_232_p1[6 : 0];
+        bufferB_1_addr_reg_353[6 : 0] <= zext_ln50_fu_232_p1[6 : 0];
+        bufferB_2_addr_reg_359[6 : 0] <= zext_ln57_fu_252_p1[6 : 0];
+        bufferB_3_addr_reg_365[6 : 0] <= zext_ln57_fu_252_p1[6 : 0];
+        bufferB_addr_reg_347[6 : 0] <= zext_ln50_fu_232_p1[6 : 0];
+        trunc_ln50_reg_315 <= trunc_ln50_fu_218_p1;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln50_fu_174_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln50_fu_206_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -257,103 +333,199 @@ always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
         ap_sig_allocacmp_j_1 = 9'd0;
     end else begin
-        ap_sig_allocacmp_j_1 = j_fu_50;
+        ap_sig_allocacmp_j_1 = j_fu_52;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_1_ce0_local = 1'b1;
+        bufferA_1_ce0_local = 1'b1;
     end else begin
-        buffer_1_ce0_local = 1'b0;
+        bufferA_1_ce0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_1_ce1_local = 1'b1;
+        bufferA_1_ce1_local = 1'b1;
     end else begin
-        buffer_1_ce1_local = 1'b0;
+        bufferA_1_ce1_local = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((trunc_ln50_reg_303 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_1_we0_local = 1'b1;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd1) & (tmp_reg_308 == 1'd1))) begin
+        bufferA_1_we0_local = 1'b1;
     end else begin
-        buffer_1_we0_local = 1'b0;
+        bufferA_1_we0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_2_ce0_local = 1'b1;
+        bufferA_2_ce0_local = 1'b1;
     end else begin
-        buffer_2_ce0_local = 1'b0;
+        bufferA_2_ce0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_2_ce1_local = 1'b1;
+        bufferA_2_ce1_local = 1'b1;
     end else begin
-        buffer_2_ce1_local = 1'b0;
+        bufferA_2_ce1_local = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((trunc_ln50_reg_303 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_2_we0_local = 1'b1;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd0) & (tmp_reg_308 == 1'd1))) begin
+        bufferA_2_we0_local = 1'b1;
     end else begin
-        buffer_2_we0_local = 1'b0;
+        bufferA_2_we0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_3_ce0_local = 1'b1;
+        bufferA_3_ce0_local = 1'b1;
     end else begin
-        buffer_3_ce0_local = 1'b0;
+        bufferA_3_ce0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_3_ce1_local = 1'b1;
+        bufferA_3_ce1_local = 1'b1;
     end else begin
-        buffer_3_ce1_local = 1'b0;
+        bufferA_3_ce1_local = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((trunc_ln50_reg_303 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_3_we0_local = 1'b1;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd1) & (tmp_reg_308 == 1'd1))) begin
+        bufferA_3_we0_local = 1'b1;
     end else begin
-        buffer_3_we0_local = 1'b0;
+        bufferA_3_we0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_r_ce0_local = 1'b1;
+        bufferA_ce0_local = 1'b1;
     end else begin
-        buffer_r_ce0_local = 1'b0;
+        bufferA_ce0_local = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_r_ce1_local = 1'b1;
+        bufferA_ce1_local = 1'b1;
     end else begin
-        buffer_r_ce1_local = 1'b0;
+        bufferA_ce1_local = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((trunc_ln50_reg_303 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        buffer_r_we0_local = 1'b1;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd0) & (tmp_reg_308 == 1'd1))) begin
+        bufferA_we0_local = 1'b1;
     end else begin
-        buffer_r_we0_local = 1'b0;
+        bufferA_we0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_1_ce0_local = 1'b1;
+    end else begin
+        bufferB_1_ce0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_1_ce1_local = 1'b1;
+    end else begin
+        bufferB_1_ce1_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd1) & (tmp_reg_308 == 1'd0))) begin
+        bufferB_1_we0_local = 1'b1;
+    end else begin
+        bufferB_1_we0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_2_ce0_local = 1'b1;
+    end else begin
+        bufferB_2_ce0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_2_ce1_local = 1'b1;
+    end else begin
+        bufferB_2_ce1_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd0) & (tmp_reg_308 == 1'd0))) begin
+        bufferB_2_we0_local = 1'b1;
+    end else begin
+        bufferB_2_we0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_3_ce0_local = 1'b1;
+    end else begin
+        bufferB_3_ce0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_3_ce1_local = 1'b1;
+    end else begin
+        bufferB_3_ce1_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd1) & (tmp_reg_308 == 1'd0))) begin
+        bufferB_3_we0_local = 1'b1;
+    end else begin
+        bufferB_3_we0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_ce0_local = 1'b1;
+    end else begin
+        bufferB_ce0_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        bufferB_ce1_local = 1'b1;
+    end else begin
+        bufferB_ce1_local = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln50_reg_315 == 1'd0) & (tmp_reg_308 == 1'd0))) begin
+        bufferB_we0_local = 1'b1;
+    end else begin
+        bufferB_we0_local = 1'b0;
     end
 end
 
@@ -368,7 +540,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln50_fu_180_p2 = (ap_sig_allocacmp_j_1 + 9'd1);
+assign add_ln50_fu_212_p2 = (ap_sig_allocacmp_j_1 + 9'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -388,84 +560,135 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = ap_ready_sig;
 
-assign buffer_1_address0 = zext_ln52_1_fu_249_p1;
+assign bufferA_1_address0 = bufferA_1_addr_1_reg_329;
 
-assign buffer_1_address1 = zext_ln52_fu_214_p1;
+assign bufferA_1_address1 = zext_ln50_fu_232_p1;
 
-assign buffer_1_ce0 = buffer_1_ce0_local;
+assign bufferA_1_ce0 = bufferA_1_ce0_local;
 
-assign buffer_1_ce1 = buffer_1_ce1_local;
+assign bufferA_1_ce1 = bufferA_1_ce1_local;
 
-assign buffer_1_d0 = select_ln52_fu_269_p3;
+assign bufferA_1_d0 = select_ln56_fu_283_p3;
 
-assign buffer_1_we0 = buffer_1_we0_local;
+assign bufferA_1_we0 = bufferA_1_we0_local;
 
-assign buffer_2_address0 = zext_ln53_1_fu_263_p1;
+assign bufferA_2_address0 = bufferA_2_addr_1_reg_335;
 
-assign buffer_2_address1 = zext_ln53_fu_230_p1;
+assign bufferA_2_address1 = zext_ln57_fu_252_p1;
 
-assign buffer_2_ce0 = buffer_2_ce0_local;
+assign bufferA_2_ce0 = bufferA_2_ce0_local;
 
-assign buffer_2_ce1 = buffer_2_ce1_local;
+assign bufferA_2_ce1 = bufferA_2_ce1_local;
 
-assign buffer_2_d0 = select_ln53_fu_278_p3;
+assign bufferA_2_d0 = select_ln57_fu_292_p3;
 
-assign buffer_2_we0 = buffer_2_we0_local;
+assign bufferA_2_we0 = bufferA_2_we0_local;
 
-assign buffer_3_address0 = zext_ln53_1_fu_263_p1;
+assign bufferA_3_address0 = bufferA_3_addr_1_reg_341;
 
-assign buffer_3_address1 = zext_ln53_fu_230_p1;
+assign bufferA_3_address1 = zext_ln57_fu_252_p1;
 
-assign buffer_3_ce0 = buffer_3_ce0_local;
+assign bufferA_3_ce0 = bufferA_3_ce0_local;
 
-assign buffer_3_ce1 = buffer_3_ce1_local;
+assign bufferA_3_ce1 = bufferA_3_ce1_local;
 
-assign buffer_3_d0 = select_ln53_fu_278_p3;
+assign bufferA_3_d0 = select_ln57_fu_292_p3;
 
-assign buffer_3_we0 = buffer_3_we0_local;
+assign bufferA_3_we0 = bufferA_3_we0_local;
 
-assign buffer_r_address0 = zext_ln52_1_fu_249_p1;
+assign bufferA_address0 = bufferA_addr_1_reg_323;
 
-assign buffer_r_address1 = zext_ln52_fu_214_p1;
+assign bufferA_address1 = zext_ln50_fu_232_p1;
 
-assign buffer_r_ce0 = buffer_r_ce0_local;
+assign bufferA_ce0 = bufferA_ce0_local;
 
-assign buffer_r_ce1 = buffer_r_ce1_local;
+assign bufferA_ce1 = bufferA_ce1_local;
 
-assign buffer_r_d0 = select_ln52_fu_269_p3;
+assign bufferA_d0 = select_ln56_fu_283_p3;
 
-assign buffer_r_we0 = buffer_r_we0_local;
+assign bufferA_we0 = bufferA_we0_local;
 
-assign icmp_ln50_fu_174_p2 = ((ap_sig_allocacmp_j_1 == 9'd256) ? 1'b1 : 1'b0);
+assign bufferB_1_address0 = bufferB_1_addr_reg_353;
 
-assign lshr_ln2_fu_190_p4 = {{ap_sig_allocacmp_j_1[7:1]}};
+assign bufferB_1_address1 = zext_ln50_fu_232_p1;
 
-assign select_ln52_fu_269_p3 = ((trunc_ln50_reg_303[0:0] == 1'b1) ? buffer_1_q1 : buffer_r_q1);
+assign bufferB_1_ce0 = bufferB_1_ce0_local;
 
-assign select_ln53_fu_278_p3 = ((trunc_ln50_reg_303[0:0] == 1'b1) ? buffer_3_q1 : buffer_2_q1);
+assign bufferB_1_ce1 = bufferB_1_ce1_local;
 
-assign tmp_23_fu_241_p4 = {{{empty}, {6'd0}}, {zext_ln50_reg_314}};
+assign bufferB_1_d0 = select_ln53_fu_265_p3;
 
-assign tmp_24_fu_220_p4 = {{{empty_38}, {7'd127}}, {lshr_ln2_fu_190_p4}};
+assign bufferB_1_we0 = bufferB_1_we0_local;
 
-assign tmp_25_fu_255_p4 = {{{empty}, {7'd127}}, {lshr_ln2_reg_309}};
+assign bufferB_2_address0 = bufferB_2_addr_reg_359;
 
-assign tmp_s_fu_204_p4 = {{{empty_38}, {6'd0}}, {zext_ln50_fu_200_p1}};
+assign bufferB_2_address1 = zext_ln57_fu_252_p1;
 
-assign trunc_ln50_fu_186_p1 = ap_sig_allocacmp_j_1[0:0];
+assign bufferB_2_ce0 = bufferB_2_ce0_local;
 
-assign zext_ln50_fu_200_p1 = lshr_ln2_fu_190_p4;
+assign bufferB_2_ce1 = bufferB_2_ce1_local;
 
-assign zext_ln52_1_fu_249_p1 = tmp_23_fu_241_p4;
+assign bufferB_2_d0 = select_ln54_fu_274_p3;
 
-assign zext_ln52_fu_214_p1 = tmp_s_fu_204_p4;
+assign bufferB_2_we0 = bufferB_2_we0_local;
 
-assign zext_ln53_1_fu_263_p1 = tmp_25_fu_255_p4;
+assign bufferB_3_address0 = bufferB_3_addr_reg_365;
 
-assign zext_ln53_fu_230_p1 = tmp_24_fu_220_p4;
+assign bufferB_3_address1 = zext_ln57_fu_252_p1;
+
+assign bufferB_3_ce0 = bufferB_3_ce0_local;
+
+assign bufferB_3_ce1 = bufferB_3_ce1_local;
+
+assign bufferB_3_d0 = select_ln54_fu_274_p3;
+
+assign bufferB_3_we0 = bufferB_3_we0_local;
+
+assign bufferB_address0 = bufferB_addr_reg_347;
+
+assign bufferB_address1 = zext_ln50_fu_232_p1;
+
+assign bufferB_ce0 = bufferB_ce0_local;
+
+assign bufferB_ce1 = bufferB_ce1_local;
+
+assign bufferB_d0 = select_ln53_fu_265_p3;
+
+assign bufferB_we0 = bufferB_we0_local;
+
+assign icmp_ln50_fu_206_p2 = ((ap_sig_allocacmp_j_1 == 9'd256) ? 1'b1 : 1'b0);
+
+assign lshr_ln2_fu_222_p4 = {{ap_sig_allocacmp_j_1[7:1]}};
+
+assign select_ln53_fu_265_p3 = ((trunc_ln50_reg_315[0:0] == 1'b1) ? bufferA_1_q1 : bufferA_q1);
+
+assign select_ln54_fu_274_p3 = ((trunc_ln50_reg_315[0:0] == 1'b1) ? bufferA_3_q1 : bufferA_2_q1);
+
+assign select_ln56_fu_283_p3 = ((trunc_ln50_reg_315[0:0] == 1'b1) ? bufferB_1_q1 : bufferB_q1);
+
+assign select_ln57_fu_292_p3 = ((trunc_ln50_reg_315[0:0] == 1'b1) ? bufferB_3_q1 : bufferB_2_q1);
+
+assign sext_ln57_fu_248_p1 = $signed(tmp_s_fu_240_p3);
+
+assign tmp_reg_308 = empty;
+
+assign tmp_s_fu_240_p3 = {{1'd1}, {lshr_ln2_fu_222_p4}};
+
+assign trunc_ln50_fu_218_p1 = ap_sig_allocacmp_j_1[0:0];
+
+assign zext_ln50_fu_232_p1 = lshr_ln2_fu_222_p4;
+
+assign zext_ln57_fu_252_p1 = $unsigned(sext_ln57_fu_248_p1);
 
 always @ (posedge ap_clk) begin
-    zext_ln50_reg_314[7] <= 1'b0;
+    bufferA_addr_1_reg_323[13:7] <= 7'b0000000;
+    bufferA_1_addr_1_reg_329[13:7] <= 7'b0000000;
+    bufferA_2_addr_1_reg_335[13:7] <= 7'b1111111;
+    bufferA_3_addr_1_reg_341[13:7] <= 7'b1111111;
+    bufferB_addr_reg_347[13:7] <= 7'b0000000;
+    bufferB_1_addr_reg_353[13:7] <= 7'b0000000;
+    bufferB_2_addr_reg_359[13:7] <= 7'b1111111;
+    bufferB_3_addr_reg_365[13:7] <= 7'b1111111;
 end
 
 endmodule //top_kernel_compute_Pipeline_VITIS_LOOP_50_4

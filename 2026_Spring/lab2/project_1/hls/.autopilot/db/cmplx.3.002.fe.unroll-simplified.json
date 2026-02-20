@@ -1,17 +1,32 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "1 2 3",
+    "calls": "2 3 1",
     "control_depth": 0,
     "def_use_depth": 1,
     "file": "top.cpp",
-    "fileloc": 153,
+    "fileloc": 156,
     "instructions": 13,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 456
+    "total_instructions": 426
   },
   "1": {
+    "basicblocks": 5,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "top.cpp",
+    "fileloc": 144,
+    "instructions": 17,
+    "memory_accesses": 2,
+    "name": "write_output",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 17
+  },
+  "2": {
     "basicblocks": 5,
     "calls": "",
     "control_depth": 0,
@@ -26,37 +41,22 @@
     "name": "read_input",
     "total_instructions": 17
   },
-  "2": {
-    "basicblocks": 29,
+  "3": {
+    "basicblocks": 39,
     "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 48,
+    "control_depth": 5,
+    "def_use_depth": 41,
     "file": "top.cpp",
     "fileloc": 17,
-    "instructions": 409,
+    "instructions": 379,
     "loads": {
-      "L": 14
+      "L": 19
     },
-    "memory_accesses": 41,
+    "memory_accesses": 43,
     "name": "compute",
     "stores": {
-      "L": 17
+      "L": 22
     },
-    "total_instructions": 409
-  },
-  "3": {
-    "basicblocks": 5,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "top.cpp",
-    "fileloc": 141,
-    "instructions": 17,
-    "memory_accesses": 2,
-    "name": "write_output",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 17
+    "total_instructions": 379
   }
 }

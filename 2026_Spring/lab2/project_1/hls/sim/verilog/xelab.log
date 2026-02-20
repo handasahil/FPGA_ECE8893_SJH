@@ -17,16 +17,16 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE889
 INFO: [VRFC 10-311] analyzing module top_kernel_entry_proc
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_read_input.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_read_input
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_34_1_VITIS_LOOP_35_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_34_1_VITIS_LOOP_35_2
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_50_4.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_50_4
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_55_5.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_55_5
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_60_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_60_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_133_9_VITIS_LOOP_134_10.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_133_9_VITIS_LOOP_134_10
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_compute
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_write_output.v" into library xil_defaultlib
@@ -41,14 +41,12 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE889
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_39s_24ns_63_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_mul_39s_26ns_65_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_39s_26ns_65_1_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_add_41s_41s_41_1_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_add_41s_41s_41_1_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_add_42s_42s_42_1_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_add_42s_42s_42_1_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_line_buf_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_line_buf_1_RAM_AUTO_1R1W
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_buffer_RAM_AUTO_1R1W.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_buffer_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7_line_buf_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_72_6_VITIS_LOOP_73_7_line_buf_1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_bufferA_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_bufferA_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_bufferB_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_bufferB_RAM_AUTO_1R1W
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_fifo_w64_d4_S.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_fifo_w64_d4_S
 INFO: [VRFC 10-311] analyzing module top_kernel_fifo_w64_d4_S_ShiftReg
@@ -147,7 +145,8 @@ Compiling module xil_defaultlib.top_kernel_A_out_m_axi_write(CON...
 Compiling module xil_defaultlib.top_kernel_A_out_m_axi(C_M_AXI_A...
 Compiling module xil_defaultlib.top_kernel_entry_proc
 Compiling module xil_defaultlib.top_kernel_read_input
-Compiling module xil_defaultlib.top_kernel_compute_buffer_RAM_AU...
+Compiling module xil_defaultlib.top_kernel_compute_bufferA_RAM_A...
+Compiling module xil_defaultlib.top_kernel_compute_bufferB_RAM_A...
 Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
 Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
@@ -156,8 +155,6 @@ Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_mul_39s_24ns_63_1_1(N...
 Compiling module xil_defaultlib.top_kernel_mul_39s_26ns_65_1_1(N...
-Compiling module xil_defaultlib.top_kernel_add_41s_41s_41_1_1
-Compiling module xil_defaultlib.top_kernel_add_42s_42s_42_1_1
 Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_compute
 Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...

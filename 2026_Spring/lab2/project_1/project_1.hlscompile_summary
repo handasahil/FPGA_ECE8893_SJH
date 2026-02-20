@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180410",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061736",
  "buildStep": {
-  "cmdId": "57e28b0d-207e-40c6-a62c-d32ca309ae96",
+  "cmdId": "e8f42857-a5a9-41de-a8d3-9d2ca031983a",
   "name": "vitis-run",
   "logFile": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/logs/hls_compile.log",
   "commandLine": "vitis-run --mode hls --tcl /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl",
@@ -25,10 +25,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180410",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061737",
  "status": {
-  "cmdId": "57e28b0d-207e-40c6-a62c-d32ca309ae96",
+  "cmdId": "e8f42857-a5a9-41de-a8d3-9d2ca031983a",
   "state": "CS_RUNNING"
  }
 }
@@ -36,8 +36,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180411",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061737",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -72,10 +72,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180411",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061738",
  "buildStep": {
-  "cmdId": "d00c4223-c2b9-433e-acaf-1fd26e3665ae",
+  "cmdId": "b9adc1a5-99de-4693-b5d8-8039da821704",
   "name": "csynth_design",
   "logFile": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/hls.log",
   "commandLine": "csynth_design",
@@ -88,10 +88,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180412",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061738",
  "status": {
-  "cmdId": "d00c4223-c2b9-433e-acaf-1fd26e3665ae",
+  "cmdId": "b9adc1a5-99de-4693-b5d8-8039da821704",
   "state": "CS_RUNNING"
  }
 }
@@ -99,8 +99,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180412",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061738",
  "report": {
   "path": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/hls_data.json",
   "name": "",
@@ -113,8 +113,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180412",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061739",
  "report": {
   "path": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth.rpt",
   "name": "",
@@ -127,8 +127,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 20 12:56:20 2026",
- "timestampMillis": "1771610180413",
+ "dateTimestamp": "Fri Feb 20 13:27:41 2026",
+ "timestampMillis": "1771612061739",
  "report": {
   "path": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth.xml",
   "name": "",
@@ -141,8 +141,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 20 12:56:44 2026",
- "timestampMillis": "1771610204737",
+ "dateTimestamp": "Fri Feb 20 13:28:06 2026",
+ "timestampMillis": "1771612086895",
  "report": {
   "path": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls",
   "name": "",
@@ -155,8 +155,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 20 12:56:44 2026",
- "timestampMillis": "1771610204737",
+ "dateTimestamp": "Fri Feb 20 13:28:06 2026",
+ "timestampMillis": "1771612086896",
  "report": {
   "path": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls",
   "name": "",
@@ -169,8 +169,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Feb 20 12:56:44 2026",
- "timestampMillis": "1771610204738",
+ "dateTimestamp": "Fri Feb 20 13:28:06 2026",
+ "timestampMillis": "1771612086896",
  "report": {
   "path": "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls",
   "name": "",
@@ -183,10 +183,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 20 12:56:44 2026",
- "timestampMillis": "1771610204738",
+ "dateTimestamp": "Fri Feb 20 13:28:06 2026",
+ "timestampMillis": "1771612086896",
  "status": {
-  "cmdId": "d00c4223-c2b9-433e-acaf-1fd26e3665ae",
+  "cmdId": "b9adc1a5-99de-4693-b5d8-8039da821704",
   "state": "CS_PASSED"
  }
 }
@@ -194,10 +194,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Feb 20 12:56:44 2026",
- "timestampMillis": "1771610204824",
+ "dateTimestamp": "Fri Feb 20 13:28:06 2026",
+ "timestampMillis": "1771612086978",
  "status": {
-  "cmdId": "57e28b0d-207e-40c6-a62c-d32ca309ae96",
+  "cmdId": "e8f42857-a5a9-41de-a8d3-9d2ca031983a",
   "state": "CS_PASSED"
  }
 }

@@ -3,8 +3,8 @@
 # SW Build 6233196 on Thu Sep 11 21:27:11 MDT 2025
 # IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
 # SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
-# Start of session at: Fri Feb 20 12:58:47 2026
-# Process ID         : 2543143
+# Start of session at: Fri Feb 20 13:30:08 2026
+# Process ID         : 3168432
 # Current directory  : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog
 # Command line       : xsim -mode tcl -source {xsim.dir/top_kernel/xsim_script.tcl}
 # Log file           : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/xsim.log
@@ -13,13 +13,13 @@
 # Platform           : RedHatEnterprise
 # Operating System   : Red Hat Enterprise Linux release 8.10 (Ootpa)
 # Processor Detail   : Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz
-# CPU Frequency      : 2400.015 MHz
+# CPU Frequency      : 1637.198 MHz
 # CPU Physical cores : 56
 # CPU Logical cores  : 112
 # Host memory        : 201166 MB
 # Swap memory        : 68719 MB
 # Total Virtual      : 269885 MB
-# Available Virtual  : 216564 MB
+# Available Virtual  : 207206 MB
 #-----------------------------------------------------------
 source xsim.dir/top_kernel/xsim_script.tcl
 # xsim {top_kernel} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=top_kernel_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {top_kernel.tcl}
@@ -441,10 +441,10 @@ UVM_INFO /tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xln
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
-// RTL Simulation : 1 / 1 [100.00%] @ "22444395000"
+// RTL Simulation : 1 / 1 [100.00%] @ "22444095000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 22444465 ns : File "/tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
-run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:02:28 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 88639 ; free virtual = 192624
+$finish called at time : 22444165 ns : File "/tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:00.03 ; elapsed = 00:02:39 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 76352 ; free virtual = 182481
 ## quit
-INFO: xsimkernel Simulation Memory Usage: 12091868 KB (Peak: 12107200 KB), Simulation CPU Usage: 148600 ms
-INFO: [Common 17-206] Exiting xsim at Fri Feb 20 13:01:21 2026...
+INFO: xsimkernel Simulation Memory Usage: 12091956 KB (Peak: 12107288 KB), Simulation CPU Usage: 159670 ms
+INFO: [Common 17-206] Exiting xsim at Fri Feb 20 13:32:53 2026...
