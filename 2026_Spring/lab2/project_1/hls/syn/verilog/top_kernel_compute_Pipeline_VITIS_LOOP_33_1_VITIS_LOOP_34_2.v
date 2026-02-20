@@ -106,9 +106,9 @@ reg    buffer_3_ce0_local;
 wire   [0:0] icmp_ln34_fu_175_p2;
 wire   [8:0] add_ln33_fu_169_p2;
 wire   [8:0] select_ln33_fu_181_p3;
-wire   [6:0] tmp_fu_215_p4;
+wire   [6:0] tmp_20_fu_215_p4;
 wire   [6:0] lshr_ln_fu_205_p4;
-wire   [13:0] tmp_14_fu_225_p3;
+wire   [13:0] tmp_21_fu_225_p3;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -421,14 +421,14 @@ assign select_ln33_1_fu_189_p3 = ((icmp_ln34_fu_175_p2[0:0] == 1'b1) ? add_ln33_
 
 assign select_ln33_fu_181_p3 = ((icmp_ln34_fu_175_p2[0:0] == 1'b1) ? 9'd0 : j_fu_54);
 
-assign tmp_14_fu_225_p3 = {{tmp_fu_215_p4}, {lshr_ln_fu_205_p4}};
+assign tmp_20_fu_215_p4 = {{select_ln33_1_fu_189_p3[7:1]}};
 
-assign tmp_fu_215_p4 = {{select_ln33_1_fu_189_p3[7:1]}};
+assign tmp_21_fu_225_p3 = {{tmp_20_fu_215_p4}, {lshr_ln_fu_205_p4}};
 
 assign trunc_ln33_fu_197_p1 = select_ln33_1_fu_189_p3[0:0];
 
 assign trunc_ln34_fu_201_p1 = select_ln33_fu_181_p3[0:0];
 
-assign zext_ln36_fu_233_p1 = tmp_14_fu_225_p3;
+assign zext_ln36_fu_233_p1 = tmp_21_fu_225_p3;
 
 endmodule //top_kernel_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2

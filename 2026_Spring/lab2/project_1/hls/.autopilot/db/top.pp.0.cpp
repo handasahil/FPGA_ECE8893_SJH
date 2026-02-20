@@ -6601,9 +6601,25 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
                     acc_t sum_diag = (acc_t)window[0][0] + (acc_t)window[0][2] +
                                      (acc_t)window[2][0] + (acc_t)window[2][2];
 
-                    acc_t center = (acc_t)window[1][1];
 
-                    acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
+
+                    acc_t out_a, out_b, out_c;
+
+#pragma HLS bind_op variable=out_a op=mul impl=dsp
+#pragma HLS bind_op variable=out_b op=mul impl=dsp
+#pragma HLS bind_op variable=out_c op=mul impl=dsp
+
+ out_a = (acc_t)wc * (acc_t)window[1][1];
+                    out_b = (acc_t)wa * sum_axis;
+                    out_c = (acc_t)wd * sum_diag;
+
+                    acc_t out;
+
+#pragma HLS bind_op variable=out op=add impl=dsp
+
+ out = out_a + out_b + out_c;
+
+
 
 
                     buffer[write_idx][out_i][out_j] = (data_t)out;
@@ -6618,8 +6634,8 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
 
     int final_idx = 30 % 2;
-    VITIS_LOOP_114_9: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_115_10: for (int j = 0; j < 256; j++) {
+    VITIS_LOOP_130_9: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_131_10: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
  stream_out[i][j] = buffer[final_idx][i][j];
         }
@@ -6630,8 +6646,8 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
 
 void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
-    VITIS_LOOP_126_1: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_127_2: for (int j = 0; j < 256; j++) {
+    VITIS_LOOP_142_1: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_143_2: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
  A_out[i][j] = stream_in[i][j];
         }
@@ -6644,7 +6660,7 @@ void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
 __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t A_in[256][256], data_t A_out[256][256]) {
 #line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl"
 #pragma HLSDIRECTIVE TOP name=top_kernel
-# 137 "top.cpp"
+# 153 "top.cpp"
 
 #pragma HLS interface m_axi port=A_in offset=slave bundle=A_in
 #pragma HLS interface m_axi port=A_out offset=slave bundle=A_out

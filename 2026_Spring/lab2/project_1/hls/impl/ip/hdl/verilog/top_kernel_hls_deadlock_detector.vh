@@ -269,7 +269,7 @@ end
     assign proc_2_input_sync_blk[0] = 1'b0;
     assign proc_2_output_sync_blk[0] = 1'b0;
     assign proc_dep_vld_vec_2[0] = dl_detect_out ? proc_dep_vld_vec_2_reg[0] : (proc_2_data_FIFO_blk[0] | proc_2_data_PIPO_blk[0] | proc_2_start_FIFO_blk[0] | proc_2_TLF_FIFO_blk[0] | proc_2_input_sync_blk[0] | proc_2_output_sync_blk[0]);
-    assign proc_2_data_FIFO_blk[1] = 1'b0 | (~compute_U0.grp_compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10_fu_118.grid_final_blk_n);
+    assign proc_2_data_FIFO_blk[1] = 1'b0 | (~compute_U0.grp_compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10_fu_118.grid_final_blk_n);
     assign proc_2_data_PIPO_blk[1] = 1'b0;
     assign proc_2_start_FIFO_blk[1] = 1'b0;
     assign proc_2_TLF_FIFO_blk[1] = 1'b0;

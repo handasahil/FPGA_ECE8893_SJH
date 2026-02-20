@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1.1 (lin64) Build 6233196 Thu Sep 11 21:27:11 MDT 2025
-| Date             : Fri Feb 20 12:11:48 2026
+| Date             : Fri Feb 20 13:08:19 2026
 | Host             : ece-linlabsrv01 running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
 | Command          : report_power -file ./report/top_kernel_power_synth.rpt -xpe ./top_kernel_power.xpe
 | Design           : bd_0_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.294        |
+| Total On-Chip Power (W)  | 0.293        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.072        |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.009 |        3 |       --- |             --- |
-| CLB Logic               |     0.010 |     6436 |       --- |             --- |
-|   LUT as Logic          |     0.007 |     2472 |     70560 |            3.50 |
+| CLB Logic               |     0.009 |     6373 |       --- |             --- |
+|   LUT as Logic          |     0.007 |     2358 |     70560 |            3.34 |
 |   LUT as Shift Register |     0.002 |      303 |     28800 |            1.05 |
-|   Register              |    <0.001 |     2862 |    141120 |            2.03 |
-|   CARRY8                |    <0.001 |      122 |      8820 |            1.38 |
-|   Others                |     0.000 |      116 |       --- |             --- |
+|   Register              |    <0.001 |     2889 |    141120 |            2.05 |
+|   CARRY8                |    <0.001 |      106 |      8820 |            1.20 |
+|   Others                |     0.000 |      121 |       --- |             --- |
 |   F7/F8 Muxes           |     0.000 |       36 |     70560 |            0.05 |
-| Signals                 |     0.009 |     8016 |       --- |             --- |
+| Signals                 |     0.007 |     7851 |       --- |             --- |
 | Block RAM               |     0.042 |     89.5 |       216 |           41.44 |
-| DSPs                    |     0.002 |        4 |       360 |            1.11 |
+| DSPs                    |     0.004 |        8 |       360 |            2.22 |
 | Static Power            |     0.222 |          |           |                 |
-| Total                   |     0.294 |          |           |                 |
+| Total                   |     0.293 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.850 |     0.128 |       0.083 |      0.045 |       NA    | Unspecified | NA         |
+| Vccint          |       0.850 |     0.128 |       0.082 |      0.045 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.027 |       0.000 |      0.027 |       NA    | Unspecified | NA         |
 | Vccbram         |       0.850 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.048 |       0.000 |      0.048 |       NA    | Unspecified | NA         |

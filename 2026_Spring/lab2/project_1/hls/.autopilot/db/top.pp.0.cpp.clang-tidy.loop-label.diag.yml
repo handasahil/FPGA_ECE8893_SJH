@@ -127,40 +127,60 @@ Diagnostics:
         Offset:          962603
         Length:          0
         ReplacementText: 'VITIS_LOOP_67_8: '
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      101
+    FilePath:        top.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      102
+    FilePath:        top.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, mul + dsp is invalid combination for bind_op'
+    FileOffset:      103
+    FilePath:        top.cpp
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, add + dsp is invalid combination for bind_op'
+    FileOffset:      111
+    FilePath:        top.cpp
+    Replacements:    
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_114_9:  '
-    FileOffset:      114
+    Message:         'Added loop label VITIS_LOOP_130_9:  '
+    FileOffset:      130
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          963885
+        Offset:          964191
         Length:          0
-        ReplacementText: 'VITIS_LOOP_114_9: '
+        ReplacementText: 'VITIS_LOOP_130_9: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_115_10:  '
-    FileOffset:      115
+    Message:         'Added loop label VITIS_LOOP_131_10:  '
+    FileOffset:      131
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          963925
+        Offset:          964231
         Length:          0
-        ReplacementText: 'VITIS_LOOP_115_10: '
+        ReplacementText: 'VITIS_LOOP_131_10: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_126_1:  '
-    FileOffset:      126
+    Message:         'Added loop label VITIS_LOOP_142_1:  '
+    FileOffset:      142
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          964126
+        Offset:          964432
         Length:          0
-        ReplacementText: 'VITIS_LOOP_126_1: '
+        ReplacementText: 'VITIS_LOOP_142_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_127_2:  '
-    FileOffset:      127
+    Message:         'Added loop label VITIS_LOOP_143_2:  '
+    FileOffset:      143
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          964166
+        Offset:          964472
         Length:          0
-        ReplacementText: 'VITIS_LOOP_127_2: '
+        ReplacementText: 'VITIS_LOOP_143_2: '
 ...

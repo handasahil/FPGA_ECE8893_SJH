@@ -167,7 +167,7 @@
               <name>A_out_r_read</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>143</lineNumber>
+              <lineNumber>159</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -183,7 +183,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>143</second>
+                      <second>159</second>
                     </item>
                   </second>
                 </item>
@@ -224,7 +224,7 @@
               <name>A_in_r_read</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>143</lineNumber>
+              <lineNumber>159</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -240,7 +240,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>143</second>
+                      <second>159</second>
                     </item>
                   </second>
                 </item>
@@ -281,7 +281,7 @@
               <name>A_out_r_c</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>143</lineNumber>
+              <lineNumber>159</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -297,7 +297,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>143</second>
+                      <second>159</second>
                     </item>
                   </second>
                 </item>
@@ -337,7 +337,7 @@
               <name>grid_initial</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>146</lineNumber>
+              <lineNumber>162</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -353,7 +353,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>146</second>
+                      <second>162</second>
                     </item>
                   </second>
                 </item>
@@ -393,7 +393,7 @@
               <name>grid_final</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>147</lineNumber>
+              <lineNumber>163</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -409,7 +409,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>147</second>
+                      <second>163</second>
                     </item>
                   </second>
                 </item>
@@ -446,10 +446,10 @@
             <Obj>
               <type>0</type>
               <id>27</id>
-              <name>_ln143</name>
+              <name>_ln159</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>143</lineNumber>
+              <lineNumber>159</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -465,7 +465,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>143</second>
+                      <second>159</second>
                     </item>
                   </second>
                 </item>
@@ -504,10 +504,10 @@
             <Obj>
               <type>0</type>
               <id>28</id>
-              <name>_ln153</name>
+              <name>_ln169</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>153</lineNumber>
+              <lineNumber>169</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -523,7 +523,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>153</second>
+                      <second>169</second>
                     </item>
                   </second>
                 </item>
@@ -563,10 +563,10 @@
             <Obj>
               <type>0</type>
               <id>29</id>
-              <name>_ln154</name>
+              <name>_ln170</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>154</lineNumber>
+              <lineNumber>170</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -582,7 +582,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>154</second>
+                      <second>170</second>
                     </item>
                   </second>
                 </item>
@@ -622,10 +622,10 @@
             <Obj>
               <type>0</type>
               <id>30</id>
-              <name>_ln155</name>
+              <name>_ln171</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>155</lineNumber>
+              <lineNumber>171</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -641,7 +641,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>155</second>
+                      <second>171</second>
                     </item>
                   </second>
                 </item>
@@ -684,10 +684,10 @@
             <Obj>
               <type>0</type>
               <id>31</id>
-              <name>_ln156</name>
+              <name>_ln172</name>
               <fileName>top.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>156</lineNumber>
+              <lineNumber>172</lineNumber>
               <contextFuncName>top_kernel</contextFuncName>
               <contextNormFuncName>top_kernel</contextNormFuncName>
               <inlineStackInfo>
@@ -703,7 +703,7 @@
                         <first>top.cpp</first>
                         <second>top_kernel</second>
                       </first>
-                      <second>156</second>
+                      <second>172</second>
                     </item>
                   </second>
                 </item>
@@ -1777,15 +1777,15 @@
             </item>
             <item>
               <first>DSP</first>
-              <second>6</second>
+              <second>8</second>
             </item>
             <item>
               <first>FF</first>
-              <second>1067</second>
+              <second>1129</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>2622</second>
+              <second>2725</second>
             </item>
             <item>
               <first>URAM</first>
@@ -2594,7 +2594,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item>
-        <first>call_ln143_entry_proc_fu_102</first>
+        <first>call_ln159_entry_proc_fu_102</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

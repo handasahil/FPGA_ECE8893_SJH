@@ -146,8 +146,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_31</name>
-<Object>empty_31</Object>
+<name>empty_38</name>
+<Object>empty_38</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

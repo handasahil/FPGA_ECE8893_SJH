@@ -13,7 +13,7 @@ module top_kernel_compute_Pipeline_VITIS_LOOP_50_4 (
         ap_done,
         ap_idle,
         ap_ready,
-        empty_31,
+        empty_38,
         buffer_r_address0,
         buffer_r_ce0,
         buffer_r_we0,
@@ -53,7 +53,7 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [0:0] empty_31;
+input  [0:0] empty_38;
 output  [14:0] buffer_r_address0;
 output   buffer_r_ce0;
 output   buffer_r_we0;
@@ -127,9 +127,9 @@ reg    buffer_3_ce1_local;
 reg    buffer_3_we0_local;
 reg    buffer_3_ce0_local;
 wire   [14:0] tmp_s_fu_204_p4;
-wire   [14:0] tmp_18_fu_220_p4;
-wire   [14:0] tmp_17_fu_241_p4;
-wire   [14:0] tmp_20_fu_255_p4;
+wire   [14:0] tmp_24_fu_220_p4;
+wire   [14:0] tmp_23_fu_241_p4;
+wire   [14:0] tmp_25_fu_255_p4;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -444,25 +444,25 @@ assign select_ln52_fu_269_p3 = ((trunc_ln50_reg_303[0:0] == 1'b1) ? buffer_1_q1 
 
 assign select_ln53_fu_278_p3 = ((trunc_ln50_reg_303[0:0] == 1'b1) ? buffer_3_q1 : buffer_2_q1);
 
-assign tmp_17_fu_241_p4 = {{{empty}, {6'd0}}, {zext_ln50_reg_314}};
+assign tmp_23_fu_241_p4 = {{{empty}, {6'd0}}, {zext_ln50_reg_314}};
 
-assign tmp_18_fu_220_p4 = {{{empty_31}, {7'd127}}, {lshr_ln2_fu_190_p4}};
+assign tmp_24_fu_220_p4 = {{{empty_38}, {7'd127}}, {lshr_ln2_fu_190_p4}};
 
-assign tmp_20_fu_255_p4 = {{{empty}, {7'd127}}, {lshr_ln2_reg_309}};
+assign tmp_25_fu_255_p4 = {{{empty}, {7'd127}}, {lshr_ln2_reg_309}};
 
-assign tmp_s_fu_204_p4 = {{{empty_31}, {6'd0}}, {zext_ln50_fu_200_p1}};
+assign tmp_s_fu_204_p4 = {{{empty_38}, {6'd0}}, {zext_ln50_fu_200_p1}};
 
 assign trunc_ln50_fu_186_p1 = ap_sig_allocacmp_j_1[0:0];
 
 assign zext_ln50_fu_200_p1 = lshr_ln2_fu_190_p4;
 
-assign zext_ln52_1_fu_249_p1 = tmp_17_fu_241_p4;
+assign zext_ln52_1_fu_249_p1 = tmp_23_fu_241_p4;
 
 assign zext_ln52_fu_214_p1 = tmp_s_fu_204_p4;
 
-assign zext_ln53_1_fu_263_p1 = tmp_20_fu_255_p4;
+assign zext_ln53_1_fu_263_p1 = tmp_25_fu_255_p4;
 
-assign zext_ln53_fu_230_p1 = tmp_18_fu_220_p4;
+assign zext_ln53_fu_230_p1 = tmp_24_fu_220_p4;
 
 always @ (posedge ap_clk) begin
     zext_ln50_reg_314[7] <= 1'b0;

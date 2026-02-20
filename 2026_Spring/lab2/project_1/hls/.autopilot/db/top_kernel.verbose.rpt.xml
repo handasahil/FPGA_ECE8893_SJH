@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Fri Feb 20 12:00:29 2026
+<item name = "Date">Fri Feb 20 12:56:42 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -53,12 +53,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 12, -</column>
 <column name="FIFO">-, -, 297, 201, -</column>
-<column name="Instance">180, 6, 2789, 4623, 0</column>
+<column name="Instance">180, 8, 2851, 4726, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 18, -</column>
 <column name="Register">-, -, 2, -, -</column>
 <specialColumn name="Available">432, 360, 141120, 70560, 0</specialColumn>
-<specialColumn name="Utilization (%)">41, 1, 2, 6, 0</specialColumn>
+<specialColumn name="Utilization (%)">41, 2, 2, 7, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -67,7 +67,7 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="A_in_m_axi_U">A_in_m_axi, 2, 0, 671, 637, 0</column>
 <column name="A_out_m_axi_U">A_out_m_axi, 0, 0, 611, 666, 0</column>
-<column name="compute_U0">compute, 178, 6, 1067, 2622, 0</column>
+<column name="compute_U0">compute, 178, 8, 1129, 2725, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 176, 296, 0</column>
 <column name="entry_proc_U0">entry_proc, 0, 0, 3, 29, 0</column>
 <column name="read_input_U0">read_input, 0, 0, 74, 196, 0</column>

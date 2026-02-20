@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute'" level="0">
-<item name = "Date">Fri Feb 20 12:00:28 2026
+<item name = "Date">Fri Feb 20 12:56:40 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.855 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.148 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -33,7 +33,7 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="grp_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2_fu_94">compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2, 65538, 65538, 0.655 ms, 0.655 ms, 65537, 65537, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="grp_compute_Pipeline_VITIS_LOOP_50_4_fu_108">compute_Pipeline_VITIS_LOOP_50_4, 258, 258, 2.580 us, 2.580 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10_fu_118">compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10, 65538, 65538, 0.655 ms, 0.655 ms, 65537, 65537, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10_fu_118">compute_Pipeline_VITIS_LOOP_130_9_VITIS_LOOP_131_10, 65538, 65538, 0.655 ms, 0.655 ms, 65537, 65537, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="grp_compute_Pipeline_VITIS_LOOP_55_5_fu_128">compute_Pipeline_VITIS_LOOP_55_5, 258, 258, 2.580 us, 2.580 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="grp_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_fu_138">compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7, 65540, 65540, 0.655 ms, 0.655 ms, 65537, 65537, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>

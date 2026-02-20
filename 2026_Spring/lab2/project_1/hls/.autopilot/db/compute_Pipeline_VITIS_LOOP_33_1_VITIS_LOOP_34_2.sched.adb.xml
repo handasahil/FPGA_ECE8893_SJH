@@ -70,7 +70,7 @@ newFuncRoot:2 %indvar_flatten = alloca i32 1
 
 <Node id="9" bw="0" op_0_bw="0" op_1_bw="24" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %grid_initial, void @empty_1, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0, i32 0
+newFuncRoot:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %grid_initial, void @empty_18, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -420,10 +420,10 @@ for.inc12:11 %lshr_ln = partselect i7 @_ssdm_op_PartSelect.i7.i9.i32.i32, i9 %se
 
 <Node id="32" bw="7" op_0_bw="7" op_1_bw="9" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.inc12:12 %tmp = partselect i7 @_ssdm_op_PartSelect.i7.i9.i32.i32, i9 %select_ln33_1, i32 1, i32 7
+for.inc12:12 %tmp_20 = partselect i7 @_ssdm_op_PartSelect.i7.i9.i32.i32, i9 %select_ln33_1, i32 1, i32 7
 
 ]]></Node>
-<StgValue><ssdm name="tmp"/></StgValue>
+<StgValue><ssdm name="tmp_20"/></StgValue>
 </operation>
 
 <operation id="31" st_id="2" stage="1" lat="1">
@@ -435,10 +435,10 @@ for.inc12:12 %tmp = partselect i7 @_ssdm_op_PartSelect.i7.i9.i32.i32, i9 %select
 
 <Node id="33" bw="14" op_0_bw="14" op_1_bw="7" op_2_bw="7">
 <![CDATA[
-for.inc12:13 %tmp_14 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i7.i7, i7 %tmp, i7 %lshr_ln
+for.inc12:13 %tmp_21 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i7.i7, i7 %tmp_20, i7 %lshr_ln
 
 ]]></Node>
-<StgValue><ssdm name="tmp_14"/></StgValue>
+<StgValue><ssdm name="tmp_21"/></StgValue>
 </operation>
 
 <operation id="32" st_id="2" stage="1" lat="1">
@@ -450,7 +450,7 @@ for.inc12:13 %tmp_14 = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i7.i7, i7
 
 <Node id="34" bw="64" op_0_bw="14">
 <![CDATA[
-for.inc12:14 %zext_ln36 = zext i14 %tmp_14
+for.inc12:14 %zext_ln36 = zext i14 %tmp_21
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln36"/></StgValue>

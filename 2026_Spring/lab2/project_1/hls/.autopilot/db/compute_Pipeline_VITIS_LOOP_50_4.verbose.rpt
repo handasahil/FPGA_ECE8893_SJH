@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'compute_Pipeline_VITIS_LOOP_50_4'
 ================================================================
-* Date:           Fri Feb 20 12:00:28 2026
+* Date:           Fri Feb 20 12:56:41 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -136,7 +136,7 @@
 |ap_done            |  out|    1|  ap_ctrl_hs|  compute_Pipeline_VITIS_LOOP_50_4|  return value|
 |ap_idle            |  out|    1|  ap_ctrl_hs|  compute_Pipeline_VITIS_LOOP_50_4|  return value|
 |ap_ready           |  out|    1|  ap_ctrl_hs|  compute_Pipeline_VITIS_LOOP_50_4|  return value|
-|empty_31           |   in|    1|     ap_none|                          empty_31|        scalar|
+|empty_38           |   in|    1|     ap_none|                          empty_38|        scalar|
 |buffer_r_address0  |  out|   15|   ap_memory|                          buffer_r|         array|
 |buffer_r_ce0       |  out|    1|   ap_memory|                          buffer_r|         array|
 |buffer_r_we0       |  out|    1|   ap_memory|                          buffer_r|         array|
@@ -211,7 +211,7 @@ IsGatedGlobalClock: 0
 State 1 <SV = 0> <Delay = 1.89>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [top.cpp:50]   --->   Operation 5 'alloca' 'j' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tmp = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty"   --->   Operation 6 'read' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_19 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty_31"   --->   Operation 7 'read' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_26 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty_38"   --->   Operation 7 'read' 'tmp_26' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.48ns)   --->   "%store_ln50 = store i9 0, i9 %j" [top.cpp:50]   --->   Operation 8 'store' 'store_ln50' <Predicate = true> <Delay = 0.48>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc45"   --->   Operation 9 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%j_1 = load i9 %j" [top.cpp:50]   --->   Operation 10 'load' 'j_1' <Predicate = true> <Delay = 0.00>
@@ -221,12 +221,12 @@ ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln50 = br i1 %icmp_ln50, void %
 ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%trunc_ln50 = trunc i9 %j_1" [top.cpp:50]   --->   Operation 14 'trunc' 'trunc_ln50' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%lshr_ln2 = partselect i7 @_ssdm_op_PartSelect.i7.i9.i32.i32, i9 %j_1, i32 1, i32 7" [top.cpp:50]   --->   Operation 15 'partselect' 'lshr_ln2' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%zext_ln50 = zext i7 %lshr_ln2" [top.cpp:50]   --->   Operation 16 'zext' 'zext_ln50' <Predicate = (!icmp_ln50)> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i6.i8, i1 %tmp_19, i6 0, i8 %zext_ln50" [top.cpp:52]   --->   Operation 17 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln50)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_s = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i6.i8, i1 %tmp_26, i6 0, i8 %zext_ln50" [top.cpp:52]   --->   Operation 17 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln52 = zext i15 %tmp_s" [top.cpp:52]   --->   Operation 18 'zext' 'zext_ln52' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%buffer_addr_1 = getelementptr i24 %buffer_r, i64 0, i64 %zext_ln52" [top.cpp:52]   --->   Operation 19 'getelementptr' 'buffer_addr_1' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%buffer_1_addr_1 = getelementptr i24 %buffer_1, i64 0, i64 %zext_ln52" [top.cpp:52]   --->   Operation 20 'getelementptr' 'buffer_1_addr_1' <Predicate = (!icmp_ln50)> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_18 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp_19, i7 127, i7 %lshr_ln2" [top.cpp:53]   --->   Operation 21 'bitconcatenate' 'tmp_18' <Predicate = (!icmp_ln50)> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln53 = zext i15 %tmp_18" [top.cpp:53]   --->   Operation 22 'zext' 'zext_ln53' <Predicate = (!icmp_ln50)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_24 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp_26, i7 127, i7 %lshr_ln2" [top.cpp:53]   --->   Operation 21 'bitconcatenate' 'tmp_24' <Predicate = (!icmp_ln50)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln53 = zext i15 %tmp_24" [top.cpp:53]   --->   Operation 22 'zext' 'zext_ln53' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%buffer_2_addr_1 = getelementptr i24 %buffer_2, i64 0, i64 %zext_ln53" [top.cpp:53]   --->   Operation 23 'getelementptr' 'buffer_2_addr_1' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%buffer_3_addr_1 = getelementptr i24 %buffer_3, i64 0, i64 %zext_ln53" [top.cpp:53]   --->   Operation 24 'getelementptr' 'buffer_3_addr_1' <Predicate = (!icmp_ln50)> <Delay = 0.00>
 ST_1 : Operation 25 [2/2] (1.35ns)   --->   "%buffer_load = load i15 %buffer_addr_1" [top.cpp:52]   --->   Operation 25 'load' 'buffer_load' <Predicate = (!icmp_ln50)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 32768> <RAM>
@@ -241,13 +241,13 @@ ST_1 : Operation 55 [1/1] (0.48ns)   --->   "%ret_ln0 = ret"   --->   Operation 
 State 2 <SV = 1> <Delay = 3.13>
 ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%specpipeline_ln51 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_14" [top.cpp:51]   --->   Operation 32 'specpipeline' 'specpipeline_ln51' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%speclooptripcount_ln50 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256" [top.cpp:50]   --->   Operation 33 'speclooptripcount' 'speclooptripcount_ln50' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specloopname_ln50 = specloopname void @_ssdm_op_SpecLoopName, void @empty" [top.cpp:50]   --->   Operation 34 'specloopname' 'specloopname_ln50' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_17 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i6.i8, i1 %tmp, i6 0, i8 %zext_ln50" [top.cpp:52]   --->   Operation 35 'bitconcatenate' 'tmp_17' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln52_1 = zext i15 %tmp_17" [top.cpp:52]   --->   Operation 36 'zext' 'zext_ln52_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specloopname_ln50 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [top.cpp:50]   --->   Operation 34 'specloopname' 'specloopname_ln50' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_23 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i6.i8, i1 %tmp, i6 0, i8 %zext_ln50" [top.cpp:52]   --->   Operation 35 'bitconcatenate' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%zext_ln52_1 = zext i15 %tmp_23" [top.cpp:52]   --->   Operation 36 'zext' 'zext_ln52_1' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%buffer_addr_2 = getelementptr i24 %buffer_r, i64 0, i64 %zext_ln52_1" [top.cpp:52]   --->   Operation 37 'getelementptr' 'buffer_addr_2' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%buffer_1_addr_2 = getelementptr i24 %buffer_1, i64 0, i64 %zext_ln52_1" [top.cpp:52]   --->   Operation 38 'getelementptr' 'buffer_1_addr_2' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_20 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp, i7 127, i7 %lshr_ln2" [top.cpp:53]   --->   Operation 39 'bitconcatenate' 'tmp_20' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln53_1 = zext i15 %tmp_20" [top.cpp:53]   --->   Operation 40 'zext' 'zext_ln53_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_25 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp, i7 127, i7 %lshr_ln2" [top.cpp:53]   --->   Operation 39 'bitconcatenate' 'tmp_25' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln53_1 = zext i15 %tmp_25" [top.cpp:53]   --->   Operation 40 'zext' 'zext_ln53_1' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%buffer_2_addr_2 = getelementptr i24 %buffer_2, i64 0, i64 %zext_ln53_1" [top.cpp:53]   --->   Operation 41 'getelementptr' 'buffer_2_addr_2' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%buffer_3_addr_2 = getelementptr i24 %buffer_3, i64 0, i64 %zext_ln53_1" [top.cpp:53]   --->   Operation 42 'getelementptr' 'buffer_3_addr_2' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 43 [1/2] ( I:1.35ns O:1.35ns )   --->   "%buffer_load = load i15 %buffer_addr_1" [top.cpp:52]   --->   Operation 43 'load' 'buffer_load' <Predicate = true> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 24> <Depth = 32768> <RAM>
@@ -275,7 +275,7 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ empty_31]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ empty_38]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ buffer_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
 Port [ empty]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ buffer_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
@@ -289,7 +289,7 @@ Port [ buffer_3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; e
 <method=bitvector/>
 j                      (alloca           ) [ 010]
 tmp                    (read             ) [ 011]
-tmp_19                 (read             ) [ 000]
+tmp_26                 (read             ) [ 000]
 store_ln50             (store            ) [ 000]
 br_ln0                 (br               ) [ 000]
 j_1                    (load             ) [ 000]
@@ -303,7 +303,7 @@ tmp_s                  (bitconcatenate   ) [ 000]
 zext_ln52              (zext             ) [ 000]
 buffer_addr_1          (getelementptr    ) [ 011]
 buffer_1_addr_1        (getelementptr    ) [ 011]
-tmp_18                 (bitconcatenate   ) [ 000]
+tmp_24                 (bitconcatenate   ) [ 000]
 zext_ln53              (zext             ) [ 000]
 buffer_2_addr_1        (getelementptr    ) [ 011]
 buffer_3_addr_1        (getelementptr    ) [ 011]
@@ -313,11 +313,11 @@ br_ln50                (br               ) [ 000]
 specpipeline_ln51      (specpipeline     ) [ 000]
 speclooptripcount_ln50 (speclooptripcount) [ 000]
 specloopname_ln50      (specloopname     ) [ 000]
-tmp_17                 (bitconcatenate   ) [ 000]
+tmp_23                 (bitconcatenate   ) [ 000]
 zext_ln52_1            (zext             ) [ 000]
 buffer_addr_2          (getelementptr    ) [ 000]
 buffer_1_addr_2        (getelementptr    ) [ 000]
-tmp_20                 (bitconcatenate   ) [ 000]
+tmp_25                 (bitconcatenate   ) [ 000]
 zext_ln53_1            (zext             ) [ 000]
 buffer_2_addr_2        (getelementptr    ) [ 000]
 buffer_3_addr_2        (getelementptr    ) [ 000]
@@ -339,12 +339,12 @@ ret_ln0                (ret              ) [ 000]
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="empty_31">
+<comp id="0" class="1000" name="empty_38">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_31"/></StgValue>
+<StgValue><ssdm name="empty_38"/></StgValue>
 </bind>
 </comp>
 
@@ -564,7 +564,7 @@ ret_ln0                (ret              ) [ 000]
 <pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="empty_13"/></StgValue>
 </bind>
 </comp>
 
@@ -591,7 +591,7 @@ ret_ln0                (ret              ) [ 000]
 </bind>
 </comp>
 
-<comp id="60" class="1004" name="tmp_19_read_fu_60">
+<comp id="60" class="1004" name="tmp_26_read_fu_60">
 <pin_list>
 <pin id="61" dir="0" index="0" bw="1" slack="0"/>
 <pin id="62" dir="0" index="1" bw="1" slack="0"/>
@@ -599,7 +599,7 @@ ret_ln0                (ret              ) [ 000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="tmp_19/1 "/>
+<opset="tmp_26/1 "/>
 </bind>
 </comp>
 
@@ -883,7 +883,7 @@ ret_ln0                (ret              ) [ 000]
 </bind>
 </comp>
 
-<comp id="220" class="1004" name="tmp_18_fu_220">
+<comp id="220" class="1004" name="tmp_24_fu_220">
 <pin_list>
 <pin id="221" dir="0" index="0" bw="15" slack="0"/>
 <pin id="222" dir="0" index="1" bw="1" slack="0"/>
@@ -893,7 +893,7 @@ ret_ln0                (ret              ) [ 000]
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_18/1 "/>
+<opset="tmp_24/1 "/>
 </bind>
 </comp>
 
@@ -920,7 +920,7 @@ ret_ln0                (ret              ) [ 000]
 </bind>
 </comp>
 
-<comp id="241" class="1004" name="tmp_17_fu_241">
+<comp id="241" class="1004" name="tmp_23_fu_241">
 <pin_list>
 <pin id="242" dir="0" index="0" bw="15" slack="0"/>
 <pin id="243" dir="0" index="1" bw="1" slack="1"/>
@@ -930,7 +930,7 @@ ret_ln0                (ret              ) [ 000]
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_17/2 "/>
+<opset="tmp_23/2 "/>
 </bind>
 </comp>
 
@@ -945,7 +945,7 @@ ret_ln0                (ret              ) [ 000]
 </bind>
 </comp>
 
-<comp id="255" class="1004" name="tmp_20_fu_255">
+<comp id="255" class="1004" name="tmp_25_fu_255">
 <pin_list>
 <pin id="256" dir="0" index="0" bw="15" slack="0"/>
 <pin id="257" dir="0" index="1" bw="1" slack="1"/>
@@ -955,7 +955,7 @@ ret_ln0                (ret              ) [ 000]
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_20/2 "/>
+<opset="tmp_25/2 "/>
 </bind>
 </comp>
 
@@ -1291,7 +1291,7 @@ ret_ln0                (ret              ) [ 000]
 	Port: buffer_2 | {2 }
 	Port: buffer_3 | {2 }
  - Input state : 
-	Port: compute_Pipeline_VITIS_LOOP_50_4 : empty_31 | {1 }
+	Port: compute_Pipeline_VITIS_LOOP_50_4 : empty_38 | {1 }
 	Port: compute_Pipeline_VITIS_LOOP_50_4 : buffer_r | {1 2 }
 	Port: compute_Pipeline_VITIS_LOOP_50_4 : empty | {1 }
 	Port: compute_Pipeline_VITIS_LOOP_50_4 : buffer_1 | {1 2 }
@@ -1311,7 +1311,7 @@ ret_ln0                (ret              ) [ 000]
 		zext_ln52 : 5
 		buffer_addr_1 : 6
 		buffer_1_addr_1 : 6
-		tmp_18 : 3
+		tmp_24 : 3
 		zext_ln53 : 4
 		buffer_2_addr_1 : 5
 		buffer_3_addr_1 : 5
@@ -1352,7 +1352,7 @@ ret_ln0                (ret              ) [ 000]
 |    add   |   add_ln50_fu_180  |    0    |    16   |
 |----------|--------------------|---------|---------|
 |   read   |   tmp_read_fu_54   |    0    |    0    |
-|          |  tmp_19_read_fu_60 |    0    |    0    |
+|          |  tmp_26_read_fu_60 |    0    |    0    |
 |----------|--------------------|---------|---------|
 |   trunc  |  trunc_ln50_fu_186 |    0    |    0    |
 |----------|--------------------|---------|---------|
@@ -1365,9 +1365,9 @@ ret_ln0                (ret              ) [ 000]
 |          | zext_ln53_1_fu_263 |    0    |    0    |
 |----------|--------------------|---------|---------|
 |          |    tmp_s_fu_204    |    0    |    0    |
-|bitconcatenate|    tmp_18_fu_220   |    0    |    0    |
-|          |    tmp_17_fu_241   |    0    |    0    |
-|          |    tmp_20_fu_255   |    0    |    0    |
+|bitconcatenate|    tmp_24_fu_220   |    0    |    0    |
+|          |    tmp_23_fu_241   |    0    |    0    |
+|          |    tmp_25_fu_255   |    0    |    0    |
 |----------|--------------------|---------|---------|
 |   Total  |                    |    0    |    80   |
 |----------|--------------------|---------|---------|

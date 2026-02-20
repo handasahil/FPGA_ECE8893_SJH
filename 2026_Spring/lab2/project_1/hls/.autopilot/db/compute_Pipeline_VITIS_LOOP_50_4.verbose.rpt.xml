@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute_Pipeline_VITIS_LOOP_50_4'" level="0">
-<item name = "Date">Fri Feb 20 12:00:28 2026
+<item name = "Date">Fri Feb 20 12:56:41 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -117,7 +117,7 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, compute_Pipeline_VITIS_LOOP_50_4, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, compute_Pipeline_VITIS_LOOP_50_4, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, compute_Pipeline_VITIS_LOOP_50_4, return value</column>
-<column name="empty_31">in, 1, ap_none, empty_31, scalar</column>
+<column name="empty_38">in, 1, ap_none, empty_38, scalar</column>
 <column name="buffer_r_address0">out, 15, ap_memory, buffer_r, array</column>
 <column name="buffer_r_ce0">out, 1, ap_memory, buffer_r, array</column>
 <column name="buffer_r_we0">out, 1, ap_memory, buffer_r, array</column>

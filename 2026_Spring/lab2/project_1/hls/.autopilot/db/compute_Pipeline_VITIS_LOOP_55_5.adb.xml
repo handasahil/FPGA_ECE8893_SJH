@@ -55,10 +55,10 @@ newFuncRoot:1 %tmp = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty
 
 <Node id="9" bw="1" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-newFuncRoot:2 %tmp_18 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty_30
+newFuncRoot:2 %tmp_25 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %empty_37
 
 ]]></Node>
-<StgValue><ssdm name="tmp_18"/></StgValue>
+<StgValue><ssdm name="tmp_25"/></StgValue>
 </operation>
 
 <operation id="8" st_id="1" stage="1" lat="1">
@@ -193,7 +193,7 @@ for.inc73.split:4 %lshr_ln3 = partselect i7 @_ssdm_op_PartSelect.i7.i9.i32.i32, 
 
 <Node id="23" bw="15" op_0_bw="15" op_1_bw="1" op_2_bw="7" op_3_bw="7">
 <![CDATA[
-for.inc73.split:5 %tmp_s = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp_18, i7 %lshr_ln3, i7 0
+for.inc73.split:5 %tmp_s = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp_25, i7 %lshr_ln3, i7 0
 
 ]]></Node>
 <StgValue><ssdm name="tmp_s"/></StgValue>
@@ -241,10 +241,10 @@ for.inc73.split:7 %buffer_addr = getelementptr i24 %buffer_r, i64 0, i64 %zext_l
 
 <Node id="29" bw="15" op_0_bw="15" op_1_bw="1" op_2_bw="7" op_3_bw="7">
 <![CDATA[
-for.inc73.split:11 %tmp_15 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp_18, i7 %lshr_ln3, i7 127
+for.inc73.split:11 %tmp_21 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp_25, i7 %lshr_ln3, i7 127
 
 ]]></Node>
-<StgValue><ssdm name="tmp_15"/></StgValue>
+<StgValue><ssdm name="tmp_21"/></StgValue>
 </operation>
 
 <operation id="20" st_id="1" stage="1" lat="1">
@@ -257,7 +257,7 @@ for.inc73.split:11 %tmp_15 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.
 
 <Node id="30" bw="64" op_0_bw="15">
 <![CDATA[
-for.inc73.split:12 %zext_ln58 = zext i15 %tmp_15
+for.inc73.split:12 %zext_ln58 = zext i15 %tmp_21
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln58"/></StgValue>
@@ -481,7 +481,7 @@ for.inc73.split:2 %speclooptripcount_ln55 = speclooptripcount void @_ssdm_op_Spe
 
 <Node id="21" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc73.split:3 %specloopname_ln55 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0
+for.inc73.split:3 %specloopname_ln55 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln55"/></StgValue>
@@ -496,10 +496,10 @@ for.inc73.split:3 %specloopname_ln55 = specloopname void @_ssdm_op_SpecLoopName,
 
 <Node id="26" bw="15" op_0_bw="15" op_1_bw="1" op_2_bw="7" op_3_bw="7">
 <![CDATA[
-for.inc73.split:8 %tmp_14 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp, i7 %lshr_ln3, i7 0
+for.inc73.split:8 %tmp_20 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp, i7 %lshr_ln3, i7 0
 
 ]]></Node>
-<StgValue><ssdm name="tmp_14"/></StgValue>
+<StgValue><ssdm name="tmp_20"/></StgValue>
 </operation>
 
 <operation id="35" st_id="2" stage="1" lat="1">
@@ -511,7 +511,7 @@ for.inc73.split:8 %tmp_14 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i
 
 <Node id="27" bw="64" op_0_bw="15">
 <![CDATA[
-for.inc73.split:9 %zext_ln57_1 = zext i15 %tmp_14
+for.inc73.split:9 %zext_ln57_1 = zext i15 %tmp_20
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln57_1"/></StgValue>
@@ -541,10 +541,10 @@ for.inc73.split:10 %buffer_addr_2 = getelementptr i24 %buffer_r, i64 0, i64 %zex
 
 <Node id="32" bw="15" op_0_bw="15" op_1_bw="1" op_2_bw="7" op_3_bw="7">
 <![CDATA[
-for.inc73.split:14 %tmp_16 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp, i7 %lshr_ln3, i7 127
+for.inc73.split:14 %tmp_22 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.i7.i7, i1 %tmp, i7 %lshr_ln3, i7 127
 
 ]]></Node>
-<StgValue><ssdm name="tmp_16"/></StgValue>
+<StgValue><ssdm name="tmp_22"/></StgValue>
 </operation>
 
 <operation id="38" st_id="2" stage="1" lat="1">
@@ -556,7 +556,7 @@ for.inc73.split:14 %tmp_16 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i1.
 
 <Node id="33" bw="64" op_0_bw="15">
 <![CDATA[
-for.inc73.split:15 %zext_ln58_1 = zext i15 %tmp_16
+for.inc73.split:15 %zext_ln58_1 = zext i15 %tmp_22
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln58_1"/></StgValue>
@@ -797,8 +797,8 @@ arrayidx7235.case.1:2 %br_ln58 = br void %arrayidx7235.exit
 
 
 <ports>
-<port id="64" name="empty_30" dir="0" iftype="0">
-<core>NULL</core><StgValue><ssdm name="empty_30"/></StgValue>
+<port id="64" name="empty_37" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="empty_37"/></StgValue>
 </port>
 <port id="65" name="buffer_r" dir="2" iftype="1">
 <core>RAM</core><StgValue><ssdm name="buffer_r"/><MemPortTyVec>0 1 </MemPortTyVec>
@@ -829,9 +829,9 @@ arrayidx7235.case.1:2 %br_ln58 = br void %arrayidx7235.exit
 </dataflow>
 <dataflow id="74" from="empty" to="tmp" fromId="66" toId="6">
 </dataflow>
-<dataflow id="75" from="_ssdm_op_Read.ap_auto.i1" to="tmp_18" fromId="72" toId="7">
+<dataflow id="75" from="_ssdm_op_Read.ap_auto.i1" to="tmp_25" fromId="72" toId="7">
 </dataflow>
-<dataflow id="76" from="empty_30" to="tmp_18" fromId="64" toId="7">
+<dataflow id="76" from="empty_37" to="tmp_25" fromId="64" toId="7">
 </dataflow>
 <dataflow id="78" from="StgValue_77" to="store_ln55" fromId="77" toId="8">
 </dataflow>
@@ -861,7 +861,7 @@ arrayidx7235.case.1:2 %br_ln58 = br void %arrayidx7235.exit
 </dataflow>
 <dataflow id="96" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_s" fromId="95" toId="16">
 </dataflow>
-<dataflow id="97" from="tmp_18" to="tmp_s" fromId="7" toId="16">
+<dataflow id="97" from="tmp_25" to="tmp_s" fromId="7" toId="16">
 </dataflow>
 <dataflow id="98" from="lshr_ln3" to="tmp_s" fromId="15" toId="16">
 </dataflow>
@@ -875,15 +875,15 @@ arrayidx7235.case.1:2 %br_ln58 = br void %arrayidx7235.exit
 </dataflow>
 <dataflow id="105" from="zext_ln57" to="buffer_addr" fromId="17" toId="18">
 </dataflow>
-<dataflow id="106" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_15" fromId="95" toId="19">
+<dataflow id="106" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_21" fromId="95" toId="19">
 </dataflow>
-<dataflow id="107" from="tmp_18" to="tmp_15" fromId="7" toId="19">
+<dataflow id="107" from="tmp_25" to="tmp_21" fromId="7" toId="19">
 </dataflow>
-<dataflow id="108" from="lshr_ln3" to="tmp_15" fromId="15" toId="19">
+<dataflow id="108" from="lshr_ln3" to="tmp_21" fromId="15" toId="19">
 </dataflow>
-<dataflow id="110" from="StgValue_109" to="tmp_15" fromId="109" toId="19">
+<dataflow id="110" from="StgValue_109" to="tmp_21" fromId="109" toId="19">
 </dataflow>
-<dataflow id="111" from="tmp_15" to="zext_ln58" fromId="19" toId="20">
+<dataflow id="111" from="tmp_21" to="zext_ln58" fromId="19" toId="20">
 </dataflow>
 <dataflow id="112" from="buffer_1" to="buffer_1_addr" fromId="67" toId="21">
 </dataflow>
@@ -939,17 +939,17 @@ arrayidx7235.case.1:2 %br_ln58 = br void %arrayidx7235.exit
 </dataflow>
 <dataflow id="144" from="_ssdm_op_SpecLoopName" to="specloopname_ln55" fromId="143" toId="33">
 </dataflow>
-<dataflow id="146" from="empty_0" to="specloopname_ln55" fromId="145" toId="33">
+<dataflow id="146" from="empty_12" to="specloopname_ln55" fromId="145" toId="33">
 </dataflow>
-<dataflow id="147" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_14" fromId="95" toId="34">
+<dataflow id="147" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_20" fromId="95" toId="34">
 </dataflow>
-<dataflow id="148" from="tmp" to="tmp_14" fromId="6" toId="34">
+<dataflow id="148" from="tmp" to="tmp_20" fromId="6" toId="34">
 </dataflow>
-<dataflow id="149" from="lshr_ln3" to="tmp_14" fromId="15" toId="34">
+<dataflow id="149" from="lshr_ln3" to="tmp_20" fromId="15" toId="34">
 </dataflow>
-<dataflow id="150" from="StgValue_99" to="tmp_14" fromId="99" toId="34">
+<dataflow id="150" from="StgValue_99" to="tmp_20" fromId="99" toId="34">
 </dataflow>
-<dataflow id="151" from="tmp_14" to="zext_ln57_1" fromId="34" toId="35">
+<dataflow id="151" from="tmp_20" to="zext_ln57_1" fromId="34" toId="35">
 </dataflow>
 <dataflow id="152" from="buffer_r" to="buffer_addr_2" fromId="65" toId="36">
 </dataflow>
@@ -957,15 +957,15 @@ arrayidx7235.case.1:2 %br_ln58 = br void %arrayidx7235.exit
 </dataflow>
 <dataflow id="154" from="zext_ln57_1" to="buffer_addr_2" fromId="35" toId="36">
 </dataflow>
-<dataflow id="155" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_16" fromId="95" toId="37">
+<dataflow id="155" from="_ssdm_op_BitConcatenate.i15.i1.i7.i7" to="tmp_22" fromId="95" toId="37">
 </dataflow>
-<dataflow id="156" from="tmp" to="tmp_16" fromId="6" toId="37">
+<dataflow id="156" from="tmp" to="tmp_22" fromId="6" toId="37">
 </dataflow>
-<dataflow id="157" from="lshr_ln3" to="tmp_16" fromId="15" toId="37">
+<dataflow id="157" from="lshr_ln3" to="tmp_22" fromId="15" toId="37">
 </dataflow>
-<dataflow id="158" from="StgValue_109" to="tmp_16" fromId="109" toId="37">
+<dataflow id="158" from="StgValue_109" to="tmp_22" fromId="109" toId="37">
 </dataflow>
-<dataflow id="159" from="tmp_16" to="zext_ln58_1" fromId="37" toId="38">
+<dataflow id="159" from="tmp_22" to="zext_ln58_1" fromId="37" toId="38">
 </dataflow>
 <dataflow id="160" from="buffer_1" to="buffer_1_addr_2" fromId="67" toId="39">
 </dataflow>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Fri Feb 20 12:00:28 2026
+<item name = "Date">Fri Feb 20 12:56:41 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="call_ln143_entry_proc_fu_102">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="call_ln159_entry_proc_fu_102">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="grp_read_input_fu_109">read_input, 197128, 197128, 1.971 ms, 1.971 ms, 197128, 197128, no</column>
 <column name="grp_compute_fu_117">compute, 2112940, 2112940, 21.129 ms, 21.129 ms, 2112940, 2112940, no</column>
 <column name="grp_write_output_fu_123">write_output, 65545, 65545, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>

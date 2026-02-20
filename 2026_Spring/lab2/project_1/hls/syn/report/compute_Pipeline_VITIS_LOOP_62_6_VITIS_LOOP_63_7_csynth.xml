@@ -18,7 +18,7 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>6.855</EstimatedClockPeriod>
+<EstimatedClockPeriod>7.148</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -64,9 +64,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>2</BRAM_18K>
-<DSP>6</DSP>
-<FF>701</FF>
-<LUT>1231</LUT>
+<DSP>8</DSP>
+<FF>763</FF>
+<LUT>1334</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -146,8 +146,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01171_lcssa_lcssa70</name>
-<Object>p_0_0_01171_lcssa_lcssa70</Object>
+<name>p_0_0_01527_lcssa_lcssa99</name>
+<Object>p_0_0_01527_lcssa_lcssa99</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -157,8 +157,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01172_lcssa_lcssa68</name>
-<Object>p_0_0_01172_lcssa_lcssa68</Object>
+<name>p_0_0_01528_lcssa_lcssa97</name>
+<Object>p_0_0_01528_lcssa_lcssa97</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -168,8 +168,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01173_lcssa_lcssa66</name>
-<Object>p_0_0_01173_lcssa_lcssa66</Object>
+<name>p_0_0_01529_lcssa_lcssa95</name>
+<Object>p_0_0_01529_lcssa_lcssa95</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -179,8 +179,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>tmp_18</name>
-<Object>tmp_18</Object>
+<name>tmp_25</name>
+<Object>tmp_25</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -520,8 +520,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_252_out</name>
-<Object>p_0_0_01178_252_out</Object>
+<name>p_0_0_01534_281_out</name>
+<Object>p_0_0_01534_281_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -531,8 +531,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_252_out_ap_vld</name>
-<Object>p_0_0_01178_252_out</Object>
+<name>p_0_0_01534_281_out_ap_vld</name>
+<Object>p_0_0_01534_281_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -542,8 +542,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_251_out_i</name>
-<Object>p_0_0_01178_251_out</Object>
+<name>p_0_0_01534_280_out_i</name>
+<Object>p_0_0_01534_280_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -553,8 +553,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_251_out_o</name>
-<Object>p_0_0_01178_251_out</Object>
+<name>p_0_0_01534_280_out_o</name>
+<Object>p_0_0_01534_280_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -564,8 +564,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_251_out_o_ap_vld</name>
-<Object>p_0_0_01178_251_out</Object>
+<name>p_0_0_01534_280_out_o_ap_vld</name>
+<Object>p_0_0_01534_280_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -575,8 +575,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_150_out</name>
-<Object>p_0_0_01178_150_out</Object>
+<name>p_0_0_01534_179_out</name>
+<Object>p_0_0_01534_179_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -586,8 +586,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_150_out_ap_vld</name>
-<Object>p_0_0_01178_150_out</Object>
+<name>p_0_0_01534_179_out_ap_vld</name>
+<Object>p_0_0_01534_179_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -597,8 +597,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_149_out_i</name>
-<Object>p_0_0_01178_149_out</Object>
+<name>p_0_0_01534_178_out_i</name>
+<Object>p_0_0_01534_178_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -608,8 +608,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_149_out_o</name>
-<Object>p_0_0_01178_149_out</Object>
+<name>p_0_0_01534_178_out_o</name>
+<Object>p_0_0_01534_178_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -619,8 +619,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_01178_149_out_o_ap_vld</name>
-<Object>p_0_0_01178_149_out</Object>
+<name>p_0_0_01534_178_out_o_ap_vld</name>
+<Object>p_0_0_01534_178_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -630,8 +630,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_0117848_out</name>
-<Object>p_0_0_0117848_out</Object>
+<name>p_0_0_0153477_out</name>
+<Object>p_0_0_0153477_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -641,8 +641,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_0117848_out_ap_vld</name>
-<Object>p_0_0_0117848_out</Object>
+<name>p_0_0_0153477_out_ap_vld</name>
+<Object>p_0_0_0153477_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -652,8 +652,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_0117847_out_i</name>
-<Object>p_0_0_0117847_out</Object>
+<name>p_0_0_0153476_out_i</name>
+<Object>p_0_0_0153476_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -663,8 +663,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_0117847_out_o</name>
-<Object>p_0_0_0117847_out</Object>
+<name>p_0_0_0153476_out_o</name>
+<Object>p_0_0_0153476_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>
@@ -674,8 +674,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>p_0_0_0117847_out_o_ap_vld</name>
-<Object>p_0_0_0117847_out</Object>
+<name>p_0_0_0153476_out_o_ap_vld</name>
+<Object>p_0_0_0153476_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_ovld</IOProtocol>

@@ -59355,9 +59355,25 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
                     acc_t sum_diag = (acc_t)window[0][0] + (acc_t)window[0][2] +
                                      (acc_t)window[2][0] + (acc_t)window[2][2];
 
-                    acc_t center = (acc_t)window[1][1];
 
-                    acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
+
+                    acc_t out_a, out_b, out_c;
+
+#pragma HLS bind_op variable=out_a op=mul impl=dsp
+#pragma HLS bind_op variable=out_b op=mul impl=dsp
+#pragma HLS bind_op variable=out_c op=mul impl=dsp
+
+                    out_a = (acc_t)wc * (acc_t)window[1][1];
+                    out_b = (acc_t)wa * sum_axis;
+                    out_c = (acc_t)wd * sum_diag;
+
+                    acc_t out;
+
+#pragma HLS bind_op variable=out op=add impl=dsp
+
+                    out = out_a + out_b + out_c;
+
+
 
 
                     buffer[write_idx][out_i][out_j] = (data_t)out;
@@ -59440,5 +59456,5 @@ apatb_top_kernel_ir(A_in, A_out);
 return ;
 }
 #endif
-# 156 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
+# 172 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
 

@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1.1 (lin64) Build 6233196 Thu Sep 11 21:27:11 MDT 2025
-// Date        : Fri Feb 20 12:08:46 2026
+// Date        : Fri Feb 20 13:05:20 2026
 // Host        : ece-linlabsrv01 running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
 // Command     : write_verilog -force -mode synth_stub
 //               /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0_stub.v
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "bd_0_hls_inst_0,top_kernel,{}" *) (* CORE_GENERATION_INFO = "bd_0_hls_inst_0,top_kernel,{x_ipProduct=Vivado 2025.1.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=top_kernel,x_ipVersion=1.0,x_ipCoreRevision=2114488925,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CONTROL_ADDR_WIDTH=6,C_S_AXI_CONTROL_DATA_WIDTH=32,C_M_AXI_A_IN_ID_WIDTH=1,C_M_AXI_A_IN_ADDR_WIDTH=64,C_M_AXI_A_IN_DATA_WIDTH=32,C_M_AXI_A_IN_AWUSER_WIDTH=1,C_M_AXI_A_IN_ARUSER_WIDTH=1,C_M_AXI_A_IN_WUSER_WIDTH=1,C_M_AXI_A_IN_RUSER_WIDTH=1,C_M_AXI_A_IN_BUSER_WIDTH=1,C_M_AXI_A_IN_USER_VALUE=0x00000000,C_M_AXI_A_IN_PROT_VALUE=000,C_M_AXI_A_IN_CACHE_VALUE=0011,C_M_AXI_A_OUT_ID_WIDTH=1,C_M_AXI_A_OUT_ADDR_WIDTH=64,C_M_AXI_A_OUT_DATA_WIDTH=32,C_M_AXI_A_OUT_AWUSER_WIDTH=1,C_M_AXI_A_OUT_ARUSER_WIDTH=1,C_M_AXI_A_OUT_WUSER_WIDTH=1,C_M_AXI_A_OUT_RUSER_WIDTH=1,C_M_AXI_A_OUT_BUSER_WIDTH=1,C_M_AXI_A_OUT_USER_VALUE=0x00000000,C_M_AXI_A_OUT_PROT_VALUE=000,C_M_AXI_A_OUT_CACHE_VALUE=0011}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "bd_0_hls_inst_0,top_kernel,{}" *) (* CORE_GENERATION_INFO = "bd_0_hls_inst_0,top_kernel,{x_ipProduct=Vivado 2025.1.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=top_kernel,x_ipVersion=1.0,x_ipCoreRevision=2114488981,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CONTROL_ADDR_WIDTH=6,C_S_AXI_CONTROL_DATA_WIDTH=32,C_M_AXI_A_IN_ID_WIDTH=1,C_M_AXI_A_IN_ADDR_WIDTH=64,C_M_AXI_A_IN_DATA_WIDTH=32,C_M_AXI_A_IN_AWUSER_WIDTH=1,C_M_AXI_A_IN_ARUSER_WIDTH=1,C_M_AXI_A_IN_WUSER_WIDTH=1,C_M_AXI_A_IN_RUSER_WIDTH=1,C_M_AXI_A_IN_BUSER_WIDTH=1,C_M_AXI_A_IN_USER_VALUE=0x00000000,C_M_AXI_A_IN_PROT_VALUE=000,C_M_AXI_A_IN_CACHE_VALUE=0011,C_M_AXI_A_OUT_ID_WIDTH=1,C_M_AXI_A_OUT_ADDR_WIDTH=64,C_M_AXI_A_OUT_DATA_WIDTH=32,C_M_AXI_A_OUT_AWUSER_WIDTH=1,C_M_AXI_A_OUT_ARUSER_WIDTH=1,C_M_AXI_A_OUT_WUSER_WIDTH=1,C_M_AXI_A_OUT_RUSER_WIDTH=1,C_M_AXI_A_OUT_BUSER_WIDTH=1,C_M_AXI_A_OUT_USER_VALUE=0x00000000,C_M_AXI_A_OUT_PROT_VALUE=000,C_M_AXI_A_OUT_CACHE_VALUE=0011}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
 (* IP_DEFINITION_SOURCE = "HLS" *) (* X_CORE_INFO = "top_kernel,Vivado 2025.1.1" *) (* hls_module = "yes" *) 
 module bd_0_hls_inst_0(s_axi_control_ARADDR, 
   s_axi_control_ARREADY, s_axi_control_ARVALID, s_axi_control_AWADDR, 
