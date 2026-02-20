@@ -14,24 +14,22 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 13
+set cdfgNum 8
 set C_modelName {compute}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
-dict set ap_memory_interface_dict stream_in { MEM_WIDTH 24 MEM_SIZE 196608 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
-dict set ap_memory_interface_dict stream_out { MEM_WIDTH 24 MEM_SIZE 196608 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
-	{ stream_in int 24 regular {array 65536 { 1 3 } 1 1 }  }
-	{ stream_out int 24 regular {array 65536 { 0 3 } 0 1 }  }
+	{ grid_initial int 24 regular {fifo 0 volatile }  }
+	{ grid_final int 24 regular {fifo 1 volatile }  }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "stream_in", "interface" : "memory", "bitwidth" : 24, "direction" : "READONLY"} , 
- 	{ "Name" : "stream_out", "interface" : "memory", "bitwidth" : 24, "direction" : "WRITEONLY"} ]}
+	{ "Name" : "grid_initial", "interface" : "fifo", "bitwidth" : 24, "direction" : "READONLY"} , 
+ 	{ "Name" : "grid_final", "interface" : "fifo", "bitwidth" : 24, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 14
+set portNum 17
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -40,13 +38,16 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ stream_in_address0 sc_out sc_lv 16 signal 0 } 
-	{ stream_in_ce0 sc_out sc_logic 1 signal 0 } 
-	{ stream_in_q0 sc_in sc_lv 24 signal 0 } 
-	{ stream_out_address0 sc_out sc_lv 16 signal 1 } 
-	{ stream_out_ce0 sc_out sc_logic 1 signal 1 } 
-	{ stream_out_we0 sc_out sc_logic 1 signal 1 } 
-	{ stream_out_d0 sc_out sc_lv 24 signal 1 } 
+	{ grid_initial_dout sc_in sc_lv 24 signal 0 } 
+	{ grid_initial_empty_n sc_in sc_logic 1 signal 0 } 
+	{ grid_initial_read sc_out sc_logic 1 signal 0 } 
+	{ grid_initial_num_data_valid sc_in sc_lv 3 signal 0 } 
+	{ grid_initial_fifo_cap sc_in sc_lv 3 signal 0 } 
+	{ grid_final_din sc_out sc_lv 24 signal 1 } 
+	{ grid_final_full_n sc_in sc_logic 1 signal 1 } 
+	{ grid_final_write sc_out sc_logic 1 signal 1 } 
+	{ grid_final_num_data_valid sc_in sc_lv 3 signal 1 } 
+	{ grid_final_fifo_cap sc_in sc_lv 3 signal 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -56,84 +57,48 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "stream_in_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "stream_in", "role": "address0" }} , 
- 	{ "name": "stream_in_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "stream_in", "role": "ce0" }} , 
- 	{ "name": "stream_in_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "stream_in", "role": "q0" }} , 
- 	{ "name": "stream_out_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "stream_out", "role": "address0" }} , 
- 	{ "name": "stream_out_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "stream_out", "role": "ce0" }} , 
- 	{ "name": "stream_out_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "stream_out", "role": "we0" }} , 
- 	{ "name": "stream_out_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "stream_out", "role": "d0" }}  ]}
+ 	{ "name": "grid_initial_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "grid_initial", "role": "dout" }} , 
+ 	{ "name": "grid_initial_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grid_initial", "role": "empty_n" }} , 
+ 	{ "name": "grid_initial_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grid_initial", "role": "read" }} , 
+ 	{ "name": "grid_initial_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_initial", "role": "num_data_valid" }} , 
+ 	{ "name": "grid_initial_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_initial", "role": "fifo_cap" }} , 
+ 	{ "name": "grid_final_din", "direction": "out", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "grid_final", "role": "din" }} , 
+ 	{ "name": "grid_final_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grid_final", "role": "full_n" }} , 
+ 	{ "name": "grid_final_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grid_final", "role": "write" }} , 
+ 	{ "name": "grid_final_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_final", "role": "num_data_valid" }} , 
+ 	{ "name": "grid_final_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_final", "role": "fifo_cap" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	compute {
-		stream_in {Type I LastRead 12 FirstWrite -1}
-		stream_out {Type O LastRead -1 FirstWrite 13}}
-	compute_Pipeline_VITIS_LOOP_27_1_VITIS_LOOP_28_2 {
-		stream_in {Type I LastRead 12 FirstWrite -1}
-		cur {Type O LastRead -1 FirstWrite 13}
-		cur_1 {Type O LastRead -1 FirstWrite 13}
-		cur_2 {Type O LastRead -1 FirstWrite 13}
-		cur_3 {Type O LastRead -1 FirstWrite 13}
-		cur_4 {Type O LastRead -1 FirstWrite 13}
-		cur_5 {Type O LastRead -1 FirstWrite 13}
-		cur_6 {Type O LastRead -1 FirstWrite 13}
-		cur_7 {Type O LastRead -1 FirstWrite 13}
-		cur_8 {Type O LastRead -1 FirstWrite 13}}
-	compute_Pipeline_VITIS_LOOP_37_4 {
-		nxt {Type O LastRead -1 FirstWrite 1}
+		grid_initial {Type I LastRead 2 FirstWrite -1}
+		grid_final {Type O LastRead -1 FirstWrite 5}}
+	compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 {
+		p_0_0_01162_lcssa_lcssa72 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01169_2_lcssa_lcssa71 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01163_lcssa_lcssa70 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01169_1_lcssa_lcssa69 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01164_lcssa_lcssa68 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01169_lcssa_lcssa67 {Type I LastRead 0 FirstWrite -1}
 		cur {Type I LastRead 1 FirstWrite -1}
-		cur_1 {Type I LastRead 1 FirstWrite -1}
-		cur_2 {Type I LastRead 1 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_77_10_VITIS_LOOP_78_11 {
-		stream_out {Type O LastRead -1 FirstWrite 13}
-		cur {Type I LastRead 12 FirstWrite -1}
-		cur_1 {Type I LastRead 12 FirstWrite -1}
-		cur_2 {Type I LastRead 12 FirstWrite -1}
-		cur_3 {Type I LastRead 12 FirstWrite -1}
-		cur_4 {Type I LastRead 12 FirstWrite -1}
-		cur_5 {Type I LastRead 12 FirstWrite -1}
-		cur_6 {Type I LastRead 12 FirstWrite -1}
-		cur_7 {Type I LastRead 12 FirstWrite -1}
-		cur_8 {Type I LastRead 12 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_42_5 {
-		nxt {Type O LastRead -1 FirstWrite 1}
-		cur {Type I LastRead 1 FirstWrite -1}
-		cur_3 {Type I LastRead 1 FirstWrite -1}
-		cur_6 {Type I LastRead 1 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_49_6_VITIS_LOOP_50_7 {
-		nxt {Type O LastRead -1 FirstWrite 15}
-		cur {Type I LastRead 14 FirstWrite -1}
-		cur_1 {Type I LastRead 14 FirstWrite -1}
-		cur_2 {Type I LastRead 14 FirstWrite -1}
-		cur_3 {Type I LastRead 14 FirstWrite -1}
-		cur_4 {Type I LastRead 14 FirstWrite -1}
-		cur_5 {Type I LastRead 14 FirstWrite -1}
-		cur_6 {Type I LastRead 14 FirstWrite -1}
-		cur_7 {Type I LastRead 14 FirstWrite -1}
-		cur_8 {Type I LastRead 14 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_68_8_VITIS_LOOP_69_9 {
-		nxt {Type I LastRead 12 FirstWrite -1}
-		cur {Type O LastRead -1 FirstWrite 13}
-		cur_1 {Type O LastRead -1 FirstWrite 13}
-		cur_2 {Type O LastRead -1 FirstWrite 13}
-		cur_3 {Type O LastRead -1 FirstWrite 13}
-		cur_4 {Type O LastRead -1 FirstWrite 13}
-		cur_5 {Type O LastRead -1 FirstWrite 13}
-		cur_6 {Type O LastRead -1 FirstWrite 13}
-		cur_7 {Type O LastRead -1 FirstWrite 13}
-		cur_8 {Type O LastRead -1 FirstWrite 13}}}
+		nxt {Type O LastRead -1 FirstWrite 4}
+		p_0_0_01169_254_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01169_253_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01169_152_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01169_151_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_0116950_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_0116949_out {Type O LastRead -1 FirstWrite 3}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "4049281", "Max" : "4049281"}
-	, {"Name" : "Interval", "Min" : "4049281", "Max" : "4049281"}
+	{"Name" : "Latency", "Min" : "6142255", "Max" : "6142255"}
+	, {"Name" : "Interval", "Min" : "6142255", "Max" : "6142255"}
 ]}
 
 set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	stream_in { ap_memory {  { stream_in_address0 mem_address 1 16 }  { stream_in_ce0 mem_ce 1 1 }  { stream_in_q0 mem_dout 0 24 } } }
-	stream_out { ap_memory {  { stream_out_address0 mem_address 1 16 }  { stream_out_ce0 mem_ce 1 1 }  { stream_out_we0 mem_we 1 1 }  { stream_out_d0 mem_din 1 24 } } }
+	grid_initial { ap_fifo {  { grid_initial_dout fifo_data_in 0 24 }  { grid_initial_empty_n fifo_status 0 1 }  { grid_initial_read fifo_port_we 1 1 }  { grid_initial_num_data_valid fifo_status_num_data_valid 0 3 }  { grid_initial_fifo_cap fifo_update 0 3 } } }
+	grid_final { ap_fifo {  { grid_final_din fifo_data_in 1 24 }  { grid_final_full_n fifo_status 0 1 }  { grid_final_write fifo_port_we 1 1 }  { grid_final_num_data_valid fifo_status_num_data_valid 0 3 }  { grid_final_fifo_cap fifo_update 0 3 } } }
 }

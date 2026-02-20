@@ -7,25 +7,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 5 \
-    name stream_out \
-    reset_level 1 \
-    sync_rst true \
-    dir O \
-    corename stream_out \
-    op interface \
-    ports { stream_out_address0 { O 16 vector } stream_out_ce0 { O 1 bit } stream_out_we0 { O 1 bit } stream_out_d0 { O 24 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out'"
-}
-}
-
-
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
@@ -53,6 +34,21 @@ eval "cg_default_interface_gen_dc { \
     corename dc_A_in1 \
     op interface \
     ports { A_in1 { I 64 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 5 \
+    name grid_initial \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_grid_initial \
+    op interface \
+    ports { grid_initial_din { O 24 vector } grid_initial_full_n { I 1 bit } grid_initial_write { O 1 bit } grid_initial_num_data_valid { I 3 vector } grid_initial_fifo_cap { I 3 vector } } \
 } "
 }
 

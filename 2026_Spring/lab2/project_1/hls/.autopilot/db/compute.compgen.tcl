@@ -17,43 +17,35 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 128 \
-    name stream_in \
-    reset_level 1 \
-    sync_rst true \
+eval "cg_default_interface_gen_dc { \
+    id 27 \
+    name grid_initial \
+    type fifo \
     dir I \
-    corename stream_in \
-    op interface \
-    ports { stream_in_address0 { O 16 vector } stream_in_ce0 { O 1 bit } stream_in_q0 { I 24 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_in'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 129 \
-    name stream_out \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename stream_out \
+    corename dc_grid_initial \
     op interface \
-    ports { stream_out_address0 { O 16 vector } stream_out_ce0 { O 1 bit } stream_out_we0 { O 1 bit } stream_out_d0 { O 24 vector } } \
+    ports { grid_initial_dout { I 24 vector } grid_initial_empty_n { I 1 bit } grid_initial_read { O 1 bit } grid_initial_num_data_valid { I 3 vector } grid_initial_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'stream_out'"
-}
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 28 \
+    name grid_final \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_grid_final \
+    op interface \
+    ports { grid_final_din { O 24 vector } grid_final_full_n { I 1 bit } grid_final_write { O 1 bit } grid_final_num_data_valid { I 3 vector } grid_final_fifo_cap { I 3 vector } } \
+} "
+}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {

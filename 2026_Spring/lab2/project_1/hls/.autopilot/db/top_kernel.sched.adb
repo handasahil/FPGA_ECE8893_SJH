@@ -167,7 +167,7 @@
 						<name>A_out_r_read</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>143</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -183,7 +183,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>106</second>
+										<second>143</second>
 									</item>
 								</second>
 							</item>
@@ -204,8 +204,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>30</item>
-					<item>31</item>
+					<item>34</item>
+					<item>35</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -224,7 +224,7 @@
 						<name>A_in_r_read</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>143</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -240,7 +240,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>106</second>
+										<second>143</second>
 									</item>
 								</second>
 							</item>
@@ -261,8 +261,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>32</item>
-					<item>33</item>
+					<item>36</item>
+					<item>37</item>
 				</oprand_edges>
 				<opcode>read</opcode>
 				<m_Display>0</m_Display>
@@ -281,7 +281,7 @@
 						<name>A_out_r_c</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>143</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -297,7 +297,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>106</second>
+										<second>143</second>
 									</item>
 								</second>
 							</item>
@@ -318,7 +318,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>35</item>
+					<item>39</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 				<m_Display>0</m_Display>
@@ -337,7 +337,7 @@
 						<name>grid_initial</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>109</lineNumber>
+						<lineNumber>146</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -353,7 +353,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>109</second>
+										<second>146</second>
 									</item>
 								</second>
 							</item>
@@ -374,7 +374,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>36</item>
+					<item>40</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 				<m_Display>0</m_Display>
@@ -389,11 +389,11 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>22</id>
+						<id>24</id>
 						<name>grid_final</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>110</lineNumber>
+						<lineNumber>147</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -409,7 +409,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>110</second>
+										<second>147</second>
 									</item>
 								</second>
 							</item>
@@ -430,7 +430,7 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>37</item>
+					<item>41</item>
 				</oprand_edges>
 				<opcode>alloca</opcode>
 				<m_Display>0</m_Display>
@@ -445,11 +445,11 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>23</id>
-						<name>_ln106</name>
+						<id>27</id>
+						<name>_ln143</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>106</lineNumber>
+						<lineNumber>143</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -465,7 +465,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>106</second>
+										<second>143</second>
 									</item>
 								</second>
 							</item>
@@ -486,9 +486,9 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>39</item>
-					<item>40</item>
-					<item>41</item>
+					<item>43</item>
+					<item>44</item>
+					<item>45</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -503,11 +503,11 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>24</id>
-						<name>_ln113</name>
+						<id>28</id>
+						<name>_ln153</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>113</lineNumber>
+						<lineNumber>153</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -523,7 +523,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>113</second>
+										<second>153</second>
 									</item>
 								</second>
 							</item>
@@ -544,10 +544,10 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>43</item>
-					<item>44</item>
-					<item>45</item>
-					<item>46</item>
+					<item>47</item>
+					<item>48</item>
+					<item>49</item>
+					<item>50</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -562,11 +562,11 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>25</id>
-						<name>_ln114</name>
+						<id>29</id>
+						<name>_ln154</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>114</lineNumber>
+						<lineNumber>154</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -582,7 +582,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>114</second>
+										<second>154</second>
 									</item>
 								</second>
 							</item>
@@ -603,10 +603,10 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>48</item>
-					<item>49</item>
-					<item>50</item>
-					<item>262</item>
+					<item>52</item>
+					<item>53</item>
+					<item>54</item>
+					<item>327</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -621,11 +621,11 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>26</id>
-						<name>_ln115</name>
+						<id>30</id>
+						<name>_ln155</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>115</lineNumber>
+						<lineNumber>155</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -641,7 +641,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>115</second>
+										<second>155</second>
 									</item>
 								</second>
 							</item>
@@ -662,13 +662,13 @@
 				<oprand_edges>
 					<count>7</count>
 					<item_version>0</item_version>
-					<item>52</item>
-					<item>53</item>
-					<item>54</item>
-					<item>55</item>
-					<item>261</item>
-					<item>263</item>
-					<item>264</item>
+					<item>56</item>
+					<item>57</item>
+					<item>58</item>
+					<item>59</item>
+					<item>326</item>
+					<item>328</item>
+					<item>329</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -683,11 +683,11 @@
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>27</id>
-						<name>_ln116</name>
+						<id>31</id>
+						<name>_ln156</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>116</lineNumber>
+						<lineNumber>156</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -703,7 +703,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>116</second>
+										<second>156</second>
 									</item>
 								</second>
 							</item>
@@ -742,7 +742,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>34</id>
+						<id>38</id>
 						<name>empty</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -773,7 +773,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>38</id>
+						<id>42</id>
 						<name>entry_proc</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -804,7 +804,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>42</id>
+						<id>46</id>
 						<name>read_input</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -835,7 +835,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>47</id>
+						<id>51</id>
 						<name>compute</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -866,7 +866,7 @@
 				<Value>
 					<Obj>
 						<type>2</type>
-						<id>51</id>
+						<id>55</id>
 						<name>write_output</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
@@ -900,7 +900,7 @@
 			<item class_id="18" tracking_level="1" version="0" object_id="_20">
 				<Obj>
 					<type>3</type>
-					<id>28</id>
+					<id>32</id>
 					<name>top_kernel</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
@@ -929,12 +929,12 @@
 					<item>6</item>
 					<item>7</item>
 					<item>21</item>
-					<item>22</item>
-					<item>23</item>
 					<item>24</item>
-					<item>25</item>
-					<item>26</item>
 					<item>27</item>
+					<item>28</item>
+					<item>29</item>
+					<item>30</item>
+					<item>31</item>
 				</node_objs>
 			</item>
 		</blocks>
@@ -942,164 +942,164 @@
 			<count>23</count>
 			<item_version>0</item_version>
 			<item class_id="20" tracking_level="1" version="0" object_id="_21">
-				<id>31</id>
+				<id>35</id>
 				<edge_type>1</edge_type>
 				<source_obj>4</source_obj>
 				<sink_obj>5</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_22">
-				<id>33</id>
+				<id>37</id>
 				<edge_type>1</edge_type>
 				<source_obj>3</source_obj>
 				<sink_obj>6</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_23">
-				<id>35</id>
+				<id>39</id>
 				<edge_type>1</edge_type>
-				<source_obj>34</source_obj>
+				<source_obj>38</source_obj>
 				<sink_obj>7</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_24">
-				<id>36</id>
+				<id>40</id>
 				<edge_type>1</edge_type>
-				<source_obj>34</source_obj>
+				<source_obj>38</source_obj>
 				<sink_obj>21</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_25">
-				<id>37</id>
+				<id>41</id>
 				<edge_type>1</edge_type>
-				<source_obj>34</source_obj>
-				<sink_obj>22</sink_obj>
+				<source_obj>38</source_obj>
+				<sink_obj>24</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_26">
-				<id>39</id>
-				<edge_type>1</edge_type>
-				<source_obj>38</source_obj>
-				<sink_obj>23</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_27">
-				<id>40</id>
-				<edge_type>1</edge_type>
-				<source_obj>5</source_obj>
-				<sink_obj>23</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_28">
-				<id>41</id>
-				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
-				<sink_obj>23</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_29">
 				<id>43</id>
 				<edge_type>1</edge_type>
 				<source_obj>42</source_obj>
-				<sink_obj>24</sink_obj>
+				<sink_obj>27</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_27">
+				<id>44</id>
+				<edge_type>1</edge_type>
+				<source_obj>5</source_obj>
+				<sink_obj>27</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_28">
+				<id>45</id>
+				<edge_type>1</edge_type>
+				<source_obj>7</source_obj>
+				<sink_obj>27</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_29">
+				<id>47</id>
+				<edge_type>1</edge_type>
+				<source_obj>46</source_obj>
+				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_30">
-				<id>44</id>
+				<id>48</id>
 				<edge_type>1</edge_type>
 				<source_obj>1</source_obj>
-				<sink_obj>24</sink_obj>
+				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_31">
-				<id>45</id>
+				<id>49</id>
 				<edge_type>1</edge_type>
 				<source_obj>6</source_obj>
-				<sink_obj>24</sink_obj>
+				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_32">
-				<id>46</id>
+				<id>50</id>
 				<edge_type>1</edge_type>
 				<source_obj>21</source_obj>
-				<sink_obj>24</sink_obj>
+				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_33">
-				<id>48</id>
-				<edge_type>1</edge_type>
-				<source_obj>47</source_obj>
-				<sink_obj>25</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_34">
-				<id>49</id>
-				<edge_type>1</edge_type>
-				<source_obj>21</source_obj>
-				<sink_obj>25</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_35">
-				<id>50</id>
-				<edge_type>1</edge_type>
-				<source_obj>22</source_obj>
-				<sink_obj>25</sink_obj>
-				<is_back_edge>0</is_back_edge>
-			</item>
-			<item class_id_reference="20" object_id="_36">
 				<id>52</id>
 				<edge_type>1</edge_type>
 				<source_obj>51</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>29</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_34">
+				<id>53</id>
+				<edge_type>1</edge_type>
+				<source_obj>21</source_obj>
+				<sink_obj>29</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_35">
+				<id>54</id>
+				<edge_type>1</edge_type>
+				<source_obj>24</source_obj>
+				<sink_obj>29</sink_obj>
+				<is_back_edge>0</is_back_edge>
+			</item>
+			<item class_id_reference="20" object_id="_36">
+				<id>56</id>
+				<edge_type>1</edge_type>
+				<source_obj>55</source_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_37">
-				<id>53</id>
+				<id>57</id>
 				<edge_type>1</edge_type>
-				<source_obj>22</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>24</source_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_38">
-				<id>54</id>
+				<id>58</id>
 				<edge_type>1</edge_type>
 				<source_obj>2</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_39">
-				<id>55</id>
+				<id>59</id>
 				<edge_type>1</edge_type>
 				<source_obj>7</source_obj>
-				<sink_obj>26</sink_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_40">
-				<id>261</id>
+				<id>326</id>
 				<edge_type>4</edge_type>
-				<source_obj>25</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>29</source_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_41">
-				<id>262</id>
+				<id>327</id>
 				<edge_type>4</edge_type>
-				<source_obj>24</source_obj>
-				<sink_obj>25</sink_obj>
+				<source_obj>28</source_obj>
+				<sink_obj>29</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_42">
-				<id>263</id>
+				<id>328</id>
 				<edge_type>4</edge_type>
-				<source_obj>23</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>27</source_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_43">
-				<id>264</id>
+				<id>329</id>
 				<edge_type>4</edge_type>
-				<source_obj>23</source_obj>
-				<sink_obj>26</sink_obj>
+				<source_obj>27</source_obj>
+				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 		</edges>
@@ -1119,14 +1119,14 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>28</item>
+				<item>32</item>
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>4311956</mMinLatency>
-			<mMaxLatency>4311956</mMaxLatency>
+			<mMinLatency>6272825</mMinLatency>
+			<mMaxLatency>6272825</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_45">
 				<port_list class_id="24" tracking_level="0" version="0">
@@ -1171,7 +1171,7 @@
 					<item class_id="28" tracking_level="1" version="0" object_id="_50">
 						<type>0</type>
 						<name>entry_proc_U0</name>
-						<ssdmobj_id>23</ssdmobj_id>
+						<ssdmobj_id>27</ssdmobj_id>
 						<pins class_id="29" tracking_level="0" version="0">
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1187,7 +1187,7 @@
 								<inst class_id="31" tracking_level="1" version="0" object_id="_53">
 									<type>0</type>
 									<name>entry_proc_U0</name>
-									<ssdmobj_id>23</ssdmobj_id>
+									<ssdmobj_id>27</ssdmobj_id>
 								</inst>
 							</item>
 						</pins>
@@ -1198,7 +1198,7 @@
 					<item class_id_reference="28" object_id="_54">
 						<type>0</type>
 						<name>read_input_U0</name>
-						<ssdmobj_id>24</ssdmobj_id>
+						<ssdmobj_id>28</ssdmobj_id>
 						<pins>
 							<count>2</count>
 							<item_version>0</item_version>
@@ -1214,7 +1214,7 @@
 								<inst class_id_reference="31" object_id="_57">
 									<type>0</type>
 									<name>read_input_U0</name>
-									<ssdmobj_id>24</ssdmobj_id>
+									<ssdmobj_id>28</ssdmobj_id>
 								</inst>
 							</item>
 							<item class_id_reference="30" object_id="_58">
@@ -1236,7 +1236,7 @@
 					<item class_id_reference="28" object_id="_60">
 						<type>0</type>
 						<name>compute_U0</name>
-						<ssdmobj_id>25</ssdmobj_id>
+						<ssdmobj_id>29</ssdmobj_id>
 						<pins>
 							<count>0</count>
 							<item_version>0</item_version>
@@ -1248,7 +1248,7 @@
 					<item class_id_reference="28" object_id="_61">
 						<type>0</type>
 						<name>write_output_U0</name>
-						<ssdmobj_id>26</ssdmobj_id>
+						<ssdmobj_id>30</ssdmobj_id>
 						<pins>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1264,7 +1264,7 @@
 								<inst class_id_reference="31" object_id="_64">
 									<type>0</type>
 									<name>write_output_U0</name>
-									<ssdmobj_id>26</ssdmobj_id>
+									<ssdmobj_id>30</ssdmobj_id>
 								</inst>
 							</item>
 						</pins>
@@ -1323,9 +1323,9 @@
 						<type>1</type>
 						<name>grid_initial</name>
 						<ssdmobj_id>21</ssdmobj_id>
-						<ctype>1</ctype>
+						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>0</bitwidth>
+						<bitwidth>24</bitwidth>
 						<suggested_type>0</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source_list>
@@ -1358,21 +1358,21 @@
 								<inst class_id_reference="31" object_id="_75">
 									<type>0</type>
 									<name>compute_U0</name>
-									<ssdmobj_id>25</ssdmobj_id>
+									<ssdmobj_id>29</ssdmobj_id>
 								</inst>
 							</item>
 						</sink_list>
 						<bram_cost>0</bram_cost>
 						<uram_cost>0</uram_cost>
-						<storage_size>24 65536 2</storage_size>
+						<storage_size>24 2 1</storage_size>
 					</item>
 					<item class_id_reference="26" object_id="_76">
 						<type>1</type>
 						<name>grid_final</name>
-						<ssdmobj_id>22</ssdmobj_id>
-						<ctype>1</ctype>
+						<ssdmobj_id>24</ssdmobj_id>
+						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>0</bitwidth>
+						<bitwidth>24</bitwidth>
 						<suggested_type>0</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source_list>
@@ -1407,7 +1407,7 @@
 						</sink_list>
 						<bram_cost>0</bram_cost>
 						<uram_cost>0</uram_cost>
-						<storage_size>24 65536 2</storage_size>
+						<storage_size>24 2 1</storage_size>
 					</item>
 				</channel_list>
 				<net_list class_id="33" tracking_level="0" version="0">
@@ -1451,42 +1451,42 @@
 			</second>
 		</item>
 		<item>
-			<first>22</first>
-			<second>
-				<first>0</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
-			<first>23</first>
-			<second>
-				<first>0</first>
-				<second>0</second>
-			</second>
-		</item>
-		<item>
 			<first>24</first>
+			<second>
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>27</first>
+			<second>
+				<first>0</first>
+				<second>0</second>
+			</second>
+		</item>
+		<item>
+			<first>28</first>
 			<second>
 				<first>1</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>25</first>
+			<first>29</first>
 			<second>
 				<first>3</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>26</first>
+			<first>30</first>
 			<second>
 				<first>5</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
-			<first>27</first>
+			<first>31</first>
 			<second>
 				<first>6</first>
 				<second>0</second>
@@ -1497,7 +1497,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="40" tracking_level="0" version="0">
-			<first>28</first>
+			<first>32</first>
 			<second class_id="41" tracking_level="0" version="0">
 				<first>0</first>
 				<second>6</second>
@@ -1512,10 +1512,10 @@
 			<basic_blocks>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>28</item>
+				<item>32</item>
 			</basic_blocks>
 			<nodes>
-				<count>23</count>
+				<count>27</count>
 				<item_version>0</item_version>
 				<item>5</item>
 				<item>6</item>
@@ -1540,6 +1540,10 @@
 				<item>25</item>
 				<item>26</item>
 				<item>27</item>
+				<item>28</item>
+				<item>29</item>
+				<item>30</item>
+				<item>31</item>
 			</nodes>
 			<anchor_node>-1</anchor_node>
 			<region_type>16</region_type>

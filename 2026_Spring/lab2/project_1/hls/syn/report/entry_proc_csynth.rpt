@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'entry_proc'
 ================================================================
-* Date:           Thu Feb 19 22:36:34 2026
+* Date:           Fri Feb 20 10:14:37 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -53,10 +53,10 @@
 |FIFO             |        -|    -|       -|      -|    -|
 |Instance         |        -|    -|       -|      -|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       0|     18|    -|
-|Register         |        -|    -|       2|      -|    -|
+|Multiplexer      |        -|    -|       0|     27|    -|
+|Register         |        -|    -|       3|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|       2|     20|    0|
+|Total            |        0|    0|       3|     29|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      432|  360|  141120|  70560|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -91,19 +91,21 @@
     +-----------------+----+-----------+-----+-----------+
     |A_out_r_c_blk_n  |   9|          2|    1|          2|
     |ap_done          |   9|          2|    1|          2|
+    |real_start       |   9|          2|    1|          2|
     +-----------------+----+-----------+-----+-----------+
-    |Total            |  18|          4|    2|          4|
+    |Total            |  27|          6|    3|          6|
     +-----------------+----+-----------+-----+-----------+
 
     * Register: 
-    +-------------+---+----+-----+-----------+
-    |     Name    | FF| LUT| Bits| Const Bits|
-    +-------------+---+----+-----+-----------+
-    |ap_CS_fsm    |  1|   0|    1|          0|
-    |ap_done_reg  |  1|   0|    1|          0|
-    +-------------+---+----+-----+-----------+
-    |Total        |  2|   0|    2|          0|
-    +-------------+---+----+-----+-----------+
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  1|   0|    1|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  3|   0|    3|          0|
+    +----------------+---+----+-----+-----------+
 
 
 
@@ -117,10 +119,13 @@
 |ap_clk                    |   in|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |ap_rst                    |   in|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |ap_start                  |   in|    1|  ap_ctrl_hs|    entry_proc|  return value|
+|start_full_n              |   in|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |ap_done                   |  out|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |ap_continue               |   in|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |ap_idle                   |  out|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |ap_ready                  |  out|    1|  ap_ctrl_hs|    entry_proc|  return value|
+|start_out                 |  out|    1|  ap_ctrl_hs|    entry_proc|  return value|
+|start_write               |  out|    1|  ap_ctrl_hs|    entry_proc|  return value|
 |A_out_r                   |   in|   64|     ap_none|       A_out_r|        scalar|
 |A_out_r_c_din             |  out|   64|     ap_fifo|     A_out_r_c|       pointer|
 |A_out_r_c_full_n          |   in|    1|     ap_fifo|     A_out_r_c|       pointer|

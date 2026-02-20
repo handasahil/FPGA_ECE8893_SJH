@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 13
+set cdfgNum 8
 set C_modelName {top_kernel}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -35,8 +35,6 @@ set C_modelArgMapList {[
 # RTL Port declarations: 
 set portNum 110
 set portList { 
-	{ ap_clk sc_in sc_logic 1 clock -1 } 
-	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
 	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_AWADDR sc_in sc_lv 6 signal -1 } 
@@ -54,6 +52,8 @@ set portList {
 	{ s_axi_control_BVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_BREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_BRESP sc_out sc_lv 2 signal -1 } 
+	{ ap_clk sc_in sc_logic 1 clock -1 } 
+	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 	{ m_axi_A_in_AWVALID sc_out sc_logic 1 signal 0 } 
 	{ m_axi_A_in_AWREADY sc_in sc_logic 1 signal 0 } 
@@ -261,7 +261,7 @@ set NewPortList {[
 set ArgLastReadFirstWriteLatency {
 	top_kernel {
 		A_in {Type I LastRead 10 FirstWrite -1}
-		A_out {Type O LastRead 4 FirstWrite 3}
+		A_out {Type O LastRead 3 FirstWrite 4}
 		A_in_r {Type I LastRead 0 FirstWrite -1}
 		A_out_r {Type I LastRead 0 FirstWrite -1}}
 	entry_proc {
@@ -270,74 +270,35 @@ set ArgLastReadFirstWriteLatency {
 	read_input {
 		A_in {Type I LastRead 10 FirstWrite -1}
 		A_in1 {Type I LastRead 0 FirstWrite -1}
-		stream_out {Type O LastRead -1 FirstWrite 11}}
+		grid_initial {Type O LastRead -1 FirstWrite 11}}
 	compute {
-		stream_in {Type I LastRead 12 FirstWrite -1}
-		stream_out {Type O LastRead -1 FirstWrite 13}}
-	compute_Pipeline_VITIS_LOOP_27_1_VITIS_LOOP_28_2 {
-		stream_in {Type I LastRead 12 FirstWrite -1}
-		cur {Type O LastRead -1 FirstWrite 13}
-		cur_1 {Type O LastRead -1 FirstWrite 13}
-		cur_2 {Type O LastRead -1 FirstWrite 13}
-		cur_3 {Type O LastRead -1 FirstWrite 13}
-		cur_4 {Type O LastRead -1 FirstWrite 13}
-		cur_5 {Type O LastRead -1 FirstWrite 13}
-		cur_6 {Type O LastRead -1 FirstWrite 13}
-		cur_7 {Type O LastRead -1 FirstWrite 13}
-		cur_8 {Type O LastRead -1 FirstWrite 13}}
-	compute_Pipeline_VITIS_LOOP_37_4 {
-		nxt {Type O LastRead -1 FirstWrite 1}
+		grid_initial {Type I LastRead 2 FirstWrite -1}
+		grid_final {Type O LastRead -1 FirstWrite 5}}
+	compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 {
+		p_0_0_01162_lcssa_lcssa72 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01169_2_lcssa_lcssa71 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01163_lcssa_lcssa70 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01169_1_lcssa_lcssa69 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01164_lcssa_lcssa68 {Type I LastRead 0 FirstWrite -1}
+		p_0_0_01169_lcssa_lcssa67 {Type I LastRead 0 FirstWrite -1}
 		cur {Type I LastRead 1 FirstWrite -1}
-		cur_1 {Type I LastRead 1 FirstWrite -1}
-		cur_2 {Type I LastRead 1 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_77_10_VITIS_LOOP_78_11 {
-		stream_out {Type O LastRead -1 FirstWrite 13}
-		cur {Type I LastRead 12 FirstWrite -1}
-		cur_1 {Type I LastRead 12 FirstWrite -1}
-		cur_2 {Type I LastRead 12 FirstWrite -1}
-		cur_3 {Type I LastRead 12 FirstWrite -1}
-		cur_4 {Type I LastRead 12 FirstWrite -1}
-		cur_5 {Type I LastRead 12 FirstWrite -1}
-		cur_6 {Type I LastRead 12 FirstWrite -1}
-		cur_7 {Type I LastRead 12 FirstWrite -1}
-		cur_8 {Type I LastRead 12 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_42_5 {
-		nxt {Type O LastRead -1 FirstWrite 1}
-		cur {Type I LastRead 1 FirstWrite -1}
-		cur_3 {Type I LastRead 1 FirstWrite -1}
-		cur_6 {Type I LastRead 1 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_49_6_VITIS_LOOP_50_7 {
-		nxt {Type O LastRead -1 FirstWrite 15}
-		cur {Type I LastRead 14 FirstWrite -1}
-		cur_1 {Type I LastRead 14 FirstWrite -1}
-		cur_2 {Type I LastRead 14 FirstWrite -1}
-		cur_3 {Type I LastRead 14 FirstWrite -1}
-		cur_4 {Type I LastRead 14 FirstWrite -1}
-		cur_5 {Type I LastRead 14 FirstWrite -1}
-		cur_6 {Type I LastRead 14 FirstWrite -1}
-		cur_7 {Type I LastRead 14 FirstWrite -1}
-		cur_8 {Type I LastRead 14 FirstWrite -1}}
-	compute_Pipeline_VITIS_LOOP_68_8_VITIS_LOOP_69_9 {
-		nxt {Type I LastRead 12 FirstWrite -1}
-		cur {Type O LastRead -1 FirstWrite 13}
-		cur_1 {Type O LastRead -1 FirstWrite 13}
-		cur_2 {Type O LastRead -1 FirstWrite 13}
-		cur_3 {Type O LastRead -1 FirstWrite 13}
-		cur_4 {Type O LastRead -1 FirstWrite 13}
-		cur_5 {Type O LastRead -1 FirstWrite 13}
-		cur_6 {Type O LastRead -1 FirstWrite 13}
-		cur_7 {Type O LastRead -1 FirstWrite 13}
-		cur_8 {Type O LastRead -1 FirstWrite 13}}
+		nxt {Type O LastRead -1 FirstWrite 4}
+		p_0_0_01169_254_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01169_253_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01169_152_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_01169_151_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_0116950_out {Type O LastRead -1 FirstWrite 3}
+		p_0_0_0116949_out {Type O LastRead -1 FirstWrite 3}}
 	write_output {
-		stream_in {Type I LastRead 0 FirstWrite -1}
-		A_out {Type O LastRead 4 FirstWrite 3}
-		A_out1 {Type I LastRead 1 FirstWrite -1}}}
+		grid_final {Type I LastRead 3 FirstWrite -1}
+		A_out {Type O LastRead 3 FirstWrite 4}
+		A_out1 {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "4311956", "Max" : "4311956"}
-	, {"Name" : "Interval", "Min" : "4049282", "Max" : "4049282"}
+	{"Name" : "Latency", "Min" : "6272825", "Max" : "6272825"}
+	, {"Name" : "Interval", "Min" : "6142256", "Max" : "6142256"}
 ]}
 
 set PipelineEnableSignalInfo {[

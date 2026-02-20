@@ -11,6 +11,7 @@
     <config>
         <config_unroll tripcount_threshold="0"/>
         <config_compile pipeline_loops="0"/>
+        <config_export flow="impl" format="ip_catalog"/>
     </config>
     <targetInfo>
         <TargetInfo value="xczu3eg:-sbva484:-1-e"/>

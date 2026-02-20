@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'entry_proc'" level="0">
-<item name = "Date">Thu Feb 19 22:36:34 2026
+<item name = "Date">Fri Feb 20 10:14:37 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -51,8 +51,8 @@
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, 0, 18, -</column>
-<column name="Register">-, -, 2, -, -</column>
+<column name="Multiplexer">-, -, 0, 27, -</column>
+<column name="Register">-, -, 3, -, -</column>
 <specialColumn name="Available">432, 360, 141120, 70560, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
@@ -84,12 +84,14 @@
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="A_out_r_c_blk_n">9, 2, 1, 2</column>
 <column name="ap_done">9, 2, 1, 2</column>
+<column name="real_start">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">1, 0, 1, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
 </table>
 </item>
 </section>
@@ -102,10 +104,13 @@
 <column name="ap_clk">in, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, entry_proc, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_done">out, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_continue">in, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, entry_proc, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, entry_proc, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, entry_proc, return value</column>
 <column name="A_out_r">in, 64, ap_none, A_out_r, scalar</column>
 <column name="A_out_r_c_din">out, 64, ap_fifo, A_out_r_c, pointer</column>
 <column name="A_out_r_c_full_n">in, 1, ap_fifo, A_out_r_c, pointer</column>

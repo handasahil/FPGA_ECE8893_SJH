@@ -59273,6 +59273,13 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
     data_t cur[256][256];
     data_t nxt[256][256];
 
+
+    data_t line_buf[2][256];
+#pragma HLS array_partition variable=line_buf complete dim=1
+
+    data_t window[3][3];
+#pragma HLS array_partition variable=window complete dim=0
+
     const data_t wc = (data_t)0.50;
     const data_t wa = (data_t)0.10;
     const data_t wd = (data_t)0.025;
@@ -59280,7 +59287,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
+
             cur[i][j] = stream_in[i][j];
         }
     }
@@ -59288,40 +59295,70 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
     for (int t = 0; t < 30; t++) {
 
+
         for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
+
             nxt[0][j] = cur[0][j];
             nxt[256 - 1][j] = cur[256 - 1][j];
         }
         for (int i = 0; i < 256; i++) {
-#pragma HLS pipeline II=1
+
             nxt[i][0] = cur[i][0];
             nxt[i][256 - 1] = cur[i][256 - 1];
         }
 
 
-        for (int i = 1; i < 256 - 1; i++) {
-            for (int j = 1; j < 256 - 1; j++) {
+        for (int i = 0; i < 256; i++) {
+            for (int j = 0; j < 256; j++) {
+
 #pragma HLS pipeline II=1
-                acc_t sum_axis =
-                    (acc_t)cur[i - 1][j] + (acc_t)cur[i + 1][j] +
-                    (acc_t)cur[i][j - 1] + (acc_t)cur[i][j + 1];
 
-                acc_t sum_diag =
-                    (acc_t)cur[i - 1][j - 1] + (acc_t)cur[i - 1][j + 1] +
-                    (acc_t)cur[i + 1][j - 1] + (acc_t)cur[i + 1][j + 1];
 
-                acc_t center = (acc_t)cur[i][j];
+                for (int r = 0; r < 3; r++) {
+                    window[r][0] = window[r][1];
+                    window[r][1] = window[r][2];
+                }
 
-                acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
-                nxt[i][j] = (data_t)out;
+
+                data_t new_pixel = cur[i][j];
+                data_t top_pixel = line_buf[0][j];
+                data_t mid_pixel = line_buf[1][j];
+
+
+                line_buf[0][j] = mid_pixel;
+                line_buf[1][j] = new_pixel;
+
+
+                window[0][2] = top_pixel;
+                window[1][2] = mid_pixel;
+                window[2][2] = new_pixel;
+
+
+                if (i >= 2 && j >= 2) {
+
+                    int out_i = i - 1;
+                    int out_j = j - 1;
+
+                    acc_t sum_axis = (acc_t)window[0][1] + (acc_t)window[2][1] +
+                                     (acc_t)window[1][0] + (acc_t)window[1][2];
+
+                    acc_t sum_diag = (acc_t)window[0][0] + (acc_t)window[0][2] +
+                                     (acc_t)window[2][0] + (acc_t)window[2][2];
+
+                    acc_t center = (acc_t)window[1][1];
+
+                    acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
+
+
+                    nxt[out_i][out_j] = (data_t)out;
+                }
             }
         }
 
 
         for (int i = 0; i < 256; i++) {
             for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
+
                 cur[i][j] = nxt[i][j];
             }
         }
@@ -59330,7 +59367,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
+
             stream_out[i][j] = cur[i][j];
         }
     }
@@ -59342,7 +59379,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
+
             A_out[i][j] = stream_in[i][j];
         }
     }
@@ -59362,6 +59399,9 @@ void top_kernel(const data_t A_in[256][256], data_t A_out[256][256]) {
 
     data_t grid_initial[256][256];
     data_t grid_final[256][256];
+
+#pragma HLS stream variable=grid_initial depth=2
+#pragma HLS stream variable=grid_final depth=2
 
 
     read_input(A_in, grid_initial);

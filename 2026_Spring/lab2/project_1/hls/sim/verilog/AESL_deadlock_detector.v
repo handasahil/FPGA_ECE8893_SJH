@@ -94,35 +94,57 @@ module AESL_deadlock_detector (
     wire token_clear;
     wire [3:0] origin;
 
-    reg ap_done_reg_0;// for module AESL_inst_top_kernel.read_input_U0
-    always @ (negedge dl_reset or posedge dl_clock) begin
-        if (~dl_reset) begin
-            ap_done_reg_0 <= 'b0;
-        end
-        else begin
-            ap_done_reg_0 <= AESL_inst_top_kernel.read_input_U0.ap_done & ~AESL_inst_top_kernel.read_input_U0.ap_continue;
-        end
+reg [15:0] trans_in_cnt_0;// for process AESL_inst_top_kernel.read_input_U0
+always @(negedge dl_reset or posedge dl_clock) begin
+    if (~dl_reset) begin
+         trans_in_cnt_0 <= 16'h0;
     end
+    else if (AESL_inst_top_kernel.read_input_U0.start_write == 1'b1) begin
+        trans_in_cnt_0 <= trans_in_cnt_0 + 16'h1;
+    end
+    else begin
+        trans_in_cnt_0 <= trans_in_cnt_0;
+    end
+end
 
-    reg ap_done_reg_1;// for module AESL_inst_top_kernel.compute_U0
-    always @ (negedge dl_reset or posedge dl_clock) begin
-        if (~dl_reset) begin
-            ap_done_reg_1 <= 'b0;
-        end
-        else begin
-            ap_done_reg_1 <= AESL_inst_top_kernel.compute_U0.ap_done & ~AESL_inst_top_kernel.compute_U0.ap_continue;
-        end
+reg [15:0] trans_out_cnt_0;// for process AESL_inst_top_kernel.read_input_U0
+always @(negedge dl_reset or posedge dl_clock) begin
+    if (~dl_reset) begin
+         trans_out_cnt_0 <= 16'h0;
     end
+    else if (AESL_inst_top_kernel.read_input_U0.ap_done == 1'b1 && AESL_inst_top_kernel.read_input_U0.ap_continue == 1'b1) begin
+        trans_out_cnt_0 <= trans_out_cnt_0 + 16'h1;
+    end
+    else begin
+        trans_out_cnt_0 <= trans_out_cnt_0;
+    end
+end
 
-    reg ap_done_reg_2;// for module AESL_inst_top_kernel.write_output_U0
-    always @ (negedge dl_reset or posedge dl_clock) begin
-        if (~dl_reset) begin
-            ap_done_reg_2 <= 'b0;
-        end
-        else begin
-            ap_done_reg_2 <= AESL_inst_top_kernel.write_output_U0.ap_done & ~AESL_inst_top_kernel.write_output_U0.ap_continue;
-        end
+reg [15:0] trans_in_cnt_1;// for process AESL_inst_top_kernel.entry_proc_U0
+always @(negedge dl_reset or posedge dl_clock) begin
+    if (~dl_reset) begin
+         trans_in_cnt_1 <= 16'h0;
     end
+    else if (AESL_inst_top_kernel.entry_proc_U0.start_write == 1'b1) begin
+        trans_in_cnt_1 <= trans_in_cnt_1 + 16'h1;
+    end
+    else begin
+        trans_in_cnt_1 <= trans_in_cnt_1;
+    end
+end
+
+reg [15:0] trans_out_cnt_1;// for process AESL_inst_top_kernel.entry_proc_U0
+always @(negedge dl_reset or posedge dl_clock) begin
+    if (~dl_reset) begin
+         trans_out_cnt_1 <= 16'h0;
+    end
+    else if (AESL_inst_top_kernel.entry_proc_U0.ap_done == 1'b1 && AESL_inst_top_kernel.entry_proc_U0.ap_continue == 1'b1) begin
+        trans_out_cnt_1 <= trans_out_cnt_1 + 16'h1;
+    end
+    else begin
+        trans_out_cnt_1 <= trans_out_cnt_1;
+    end
+end
 
     // Process: AESL_inst_top_kernel.entry_proc_U0
     AESL_deadlock_detect_unit #(4, 0, 2, 2) AESL_deadlock_detect_unit_0 (
@@ -142,7 +164,7 @@ module AESL_deadlock_detector (
 
     assign proc_0_data_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.entry_proc_U0.A_out_r_c_blk_n);
     assign proc_0_data_PIPO_blk[0] = 1'b0;
-    assign proc_0_start_FIFO_blk[0] = 1'b0;
+    assign proc_0_start_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.start_for_write_output_U0_U.if_full_n & AESL_inst_top_kernel.entry_proc_U0.ap_start & ~AESL_inst_top_kernel.entry_proc_U0.real_start & (trans_in_cnt_1 == trans_out_cnt_1) & ~AESL_inst_top_kernel.start_for_write_output_U0_U.if_read);
     assign proc_0_TLF_FIFO_blk[0] = 1'b0;
     assign proc_0_input_sync_blk[0] = 1'b0;
     assign proc_0_output_sync_blk[0] = 1'b0;
@@ -191,9 +213,9 @@ module AESL_deadlock_detector (
         .token_out_vec(token_out_vec_1),
         .dl_detect_out(dl_in_vec[1]));
 
-    assign proc_1_data_FIFO_blk[0] = 1'b0;
-    assign proc_1_data_PIPO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.grid_initial_U.i_full_n & AESL_inst_top_kernel.read_input_U0.ap_done & ap_done_reg_0 & ~AESL_inst_top_kernel.grid_initial_U.t_read);
-    assign proc_1_start_FIFO_blk[0] = 1'b0;
+    assign proc_1_data_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.read_input_U0.grid_initial_blk_n);
+    assign proc_1_data_PIPO_blk[0] = 1'b0;
+    assign proc_1_start_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.start_for_compute_U0_U.if_full_n & AESL_inst_top_kernel.read_input_U0.ap_start & ~AESL_inst_top_kernel.read_input_U0.real_start & (trans_in_cnt_0 == trans_out_cnt_0) & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_read);
     assign proc_1_TLF_FIFO_blk[0] = 1'b0;
     assign proc_1_input_sync_blk[0] = 1'b0;
     assign proc_1_output_sync_blk[0] = 1'b0;
@@ -242,15 +264,15 @@ module AESL_deadlock_detector (
         .token_out_vec(token_out_vec_2),
         .dl_detect_out(dl_in_vec[2]));
 
-    assign proc_2_data_FIFO_blk[0] = 1'b0;
-    assign proc_2_data_PIPO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.grid_initial_U.t_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.grid_initial_U.i_write);
-    assign proc_2_start_FIFO_blk[0] = 1'b0;
+    assign proc_2_data_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.compute_U0.grid_initial_blk_n);
+    assign proc_2_data_PIPO_blk[0] = 1'b0;
+    assign proc_2_start_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.start_for_compute_U0_U.if_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_write);
     assign proc_2_TLF_FIFO_blk[0] = 1'b0;
     assign proc_2_input_sync_blk[0] = 1'b0;
     assign proc_2_output_sync_blk[0] = 1'b0;
     assign proc_dep_vld_vec_2[0] = dl_detect_out ? proc_dep_vld_vec_2_reg[0] : (proc_2_data_FIFO_blk[0] | proc_2_data_PIPO_blk[0] | proc_2_start_FIFO_blk[0] | proc_2_TLF_FIFO_blk[0] | proc_2_input_sync_blk[0] | proc_2_output_sync_blk[0]);
-    assign proc_2_data_FIFO_blk[1] = 1'b0;
-    assign proc_2_data_PIPO_blk[1] = 1'b0 | (~AESL_inst_top_kernel.grid_final_U.i_full_n & AESL_inst_top_kernel.compute_U0.ap_done & ap_done_reg_1 & ~AESL_inst_top_kernel.grid_final_U.t_read);
+    assign proc_2_data_FIFO_blk[1] = 1'b0 | (~AESL_inst_top_kernel.compute_U0.grid_final_blk_n);
+    assign proc_2_data_PIPO_blk[1] = 1'b0;
     assign proc_2_start_FIFO_blk[1] = 1'b0;
     assign proc_2_TLF_FIFO_blk[1] = 1'b0;
     assign proc_2_input_sync_blk[1] = 1'b0;
@@ -293,8 +315,8 @@ module AESL_deadlock_detector (
         .token_out_vec(token_out_vec_3),
         .dl_detect_out(dl_in_vec[3]));
 
-    assign proc_3_data_FIFO_blk[0] = 1'b0;
-    assign proc_3_data_PIPO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.grid_final_U.t_empty_n & AESL_inst_top_kernel.write_output_U0.ap_idle & ~AESL_inst_top_kernel.grid_final_U.i_write);
+    assign proc_3_data_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.write_output_U0.grid_final_blk_n);
+    assign proc_3_data_PIPO_blk[0] = 1'b0;
     assign proc_3_start_FIFO_blk[0] = 1'b0;
     assign proc_3_TLF_FIFO_blk[0] = 1'b0;
     assign proc_3_input_sync_blk[0] = 1'b0;
@@ -302,7 +324,7 @@ module AESL_deadlock_detector (
     assign proc_dep_vld_vec_3[0] = dl_detect_out ? proc_dep_vld_vec_3_reg[0] : (proc_3_data_FIFO_blk[0] | proc_3_data_PIPO_blk[0] | proc_3_start_FIFO_blk[0] | proc_3_TLF_FIFO_blk[0] | proc_3_input_sync_blk[0] | proc_3_output_sync_blk[0]);
     assign proc_3_data_FIFO_blk[1] = 1'b0 | (~AESL_inst_top_kernel.write_output_U0.A_out1_blk_n);
     assign proc_3_data_PIPO_blk[1] = 1'b0;
-    assign proc_3_start_FIFO_blk[1] = 1'b0;
+    assign proc_3_start_FIFO_blk[1] = 1'b0 | (~AESL_inst_top_kernel.start_for_write_output_U0_U.if_empty_n & AESL_inst_top_kernel.write_output_U0.ap_idle & ~AESL_inst_top_kernel.start_for_write_output_U0_U.if_write);
     assign proc_3_TLF_FIFO_blk[1] = 1'b0;
     assign proc_3_input_sync_blk[1] = 1'b0;
     assign proc_3_output_sync_blk[1] = 1'b0;
@@ -334,9 +356,10 @@ module AESL_deadlock_detector (
         .dl_reset(dl_reset),
         .dl_clock(dl_clock),
         .dl_in_vec(dl_in_vec_comb),
-        .ap_done_reg_0(ap_done_reg_0),
-        .ap_done_reg_1(ap_done_reg_1),
-        .ap_done_reg_2(ap_done_reg_2),
+        .trans_in_cnt_0(trans_in_cnt_0),
+        .trans_out_cnt_0(trans_out_cnt_0),
+        .trans_in_cnt_1(trans_in_cnt_1),
+        .trans_out_cnt_1(trans_out_cnt_1),
         .dl_detect_out(dl_detect_out),
         .origin(origin),
         .token_clear(token_clear));

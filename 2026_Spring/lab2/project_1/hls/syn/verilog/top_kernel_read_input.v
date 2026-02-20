@@ -10,10 +10,13 @@ module top_kernel_read_input (
         ap_clk,
         ap_rst,
         ap_start,
+        start_full_n,
         ap_done,
         ap_continue,
         ap_idle,
         ap_ready,
+        start_out,
+        start_write,
         m_axi_A_in_0_AWVALID,
         m_axi_A_in_0_AWREADY,
         m_axi_A_in_0_AWADDR,
@@ -61,10 +64,11 @@ module top_kernel_read_input (
         m_axi_A_in_0_BID,
         m_axi_A_in_0_BUSER,
         A_in1,
-        stream_out_address0,
-        stream_out_ce0,
-        stream_out_we0,
-        stream_out_d0
+        grid_initial_din,
+        grid_initial_full_n,
+        grid_initial_write,
+        grid_initial_num_data_valid,
+        grid_initial_fifo_cap
 );
 
 parameter    ap_ST_fsm_state1 = 12'd1;
@@ -83,10 +87,13 @@ parameter    ap_ST_fsm_state12 = 12'd2048;
 input   ap_clk;
 input   ap_rst;
 input   ap_start;
+input   start_full_n;
 output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
+output   start_out;
+output   start_write;
 output   m_axi_A_in_0_AWVALID;
 input   m_axi_A_in_0_AWREADY;
 output  [63:0] m_axi_A_in_0_AWADDR;
@@ -134,48 +141,45 @@ input  [1:0] m_axi_A_in_0_BRESP;
 input  [0:0] m_axi_A_in_0_BID;
 input  [0:0] m_axi_A_in_0_BUSER;
 input  [63:0] A_in1;
-output  [15:0] stream_out_address0;
-output   stream_out_ce0;
-output   stream_out_we0;
-output  [23:0] stream_out_d0;
+output  [23:0] grid_initial_din;
+input   grid_initial_full_n;
+output   grid_initial_write;
+input  [2:0] grid_initial_num_data_valid;
+input  [2:0] grid_initial_fifo_cap;
 
 reg ap_done;
 reg ap_idle;
-reg ap_ready;
+reg start_write;
 reg m_axi_A_in_0_ARVALID;
 reg m_axi_A_in_0_RREADY;
+reg grid_initial_write;
 
+reg    real_start;
+reg    start_once_reg;
 reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [11:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
+reg    internal_ap_ready;
 reg    A_in_blk_n_AR;
 reg    A_in_blk_n_R;
 wire    ap_CS_fsm_state11;
-reg    ap_block_state1;
-wire   [8:0] add_ln7_fu_141_p2;
-reg   [8:0] add_ln7_reg_208;
-wire    ap_CS_fsm_state9;
-wire   [15:0] tmp_fu_151_p3;
-reg   [15:0] tmp_reg_213;
-wire   [8:0] add_ln8_fu_165_p2;
-reg   [8:0] add_ln8_reg_221;
-wire    ap_CS_fsm_state10;
-wire   [15:0] add_ln9_fu_175_p2;
-reg   [15:0] add_ln9_reg_226;
-wire   [23:0] trunc_ln9_fu_184_p1;
-reg   [23:0] trunc_ln9_reg_231;
-reg   [8:0] j_reg_95;
-wire   [0:0] icmp_ln7_fu_135_p2;
+reg    grid_initial_blk_n;
 wire    ap_CS_fsm_state12;
-wire   [63:0] zext_ln9_1_fu_188_p1;
-wire  signed [63:0] sext_ln7_fu_116_p1;
-reg   [8:0] i_fu_60;
-wire   [0:0] icmp_ln8_fu_159_p2;
-reg    stream_out_we0_local;
-reg    stream_out_ce0_local;
-wire   [61:0] trunc_ln7_fu_106_p4;
-wire   [7:0] trunc_ln7_1_fu_147_p1;
-wire   [15:0] zext_ln9_fu_171_p1;
+reg    ap_block_state1;
+wire   [8:0] add_ln7_fu_133_p2;
+reg   [8:0] add_ln7_reg_175;
+wire    ap_CS_fsm_state9;
+wire   [8:0] add_ln8_fu_145_p2;
+reg   [8:0] add_ln8_reg_183;
+wire    ap_CS_fsm_state10;
+wire   [23:0] trunc_ln9_fu_155_p1;
+reg   [23:0] trunc_ln9_reg_188;
+reg   [8:0] j_reg_87;
+wire   [0:0] icmp_ln7_fu_127_p2;
+wire  signed [63:0] sext_ln7_fu_108_p1;
+reg   [8:0] i_fu_58;
+wire   [0:0] icmp_ln8_fu_139_p2;
+wire   [61:0] trunc_ln7_fu_98_p4;
 reg   [11:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
@@ -188,14 +192,15 @@ wire    ap_ST_fsm_state8_blk;
 wire    ap_ST_fsm_state9_blk;
 wire    ap_ST_fsm_state10_blk;
 reg    ap_ST_fsm_state11_blk;
-wire    ap_ST_fsm_state12_blk;
+reg    ap_ST_fsm_state12_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
+#0 start_once_reg = 1'b0;
 #0 ap_done_reg = 1'b0;
 #0 ap_CS_fsm = 12'd1;
-#0 i_fu_60 = 9'd0;
+#0 i_fu_58 = 9'd0;
 end
 
 always @ (posedge ap_clk) begin
@@ -212,50 +217,60 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_135_p2 == 1'd1))) begin
+        end else if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_127_p2 == 1'd1))) begin
             ap_done_reg <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((~((m_axi_A_in_0_ARREADY == 1'b0) | (1'b1 == ap_block_state1)) & (1'b1 == ap_CS_fsm_state1))) begin
-        i_fu_60 <= 9'd0;
-    end else if (((1'b1 == ap_CS_fsm_state10) & (icmp_ln8_fu_159_p2 == 1'd1))) begin
-        i_fu_60 <= add_ln7_reg_208;
+    if (ap_rst == 1'b1) begin
+        start_once_reg <= 1'b0;
+    end else begin
+        if (((internal_ap_ready == 1'b0) & (real_start == 1'b1))) begin
+            start_once_reg <= 1'b1;
+        end else if ((internal_ap_ready == 1'b1)) begin
+            start_once_reg <= 1'b0;
+        end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state12)) begin
-        j_reg_95 <= add_ln8_reg_221;
-    end else if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_135_p2 == 1'd0))) begin
-        j_reg_95 <= 9'd0;
+    if ((~((m_axi_A_in_0_ARREADY == 1'b0) | (1'b1 == ap_block_state1)) & (1'b1 == ap_CS_fsm_state1))) begin
+        i_fu_58 <= 9'd0;
+    end else if (((1'b1 == ap_CS_fsm_state10) & (icmp_ln8_fu_139_p2 == 1'd1))) begin
+        i_fu_58 <= add_ln7_reg_175;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b1 == ap_CS_fsm_state12) & (grid_initial_full_n == 1'b1))) begin
+        j_reg_87 <= add_ln8_reg_183;
+    end else if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_127_p2 == 1'd0))) begin
+        j_reg_87 <= 9'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        add_ln7_reg_208 <= add_ln7_fu_141_p2;
-        tmp_reg_213[15 : 8] <= tmp_fu_151_p3[15 : 8];
+        add_ln7_reg_175 <= add_ln7_fu_133_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state10)) begin
-        add_ln8_reg_221 <= add_ln8_fu_165_p2;
-        add_ln9_reg_226 <= add_ln9_fu_175_p2;
+        add_ln8_reg_183 <= add_ln8_fu_145_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((m_axi_A_in_0_RVALID == 1'b1) & (1'b1 == ap_CS_fsm_state11))) begin
-        trunc_ln9_reg_231 <= trunc_ln9_fu_184_p1;
+        trunc_ln9_reg_188 <= trunc_ln9_fu_155_p1;
     end
 end
 
 always @ (*) begin
-    if ((~((ap_done_reg == 1'b1) | (ap_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
+    if ((~((ap_done_reg == 1'b1) | (real_start == 1'b0)) & (1'b1 == ap_CS_fsm_state1))) begin
         A_in_blk_n_AR = m_axi_A_in_0_ARREADY;
     end else begin
         A_in_blk_n_AR = 1'b1;
@@ -280,7 +295,13 @@ always @ (*) begin
     end
 end
 
-assign ap_ST_fsm_state12_blk = 1'b0;
+always @ (*) begin
+    if ((grid_initial_full_n == 1'b0)) begin
+        ap_ST_fsm_state12_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state12_blk = 1'b0;
+    end
+end
 
 always @ (*) begin
     if (((m_axi_A_in_0_ARREADY == 1'b0) | (1'b1 == ap_block_state1))) begin
@@ -307,7 +328,7 @@ assign ap_ST_fsm_state8_blk = 1'b0;
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_135_p2 == 1'd1))) begin
+    if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_127_p2 == 1'd1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -315,7 +336,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
+    if (((1'b1 == ap_CS_fsm_state1) & (real_start == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -323,10 +344,26 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_135_p2 == 1'd1))) begin
-        ap_ready = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state12)) begin
+        grid_initial_blk_n = grid_initial_full_n;
     end else begin
-        ap_ready = 1'b0;
+        grid_initial_blk_n = 1'b1;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state12) & (grid_initial_full_n == 1'b1))) begin
+        grid_initial_write = 1'b1;
+    end else begin
+        grid_initial_write = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_127_p2 == 1'd1))) begin
+        internal_ap_ready = 1'b1;
+    end else begin
+        internal_ap_ready = 1'b0;
     end
 end
 
@@ -347,18 +384,18 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state12)) begin
-        stream_out_ce0_local = 1'b1;
+    if (((start_once_reg == 1'b0) & (start_full_n == 1'b0))) begin
+        real_start = 1'b0;
     end else begin
-        stream_out_ce0_local = 1'b0;
+        real_start = ap_start;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state12)) begin
-        stream_out_we0_local = 1'b1;
+    if (((start_once_reg == 1'b0) & (real_start == 1'b1))) begin
+        start_write = 1'b1;
     end else begin
-        stream_out_we0_local = 1'b0;
+        start_write = 1'b0;
     end
 end
 
@@ -393,14 +430,14 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state9;
         end
         ap_ST_fsm_state9 : begin
-            if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_135_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state9) & (icmp_ln7_fu_127_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state10;
             end
         end
         ap_ST_fsm_state10 : begin
-            if (((1'b1 == ap_CS_fsm_state10) & (icmp_ln8_fu_159_p2 == 1'd1))) begin
+            if (((1'b1 == ap_CS_fsm_state10) & (icmp_ln8_fu_139_p2 == 1'd1))) begin
                 ap_NS_fsm = ap_ST_fsm_state9;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state11;
@@ -414,7 +451,11 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state12 : begin
-            ap_NS_fsm = ap_ST_fsm_state10;
+            if (((1'b1 == ap_CS_fsm_state12) & (grid_initial_full_n == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state10;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state12;
+            end
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -422,11 +463,9 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln7_fu_141_p2 = (i_fu_60 + 9'd1);
+assign add_ln7_fu_133_p2 = (i_fu_58 + 9'd1);
 
-assign add_ln8_fu_165_p2 = (j_reg_95 + 9'd1);
-
-assign add_ln9_fu_175_p2 = (tmp_reg_213 + zext_ln9_fu_171_p1);
+assign add_ln8_fu_145_p2 = (j_reg_87 + 9'd1);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -439,14 +478,18 @@ assign ap_CS_fsm_state12 = ap_CS_fsm[32'd11];
 assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 
 always @ (*) begin
-    ap_block_state1 = ((ap_done_reg == 1'b1) | (ap_start == 1'b0));
+    ap_block_state1 = ((ap_done_reg == 1'b1) | (real_start == 1'b0));
 end
 
-assign icmp_ln7_fu_135_p2 = ((i_fu_60 == 9'd256) ? 1'b1 : 1'b0);
+assign ap_ready = internal_ap_ready;
 
-assign icmp_ln8_fu_159_p2 = ((j_reg_95 == 9'd256) ? 1'b1 : 1'b0);
+assign grid_initial_din = trunc_ln9_reg_188;
 
-assign m_axi_A_in_0_ARADDR = sext_ln7_fu_116_p1;
+assign icmp_ln7_fu_127_p2 = ((i_fu_58 == 9'd256) ? 1'b1 : 1'b0);
+
+assign icmp_ln8_fu_139_p2 = ((j_reg_87 == 9'd256) ? 1'b1 : 1'b0);
+
+assign m_axi_A_in_0_ARADDR = sext_ln7_fu_108_p1;
 
 assign m_axi_A_in_0_ARBURST = 2'd0;
 
@@ -506,30 +549,12 @@ assign m_axi_A_in_0_WUSER = 1'd0;
 
 assign m_axi_A_in_0_WVALID = 1'b0;
 
-assign sext_ln7_fu_116_p1 = $signed(trunc_ln7_fu_106_p4);
+assign sext_ln7_fu_108_p1 = $signed(trunc_ln7_fu_98_p4);
 
-assign stream_out_address0 = zext_ln9_1_fu_188_p1;
+assign start_out = real_start;
 
-assign stream_out_ce0 = stream_out_ce0_local;
+assign trunc_ln7_fu_98_p4 = {{A_in1[63:2]}};
 
-assign stream_out_d0 = trunc_ln9_reg_231;
-
-assign stream_out_we0 = stream_out_we0_local;
-
-assign tmp_fu_151_p3 = {{trunc_ln7_1_fu_147_p1}, {8'd0}};
-
-assign trunc_ln7_1_fu_147_p1 = i_fu_60[7:0];
-
-assign trunc_ln7_fu_106_p4 = {{A_in1[63:2]}};
-
-assign trunc_ln9_fu_184_p1 = m_axi_A_in_0_RDATA[23:0];
-
-assign zext_ln9_1_fu_188_p1 = add_ln9_reg_226;
-
-assign zext_ln9_fu_171_p1 = j_reg_95;
-
-always @ (posedge ap_clk) begin
-    tmp_reg_213[7:0] <= 8'b00000000;
-end
+assign trunc_ln9_fu_155_p1 = m_axi_A_in_0_RDATA[23:0];
 
 endmodule //top_kernel_read_input

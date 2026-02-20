@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'write_output'" level="0">
-<item name = "Date">Thu Feb 19 22:36:34 2026
+<item name = "Date">Fri Feb 20 10:14:37 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">65545, 65545, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">131591, 131591, 1.316 ms, 1.316 ms, 131591, 131591, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_89_1_VITIS_LOOP_90_2">65543, 65543, 9, 1, 1, 65536, yes</column>
+<column name="- VITIS_LOOP_126_1">131584, 131584, 514, -, -, 256, no</column>
+<column name=" + VITIS_LOOP_127_2">512, 512, 2, -, -, 256, no</column>
 </table>
 </item>
 </section>

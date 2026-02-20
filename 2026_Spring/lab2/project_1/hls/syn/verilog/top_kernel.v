@@ -6,11 +6,9 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=4311956,HLS_SYN_TPT=4049282,HLS_SYN_MEM=550,HLS_SYN_DSP=0,HLS_SYN_FF=5252,HLS_SYN_LUT=8361,HLS_VERSION=2025_1_1}" *)
+(* CORE_GENERATION_INFO="top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=6272825,HLS_SYN_TPT=6142256,HLS_SYN_MEM=180,HLS_SYN_DSP=0,HLS_SYN_FF=2881,HLS_SYN_LUT=4006,HLS_VERSION=2025_1_1}" *)
 
 module top_kernel (
-        ap_clk,
-        ap_rst_n,
         s_axi_control_AWVALID,
         s_axi_control_AWREADY,
         s_axi_control_AWADDR,
@@ -28,6 +26,8 @@ module top_kernel (
         s_axi_control_BVALID,
         s_axi_control_BREADY,
         s_axi_control_BRESP,
+        ap_clk,
+        ap_rst_n,
         interrupt,
         m_axi_A_in_AWVALID,
         m_axi_A_in_AWREADY,
@@ -154,8 +154,6 @@ parameter C_M_AXI_A_IN_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_A_OUT_WSTRB_WIDTH = (32 / 8);
 
-input   ap_clk;
-input   ap_rst_n;
 input   s_axi_control_AWVALID;
 output   s_axi_control_AWREADY;
 input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_AWADDR;
@@ -173,6 +171,8 @@ output  [1:0] s_axi_control_RRESP;
 output   s_axi_control_BVALID;
 input   s_axi_control_BREADY;
 output  [1:0] s_axi_control_BRESP;
+input   ap_clk;
+input   ap_rst_n;
 output   interrupt;
 output   m_axi_A_in_AWVALID;
 input   m_axi_A_in_AWREADY;
@@ -266,10 +266,6 @@ input  [C_M_AXI_A_OUT_ID_WIDTH - 1:0] m_axi_A_out_BID;
 input  [C_M_AXI_A_OUT_BUSER_WIDTH - 1:0] m_axi_A_out_BUSER;
 
  reg    ap_rst_n_inv;
-wire   [23:0] grid_initial_i_q0;
-wire   [23:0] grid_initial_t_q0;
-wire   [23:0] grid_final_i_q0;
-wire   [23:0] grid_final_t_q0;
 wire   [63:0] A_in_r;
 wire   [63:0] A_out_r;
 wire    ap_start;
@@ -302,6 +298,8 @@ wire    entry_proc_U0_ap_done;
 wire    entry_proc_U0_ap_continue;
 wire    entry_proc_U0_ap_idle;
 wire    entry_proc_U0_ap_ready;
+wire    entry_proc_U0_start_out;
+wire    entry_proc_U0_start_write;
 wire   [63:0] entry_proc_U0_A_out_r_c_din;
 wire    entry_proc_U0_A_out_r_c_write;
 wire    read_input_U0_ap_start;
@@ -309,6 +307,8 @@ wire    read_input_U0_ap_done;
 wire    read_input_U0_ap_continue;
 wire    read_input_U0_ap_idle;
 wire    read_input_U0_ap_ready;
+wire    read_input_U0_start_out;
+wire    read_input_U0_start_write;
 wire    read_input_U0_m_axi_A_in_0_AWVALID;
 wire   [63:0] read_input_U0_m_axi_A_in_0_AWADDR;
 wire   [0:0] read_input_U0_m_axi_A_in_0_AWID;
@@ -341,27 +341,22 @@ wire   [3:0] read_input_U0_m_axi_A_in_0_ARREGION;
 wire   [0:0] read_input_U0_m_axi_A_in_0_ARUSER;
 wire    read_input_U0_m_axi_A_in_0_RREADY;
 wire    read_input_U0_m_axi_A_in_0_BREADY;
-wire   [15:0] read_input_U0_stream_out_address0;
-wire    read_input_U0_stream_out_ce0;
-wire    read_input_U0_stream_out_we0;
-wire   [23:0] read_input_U0_stream_out_d0;
+wire   [23:0] read_input_U0_grid_initial_din;
+wire    read_input_U0_grid_initial_write;
 wire    compute_U0_ap_start;
 wire    compute_U0_ap_done;
 wire    compute_U0_ap_continue;
 wire    compute_U0_ap_idle;
 wire    compute_U0_ap_ready;
-wire   [15:0] compute_U0_stream_in_address0;
-wire    compute_U0_stream_in_ce0;
-wire   [15:0] compute_U0_stream_out_address0;
-wire    compute_U0_stream_out_ce0;
-wire    compute_U0_stream_out_we0;
-wire   [23:0] compute_U0_stream_out_d0;
+wire    compute_U0_grid_initial_read;
+wire   [23:0] compute_U0_grid_final_din;
+wire    compute_U0_grid_final_write;
 wire    write_output_U0_ap_start;
 wire    write_output_U0_ap_done;
 wire    write_output_U0_ap_continue;
 wire    write_output_U0_ap_idle;
 wire    write_output_U0_ap_ready;
-wire    write_output_U0_A_out1_read;
+wire    write_output_U0_grid_final_read;
 wire    write_output_U0_m_axi_A_out_0_AWVALID;
 wire   [63:0] write_output_U0_m_axi_A_out_0_AWADDR;
 wire   [0:0] write_output_U0_m_axi_A_out_0_AWID;
@@ -394,22 +389,35 @@ wire   [3:0] write_output_U0_m_axi_A_out_0_ARREGION;
 wire   [0:0] write_output_U0_m_axi_A_out_0_ARUSER;
 wire    write_output_U0_m_axi_A_out_0_RREADY;
 wire    write_output_U0_m_axi_A_out_0_BREADY;
-wire   [15:0] write_output_U0_stream_in_address0;
-wire    write_output_U0_stream_in_ce0;
-wire    grid_initial_i_full_n;
-wire    grid_initial_t_empty_n;
-wire    grid_final_i_full_n;
-wire    grid_final_t_empty_n;
+wire    write_output_U0_A_out1_read;
 wire    A_out_r_c_full_n;
 wire   [63:0] A_out_r_c_dout;
 wire    A_out_r_c_empty_n;
 wire   [2:0] A_out_r_c_num_data_valid;
 wire   [2:0] A_out_r_c_fifo_cap;
+wire    grid_initial_full_n;
+wire   [23:0] grid_initial_dout;
+wire    grid_initial_empty_n;
+wire   [2:0] grid_initial_num_data_valid;
+wire   [2:0] grid_initial_fifo_cap;
+wire    grid_final_full_n;
+wire   [23:0] grid_final_dout;
+wire    grid_final_empty_n;
+wire   [2:0] grid_final_num_data_valid;
+wire   [2:0] grid_final_fifo_cap;
 wire    ap_sync_ready;
 reg    ap_sync_reg_entry_proc_U0_ap_ready;
 wire    ap_sync_entry_proc_U0_ap_ready;
 reg    ap_sync_reg_read_input_U0_ap_ready;
 wire    ap_sync_read_input_U0_ap_ready;
+wire   [0:0] start_for_write_output_U0_din;
+wire    start_for_write_output_U0_full_n;
+wire   [0:0] start_for_write_output_U0_dout;
+wire    start_for_write_output_U0_empty_n;
+wire   [0:0] start_for_compute_U0_din;
+wire    start_for_compute_U0_full_n;
+wire   [0:0] start_for_compute_U0_dout;
+wire    start_for_compute_U0_empty_n;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -417,56 +425,6 @@ initial begin
 #0 ap_sync_reg_entry_proc_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_read_input_U0_ap_ready = 1'b0;
 end
-
-top_kernel_grid_initial_RAM_AUTO_1R1W #(
-    .DataWidth( 24 ),
-    .AddressRange( 65536 ),
-    .AddressWidth( 16 ))
-grid_initial_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(read_input_U0_stream_out_address0),
-    .i_ce0(read_input_U0_stream_out_ce0),
-    .i_we0(read_input_U0_stream_out_we0),
-    .i_d0(read_input_U0_stream_out_d0),
-    .i_q0(grid_initial_i_q0),
-    .t_address0(compute_U0_stream_in_address0),
-    .t_ce0(compute_U0_stream_in_ce0),
-    .t_we0(1'b0),
-    .t_d0(24'd0),
-    .t_q0(grid_initial_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(grid_initial_i_full_n),
-    .i_write(read_input_U0_ap_done),
-    .t_empty_n(grid_initial_t_empty_n),
-    .t_read(compute_U0_ap_ready)
-);
-
-top_kernel_grid_initial_RAM_AUTO_1R1W #(
-    .DataWidth( 24 ),
-    .AddressRange( 65536 ),
-    .AddressWidth( 16 ))
-grid_final_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(compute_U0_stream_out_address0),
-    .i_ce0(compute_U0_stream_out_ce0),
-    .i_we0(compute_U0_stream_out_we0),
-    .i_d0(compute_U0_stream_out_d0),
-    .i_q0(grid_final_i_q0),
-    .t_address0(write_output_U0_stream_in_address0),
-    .t_ce0(write_output_U0_stream_in_ce0),
-    .t_we0(1'b0),
-    .t_d0(24'd0),
-    .t_q0(grid_final_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(grid_final_i_full_n),
-    .i_write(compute_U0_ap_done),
-    .t_empty_n(grid_final_t_empty_n),
-    .t_read(write_output_U0_ap_ready)
-);
 
 top_kernel_control_s_axi #(
     .C_S_AXI_ADDR_WIDTH( C_S_AXI_CONTROL_ADDR_WIDTH ),
@@ -689,10 +647,13 @@ top_kernel_entry_proc entry_proc_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .ap_start(entry_proc_U0_ap_start),
+    .start_full_n(start_for_write_output_U0_full_n),
     .ap_done(entry_proc_U0_ap_done),
     .ap_continue(entry_proc_U0_ap_continue),
     .ap_idle(entry_proc_U0_ap_idle),
     .ap_ready(entry_proc_U0_ap_ready),
+    .start_out(entry_proc_U0_start_out),
+    .start_write(entry_proc_U0_start_write),
     .A_out_r(A_out_r),
     .A_out_r_c_din(entry_proc_U0_A_out_r_c_din),
     .A_out_r_c_full_n(A_out_r_c_full_n),
@@ -705,10 +666,13 @@ top_kernel_read_input read_input_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .ap_start(read_input_U0_ap_start),
+    .start_full_n(start_for_compute_U0_full_n),
     .ap_done(read_input_U0_ap_done),
     .ap_continue(read_input_U0_ap_continue),
     .ap_idle(read_input_U0_ap_idle),
     .ap_ready(read_input_U0_ap_ready),
+    .start_out(read_input_U0_start_out),
+    .start_write(read_input_U0_start_write),
     .m_axi_A_in_0_AWVALID(read_input_U0_m_axi_A_in_0_AWVALID),
     .m_axi_A_in_0_AWREADY(1'b0),
     .m_axi_A_in_0_AWADDR(read_input_U0_m_axi_A_in_0_AWADDR),
@@ -756,10 +720,11 @@ top_kernel_read_input read_input_U0(
     .m_axi_A_in_0_BID(1'd0),
     .m_axi_A_in_0_BUSER(1'd0),
     .A_in1(A_in_r),
-    .stream_out_address0(read_input_U0_stream_out_address0),
-    .stream_out_ce0(read_input_U0_stream_out_ce0),
-    .stream_out_we0(read_input_U0_stream_out_we0),
-    .stream_out_d0(read_input_U0_stream_out_d0)
+    .grid_initial_din(read_input_U0_grid_initial_din),
+    .grid_initial_full_n(grid_initial_full_n),
+    .grid_initial_write(read_input_U0_grid_initial_write),
+    .grid_initial_num_data_valid(grid_initial_num_data_valid),
+    .grid_initial_fifo_cap(grid_initial_fifo_cap)
 );
 
 top_kernel_compute compute_U0(
@@ -770,13 +735,16 @@ top_kernel_compute compute_U0(
     .ap_continue(compute_U0_ap_continue),
     .ap_idle(compute_U0_ap_idle),
     .ap_ready(compute_U0_ap_ready),
-    .stream_in_address0(compute_U0_stream_in_address0),
-    .stream_in_ce0(compute_U0_stream_in_ce0),
-    .stream_in_q0(grid_initial_t_q0),
-    .stream_out_address0(compute_U0_stream_out_address0),
-    .stream_out_ce0(compute_U0_stream_out_ce0),
-    .stream_out_we0(compute_U0_stream_out_we0),
-    .stream_out_d0(compute_U0_stream_out_d0)
+    .grid_initial_dout(grid_initial_dout),
+    .grid_initial_empty_n(grid_initial_empty_n),
+    .grid_initial_read(compute_U0_grid_initial_read),
+    .grid_initial_num_data_valid(grid_initial_num_data_valid),
+    .grid_initial_fifo_cap(grid_initial_fifo_cap),
+    .grid_final_din(compute_U0_grid_final_din),
+    .grid_final_full_n(grid_final_full_n),
+    .grid_final_write(compute_U0_grid_final_write),
+    .grid_final_num_data_valid(grid_final_num_data_valid),
+    .grid_final_fifo_cap(grid_final_fifo_cap)
 );
 
 top_kernel_write_output write_output_U0(
@@ -787,11 +755,11 @@ top_kernel_write_output write_output_U0(
     .ap_continue(write_output_U0_ap_continue),
     .ap_idle(write_output_U0_ap_idle),
     .ap_ready(write_output_U0_ap_ready),
-    .A_out1_dout(A_out_r_c_dout),
-    .A_out1_empty_n(A_out_r_c_empty_n),
-    .A_out1_read(write_output_U0_A_out1_read),
-    .A_out1_num_data_valid(A_out_r_c_num_data_valid),
-    .A_out1_fifo_cap(A_out_r_c_fifo_cap),
+    .grid_final_dout(grid_final_dout),
+    .grid_final_empty_n(grid_final_empty_n),
+    .grid_final_read(write_output_U0_grid_final_read),
+    .grid_final_num_data_valid(grid_final_num_data_valid),
+    .grid_final_fifo_cap(grid_final_fifo_cap),
     .m_axi_A_out_0_AWVALID(write_output_U0_m_axi_A_out_0_AWVALID),
     .m_axi_A_out_0_AWREADY(A_out_0_AWREADY),
     .m_axi_A_out_0_AWADDR(write_output_U0_m_axi_A_out_0_AWADDR),
@@ -838,9 +806,11 @@ top_kernel_write_output write_output_U0(
     .m_axi_A_out_0_BRESP(A_out_0_BRESP),
     .m_axi_A_out_0_BID(A_out_0_BID),
     .m_axi_A_out_0_BUSER(A_out_0_BUSER),
-    .stream_in_address0(write_output_U0_stream_in_address0),
-    .stream_in_ce0(write_output_U0_stream_in_ce0),
-    .stream_in_q0(grid_final_t_q0)
+    .A_out1_dout(A_out_r_c_dout),
+    .A_out1_empty_n(A_out_r_c_empty_n),
+    .A_out1_read(write_output_U0_A_out1_read),
+    .A_out1_num_data_valid(A_out_r_c_num_data_valid),
+    .A_out1_fifo_cap(A_out_r_c_fifo_cap)
 );
 
 top_kernel_fifo_w64_d4_S A_out_r_c_U(
@@ -856,6 +826,62 @@ top_kernel_fifo_w64_d4_S A_out_r_c_U(
     .if_read(write_output_U0_A_out1_read),
     .if_num_data_valid(A_out_r_c_num_data_valid),
     .if_fifo_cap(A_out_r_c_fifo_cap)
+);
+
+top_kernel_fifo_w24_d2_S grid_initial_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(read_input_U0_grid_initial_din),
+    .if_full_n(grid_initial_full_n),
+    .if_write(read_input_U0_grid_initial_write),
+    .if_dout(grid_initial_dout),
+    .if_empty_n(grid_initial_empty_n),
+    .if_read(compute_U0_grid_initial_read),
+    .if_num_data_valid(grid_initial_num_data_valid),
+    .if_fifo_cap(grid_initial_fifo_cap)
+);
+
+top_kernel_fifo_w24_d2_S grid_final_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(compute_U0_grid_final_din),
+    .if_full_n(grid_final_full_n),
+    .if_write(compute_U0_grid_final_write),
+    .if_dout(grid_final_dout),
+    .if_empty_n(grid_final_empty_n),
+    .if_read(write_output_U0_grid_final_read),
+    .if_num_data_valid(grid_final_num_data_valid),
+    .if_fifo_cap(grid_final_fifo_cap)
+);
+
+top_kernel_start_for_write_output_U0 start_for_write_output_U0_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(start_for_write_output_U0_din),
+    .if_full_n(start_for_write_output_U0_full_n),
+    .if_write(entry_proc_U0_start_write),
+    .if_dout(start_for_write_output_U0_dout),
+    .if_empty_n(start_for_write_output_U0_empty_n),
+    .if_read(write_output_U0_ap_ready)
+);
+
+top_kernel_start_for_compute_U0 start_for_compute_U0_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(start_for_compute_U0_din),
+    .if_full_n(start_for_compute_U0_full_n),
+    .if_write(read_input_U0_start_write),
+    .if_dout(start_for_compute_U0_dout),
+    .if_empty_n(start_for_compute_U0_empty_n),
+    .if_read(compute_U0_ap_ready)
 );
 
 always @ (posedge ap_clk) begin
@@ -898,7 +924,7 @@ assign A_out_0_BUSER = 1'd0;
 
 assign ap_done = write_output_U0_ap_done;
 
-assign ap_idle = (write_output_U0_ap_idle & read_input_U0_ap_idle & (grid_final_t_empty_n ^ 1'b1) & (grid_initial_t_empty_n ^ 1'b1) & entry_proc_U0_ap_idle & compute_U0_ap_idle);
+assign ap_idle = (write_output_U0_ap_idle & read_input_U0_ap_idle & entry_proc_U0_ap_idle & compute_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
@@ -912,20 +938,24 @@ assign ap_sync_read_input_U0_ap_ready = (read_input_U0_ap_ready | ap_sync_reg_re
 
 assign ap_sync_ready = (ap_sync_read_input_U0_ap_ready & ap_sync_entry_proc_U0_ap_ready);
 
-assign compute_U0_ap_continue = grid_final_i_full_n;
+assign compute_U0_ap_continue = 1'b1;
 
-assign compute_U0_ap_start = grid_initial_t_empty_n;
+assign compute_U0_ap_start = start_for_compute_U0_empty_n;
 
 assign entry_proc_U0_ap_continue = 1'b1;
 
 assign entry_proc_U0_ap_start = ((ap_sync_reg_entry_proc_U0_ap_ready ^ 1'b1) & ap_start & 1'b1);
 
-assign read_input_U0_ap_continue = grid_initial_i_full_n;
+assign read_input_U0_ap_continue = 1'b1;
 
 assign read_input_U0_ap_start = ((ap_sync_reg_read_input_U0_ap_ready ^ 1'b1) & ap_start & 1'b1);
 
+assign start_for_compute_U0_din = 1'b1;
+
+assign start_for_write_output_U0_din = 1'b1;
+
 assign write_output_U0_ap_continue = 1'b1;
 
-assign write_output_U0_ap_start = grid_final_t_empty_n;
+assign write_output_U0_ap_start = start_for_write_output_U0_empty_n;
 
 endmodule //top_kernel

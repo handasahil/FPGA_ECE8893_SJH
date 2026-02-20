@@ -1,0 +1,429 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Fri Feb 20 10:31:25 EST 2026
+    * Version:         2025.1 (Build 6214317 on Sep 11 2025)
+    * Project:         project_1
+    * Solution:        hls (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xczu3eg-sbva484-1-e
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       auto
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              2656
+FF:               2979
+DSP:              4
+BRAM:             179
+URAM:             0
+SRL:              166
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 5.049       |
+| Post-Route     | 7.174       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++---------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                                                | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++---------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                                                | 2656 | 2979 | 4   | 179  |      |     |        |      |         |          |        |
+|   A_in_m_axi_U                                                      | 465  | 741  |     | 1    |      |     |        |      |         |          |        |
+|   A_out_m_axi_U                                                     | 646  | 998  |     |      |      |     |        |      |         |          |        |
+|   A_out_r_c_U                                                       |      |      |     |      |      |     |        |      |         |          |        |
+|   compute_U0                                                        | 1237 | 727  | 4   | 178  |      |     |        |      |         |          |        |
+|     (compute_U0)                                                    | 93   | 363  |     |      |      |     |        |      |         |          |        |
+|     cur_U                                                           | 195  | 4    |     | 88   |      |     |        |      |         |          |        |
+|     grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330     | 800  | 358  | 4   | 2    |      |     |        |      |         |          |        |
+|       (grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330) | 433  | 356  |     |      |      |     |        |      |         |          |        |
+|       line_buf_1_U                                                  |      |      |     |      |      |     |        |      |         |          |        |
+|       line_buf_U                                                    |      |      |     |      |      |     |        |      |         |          |        |
+|       mul_39s_24ns_63_1_1_U6                                        | 103  |      | 2   |      |      |     |        |      |         |          |        |
+|       mul_39s_26ns_65_1_1_U7                                        | 66   |      | 2   |      |      |     |        |      |         |          |        |
+|     nxt_U                                                           | 151  | 2    |     | 88   |      |     |        |      |         |          |        |
+|   control_s_axi_U                                                   | 159  | 181  |     |      |      |     |        |      |         |          |        |
+|   entry_proc_U0                                                     |      |      |     |      |      |     |        |      |         |          |        |
+|   grid_final_U                                                      | 20   | 54   |     |      |      |     |        |      |         |          |        |
+|   grid_initial_U                                                    | 21   | 54   |     |      |      |     |        |      |         |          |        |
+|   read_input_U0                                                     | 33   | 73   |     |      |      |     |        |      |         |          |        |
+|   start_for_compute_U0_U                                            |      |      |     |      |      |     |        |      |         |          |        |
+|   start_for_write_output_U0_U                                       |      |      |     |      |      |     |        |      |         |          |        |
+|   write_output_U0                                                   | 29   | 132  |     |      |      |     |        |      |         |          |        |
++---------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 3.76%  | OK     |
+| FD                                                        | 50%       | 2.11%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 0.58%  | OK     |
+| CARRY8                                                    | 25%       | 1.36%  | OK     |
+| MUXF7                                                     | 15%       | 0.00%  | OK     |
+| DSP                                                       | 80%       | 1.11%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 41.44% | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 21.27% | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 1323      | 129    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 2.31   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.350ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.239ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+-------+--------------------------------------------+--------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                             | ENDPOINT PIN                               | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                            |                                            |              |            |                |          DELAY |        DELAY |
++-------+-------+--------------------------------------------+--------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 2.826 | compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK | compute_U0/cur_U/ram_reg_bram_0/DINADIN[3] |            8 |         32 |          6.796 |          2.798 |        3.998 |
+| Path2 | 2.900 | compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK | compute_U0/cur_U/ram_reg_bram_1/DINADIN[3] |            8 |         32 |          6.722 |          2.798 |        3.924 |
+| Path3 | 2.931 | compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK | compute_U0/cur_U/ram_reg_bram_2/DINADIN[3] |            8 |         32 |          6.691 |          2.798 |        3.893 |
+| Path4 | 2.952 | compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK | compute_U0/cur_U/ram_reg_bram_1/DINADIN[4] |            8 |         32 |          6.650 |          2.706 |        3.944 |
+| Path5 | 2.997 | compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK | compute_U0/cur_U/ram_reg_bram_3/DINADIN[3] |            8 |         32 |          6.626 |          2.798 |        3.828 |
++-------+-------+--------------------------------------------+--------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +--------------------------------------+------------------------+
+    | Path1 Cells                          | Primitive Type         |
+    +--------------------------------------+------------------------+
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_0      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_2      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_36 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_3      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------+------------------------+
+
+    +--------------------------------------+------------------------+
+    | Path2 Cells                          | Primitive Type         |
+    +--------------------------------------+------------------------+
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_0      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_2      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_36 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_3      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------+------------------------+
+
+    +--------------------------------------+------------------------+
+    | Path3 Cells                          | Primitive Type         |
+    +--------------------------------------+------------------------+
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_0      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_2      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_36 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_3      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------+------------------------+
+
+    +--------------------------------------+------------------------+
+    | Path4 Cells                          | Primitive Type         |
+    +--------------------------------------+------------------------+
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_0      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_2      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_36 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_3      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------+------------------------+
+
+    +--------------------------------------+------------------------+
+    | Path5 Cells                          | Primitive Type         |
+    +--------------------------------------+------------------------+
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_0      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_2      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_36 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_1      | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_24     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_25     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_26     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_27     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_28     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_29     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_30     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_31     | BLOCKRAM.BRAM.RAMB36E2 |
+    | compute_U0/nxt_U/ram_reg_bram_0_i_37 | CLB.LUT.LUT6           |
+    | compute_U0/cur_U/ram_reg_bram_3      | BLOCKRAM.BRAM.RAMB36E2 |
+    +--------------------------------------+------------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+--------------------------------------------------------------------+
+| Report Type              | Report Location                                                    |
++--------------------------+--------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/top_kernel_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/top_kernel_failfast_routed.rpt                 |
+| power                    | impl/verilog/report/top_kernel_power_routed.rpt                    |
+| status                   | impl/verilog/report/top_kernel_status_routed.rpt                   |
+| timing                   | impl/verilog/report/top_kernel_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/top_kernel_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/top_kernel_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/top_kernel_utilization_hierarchical_routed.rpt |
++--------------------------+--------------------------------------------------------------------+
+
+

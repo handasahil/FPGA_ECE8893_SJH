@@ -4,9 +4,10 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
     input dl_reset,
     input dl_clock,
     input [PROC_NUM - 1:0] dl_in_vec,
-    input ap_done_reg_0,
-    input ap_done_reg_1,
-    input ap_done_reg_2,
+    input [15:0] trans_in_cnt_0,
+    input [15:0] trans_out_cnt_0,
+    input [15:0] trans_in_cnt_1,
+    input [15:0] trans_out_cnt_1,
     output dl_detect_out,
     output reg [PROC_NUM - 1:0] origin,
     output token_clear);
@@ -296,7 +297,7 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
 
     // print one channel component in the cycle
     task print_cycle_chan_comp(input [PROC_NUM - 1:0] dl_vec1, input [PROC_NUM - 1:0] dl_vec2);
-        reg [280:0] chan_path;
+        reg [384:0] chan_path;
         integer index1;
         integer index2;
         begin
@@ -320,6 +321,11 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
+// for dep channel 'top_kernel.start_for_write_output_U0_U' info is :
+// blk sig is {{~AESL_inst_top_kernel.start_for_write_output_U0_U.if_full_n & AESL_inst_top_kernel.entry_proc_U0.ap_start & ~AESL_inst_top_kernel.entry_proc_U0.real_start & (trans_in_cnt_1 == trans_out_cnt_1) & ~AESL_inst_top_kernel.start_for_write_output_U0_U.if_read} start_FIFO}
+                        if ((~AESL_inst_top_kernel.start_for_write_output_U0_U.if_full_n & AESL_inst_top_kernel.entry_proc_U0.ap_start & ~AESL_inst_top_kernel.entry_proc_U0.real_start & (trans_in_cnt_1 == trans_out_cnt_1) & ~AESL_inst_top_kernel.start_for_write_output_U0_U.if_read)) begin
+                            $display("//      Blocked by full output start propagation FIFO 'top_kernel.start_for_write_output_U0_U' read by process 'top_kernel.write_output_U0',");
+                        end
                     end
                     1: begin //  for dep proc 'top_kernel.read_input_U0'
 // for dep channel '' info is :
@@ -334,18 +340,23 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                     case(index2)
                     2: begin //  for dep proc 'top_kernel.compute_U0'
 // for dep channel 'top_kernel.grid_initial_U' info is :
-// blk sig is {{~AESL_inst_top_kernel.grid_initial_U.i_full_n & AESL_inst_top_kernel.read_input_U0.ap_done & ap_done_reg_0 & ~AESL_inst_top_kernel.grid_initial_U.t_read} data_PIPO}
-                        if ((~AESL_inst_top_kernel.grid_initial_U.i_full_n & AESL_inst_top_kernel.read_input_U0.ap_done & ap_done_reg_0 & ~AESL_inst_top_kernel.grid_initial_U.t_read)) begin
-                            if (~AESL_inst_top_kernel.grid_initial_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel.grid_initial_U' written by process 'top_kernel.compute_U0'");
+// blk sig is {~AESL_inst_top_kernel.read_input_U0.grid_initial_blk_n data_FIFO}
+                        if ((~AESL_inst_top_kernel.read_input_U0.grid_initial_blk_n)) begin
+                            if (~AESL_inst_top_kernel.grid_initial_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel.grid_initial_U' written by process 'top_kernel.compute_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_initial_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~AESL_inst_top_kernel.grid_initial_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel.grid_initial_U' read by process 'top_kernel.compute_U0'");
+                            else if (~AESL_inst_top_kernel.grid_initial_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel.grid_initial_U' read by process 'top_kernel.compute_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_initial_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
+                        end
+// for dep channel 'top_kernel.start_for_compute_U0_U' info is :
+// blk sig is {{~AESL_inst_top_kernel.start_for_compute_U0_U.if_full_n & AESL_inst_top_kernel.read_input_U0.ap_start & ~AESL_inst_top_kernel.read_input_U0.real_start & (trans_in_cnt_0 == trans_out_cnt_0) & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_read} start_FIFO}
+                        if ((~AESL_inst_top_kernel.start_for_compute_U0_U.if_full_n & AESL_inst_top_kernel.read_input_U0.ap_start & ~AESL_inst_top_kernel.read_input_U0.real_start & (trans_in_cnt_0 == trans_out_cnt_0) & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_read)) begin
+                            $display("//      Blocked by full output start propagation FIFO 'top_kernel.start_for_compute_U0_U' read by process 'top_kernel.compute_U0',");
                         end
                     end
                     0: begin //  for dep proc 'top_kernel.entry_proc_U0'
@@ -361,31 +372,36 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                     case(index2)
                     1: begin //  for dep proc 'top_kernel.read_input_U0'
 // for dep channel 'top_kernel.grid_initial_U' info is :
-// blk sig is {{~AESL_inst_top_kernel.grid_initial_U.t_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.grid_initial_U.i_write} data_PIPO}
-                        if ((~AESL_inst_top_kernel.grid_initial_U.t_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.grid_initial_U.i_write)) begin
-                            if (~AESL_inst_top_kernel.grid_initial_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel.grid_initial_U' written by process 'top_kernel.read_input_U0'");
+// blk sig is {~AESL_inst_top_kernel.compute_U0.grid_initial_blk_n data_FIFO}
+                        if ((~AESL_inst_top_kernel.compute_U0.grid_initial_blk_n)) begin
+                            if (~AESL_inst_top_kernel.grid_initial_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel.grid_initial_U' written by process 'top_kernel.read_input_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_initial_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~AESL_inst_top_kernel.grid_initial_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel.grid_initial_U' read by process 'top_kernel.read_input_U0'");
+                            else if (~AESL_inst_top_kernel.grid_initial_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel.grid_initial_U' read by process 'top_kernel.read_input_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_initial_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
+// for dep channel 'top_kernel.start_for_compute_U0_U' info is :
+// blk sig is {{~AESL_inst_top_kernel.start_for_compute_U0_U.if_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_write} start_FIFO}
+                        if ((~AESL_inst_top_kernel.start_for_compute_U0_U.if_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_write)) begin
+                            $display("//      Blocked by missing 'ap_start' from start propagation FIFO 'top_kernel.start_for_compute_U0_U' written by process 'top_kernel.read_input_U0',");
+                        end
                     end
                     3: begin //  for dep proc 'top_kernel.write_output_U0'
 // for dep channel 'top_kernel.grid_final_U' info is :
-// blk sig is {{~AESL_inst_top_kernel.grid_final_U.i_full_n & AESL_inst_top_kernel.compute_U0.ap_done & ap_done_reg_1 & ~AESL_inst_top_kernel.grid_final_U.t_read} data_PIPO}
-                        if ((~AESL_inst_top_kernel.grid_final_U.i_full_n & AESL_inst_top_kernel.compute_U0.ap_done & ap_done_reg_1 & ~AESL_inst_top_kernel.grid_final_U.t_read)) begin
-                            if (~AESL_inst_top_kernel.grid_final_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel.grid_final_U' written by process 'top_kernel.write_output_U0'");
+// blk sig is {~AESL_inst_top_kernel.compute_U0.grid_final_blk_n data_FIFO}
+                        if ((~AESL_inst_top_kernel.compute_U0.grid_final_blk_n)) begin
+                            if (~AESL_inst_top_kernel.grid_final_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel.grid_final_U' written by process 'top_kernel.write_output_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_final_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~AESL_inst_top_kernel.grid_final_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel.grid_final_U' read by process 'top_kernel.write_output_U0'");
+                            else if (~AESL_inst_top_kernel.grid_final_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel.grid_final_U' read by process 'top_kernel.write_output_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_final_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
@@ -397,15 +413,15 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                     case(index2)
                     2: begin //  for dep proc 'top_kernel.compute_U0'
 // for dep channel 'top_kernel.grid_final_U' info is :
-// blk sig is {{~AESL_inst_top_kernel.grid_final_U.t_empty_n & AESL_inst_top_kernel.write_output_U0.ap_idle & ~AESL_inst_top_kernel.grid_final_U.i_write} data_PIPO}
-                        if ((~AESL_inst_top_kernel.grid_final_U.t_empty_n & AESL_inst_top_kernel.write_output_U0.ap_idle & ~AESL_inst_top_kernel.grid_final_U.i_write)) begin
-                            if (~AESL_inst_top_kernel.grid_final_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel.grid_final_U' written by process 'top_kernel.compute_U0'");
+// blk sig is {~AESL_inst_top_kernel.write_output_U0.grid_final_blk_n data_FIFO}
+                        if ((~AESL_inst_top_kernel.write_output_U0.grid_final_blk_n)) begin
+                            if (~AESL_inst_top_kernel.grid_final_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel.grid_final_U' written by process 'top_kernel.compute_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_final_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~AESL_inst_top_kernel.grid_final_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel.grid_final_U' read by process 'top_kernel.compute_U0'");
+                            else if (~AESL_inst_top_kernel.grid_final_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel.grid_final_U' read by process 'top_kernel.compute_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_final_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
@@ -425,6 +441,11 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.A_out_r_c_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
+                        end
+// for dep channel 'top_kernel.start_for_write_output_U0_U' info is :
+// blk sig is {{~AESL_inst_top_kernel.start_for_write_output_U0_U.if_empty_n & AESL_inst_top_kernel.write_output_U0.ap_idle & ~AESL_inst_top_kernel.start_for_write_output_U0_U.if_write} start_FIFO}
+                        if ((~AESL_inst_top_kernel.start_for_write_output_U0_U.if_empty_n & AESL_inst_top_kernel.write_output_U0.ap_idle & ~AESL_inst_top_kernel.start_for_write_output_U0_U.if_write)) begin
+                            $display("//      Blocked by missing 'ap_start' from start propagation FIFO 'top_kernel.start_for_write_output_U0_U' written by process 'top_kernel.entry_proc_U0',");
                         end
                     end
                     endcase

@@ -35,8 +35,6 @@ generic (
     C_M_AXI_A_OUT_PROT_VALUE : INTEGER := 0;
     C_M_AXI_A_OUT_CACHE_VALUE : INTEGER := 3 );
 port (
-    ap_clk : IN STD_LOGIC;
-    ap_rst_n : IN STD_LOGIC;
     s_axi_control_AWVALID : IN STD_LOGIC;
     s_axi_control_AWREADY : OUT STD_LOGIC;
     s_axi_control_AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_CONTROL_ADDR_WIDTH-1 downto 0);
@@ -54,6 +52,8 @@ port (
     s_axi_control_BVALID : OUT STD_LOGIC;
     s_axi_control_BREADY : IN STD_LOGIC;
     s_axi_control_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
+    ap_clk : IN STD_LOGIC;
+    ap_rst_n : IN STD_LOGIC;
     interrupt : OUT STD_LOGIC;
     m_axi_A_in_AWVALID : OUT STD_LOGIC;
     m_axi_A_in_AWREADY : IN STD_LOGIC;
@@ -151,12 +151,11 @@ end;
 architecture behav of top_kernel is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=4311956,HLS_SYN_TPT=4049282,HLS_SYN_MEM=550,HLS_SYN_DSP=0,HLS_SYN_FF=5252,HLS_SYN_LUT=8361,HLS_VERSION=2025_1_1}";
-    constant ap_const_logic_1 : STD_LOGIC := '1';
+    "top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=6272825,HLS_SYN_TPT=6142256,HLS_SYN_MEM=180,HLS_SYN_DSP=0,HLS_SYN_FF=2881,HLS_SYN_LUT=4006,HLS_VERSION=2025_1_1}";
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
+    constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_const_lv24_0 : STD_LOGIC_VECTOR (23 downto 0) := "000000000000000000000000";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
@@ -166,10 +165,6 @@ architecture behav of top_kernel is
     constant ap_const_boolean_1 : BOOLEAN := true;
 
     signal ap_rst_n_inv : STD_LOGIC;
-    signal grid_initial_i_q0 : STD_LOGIC_VECTOR (23 downto 0);
-    signal grid_initial_t_q0 : STD_LOGIC_VECTOR (23 downto 0);
-    signal grid_final_i_q0 : STD_LOGIC_VECTOR (23 downto 0);
-    signal grid_final_t_q0 : STD_LOGIC_VECTOR (23 downto 0);
     signal A_in_r : STD_LOGIC_VECTOR (63 downto 0);
     signal A_out_r : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_start : STD_LOGIC;
@@ -202,6 +197,8 @@ architecture behav of top_kernel is
     signal entry_proc_U0_ap_continue : STD_LOGIC;
     signal entry_proc_U0_ap_idle : STD_LOGIC;
     signal entry_proc_U0_ap_ready : STD_LOGIC;
+    signal entry_proc_U0_start_out : STD_LOGIC;
+    signal entry_proc_U0_start_write : STD_LOGIC;
     signal entry_proc_U0_A_out_r_c_din : STD_LOGIC_VECTOR (63 downto 0);
     signal entry_proc_U0_A_out_r_c_write : STD_LOGIC;
     signal read_input_U0_ap_start : STD_LOGIC;
@@ -209,6 +206,8 @@ architecture behav of top_kernel is
     signal read_input_U0_ap_continue : STD_LOGIC;
     signal read_input_U0_ap_idle : STD_LOGIC;
     signal read_input_U0_ap_ready : STD_LOGIC;
+    signal read_input_U0_start_out : STD_LOGIC;
+    signal read_input_U0_start_write : STD_LOGIC;
     signal read_input_U0_m_axi_A_in_0_AWVALID : STD_LOGIC;
     signal read_input_U0_m_axi_A_in_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal read_input_U0_m_axi_A_in_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
@@ -241,27 +240,22 @@ architecture behav of top_kernel is
     signal read_input_U0_m_axi_A_in_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal read_input_U0_m_axi_A_in_0_RREADY : STD_LOGIC;
     signal read_input_U0_m_axi_A_in_0_BREADY : STD_LOGIC;
-    signal read_input_U0_stream_out_address0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal read_input_U0_stream_out_ce0 : STD_LOGIC;
-    signal read_input_U0_stream_out_we0 : STD_LOGIC;
-    signal read_input_U0_stream_out_d0 : STD_LOGIC_VECTOR (23 downto 0);
+    signal read_input_U0_grid_initial_din : STD_LOGIC_VECTOR (23 downto 0);
+    signal read_input_U0_grid_initial_write : STD_LOGIC;
     signal compute_U0_ap_start : STD_LOGIC;
     signal compute_U0_ap_done : STD_LOGIC;
     signal compute_U0_ap_continue : STD_LOGIC;
     signal compute_U0_ap_idle : STD_LOGIC;
     signal compute_U0_ap_ready : STD_LOGIC;
-    signal compute_U0_stream_in_address0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal compute_U0_stream_in_ce0 : STD_LOGIC;
-    signal compute_U0_stream_out_address0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal compute_U0_stream_out_ce0 : STD_LOGIC;
-    signal compute_U0_stream_out_we0 : STD_LOGIC;
-    signal compute_U0_stream_out_d0 : STD_LOGIC_VECTOR (23 downto 0);
+    signal compute_U0_grid_initial_read : STD_LOGIC;
+    signal compute_U0_grid_final_din : STD_LOGIC_VECTOR (23 downto 0);
+    signal compute_U0_grid_final_write : STD_LOGIC;
     signal write_output_U0_ap_start : STD_LOGIC;
     signal write_output_U0_ap_done : STD_LOGIC;
     signal write_output_U0_ap_continue : STD_LOGIC;
     signal write_output_U0_ap_idle : STD_LOGIC;
     signal write_output_U0_ap_ready : STD_LOGIC;
-    signal write_output_U0_A_out1_read : STD_LOGIC;
+    signal write_output_U0_grid_final_read : STD_LOGIC;
     signal write_output_U0_m_axi_A_out_0_AWVALID : STD_LOGIC;
     signal write_output_U0_m_axi_A_out_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal write_output_U0_m_axi_A_out_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
@@ -294,22 +288,35 @@ architecture behav of top_kernel is
     signal write_output_U0_m_axi_A_out_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal write_output_U0_m_axi_A_out_0_RREADY : STD_LOGIC;
     signal write_output_U0_m_axi_A_out_0_BREADY : STD_LOGIC;
-    signal write_output_U0_stream_in_address0 : STD_LOGIC_VECTOR (15 downto 0);
-    signal write_output_U0_stream_in_ce0 : STD_LOGIC;
-    signal grid_initial_i_full_n : STD_LOGIC;
-    signal grid_initial_t_empty_n : STD_LOGIC;
-    signal grid_final_i_full_n : STD_LOGIC;
-    signal grid_final_t_empty_n : STD_LOGIC;
+    signal write_output_U0_A_out1_read : STD_LOGIC;
     signal A_out_r_c_full_n : STD_LOGIC;
     signal A_out_r_c_dout : STD_LOGIC_VECTOR (63 downto 0);
     signal A_out_r_c_empty_n : STD_LOGIC;
     signal A_out_r_c_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
     signal A_out_r_c_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal grid_initial_full_n : STD_LOGIC;
+    signal grid_initial_dout : STD_LOGIC_VECTOR (23 downto 0);
+    signal grid_initial_empty_n : STD_LOGIC;
+    signal grid_initial_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal grid_initial_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal grid_final_full_n : STD_LOGIC;
+    signal grid_final_dout : STD_LOGIC_VECTOR (23 downto 0);
+    signal grid_final_empty_n : STD_LOGIC;
+    signal grid_final_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal grid_final_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_sync_ready : STD_LOGIC;
     signal ap_sync_reg_entry_proc_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_entry_proc_U0_ap_ready : STD_LOGIC;
     signal ap_sync_reg_read_input_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_read_input_U0_ap_ready : STD_LOGIC;
+    signal start_for_write_output_U0_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_write_output_U0_full_n : STD_LOGIC;
+    signal start_for_write_output_U0_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_write_output_U0_empty_n : STD_LOGIC;
+    signal start_for_compute_U0_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_compute_U0_full_n : STD_LOGIC;
+    signal start_for_compute_U0_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_compute_U0_empty_n : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
     component top_kernel_entry_proc IS
@@ -317,10 +324,13 @@ architecture behav of top_kernel is
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
+        start_full_n : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
+        start_out : OUT STD_LOGIC;
+        start_write : OUT STD_LOGIC;
         A_out_r : IN STD_LOGIC_VECTOR (63 downto 0);
         A_out_r_c_din : OUT STD_LOGIC_VECTOR (63 downto 0);
         A_out_r_c_full_n : IN STD_LOGIC;
@@ -335,10 +345,13 @@ architecture behav of top_kernel is
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
+        start_full_n : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
+        start_out : OUT STD_LOGIC;
+        start_write : OUT STD_LOGIC;
         m_axi_A_in_0_AWVALID : OUT STD_LOGIC;
         m_axi_A_in_0_AWREADY : IN STD_LOGIC;
         m_axi_A_in_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
@@ -386,10 +399,11 @@ architecture behav of top_kernel is
         m_axi_A_in_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_A_in_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         A_in1 : IN STD_LOGIC_VECTOR (63 downto 0);
-        stream_out_address0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        stream_out_ce0 : OUT STD_LOGIC;
-        stream_out_we0 : OUT STD_LOGIC;
-        stream_out_d0 : OUT STD_LOGIC_VECTOR (23 downto 0) );
+        grid_initial_din : OUT STD_LOGIC_VECTOR (23 downto 0);
+        grid_initial_full_n : IN STD_LOGIC;
+        grid_initial_write : OUT STD_LOGIC;
+        grid_initial_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        grid_initial_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
     end component;
 
 
@@ -402,13 +416,16 @@ architecture behav of top_kernel is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        stream_in_address0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        stream_in_ce0 : OUT STD_LOGIC;
-        stream_in_q0 : IN STD_LOGIC_VECTOR (23 downto 0);
-        stream_out_address0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        stream_out_ce0 : OUT STD_LOGIC;
-        stream_out_we0 : OUT STD_LOGIC;
-        stream_out_d0 : OUT STD_LOGIC_VECTOR (23 downto 0) );
+        grid_initial_dout : IN STD_LOGIC_VECTOR (23 downto 0);
+        grid_initial_empty_n : IN STD_LOGIC;
+        grid_initial_read : OUT STD_LOGIC;
+        grid_initial_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        grid_initial_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        grid_final_din : OUT STD_LOGIC_VECTOR (23 downto 0);
+        grid_final_full_n : IN STD_LOGIC;
+        grid_final_write : OUT STD_LOGIC;
+        grid_final_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        grid_final_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
     end component;
 
 
@@ -421,11 +438,11 @@ architecture behav of top_kernel is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        A_out1_dout : IN STD_LOGIC_VECTOR (63 downto 0);
-        A_out1_empty_n : IN STD_LOGIC;
-        A_out1_read : OUT STD_LOGIC;
-        A_out1_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        A_out1_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        grid_final_dout : IN STD_LOGIC_VECTOR (23 downto 0);
+        grid_final_empty_n : IN STD_LOGIC;
+        grid_final_read : OUT STD_LOGIC;
+        grid_final_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        grid_final_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
         m_axi_A_out_0_AWVALID : OUT STD_LOGIC;
         m_axi_A_out_0_AWREADY : IN STD_LOGIC;
         m_axi_A_out_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
@@ -472,36 +489,11 @@ architecture behav of top_kernel is
         m_axi_A_out_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_A_out_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_A_out_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        stream_in_address0 : OUT STD_LOGIC_VECTOR (15 downto 0);
-        stream_in_ce0 : OUT STD_LOGIC;
-        stream_in_q0 : IN STD_LOGIC_VECTOR (23 downto 0) );
-    end component;
-
-
-    component top_kernel_grid_initial_RAM_AUTO_1R1W IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        i_address0 : IN STD_LOGIC_VECTOR (15 downto 0);
-        i_ce0 : IN STD_LOGIC;
-        i_we0 : IN STD_LOGIC;
-        i_d0 : IN STD_LOGIC_VECTOR (23 downto 0);
-        i_q0 : OUT STD_LOGIC_VECTOR (23 downto 0);
-        t_address0 : IN STD_LOGIC_VECTOR (15 downto 0);
-        t_ce0 : IN STD_LOGIC;
-        t_we0 : IN STD_LOGIC;
-        t_d0 : IN STD_LOGIC_VECTOR (23 downto 0);
-        t_q0 : OUT STD_LOGIC_VECTOR (23 downto 0);
-        i_ce : IN STD_LOGIC;
-        t_ce : IN STD_LOGIC;
-        i_full_n : OUT STD_LOGIC;
-        i_write : IN STD_LOGIC;
-        t_empty_n : OUT STD_LOGIC;
-        t_read : IN STD_LOGIC );
+        A_out1_dout : IN STD_LOGIC_VECTOR (63 downto 0);
+        A_out1_empty_n : IN STD_LOGIC;
+        A_out1_read : OUT STD_LOGIC;
+        A_out1_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        A_out1_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
     end component;
 
 
@@ -519,6 +511,53 @@ architecture behav of top_kernel is
         if_read : IN STD_LOGIC;
         if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
         if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
+    end component;
+
+
+    component top_kernel_fifo_w24_d2_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (23 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (23 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC;
+        if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
+        if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
+    end component;
+
+
+    component top_kernel_start_for_write_output_U0 IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component top_kernel_start_for_compute_U0 IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
     end component;
 
 
@@ -747,56 +786,6 @@ architecture behav of top_kernel is
 
 
 begin
-    grid_initial_U : component top_kernel_grid_initial_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 24,
-        AddressRange => 65536,
-        AddressWidth => 16)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => read_input_U0_stream_out_address0,
-        i_ce0 => read_input_U0_stream_out_ce0,
-        i_we0 => read_input_U0_stream_out_we0,
-        i_d0 => read_input_U0_stream_out_d0,
-        i_q0 => grid_initial_i_q0,
-        t_address0 => compute_U0_stream_in_address0,
-        t_ce0 => compute_U0_stream_in_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv24_0,
-        t_q0 => grid_initial_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => grid_initial_i_full_n,
-        i_write => read_input_U0_ap_done,
-        t_empty_n => grid_initial_t_empty_n,
-        t_read => compute_U0_ap_ready);
-
-    grid_final_U : component top_kernel_grid_initial_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 24,
-        AddressRange => 65536,
-        AddressWidth => 16)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => compute_U0_stream_out_address0,
-        i_ce0 => compute_U0_stream_out_ce0,
-        i_we0 => compute_U0_stream_out_we0,
-        i_d0 => compute_U0_stream_out_d0,
-        i_q0 => grid_final_i_q0,
-        t_address0 => write_output_U0_stream_in_address0,
-        t_ce0 => write_output_U0_stream_in_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv24_0,
-        t_q0 => grid_final_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => grid_final_i_full_n,
-        i_write => compute_U0_ap_done,
-        t_empty_n => grid_final_t_empty_n,
-        t_read => write_output_U0_ap_ready);
-
     control_s_axi_U : component top_kernel_control_s_axi
     generic map (
         C_S_AXI_ADDR_WIDTH => C_S_AXI_CONTROL_ADDR_WIDTH,
@@ -1019,10 +1008,13 @@ begin
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
         ap_start => entry_proc_U0_ap_start,
+        start_full_n => start_for_write_output_U0_full_n,
         ap_done => entry_proc_U0_ap_done,
         ap_continue => entry_proc_U0_ap_continue,
         ap_idle => entry_proc_U0_ap_idle,
         ap_ready => entry_proc_U0_ap_ready,
+        start_out => entry_proc_U0_start_out,
+        start_write => entry_proc_U0_start_write,
         A_out_r => A_out_r,
         A_out_r_c_din => entry_proc_U0_A_out_r_c_din,
         A_out_r_c_full_n => A_out_r_c_full_n,
@@ -1035,10 +1027,13 @@ begin
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
         ap_start => read_input_U0_ap_start,
+        start_full_n => start_for_compute_U0_full_n,
         ap_done => read_input_U0_ap_done,
         ap_continue => read_input_U0_ap_continue,
         ap_idle => read_input_U0_ap_idle,
         ap_ready => read_input_U0_ap_ready,
+        start_out => read_input_U0_start_out,
+        start_write => read_input_U0_start_write,
         m_axi_A_in_0_AWVALID => read_input_U0_m_axi_A_in_0_AWVALID,
         m_axi_A_in_0_AWREADY => ap_const_logic_0,
         m_axi_A_in_0_AWADDR => read_input_U0_m_axi_A_in_0_AWADDR,
@@ -1086,10 +1081,11 @@ begin
         m_axi_A_in_0_BID => ap_const_lv1_0,
         m_axi_A_in_0_BUSER => ap_const_lv1_0,
         A_in1 => A_in_r,
-        stream_out_address0 => read_input_U0_stream_out_address0,
-        stream_out_ce0 => read_input_U0_stream_out_ce0,
-        stream_out_we0 => read_input_U0_stream_out_we0,
-        stream_out_d0 => read_input_U0_stream_out_d0);
+        grid_initial_din => read_input_U0_grid_initial_din,
+        grid_initial_full_n => grid_initial_full_n,
+        grid_initial_write => read_input_U0_grid_initial_write,
+        grid_initial_num_data_valid => grid_initial_num_data_valid,
+        grid_initial_fifo_cap => grid_initial_fifo_cap);
 
     compute_U0 : component top_kernel_compute
     port map (
@@ -1100,13 +1096,16 @@ begin
         ap_continue => compute_U0_ap_continue,
         ap_idle => compute_U0_ap_idle,
         ap_ready => compute_U0_ap_ready,
-        stream_in_address0 => compute_U0_stream_in_address0,
-        stream_in_ce0 => compute_U0_stream_in_ce0,
-        stream_in_q0 => grid_initial_t_q0,
-        stream_out_address0 => compute_U0_stream_out_address0,
-        stream_out_ce0 => compute_U0_stream_out_ce0,
-        stream_out_we0 => compute_U0_stream_out_we0,
-        stream_out_d0 => compute_U0_stream_out_d0);
+        grid_initial_dout => grid_initial_dout,
+        grid_initial_empty_n => grid_initial_empty_n,
+        grid_initial_read => compute_U0_grid_initial_read,
+        grid_initial_num_data_valid => grid_initial_num_data_valid,
+        grid_initial_fifo_cap => grid_initial_fifo_cap,
+        grid_final_din => compute_U0_grid_final_din,
+        grid_final_full_n => grid_final_full_n,
+        grid_final_write => compute_U0_grid_final_write,
+        grid_final_num_data_valid => grid_final_num_data_valid,
+        grid_final_fifo_cap => grid_final_fifo_cap);
 
     write_output_U0 : component top_kernel_write_output
     port map (
@@ -1117,11 +1116,11 @@ begin
         ap_continue => write_output_U0_ap_continue,
         ap_idle => write_output_U0_ap_idle,
         ap_ready => write_output_U0_ap_ready,
-        A_out1_dout => A_out_r_c_dout,
-        A_out1_empty_n => A_out_r_c_empty_n,
-        A_out1_read => write_output_U0_A_out1_read,
-        A_out1_num_data_valid => A_out_r_c_num_data_valid,
-        A_out1_fifo_cap => A_out_r_c_fifo_cap,
+        grid_final_dout => grid_final_dout,
+        grid_final_empty_n => grid_final_empty_n,
+        grid_final_read => write_output_U0_grid_final_read,
+        grid_final_num_data_valid => grid_final_num_data_valid,
+        grid_final_fifo_cap => grid_final_fifo_cap,
         m_axi_A_out_0_AWVALID => write_output_U0_m_axi_A_out_0_AWVALID,
         m_axi_A_out_0_AWREADY => A_out_0_AWREADY,
         m_axi_A_out_0_AWADDR => write_output_U0_m_axi_A_out_0_AWADDR,
@@ -1168,9 +1167,11 @@ begin
         m_axi_A_out_0_BRESP => A_out_0_BRESP,
         m_axi_A_out_0_BID => A_out_0_BID,
         m_axi_A_out_0_BUSER => A_out_0_BUSER,
-        stream_in_address0 => write_output_U0_stream_in_address0,
-        stream_in_ce0 => write_output_U0_stream_in_ce0,
-        stream_in_q0 => grid_final_t_q0);
+        A_out1_dout => A_out_r_c_dout,
+        A_out1_empty_n => A_out_r_c_empty_n,
+        A_out1_read => write_output_U0_A_out1_read,
+        A_out1_num_data_valid => A_out_r_c_num_data_valid,
+        A_out1_fifo_cap => A_out_r_c_fifo_cap);
 
     A_out_r_c_U : component top_kernel_fifo_w64_d4_S
     port map (
@@ -1186,6 +1187,62 @@ begin
         if_read => write_output_U0_A_out1_read,
         if_num_data_valid => A_out_r_c_num_data_valid,
         if_fifo_cap => A_out_r_c_fifo_cap);
+
+    grid_initial_U : component top_kernel_fifo_w24_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => read_input_U0_grid_initial_din,
+        if_full_n => grid_initial_full_n,
+        if_write => read_input_U0_grid_initial_write,
+        if_dout => grid_initial_dout,
+        if_empty_n => grid_initial_empty_n,
+        if_read => compute_U0_grid_initial_read,
+        if_num_data_valid => grid_initial_num_data_valid,
+        if_fifo_cap => grid_initial_fifo_cap);
+
+    grid_final_U : component top_kernel_fifo_w24_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => compute_U0_grid_final_din,
+        if_full_n => grid_final_full_n,
+        if_write => compute_U0_grid_final_write,
+        if_dout => grid_final_dout,
+        if_empty_n => grid_final_empty_n,
+        if_read => write_output_U0_grid_final_read,
+        if_num_data_valid => grid_final_num_data_valid,
+        if_fifo_cap => grid_final_fifo_cap);
+
+    start_for_write_output_U0_U : component top_kernel_start_for_write_output_U0
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => start_for_write_output_U0_din,
+        if_full_n => start_for_write_output_U0_full_n,
+        if_write => entry_proc_U0_start_write,
+        if_dout => start_for_write_output_U0_dout,
+        if_empty_n => start_for_write_output_U0_empty_n,
+        if_read => write_output_U0_ap_ready);
+
+    start_for_compute_U0_U : component top_kernel_start_for_compute_U0
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => start_for_compute_U0_din,
+        if_full_n => start_for_compute_U0_full_n,
+        if_write => read_input_U0_start_write,
+        if_dout => start_for_compute_U0_dout,
+        if_empty_n => start_for_compute_U0_empty_n,
+        if_read => compute_U0_ap_ready);
 
 
 
@@ -1230,7 +1287,7 @@ begin
     A_out_0_BRESP <= ap_const_lv2_0;
     A_out_0_BUSER <= ap_const_lv1_0;
     ap_done <= write_output_U0_ap_done;
-    ap_idle <= (write_output_U0_ap_idle and read_input_U0_ap_idle and (grid_final_t_empty_n xor ap_const_logic_1) and (grid_initial_t_empty_n xor ap_const_logic_1) and entry_proc_U0_ap_idle and compute_U0_ap_idle);
+    ap_idle <= (write_output_U0_ap_idle and read_input_U0_ap_idle and entry_proc_U0_ap_idle and compute_U0_ap_idle);
     ap_ready <= ap_sync_ready;
 
     ap_rst_n_inv_assign_proc : process(ap_rst_n)
@@ -1241,12 +1298,14 @@ begin
     ap_sync_entry_proc_U0_ap_ready <= (entry_proc_U0_ap_ready or ap_sync_reg_entry_proc_U0_ap_ready);
     ap_sync_read_input_U0_ap_ready <= (read_input_U0_ap_ready or ap_sync_reg_read_input_U0_ap_ready);
     ap_sync_ready <= (ap_sync_read_input_U0_ap_ready and ap_sync_entry_proc_U0_ap_ready);
-    compute_U0_ap_continue <= grid_final_i_full_n;
-    compute_U0_ap_start <= grid_initial_t_empty_n;
+    compute_U0_ap_continue <= ap_const_logic_1;
+    compute_U0_ap_start <= start_for_compute_U0_empty_n;
     entry_proc_U0_ap_continue <= ap_const_logic_1;
     entry_proc_U0_ap_start <= ((ap_sync_reg_entry_proc_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
-    read_input_U0_ap_continue <= grid_initial_i_full_n;
+    read_input_U0_ap_continue <= ap_const_logic_1;
     read_input_U0_ap_start <= ((ap_sync_reg_read_input_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
+    start_for_compute_U0_din <= (0=>ap_const_logic_1, others=>'-');
+    start_for_write_output_U0_din <= (0=>ap_const_logic_1, others=>'-');
     write_output_U0_ap_continue <= ap_const_logic_1;
-    write_output_U0_ap_start <= grid_final_t_empty_n;
+    write_output_U0_ap_start <= start_for_write_output_U0_empty_n;
 end behav;
