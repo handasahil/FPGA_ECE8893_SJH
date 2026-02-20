@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'read_input'
 ================================================================
-* Date:           Fri Feb 20 11:30:59 2026
+* Date:           Fri Feb 20 12:00:27 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -25,24 +25,25 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-------+-------+------------------------------------------------+
-    |  Latency (cycles) |  Latency (absolute) |    Interval   |                    Pipeline                    |
-    |   min   |   max   |    min   |    max   |  min  |  max  |                      Type                      |
-    +---------+---------+----------+----------+-------+-------+------------------------------------------------+
-    |    65547|    65547|  0.655 ms|  0.655 ms|  65536|  65536|  loop auto-rewind stp (delay=0 clock cycles(s))|
-    +---------+---------+----------+----------+-------+-------+------------------------------------------------+
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   197128|   197128|  1.971 ms|  1.971 ms|  197128|  197128|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +---------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
-        |                                 |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
-        |            Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
-        +---------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
-        |- VITIS_LOOP_7_1_VITIS_LOOP_8_2  |    65545|    65545|        11|          1|          1|  65536|       yes|
-        +---------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_7_1   |   197120|   197120|       770|          -|          -|   256|        no|
+        | + VITIS_LOOP_8_2  |      768|      768|         3|          -|          -|   256|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -57,7 +58,7 @@ ResetActiveHigh: 1
 IsCombinational: 2
 IsDatapathOnly: 0
 HasWiredReturn: 1
-HasMFsm: 2
+HasMFsm: 0
 HasVarLatency: 1
 IsPipeline: 0
 IsRtlPipelined: 0
@@ -66,16 +67,12 @@ IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
-+ Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 11
-
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 11
-* Pipeline : 1
-  Pipeline-0 : II = 1, D = 11, States = { 1 2 3 4 5 6 7 8 9 10 11 }
+* Number of FSM states : 12
+* Pipeline : 0
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
@@ -88,64 +85,72 @@ IsGatedGlobalClock: 0
 7 --> 8 
 8 --> 9 
 9 --> 10 
-10 --> 11 
-11 --> 
+10 --> 11 9 
+11 --> 12 
+12 --> 10 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 1.99>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%indvar_flatten2 = alloca i32 1"   --->   Operation 14 'alloca' 'indvar_flatten2' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %grid_initial, void @empty_0, i32 0, i32 0, void @empty_15, i32 0, i32 0, void @empty_15, void @empty_15, void @empty_15, i32 0, i32 0, i32 0, i32 0, void @empty_15, void @empty_15, i32 4294967295, i32 0, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A_in, void @empty_14, i32 0, i32 0, void @empty_15, i32 0, i32 0, void @empty_16, void @empty_13, void @empty_15, i32 16, i32 16, i32 16, i32 16, void @empty_15, void @empty_15, i32 4294967295, i32 0, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%A_in1_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %A_in1" [top.cpp:6]   --->   Operation 17 'read' 'A_in1_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.48ns)   --->   "%store_ln0 = store i16 0, i16 %indvar_flatten2"   --->   Operation 18 'store' 'store_ln0' <Predicate = true> <Delay = 0.48>
-ST_1 : Operation 19 [1/1] (0.48ns)   --->   "%br_ln0 = br void %new.header"   --->   Operation 19 'br' 'br_ln0' <Predicate = true> <Delay = 0.48>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%first_iter_0 = phi i1 1, void %entry, i1 0, void %for.inc11"   --->   Operation 20 'phi' 'first_iter_0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %first_iter_0, void %for.inc11, void %for.first.iter.for.inc11"   --->   Operation 21 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%indvar_flatten2_load = load i16 %indvar_flatten2" [top.cpp:7]   --->   Operation 22 'load' 'indvar_flatten2_load' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 23 [1/1] (1.01ns)   --->   "%add_ln7 = add i16 %indvar_flatten2_load, i16 1" [top.cpp:7]   --->   Operation 23 'add' 'add_ln7' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 24 [1/1] (1.01ns)   --->   "%icmp_ln7 = icmp_eq  i16 %indvar_flatten2_load, i16 65535" [top.cpp:7]   --->   Operation 24 'icmp' 'icmp_ln7' <Predicate = true> <Delay = 1.01> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 25 [1/1] (0.48ns)   --->   "%store_ln7 = store i16 %add_ln7, i16 %indvar_flatten2" [top.cpp:7]   --->   Operation 25 'store' 'store_ln7' <Predicate = true> <Delay = 0.48>
-ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln7 = br i1 %icmp_ln7, void %new.header, void %for.end13" [top.cpp:7]   --->   Operation 26 'br' 'br_ln7' <Predicate = true> <Delay = 0.00>
+State 1 <SV = 0> <Delay = 7.30>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [top.cpp:7]   --->   Operation 13 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%A_in1_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %A_in1" [top.cpp:6]   --->   Operation 14 'read' 'A_in1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%trunc_ln7 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %A_in1_read, i32 2, i32 63" [top.cpp:7]   --->   Operation 15 'partselect' 'trunc_ln7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%sext_ln7 = sext i62 %trunc_ln7" [top.cpp:7]   --->   Operation 16 'sext' 'sext_ln7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%A_in_addr = getelementptr i32 %A_in, i64 %sext_ln7" [top.cpp:7]   --->   Operation 17 'getelementptr' 'A_in_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [8/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 18 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_1 : Operation 19 [1/1] (0.48ns)   --->   "%store_ln7 = store i9 0, i9 %i" [top.cpp:7]   --->   Operation 19 'store' 'store_ln7' <Predicate = true> <Delay = 0.48>
 
 State 2 <SV = 1> <Delay = 7.30>
-ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%trunc_ln7 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %A_in1_read, i32 2, i32 63" [top.cpp:7]   --->   Operation 27 'partselect' 'trunc_ln7' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%sext_ln7 = sext i62 %trunc_ln7" [top.cpp:7]   --->   Operation 28 'sext' 'sext_ln7' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%A_in_addr = getelementptr i32 %A_in, i64 %sext_ln7" [top.cpp:7]   --->   Operation 29 'getelementptr' 'A_in_addr' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 30 [8/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 30 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 20 [7/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 20 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 3 <SV = 2> <Delay = 7.30>
-ST_3 : Operation 31 [7/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 31 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 21 [6/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 21 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 4 <SV = 3> <Delay = 7.30>
-ST_4 : Operation 32 [6/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 32 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 22 [5/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 22 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 5 <SV = 4> <Delay = 7.30>
-ST_5 : Operation 33 [5/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 33 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 23 [4/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 23 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 6 <SV = 5> <Delay = 7.30>
-ST_6 : Operation 34 [4/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 34 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 24 [3/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 24 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 7 <SV = 6> <Delay = 7.30>
-ST_7 : Operation 35 [3/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 35 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 25 [2/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 25 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
 
 State 8 <SV = 7> <Delay = 7.30>
-ST_8 : Operation 36 [2/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 36 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %grid_initial, void @empty_1, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A_in, void @empty_2, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_15, void @empty_16, void @empty_14, i32 16, i32 16, i32 16, i32 16, void @empty_14, void @empty_14, i32 4294967295, i32 0, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 28 [1/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 28 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln7 = br void %VITIS_LOOP_8_2" [top.cpp:7]   --->   Operation 29 'br' 'br_ln7' <Predicate = true> <Delay = 0.00>
 
-State 9 <SV = 8> <Delay = 7.30>
-ST_9 : Operation 37 [1/8] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i32, i32 %A_in_addr, i64 65536" [top.cpp:7]   --->   Operation 37 'readreq' 'empty' <Predicate = (first_iter_0)> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_9 : Operation 38 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc11"   --->   Operation 38 'br' 'br_ln0' <Predicate = (first_iter_0)> <Delay = 0.00>
+State 9 <SV = 8> <Delay = 1.40>
+ST_9 : Operation 30 [1/1] (0.00ns)   --->   "%i_1 = load i9 %i" [top.cpp:7]   --->   Operation 30 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 31 [1/1] (0.92ns)   --->   "%icmp_ln7 = icmp_eq  i9 %i_1, i9 256" [top.cpp:7]   --->   Operation 31 'icmp' 'icmp_ln7' <Predicate = true> <Delay = 0.92> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 32 [1/1] (0.92ns)   --->   "%add_ln7 = add i9 %i_1, i9 1" [top.cpp:7]   --->   Operation 32 'add' 'add_ln7' <Predicate = true> <Delay = 0.92> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 33 [1/1] (0.00ns)   --->   "%br_ln7 = br i1 %icmp_ln7, void %VITIS_LOOP_8_2.split, void %for.end13" [top.cpp:7]   --->   Operation 33 'br' 'br_ln7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 34 [1/1] (0.00ns)   --->   "%speclooptripcount_ln7 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256" [top.cpp:7]   --->   Operation 34 'speclooptripcount' 'speclooptripcount_ln7' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_9 : Operation 35 [1/1] (0.00ns)   --->   "%specloopname_ln7 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [top.cpp:7]   --->   Operation 35 'specloopname' 'specloopname_ln7' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_9 : Operation 36 [1/1] (0.48ns)   --->   "%br_ln8 = br void %for.inc" [top.cpp:8]   --->   Operation 36 'br' 'br_ln8' <Predicate = (!icmp_ln7)> <Delay = 0.48>
+ST_9 : Operation 37 [1/1] (0.00ns)   --->   "%ret_ln12 = ret" [top.cpp:12]   --->   Operation 37 'ret' 'ret_ln12' <Predicate = (icmp_ln7)> <Delay = 0.00>
 
-State 10 <SV = 9> <Delay = 7.30>
-ST_10 : Operation 39 [1/1] (7.30ns)   --->   "%A_in_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %A_in_addr" [top.cpp:10]   --->   Operation 39 'read' 'A_in_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
-ST_10 : Operation 40 [1/1] (0.00ns)   --->   "%trunc_ln10 = trunc i32 %A_in_addr_read" [top.cpp:10]   --->   Operation 40 'trunc' 'trunc_ln10' <Predicate = true> <Delay = 0.00>
+State 10 <SV = 9> <Delay = 1.40>
+ST_10 : Operation 38 [1/1] (0.00ns)   --->   "%j = phi i9 0, void %VITIS_LOOP_8_2.split, i9 %add_ln8, void %for.inc.split" [top.cpp:8]   --->   Operation 38 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 39 [1/1] (0.92ns)   --->   "%icmp_ln8 = icmp_eq  i9 %j, i9 256" [top.cpp:8]   --->   Operation 39 'icmp' 'icmp_ln8' <Predicate = true> <Delay = 0.92> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 40 [1/1] (0.92ns)   --->   "%add_ln8 = add i9 %j, i9 1" [top.cpp:8]   --->   Operation 40 'add' 'add_ln8' <Predicate = true> <Delay = 0.92> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.92> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln8 = br i1 %icmp_ln8, void %for.inc.split, void %for.inc11" [top.cpp:8]   --->   Operation 41 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 42 [1/1] (0.48ns)   --->   "%store_ln7 = store i9 %add_ln7, i9 %i" [top.cpp:7]   --->   Operation 42 'store' 'store_ln7' <Predicate = (icmp_ln8)> <Delay = 0.48>
+ST_10 : Operation 43 [1/1] (0.00ns)   --->   "%br_ln7 = br void %VITIS_LOOP_8_2" [top.cpp:7]   --->   Operation 43 'br' 'br_ln7' <Predicate = (icmp_ln8)> <Delay = 0.00>
 
-State 11 <SV = 10> <Delay = 2.16>
-ST_11 : Operation 41 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_7_1_VITIS_LOOP_8_2_str"   --->   Operation 41 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
-ST_11 : Operation 42 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 65536, i64 65536, i64 65536"   --->   Operation 42 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_11 : Operation 43 [1/1] (0.00ns)   --->   "%specpipeline_ln9 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_15" [top.cpp:9]   --->   Operation 43 'specpipeline' 'specpipeline_ln9' <Predicate = true> <Delay = 0.00>
-ST_11 : Operation 44 [1/1] ( I:2.16ns O:2.16ns )   --->   "%write_ln10 = write void @_ssdm_op_Write.ap_fifo.volatile.i24P0A, i24 %grid_initial, i24 %trunc_ln10" [top.cpp:10]   --->   Operation 44 'write' 'write_ln10' <Predicate = true> <Delay = 2.16> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
-ST_11 : Operation 45 [1/1] (0.48ns)   --->   "%ret_ln13 = ret" [top.cpp:13]   --->   Operation 45 'ret' 'ret_ln13' <Predicate = (icmp_ln7)> <Delay = 0.48>
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 44 [1/1] (7.30ns)   --->   "%A_in_addr_read = read i32 @_ssdm_op_Read.m_axi.p1i32, i32 %A_in_addr" [top.cpp:9]   --->   Operation 44 'read' 'A_in_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 119 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 45 [1/1] (0.00ns)   --->   "%trunc_ln9 = trunc i32 %A_in_addr_read" [top.cpp:9]   --->   Operation 45 'trunc' 'trunc_ln9' <Predicate = true> <Delay = 0.00>
+
+State 12 <SV = 11> <Delay = 2.16>
+ST_12 : Operation 46 [1/1] (0.00ns)   --->   "%speclooptripcount_ln8 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256" [top.cpp:8]   --->   Operation 46 'speclooptripcount' 'speclooptripcount_ln8' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 47 [1/1] (0.00ns)   --->   "%specloopname_ln8 = specloopname void @_ssdm_op_SpecLoopName, void @empty_6" [top.cpp:8]   --->   Operation 47 'specloopname' 'specloopname_ln8' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 48 [1/1] ( I:2.16ns O:2.16ns )   --->   "%write_ln9 = write void @_ssdm_op_Write.ap_fifo.volatile.i24P0A, i24 %grid_initial, i24 %trunc_ln9" [top.cpp:9]   --->   Operation 48 'write' 'write_ln9' <Predicate = true> <Delay = 2.16> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.16> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_12 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln8 = br void %for.inc" [top.cpp:8]   --->   Operation 49 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -153,53 +158,59 @@ ST_11 : Operation 45 [1/1] (0.48ns)   --->   "%ret_ln13 = ret" [top.cpp:13]   --
 ============================================================
 Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 
- <State 1>: 1.994ns
+ <State 1>: 7.300ns
 The critical path consists of the following:
-	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten2' [8]  (0.489 ns)
-	'load' operation 16 bit ('indvar_flatten2_load', top.cpp:7) on local variable 'indvar_flatten2' [20]  (0.000 ns)
-	'add' operation 16 bit ('add_ln7', top.cpp:7) [27]  (1.016 ns)
-	'store' operation 0 bit ('store_ln7', top.cpp:7) of variable 'add_ln7', top.cpp:7 on local variable 'indvar_flatten2' [29]  (0.489 ns)
+	wire read operation ('A_in1_read', top.cpp:6) on port 'A_in1' (top.cpp:6) [7]  (0.000 ns)
+	'getelementptr' operation 32 bit ('A_in_addr', top.cpp:7) [10]  (0.000 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 2>: 7.300ns
 The critical path consists of the following:
-	'getelementptr' operation 32 bit ('A_in_addr', top.cpp:7) [14]  (0.000 ns)
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 3>: 7.300ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 4>: 7.300ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 5>: 7.300ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 6>: 7.300ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 7>: 7.300ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
  <State 8>: 7.300ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [11]  (7.300 ns)
 
- <State 9>: 7.300ns
+ <State 9>: 1.410ns
 The critical path consists of the following:
-	bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) [17]  (7.300 ns)
+	'load' operation 9 bit ('i', top.cpp:7) on local variable 'i', top.cpp:7 [15]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln7', top.cpp:7) [16]  (0.921 ns)
+	blocking operation 0.489 ns on control path)
 
- <State 10>: 7.300ns
+ <State 10>: 1.410ns
 The critical path consists of the following:
-	bus read operation ('A_in_addr_read', top.cpp:10) on port 'A_in' (top.cpp:10) [24]  (7.300 ns)
+	'phi' operation 9 bit ('j', top.cpp:8) with incoming values : ('add_ln8', top.cpp:8) [24]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln8', top.cpp:8) [25]  (0.921 ns)
+	blocking operation 0.489 ns on control path)
 
- <State 11>: 2.167ns
+ <State 11>: 7.300ns
 The critical path consists of the following:
-	fifo write operation ('write_ln10', top.cpp:10) on port 'grid_initial' (top.cpp:10) [26]  (2.167 ns)
+	bus read operation ('A_in_addr_read', top.cpp:9) on port 'A_in' (top.cpp:9) [31]  (7.300 ns)
+
+ <State 12>: 2.167ns
+The critical path consists of the following:
+	fifo write operation ('write_ln9', top.cpp:9) on port 'grid_initial' (top.cpp:9) [33]  (2.167 ns)
 
 
 ============================================================
@@ -221,6 +232,7 @@ N/A
 	State 9
 	State 10
 	State 11
+	State 12
 
 
 ============================================================

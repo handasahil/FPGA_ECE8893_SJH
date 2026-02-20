@@ -9,23 +9,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>9</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=read_input_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>top.cpp</string>
-      <key>line</key>
-      <integer>25</integer>
+      <integer>23</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -41,7 +25,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>28</integer>
+      <integer>26</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -57,7 +41,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>37</integer>
+      <integer>35</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -73,7 +57,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>47</integer>
+      <integer>51</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -89,7 +73,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>52</integer>
+      <integer>56</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -105,7 +89,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>61</integer>
+      <integer>64</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -121,7 +105,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>108</integer>
+      <integer>116</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -137,11 +121,11 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>117</integer>
+      <integer>128</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=compute_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=write_output_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -169,7 +153,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>139</integer>
+      <integer>138</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -185,7 +169,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>140</integer>
+      <integer>139</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -201,7 +185,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>141</integer>
+      <integer>140</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -217,7 +201,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>144</integer>
+      <integer>143</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -233,7 +217,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>150</integer>
+      <integer>149</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -249,7 +233,7 @@
       <key>filename</key>
       <string>top.cpp</string>
       <key>line</key>
-      <integer>151</integer>
+      <integer>150</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'compute'" level="0">
-<item name = "Date">Fri Feb 20 11:30:59 2026
+<item name = "Date">Fri Feb 20 12:00:28 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">4079140, 4079140, 40.791 ms, 40.791 ms, 4079140, 4079140, no</column>
+<column name="">2112940, 2112940, 21.129 ms, 21.129 ms, 2112940, 2112940, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_43_3">3948060, 3948060, 131602, -, -, 30, no</column>
+<column name="- VITIS_LOOP_41_3">1981860, 1981860, 66062, -, -, 30, no</column>
 </table>
 </item>
 </section>

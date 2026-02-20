@@ -19,29 +19,29 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>4079150</Best-caseLatency>
-            <Average-caseLatency>4079150</Average-caseLatency>
-            <Worst-caseLatency>4079150</Worst-caseLatency>
-            <Best-caseRealTimeLatency>40.791 ms</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>40.791 ms</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>40.791 ms</Worst-caseRealTimeLatency>
-            <DataflowPipelineThroughput>4079141</DataflowPipelineThroughput>
-            <Interval-min>4079141</Interval-min>
-            <Interval-max>4079141</Interval-max>
+            <Best-caseLatency>2112950</Best-caseLatency>
+            <Average-caseLatency>2112950</Average-caseLatency>
+            <Worst-caseLatency>2112950</Worst-caseLatency>
+            <Best-caseRealTimeLatency>21.130 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>21.130 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>21.130 ms</Worst-caseRealTimeLatency>
+            <DataflowPipelineThroughput>2112941</DataflowPipelineThroughput>
+            <Interval-min>2112941</Interval-min>
+            <Interval-max>2112941</Interval-max>
             <PerformancePragma>-</PerformancePragma>
         </SummaryOfOverallLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>top.cpp:144</SourceLocation>
+            <SourceLocation>top.cpp:143</SourceLocation>
         </SummaryOfViolations>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>180</BRAM_18K>
             <DSP>6</DSP>
-            <FF>2913</FF>
-            <LUT>4356</LUT>
+            <FF>3088</FF>
+            <LUT>4854</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -1369,65 +1369,58 @@
                     <ModuleName>read_input</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>109</ID>
-                    <BindInstances>add_ln7_fu_109_p2 icmp_ln7_fu_115_p2</BindInstances>
+                    <BindInstances>icmp_ln7_fu_127_p2 add_ln7_fu_133_p2 icmp_ln8_fu_139_p2 add_ln8_fu_145_p2</BindInstances>
                 </Instance>
                 <Instance>
                     <InstName>compute_U0</InstName>
                     <ModuleName>compute</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>118</ID>
+                    <ID>117</ID>
                     <InstancesList>
                         <Instance>
-                            <InstName>grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82</InstName>
-                            <ModuleName>compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2</ModuleName>
+                            <InstName>grp_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2_fu_94</InstName>
+                            <ModuleName>compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>82</ID>
-                            <BindInstances>icmp_ln35_fu_96_p2 add_ln35_1_fu_102_p2 add_ln35_fu_119_p2 icmp_ln36_fu_125_p2 select_ln35_fu_131_p3 select_ln35_1_fu_139_p3 add_ln38_fu_163_p2 add_ln36_fu_174_p2</BindInstances>
+                            <ID>94</ID>
+                            <BindInstances>icmp_ln33_fu_146_p2 add_ln33_1_fu_152_p2 add_ln33_fu_169_p2 icmp_ln34_fu_175_p2 select_ln33_fu_181_p3 select_ln33_1_fu_189_p3 add_ln34_fu_241_p2</BindInstances>
                         </Instance>
                         <Instance>
-                            <InstName>grp_compute_Pipeline_VITIS_LOOP_46_4_fu_90</InstName>
-                            <ModuleName>compute_Pipeline_VITIS_LOOP_46_4</ModuleName>
+                            <InstName>grp_compute_Pipeline_VITIS_LOOP_50_4_fu_108</InstName>
+                            <ModuleName>compute_Pipeline_VITIS_LOOP_50_4</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>90</ID>
-                            <BindInstances>icmp_ln46_fu_96_p2 add_ln46_fu_102_p2</BindInstances>
+                            <ID>108</ID>
+                            <BindInstances>icmp_ln50_fu_174_p2 add_ln50_fu_180_p2 select_ln52_fu_269_p3 select_ln53_fu_278_p3</BindInstances>
                         </Instance>
                         <Instance>
-                            <InstName>grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96</InstName>
-                            <ModuleName>compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12</ModuleName>
+                            <InstName>grp_compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10_fu_118</InstName>
+                            <ModuleName>compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>96</ID>
-                            <BindInstances>icmp_ln115_fu_97_p2 add_ln115_1_fu_103_p2 add_ln115_fu_115_p2 icmp_ln116_fu_121_p2 select_ln115_fu_127_p3 select_ln115_1_fu_135_p3 add_ln118_fu_159_p2 add_ln116_fu_170_p2</BindInstances>
+                            <ID>118</ID>
+                            <BindInstances>icmp_ln114_fu_143_p2 add_ln114_1_fu_149_p2 add_ln114_fu_161_p2 icmp_ln115_fu_167_p2 select_ln114_fu_173_p3 select_ln114_1_fu_181_p3 select_ln117_fu_254_p3 select_ln117_1_fu_261_p3 grid_final_din add_ln115_fu_233_p2</BindInstances>
                         </Instance>
                         <Instance>
-                            <InstName>grp_compute_Pipeline_VITIS_LOOP_51_5_fu_103</InstName>
-                            <ModuleName>compute_Pipeline_VITIS_LOOP_51_5</ModuleName>
+                            <InstName>grp_compute_Pipeline_VITIS_LOOP_55_5_fu_128</InstName>
+                            <ModuleName>compute_Pipeline_VITIS_LOOP_55_5</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>103</ID>
-                            <BindInstances>icmp_ln51_fu_98_p2 add_ln51_fu_104_p2</BindInstances>
+                            <ID>128</ID>
+                            <BindInstances>icmp_ln55_fu_172_p2 add_ln55_fu_178_p2 select_ln57_fu_263_p3 select_ln58_fu_272_p3</BindInstances>
                         </Instance>
                         <Instance>
-                            <InstName>grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109</InstName>
-                            <ModuleName>compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7</ModuleName>
+                            <InstName>grp_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_fu_138</InstName>
+                            <ModuleName>compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7</ModuleName>
                             <IsCompInst>true</IsCompInst>
-                            <ID>109</ID>
-                            <BindInstances>line_buf_1_U line_buf_U icmp_ln58_fu_285_p2 add_ln58_1_fu_291_p2 add_ln58_fu_303_p2 icmp_ln59_fu_309_p2 select_ln58_fu_315_p3 select_ln58_1_fu_323_p3 icmp_fu_353_p2 empty_fu_436_p2 add_ln70_fu_369_p2 icmp_ln84_fu_394_p2 and_ln84_fu_400_p2 add_ln87_fu_671_p2 empty_33_fu_465_p2 add_ln89_fu_475_p2 sum_axis_fu_505_p2 empty_34_fu_523_p2 add_ln92_fu_533_p2 sum_diag_fu_563_p2 mul_39s_26ns_65_1_1_U13 mul_39s_24ns_63_1_1_U12 add_ln97_fu_629_p2 add_ln97_1_fu_639_p2 out_1_fu_694_p2 xor_ln97_fu_712_p2 or_ln97_1_fu_717_p2 xor_ln97_1_fu_723_p2 xor_ln97_2_fu_728_p2 or_ln97_fu_734_p2 and_ln97_fu_740_p2 out_2_fu_746_p3 add_ln100_fu_792_p2 xor_ln100_fu_806_p2 and_ln100_fu_812_p2 icmp_ln100_fu_834_p2 icmp_ln100_1_fu_848_p2 icmp_ln100_2_fu_854_p2 select_ln100_fu_860_p3 xor_ln100_1_fu_868_p2 and_ln100_1_fu_874_p2 select_ln100_1_fu_880_p3 and_ln100_2_fu_888_p2 xor_ln100_2_fu_894_p2 or_ln100_fu_900_p2 xor_ln100_3_fu_906_p2 and_ln100_3_fu_912_p2 and_ln100_4_fu_918_p2 or_ln100_2_fu_924_p2 xor_ln100_4_fu_930_p2 and_ln100_5_fu_936_p2 select_ln100_2_fu_942_p3 or_ln100_1_fu_950_p2 select_ln100_3_fu_956_p3 add_ln59_fu_406_p2</BindInstances>
-                        </Instance>
-                        <Instance>
-                            <InstName>grp_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_fu_124</InstName>
-                            <ModuleName>compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10</ModuleName>
-                            <IsCompInst>true</IsCompInst>
-                            <ID>124</ID>
-                            <BindInstances>icmp_ln106_fu_95_p2 add_ln106_1_fu_101_p2 add_ln106_fu_113_p2 icmp_ln107_fu_119_p2 select_ln106_fu_125_p3 select_ln106_1_fu_133_p3 add_ln109_fu_157_p2 add_ln107_fu_168_p2</BindInstances>
+                            <ID>138</ID>
+                            <BindInstances>line_buf_1_U line_buf_U icmp_ln62_fu_402_p2 add_ln62_1_fu_408_p2 add_ln62_fu_420_p2 icmp_ln63_fu_426_p2 select_ln62_fu_432_p3 select_ln62_1_fu_440_p3 icmp_fu_462_p2 empty_37_fu_468_p2 xor_ln102_5_fu_492_p2 add_ln102_1_fu_497_p2 select_ln84_fu_631_p3 select_ln84_1_fu_638_p3 select_ln84_2_fu_645_p3 icmp_ln87_fu_563_p2 and_ln87_fu_569_p2 add_ln89_fu_575_p2 empty_38_fu_677_p2 add_ln91_fu_687_p2 sum_axis_fu_717_p2 empty_39_fu_735_p2 add_ln94_fu_745_p2 sum_diag_fu_775_p2 mul_39s_26ns_65_1_1_U24 mul_39s_24ns_63_1_1_U23 add_ln99_fu_841_p2 add_ln99_1_fu_851_p2 out_1_fu_904_p2 xor_ln99_fu_922_p2 or_ln99_1_fu_927_p2 xor_ln99_1_fu_933_p2 xor_ln99_2_fu_938_p2 or_ln99_fu_944_p2 and_ln99_fu_950_p2 out_2_fu_956_p3 add_ln102_fu_1002_p2 xor_ln102_fu_1016_p2 and_ln102_fu_1022_p2 icmp_ln102_fu_1044_p2 icmp_ln102_1_fu_1058_p2 icmp_ln102_2_fu_1064_p2 select_ln102_fu_1070_p3 xor_ln102_1_fu_1078_p2 and_ln102_1_fu_1084_p2 select_ln102_1_fu_1090_p3 and_ln102_2_fu_1098_p2 xor_ln102_2_fu_1104_p2 or_ln102_fu_1110_p2 xor_ln102_3_fu_1116_p2 and_ln102_3_fu_1122_p2 and_ln102_4_fu_1128_p2 or_ln102_2_fu_1134_p2 xor_ln102_4_fu_1140_p2 and_ln102_5_fu_1146_p2 select_ln102_2_fu_1152_p3 or_ln102_1_fu_1160_p2 select_ln102_3_fu_1166_p3 add_ln63_fu_601_p2</BindInstances>
                         </Instance>
                     </InstancesList>
-                    <BindInstances>cur_U nxt_U icmp_ln43_fu_150_p2 t_2_fu_156_p2</BindInstances>
+                    <BindInstances>buffer_U buffer_1_U buffer_2_U buffer_3_U icmp_ln41_fu_179_p2 t_2_fu_185_p2</BindInstances>
                 </Instance>
                 <Instance>
                     <InstName>write_output_U0</InstName>
                     <ModuleName>write_output</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>124</ID>
-                    <BindInstances>icmp_ln127_fu_143_p2 add_ln127_fu_149_p2 icmp_ln128_fu_155_p2 add_ln128_fu_161_p2</BindInstances>
+                    <ID>123</ID>
+                    <BindInstances>add_ln126_fu_130_p2 icmp_ln126_fu_136_p2</BindInstances>
                 </Instance>
             </InstancesList>
             <BindInstances>A_out_r_c_U grid_initial_U grid_final_U control_s_axi_U A_in_m_axi_U A_out_m_axi_U</BindInstances>
@@ -1482,7 +1475,9 @@
         <Module>
             <Name>read_input</Name>
             <Loops>
-                <VITIS_LOOP_7_1_VITIS_LOOP_8_2/>
+                <VITIS_LOOP_7_1>
+                    <VITIS_LOOP_8_2/>
+                </VITIS_LOOP_7_1>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -1491,51 +1486,70 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>65547</Best-caseLatency>
-                    <Average-caseLatency>65547</Average-caseLatency>
-                    <Worst-caseLatency>65547</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.655 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.655 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>65536</PipelineInitiationInterval>
-                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                    <Best-caseLatency>197128</Best-caseLatency>
+                    <Average-caseLatency>197128</Average-caseLatency>
+                    <Worst-caseLatency>197128</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.971 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.971 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.971 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>197128</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_7_1_VITIS_LOOP_8_2>
-                        <Name>VITIS_LOOP_7_1_VITIS_LOOP_8_2</Name>
+                    <VITIS_LOOP_7_1>
+                        <Name>VITIS_LOOP_7_1</Name>
                         <Slack>7.30</Slack>
-                        <TripCount>65536</TripCount>
+                        <TripCount>256</TripCount>
                         <isPerfectNested>0</isPerfectNested>
-                        <Latency>65545</Latency>
-                        <AbsoluteTimeLatency>0.655 ms</AbsoluteTimeLatency>
-                        <PipelineII>1</PipelineII>
-                        <PipelineDepth>11</PipelineDepth>
-                        <PipelineType>yes</PipelineType>
+                        <Latency>197120</Latency>
+                        <AbsoluteTimeLatency>1.971 ms</AbsoluteTimeLatency>
+                        <IterationLatency>770</IterationLatency>
+                        <PipelineDepth>770</PipelineDepth>
+                        <PipelineType>no</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                    </VITIS_LOOP_7_1_VITIS_LOOP_8_2>
+                        <VITIS_LOOP_8_2>
+                            <Name>VITIS_LOOP_8_2</Name>
+                            <Slack>7.30</Slack>
+                            <TripCount>256</TripCount>
+                            <isPerfectNested>1</isPerfectNested>
+                            <Latency>768</Latency>
+                            <AbsoluteTimeLatency>7.680 us</AbsoluteTimeLatency>
+                            <IterationLatency>3</IterationLatency>
+                            <PipelineDepth>3</PipelineDepth>
+                            <PipelineType>no</PipelineType>
+                            <PerformancePragma>-</PerformancePragma>
+                            <InstanceList/>
+                        </VITIS_LOOP_8_2>
+                    </VITIS_LOOP_7_1>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:6</SourceLocation>
+                    <SourceLocation>top.cpp:7</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_7_1_VITIS_LOOP_8_2>
-                            <Name>VITIS_LOOP_7_1_VITIS_LOOP_8_2</Name>
+                        <VITIS_LOOP_7_1>
+                            <Name>VITIS_LOOP_7_1</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
                             <SourceLocation>top.cpp:7</SourceLocation>
-                        </VITIS_LOOP_7_1_VITIS_LOOP_8_2>
+                            <VITIS_LOOP_8_2>
+                                <Name>VITIS_LOOP_8_2</Name>
+                                <IssueType>-</IssueType>
+                                <ViolationType>-</ViolationType>
+                                <SourceLocation>top.cpp:8</SourceLocation>
+                            </VITIS_LOOP_8_2>
+                        </VITIS_LOOP_7_1>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>129</FF>
+                    <FF>74</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>132</LUT>
+                    <LUT>196</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1550,20 +1564,22 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_7_1_VITIS_LOOP_8_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln7_fu_109_p2" SOURCE="top.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln7" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_7_1_VITIS_LOOP_8_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln7_fu_115_p2" SOURCE="top.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_7_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln7_fu_127_p2" SOURCE="top.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_7_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln7_fu_133_p2" SOURCE="top.cpp:7" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln7" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_8_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln8_fu_139_p2" SOURCE="top.cpp:8" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln8" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_8_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln8_fu_145_p2" SOURCE="top.cpp:8" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln8" VISIBLE="true"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2</Name>
+            <Name>compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2</Name>
             <Loops>
-                <VITIS_LOOP_35_1_VITIS_LOOP_36_2/>
+                <VITIS_LOOP_33_1_VITIS_LOOP_34_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>3.746</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>3.519</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>65538</Best-caseLatency>
@@ -1577,8 +1593,8 @@
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_35_1_VITIS_LOOP_36_2>
-                        <Name>VITIS_LOOP_35_1_VITIS_LOOP_36_2</Name>
+                    <VITIS_LOOP_33_1_VITIS_LOOP_34_2>
+                        <Name>VITIS_LOOP_33_1_VITIS_LOOP_34_2</Name>
                         <Slack>7.30</Slack>
                         <TripCount>65536</TripCount>
                         <isPerfectNested>0</isPerfectNested>
@@ -1589,19 +1605,19 @@
                         <PipelineType>yes</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                    </VITIS_LOOP_35_1_VITIS_LOOP_36_2>
+                    </VITIS_LOOP_33_1_VITIS_LOOP_34_2>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:36</SourceLocation>
+                    <SourceLocation>top.cpp:34</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_35_1_VITIS_LOOP_36_2>
-                            <Name>VITIS_LOOP_35_1_VITIS_LOOP_36_2</Name>
+                        <VITIS_LOOP_33_1_VITIS_LOOP_34_2>
+                            <Name>VITIS_LOOP_33_1_VITIS_LOOP_34_2</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:35</SourceLocation>
-                        </VITIS_LOOP_35_1_VITIS_LOOP_36_2>
+                            <SourceLocation>top.cpp:33</SourceLocation>
+                        </VITIS_LOOP_33_1_VITIS_LOOP_34_2>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -1610,7 +1626,7 @@
                     <FF>38</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>204</LUT>
+                    <LUT>181</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1625,26 +1641,25 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln35_fu_96_p2" SOURCE="top.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln35" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_1_fu_102_p2" SOURCE="top.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln35_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_fu_119_p2" SOURCE="top.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln35" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln36_fu_125_p2" SOURCE="top.cpp:36" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln36" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="select" PRAGMA="" RTLNAME="select_ln35_fu_131_p3" SOURCE="top.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln35" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="select" PRAGMA="" RTLNAME="select_ln35_1_fu_139_p3" SOURCE="top.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln35_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_163_p2" SOURCE="top.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln38" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_1_VITIS_LOOP_36_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln36_fu_174_p2" SOURCE="top.cpp:36" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln36" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln33_fu_146_p2" SOURCE="top.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln33" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_1_fu_152_p2" SOURCE="top.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_169_p2" SOURCE="top.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln34_fu_175_p2" SOURCE="top.cpp:34" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln34" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="select" PRAGMA="" RTLNAME="select_ln33_fu_181_p3" SOURCE="top.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln33" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="select" PRAGMA="" RTLNAME="select_ln33_1_fu_189_p3" SOURCE="top.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln33_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_1_VITIS_LOOP_34_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln34_fu_241_p2" SOURCE="top.cpp:34" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln34" VISIBLE="true"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>compute_Pipeline_VITIS_LOOP_46_4</Name>
+            <Name>compute_Pipeline_VITIS_LOOP_50_4</Name>
             <Loops>
-                <VITIS_LOOP_46_4/>
+                <VITIS_LOOP_50_4/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.704</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>3.139</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>258</Best-caseLatency>
@@ -1658,8 +1673,8 @@
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_46_4>
-                        <Name>VITIS_LOOP_46_4</Name>
+                    <VITIS_LOOP_50_4>
+                        <Name>VITIS_LOOP_50_4</Name>
                         <Slack>7.30</Slack>
                         <TripCount>256</TripCount>
                         <isPerfectNested>0</isPerfectNested>
@@ -1670,28 +1685,28 @@
                         <PipelineType>yes</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                    </VITIS_LOOP_46_4>
+                    </VITIS_LOOP_50_4>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:46</SourceLocation>
+                    <SourceLocation>top.cpp:50</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_46_4>
-                            <Name>VITIS_LOOP_46_4</Name>
+                        <VITIS_LOOP_50_4>
+                            <Name>VITIS_LOOP_50_4</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:46</SourceLocation>
-                        </VITIS_LOOP_46_4>
+                            <SourceLocation>top.cpp:50</SourceLocation>
+                        </VITIS_LOOP_50_4>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>29</FF>
+                    <FF>27</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>71</LUT>
+                    <LUT>119</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1706,20 +1721,22 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_46_4" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln46_fu_96_p2" SOURCE="top.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln46" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_46_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln46_fu_102_p2" SOURCE="top.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln46" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_50_4" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln50_fu_174_p2" SOURCE="top.cpp:50" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln50" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_50_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln50_fu_180_p2" SOURCE="top.cpp:50" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln50" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_50_4" OPTYPE="select" PRAGMA="" RTLNAME="select_ln52_fu_269_p3" SOURCE="top.cpp:52" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln52" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_50_4" OPTYPE="select" PRAGMA="" RTLNAME="select_ln53_fu_278_p3" SOURCE="top.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln53" VISIBLE="false"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>compute_Pipeline_VITIS_LOOP_51_5</Name>
+            <Name>compute_Pipeline_VITIS_LOOP_55_5</Name>
             <Loops>
-                <VITIS_LOOP_51_5/>
+                <VITIS_LOOP_55_5/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>2.704</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>3.139</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>258</Best-caseLatency>
@@ -1733,8 +1750,8 @@
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_51_5>
-                        <Name>VITIS_LOOP_51_5</Name>
+                    <VITIS_LOOP_55_5>
+                        <Name>VITIS_LOOP_55_5</Name>
                         <Slack>7.30</Slack>
                         <TripCount>256</TripCount>
                         <isPerfectNested>0</isPerfectNested>
@@ -1745,28 +1762,28 @@
                         <PipelineType>yes</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                    </VITIS_LOOP_51_5>
+                    </VITIS_LOOP_55_5>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:51</SourceLocation>
+                    <SourceLocation>top.cpp:55</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_51_5>
-                            <Name>VITIS_LOOP_51_5</Name>
+                        <VITIS_LOOP_55_5>
+                            <Name>VITIS_LOOP_55_5</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:51</SourceLocation>
-                        </VITIS_LOOP_51_5>
+                            <SourceLocation>top.cpp:55</SourceLocation>
+                        </VITIS_LOOP_55_5>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>28</FF>
+                    <FF>20</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>71</LUT>
+                    <LUT>119</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1781,14 +1798,16 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_51_5" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln51_fu_98_p2" SOURCE="top.cpp:51" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln51" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_51_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln51_fu_104_p2" SOURCE="top.cpp:51" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln51" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_55_5" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln55_fu_172_p2" SOURCE="top.cpp:55" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln55" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_55_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln55_fu_178_p2" SOURCE="top.cpp:55" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln55" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_55_5" OPTYPE="select" PRAGMA="" RTLNAME="select_ln57_fu_263_p3" SOURCE="top.cpp:57" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln57" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_55_5" OPTYPE="select" PRAGMA="" RTLNAME="select_ln58_fu_272_p3" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln58" VISIBLE="false"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7</Name>
+            <Name>compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7</Name>
             <Loops>
-                <VITIS_LOOP_58_6_VITIS_LOOP_59_7/>
+                <VITIS_LOOP_62_6_VITIS_LOOP_63_7/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -1808,8 +1827,8 @@
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_58_6_VITIS_LOOP_59_7>
-                        <Name>VITIS_LOOP_58_6_VITIS_LOOP_59_7</Name>
+                    <VITIS_LOOP_62_6_VITIS_LOOP_63_7>
+                        <Name>VITIS_LOOP_62_6_VITIS_LOOP_63_7</Name>
                         <Slack>7.30</Slack>
                         <TripCount>65536</TripCount>
                         <isPerfectNested>0</isPerfectNested>
@@ -1820,19 +1839,19 @@
                         <PipelineType>yes</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                    </VITIS_LOOP_58_6_VITIS_LOOP_59_7>
+                    </VITIS_LOOP_62_6_VITIS_LOOP_63_7>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:59</SourceLocation>
+                    <SourceLocation>top.cpp:63</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_58_6_VITIS_LOOP_59_7>
-                            <Name>VITIS_LOOP_58_6_VITIS_LOOP_59_7</Name>
+                        <VITIS_LOOP_62_6_VITIS_LOOP_63_7>
+                            <Name>VITIS_LOOP_62_6_VITIS_LOOP_63_7</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:58</SourceLocation>
-                        </VITIS_LOOP_58_6_VITIS_LOOP_59_7>
+                            <SourceLocation>top.cpp:62</SourceLocation>
+                        </VITIS_LOOP_62_6_VITIS_LOOP_63_7>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -1844,10 +1863,10 @@
                     <DSP>6</DSP>
                     <AVAIL_DSP>360</AVAIL_DSP>
                     <UTIL_DSP>1</UTIL_DSP>
-                    <FF>460</FF>
+                    <FF>701</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>1036</LUT>
+                    <LUT>1231</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>1</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1856,73 +1875,77 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="line_buf_1_U" SOURCE="top.cpp:24" STORAGESIZE="24 256 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="line_buf_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="line_buf_U" SOURCE="top.cpp:24" STORAGESIZE="24 256 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="line_buf" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln58_fu_285_p2" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln58" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln58_1_fu_291_p2" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln58_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln58_fu_303_p2" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln58" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln59_fu_309_p2" SOURCE="top.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln59" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln58_fu_315_p3" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln58" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln58_1_fu_323_p3" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln58_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_fu_353_p2" SOURCE="top.cpp:58" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="empty_fu_436_p2" SOURCE="top.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="empty" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln70_fu_369_p2" SOURCE="top.cpp:70" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln70" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln84_fu_394_p2" SOURCE="top.cpp:84" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln84" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln84_fu_400_p2" SOURCE="top.cpp:84" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln84" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln87_fu_671_p2" SOURCE="top.cpp:87" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln87" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="empty_33_fu_465_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_33" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln89_fu_475_p2" SOURCE="top.cpp:89" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln89" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="sum_axis_fu_505_p2" SOURCE="top.cpp:90" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_axis" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="empty_34_fu_523_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_34" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln92_fu_533_p2" SOURCE="top.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln92" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="sum_diag_fu_563_p2" SOURCE="top.cpp:93" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_diag" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="mul" PRAGMA="" RTLNAME="mul_39s_26ns_65_1_1_U13" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln97" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="mul" PRAGMA="" RTLNAME="mul_39s_24ns_63_1_1_U12" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln97_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln97_fu_629_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln97" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln97_1_fu_639_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln97_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="out_1_fu_694_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="out_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln97_fu_712_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln97" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln97_1_fu_717_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln97_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln97_1_fu_723_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln97_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln97_2_fu_728_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln97_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln97_fu_734_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln97" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln97_fu_740_p2" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln97" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="out_2_fu_746_p3" SOURCE="top.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="out_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln100_fu_792_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln100" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln100_fu_806_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln100" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln100_fu_812_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln100" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln100_fu_834_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln100" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln100_1_fu_848_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln100_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln100_2_fu_854_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln100_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln100_fu_860_p3" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln100" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln100_1_fu_868_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln100_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln100_1_fu_874_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln100_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln100_1_fu_880_p3" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln100_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln100_2_fu_888_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln100_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln100_2_fu_894_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln100_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln100_fu_900_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln100" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln100_3_fu_906_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln100_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln100_3_fu_912_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln100_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln100_4_fu_918_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln100_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln100_2_fu_924_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln100_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln100_4_fu_930_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln100_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln100_5_fu_936_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln100_5" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln100_2_fu_942_p3" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln100_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln100_1_fu_950_p2" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln100_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln100_3_fu_956_p3" SOURCE="top.cpp:100" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln100_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_58_6_VITIS_LOOP_59_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_fu_406_p2" SOURCE="top.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln59" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="line_buf_1_U" SOURCE="top.cpp:22" STORAGESIZE="24 256 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="line_buf_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="line_buf_U" SOURCE="top.cpp:22" STORAGESIZE="24 256 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="line_buf" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln62_fu_402_p2" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln62" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln62_1_fu_408_p2" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln62_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln62_fu_420_p2" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln62" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln63_fu_426_p2" SOURCE="top.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln63" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln62_fu_432_p3" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln62" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln62_1_fu_440_p3" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln62_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_fu_462_p2" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="empty_37_fu_468_p2" SOURCE="top.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_37" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln102_5_fu_492_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln102_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln102_1_fu_497_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln102_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln84_fu_631_p3" SOURCE="top.cpp:84" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln84" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln84_1_fu_638_p3" SOURCE="top.cpp:84" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln84_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln84_2_fu_645_p3" SOURCE="top.cpp:84" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln84_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln87_fu_563_p2" SOURCE="top.cpp:87" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln87" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln87_fu_569_p2" SOURCE="top.cpp:87" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln87" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln89_fu_575_p2" SOURCE="top.cpp:89" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln89" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="empty_38_fu_677_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_38" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln91_fu_687_p2" SOURCE="top.cpp:91" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln91" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="sum_axis_fu_717_p2" SOURCE="top.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_axis" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="empty_39_fu_735_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_39" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln94_fu_745_p2" SOURCE="top.cpp:94" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln94" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="sum_diag_fu_775_p2" SOURCE="top.cpp:95" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_diag" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="mul" PRAGMA="" RTLNAME="mul_39s_26ns_65_1_1_U24" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln99" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="mul" PRAGMA="" RTLNAME="mul_39s_24ns_63_1_1_U23" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln99_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln99_fu_841_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln99" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln99_1_fu_851_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln99_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="out_1_fu_904_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="out_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln99_fu_922_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln99" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln99_1_fu_927_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln99_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln99_1_fu_933_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln99_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln99_2_fu_938_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln99_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln99_fu_944_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln99" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln99_fu_950_p2" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln99" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="out_2_fu_956_p3" SOURCE="top.cpp:99" STORAGESUBTYPE="" URAM="0" VARIABLE="out_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln102_fu_1002_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln102" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln102_fu_1016_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln102" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln102_fu_1022_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln102" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln102_fu_1044_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln102" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln102_1_fu_1058_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln102_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln102_2_fu_1064_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln102_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln102_fu_1070_p3" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln102" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln102_1_fu_1078_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln102_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln102_1_fu_1084_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln102_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln102_1_fu_1090_p3" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln102_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln102_2_fu_1098_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln102_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln102_2_fu_1104_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln102_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln102_fu_1110_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln102" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln102_3_fu_1116_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln102_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln102_3_fu_1122_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln102_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln102_4_fu_1128_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln102_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln102_2_fu_1134_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln102_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln102_4_fu_1140_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln102_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="and" PRAGMA="" RTLNAME="and_ln102_5_fu_1146_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="and_ln102_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln102_2_fu_1152_p3" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln102_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="or" PRAGMA="" RTLNAME="or_ln102_1_fu_1160_p2" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln102_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="select" PRAGMA="" RTLNAME="select_ln102_3_fu_1166_p3" SOURCE="top.cpp:102" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln102_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_62_6_VITIS_LOOP_63_7" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_fu_601_p2" SOURCE="top.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln63" VISIBLE="true"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10</Name>
+            <Name>compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10</Name>
             <Loops>
-                <VITIS_LOOP_106_9_VITIS_LOOP_107_10/>
+                <VITIS_LOOP_114_9_VITIS_LOOP_115_10/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>3.746</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>4.389</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>65538</Best-caseLatency>
@@ -1936,8 +1959,8 @@
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_106_9_VITIS_LOOP_107_10>
-                        <Name>VITIS_LOOP_106_9_VITIS_LOOP_107_10</Name>
+                    <VITIS_LOOP_114_9_VITIS_LOOP_115_10>
+                        <Name>VITIS_LOOP_114_9_VITIS_LOOP_115_10</Name>
                         <Slack>7.30</Slack>
                         <TripCount>65536</TripCount>
                         <isPerfectNested>0</isPerfectNested>
@@ -1948,28 +1971,28 @@
                         <PipelineType>yes</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                    </VITIS_LOOP_106_9_VITIS_LOOP_107_10>
+                    </VITIS_LOOP_114_9_VITIS_LOOP_115_10>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:107</SourceLocation>
+                    <SourceLocation>top.cpp:115</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_106_9_VITIS_LOOP_107_10>
-                            <Name>VITIS_LOOP_106_9_VITIS_LOOP_107_10</Name>
+                        <VITIS_LOOP_114_9_VITIS_LOOP_115_10>
+                            <Name>VITIS_LOOP_114_9_VITIS_LOOP_115_10</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:106</SourceLocation>
-                        </VITIS_LOOP_106_9_VITIS_LOOP_107_10>
+                            <SourceLocation>top.cpp:114</SourceLocation>
+                        </VITIS_LOOP_114_9_VITIS_LOOP_115_10>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>55</FF>
+                    <FF>41</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>193</LUT>
+                    <LUT>253</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1984,101 +2007,22 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln106_fu_95_p2" SOURCE="top.cpp:106" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln106" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln106_1_fu_101_p2" SOURCE="top.cpp:106" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln106_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln106_fu_113_p2" SOURCE="top.cpp:106" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln106" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln107_fu_119_p2" SOURCE="top.cpp:107" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln107" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="select" PRAGMA="" RTLNAME="select_ln106_fu_125_p3" SOURCE="top.cpp:106" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln106" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="select" PRAGMA="" RTLNAME="select_ln106_1_fu_133_p3" SOURCE="top.cpp:106" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln106_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln109_fu_157_p2" SOURCE="top.cpp:109" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln109" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_106_9_VITIS_LOOP_107_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln107_fu_168_p2" SOURCE="top.cpp:107" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln107" VISIBLE="true"/>
-            </BindNodes>
-        </Module>
-        <Module>
-            <Name>compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12</Name>
-            <Loops>
-                <VITIS_LOOP_115_11_VITIS_LOOP_116_12/>
-            </Loops>
-            <PerformanceEstimates>
-                <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>10.00</TargetClockPeriod>
-                    <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>3.746</EstimatedClockPeriod>
-                </SummaryOfTimingAnalysis>
-                <SummaryOfOverallLatency>
-                    <Best-caseLatency>65538</Best-caseLatency>
-                    <Average-caseLatency>65538</Average-caseLatency>
-                    <Worst-caseLatency>65538</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.655 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.655 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>65537</PipelineInitiationInterval>
-                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
-                    <PerformancePragma>-</PerformancePragma>
-                </SummaryOfOverallLatency>
-                <SummaryOfLoopLatency>
-                    <VITIS_LOOP_115_11_VITIS_LOOP_116_12>
-                        <Name>VITIS_LOOP_115_11_VITIS_LOOP_116_12</Name>
-                        <Slack>7.30</Slack>
-                        <TripCount>65536</TripCount>
-                        <isPerfectNested>0</isPerfectNested>
-                        <Latency>65536</Latency>
-                        <AbsoluteTimeLatency>0.655 ms</AbsoluteTimeLatency>
-                        <PipelineII>1</PipelineII>
-                        <PipelineDepth>2</PipelineDepth>
-                        <PipelineType>yes</PipelineType>
-                        <PerformancePragma>-</PerformancePragma>
-                        <InstanceList/>
-                    </VITIS_LOOP_115_11_VITIS_LOOP_116_12>
-                </SummaryOfLoopLatency>
-                <SummaryOfViolations>
-                    <IssueType>-</IssueType>
-                    <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:116</SourceLocation>
-                    <SummaryOfLoopViolations>
-                        <VITIS_LOOP_115_11_VITIS_LOOP_116_12>
-                            <Name>VITIS_LOOP_115_11_VITIS_LOOP_116_12</Name>
-                            <IssueType>-</IssueType>
-                            <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:115</SourceLocation>
-                        </VITIS_LOOP_115_11_VITIS_LOOP_116_12>
-                    </SummaryOfLoopViolations>
-                </SummaryOfViolations>
-            </PerformanceEstimates>
-            <AreaEstimates>
-                <Resources>
-                    <FF>39</FF>
-                    <AVAIL_FF>141120</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>204</LUT>
-                    <AVAIL_LUT>70560</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
-                    <BRAM_18K>0</BRAM_18K>
-                    <AVAIL_BRAM>432</AVAIL_BRAM>
-                    <UTIL_BRAM>0</UTIL_BRAM>
-                    <DSP>0</DSP>
-                    <AVAIL_DSP>360</AVAIL_DSP>
-                    <UTIL_DSP>0</UTIL_DSP>
-                    <URAM>0</URAM>
-                    <AVAIL_URAM>0</AVAIL_URAM>
-                    <UTIL_URAM>0</UTIL_URAM>
-                </Resources>
-            </AreaEstimates>
-            <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln115_fu_97_p2" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln115" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="add" PRAGMA="" RTLNAME="add_ln115_1_fu_103_p2" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln115_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="add" PRAGMA="" RTLNAME="add_ln115_fu_115_p2" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln115" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln116_fu_121_p2" SOURCE="top.cpp:116" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln116" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="select" PRAGMA="" RTLNAME="select_ln115_fu_127_p3" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln115" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="select" PRAGMA="" RTLNAME="select_ln115_1_fu_135_p3" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln115_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="add" PRAGMA="" RTLNAME="add_ln118_fu_159_p2" SOURCE="top.cpp:118" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln118" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_115_11_VITIS_LOOP_116_12" OPTYPE="add" PRAGMA="" RTLNAME="add_ln116_fu_170_p2" SOURCE="top.cpp:116" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln116" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln114_fu_143_p2" SOURCE="top.cpp:114" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln114" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln114_1_fu_149_p2" SOURCE="top.cpp:114" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln114_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln114_fu_161_p2" SOURCE="top.cpp:114" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln114" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln115_fu_167_p2" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln115" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="select" PRAGMA="" RTLNAME="select_ln114_fu_173_p3" SOURCE="top.cpp:114" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln114" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="select" PRAGMA="" RTLNAME="select_ln114_1_fu_181_p3" SOURCE="top.cpp:114" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln114_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="select" PRAGMA="" RTLNAME="select_ln117_fu_254_p3" SOURCE="top.cpp:117" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln117" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="select" PRAGMA="" RTLNAME="select_ln117_1_fu_261_p3" SOURCE="top.cpp:117" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln117_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="select" PRAGMA="" RTLNAME="grid_final_din" SOURCE="top.cpp:117" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln117_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_114_9_VITIS_LOOP_115_10" OPTYPE="add" PRAGMA="" RTLNAME="add_ln115_fu_233_p2" SOURCE="top.cpp:115" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln115" VISIBLE="true"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>compute</Name>
             <Loops>
-                <VITIS_LOOP_43_3/>
+                <VITIS_LOOP_41_3/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2087,47 +2031,46 @@
                     <EstimatedClockPeriod>6.855</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>4079140</Best-caseLatency>
-                    <Average-caseLatency>4079140</Average-caseLatency>
-                    <Worst-caseLatency>4079140</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>40.791 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>40.791 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>40.791 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>4079140</PipelineInitiationInterval>
+                    <Best-caseLatency>2112940</Best-caseLatency>
+                    <Average-caseLatency>2112940</Average-caseLatency>
+                    <Worst-caseLatency>2112940</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>21.129 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.129 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>21.129 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2112940</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_43_3>
-                        <Name>VITIS_LOOP_43_3</Name>
+                    <VITIS_LOOP_41_3>
+                        <Name>VITIS_LOOP_41_3</Name>
                         <Slack>7.30</Slack>
                         <TripCount>30</TripCount>
                         <isPerfectNested>0</isPerfectNested>
-                        <Latency>3948060</Latency>
-                        <AbsoluteTimeLatency>39.481 ms</AbsoluteTimeLatency>
-                        <IterationLatency>131602</IterationLatency>
-                        <PipelineDepth>131602</PipelineDepth>
+                        <Latency>1981860</Latency>
+                        <AbsoluteTimeLatency>19.819 ms</AbsoluteTimeLatency>
+                        <IterationLatency>66062</IterationLatency>
+                        <PipelineDepth>66062</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList>
-                            <Instance>grp_compute_Pipeline_VITIS_LOOP_46_4_fu_90</Instance>
-                            <Instance>grp_compute_Pipeline_VITIS_LOOP_51_5_fu_103</Instance>
-                            <Instance>grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109</Instance>
-                            <Instance>grp_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_fu_124</Instance>
+                            <Instance>grp_compute_Pipeline_VITIS_LOOP_50_4_fu_108</Instance>
+                            <Instance>grp_compute_Pipeline_VITIS_LOOP_55_5_fu_128</Instance>
+                            <Instance>grp_compute_Pipeline_VITIS_LOOP_62_6_VITIS_LOOP_63_7_fu_138</Instance>
                         </InstanceList>
-                    </VITIS_LOOP_43_3>
+                    </VITIS_LOOP_41_3>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:43</SourceLocation>
+                    <SourceLocation>top.cpp:41</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_43_3>
-                            <Name>VITIS_LOOP_43_3</Name>
+                        <VITIS_LOOP_41_3>
+                            <Name>VITIS_LOOP_41_3</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:43</SourceLocation>
-                        </VITIS_LOOP_43_3>
+                            <SourceLocation>top.cpp:47</SourceLocation>
+                        </VITIS_LOOP_41_3>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -2139,10 +2082,10 @@
                     <DSP>6</DSP>
                     <AVAIL_DSP>360</AVAIL_DSP>
                     <UTIL_DSP>1</UTIL_DSP>
-                    <FF>889</FF>
+                    <FF>1067</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>2166</LUT>
+                    <LUT>2622</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>3</UTIL_LUT>
                     <URAM>0</URAM>
@@ -2151,18 +2094,18 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="88" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="" RTLNAME="cur_U" SOURCE="top.cpp:20" STORAGESIZE="24 65536 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="cur" VISIBLE="true"/>
-                <BindNode BINDTYPE="storage" BRAM="88" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="nxt_U" SOURCE="top.cpp:21" STORAGESIZE="24 65536 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_t2p array" URAM="0" VARIABLE="nxt" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_43_3" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln43_fu_150_p2" SOURCE="top.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln43" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_43_3" OPTYPE="add" PRAGMA="" RTLNAME="t_2_fu_156_p2" SOURCE="top.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="t_2" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="44" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="" RTLNAME="buffer_U" SOURCE="top.cpp:19" STORAGESIZE="24 32768 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="buffer" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="44" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="" RTLNAME="buffer_1_U" SOURCE="top.cpp:19" STORAGESIZE="24 32768 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="buffer_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="44" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="" RTLNAME="buffer_2_U" SOURCE="top.cpp:19" STORAGESIZE="24 32768 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="buffer_2" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="44" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="" RTLNAME="buffer_3_U" SOURCE="top.cpp:19" STORAGESIZE="24 32768 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p array" URAM="0" VARIABLE="buffer_3" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_41_3" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln41_fu_179_p2" SOURCE="top.cpp:41" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln41" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_41_3" OPTYPE="add" PRAGMA="" RTLNAME="t_2_fu_185_p2" SOURCE="top.cpp:47" STORAGESUBTYPE="" URAM="0" VARIABLE="t_2" VISIBLE="true"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>write_output</Name>
             <Loops>
-                <VITIS_LOOP_127_1>
-                    <VITIS_LOOP_128_2/>
-                </VITIS_LOOP_127_1>
+                <VITIS_LOOP_126_1_VITIS_LOOP_127_2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -2171,70 +2114,51 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>131591</Best-caseLatency>
-                    <Average-caseLatency>131591</Average-caseLatency>
-                    <Worst-caseLatency>131591</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.316 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.316 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.316 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>131591</PipelineInitiationInterval>
-                    <PipelineType>no</PipelineType>
+                    <Best-caseLatency>65545</Best-caseLatency>
+                    <Average-caseLatency>65545</Average-caseLatency>
+                    <Worst-caseLatency>65545</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.655 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.655 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.655 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>65536</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <VITIS_LOOP_127_1>
-                        <Name>VITIS_LOOP_127_1</Name>
+                    <VITIS_LOOP_126_1_VITIS_LOOP_127_2>
+                        <Name>VITIS_LOOP_126_1_VITIS_LOOP_127_2</Name>
                         <Slack>7.30</Slack>
-                        <TripCount>256</TripCount>
+                        <TripCount>65536</TripCount>
                         <isPerfectNested>0</isPerfectNested>
-                        <Latency>131584</Latency>
-                        <AbsoluteTimeLatency>1.316 ms</AbsoluteTimeLatency>
-                        <IterationLatency>514</IterationLatency>
-                        <PipelineDepth>514</PipelineDepth>
-                        <PipelineType>no</PipelineType>
+                        <Latency>65543</Latency>
+                        <AbsoluteTimeLatency>0.655 ms</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>9</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
                         <PerformancePragma>-</PerformancePragma>
                         <InstanceList/>
-                        <VITIS_LOOP_128_2>
-                            <Name>VITIS_LOOP_128_2</Name>
-                            <Slack>7.30</Slack>
-                            <TripCount>256</TripCount>
-                            <isPerfectNested>1</isPerfectNested>
-                            <Latency>512</Latency>
-                            <AbsoluteTimeLatency>5.120 us</AbsoluteTimeLatency>
-                            <IterationLatency>2</IterationLatency>
-                            <PipelineDepth>2</PipelineDepth>
-                            <PipelineType>no</PipelineType>
-                            <PerformancePragma>-</PerformancePragma>
-                            <InstanceList/>
-                        </VITIS_LOOP_128_2>
-                    </VITIS_LOOP_127_1>
+                    </VITIS_LOOP_126_1_VITIS_LOOP_127_2>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:127</SourceLocation>
+                    <SourceLocation>top.cpp:126</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <VITIS_LOOP_127_1>
-                            <Name>VITIS_LOOP_127_1</Name>
+                        <VITIS_LOOP_126_1_VITIS_LOOP_127_2>
+                            <Name>VITIS_LOOP_126_1_VITIS_LOOP_127_2</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>top.cpp:127</SourceLocation>
-                            <VITIS_LOOP_128_2>
-                                <Name>VITIS_LOOP_128_2</Name>
-                                <IssueType>-</IssueType>
-                                <ViolationType>-</ViolationType>
-                                <SourceLocation>top.cpp:128</SourceLocation>
-                            </VITIS_LOOP_128_2>
-                        </VITIS_LOOP_127_1>
+                            <SourceLocation>top.cpp:126</SourceLocation>
+                        </VITIS_LOOP_126_1_VITIS_LOOP_127_2>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>135</FF>
+                    <FF>187</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>201</LUT>
+                    <LUT>179</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -2249,10 +2173,8 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_127_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln127_fu_143_p2" SOURCE="top.cpp:127" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln127" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_127_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln127_fu_149_p2" SOURCE="top.cpp:127" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln127" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_128_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln128_fu_155_p2" SOURCE="top.cpp:128" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln128" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_128_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln128_fu_161_p2" SOURCE="top.cpp:128" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln128" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_126_1_VITIS_LOOP_127_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln126_fu_130_p2" SOURCE="top.cpp:126" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln126" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_126_1_VITIS_LOOP_127_2" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln126_fu_136_p2" SOURCE="top.cpp:126" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln126" VISIBLE="false"/>
             </BindNodes>
         </Module>
         <Module>
@@ -2264,21 +2186,21 @@
                     <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>4079150</Best-caseLatency>
-                    <Average-caseLatency>4079150</Average-caseLatency>
-                    <Worst-caseLatency>4079150</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>40.791 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>40.791 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>40.791 ms</Worst-caseRealTimeLatency>
-                    <DataflowPipelineThroughput>4079141</DataflowPipelineThroughput>
-                    <PipelineInitiationInterval>4079141</PipelineInitiationInterval>
+                    <Best-caseLatency>2112950</Best-caseLatency>
+                    <Average-caseLatency>2112950</Average-caseLatency>
+                    <Worst-caseLatency>2112950</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>21.130 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>21.130 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>21.130 ms</Worst-caseRealTimeLatency>
+                    <DataflowPipelineThroughput>2112941</DataflowPipelineThroughput>
+                    <PipelineInitiationInterval>2112941</PipelineInitiationInterval>
                     <PipelineType>dataflow</PipelineType>
                     <PerformancePragma>-</PerformancePragma>
                 </SummaryOfOverallLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>top.cpp:144</SourceLocation>
+                    <SourceLocation>top.cpp:143</SourceLocation>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -2289,10 +2211,10 @@
                     <DSP>6</DSP>
                     <AVAIL_DSP>360</AVAIL_DSP>
                     <UTIL_DSP>1</UTIL_DSP>
-                    <FF>2913</FF>
+                    <FF>3088</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
                     <UTIL_FF>2</UTIL_FF>
-                    <LUT>4358</LUT>
+                    <LUT>4856</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
                     <UTIL_LUT>6</UTIL_LUT>
                     <URAM>0</URAM>
@@ -2301,9 +2223,9 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="A_out_r_c_U" SOURCE="top.cpp:144" STORAGESIZE="64 4 1" STORAGESUBTYPE="scalar prop" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="A_out_r_c" VISIBLE="true"/>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="grid_initial_U" SOURCE="top.cpp:147" STORAGESIZE="24 2 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="grid_initial" VISIBLE="true"/>
-                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="grid_final_U" SOURCE="top.cpp:148" STORAGESIZE="24 2 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="grid_final" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="A_out_r_c_U" SOURCE="top.cpp:143" STORAGESIZE="64 4 1" STORAGESUBTYPE="scalar prop" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="A_out_r_c" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="grid_initial_U" SOURCE="top.cpp:146" STORAGESIZE="24 2 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="grid_initial" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage fifo" DSP="0" ID="" IMPL="srl" LATENCY="0" LOOP="" OPTYPE="fifo" PRAGMA="" RTLNAME="grid_final_U" SOURCE="top.cpp:147" STORAGESIZE="24 2 1" STORAGESUBTYPE="stream" STORAGEUSAGE="fifo channel" URAM="0" VARIABLE="grid_final" VISIBLE="true"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="2" BUNDLEDNAME="A_in" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="A_in_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="A_out" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="A_out_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
@@ -2673,36 +2595,38 @@
                 <table>
                     <keys size="6">HW Interface, Direction, Length, Width, Loop, Loop Location</keys>
                     <column name="m_axi_A_in">read, 65536, 32, VITIS_LOOP_7_1, top.cpp:7:21</column>
-                    <column name="m_axi_A_out">write, 65536, 32, VITIS_LOOP_127_1, top.cpp:127:23</column>
+                    <column name="m_axi_A_out">write, 65536, 32, VITIS_LOOP_126_1, top.cpp:126:23</column>
                 </table>
             </item>
             <item name="All M_AXI Variable Accesses">
                 <table>
                     <keys size="10">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Loop, Loop Location, Resolution, Problem</keys>
-                    <column name="m_axi_A_in">A_in, top.cpp:10:19, read, Widen Fail, , VITIS_LOOP_8_2, top.cpp:8:25, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_A_in">A_in, top.cpp:10:19, read, Inferred, 65536, VITIS_LOOP_7_1, top.cpp:7:21, , </column>
-                    <column name="m_axi_A_out">A_out, top.cpp:130:25, write, Widen Fail, , VITIS_LOOP_128_2, top.cpp:128:27, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_A_out">A_out, top.cpp:130:25, write, Inferred, 65536, VITIS_LOOP_127_1, top.cpp:127:23, , </column>
+                    <column name="m_axi_A_in">A_in, top.cpp:9:30, read, Widen Fail, , VITIS_LOOP_8_2, top.cpp:8:25, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_A_in">A_in, top.cpp:9:30, read, Inferred, 65536, VITIS_LOOP_7_1, top.cpp:7:21, , </column>
+                    <column name="m_axi_A_out">A_out, top.cpp:129:14, write, Widen Fail, , VITIS_LOOP_127_2, top.cpp:127:27, 214-353, Could not widen since type i32 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_A_out">A_out, top.cpp:129:14, write, Inferred, 65536, VITIS_LOOP_126_1, top.cpp:126:23, , </column>
                 </table>
             </item>
         </section>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="pipeline" location="top.cpp:9" status="valid" parentFunction="read_input" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="array_partition" location="top.cpp:25" status="valid" parentFunction="compute" variable="line_buf" isDirective="0" options="variable=line_buf complete dim=1"/>
-        <Pragma type="array_partition" location="top.cpp:28" status="valid" parentFunction="compute" variable="window" isDirective="0" options="variable=window complete dim=0"/>
-        <Pragma type="pipeline" location="top.cpp:37" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="pipeline" location="top.cpp:47" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="pipeline" location="top.cpp:52" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="pipeline" location="top.cpp:61" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="pipeline" location="top.cpp:108" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="pipeline" location="top.cpp:117" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
-        <Pragma type="interface" location="top.cpp:139" status="valid" parentFunction="top_kernel" variable="A_in" isDirective="0" options="m_axi port=A_in offset=slave bundle=A_in"/>
-        <Pragma type="interface" location="top.cpp:140" status="valid" parentFunction="top_kernel" variable="A_out" isDirective="0" options="m_axi port=A_out offset=slave bundle=A_out"/>
-        <Pragma type="interface" location="top.cpp:141" status="valid" parentFunction="top_kernel" variable="return" isDirective="0" options="s_axilite port=return"/>
-        <Pragma type="dataflow" location="top.cpp:144" status="valid" parentFunction="top_kernel" variable="" isDirective="0" options=""/>
-        <Pragma type="stream" location="top.cpp:150" status="valid" parentFunction="top_kernel" variable="grid_initial" isDirective="0" options="variable=grid_initial depth=2"/>
-        <Pragma type="stream" location="top.cpp:151" status="valid" parentFunction="top_kernel" variable="grid_final" isDirective="0" options="variable=grid_final depth=2"/>
+        <Pragma type="array_partition" location="top.cpp:23" status="valid" parentFunction="compute" variable="line_buf" isDirective="0" options="variable=line_buf complete dim=1"/>
+        <Pragma type="array_partition" location="top.cpp:26" status="valid" parentFunction="compute" variable="window" isDirective="0" options="variable=window complete dim=0"/>
+        <Pragma type="pipeline" location="top.cpp:35" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
+        <Pragma type="pipeline" location="top.cpp:51" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
+        <Pragma type="pipeline" location="top.cpp:56" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
+        <Pragma type="pipeline" location="top.cpp:64" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
+        <Pragma type="pipeline" location="top.cpp:116" status="valid" parentFunction="compute" variable="" isDirective="0" options="ii=1"/>
+        <Pragma type="pipeline" location="top.cpp:128" status="valid" parentFunction="write_output" variable="" isDirective="0" options="ii=1"/>
+        <Pragma type="interface" location="top.cpp:138" status="valid" parentFunction="top_kernel" variable="A_in" isDirective="0" options="m_axi port=A_in offset=slave bundle=A_in"/>
+        <Pragma type="interface" location="top.cpp:139" status="valid" parentFunction="top_kernel" variable="A_out" isDirective="0" options="m_axi port=A_out offset=slave bundle=A_out"/>
+        <Pragma type="interface" location="top.cpp:140" status="valid" parentFunction="top_kernel" variable="return" isDirective="0" options="s_axilite port=return"/>
+        <Pragma type="dataflow" location="top.cpp:143" status="valid" parentFunction="top_kernel" variable="" isDirective="0" options=""/>
+        <Pragma type="stream" location="top.cpp:149" status="valid" parentFunction="top_kernel" variable="grid_initial" isDirective="0" options="variable=grid_initial depth=2"/>
+        <Pragma type="stream" location="top.cpp:150" status="valid" parentFunction="top_kernel" variable="grid_final" isDirective="0" options="variable=grid_final depth=2"/>
     </PragmaReport>
+    <AutoPragmaReport>
+        <AutoPragma type="array_partition" parentFunction="compute" options="dim=3 type=cyclic factor=2 variable=buffer" pragmaLocId="top.cpp:19:0" srcPragmaType="pipeline" srcPragmaLoc="top.cpp:56:0" srcPragmaSource="pragma" srcIsDirective="0" srcIsSlxDirective="0" variable="buffer" varLoc=""/>
+    </AutoPragmaReport>
 </profile>
 

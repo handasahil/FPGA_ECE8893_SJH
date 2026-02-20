@@ -6,7 +6,6 @@
 void read_input(const data_t A_in[NX][NY], data_t stream_out[NX][NY]) {
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
-        #pragma HLS pipeline II=1
             stream_out[i][j] = A_in[i][j];
         }
     }
@@ -16,11 +15,10 @@ void read_input(const data_t A_in[NX][NY], data_t stream_out[NX][NY]) {
 // Task 2: Compute Stencil (Iterative Time Loop)
 // --------------------------------------------------------
 void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
-    // Internal buffers for time-stepping
-    data_t cur[NX][NY];
-    data_t nxt[NX][NY];
+    // 1. COMBINE INTO A 3D PING-PONG BUFFER
+    data_t buffer[2][NX][NY];
 
-    // 1. ADD LINE BUFFER AND WINDOW HERE
+    // Line Buffer and Window
     data_t line_buf[2][NY];
     #pragma HLS array_partition variable=line_buf complete dim=1
     
@@ -31,58 +29,62 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
     const data_t wa = (data_t)0.10;
     const data_t wd = (data_t)0.025;
 
-    // Initialize local 'cur' from the incoming channel
+    // Initialize buffer[0] from the incoming channel
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
         #pragma HLS pipeline II=1    
-            cur[i][j] = stream_in[i][j];
+            buffer[0][i][j] = stream_in[i][j];
         }
     }
 
     // Time stepping
     for (int t = 0; t < TSTEPS; t++) {
         
-        // Copy boundaries unchanged (Leave these as they are!)
+        // 2. TOGGLE THE READ AND WRITE INDICES
+        // Even t: read from 0, write to 1
+        // Odd t:  read from 1, write to 0
+        int read_idx = t % 2;
+        int write_idx = (t + 1) % 2;
+
+        // Copy boundaries unchanged
         for (int j = 0; j < NY; j++) {
         #pragma HLS pipeline II=1
-            nxt[0][j]      = cur[0][j];
-            nxt[NX - 1][j] = cur[NX - 1][j];
+            buffer[write_idx][0][j]      = buffer[read_idx][0][j];
+            buffer[write_idx][NX - 1][j] = buffer[read_idx][NX - 1][j];
         }
         for (int i = 0; i < NX; i++) {
         #pragma HLS pipeline II=1
-            nxt[i][0]      = cur[i][0];
-            nxt[i][NY - 1] = cur[i][NY - 1];
+            buffer[write_idx][i][0]      = buffer[read_idx][i][0];
+            buffer[write_idx][i][NY - 1] = buffer[read_idx][i][NY - 1];
         }
 
-        // 2. NEW LINE BUFFER INTERIOR UPDATE
+        // Update interior
         for (int i = 0; i < NX; i++) {
             for (int j = 0; j < NY; j++) {
-                // Process exactly ONE pixel per clock cycle
                 #pragma HLS pipeline II=1
                 
-                // Shift the 3x3 Window Left
+                // Shift Window
                 for (int r = 0; r < 3; r++) {
                     window[r][0] = window[r][1];
                     window[r][1] = window[r][2];
                 }
 
-                // Read 1 New Pixel & Read from Line Buffer
-                data_t new_pixel = cur[i][j];
+                // 3. READ FROM THE CURRENT READ BUFFER
+                data_t new_pixel = buffer[read_idx][i][j];
                 data_t top_pixel = line_buf[0][j];
                 data_t mid_pixel = line_buf[1][j];
 
-                // Shift the Line Buffer Up
+                // Shift Line Buffer
                 line_buf[0][j] = mid_pixel;
                 line_buf[1][j] = new_pixel;
 
-                // Fill the Right Column of the Window
+                // Fill Window
                 window[0][2] = top_pixel;
                 window[1][2] = mid_pixel;
                 window[2][2] = new_pixel;
 
-                // Compute the Stencil (Only when window is fully populated)
+                // Compute Stencil
                 if (i >= 2 && j >= 2) {
-                    // Output corresponds to the center of the window (i-1, j-1)
                     int out_i = i - 1;
                     int out_j = j - 1;
                     
@@ -96,26 +98,23 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
 
                     acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
                     
-                    // Write to nxt array
-                    nxt[out_i][out_j] = (data_t)out;
+                    // 4. WRITE TO THE CURRENT WRITE BUFFER
+                    buffer[write_idx][out_i][out_j] = (data_t)out;
                 }
             }
         }
-
-        // Baseline swap: full copy nxt -> cur
-        for (int i = 0; i < NX; i++) {
-            for (int j = 0; j < NY; j++) {
-            #pragma HLS pipeline II=1
-                cur[i][j] = nxt[i][j];
-            }
-        }
+        
+        // NO COPY LOOP NEEDED HERE ANYMORE!
     }
 
-    // Write final result to the outgoing channel
+    // 5. WRITE FINAL RESULT
+    // The final result lives in the buffer that was just written to in the last iteration.
+    // If TSTEPS is 10, the last write_idx was (9 + 1) % 2 = 0.
+    int final_idx = TSTEPS % 2;
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
         #pragma HLS pipeline II=1
-            stream_out[i][j] = cur[i][j];
+            stream_out[i][j] = buffer[final_idx][i][j];
         }
     }
 }
@@ -126,7 +125,7 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
 void write_output(data_t stream_in[NX][NY], data_t A_out[NX][NY]) {
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
-        // #pragma HLS pipeline II=1
+        #pragma HLS pipeline II=1
             A_out[i][j] = stream_in[i][j];
         }
     }

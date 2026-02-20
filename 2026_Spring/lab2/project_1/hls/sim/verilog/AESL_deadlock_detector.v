@@ -264,14 +264,14 @@ end
         .token_out_vec(token_out_vec_2),
         .dl_detect_out(dl_in_vec[2]));
 
-    assign proc_2_data_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82.grid_initial_blk_n);
+    assign proc_2_data_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_33_1_VITIS_LOOP_34_2_fu_94.grid_initial_blk_n);
     assign proc_2_data_PIPO_blk[0] = 1'b0;
     assign proc_2_start_FIFO_blk[0] = 1'b0 | (~AESL_inst_top_kernel.start_for_compute_U0_U.if_empty_n & AESL_inst_top_kernel.compute_U0.ap_idle & ~AESL_inst_top_kernel.start_for_compute_U0_U.if_write);
     assign proc_2_TLF_FIFO_blk[0] = 1'b0;
     assign proc_2_input_sync_blk[0] = 1'b0;
     assign proc_2_output_sync_blk[0] = 1'b0;
     assign proc_dep_vld_vec_2[0] = dl_detect_out ? proc_dep_vld_vec_2_reg[0] : (proc_2_data_FIFO_blk[0] | proc_2_data_PIPO_blk[0] | proc_2_start_FIFO_blk[0] | proc_2_TLF_FIFO_blk[0] | proc_2_input_sync_blk[0] | proc_2_output_sync_blk[0]);
-    assign proc_2_data_FIFO_blk[1] = 1'b0 | (~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96.grid_final_blk_n);
+    assign proc_2_data_FIFO_blk[1] = 1'b0 | (~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_114_9_VITIS_LOOP_115_10_fu_118.grid_final_blk_n);
     assign proc_2_data_PIPO_blk[1] = 1'b0;
     assign proc_2_start_FIFO_blk[1] = 1'b0;
     assign proc_2_TLF_FIFO_blk[1] = 1'b0;

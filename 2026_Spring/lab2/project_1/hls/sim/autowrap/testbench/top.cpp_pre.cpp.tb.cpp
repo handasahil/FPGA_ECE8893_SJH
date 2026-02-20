@@ -59267,7 +59267,6 @@ void top_kernel(const data_t A_in[256][256],
 void read_input(const data_t A_in[256][256], data_t stream_out[256][256]) {
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
             stream_out[i][j] = A_in[i][j];
         }
     }
@@ -59278,8 +59277,7 @@ void read_input(const data_t A_in[256][256], data_t stream_out[256][256]) {
 
 void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
-    data_t cur[256][256];
-    data_t nxt[256][256];
+    data_t buffer[2][256][256];
 
 
     data_t line_buf[2][256];
@@ -59296,7 +59294,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
-            cur[i][j] = stream_in[i][j];
+            buffer[0][i][j] = stream_in[i][j];
         }
     }
 
@@ -59304,21 +59302,26 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
     for (int t = 0; t < 30; t++) {
 
 
+
+
+        int read_idx = t % 2;
+        int write_idx = (t + 1) % 2;
+
+
         for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
-            nxt[0][j] = cur[0][j];
-            nxt[256 - 1][j] = cur[256 - 1][j];
+            buffer[write_idx][0][j] = buffer[read_idx][0][j];
+            buffer[write_idx][256 - 1][j] = buffer[read_idx][256 - 1][j];
         }
         for (int i = 0; i < 256; i++) {
 #pragma HLS pipeline II=1
-            nxt[i][0] = cur[i][0];
-            nxt[i][256 - 1] = cur[i][256 - 1];
+            buffer[write_idx][i][0] = buffer[read_idx][i][0];
+            buffer[write_idx][i][256 - 1] = buffer[read_idx][i][256 - 1];
         }
 
 
         for (int i = 0; i < 256; i++) {
             for (int j = 0; j < 256; j++) {
-
 #pragma HLS pipeline II=1
 
 
@@ -59328,7 +59331,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
                 }
 
 
-                data_t new_pixel = cur[i][j];
+                data_t new_pixel = buffer[read_idx][i][j];
                 data_t top_pixel = line_buf[0][j];
                 data_t mid_pixel = line_buf[1][j];
 
@@ -59343,7 +59346,6 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
 
                 if (i >= 2 && j >= 2) {
-
                     int out_i = i - 1;
                     int out_j = j - 1;
 
@@ -59358,25 +59360,22 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
                     acc_t out = (acc_t)wc * center + (acc_t)wa * sum_axis + (acc_t)wd * sum_diag;
 
 
-                    nxt[out_i][out_j] = (data_t)out;
+                    buffer[write_idx][out_i][out_j] = (data_t)out;
                 }
             }
         }
 
 
-        for (int i = 0; i < 256; i++) {
-            for (int j = 0; j < 256; j++) {
-#pragma HLS pipeline II=1
-                cur[i][j] = nxt[i][j];
-            }
-        }
     }
 
 
+
+
+    int final_idx = 30 % 2;
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
-            stream_out[i][j] = cur[i][j];
+            stream_out[i][j] = buffer[final_idx][i][j];
         }
     }
 }
@@ -59387,7 +59386,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-
+#pragma HLS pipeline II=1
             A_out[i][j] = stream_in[i][j];
         }
     }
@@ -59441,5 +59440,5 @@ apatb_top_kernel_ir(A_in, A_out);
 return ;
 }
 #endif
-# 157 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
+# 156 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
 

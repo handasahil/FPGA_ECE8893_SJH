@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'write_output'
 ================================================================
-* Date:           Fri Feb 20 11:31:01 2026
+* Date:           Fri Feb 20 12:00:29 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -25,25 +25,24 @@
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+--------+--------+---------+
-    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
-    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
-    +---------+---------+----------+----------+--------+--------+---------+
-    |   131591|   131591|  1.316 ms|  1.316 ms|  131591|  131591|       no|
-    +---------+---------+----------+----------+--------+--------+---------+
+    +---------+---------+----------+----------+-------+-------+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   |  min  |  max  |                      Type                      |
+    +---------+---------+----------+----------+-------+-------+------------------------------------------------+
+    |    65545|    65545|  0.655 ms|  0.655 ms|  65536|  65536|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-------+-------+------------------------------------------------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
-        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
-        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_127_1   |   131584|   131584|       514|          -|          -|   256|        no|
-        | + VITIS_LOOP_128_2  |      512|      512|         2|          -|          -|   256|        no|
-        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        +-------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                                     |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- VITIS_LOOP_126_1_VITIS_LOOP_127_2  |    65543|    65543|         9|          1|          1|  65536|       yes|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
 
 
 
@@ -55,14 +54,14 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|     70|    -|
+|Expression       |        -|    -|       0|     64|    -|
 |FIFO             |        -|    -|       -|      -|    -|
 |Instance         |        -|    -|       -|      -|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       0|    131|    -|
-|Register         |        -|    -|     135|      -|    -|
+|Multiplexer      |        -|    -|       0|     81|    -|
+|Register         |        -|    -|     187|     32|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|     135|    201|    0|
+|Total            |        0|    0|     187|    177|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      432|  360|  141120|  70560|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -83,51 +82,73 @@
     N/A
 
     * Expression: 
-    +----------------------+----------+----+---+----+------------+------------+
-    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +----------------------+----------+----+---+----+------------+------------+
-    |add_ln127_fu_149_p2   |         +|   0|  0|  16|           9|           1|
-    |add_ln128_fu_161_p2   |         +|   0|  0|  16|           9|           1|
-    |ap_block_state4       |       and|   0|  0|   2|           1|           1|
-    |icmp_ln127_fu_143_p2  |      icmp|   0|  0|  17|           9|          10|
-    |icmp_ln128_fu_155_p2  |      icmp|   0|  0|  17|           9|          10|
-    |ap_block_state1       |        or|   0|  0|   2|           1|           1|
-    +----------------------+----------+----+---+----+------------+------------+
-    |Total                 |          |   0|  0|  70|          38|          24|
-    +----------------------+----------+----+---+----+------------+------------+
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |             Variable Name             | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln126_fu_130_p2                    |         +|   0|  0|  23|          16|           1|
+    |ap_block_state2_pp0_stage0_iter1_grp1  |       and|   0|  0|   2|           1|           1|
+    |ap_block_state3_io_grp1                |       and|   0|  0|   2|           1|           1|
+    |ap_block_state9_pp0_stage0_iter8_grp1  |       and|   0|  0|   2|           1|           1|
+    |ap_condition_273                       |       and|   0|  0|   2|           1|           1|
+    |ap_condition_353                       |       and|   0|  0|   2|           1|           1|
+    |icmp_ln126_fu_136_p2                   |      icmp|   0|  0|  23|          16|           2|
+    |ap_block_pp0_stage0_01001_grp1         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_11001              |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_11001_grp0         |        or|   0|  0|   2|           1|           1|
+    |ap_enable_pp0                          |       xor|   0|  0|   2|           1|           2|
+    +---------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                  |          |   0|  0|  64|          41|          13|
+    +---------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
-    +------------------+----+-----------+-----+-----------+
-    |       Name       | LUT| Input Size| Bits| Total Bits|
-    +------------------+----+-----------+-----+-----------+
-    |A_out1_blk_n      |   9|          2|    1|          2|
-    |A_out_blk_n_AW    |   9|          2|    1|          2|
-    |A_out_blk_n_B     |   9|          2|    1|          2|
-    |A_out_blk_n_W     |   9|          2|    1|          2|
-    |ap_NS_fsm         |  59|         11|    1|         11|
-    |ap_done           |   9|          2|    1|          2|
-    |grid_final_blk_n  |   9|          2|    1|          2|
-    |i_fu_68           |   9|          2|    9|         18|
-    |j_reg_104         |   9|          2|    9|         18|
-    +------------------+----+-----------+-----+-----------+
-    |Total             | 131|         27|   25|         59|
-    +------------------+----+-----------+-----+-----------+
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |A_out1_blk_n                           |   9|          2|    1|          2|
+    |A_out_blk_n_AW                         |   9|          2|    1|          2|
+    |A_out_blk_n_B                          |   9|          2|    1|          2|
+    |A_out_blk_n_W                          |   9|          2|    1|          2|
+    |ap_done_int                            |   9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter8_reg       |   9|          2|    1|          2|
+    |ap_sig_allocacmp_indvar_flatten2_load  |   9|          2|   16|         32|
+    |grid_final_blk_n                       |   9|          2|    1|          2|
+    |indvar_flatten2_fu_70                  |   9|          2|   16|         32|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  |  81|         18|   39|         78|
+    +---------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +-------------------------+----+----+-----+-----------+
-    |           Name          | FF | LUT| Bits| Const Bits|
-    +-------------------------+----+----+-----+-----------+
-    |A_out_addr_reg_182       |  64|   0|   64|          0|
-    |add_ln127_reg_192        |   9|   0|    9|          0|
-    |add_ln128_reg_200        |   9|   0|    9|          0|
-    |ap_CS_fsm                |  10|   0|   10|          0|
-    |ap_done_reg              |   1|   0|    1|          0|
-    |grid_final_read_reg_205  |  24|   0|   24|          0|
-    |i_fu_68                  |   9|   0|    9|          0|
-    |j_reg_104                |   9|   0|    9|          0|
-    +-------------------------+----+----+-----+-----------+
-    |Total                    | 135|   0|  135|          0|
-    +-------------------------+----+----+-----+-----------+
+    +------------------------------------+----+----+-----+-----------+
+    |                Name                | FF | LUT| Bits| Const Bits|
+    +------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                           |   1|   0|    1|          0|
+    |ap_done_reg                         |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8             |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter6_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter7_reg    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter8_reg    |   1|   0|    1|          0|
+    |first_iter_0_reg_110                |   1|   0|    1|          0|
+    |first_iter_0_reg_110_pp0_iter1_reg  |   1|   0|    1|          0|
+    |grid_final_read_reg_208             |  24|   0|   24|          0|
+    |icmp_ln126_reg_199                  |   1|   0|    1|          0|
+    |indvar_flatten2_fu_70               |  16|   0|   16|          0|
+    |trunc_ln_reg_203                    |  62|   0|   62|          0|
+    |icmp_ln126_reg_199                  |  64|  32|    1|          0|
+    +------------------------------------+----+----+-----+-----------+
+    |Total                               | 187|  32|  124|          0|
+    +------------------------------------+----+----+-----+-----------+
 
 
 
@@ -145,11 +166,11 @@
 |ap_continue                |   in|    1|  ap_ctrl_hs|  write_output|  return value|
 |ap_idle                    |  out|    1|  ap_ctrl_hs|  write_output|  return value|
 |ap_ready                   |  out|    1|  ap_ctrl_hs|  write_output|  return value|
-|grid_final_dout            |   in|   24|     ap_fifo|    grid_final|       pointer|
-|grid_final_empty_n         |   in|    1|     ap_fifo|    grid_final|       pointer|
-|grid_final_read            |  out|    1|     ap_fifo|    grid_final|       pointer|
-|grid_final_num_data_valid  |   in|    3|     ap_fifo|    grid_final|       pointer|
-|grid_final_fifo_cap        |   in|    3|     ap_fifo|    grid_final|       pointer|
+|A_out1_dout                |   in|   64|     ap_fifo|        A_out1|       pointer|
+|A_out1_empty_n             |   in|    1|     ap_fifo|        A_out1|       pointer|
+|A_out1_read                |  out|    1|     ap_fifo|        A_out1|       pointer|
+|A_out1_num_data_valid      |   in|    3|     ap_fifo|        A_out1|       pointer|
+|A_out1_fifo_cap            |   in|    3|     ap_fifo|        A_out1|       pointer|
 |m_axi_A_out_0_AWVALID      |  out|    1|       m_axi|         A_out|       pointer|
 |m_axi_A_out_0_AWREADY      |   in|    1|       m_axi|         A_out|       pointer|
 |m_axi_A_out_0_AWADDR       |  out|   64|       m_axi|         A_out|       pointer|
@@ -196,10 +217,10 @@
 |m_axi_A_out_0_BRESP        |   in|    2|       m_axi|         A_out|       pointer|
 |m_axi_A_out_0_BID          |   in|    1|       m_axi|         A_out|       pointer|
 |m_axi_A_out_0_BUSER        |   in|    1|       m_axi|         A_out|       pointer|
-|A_out1_dout                |   in|   64|     ap_fifo|        A_out1|       pointer|
-|A_out1_empty_n             |   in|    1|     ap_fifo|        A_out1|       pointer|
-|A_out1_read                |  out|    1|     ap_fifo|        A_out1|       pointer|
-|A_out1_num_data_valid      |   in|    3|     ap_fifo|        A_out1|       pointer|
-|A_out1_fifo_cap            |   in|    3|     ap_fifo|        A_out1|       pointer|
+|grid_final_dout            |   in|   24|     ap_fifo|    grid_final|       pointer|
+|grid_final_empty_n         |   in|    1|     ap_fifo|    grid_final|       pointer|
+|grid_final_read            |  out|    1|     ap_fifo|    grid_final|       pointer|
+|grid_final_num_data_valid  |   in|    3|     ap_fifo|    grid_final|       pointer|
+|grid_final_fifo_cap        |   in|    3|     ap_fifo|    grid_final|       pointer|
 +---------------------------+-----+-----+------------+--------------+--------------+
 
