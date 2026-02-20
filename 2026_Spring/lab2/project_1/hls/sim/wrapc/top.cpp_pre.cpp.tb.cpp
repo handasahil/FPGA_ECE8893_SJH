@@ -59264,20 +59264,21 @@ void top_kernel(const data_t A_in[256][256],
 
 
 
+void read_input(const data_t A_in[256][256], data_t stream_out[256][256]) {
+    for (int i = 0; i < 256; i++) {
+        for (int j = 0; j < 256; j++) {
+            stream_out[i][j] = A_in[i][j];
+        }
+    }
+}
 
 
 
 
-void top_kernel(const data_t A_in[256][256],
-                data_t A_out[256][256]) {
-#pragma HLS interface m_axi port=A_in offset=slave bundle=A_in
-#pragma HLS interface m_axi port=A_out offset=slave bundle=A_out
-#pragma HLS interface s_axilite port=return
+void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
-
-    static data_t cur[256][256];
-    static data_t nxt[256][256];
-
+    data_t cur[256][256];
+    data_t nxt[256][256];
 
     const data_t wc = (data_t)0.50;
     const data_t wa = (data_t)0.10;
@@ -59286,7 +59287,8 @@ void top_kernel(const data_t A_in[256][256],
 
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-            cur[i][j] = A_in[i][j];
+#pragma HLS pipeline II=1
+            cur[i][j] = stream_in[i][j];
         }
     }
 
@@ -59299,6 +59301,7 @@ void top_kernel(const data_t A_in[256][256],
             nxt[256 - 1][j] = cur[256 - 1][j];
         }
         for (int i = 0; i < 256; i++) {
+#pragma HLS pipeline II=1
             nxt[i][0] = cur[i][0];
             nxt[i][256 - 1] = cur[i][256 - 1];
         }
@@ -59306,6 +59309,7 @@ void top_kernel(const data_t A_in[256][256],
 
         for (int i = 1; i < 256 - 1; i++) {
             for (int j = 1; j < 256 - 1; j++) {
+#pragma HLS pipeline II=1
                 acc_t sum_axis =
                     (acc_t)cur[i - 1][j] + (acc_t)cur[i + 1][j] +
                     (acc_t)cur[i][j - 1] + (acc_t)cur[i][j + 1];
@@ -59324,6 +59328,7 @@ void top_kernel(const data_t A_in[256][256],
 
         for (int i = 0; i < 256; i++) {
             for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
                 cur[i][j] = nxt[i][j];
             }
         }
@@ -59332,9 +59337,43 @@ void top_kernel(const data_t A_in[256][256],
 
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-            A_out[i][j] = cur[i][j];
+#pragma HLS pipeline II=1
+            stream_out[i][j] = cur[i][j];
         }
     }
+}
+
+
+
+
+void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
+    for (int i = 0; i < 256; i++) {
+        for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
+            A_out[i][j] = stream_in[i][j];
+        }
+    }
+}
+
+
+
+
+void top_kernel(const data_t A_in[256][256], data_t A_out[256][256]) {
+#pragma HLS interface m_axi port=A_in offset=slave bundle=A_in
+#pragma HLS interface m_axi port=A_out offset=slave bundle=A_out
+#pragma HLS interface s_axilite port=return
+
+
+#pragma HLS dataflow
+
+
+    data_t grid_initial[256][256];
+    data_t grid_final[256][256];
+
+
+    read_input(A_in, grid_initial);
+    compute(grid_initial, grid_final);
+    write_output(grid_final, A_out);
 }
 #ifndef HLS_FASTSIM
 #ifdef __cplusplus
@@ -59361,5 +59400,5 @@ apatb_top_kernel_ir(A_in, A_out);
 return ;
 }
 #endif
-# 77 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
+# 116 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
 

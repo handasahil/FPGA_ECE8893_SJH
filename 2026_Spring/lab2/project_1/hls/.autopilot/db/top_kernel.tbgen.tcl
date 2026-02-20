@@ -4,7 +4,7 @@ set isCombinational 0
 set isDatapathOnly 0
 set isPipelined 0
 set isPipelined_legacy 0
-set pipeline_type none
+set pipeline_type dataflow
 set FunctionProtocol ap_ctrl_hs
 set isOneStateSeq 0
 set ProfileFlag 0
@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 4
+set cdfgNum 13
 set C_modelName {top_kernel}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -37,6 +37,24 @@ set portNum 110
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
+	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
+	{ s_axi_control_AWREADY sc_out sc_logic 1 signal -1 } 
+	{ s_axi_control_AWADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_control_WVALID sc_in sc_logic 1 signal -1 } 
+	{ s_axi_control_WREADY sc_out sc_logic 1 signal -1 } 
+	{ s_axi_control_WDATA sc_in sc_lv 32 signal -1 } 
+	{ s_axi_control_WSTRB sc_in sc_lv 4 signal -1 } 
+	{ s_axi_control_ARVALID sc_in sc_logic 1 signal -1 } 
+	{ s_axi_control_ARREADY sc_out sc_logic 1 signal -1 } 
+	{ s_axi_control_ARADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_control_RVALID sc_out sc_logic 1 signal -1 } 
+	{ s_axi_control_RREADY sc_in sc_logic 1 signal -1 } 
+	{ s_axi_control_RDATA sc_out sc_lv 32 signal -1 } 
+	{ s_axi_control_RRESP sc_out sc_lv 2 signal -1 } 
+	{ s_axi_control_BVALID sc_out sc_logic 1 signal -1 } 
+	{ s_axi_control_BREADY sc_in sc_logic 1 signal -1 } 
+	{ s_axi_control_BRESP sc_out sc_lv 2 signal -1 } 
+	{ interrupt sc_out sc_logic 1 signal -1 } 
 	{ m_axi_A_in_AWVALID sc_out sc_logic 1 signal 0 } 
 	{ m_axi_A_in_AWREADY sc_in sc_logic 1 signal 0 } 
 	{ m_axi_A_in_AWADDR sc_out sc_lv 64 signal 0 } 
@@ -127,24 +145,6 @@ set portList {
 	{ m_axi_A_out_BRESP sc_in sc_lv 2 signal 1 } 
 	{ m_axi_A_out_BID sc_in sc_lv 1 signal 1 } 
 	{ m_axi_A_out_BUSER sc_in sc_lv 1 signal 1 } 
-	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_AWADDR sc_in sc_lv 6 signal -1 } 
-	{ s_axi_control_WVALID sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_WREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_WDATA sc_in sc_lv 32 signal -1 } 
-	{ s_axi_control_WSTRB sc_in sc_lv 4 signal -1 } 
-	{ s_axi_control_ARVALID sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_ARADDR sc_in sc_lv 6 signal -1 } 
-	{ s_axi_control_RVALID sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_RREADY sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_RDATA sc_out sc_lv 32 signal -1 } 
-	{ s_axi_control_RRESP sc_out sc_lv 2 signal -1 } 
-	{ s_axi_control_BVALID sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_BREADY sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_BRESP sc_out sc_lv 2 signal -1 } 
-	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"top_kernel","role":"start","value":"0","valid_bit":"0"},{"name":"top_kernel","role":"continue","value":"0","valid_bit":"4"},{"name":"top_kernel","role":"auto_start","value":"0","valid_bit":"7"},{"name":"A_in_r","role":"data","value":"16"},{"name":"A_out_r","role":"data","value":"28"}] },
@@ -260,21 +260,84 @@ set NewPortList {[
 
 set ArgLastReadFirstWriteLatency {
 	top_kernel {
-		A_in {Type I LastRead 11 FirstWrite -1}
-		A_out {Type O LastRead 13 FirstWrite 15}
+		A_in {Type I LastRead 10 FirstWrite -1}
+		A_out {Type O LastRead 4 FirstWrite 3}
 		A_in_r {Type I LastRead 0 FirstWrite -1}
+		A_out_r {Type I LastRead 0 FirstWrite -1}}
+	entry_proc {
 		A_out_r {Type I LastRead 0 FirstWrite -1}
-		cur {Type IO LastRead -1 FirstWrite -1}
-		nxt {Type IO LastRead -1 FirstWrite -1}}
-	top_kernel_Pipeline_VITIS_LOOP_35_4 {
+		A_out_r_c {Type O LastRead -1 FirstWrite 0}}
+	read_input {
+		A_in {Type I LastRead 10 FirstWrite -1}
+		A_in1 {Type I LastRead 0 FirstWrite -1}
+		stream_out {Type O LastRead -1 FirstWrite 11}}
+	compute {
+		stream_in {Type I LastRead 12 FirstWrite -1}
+		stream_out {Type O LastRead -1 FirstWrite 13}}
+	compute_Pipeline_VITIS_LOOP_27_1_VITIS_LOOP_28_2 {
+		stream_in {Type I LastRead 12 FirstWrite -1}
+		cur {Type O LastRead -1 FirstWrite 13}
+		cur_1 {Type O LastRead -1 FirstWrite 13}
+		cur_2 {Type O LastRead -1 FirstWrite 13}
+		cur_3 {Type O LastRead -1 FirstWrite 13}
+		cur_4 {Type O LastRead -1 FirstWrite 13}
+		cur_5 {Type O LastRead -1 FirstWrite 13}
+		cur_6 {Type O LastRead -1 FirstWrite 13}
+		cur_7 {Type O LastRead -1 FirstWrite 13}
+		cur_8 {Type O LastRead -1 FirstWrite 13}}
+	compute_Pipeline_VITIS_LOOP_37_4 {
+		nxt {Type O LastRead -1 FirstWrite 1}
 		cur {Type I LastRead 1 FirstWrite -1}
-		nxt {Type O LastRead -1 FirstWrite 1}}}
+		cur_1 {Type I LastRead 1 FirstWrite -1}
+		cur_2 {Type I LastRead 1 FirstWrite -1}}
+	compute_Pipeline_VITIS_LOOP_77_10_VITIS_LOOP_78_11 {
+		stream_out {Type O LastRead -1 FirstWrite 13}
+		cur {Type I LastRead 12 FirstWrite -1}
+		cur_1 {Type I LastRead 12 FirstWrite -1}
+		cur_2 {Type I LastRead 12 FirstWrite -1}
+		cur_3 {Type I LastRead 12 FirstWrite -1}
+		cur_4 {Type I LastRead 12 FirstWrite -1}
+		cur_5 {Type I LastRead 12 FirstWrite -1}
+		cur_6 {Type I LastRead 12 FirstWrite -1}
+		cur_7 {Type I LastRead 12 FirstWrite -1}
+		cur_8 {Type I LastRead 12 FirstWrite -1}}
+	compute_Pipeline_VITIS_LOOP_42_5 {
+		nxt {Type O LastRead -1 FirstWrite 1}
+		cur {Type I LastRead 1 FirstWrite -1}
+		cur_3 {Type I LastRead 1 FirstWrite -1}
+		cur_6 {Type I LastRead 1 FirstWrite -1}}
+	compute_Pipeline_VITIS_LOOP_49_6_VITIS_LOOP_50_7 {
+		nxt {Type O LastRead -1 FirstWrite 15}
+		cur {Type I LastRead 14 FirstWrite -1}
+		cur_1 {Type I LastRead 14 FirstWrite -1}
+		cur_2 {Type I LastRead 14 FirstWrite -1}
+		cur_3 {Type I LastRead 14 FirstWrite -1}
+		cur_4 {Type I LastRead 14 FirstWrite -1}
+		cur_5 {Type I LastRead 14 FirstWrite -1}
+		cur_6 {Type I LastRead 14 FirstWrite -1}
+		cur_7 {Type I LastRead 14 FirstWrite -1}
+		cur_8 {Type I LastRead 14 FirstWrite -1}}
+	compute_Pipeline_VITIS_LOOP_68_8_VITIS_LOOP_69_9 {
+		nxt {Type I LastRead 12 FirstWrite -1}
+		cur {Type O LastRead -1 FirstWrite 13}
+		cur_1 {Type O LastRead -1 FirstWrite 13}
+		cur_2 {Type O LastRead -1 FirstWrite 13}
+		cur_3 {Type O LastRead -1 FirstWrite 13}
+		cur_4 {Type O LastRead -1 FirstWrite 13}
+		cur_5 {Type O LastRead -1 FirstWrite 13}
+		cur_6 {Type O LastRead -1 FirstWrite 13}
+		cur_7 {Type O LastRead -1 FirstWrite 13}
+		cur_8 {Type O LastRead -1 FirstWrite 13}}
+	write_output {
+		stream_in {Type I LastRead 0 FirstWrite -1}
+		A_out {Type O LastRead 4 FirstWrite 3}
+		A_out1 {Type I LastRead 1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "17928627", "Max" : "17928627"}
-	, {"Name" : "Interval", "Min" : "17928628", "Max" : "17928628"}
+	{"Name" : "Latency", "Min" : "4311956", "Max" : "4311956"}
+	, {"Name" : "Interval", "Min" : "4049282", "Max" : "4049282"}
 ]}
 
 set PipelineEnableSignalInfo {[

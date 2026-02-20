@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Tue Feb 17 22:20:40 2026
+<item name = "Date">Thu Feb 19 22:36:34 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -24,28 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">17928627, 17928627, 0.179 sec, 0.179 sec, 17928628, 17928628, no</column>
+<column name="">4311956, 4311956, 43.120 ms, 43.120 ms, 4049282, 4049282, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_top_kernel_Pipeline_VITIS_LOOP_35_4_fu_488">top_kernel_Pipeline_VITIS_LOOP_35_4, 258, 258, 2.580 us, 2.580 us, 257, 257, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="call_ln106_entry_proc_fu_96">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_read_input_fu_103">read_input, 197128, 197128, 1.971 ms, 1.971 ms, 197128, 197128, no</column>
+<column name="grp_compute_fu_111">compute, 4049281, 4049281, 40.493 ms, 40.493 ms, 4049281, 4049281, no</column>
+<column name="grp_write_output_fu_117">write_output, 65545, 65545, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_26_1">197120, 197120, 770, -, -, 256, no</column>
-<column name=" + VITIS_LOOP_27_2">768, 768, 3, -, -, 256, no</column>
-<column name="- VITIS_LOOP_33_3">17534370, 17534370, 584479, -, -, 30, no</column>
-<column name=" + VITIS_LOOP_40_5">512, 512, 2, -, -, 256, no</column>
-<column name=" + VITIS_LOOP_46_6">452120, 452120, 1780, -, -, 254, no</column>
-<column name="  ++ VITIS_LOOP_47_7">1778, 1778, 7, -, -, 254, no</column>
-<column name=" + VITIS_LOOP_64_8">131584, 131584, 514, -, -, 256, no</column>
-<column name="  ++ VITIS_LOOP_65_9">512, 512, 2, -, -, 256, no</column>
-<column name="- VITIS_LOOP_72_10">197120, 197120, 770, -, -, 256, no</column>
-<column name=" + VITIS_LOOP_73_11">768, 768, 3, -, -, 256, no</column>
 </table>
 </item>
 </section>

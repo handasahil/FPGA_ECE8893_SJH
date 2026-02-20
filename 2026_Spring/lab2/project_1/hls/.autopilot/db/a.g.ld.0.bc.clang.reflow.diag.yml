@@ -1,10 +1,88 @@
 --- !Missed
 Pass:            inline
 Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 113, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 114, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'compute(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 115, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 88, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 113, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 114, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'compute(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 115, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 88, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
 Function:        apatb_top_kernel_ir
 Args:            
   - Callee:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_top_kernel_ir
   - String:          ' because it should never be inlined (cost=never)'
@@ -42,8 +120,8 @@ Args:
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: top.cpp, Line: 26, Column: 22 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 7, Column: 21 }
+Function:        _Z10read_inputPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - String:          'Sequential '
   - Direction:       read
@@ -56,24 +134,24 @@ Args:
   - String:          ' '
   - BundleName:      A_in
   - String:          ' '
-  - LoopName:        VITIS_LOOP_26_1
+  - LoopName:        VITIS_LOOP_7_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:26:22'
+  - LoopLoc:         'top.cpp:7:21'
   - String:          ' '
-  - Function:        'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
+  - Function:        'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: top.cpp, Line: 28, Column: 23 }
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 30 }
   - OrigDirection:   read
   - OrigID:          for.inc.load.6
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: top.cpp, Line: 72, Column: 23 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 89, Column: 22 }
+Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
 Args:            
   - String:          'Sequential '
   - Direction:       write
@@ -81,29 +159,29 @@ Args:
   - Length:          '65536'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        A_out2seq
+  - AccessID:        A_out1seq
   - ArrayName:       A_out
   - String:          ' '
   - BundleName:      A_out
   - String:          ' '
-  - LoopName:        VITIS_LOOP_72_10
+  - LoopName:        VITIS_LOOP_89_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:72:23'
+  - LoopLoc:         'top.cpp:89:22'
   - String:          ' '
-  - Function:        'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
+  - Function:        'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 88, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: top.cpp, Line: 74, Column: 25 }
+    DebugLoc:        { File: top.cpp, Line: 92, Column: 14 }
   - OrigDirection:   write
-  - OrigID:          for.inc186.store.9
+  - OrigID:          for.inc.store.9
 ...
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: top.cpp, Line: 72, Column: 23 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 7, Column: 21 }
+Function:        _Z10read_inputPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
 Args:            
   - String:          'Could not widen since type '
   - Type:            i32
@@ -111,53 +189,165 @@ Args:
   - Threshold:       '0'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: top.cpp, Line: 72, Column: 23 }
-  - OrigDirection:   write
-  - OrigID:          A_out2seq
-  - ArrayName:       A_out
-  - String:          ' '
-  - BundleName:      A_out
-  - String:          ' '
-  - LoopName:        VITIS_LOOP_73_11
-  - String:          ' '
-  - LoopLoc:         'top.cpp:73:27'
-  - String:          ' '
-  - Function:        'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
-  - String:          ' '
-...
---- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: top.cpp, Line: 26, Column: 22 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
-Args:            
-  - String:          'Could not widen since type '
-  - Type:            i32
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      call
-    DebugLoc:        { File: top.cpp, Line: 26, Column: 22 }
+    DebugLoc:        { File: top.cpp, Line: 7, Column: 21 }
   - OrigDirection:   read
   - OrigID:          A_in1seq
   - ArrayName:       A_in
   - String:          ' '
   - BundleName:      A_in
   - String:          ' '
-  - LoopName:        VITIS_LOOP_27_2
+  - LoopName:        VITIS_LOOP_8_2
   - String:          ' '
-  - LoopLoc:         'top.cpp:27:26'
+  - LoopLoc:         'top.cpp:8:25'
   - String:          ' '
-  - Function:        'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
+  - Function:        'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
   - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: top.cpp, Line: 89, Column: 22 }
+Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 89, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          A_out1seq
+  - ArrayName:       A_out
+  - String:          ' '
+  - BundleName:      A_out
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_90_2
+  - String:          ' '
+  - LoopLoc:         'top.cpp:90:26'
+  - String:          ' '
+  - Function:        'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 88, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: top.cpp, Line: 19, Column: 12 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=3 variable=cur'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  compute
+  - String:          ' '
+  - varLoc:          'top.cpp:19:12'
+  - String:          ' '
+  - PragmaSrcLoc:    'top.cpp:51:9'
+    DebugLoc:        { File: top.cpp, Line: 51, Column: 9 }
+  - VarName:         cur
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: top.cpp, Line: 51, Column: 9 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            cur
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: top.cpp, Line: 19, Column: 12 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=3 variable=cur'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  compute
+  - String:          ' '
+  - varLoc:          'top.cpp:19:12'
+  - String:          ' '
+  - PragmaSrcLoc:    'top.cpp:51:9'
+    DebugLoc:        { File: top.cpp, Line: 51, Column: 9 }
+  - VarName:         cur
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: top.cpp, Line: 51, Column: 9 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '3'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            cur
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: top.cpp, Line: 19, Column: 12 }
+Function:        _Z7computePA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          cur
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '3'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: top.cpp, Line: 26, Column: 22 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 7, Column: 21 }
+Function:        _Z10read_inputPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
@@ -173,19 +363,19 @@ Args:
   - String:          ' '
   - BundleName:      A_in
   - String:          ' '
-  - LoopName:        VITIS_LOOP_26_1
+  - LoopName:        VITIS_LOOP_7_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:26:22'
+  - LoopLoc:         'top.cpp:7:21'
   - String:          ' '
-  - Function:        'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
+  - Function:        'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: top.cpp, Line: 26, Column: 22 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 7, Column: 21 }
+Function:        _Z10read_inputPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
@@ -194,9 +384,9 @@ Args:
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_26_1
+  - LoopName:        VITIS_LOOP_7_1
   - String:          '''('
-  - LoopLoc:         'top.cpp:26:22'
+  - LoopLoc:         'top.cpp:7:21'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      A_in
@@ -206,8 +396,8 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: top.cpp, Line: 72, Column: 23 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 89, Column: 22 }
+Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
@@ -218,24 +408,24 @@ Args:
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        seq1
+  - AccessID:        seq
   - ArrayName:       ''
   - String:          ' '
   - BundleName:      A_out
   - String:          ' '
-  - LoopName:        VITIS_LOOP_72_10
+  - LoopName:        VITIS_LOOP_89_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:72:23'
+  - LoopLoc:         'top.cpp:89:22'
   - String:          ' '
-  - Function:        'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
-    DebugLoc:        { File: top.cpp, Line: 11, Column: 0 }
+  - Function:        'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 88, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: top.cpp, Line: 72, Column: 23 }
-Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+DebugLoc:        { File: top.cpp, Line: 89, Column: 22 }
+Function:        _Z12write_outputPA256_8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EES4_.1
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
@@ -244,12 +434,51 @@ Args:
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_72_10
+  - LoopName:        VITIS_LOOP_89_1
   - String:          '''('
-  - LoopLoc:         'top.cpp:72:23'
+  - LoopLoc:         'top.cpp:89:22'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      A_out
   - String:          '''.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 113, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'read_input(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 114, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'compute(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 17, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 115, Column: 5 }
+Function:        _Z10top_kernelPA256_K8ap_fixedILi24ELi8EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA256_S2_
+Args:            
+  - Callee:          'write_output(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 88, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [256], ap_fixed<24, 8, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [256])'
+    DebugLoc:        { File: top.cpp, Line: 100, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
 ...

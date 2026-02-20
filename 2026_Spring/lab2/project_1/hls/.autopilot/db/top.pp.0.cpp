@@ -6510,53 +6510,53 @@ __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t A_in[2
 
 
 
+void read_input(const data_t A_in[256][256], data_t stream_out[256][256]) {
+    VITIS_LOOP_7_1: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_8_2: for (int j = 0; j < 256; j++) {
+            stream_out[i][j] = A_in[i][j];
+        }
+    }
+}
 
 
 
 
-__attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t A_in[256][256],
-                data_t A_out[256][256]) {
-#line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl"
-#pragma HLSDIRECTIVE TOP name=top_kernel
-# 11 "top.cpp"
+void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
-#pragma HLS interface m_axi port=A_in offset=slave bundle=A_in
-#pragma HLS interface m_axi port=A_out offset=slave bundle=A_out
-#pragma HLS interface s_axilite port=return
-
-
- static data_t cur[256][256];
-    static data_t nxt[256][256];
-
+    data_t cur[256][256];
+    data_t nxt[256][256];
 
     const data_t wc = (data_t)0.50;
     const data_t wa = (data_t)0.10;
     const data_t wd = (data_t)0.025;
 
 
-    VITIS_LOOP_26_1: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_27_2: for (int j = 0; j < 256; j++) {
-            cur[i][j] = A_in[i][j];
+    VITIS_LOOP_27_1: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_28_2: for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
+ cur[i][j] = stream_in[i][j];
         }
     }
 
 
-    VITIS_LOOP_33_3: for (int t = 0; t < 30; t++) {
+    VITIS_LOOP_35_3: for (int t = 0; t < 30; t++) {
 
-        VITIS_LOOP_35_4: for (int j = 0; j < 256; j++) {
+        VITIS_LOOP_37_4: for (int j = 0; j < 256; j++) {
 #pragma HLS pipeline II=1
  nxt[0][j] = cur[0][j];
             nxt[256 - 1][j] = cur[256 - 1][j];
         }
-        VITIS_LOOP_40_5: for (int i = 0; i < 256; i++) {
-            nxt[i][0] = cur[i][0];
+        VITIS_LOOP_42_5: for (int i = 0; i < 256; i++) {
+#pragma HLS pipeline II=1
+ nxt[i][0] = cur[i][0];
             nxt[i][256 - 1] = cur[i][256 - 1];
         }
 
 
-        VITIS_LOOP_46_6: for (int i = 1; i < 256 - 1; i++) {
-            VITIS_LOOP_47_7: for (int j = 1; j < 256 - 1; j++) {
-                acc_t sum_axis =
+        VITIS_LOOP_49_6: for (int i = 1; i < 256 - 1; i++) {
+            VITIS_LOOP_50_7: for (int j = 1; j < 256 - 1; j++) {
+#pragma HLS pipeline II=1
+ acc_t sum_axis =
                     (acc_t)cur[i - 1][j] + (acc_t)cur[i + 1][j] +
                     (acc_t)cur[i][j - 1] + (acc_t)cur[i][j + 1];
 
@@ -6572,17 +6572,56 @@ __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t A_in[2
         }
 
 
-        VITIS_LOOP_64_8: for (int i = 0; i < 256; i++) {
-            VITIS_LOOP_65_9: for (int j = 0; j < 256; j++) {
-                cur[i][j] = nxt[i][j];
+        VITIS_LOOP_68_8: for (int i = 0; i < 256; i++) {
+            VITIS_LOOP_69_9: for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
+ cur[i][j] = nxt[i][j];
             }
         }
     }
 
 
-    VITIS_LOOP_72_10: for (int i = 0; i < 256; i++) {
-        VITIS_LOOP_73_11: for (int j = 0; j < 256; j++) {
-            A_out[i][j] = cur[i][j];
+    VITIS_LOOP_77_10: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_78_11: for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
+ stream_out[i][j] = cur[i][j];
         }
     }
+}
+
+
+
+
+void write_output(data_t stream_in[256][256], data_t A_out[256][256]) {
+    VITIS_LOOP_89_1: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_90_2: for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
+ A_out[i][j] = stream_in[i][j];
+        }
+    }
+}
+
+
+
+
+__attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t A_in[256][256], data_t A_out[256][256]) {
+#line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl"
+#pragma HLSDIRECTIVE TOP name=top_kernel
+# 100 "top.cpp"
+
+#pragma HLS interface m_axi port=A_in offset=slave bundle=A_in
+#pragma HLS interface m_axi port=A_out offset=slave bundle=A_out
+#pragma HLS interface s_axilite port=return
+
+
+#pragma HLS dataflow
+
+
+ data_t grid_initial[256][256];
+    data_t grid_final[256][256];
+
+
+    read_input(A_in, grid_initial);
+    compute(grid_initial, grid_final);
+    write_output(grid_final, A_out);
 }
