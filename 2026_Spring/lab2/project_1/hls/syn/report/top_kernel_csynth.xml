@@ -22,21 +22,21 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>6272825</Best-caseLatency>
-<Average-caseLatency>6272825</Average-caseLatency>
-<Worst-caseLatency>6272825</Worst-caseLatency>
-<Best-caseRealTimeLatency>62.728 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>62.728 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>62.728 ms</Worst-caseRealTimeLatency>
-<DataflowPipelineThroughput>6142256</DataflowPipelineThroughput>
-<Interval-min>6142256</Interval-min>
-<Interval-max>6142256</Interval-max>
+<Best-caseLatency>4079150</Best-caseLatency>
+<Average-caseLatency>4079150</Average-caseLatency>
+<Worst-caseLatency>4079150</Worst-caseLatency>
+<Best-caseRealTimeLatency>40.791 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>40.791 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>40.791 ms</Worst-caseRealTimeLatency>
+<DataflowPipelineThroughput>4079141</DataflowPipelineThroughput>
+<Interval-min>4079141</Interval-min>
+<Interval-max>4079141</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>top.cpp:143</SourceLocation>
+<SourceLocation>top.cpp:144</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
@@ -44,8 +44,8 @@
 <Resources>
 <BRAM_18K>180</BRAM_18K>
 <DSP>6</DSP>
-<FF>2881</FF>
-<LUT>4006</LUT>
+<FF>2913</FF>
+<LUT>4356</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

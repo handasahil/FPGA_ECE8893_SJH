@@ -1,6 +1,6 @@
 Execute         source -notrace -encoding utf-8 /tools/software/xilinx/2025.1.1/Vitis/tps/tcl/tcl8.6/clock.tcl 
 Execute           source -encoding utf-8 /tools/software/xilinx/2025.1.1/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
-INFO-FLOW: Workspace /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls opened at Fri Feb 20 10:14:09 EST 2026
+INFO-FLOW: Workspace /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls opened at Fri Feb 20 11:30:28 EST 2026
 Execute         send_msg_by_id INFO @200-1505@%s%s default  vivado 
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/tps/tcl/tcllib2.0/yaml/huddle.tcl 
@@ -33,7 +33,7 @@ DBG:HLSDevice: Trying to load device library: /tools/software/xilinx//2025.1.1/V
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/software/xilinx//2025.1.1/Vivado/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
-Command       create_platform done; 4.23 sec.
+Command       create_platform done; 4.53 sec.
 Execute       source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/common/xilinx.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/plb46.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/axi4.gen 
@@ -43,18 +43,19 @@ Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/x
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/util.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.11 sec.
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.14 sec.
+Command       ap_source done; 0.15 sec.
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 4.41 sec.
+Command     set_part done; 4.74 sec.
 Execute     csynth_design 
 INFO: [HLS 200-1510] Running: csynth_design 
 Execute       ::AP::init_summary_file csynth 
 Execute         AP::app_get_file_relativeroot [AP::app_get_root] {}
-Command       AP::init_summary_file done; 7.54 sec.
+Command       AP::init_summary_file done; 7.56 sec.
 Execute       write_ini /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls_config.cfg -apsfile /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/hls.aps -filepaths relative 
 Execute         send_msg_by_id INFO @200-1915@%s /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls_config.cfg 
 INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls_config.cfg
@@ -62,7 +63,7 @@ Execute       ap_part_info -name xczu3eg-sbva484-1-e -data info
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/xilinx-performance-pragma-detector top.cpp -- -fhls -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot -I /tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.xilinx-performance-pragma-detector.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.xilinx-performance-pragma-detector.err.log
 INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
 Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.36 seconds. CPU system time: 0.09 seconds. Elapsed time: 8 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.46 seconds. CPU system time: 0.12 seconds. Elapsed time: 8.18 seconds; current allocated memory: 0.000 MB.
 Execute         set_directive_top top_kernel -name=top_kernel 
 INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
 INFO-FLOW: Compiling one TU...
@@ -71,28 +72,28 @@ Execute         ap_part_info -name xczu3eg-sbva484-1-e -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang top.cpp -foptimization-record-file=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --gcc-toolchain=/tools/software/xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -insert-hls-directive=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot -I /tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -hls-platform-db-name=/tools/software/xilinx//2025.1.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_slow -device-resource-info=BRAM_432.000000_DSP_360.000000_FF_141120.000000_LUT_70560.000000_SLICE_8820.000000_URAM_0.000000 -device-name-info=xczu3eg-sbva484-1-e > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.clang.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.clang.err.log
-INFO-FLOW: Done: GCC PP 39 time: 0.3 seconds per iteration
+INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
 INFO-FLOW: Source syntax check for synthesis
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -hls-platform-db-name=/tools/software/xilinx//2025.1.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_slow -device-resource-info=BRAM_432.000000_DSP_360.000000_FF_141120.000000_LUT_70560.000000_SLICE_8820.000000_URAM_0.000000 -device-name-info=xczu3eg-sbva484-1-e > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/clang.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/clang.err.log
 Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp  -target fpga  -directive=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/.systemc_flag -fix-errors /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 0.79 sec.
+Command         clang_tidy done; 0.97 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp  -target fpga  -directive=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/all.directive.json -fix-errors /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0
-Command         clang_tidy done; 1.1 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1.1 seconds per iteration
+Command         clang_tidy done; 1.21 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 1.2 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
 Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp  -target fpga  
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.clang-tidy.loop-label.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.clang-tidy.loop-label.err.log
 Execute           source /tools/software/xilinx/2025.1.1/Vitis/tps/tcl/tcllib2.0/yaml/yaml.tcl 
-Command         clang_tidy done; 1.44 sec.
+Command         clang_tidy done; 1.6 sec.
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -- - -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.xilinx-dataflow-lawyer.err.log
 Execute         ap_part_info -name xczu3eg-sbva484-1-e -data info 
 INFO-FLOW: compiling source code to llvm bc
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot -I /tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.bc -hls-platform-db-name=/tools/software/xilinx//2025.1.1/Vitis/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_slow -device-resource-info=BRAM_432.000000_DSP_360.000000_FF_141120.000000_LUT_70560.000000_SLICE_8820.000000_URAM_0.000000 -device-name-info=xczu3eg-sbva484-1-e > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.clang.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.pp.0.cpp.clang.err.log
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.3 seconds. CPU system time: 0.93 seconds. Elapsed time: 6.36 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.14 seconds. CPU system time: 1.12 seconds. Elapsed time: 7.43 seconds; current allocated memory: 0.000 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute         run_link_or_opt -out /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.0.bc -args  "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.g.bc"  
@@ -104,12 +105,12 @@ INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
 INFO-FLOW: Linking math bc lib
 Execute         run_link_or_opt -out /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.2.m1.bc -args /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/software/xilinx/2025.1.1/Vitis/lnx64/lib/libhlsm_39.bc /tools/software/xilinx/2025.1.1/Vitis/lnx64/lib/libhlsmc++_39.bc 
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/software/xilinx/2025.1.1/Vitis/lnx64/lib/libhlsm_39.bc /tools/software/xilinx/2025.1.1/Vitis/lnx64/lib/libhlsmc++_39.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.2.m1.bc > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
-Command         run_link_or_opt done; 2.1 sec.
+Command         run_link_or_opt done; 2.3 sec.
 Execute         run_link_or_opt -opt -out /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc -args /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=top_kernel -reflow-float-conversion 
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=top_kernel -reflow-float-conversion -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command         run_link_or_opt done; 0.92 sec.
+Command         run_link_or_opt done; 1.16 sec.
 Execute         run_link_or_opt -out /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.4.m2.bc -args /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/software/xilinx/2025.1.1/Vitis/lnx64/lib/libfloatconversion_39.bc 
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/llvm-link /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/software/xilinx/2025.1.1/Vitis/lnx64/lib/libfloatconversion_39.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.4.m2.bc > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
 Execute         run_link_or_opt -opt -out /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.5.gdce.bc -args /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=top_kernel 
@@ -151,55 +152,63 @@ Execute         send_msg_by_id INFO @200-1995@%s%s%s 340 Performance (step 4) (/
 INFO: [HLS 200-1995] There were 340 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2)
 Execute         send_msg_by_id INFO @200-1995@%s%s%s 346 HW Transforms (step 1) (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2) 
 INFO: [HLS 200-1995] There were 346 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2)
-Execute         send_msg_by_id INFO @200-1995@%s%s%s 392 HW Transforms (step 2) (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2) 
-INFO: [HLS 200-1995] There were 392 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_63_8' is marked as complete unroll implied by the pipeline pragma (top.cpp:63:19)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_63_8' (top.cpp:63:19) in function 'compute' completely with a factor of 3 (top.cpp:17:0)
-INFO: [HLS 214-248] Applying array_partition to 'line_buf': Complete partitioning on dimension 1. (top.cpp:23:12)
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 398 HW Transforms (step 2) (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2) 
+INFO: [HLS 200-1995] There were 398 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_64_8' is marked as complete unroll implied by the pipeline pragma (top.cpp:64:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_64_8' (top.cpp:64:19) in function 'compute' completely with a factor of 3 (top.cpp:18:0)
+INFO: [HLS 214-248] Applying array_partition to 'line_buf': Complete partitioning on dimension 1. (top.cpp:24:12)
 INFO: [HLS 214-241] Aggregating maxi variable 'A_out' with compact=none mode in 32-bits
 INFO: [HLS 214-241] Aggregating maxi variable 'A_in' with compact=none mode in 32-bits
 WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'grid_initial'
 WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'grid_final'
 INFO: [HLS 214-115] Multiple burst reads of length 65536 and bit width 32 in loop 'VITIS_LOOP_7_1'(top.cpp:7:21) has been inferred on bundle 'A_in'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:7:21)
-INFO: [HLS 214-115] Multiple burst writes of length 65536 and bit width 32 in loop 'VITIS_LOOP_126_1'(top.cpp:126:23) has been inferred on bundle 'A_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:126:23)
+INFO: [HLS 214-115] Multiple burst writes of length 65536 and bit width 32 in loop 'VITIS_LOOP_127_1'(top.cpp:127:23) has been inferred on bundle 'A_out'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:127:23)
 INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.78 seconds. CPU system time: 0.82 seconds. Elapsed time: 8.68 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.41 seconds. CPU system time: 0.99 seconds. Elapsed time: 9.23 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
 Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute           cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top top_kernel -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.0.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.1.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.2.prechk.bc -f 
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute           transform -syn-check /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.2.prechk.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.g.1.bc to /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute           transform -hls -tmp /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -dce -hls-dead-arg-elim -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -lcssa -loop-simplify -phi-select-elim -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -extract-subproc -global-constprop -deadargelim -globaldce -legalize-global -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -canonicalize-dataflow -directive-preproc -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.1.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-712] Applying dataflow to function 'top_kernel' (top.cpp:137:1), detected/extracted 4 process function(s): 
+INFO: [XFORM 203-712] Applying dataflow to function 'top_kernel' (top.cpp:138:1), detected/extracted 4 process function(s): 
 	 'entry_proc'
 	 'read_input'
 	 'compute'
 	 'write_output'.
+Command           transform done; 0.12 sec.
 INFO-FLOW: Presyn 2...
 Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.1.tmp.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.17 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.19 seconds; current allocated memory: 0.000 MB.
 Execute           transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-rewind-sink-hoist -loop-outline -hls-dead-arg-elim -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -gvn -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -drop-inferred-ii -dump-complexity-metric /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.2.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_57_6'(top.cpp:57:26) and 'VITIS_LOOP_58_7'(top.cpp:58:30) in function 'compute' into perfectly nested loops.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_57_6' (top.cpp:57:26) in function 'compute'.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_35_1'(top.cpp:35:22) and 'VITIS_LOOP_36_2'(top.cpp:36:26) in function 'compute' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_58_6'(top.cpp:58:26) and 'VITIS_LOOP_59_7'(top.cpp:59:30) in function 'compute' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_106_9'(top.cpp:106:27) and 'VITIS_LOOP_107_10'(top.cpp:107:32) in function 'compute' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_115_11'(top.cpp:115:24) and 'VITIS_LOOP_116_12'(top.cpp:116:28) in function 'compute' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_7_1' (top.cpp:7:21) in function 'read_input'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_1' (top.cpp:35:22) in function 'compute'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_58_6' (top.cpp:58:26) in function 'compute'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_106_9' (top.cpp:106:27) in function 'compute'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_115_11' (top.cpp:115:24) in function 'compute'.
 Execute             auto_get_db
-Command           transform done; 0.12 sec.
+Command           transform done; 0.14 sec.
 INFO-FLOW: Building ssdm...
 Execute           transform -hls -cdfg-build /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.3.bc -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
 INFO-FLOW: Finish building internal data model.
-Command         opt_and_import_c done; 0.42 sec.
-Command       elaborate done; 15.47 sec.
+Command         opt_and_import_c done; 0.51 sec.
+Command       elaborate done; 17.18 sec.
 Execute       ap_eval exec zip -j /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
 Execute       autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
@@ -210,23 +219,43 @@ Execute         get_model_list top_kernel -filter all-wo-channel -topdown
 Execute         preproc_iomode -model top_kernel 
 Execute         preproc_iomode -model write_output 
 Execute         preproc_iomode -model compute 
-Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_51_5 
+Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_46_4 
+Execute         preproc_iomode -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
 Execute         preproc_iomode -model read_input 
 Execute         preproc_iomode -model entry_proc 
 Execute         create_clock 
 Execute           ap_set_clock -name default -period 10 -unit ns -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute         get_model_list top_kernel -filter all-wo-channel 
-INFO-FLOW: Model list for configure: entry_proc read_input compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 compute write_output top_kernel
+INFO-FLOW: Model list for configure: entry_proc read_input compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 compute_Pipeline_VITIS_LOOP_46_4 compute_Pipeline_VITIS_LOOP_51_5 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 compute write_output top_kernel
 INFO-FLOW: Configuring Module : entry_proc ...
 Execute         set_default_model entry_proc 
 Execute         apply_spec_resource_limit entry_proc 
 INFO-FLOW: Configuring Module : read_input ...
 Execute         set_default_model read_input 
 Execute         apply_spec_resource_limit read_input 
-INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 ...
-Execute         set_default_model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_46_4 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_46_4 
+Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_46_4 
+INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_51_5 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_51_5 
+Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_51_5 
+INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+INFO-FLOW: Configuring Module : compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         apply_spec_resource_limit compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
 INFO-FLOW: Configuring Module : compute ...
 Execute         set_default_model compute 
 Execute         apply_spec_resource_limit compute 
@@ -236,7 +265,7 @@ Execute         apply_spec_resource_limit write_output
 INFO-FLOW: Configuring Module : top_kernel ...
 Execute         set_default_model top_kernel 
 Execute         apply_spec_resource_limit top_kernel 
-INFO-FLOW: Model list for preprocess: entry_proc read_input compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 compute write_output top_kernel
+INFO-FLOW: Model list for preprocess: entry_proc read_input compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 compute_Pipeline_VITIS_LOOP_46_4 compute_Pipeline_VITIS_LOOP_51_5 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 compute write_output top_kernel
 INFO-FLOW: Preprocessing Module: entry_proc ...
 Execute         set_default_model entry_proc 
 Execute         cdfg_preprocess -model entry_proc 
@@ -245,10 +274,30 @@ INFO-FLOW: Preprocessing Module: read_input ...
 Execute         set_default_model read_input 
 Execute         cdfg_preprocess -model read_input 
 Execute         rtl_gen_preprocess read_input 
-INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 ...
-Execute         set_default_model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_46_4 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_46_4 
+Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_46_4 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_46_4 
+INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_51_5 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_51_5 
+Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_51_5 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_51_5 
+INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+INFO-FLOW: Preprocessing Module: compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 ...
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         cdfg_preprocess -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
 INFO-FLOW: Preprocessing Module: compute ...
 Execute         set_default_model compute 
 Execute         cdfg_preprocess -model compute 
@@ -261,7 +310,7 @@ INFO-FLOW: Preprocessing Module: top_kernel ...
 Execute         set_default_model top_kernel 
 Execute         cdfg_preprocess -model top_kernel 
 Execute         rtl_gen_preprocess top_kernel 
-INFO-FLOW: Model list for synthesis: entry_proc read_input compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 compute write_output top_kernel
+INFO-FLOW: Model list for synthesis: entry_proc read_input compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 compute_Pipeline_VITIS_LOOP_46_4 compute_Pipeline_VITIS_LOOP_51_5 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 compute write_output top_kernel
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -269,7 +318,7 @@ Execute         set_default_model entry_proc
 Execute         schedule -model entry_proc 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.1 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.12 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.verbose.sched.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -283,7 +332,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.verbose.bind.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -296,8 +345,11 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         set_default_model read_input 
 Execute         schedule -model read_input 
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_7_1_VITIS_LOOP_8_2'.
+INFO: [HLS 200-876] Unable to schedule the whole 8 cycles bus request operation ('empty', top.cpp:7) on port 'A_in' (top.cpp:7) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 11, loop 'VITIS_LOOP_7_1_VITIS_LOOP_8_2'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.verbose.sched.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -311,7 +363,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.verbose.bind.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -319,36 +371,186 @@ Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family
 Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.bind.adb -f 
 INFO-FLOW: Finish binding read_input.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7' 
+INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute         set_default_model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         schedule -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         schedule -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_57_6_VITIS_LOOP_58_7'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'VITIS_LOOP_57_6_VITIS_LOOP_58_7'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_35_1_VITIS_LOOP_36_2'
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.13 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 0.000 MB.
-Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.verbose.sched.rpt 
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.verbose.sched.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
 Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
-Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.sched.adb -f 
-INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.
-Execute         set_default_model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         bind -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         bind -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
-Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.verbose.bind.rpt 
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.verbose.bind.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
 Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
-Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.bind.adb -f 
-INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.bind.adb -f 
+INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_46_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_46_4 
+Execute         schedule -model compute_Pipeline_VITIS_LOOP_46_4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_46_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_46_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.verbose.sched.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_46_4.
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_46_4 
+Execute         bind -model compute_Pipeline_VITIS_LOOP_46_4 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.verbose.bind.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.bind.adb -f 
+INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_46_4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_51_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_51_5 
+Execute         schedule -model compute_Pipeline_VITIS_LOOP_51_5 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_51_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_51_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.verbose.sched.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_51_5.
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_51_5 
+Execute         bind -model compute_Pipeline_VITIS_LOOP_51_5 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.verbose.bind.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.bind.adb -f 
+INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_51_5.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         schedule -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_58_6_VITIS_LOOP_59_7'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'VITIS_LOOP_58_6_VITIS_LOOP_59_7'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.14 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.verbose.sched.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         bind -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.verbose.bind.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.bind.adb -f 
+INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         schedule -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_106_9_VITIS_LOOP_107_10'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_106_9_VITIS_LOOP_107_10'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.verbose.sched.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         bind -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.verbose.bind.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.bind.adb -f 
+INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         schedule -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_115_11_VITIS_LOOP_116_12'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_115_11_VITIS_LOOP_116_12'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.verbose.sched.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.sched.adb -f 
+INFO-FLOW: Finish scheduling compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.
+Execute         set_default_model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         bind -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 0.000 MB.
+Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.verbose.bind.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.bind.adb -f 
+INFO-FLOW: Finish binding compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'compute' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -356,7 +558,7 @@ Execute         set_default_model compute
 Execute         schedule -model compute 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute.verbose.sched.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -370,7 +572,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute.verbose.bind.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -384,7 +586,7 @@ Execute         set_default_model write_output
 Execute         schedule -model write_output 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/write_output.verbose.sched.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -398,7 +600,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/write_output.verbose.bind.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -413,7 +615,7 @@ Execute         schedule -model top_kernel
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
 WARNING: [HLS 200-1020] Increasing the depth of FIFO start_for_write_output_U0 (from entry_proc_U0 to write_output_U0) to 3 to improve performance and/or avoid deadlocks.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.07 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.verbose.sched.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -427,7 +629,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 0.000 MB.
 Execute         syn_report -verbosereport -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.verbose.bind.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
@@ -438,17 +640,22 @@ Execute         get_model_list top_kernel -filter all-wo-channel
 INFO-FLOW: Preprocessing for RTLGen ...
 Execute         rtl_gen_preprocess entry_proc 
 Execute         rtl_gen_preprocess read_input 
-Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_46_4 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_51_5 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         rtl_gen_preprocess compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
 Execute         rtl_gen_preprocess compute 
 Execute         rtl_gen_preprocess write_output 
 Execute         rtl_gen_preprocess top_kernel 
-INFO-FLOW: Model list for RTL generation: entry_proc read_input compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 compute write_output top_kernel
+INFO-FLOW: Model list for RTL generation: entry_proc read_input compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 compute_Pipeline_VITIS_LOOP_46_4 compute_Pipeline_VITIS_LOOP_51_5 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 compute write_output top_kernel
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute         create_rtl_model entry_proc -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
 Execute         gen_rtl entry_proc -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_entry_proc 
 Execute         gen_rtl entry_proc -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_entry_proc 
@@ -471,8 +678,9 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'read_input' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute         create_rtl_model read_input -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'read_input' pipeline 'VITIS_LOOP_7_1_VITIS_LOOP_8_2' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'read_input'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 0.000 MB.
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
 Execute         gen_rtl read_input -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_read_input 
 Execute         gen_rtl read_input -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_read_input 
@@ -492,33 +700,158 @@ Execute         db_write -model read_input -f -o /nethome/shanda34/FPGA_ECE8893_
 Execute         db_write -model read_input -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
 Execute         gen_tb_info read_input -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7' 
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.compgen.tcl 
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7' pipeline 'VITIS_LOOP_57_6_VITIS_LOOP_58_7' pipeline type 'loop pipeline'
+Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2' pipeline 'VITIS_LOOP_35_1_VITIS_LOOP_36_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 0.000 MB.
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_csynth.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_csynth.xml 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.verbose.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.adb 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_46_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_46_4 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_46_4' pipeline 'VITIS_LOOP_46_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_46_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.11 seconds; current allocated memory: 0.000 MB.
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_46_4 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_46_4 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_46_4 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_46_4 
+Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_46_4 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_46_4_csynth.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_46_4 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_46_4_csynth.xml 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_46_4 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.verbose.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_46_4 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.adb 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_46_4 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_46_4 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_51_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_51_5 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_51_5' pipeline 'VITIS_LOOP_51_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_51_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_51_5 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_51_5 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_51_5 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_51_5 
+Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_51_5 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_51_5_csynth.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_51_5 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_51_5_csynth.xml 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_51_5 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.verbose.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_51_5 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.adb 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_51_5 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_51_5 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7' pipeline 'VITIS_LOOP_58_6_VITIS_LOOP_59_7' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'mul_39s_24ns_63_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_39s_26ns_65_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7'.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7'.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
-Execute         gen_rtl compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         gen_rtl compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
-Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_csynth.rpt 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_csynth.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
 Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
-Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_csynth.xml 
+Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_csynth.xml 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
 Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
-Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.verbose.rpt 
+Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.verbose.rpt 
 Execute           list_part -family xczu3eg-sbva484-1-e 
 Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
 Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
-Execute         db_write -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.adb 
-Execute         db_write -model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
-Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.adb 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10' pipeline 'VITIS_LOOP_106_9_VITIS_LOOP_107_10' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_csynth.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_csynth.xml 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.verbose.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.adb 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12' pipeline 'VITIS_LOOP_115_11_VITIS_LOOP_116_12' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 0.000 MB.
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         gen_rtl compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
+Execute         syn_report -csynth -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_csynth.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -rtlxml -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_csynth.xml 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         syn_report -verbosereport -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.verbose.rpt 
+Execute           list_part -family xczu3eg-sbva484-1-e 
+Execute             ap_family_info -name xczu3eg-sbva484-1-e -data names 
+Execute             ap_part_info -quiet -name xczu3eg-sbva484-1-e -data family 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -f -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.adb 
+Execute         db_write -model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -bindview -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 -p /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'compute' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -526,7 +859,7 @@ Execute         create_rtl_model compute -top_prefix top_kernel_ -sub_prefix top
 INFO: [RTGEN 206-100] Finished creating RTL model for 'compute'.
 INFO: [RTMG 210-278] Implementing memory 'top_kernel_compute_cur_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'top_kernel_compute_nxt_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 0.000 MB.
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
 Execute         gen_rtl compute -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_compute 
 Execute         gen_rtl compute -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_compute 
@@ -550,7 +883,7 @@ INFO: [HLS 200-10] -- Generating RTL for module 'write_output'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute         create_rtl_model write_output -top_prefix top_kernel_ -sub_prefix top_kernel_ -mg_file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/write_output.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'write_output'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
 Execute         gen_rtl write_output -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel_write_output 
 Execute         gen_rtl write_output -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel_write_output 
@@ -586,7 +919,7 @@ INFO: [RTMG 210-285] Implementing FIFO 'grid_initial_U(top_kernel_fifo_w24_d2_S)
 INFO: [RTMG 210-285] Implementing FIFO 'grid_final_U(top_kernel_fifo_w24_d2_S)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_write_output_U0_U(top_kernel_start_for_write_output_U0)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_compute_U0_U(top_kernel_start_for_compute_U0)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
 Execute         gen_rtl top_kernel -istop -style xilinx -f -lang vhdl -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/vhdl/top_kernel 
 Execute         gen_rtl top_kernel -istop -style xilinx -f -lang vlog -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/verilog/top_kernel 
@@ -615,19 +948,41 @@ Execute         syn_report -wcfg -model top_kernel -o /nethome/shanda34/FPGA_ECE
 Execute         syn_report -protoinst -model top_kernel -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.protoinst 
 Execute         sc_get_clocks top_kernel 
 Execute         sc_get_portdomain top_kernel 
-INFO-FLOW: Model list for RTL component generation: entry_proc read_input compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 compute write_output top_kernel
+INFO-FLOW: Model list for RTL component generation: entry_proc read_input compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 compute_Pipeline_VITIS_LOOP_46_4 compute_Pipeline_VITIS_LOOP_51_5 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 compute write_output top_kernel
 INFO-FLOW: Handling components in module [entry_proc] ... 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.compgen.tcl 
 INFO-FLOW: Handling components in module [read_input] ... 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.compgen.tcl 
-INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7] ... 
-Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.compgen.tcl 
+INFO-FLOW: Found component top_kernel_flow_control_loop_pipe.
+INFO-FLOW: Append model top_kernel_flow_control_loop_pipe
+INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2] ... 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.compgen.tcl 
+INFO-FLOW: Found component top_kernel_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_46_4] ... 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.compgen.tcl 
+INFO-FLOW: Found component top_kernel_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_51_5] ... 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.compgen.tcl 
+INFO-FLOW: Found component top_kernel_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7] ... 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.compgen.tcl 
 INFO-FLOW: Found component top_kernel_mul_39s_24ns_63_1_1.
 INFO-FLOW: Append model top_kernel_mul_39s_24ns_63_1_1
 INFO-FLOW: Found component top_kernel_mul_39s_26ns_65_1_1.
 INFO-FLOW: Append model top_kernel_mul_39s_26ns_65_1_1
-INFO-FLOW: Found component top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W.
-INFO-FLOW: Append model top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W
+INFO-FLOW: Found component top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W.
+INFO-FLOW: Append model top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W
+INFO-FLOW: Found component top_kernel_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10] ... 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.compgen.tcl 
+INFO-FLOW: Found component top_kernel_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12] ... 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.compgen.tcl 
 INFO-FLOW: Found component top_kernel_flow_control_loop_pipe_sequential_init.
 INFO-FLOW: Append model top_kernel_flow_control_loop_pipe_sequential_init
 INFO-FLOW: Handling components in module [compute] ... 
@@ -658,16 +1013,27 @@ INFO-FLOW: Found component top_kernel_control_s_axi.
 INFO-FLOW: Append model top_kernel_control_s_axi
 INFO-FLOW: Append model entry_proc
 INFO-FLOW: Append model read_input
-INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7
+INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2
+INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_46_4
+INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_51_5
+INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7
+INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10
+INFO-FLOW: Append model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12
 INFO-FLOW: Append model compute
 INFO-FLOW: Append model write_output
 INFO-FLOW: Append model top_kernel
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: top_kernel_mul_39s_24ns_63_1_1 top_kernel_mul_39s_26ns_65_1_1 top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W top_kernel_flow_control_loop_pipe_sequential_init top_kernel_compute_cur_RAM_AUTO_1R1W top_kernel_compute_nxt_RAM_AUTO_1R1W top_kernel_fifo_w64_d4_S top_kernel_fifo_w24_d2_S top_kernel_fifo_w24_d2_S top_kernel_start_for_write_output_U0 top_kernel_start_for_compute_U0 top_kernel_A_in_m_axi top_kernel_A_out_m_axi top_kernel_control_s_axi entry_proc read_input compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 compute write_output top_kernel
+INFO-FLOW: All models in this session: top_kernel_flow_control_loop_pipe top_kernel_flow_control_loop_pipe_sequential_init top_kernel_flow_control_loop_pipe_sequential_init top_kernel_flow_control_loop_pipe_sequential_init top_kernel_mul_39s_24ns_63_1_1 top_kernel_mul_39s_26ns_65_1_1 top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W top_kernel_flow_control_loop_pipe_sequential_init top_kernel_flow_control_loop_pipe_sequential_init top_kernel_flow_control_loop_pipe_sequential_init top_kernel_compute_cur_RAM_AUTO_1R1W top_kernel_compute_nxt_RAM_AUTO_1R1W top_kernel_fifo_w64_d4_S top_kernel_fifo_w24_d2_S top_kernel_fifo_w24_d2_S top_kernel_start_for_write_output_U0 top_kernel_start_for_compute_U0 top_kernel_A_in_m_axi top_kernel_A_out_m_axi top_kernel_control_s_axi entry_proc read_input compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 compute_Pipeline_VITIS_LOOP_46_4 compute_Pipeline_VITIS_LOOP_51_5 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 compute write_output top_kernel
 INFO-FLOW: Generating /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe
+INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe_sequential_init
 INFO-FLOW: To file: write model top_kernel_mul_39s_24ns_63_1_1
 INFO-FLOW: To file: write model top_kernel_mul_39s_26ns_65_1_1
-INFO-FLOW: To file: write model top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe_sequential_init
 INFO-FLOW: To file: write model top_kernel_flow_control_loop_pipe_sequential_init
 INFO-FLOW: To file: write model top_kernel_compute_cur_RAM_AUTO_1R1W
 INFO-FLOW: To file: write model top_kernel_compute_nxt_RAM_AUTO_1R1W
@@ -681,7 +1047,12 @@ INFO-FLOW: To file: write model top_kernel_A_out_m_axi
 INFO-FLOW: To file: write model top_kernel_control_s_axi
 INFO-FLOW: To file: write model entry_proc
 INFO-FLOW: To file: write model read_input
-INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7
+INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2
+INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_46_4
+INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_51_5
+INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7
+INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10
+INFO-FLOW: To file: write model compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12
 INFO-FLOW: To file: write model compute
 INFO-FLOW: To file: write model write_output
 INFO-FLOW: To file: write model top_kernel
@@ -712,11 +1083,17 @@ Execute           source /tools/software/xilinx/2025.1.1/Vitis/common/technology
 Execute           source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute           source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute           source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command         ap_source done; 0.12 sec.
+Command         ap_source done; 0.13 sec.
 INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
-INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/vhdl' dstVlogDir='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/vlog' tclDir='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db' modelList='top_kernel_mul_39s_24ns_63_1_1
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/vhdl' dstVlogDir='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/vlog' tclDir='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db' modelList='top_kernel_flow_control_loop_pipe
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_mul_39s_24ns_63_1_1
 top_kernel_mul_39s_26ns_65_1_1
-top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W
+top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
 top_kernel_flow_control_loop_pipe_sequential_init
 top_kernel_compute_cur_RAM_AUTO_1R1W
 top_kernel_compute_nxt_RAM_AUTO_1R1W
@@ -730,7 +1107,12 @@ top_kernel_A_out_m_axi
 top_kernel_control_s_axi
 entry_proc
 read_input
-compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7
+compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2
+compute_Pipeline_VITIS_LOOP_46_4
+compute_Pipeline_VITIS_LOOP_51_5
+compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7
+compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10
+compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12
 compute
 write_output
 top_kernel
@@ -742,12 +1124,17 @@ Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/proje
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.compgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.compgen.tcl 
-Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.compgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.compgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.compgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.compgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.compgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.compgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.compgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute.compgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/write_output.compgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.compgen.tcl 
 Execute           source ./control.slave.tcl 
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.34 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.72 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.39 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.84 seconds; current allocated memory: 0.000 MB.
 INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='top_kernel_' outfile=''
 INFO-FLOW: Running: create_csynth_xml read xml data
 INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
@@ -759,9 +1146,15 @@ INFO-FLOW: Done: create_csynth_xml config info time: 0.3 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml write xml
 INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/syn/report/csynth.xml
-INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='top_kernel_mul_39s_24ns_63_1_1
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='top_kernel_flow_control_loop_pipe
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_mul_39s_24ns_63_1_1
 top_kernel_mul_39s_26ns_65_1_1
-top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W
+top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
 top_kernel_flow_control_loop_pipe_sequential_init
 top_kernel_compute_cur_RAM_AUTO_1R1W
 top_kernel_compute_nxt_RAM_AUTO_1R1W
@@ -775,7 +1168,12 @@ top_kernel_A_out_m_axi
 top_kernel_control_s_axi
 entry_proc
 read_input
-compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7
+compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2
+compute_Pipeline_VITIS_LOOP_46_4
+compute_Pipeline_VITIS_LOOP_51_5
+compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7
+compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10
+compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12
 compute
 write_output
 top_kernel
@@ -790,7 +1188,12 @@ Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/proje
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.compgen.dataonly.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.tbgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.tbgen.tcl 
-Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.tbgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.tbgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.tbgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.tbgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.tbgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.tbgen.tcl 
+Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.tbgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute.tbgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/write_output.tbgen.tcl 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.tbgen.tcl 
@@ -800,7 +1203,7 @@ Execute         ap_part_info -name xczu3eg-sbva484-1-e -data info -quiet
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.constraint.tcl 
 Execute         sc_get_clocks top_kernel 
 Execute         source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME A_in_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME A_in DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME A_out_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME A_out DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} cache_nodes {} report_dict {TOPINST top_kernel MODULE2INSTS {top_kernel top_kernel entry_proc entry_proc_U0 read_input read_input_U0 compute compute_U0 compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330 write_output write_output_U0} INST2MODULE {top_kernel top_kernel entry_proc_U0 entry_proc read_input_U0 read_input compute_U0 compute grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330 compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 write_output_U0 write_output} INSTDATA {top_kernel {DEPTH 1 CHILDREN {entry_proc_U0 read_input_U0 compute_U0 write_output_U0}} entry_proc_U0 {DEPTH 2 CHILDREN {}} read_input_U0 {DEPTH 2 CHILDREN {}} compute_U0 {DEPTH 2 CHILDREN grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330} grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330 {DEPTH 3 CHILDREN {}} write_output_U0 {DEPTH 2 CHILDREN {}}} MODULEDATA {read_input {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln7_fu_127_p2 SOURCE top.cpp:7 VARIABLE icmp_ln7 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln7_fu_133_p2 SOURCE top.cpp:7 VARIABLE add_ln7 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln8_fu_139_p2 SOURCE top.cpp:8 VARIABLE icmp_ln8 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln8_fu_145_p2 SOURCE top.cpp:8 VARIABLE add_ln8 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME line_buf_1_U SOURCE top.cpp:23 VARIABLE line_buf_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 256 1} STORAGEUSAGE {ram_s2p array} DISPNAME {bind_storage ram_s2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME line_buf_U SOURCE top.cpp:23 VARIABLE line_buf LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 256 1} STORAGEUSAGE {ram_s2p array} DISPNAME {bind_storage ram_s2p} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln57_fu_380_p2 SOURCE top.cpp:57 VARIABLE icmp_ln57 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln57_1_fu_386_p2 SOURCE top.cpp:57 VARIABLE add_ln57_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln57_fu_398_p2 SOURCE top.cpp:57 VARIABLE add_ln57 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln58_fu_404_p2 SOURCE top.cpp:58 VARIABLE icmp_ln58 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln57_fu_410_p3 SOURCE top.cpp:57 VARIABLE select_ln57 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln57_1_fu_418_p3 SOURCE top.cpp:57 VARIABLE select_ln57_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_fu_448_p2 SOURCE top.cpp:57 VARIABLE icmp LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_531_p2 SOURCE top.cpp:69 VARIABLE empty LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln69_fu_464_p2 SOURCE top.cpp:69 VARIABLE add_ln69 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_ln83_fu_489_p2 SOURCE top.cpp:83 VARIABLE icmp_ln83 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln83_fu_495_p2 SOURCE top.cpp:83 VARIABLE and_ln83 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln86_fu_760_p2 SOURCE top.cpp:86 VARIABLE add_ln86 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_41_fu_557_p2 SOURCE {} VARIABLE empty_41 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln88_fu_567_p2 SOURCE top.cpp:88 VARIABLE add_ln88 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_axis_fu_597_p2 SOURCE top.cpp:89 VARIABLE sum_axis LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_42_fu_615_p2 SOURCE {} VARIABLE empty_42 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln91_fu_625_p2 SOURCE top.cpp:91 VARIABLE add_ln91 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_diag_fu_655_p2 SOURCE top.cpp:92 VARIABLE sum_diag LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_39s_26ns_65_1_1_U7 SOURCE top.cpp:96 VARIABLE mul_ln96 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_39s_24ns_63_1_1_U6 SOURCE top.cpp:96 VARIABLE mul_ln96_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln96_fu_718_p2 SOURCE top.cpp:96 VARIABLE add_ln96 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln96_1_fu_728_p2 SOURCE top.cpp:96 VARIABLE add_ln96_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME out_1_fu_783_p2 SOURCE top.cpp:96 VARIABLE out_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln96_fu_801_p2 SOURCE top.cpp:96 VARIABLE xor_ln96 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln96_1_fu_806_p2 SOURCE top.cpp:96 VARIABLE or_ln96_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln96_1_fu_812_p2 SOURCE top.cpp:96 VARIABLE xor_ln96_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln96_2_fu_817_p2 SOURCE top.cpp:96 VARIABLE xor_ln96_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln96_fu_823_p2 SOURCE top.cpp:96 VARIABLE or_ln96 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln96_fu_829_p2 SOURCE top.cpp:96 VARIABLE and_ln96 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME out_2_fu_835_p3 SOURCE top.cpp:96 VARIABLE out_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln99_fu_881_p2 SOURCE top.cpp:99 VARIABLE add_ln99 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln99_fu_895_p2 SOURCE top.cpp:99 VARIABLE xor_ln99 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln99_fu_901_p2 SOURCE top.cpp:99 VARIABLE and_ln99 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln99_fu_923_p2 SOURCE top.cpp:99 VARIABLE icmp_ln99 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln99_1_fu_937_p2 SOURCE top.cpp:99 VARIABLE icmp_ln99_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln99_2_fu_943_p2 SOURCE top.cpp:99 VARIABLE icmp_ln99_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln99_fu_949_p3 SOURCE top.cpp:99 VARIABLE select_ln99 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln99_1_fu_957_p2 SOURCE top.cpp:99 VARIABLE xor_ln99_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln99_1_fu_963_p2 SOURCE top.cpp:99 VARIABLE and_ln99_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln99_1_fu_969_p3 SOURCE top.cpp:99 VARIABLE select_ln99_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln99_2_fu_977_p2 SOURCE top.cpp:99 VARIABLE and_ln99_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln99_2_fu_983_p2 SOURCE top.cpp:99 VARIABLE xor_ln99_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln99_fu_989_p2 SOURCE top.cpp:99 VARIABLE or_ln99 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln99_3_fu_995_p2 SOURCE top.cpp:99 VARIABLE xor_ln99_3 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln99_3_fu_1001_p2 SOURCE top.cpp:99 VARIABLE and_ln99_3 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln99_4_fu_1007_p2 SOURCE top.cpp:99 VARIABLE and_ln99_4 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln99_2_fu_1013_p2 SOURCE top.cpp:99 VARIABLE or_ln99_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln99_4_fu_1019_p2 SOURCE top.cpp:99 VARIABLE xor_ln99_4 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln99_5_fu_1025_p2 SOURCE top.cpp:99 VARIABLE and_ln99_5 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln99_2_fu_1031_p3 SOURCE top.cpp:99 VARIABLE select_ln99_2 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln99_1_fu_1039_p2 SOURCE top.cpp:99 VARIABLE or_ln99_1 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln99_3_fu_1045_p3 SOURCE top.cpp:99 VARIABLE select_ln99_3 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln58_fu_501_p2 SOURCE top.cpp:58 VARIABLE add_ln58 LOOP VITIS_LOOP_57_6_VITIS_LOOP_58_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 2 URAM 0}} compute {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_t2p PRAGMA {} RTLNAME cur_U SOURCE top.cpp:19 VARIABLE cur LOOP {} BUNDLEDNAME {} DSP 0 BRAM 88 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 65536 1} STORAGEUSAGE {ram_t2p array} DISPNAME {bind_storage ram_t2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_t2p PRAGMA {} RTLNAME nxt_U SOURCE top.cpp:20 VARIABLE nxt LOOP {} BUNDLEDNAME {} DSP 0 BRAM 88 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 65536 1} STORAGEUSAGE {ram_t2p array} DISPNAME {bind_storage ram_t2p} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln34_fu_356_p2 SOURCE top.cpp:34 VARIABLE icmp_ln34 LOOP VITIS_LOOP_34_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln34_fu_362_p2 SOURCE top.cpp:34 VARIABLE add_ln34 LOOP VITIS_LOOP_34_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln35_fu_385_p2 SOURCE top.cpp:35 VARIABLE icmp_ln35 LOOP VITIS_LOOP_35_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_391_p2 SOURCE top.cpp:35 VARIABLE add_ln35 LOOP VITIS_LOOP_35_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln37_fu_401_p2 SOURCE top.cpp:37 VARIABLE add_ln37 LOOP VITIS_LOOP_35_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln42_fu_418_p2 SOURCE top.cpp:42 VARIABLE icmp_ln42 LOOP VITIS_LOOP_42_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME t_2_fu_424_p2 SOURCE top.cpp:42 VARIABLE t_2 LOOP VITIS_LOOP_42_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln45_fu_435_p2 SOURCE top.cpp:45 VARIABLE icmp_ln45 LOOP VITIS_LOOP_45_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln45_fu_441_p2 SOURCE top.cpp:45 VARIABLE add_ln45 LOOP VITIS_LOOP_45_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln50_fu_473_p2 SOURCE top.cpp:50 VARIABLE icmp_ln50 LOOP VITIS_LOOP_50_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln50_fu_479_p2 SOURCE top.cpp:50 VARIABLE add_ln50 LOOP VITIS_LOOP_50_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln105_fu_557_p2 SOURCE top.cpp:105 VARIABLE icmp_ln105 LOOP VITIS_LOOP_105_9 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln105_fu_563_p2 SOURCE top.cpp:105 VARIABLE add_ln105 LOOP VITIS_LOOP_105_9 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln106_fu_609_p2 SOURCE top.cpp:106 VARIABLE icmp_ln106 LOOP VITIS_LOOP_106_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln106_fu_615_p2 SOURCE top.cpp:106 VARIABLE add_ln106 LOOP VITIS_LOOP_106_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln108_fu_625_p2 SOURCE top.cpp:108 VARIABLE add_ln108 LOOP VITIS_LOOP_106_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln114_fu_638_p2 SOURCE top.cpp:114 VARIABLE icmp_ln114 LOOP VITIS_LOOP_114_11 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln114_fu_644_p2 SOURCE top.cpp:114 VARIABLE add_ln114 LOOP VITIS_LOOP_114_11 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln115_fu_662_p2 SOURCE top.cpp:115 VARIABLE icmp_ln115 LOOP VITIS_LOOP_115_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln115_fu_668_p2 SOURCE top.cpp:115 VARIABLE add_ln115 LOOP VITIS_LOOP_115_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln117_fu_678_p2 SOURCE top.cpp:117 VARIABLE add_ln117 LOOP VITIS_LOOP_115_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 178 URAM 0}} write_output {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln126_fu_143_p2 SOURCE top.cpp:126 VARIABLE icmp_ln126 LOOP VITIS_LOOP_126_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln126_fu_149_p2 SOURCE top.cpp:126 VARIABLE add_ln126 LOOP VITIS_LOOP_126_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln127_fu_155_p2 SOURCE top.cpp:127 VARIABLE icmp_ln127 LOOP VITIS_LOOP_127_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln127_fu_161_p2 SOURCE top.cpp:127 VARIABLE add_ln127 LOOP VITIS_LOOP_127_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} top_kernel {BINDINFO {{BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME A_out_r_c_U SOURCE top.cpp:143 VARIABLE A_out_r_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 4 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME grid_initial_U SOURCE top.cpp:146 VARIABLE grid_initial LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE stream STORAGESIZE {24 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME grid_final_U SOURCE top.cpp:147 VARIABLE grid_final LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE stream STORAGESIZE {24 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true}} AREA {DSP 6 BRAM 180 URAM 0}} entry_proc {AREA {DSP 0 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME A_in_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME A_in DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME A_out_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME A_out DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} cache_nodes {} report_dict {TOPINST top_kernel MODULE2INSTS {top_kernel top_kernel entry_proc entry_proc_U0 read_input read_input_U0 compute compute_U0 compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82 compute_Pipeline_VITIS_LOOP_46_4 grp_compute_Pipeline_VITIS_LOOP_46_4_fu_90 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96 compute_Pipeline_VITIS_LOOP_51_5 grp_compute_Pipeline_VITIS_LOOP_51_5_fu_103 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 grp_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_fu_124 write_output write_output_U0} INST2MODULE {top_kernel top_kernel entry_proc_U0 entry_proc read_input_U0 read_input compute_U0 compute grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82 compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 grp_compute_Pipeline_VITIS_LOOP_46_4_fu_90 compute_Pipeline_VITIS_LOOP_46_4 grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96 compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 grp_compute_Pipeline_VITIS_LOOP_51_5_fu_103 compute_Pipeline_VITIS_LOOP_51_5 grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109 compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 grp_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_fu_124 compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 write_output_U0 write_output} INSTDATA {top_kernel {DEPTH 1 CHILDREN {entry_proc_U0 read_input_U0 compute_U0 write_output_U0}} entry_proc_U0 {DEPTH 2 CHILDREN {}} read_input_U0 {DEPTH 2 CHILDREN {}} compute_U0 {DEPTH 2 CHILDREN {grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82 grp_compute_Pipeline_VITIS_LOOP_46_4_fu_90 grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96 grp_compute_Pipeline_VITIS_LOOP_51_5_fu_103 grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109 grp_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_fu_124}} grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82 {DEPTH 3 CHILDREN {}} grp_compute_Pipeline_VITIS_LOOP_46_4_fu_90 {DEPTH 3 CHILDREN {}} grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96 {DEPTH 3 CHILDREN {}} grp_compute_Pipeline_VITIS_LOOP_51_5_fu_103 {DEPTH 3 CHILDREN {}} grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109 {DEPTH 3 CHILDREN {}} grp_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10_fu_124 {DEPTH 3 CHILDREN {}} write_output_U0 {DEPTH 2 CHILDREN {}}} MODULEDATA {read_input {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln7_fu_109_p2 SOURCE top.cpp:7 VARIABLE add_ln7 LOOP VITIS_LOOP_7_1_VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln7_fu_115_p2 SOURCE top.cpp:7 VARIABLE icmp_ln7 LOOP VITIS_LOOP_7_1_VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln35_fu_96_p2 SOURCE top.cpp:35 VARIABLE icmp_ln35 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_1_fu_102_p2 SOURCE top.cpp:35 VARIABLE add_ln35_1 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_119_p2 SOURCE top.cpp:35 VARIABLE add_ln35 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln36_fu_125_p2 SOURCE top.cpp:36 VARIABLE icmp_ln36 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln35_fu_131_p3 SOURCE top.cpp:35 VARIABLE select_ln35 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln35_1_fu_139_p3 SOURCE top.cpp:35 VARIABLE select_ln35_1 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln38_fu_163_p2 SOURCE top.cpp:38 VARIABLE add_ln38 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln36_fu_174_p2 SOURCE top.cpp:36 VARIABLE add_ln36 LOOP VITIS_LOOP_35_1_VITIS_LOOP_36_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} compute_Pipeline_VITIS_LOOP_46_4 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln46_fu_96_p2 SOURCE top.cpp:46 VARIABLE icmp_ln46 LOOP VITIS_LOOP_46_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln46_fu_102_p2 SOURCE top.cpp:46 VARIABLE add_ln46 LOOP VITIS_LOOP_46_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} compute_Pipeline_VITIS_LOOP_51_5 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln51_fu_98_p2 SOURCE top.cpp:51 VARIABLE icmp_ln51 LOOP VITIS_LOOP_51_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln51_fu_104_p2 SOURCE top.cpp:51 VARIABLE add_ln51 LOOP VITIS_LOOP_51_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME line_buf_1_U SOURCE top.cpp:24 VARIABLE line_buf_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 256 1} STORAGEUSAGE {ram_s2p array} DISPNAME {bind_storage ram_s2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_s2p PRAGMA {} RTLNAME line_buf_U SOURCE top.cpp:24 VARIABLE line_buf LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 256 1} STORAGEUSAGE {ram_s2p array} DISPNAME {bind_storage ram_s2p} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln58_fu_285_p2 SOURCE top.cpp:58 VARIABLE icmp_ln58 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln58_1_fu_291_p2 SOURCE top.cpp:58 VARIABLE add_ln58_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln58_fu_303_p2 SOURCE top.cpp:58 VARIABLE add_ln58 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln59_fu_309_p2 SOURCE top.cpp:59 VARIABLE icmp_ln59 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln58_fu_315_p3 SOURCE top.cpp:58 VARIABLE select_ln58 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln58_1_fu_323_p3 SOURCE top.cpp:58 VARIABLE select_ln58_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_fu_353_p2 SOURCE top.cpp:58 VARIABLE icmp LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_436_p2 SOURCE top.cpp:70 VARIABLE empty LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln70_fu_369_p2 SOURCE top.cpp:70 VARIABLE add_ln70 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_ln84_fu_394_p2 SOURCE top.cpp:84 VARIABLE icmp_ln84 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln84_fu_400_p2 SOURCE top.cpp:84 VARIABLE and_ln84 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln87_fu_671_p2 SOURCE top.cpp:87 VARIABLE add_ln87 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_33_fu_465_p2 SOURCE {} VARIABLE empty_33 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln89_fu_475_p2 SOURCE top.cpp:89 VARIABLE add_ln89 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_axis_fu_505_p2 SOURCE top.cpp:90 VARIABLE sum_axis LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_34_fu_523_p2 SOURCE {} VARIABLE empty_34 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln92_fu_533_p2 SOURCE top.cpp:92 VARIABLE add_ln92 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_diag_fu_563_p2 SOURCE top.cpp:93 VARIABLE sum_diag LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_39s_26ns_65_1_1_U13 SOURCE top.cpp:97 VARIABLE mul_ln97 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_39s_24ns_63_1_1_U12 SOURCE top.cpp:97 VARIABLE mul_ln97_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln97_fu_629_p2 SOURCE top.cpp:97 VARIABLE add_ln97 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln97_1_fu_639_p2 SOURCE top.cpp:97 VARIABLE add_ln97_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME out_1_fu_694_p2 SOURCE top.cpp:97 VARIABLE out_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln97_fu_712_p2 SOURCE top.cpp:97 VARIABLE xor_ln97 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln97_1_fu_717_p2 SOURCE top.cpp:97 VARIABLE or_ln97_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln97_1_fu_723_p2 SOURCE top.cpp:97 VARIABLE xor_ln97_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln97_2_fu_728_p2 SOURCE top.cpp:97 VARIABLE xor_ln97_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln97_fu_734_p2 SOURCE top.cpp:97 VARIABLE or_ln97 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln97_fu_740_p2 SOURCE top.cpp:97 VARIABLE and_ln97 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME out_2_fu_746_p3 SOURCE top.cpp:97 VARIABLE out_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln100_fu_792_p2 SOURCE top.cpp:100 VARIABLE add_ln100 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln100_fu_806_p2 SOURCE top.cpp:100 VARIABLE xor_ln100 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln100_fu_812_p2 SOURCE top.cpp:100 VARIABLE and_ln100 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln100_fu_834_p2 SOURCE top.cpp:100 VARIABLE icmp_ln100 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln100_1_fu_848_p2 SOURCE top.cpp:100 VARIABLE icmp_ln100_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln100_2_fu_854_p2 SOURCE top.cpp:100 VARIABLE icmp_ln100_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln100_fu_860_p3 SOURCE top.cpp:100 VARIABLE select_ln100 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln100_1_fu_868_p2 SOURCE top.cpp:100 VARIABLE xor_ln100_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln100_1_fu_874_p2 SOURCE top.cpp:100 VARIABLE and_ln100_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln100_1_fu_880_p3 SOURCE top.cpp:100 VARIABLE select_ln100_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln100_2_fu_888_p2 SOURCE top.cpp:100 VARIABLE and_ln100_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln100_2_fu_894_p2 SOURCE top.cpp:100 VARIABLE xor_ln100_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln100_fu_900_p2 SOURCE top.cpp:100 VARIABLE or_ln100 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln100_3_fu_906_p2 SOURCE top.cpp:100 VARIABLE xor_ln100_3 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln100_3_fu_912_p2 SOURCE top.cpp:100 VARIABLE and_ln100_3 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln100_4_fu_918_p2 SOURCE top.cpp:100 VARIABLE and_ln100_4 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln100_2_fu_924_p2 SOURCE top.cpp:100 VARIABLE or_ln100_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln100_4_fu_930_p2 SOURCE top.cpp:100 VARIABLE xor_ln100_4 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME and_ln100_5_fu_936_p2 SOURCE top.cpp:100 VARIABLE and_ln100_5 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln100_2_fu_942_p3 SOURCE top.cpp:100 VARIABLE select_ln100_2 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln100_1_fu_950_p2 SOURCE top.cpp:100 VARIABLE or_ln100_1 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln100_3_fu_956_p3 SOURCE top.cpp:100 VARIABLE select_ln100_3 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln59_fu_406_p2 SOURCE top.cpp:59 VARIABLE add_ln59 LOOP VITIS_LOOP_58_6_VITIS_LOOP_59_7 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 2 URAM 0}} compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln106_fu_95_p2 SOURCE top.cpp:106 VARIABLE icmp_ln106 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln106_1_fu_101_p2 SOURCE top.cpp:106 VARIABLE add_ln106_1 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln106_fu_113_p2 SOURCE top.cpp:106 VARIABLE add_ln106 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln107_fu_119_p2 SOURCE top.cpp:107 VARIABLE icmp_ln107 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln106_fu_125_p3 SOURCE top.cpp:106 VARIABLE select_ln106 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln106_1_fu_133_p3 SOURCE top.cpp:106 VARIABLE select_ln106_1 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln109_fu_157_p2 SOURCE top.cpp:109 VARIABLE add_ln109 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln107_fu_168_p2 SOURCE top.cpp:107 VARIABLE add_ln107 LOOP VITIS_LOOP_106_9_VITIS_LOOP_107_10 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln115_fu_97_p2 SOURCE top.cpp:115 VARIABLE icmp_ln115 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln115_1_fu_103_p2 SOURCE top.cpp:115 VARIABLE add_ln115_1 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln115_fu_115_p2 SOURCE top.cpp:115 VARIABLE add_ln115 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln116_fu_121_p2 SOURCE top.cpp:116 VARIABLE icmp_ln116 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln115_fu_127_p3 SOURCE top.cpp:115 VARIABLE select_ln115 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln115_1_fu_135_p3 SOURCE top.cpp:115 VARIABLE select_ln115_1 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln118_fu_159_p2 SOURCE top.cpp:118 VARIABLE add_ln118 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln116_fu_170_p2 SOURCE top.cpp:116 VARIABLE add_ln116 LOOP VITIS_LOOP_115_11_VITIS_LOOP_116_12 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} compute {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_2p PRAGMA {} RTLNAME cur_U SOURCE top.cpp:20 VARIABLE cur LOOP {} BUNDLEDNAME {} DSP 0 BRAM 88 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 65536 1} STORAGEUSAGE {ram_2p array} DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_t2p PRAGMA {} RTLNAME nxt_U SOURCE top.cpp:21 VARIABLE nxt LOOP {} BUNDLEDNAME {} DSP 0 BRAM 88 URAM 0 STORAGESUBTYPE {} STORAGESIZE {24 65536 1} STORAGEUSAGE {ram_t2p array} DISPNAME {bind_storage ram_t2p} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln43_fu_150_p2 SOURCE top.cpp:43 VARIABLE icmp_ln43 LOOP VITIS_LOOP_43_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME t_2_fu_156_p2 SOURCE top.cpp:43 VARIABLE t_2 LOOP VITIS_LOOP_43_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 178 URAM 0}} write_output {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln127_fu_143_p2 SOURCE top.cpp:127 VARIABLE icmp_ln127 LOOP VITIS_LOOP_127_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln127_fu_149_p2 SOURCE top.cpp:127 VARIABLE add_ln127 LOOP VITIS_LOOP_127_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln128_fu_155_p2 SOURCE top.cpp:128 VARIABLE icmp_ln128 LOOP VITIS_LOOP_128_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln128_fu_161_p2 SOURCE top.cpp:128 VARIABLE add_ln128 LOOP VITIS_LOOP_128_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} top_kernel {BINDINFO {{BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME A_out_r_c_U SOURCE top.cpp:144 VARIABLE A_out_r_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 4 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME grid_initial_U SOURCE top.cpp:147 VARIABLE grid_initial LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE stream STORAGESIZE {24 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME grid_final_U SOURCE top.cpp:148 VARIABLE grid_final LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE stream STORAGESIZE {24 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true}} AREA {DSP 6 BRAM 180 URAM 0}} entry_proc {AREA {DSP 0 BRAM 0 URAM 0}}}}'
 INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
 Execute         send_msg_by_id INFO @200-1603@%s  and missed bursts 
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
@@ -808,15 +1211,15 @@ INFO-FLOW: Running: gen_csynth_sec_pragma
 INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
 INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.72 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.93 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.82 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.08 seconds; current allocated memory: 0.000 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for top_kernel.
 INFO: [VLOG 209-307] Generating Verilog RTL for top_kernel.
 Execute         syn_report -model top_kernel -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
-Command       autosyn done; 3.23 sec.
-Command     csynth_design done; 26.74 sec.
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:26; Allocated memory: 0.000 MB.
+Command       autosyn done; 4.51 sec.
+Command     csynth_design done; 29.92 sec.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:29; Allocated memory: 0.000 MB.
 Execute     cosim_design 
 INFO: [HLS 200-1510] Running: cosim_design 
 Execute       ::AP::init_summary_file cosim 
@@ -828,6 +1231,8 @@ INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
+Execute       send_msg_by_id WARNING @200-626@ 
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
 INFO-FLOW: DBG:PUTS: read_platform_lib /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl
 Execute       source /tools/software/xilinx/2025.1.1/Vitis/common/technology/generic/autopilot/common.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/generic/autopilot/APCoreGen.gen 
@@ -847,7 +1252,7 @@ Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/x
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.11 sec.
+Command       ap_source done; 0.14 sec.
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data names -quiet 
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data info -quiet 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
@@ -864,13 +1269,13 @@ INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/vcx
 INFO-FLOW: TB processing: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/host.cpp /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/host.cpp_pre.cpp
 Execute       clang_tidy xilinx-tb-process -desc tb-process /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/host.cpp_pre.cpp.tb.cpp std=gnu++14 
 INFO-FLOW: exec /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/host.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
-Command       clang_tidy done; 3.72 sec.
+Command       clang_tidy done; 4.29 sec.
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data info 
 INFO-FLOW: run_clang exec: /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -I /tools/software/xilinx/2025.1.1/Vitis/include -I include /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp -o /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/top.cpp_pre.cpp -std=gnu++14 -D__DSP48E2__ --gcc-toolchain=/tools/software/xilinx/2025.1.1/Vitis/tps/lnx64/gcc-8.3.0 > /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.clang.autosim-tb.out.log 2> /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top.cpp.clang.autosim-tb.err.log
 INFO-FLOW: TB processing: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/top.cpp_pre.cpp
 Execute       clang_tidy xilinx-tb-process -desc tb-process /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/top.cpp_pre.cpp.tb.cpp std=gnu++14 
 INFO-FLOW: exec /tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/top.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
-Command       clang_tidy done; 2.95 sec.
+Command       clang_tidy done; 3.63 sec.
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/./sim/autowrap/testbench/tb.status.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
@@ -880,9 +1285,10 @@ Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.tbgen.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.tbgen.tcl 
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data info 
+Command       ap_part_info done; 0.14 sec.
 Execute       source .run_sim.tcl 
 INFO: [COSIM 212-302] Starting C TB testing ... 
-Command       ap_source done; 40.52 sec.
+Command       ap_source done; 45.11 sec.
 INFO: [COSIM 212-333] Generating C post check test bench ...
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.tbgen.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.tbgen.tcl 
@@ -935,11 +1341,11 @@ Execute         source .sim.status.tcl
 INFO: [COSIM 212-323] Starting verilog simulation. 
 INFO: [COSIM 212-15] Starting XSIM ...
 INFO: [COSIM 212-316] Starting C post checking ...
-Command       ap_source done; 307.72 sec.
+Command       ap_source done; 274.24 sec.
 INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
-Command     cosim_design done; 383.08 sec.
-INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:06:23; Allocated memory: 0.000 MB.
+Command     cosim_design done; 359.44 sec.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:05:59; Allocated memory: 0.000 MB.
 Execute     export_design -format ip_catalog -flow impl 
 INFO: [HLS 200-1510] Running: export_design -format ip_catalog -flow impl 
 Execute       config_export -flow=impl -format=ip_catalog 
@@ -948,7 +1354,7 @@ Execute         send_msg_by_id INFO @200-1915@%s /nethome/shanda34/FPGA_ECE8893_
 INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls_config.cfg
 Execute       ::AP::init_summary_file vivado-impl 
 Execute         AP::app_get_file_relativeroot [AP::app_get_root] {}
-Command       AP::init_summary_file done; 7.59 sec.
+Command       AP::init_summary_file done; 7.56 sec.
 INFO-FLOW: DBG:PUTS: export_design_wrap: -flow impl -format ip_catalog -rtl verilog
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
 INFO-FLOW: DBG:PUTS:   auto_impl: pack: -export -rtl verilog
@@ -978,7 +1384,7 @@ Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/x
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.13 sec.
+Command       ap_source done; 0.14 sec.
 INFO-FLOW: DBG:PUTS:       initCTypeInfo top_module=top_kernel xml_exists=0
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.rtl_wrap.cfg.tcl 
@@ -992,10 +1398,16 @@ Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project
 INFO-FLOW: DBG:PUTS:       cosim_export_main adding deadlock detection to top_kernel
 INFO-FLOW: DBG:PUTS:       generate_datafile_ip_script ip_types={vitis sysgen} #gSsdmPorts=0
 INFO-FLOW: DBG:PUTS: Skipping loadAnalyze_DB, #g_database=4
-INFO-FLOW: DBG:PUTS:       generate_json generate_bd_files=0 generate_xo_files=false #modelList=20 #gSsdmPorts=0
-INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='false' modelList='top_kernel_mul_39s_24ns_63_1_1
+INFO-FLOW: DBG:PUTS:       generate_json generate_bd_files=0 generate_xo_files=false #modelList=31 #gSsdmPorts=0
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='false' modelList='top_kernel_flow_control_loop_pipe
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_mul_39s_24ns_63_1_1
 top_kernel_mul_39s_26ns_65_1_1
-top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W
+top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W
+top_kernel_flow_control_loop_pipe_sequential_init
+top_kernel_flow_control_loop_pipe_sequential_init
 top_kernel_flow_control_loop_pipe_sequential_init
 top_kernel_compute_cur_RAM_AUTO_1R1W
 top_kernel_compute_nxt_RAM_AUTO_1R1W
@@ -1009,7 +1421,12 @@ top_kernel_A_out_m_axi
 top_kernel_control_s_axi
 entry_proc
 read_input
-compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7
+compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2
+compute_Pipeline_VITIS_LOOP_46_4
+compute_Pipeline_VITIS_LOOP_51_5
+compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7
+compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10
+compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12
 compute
 write_output
 top_kernel
@@ -1024,7 +1441,12 @@ Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.compgen.dataonly.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/entry_proc.tbgen.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/read_input.tbgen.tcl 
-Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.tbgen.tcl 
+Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.tbgen.tcl 
+Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_46_4.tbgen.tcl 
+Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_51_5.tbgen.tcl 
+Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.tbgen.tcl 
+Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.tbgen.tcl 
+Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.tbgen.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/compute.tbgen.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/write_output.tbgen.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/top_kernel.tbgen.tcl 
@@ -1065,7 +1487,7 @@ Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/x
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.12 sec.
+Command       ap_source done; 0.13 sec.
 INFO-FLOW: DBG:PUTS:     IP package: exec /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/ip/pack.sh
 INFO-FLOW: DBG:PUTS:     IP package: success /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/ip/pack.sh
 INFO-FLOW: DBG:PUTS:   auto_impl: eval: -flow impl -rtl verilog
@@ -1092,10 +1514,11 @@ Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/x
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/util.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.11 sec.
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.13 sec.
+Command       ap_source done; 0.15 sec.
 INFO-FLOW: DBG:PUTS:       generate_syn_sh
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data names -quiet 
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data info -quiet 
@@ -1124,10 +1547,11 @@ Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/x
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/util.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.16 sec.
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/xfir.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /tools/software/xilinx/2025.1.1/Vitis/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.13 sec.
+Command       ap_source done; 0.2 sec.
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/autopilot.rtl.models.tcl 
 Execute       source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xczu3eg-sbva484-1-e -data names -quiet 
@@ -1137,15 +1561,15 @@ INFO-FLOW: DBG:PROC: ::HLSREPORTS::auto_impl_report topinfo_dict='RtlTopPrefix {
 INFO-FLOW: DBG:PUTS:     auto_impl_report: impl processing xml
 Execute       ap_part_info -quiet -data family -name xczu3eg-sbva484-1-e 
 INFO-FLOW: DBG:PUTS:     writing export xml file: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/report/verilog/export_impl.xml
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::auto_impl_report_txt xml_root='domNode0x7f5559b5c248' export_design_flow='impl' export_rpt='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/report/verilog/export_impl.rpt' rpt_txt_var=''
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::auto_impl_report_txt xml_root='domNode0x7ffb5d61e608' export_design_flow='impl' export_rpt='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/report/verilog/export_impl.rpt' rpt_txt_var=''
 INFO-FLOW: DBG:PUTS:     wrote export rpt file: export_impl.rpt
 INFO-FLOW: DBG:PUTS:     auto_impl_report: syn processing xml
 Execute       ap_part_info -quiet -data family -name xczu3eg-sbva484-1-e 
 INFO-FLOW: DBG:PUTS:     writing export xml file: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/report/verilog/export_syn.xml
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::auto_impl_report_txt xml_root='domNode0x7f5559a95798' export_design_flow='syn' export_rpt='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/report/verilog/export_syn.rpt' rpt_txt_var=''
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::auto_impl_report_txt xml_root='domNode0x7ffb5d531428' export_design_flow='syn' export_rpt='/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/report/verilog/export_syn.rpt' rpt_txt_var=''
 INFO-FLOW: DBG:PUTS:     wrote export rpt file: export_syn.rpt
 Execute       send_msg_by_id INFO @200-802@%s project_1/hls/impl/export.zip 
 INFO: [HLS 200-802] Generated output file project_1/hls/impl/export.zip
-Command     export_design done; 622.43 sec.
-INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:10:22; Allocated memory: 0.000 MB.
+Command     export_design done; 670.6 sec.
+INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:11:10; Allocated memory: 0.000 MB.
 Execute     cleanup_all 

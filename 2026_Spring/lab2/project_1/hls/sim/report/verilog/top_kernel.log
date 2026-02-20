@@ -33,22 +33,34 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE889
 INFO: [VRFC 10-311] analyzing module top_kernel_entry_proc
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_read_input.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_read_input
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_46_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_46_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_51_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_51_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_compute
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_write_output.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_write_output
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_flow_control_loop_pipe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_flow_control_loop_pipe
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_flow_control_loop_pipe_sequential_init
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_mul_39s_24ns_63_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_39s_24ns_63_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_mul_39s_26ns_65_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_39s_26ns_65_1_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_cur_RAM_AUTO_1R1W.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_compute_cur_RAM_AUTO_1R1W
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/sim/verilog/top_kernel_compute_nxt_RAM_AUTO_1R1W.v" into library xil_defaultlib
@@ -150,13 +162,19 @@ Compiling module xil_defaultlib.top_kernel_A_out_m_axi_reg_slice...
 Compiling module xil_defaultlib.top_kernel_A_out_m_axi_write(CON...
 Compiling module xil_defaultlib.top_kernel_A_out_m_axi(C_M_AXI_A...
 Compiling module xil_defaultlib.top_kernel_entry_proc
+Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
 Compiling module xil_defaultlib.top_kernel_read_input
 Compiling module xil_defaultlib.top_kernel_compute_cur_RAM_AUTO_...
 Compiling module xil_defaultlib.top_kernel_compute_nxt_RAM_AUTO_...
+Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
+Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
+Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
+Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
+Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_mul_39s_24ns_63_1_1(N...
 Compiling module xil_defaultlib.top_kernel_mul_39s_26ns_65_1_1(N...
-Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
+Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_compute_Pipeline_VITI...
 Compiling module xil_defaultlib.top_kernel_compute
 Compiling module xil_defaultlib.top_kernel_write_output
@@ -183,7 +201,6 @@ Compiling module xil_defaultlib.df_fifo_intf_default
 Compiling module xil_defaultlib.df_process_intf_default
 Compiling module xil_defaultlib.nodf_module_intf_default
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=12)
-Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=16)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=10)
 Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
 Compiling module xil_defaultlib.dataflow_monitor_1
@@ -195,7 +212,7 @@ Built simulation snapshot top_kernel
   **** SW Build 6233196 on Thu Sep 11 21:27:11 MDT 2025
   **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
   **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
-  **** Start of session at: Fri Feb 20 10:16:27 2026
+  **** Start of session at: Fri Feb 20 11:33:04 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -619,13 +636,13 @@ UVM_INFO /tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xln
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
-// RTL Simulation : 1 / 1 [100.00%] @ "62733635000"
+// RTL Simulation : 1 / 1 [100.00%] @ "41450135000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 62733705 ns : File "/tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
-run: Time (s): cpu = 00:00:00.05 ; elapsed = 00:04:04 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 108138 ; free virtual = 198727
+$finish called at time : 41450205 ns : File "/tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:00.04 ; elapsed = 00:03:26 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 79739 ; free virtual = 178276
 ## quit
-INFO: xsimkernel Simulation Memory Usage: 30313652 KB (Peak: 30379188 KB), Simulation CPU Usage: 244520 ms
-INFO: [Common 17-206] Exiting xsim at Fri Feb 20 10:20:38 2026...
+INFO: xsimkernel Simulation Memory Usage: 20680004 KB (Peak: 20680004 KB), Simulation CPU Usage: 206640 ms
+INFO: [Common 17-206] Exiting xsim at Fri Feb 20 11:36:37 2026...
 TEST PASSED
 INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

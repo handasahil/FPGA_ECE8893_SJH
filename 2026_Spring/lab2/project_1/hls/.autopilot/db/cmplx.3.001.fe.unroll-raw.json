@@ -5,7 +5,7 @@
     "control_depth": 0,
     "def_use_depth": 1,
     "file": "top.cpp",
-    "fileloc": 137,
+    "fileloc": 138,
     "instructions": 15,
     "memory_accesses": 0,
     "name": "top_kernel",
@@ -17,7 +17,7 @@
     "control_depth": 0,
     "def_use_depth": 4,
     "file": "top.cpp",
-    "fileloc": 125,
+    "fileloc": 126,
     "instructions": 23,
     "memory_accesses": 2,
     "name": "write_output",
@@ -32,7 +32,7 @@
     "control_depth": 7,
     "def_use_depth": 20,
     "file": "top.cpp",
-    "fileloc": 17,
+    "fileloc": 18,
     "instructions": 654,
     "loads": {
       "L": 44

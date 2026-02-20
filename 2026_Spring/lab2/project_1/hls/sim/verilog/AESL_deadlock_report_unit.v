@@ -372,8 +372,8 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                     case(index2)
                     1: begin //  for dep proc 'top_kernel.read_input_U0'
 // for dep channel 'top_kernel.grid_initial_U' info is :
-// blk sig is {~AESL_inst_top_kernel.compute_U0.grid_initial_blk_n data_FIFO}
-                        if ((~AESL_inst_top_kernel.compute_U0.grid_initial_blk_n)) begin
+// blk sig is {~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82.grid_initial_blk_n data_FIFO}
+                        if ((~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2_fu_82.grid_initial_blk_n)) begin
                             if (~AESL_inst_top_kernel.grid_initial_U.if_empty_n) begin
                                 $display("//      Blocked by empty input FIFO 'top_kernel.grid_initial_U' written by process 'top_kernel.read_input_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_initial_U");
@@ -393,8 +393,8 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                     end
                     3: begin //  for dep proc 'top_kernel.write_output_U0'
 // for dep channel 'top_kernel.grid_final_U' info is :
-// blk sig is {~AESL_inst_top_kernel.compute_U0.grid_final_blk_n data_FIFO}
-                        if ((~AESL_inst_top_kernel.compute_U0.grid_final_blk_n)) begin
+// blk sig is {~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96.grid_final_blk_n data_FIFO}
+                        if ((~AESL_inst_top_kernel.compute_U0.grp_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12_fu_96.grid_final_blk_n)) begin
                             if (~AESL_inst_top_kernel.grid_final_U.if_empty_n) begin
                                 $display("//      Blocked by empty input FIFO 'top_kernel.grid_final_U' written by process 'top_kernel.write_output_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel.grid_final_U");

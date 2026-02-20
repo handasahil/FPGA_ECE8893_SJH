@@ -20,7 +20,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 27 \
+    id 34 \
     name grid_initial \
     type fifo \
     dir I \
@@ -35,7 +35,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 28 \
+    id 35 \
     name grid_final \
     type fifo \
     dir O \
@@ -43,7 +43,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_grid_final \
     op interface \
-    ports { grid_final_din { O 24 vector } grid_final_full_n { I 1 bit } grid_final_write { O 1 bit } grid_final_num_data_valid { I 3 vector } grid_final_fifo_cap { I 3 vector } } \
+    ports { grid_final_din { O 24 vector } grid_final_full_n { I 1 bit } grid_final_write { O 1 bit } grid_final_num_data_valid { I 32 vector } grid_final_fifo_cap { I 32 vector } } \
 } "
 }
 

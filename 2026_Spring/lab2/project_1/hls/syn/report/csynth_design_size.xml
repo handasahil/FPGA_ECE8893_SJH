@@ -25,17 +25,17 @@
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
             <column name="">(1) lowering,   346, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,   392, high level synthesis optimizations</column>
+            <column name="">(2) optimizations,   398, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="top_kernel" col1="top.cpp:137" col2="6483" col3="344" col4="354" col5="340" col6="392">
-                    <row id="3" col0="read_input" col1="top.cpp:6" col2="29" col3="15" col4="22" col5="22" col6="25"/>
-                    <row id="2" col0="compute" col1="top.cpp:17" col2="6402" col3="299" col4="295" col5="283" col6="319"/>
-                    <row id="1" col0="write_output" col1="top.cpp:125" col2="29" col3="15" col4="22" col5="20" col6="26"/>
+                <row id="0" col0="top_kernel" col1="top.cpp:138" col2="6483" col3="344" col4="354" col5="340" col6="398">
+                    <row id="2" col0="read_input" col1="top.cpp:6" col2="29" col3="15" col4="22" col5="22" col6="26"/>
+                    <row id="1" col0="compute" col1="top.cpp:18" col2="6402" col3="299" col4="295" col5="283" col6="324"/>
+                    <row id="3" col0="write_output" col1="top.cpp:126" col2="29" col3="15" col4="22" col5="20" col6="26"/>
                 </row>
             </rows>
             <notes/>

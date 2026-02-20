@@ -2,9 +2,9 @@ set moduleName read_input
 set isTopModule 0
 set isCombinational 0
 set isDatapathOnly 0
-set isPipelined 0
-set isPipelined_legacy 0
-set pipeline_type none
+set isPipelined 1
+set isPipelined_legacy 1
+set pipeline_type loop_auto_rewind
 set FunctionProtocol ap_ctrl_hs
 set isOneStateSeq 0
 set ProfileFlag 0
@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 8
+set cdfgNum 13
 set C_modelName {read_input}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -41,8 +41,6 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ start_out sc_out sc_logic 1 signal -1 } 
-	{ start_write sc_out sc_logic 1 signal -1 } 
 	{ m_axi_A_in_0_AWVALID sc_out sc_logic 1 signal 0 } 
 	{ m_axi_A_in_0_AWREADY sc_in sc_logic 1 signal 0 } 
 	{ m_axi_A_in_0_AWADDR sc_out sc_lv 64 signal 0 } 
@@ -89,12 +87,14 @@ set portList {
 	{ m_axi_A_in_0_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_A_in_0_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_A_in_0_BUSER sc_in sc_lv 1 signal 0 } 
-	{ A_in1 sc_in sc_lv 64 signal 1 } 
 	{ grid_initial_din sc_out sc_lv 24 signal 2 } 
 	{ grid_initial_full_n sc_in sc_logic 1 signal 2 } 
 	{ grid_initial_write sc_out sc_logic 1 signal 2 } 
 	{ grid_initial_num_data_valid sc_in sc_lv 3 signal 2 } 
 	{ grid_initial_fifo_cap sc_in sc_lv 3 signal 2 } 
+	{ start_out sc_out sc_logic 1 signal -1 } 
+	{ start_write sc_out sc_logic 1 signal -1 } 
+	{ A_in1 sc_in sc_lv 64 signal 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -105,8 +105,6 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "start_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "start_out", "role": "default" }} , 
- 	{ "name": "start_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "start_write", "role": "default" }} , 
  	{ "name": "m_axi_A_in_0_AWVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "A_in", "role": "0_AWVALID" }} , 
  	{ "name": "m_axi_A_in_0_AWREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "A_in", "role": "0_AWREADY" }} , 
  	{ "name": "m_axi_A_in_0_AWADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "A_in", "role": "0_AWADDR" }} , 
@@ -153,27 +151,30 @@ set NewPortList {[
  	{ "name": "m_axi_A_in_0_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "A_in", "role": "0_BRESP" }} , 
  	{ "name": "m_axi_A_in_0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "A_in", "role": "0_BID" }} , 
  	{ "name": "m_axi_A_in_0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "A_in", "role": "0_BUSER" }} , 
- 	{ "name": "A_in1", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "A_in1", "role": "default" }} , 
  	{ "name": "grid_initial_din", "direction": "out", "datatype": "sc_lv", "bitwidth":24, "type": "signal", "bundle":{"name": "grid_initial", "role": "din" }} , 
  	{ "name": "grid_initial_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grid_initial", "role": "full_n" }} , 
  	{ "name": "grid_initial_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grid_initial", "role": "write" }} , 
  	{ "name": "grid_initial_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_initial", "role": "num_data_valid" }} , 
- 	{ "name": "grid_initial_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_initial", "role": "fifo_cap" }}  ]}
+ 	{ "name": "grid_initial_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":3, "type": "signal", "bundle":{"name": "grid_initial", "role": "fifo_cap" }} , 
+ 	{ "name": "start_out", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "start_out", "role": "default" }} , 
+ 	{ "name": "start_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "start_write", "role": "default" }} , 
+ 	{ "name": "A_in1", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "A_in1", "role": "default" }}  ]}
 
 set ArgLastReadFirstWriteLatency {
 	read_input {
-		A_in {Type I LastRead 10 FirstWrite -1}
+		A_in {Type I LastRead 9 FirstWrite -1}
 		A_in1 {Type I LastRead 0 FirstWrite -1}
-		grid_initial {Type O LastRead -1 FirstWrite 11}}}
+		grid_initial {Type O LastRead -1 FirstWrite 10}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "197128", "Max" : "197128"}
-	, {"Name" : "Interval", "Min" : "197128", "Max" : "197128"}
+	{"Name" : "Latency", "Min" : "65547", "Max" : "65547"}
+	, {"Name" : "Interval", "Min" : "65547", "Max" : "65547"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 

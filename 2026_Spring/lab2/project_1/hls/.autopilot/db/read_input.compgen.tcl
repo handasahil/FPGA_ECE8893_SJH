@@ -116,3 +116,24 @@ if {${::AESL::PGuard_autoexp_gen}} {
 }
 
 
+# flow_control definition:
+set InstName top_kernel_flow_control_loop_pipe_U
+set CompName top_kernel_flow_control_loop_pipe
+set name flow_control_loop_pipe
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \
+    name ${name} \
+    prefix top_kernel_ \
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $CompName BINDTYPE interface TYPE internal_upc_flow_control INSTNAME $InstName
+}
+
+

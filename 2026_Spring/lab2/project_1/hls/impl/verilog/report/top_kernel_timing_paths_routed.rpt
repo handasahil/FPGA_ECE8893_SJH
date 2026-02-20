@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2025.1.1 (lin64) Build 6233196 Thu Sep 11 21:27:11 MDT 2025
-| Date              : Fri Feb 20 10:30:57 2026
+| Date              : Fri Feb 20 11:47:44 2026
 | Host              : ece-linlabsrv01 running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
 | Command           : report_timing -max_paths 10 -file ./report/top_kernel_timing_paths_routed.rpt
 | Design            : bd_0_wrapper
@@ -13,16 +13,87 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanc
 
 Timing Report
 
-Slack (MET) :             2.826ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+Slack (MET) :             2.487ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKBWRCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/DINADIN[3]
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/DINBDIN[4]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.796ns  (logic 2.798ns (41.170%)  route 3.998ns (58.830%))
+  Data Path Delay:        7.156ns  (logic 2.778ns (38.822%)  route 4.378ns (61.178%))
   Logic Levels:           8  (LUT6=1 RAMB36E2=7)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.042ns = ( 10.042 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.081ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKBWRCLK_CASDOUTB[4])
+                                                      1.159     1.240 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     1.264    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_65
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_CASDOUTB[4])
+                                                      0.220     1.484 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     1.508    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_65
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_CASDOUTB[4])
+                                                      0.220     1.728 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     1.752    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_65
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_CASDOUTB[4])
+                                                      0.220     1.972 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     1.996    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_65
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_CASDOUTB[4])
+                                                      0.220     2.216 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     2.240    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_65
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_CASDOUTB[4])
+                                                      0.220     2.460 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     2.484    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_65
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_CASDOUTB[4])
+                                                      0.220     2.704 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTB[4]
+                         net (fo=1, routed)           0.024     2.728    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_65
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[4]_DOUTBDOUT[4])
+                                                      0.120     2.848 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTBDOUT[4]
+                         net (fo=1, routed)           1.246     4.094    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_129
+    SLICE_X19Y125        LUT6 (Prop_G6LUT_SLICEM_I5_O)
+                                                      0.179     4.273 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_i_52/O
+                         net (fo=32, routed)          2.964     7.237    bd_0_i/hls_inst/inst/compute_U0/nxt_U/d1[4]
+    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/DINBDIN[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.042    10.042    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CLKBWRCLK
+                         clock pessimism              0.000    10.042    
+                         clock uncertainty           -0.035    10.007    
+    RAMB36_X2Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_DINBDIN[4])
+                                                     -0.283     9.724    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25
+  -------------------------------------------------------------------
+                         required time                          9.724    
+                         arrival time                          -7.237    
+  -------------------------------------------------------------------
+                         slack                                  2.487    
+
+Slack (MET) :             2.509ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINADIN[1]
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.083ns  (logic 2.766ns (39.049%)  route 4.317ns (60.951%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
   Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
     Source Clock Delay      (SCD):    0.081ns
@@ -37,63 +108,66 @@ Slack (MET) :             2.826ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[3])
-                                                      1.181     1.262 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.300    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_37
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.520 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.558    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_37
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.778 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.816    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_37
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.036 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.074    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_37
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.294 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.332    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_37
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.552 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.590    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_37
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.810 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.848    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_37
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_DOUTADOUT[3])
-                                                      0.120     2.968 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[3]
-                         net (fo=1, routed)           0.855     3.823    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_101
-    SLICE_X22Y128        LUT6 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.177     4.000 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_37/O
-                         net (fo=32, routed)          2.877     6.877    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[3]
-    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/DINADIN[3]
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[1])
+                                                      1.200     1.281 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     1.320    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_36
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_CASDOUTA[1])
+                                                      0.220     1.540 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     1.579    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_36
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_CASDOUTA[1])
+                                                      0.220     1.799 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     1.838    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_36
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_CASDOUTA[1])
+                                                      0.220     2.058 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     2.097    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_36
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_CASDOUTA[1])
+                                                      0.220     2.317 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     2.356    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_36
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_CASDOUTA[1])
+                                                      0.220     2.576 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     2.615    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_36
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_CASDOUTA[1])
+                                                      0.220     2.835 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTA[1]
+                         net (fo=1, routed)           0.039     2.874    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_36
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[1]_DOUTADOUT[1])
+                                                      0.120     2.994 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTADOUT[1]
+                         net (fo=1, routed)           0.974     3.968    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_100
+    SLICE_X30Y129        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.064     4.032 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_16/O
+                         net (fo=5, routed)           0.108     4.140    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[1]
+    SLICE_X30Y131        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.062     4.202 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_39/O
+                         net (fo=32, routed)          2.962     7.164    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[1]
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINADIN[1]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/CLKARDCLK
                          clock pessimism              0.000    10.041    
                          clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[3])
-                                                     -0.302     9.704    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0
+    RAMB36_X1Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[1])
+                                                     -0.332     9.674    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16
   -------------------------------------------------------------------
-                         required time                          9.704    
-                         arrival time                          -6.877    
+                         required time                          9.674    
+                         arrival time                          -7.164    
   -------------------------------------------------------------------
-                         slack                                  2.826    
+                         slack                                  2.509    
 
-Slack (MET) :             2.900ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+Slack (MET) :             2.513ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/DINADIN[3]
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINADIN[10]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.722ns  (logic 2.798ns (41.623%)  route 3.924ns (58.377%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
+  Data Path Delay:        7.133ns  (logic 2.713ns (38.036%)  route 4.420ns (61.964%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
   Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
     Source Clock Delay      (SCD):    0.081ns
@@ -108,63 +182,66 @@ Slack (MET) :             2.900ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[3])
-                                                      1.181     1.262 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.300    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_37
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.520 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.558    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_37
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.778 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.816    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_37
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.036 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.074    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_37
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.294 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.332    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_37
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.552 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.590    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_37
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.810 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.848    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_37
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_DOUTADOUT[3])
-                                                      0.120     2.968 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[3]
-                         net (fo=1, routed)           0.855     3.823    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_101
-    SLICE_X22Y128        LUT6 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.177     4.000 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_37/O
-                         net (fo=32, routed)          2.803     6.803    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[3]
-    RAMB36_X2Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/DINADIN[3]
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[10])
+                                                      1.135     1.216 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     1.254    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_27
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     1.474 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     1.512    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_27
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     1.732 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     1.770    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_27
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     1.990 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.028    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_27
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     2.248 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.286    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_27
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     2.506 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.544    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_27
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     2.764 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.802    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_27
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_DOUTADOUT[10])
+                                                      0.120     2.922 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTADOUT[10]
+                         net (fo=1, routed)           0.940     3.862    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_91
+    SLICE_X29Y131        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.100     3.962 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_7/O
+                         net (fo=5, routed)           0.108     4.070    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[10]
+    SLICE_X29Y131        LUT5 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.038     4.108 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_30/O
+                         net (fo=32, routed)          3.105     7.214    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[10]
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINADIN[10]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CLKARDCLK
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/CLKARDCLK
                          clock pessimism              0.000    10.041    
                          clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y5          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[3])
-                                                     -0.302     9.704    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1
+    RAMB36_X1Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[10])
+                                                     -0.279     9.727    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16
   -------------------------------------------------------------------
-                         required time                          9.704    
-                         arrival time                          -6.803    
+                         required time                          9.727    
+                         arrival time                          -7.214    
   -------------------------------------------------------------------
-                         slack                                  2.900    
+                         slack                                  2.513    
 
-Slack (MET) :             2.931ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+Slack (MET) :             2.532ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CLKARDCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/DINADIN[3]
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINADIN[5]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.691ns  (logic 2.798ns (41.816%)  route 3.893ns (58.184%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
+  Data Path Delay:        7.084ns  (logic 2.934ns (41.415%)  route 4.150ns (58.585%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
   Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
     Source Clock Delay      (SCD):    0.081ns
@@ -179,63 +256,66 @@ Slack (MET) :             2.931ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X1Y18         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[3])
-                                                      1.181     1.262 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.300    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_37
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.520 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.558    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_37
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.778 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.816    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_37
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.036 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.074    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_37
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.294 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.332    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_37
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.552 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.590    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_37
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.810 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.848    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_37
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_DOUTADOUT[3])
-                                                      0.120     2.968 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[3]
-                         net (fo=1, routed)           0.855     3.823    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_101
-    SLICE_X22Y128        LUT6 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.177     4.000 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_37/O
-                         net (fo=32, routed)          2.772     6.772    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[3]
-    RAMB36_X2Y6          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/DINADIN[3]
+    RAMB36_X1Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[5])
+                                                      1.170     1.251 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     1.289    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24_n_32
+    RAMB36_X1Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     1.509 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_25/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     1.547    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_25_n_32
+    RAMB36_X1Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     1.767 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_26/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     1.805    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_26_n_32
+    RAMB36_X1Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.025 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_27/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.063    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_27_n_32
+    RAMB36_X1Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.283 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_28/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.321    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_28_n_32
+    RAMB36_X1Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.541 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_29/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.579    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_29_n_32
+    RAMB36_X1Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.799 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_30/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.837    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_30_n_32
+    RAMB36_X1Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_DOUTADOUT[5])
+                                                      0.120     2.957 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_31/DOUTADOUT[5]
+                         net (fo=1, routed)           0.783     3.740    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_31_n_96
+    SLICE_X30Y130        LUT6 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.147     3.887 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_12/O
+                         net (fo=5, routed)           0.123     4.010    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[5]
+    SLICE_X30Y130        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.177     4.187 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_35/O
+                         net (fo=32, routed)          2.978     7.165    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[5]
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINADIN[5]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y6          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CLKARDCLK
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/CLKARDCLK
                          clock pessimism              0.000    10.041    
                          clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y6          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[3])
-                                                     -0.302     9.704    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2
+    RAMB36_X1Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[5])
+                                                     -0.308     9.698    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16
   -------------------------------------------------------------------
-                         required time                          9.704    
-                         arrival time                          -6.772    
+                         required time                          9.698    
+                         arrival time                          -7.165    
   -------------------------------------------------------------------
-                         slack                                  2.931    
+                         slack                                  2.532    
 
-Slack (MET) :             2.952ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+Slack (MET) :             2.590ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CLKARDCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/DINADIN[4]
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17/DINADIN[5]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.650ns  (logic 2.706ns (40.693%)  route 3.944ns (59.307%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
+  Data Path Delay:        7.026ns  (logic 2.934ns (41.757%)  route 4.092ns (58.243%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
   Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
     Source Clock Delay      (SCD):    0.081ns
@@ -250,63 +330,214 @@ Slack (MET) :             2.952ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X1Y18         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[4])
-                                                      1.168     1.249 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.280    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_36
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.500 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.531    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_36
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.751 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.782    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_36
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.002 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.033    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_36
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.253 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.284    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_36
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.504 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.535    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_36
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.755 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.786    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_36
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_DOUTADOUT[4])
-                                                      0.120     2.906 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[4]
-                         net (fo=1, routed)           0.895     3.801    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_100
-    SLICE_X24Y126        LUT6 (Prop_F6LUT_SLICEM_I0_O)
-                                                      0.098     3.899 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_36/O
-                         net (fo=32, routed)          2.832     6.731    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[4]
-    RAMB36_X2Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/DINADIN[4]
+    RAMB36_X1Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[5])
+                                                      1.170     1.251 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     1.289    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24_n_32
+    RAMB36_X1Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     1.509 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_25/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     1.547    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_25_n_32
+    RAMB36_X1Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     1.767 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_26/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     1.805    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_26_n_32
+    RAMB36_X1Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.025 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_27/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.063    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_27_n_32
+    RAMB36_X1Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.283 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_28/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.321    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_28_n_32
+    RAMB36_X1Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.541 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_29/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.579    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_29_n_32
+    RAMB36_X1Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_CASDOUTA[5])
+                                                      0.220     2.799 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_30/CASDOUTA[5]
+                         net (fo=1, routed)           0.038     2.837    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_30_n_32
+    RAMB36_X1Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[5]_DOUTADOUT[5])
+                                                      0.120     2.957 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_31/DOUTADOUT[5]
+                         net (fo=1, routed)           0.783     3.740    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_31_n_96
+    SLICE_X30Y130        LUT6 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.147     3.887 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_12/O
+                         net (fo=5, routed)           0.123     4.010    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[5]
+    SLICE_X30Y130        LUT5 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.177     4.187 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_35/O
+                         net (fo=32, routed)          2.920     7.107    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[5]
+    RAMB36_X1Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17/DINADIN[5]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CLKARDCLK
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17/CLKARDCLK
                          clock pessimism              0.000    10.041    
                          clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y5          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[4])
-                                                     -0.323     9.683    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1
+    RAMB36_X1Y5          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[5])
+                                                     -0.308     9.698    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17
+  -------------------------------------------------------------------
+                         required time                          9.698    
+                         arrival time                          -7.107    
+  -------------------------------------------------------------------
+                         slack                                  2.590    
+
+Slack (MET) :             2.604ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19/DINADIN[10]
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        7.042ns  (logic 2.713ns (38.528%)  route 4.329ns (61.472%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.081ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[10])
+                                                      1.135     1.216 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     1.254    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_27
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     1.474 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     1.512    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_27
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     1.732 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     1.770    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_27
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     1.990 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.028    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_27
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     2.248 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.286    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_27
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     2.506 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.544    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_27
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_CASDOUTA[10])
+                                                      0.220     2.764 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTA[10]
+                         net (fo=1, routed)           0.038     2.802    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_27
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[10]_DOUTADOUT[10])
+                                                      0.120     2.922 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTADOUT[10]
+                         net (fo=1, routed)           0.940     3.862    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_91
+    SLICE_X29Y131        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.100     3.962 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_7/O
+                         net (fo=5, routed)           0.108     4.070    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[10]
+    SLICE_X29Y131        LUT5 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.038     4.108 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_30/O
+                         net (fo=32, routed)          3.014     7.123    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[10]
+    RAMB36_X1Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19/DINADIN[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19/CLKARDCLK
+                         clock pessimism              0.000    10.041    
+                         clock uncertainty           -0.035    10.006    
+    RAMB36_X1Y7          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[10])
+                                                     -0.279     9.727    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19
+  -------------------------------------------------------------------
+                         required time                          9.727    
+                         arrival time                          -7.123    
+  -------------------------------------------------------------------
+                         slack                                  2.604    
+
+Slack (MET) :             2.612ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CLKARDCLK
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19/DINADIN[4]
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        6.989ns  (logic 2.903ns (41.535%)  route 4.086ns (58.465%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.081ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X1Y18         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X1Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[4])
+                                                      1.168     1.249 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     1.280    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_24_n_33
+    RAMB36_X1Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
+                                                      0.220     1.500 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_25/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     1.531    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_25_n_33
+    RAMB36_X1Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
+                                                      0.220     1.751 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_26/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     1.782    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_26_n_33
+    RAMB36_X1Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
+                                                      0.220     2.002 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_27/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     2.033    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_27_n_33
+    RAMB36_X1Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
+                                                      0.220     2.253 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_28/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     2.284    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_28_n_33
+    RAMB36_X1Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
+                                                      0.220     2.504 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_29/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     2.535    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_29_n_33
+    RAMB36_X1Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
+                                                      0.220     2.755 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_30/CASDOUTA[4]
+                         net (fo=1, routed)           0.031     2.786    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_30_n_33
+    RAMB36_X1Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_DOUTADOUT[4])
+                                                      0.120     2.906 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_31/DOUTADOUT[4]
+                         net (fo=1, routed)           0.816     3.722    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_31_n_97
+    SLICE_X32Y127        LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.179     3.901 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_13/O
+                         net (fo=5, routed)           0.297     4.198    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[4]
+    SLICE_X27Y127        LUT5 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.116     4.314 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_36/O
+                         net (fo=32, routed)          2.756     7.070    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[4]
+    RAMB36_X1Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19/DINADIN[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19/CLKARDCLK
+                         clock pessimism              0.000    10.041    
+                         clock uncertainty           -0.035    10.006    
+    RAMB36_X1Y7          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[4])
+                                                     -0.323     9.683    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_19
   -------------------------------------------------------------------
                          required time                          9.683    
-                         arrival time                          -6.731    
+                         arrival time                          -7.070    
   -------------------------------------------------------------------
-                         slack                                  2.952    
+                         slack                                  2.612    
 
-Slack (MET) :             2.997ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+Slack (MET) :             2.614ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/DINADIN[3]
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17/DINADIN[15]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.626ns  (logic 2.798ns (42.229%)  route 3.828ns (57.771%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
+  Data Path Delay:        7.020ns  (logic 2.793ns (39.784%)  route 4.227ns (60.216%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
   Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
     Source Clock Delay      (SCD):    0.081ns
@@ -321,63 +552,137 @@ Slack (MET) :             2.997ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[3])
-                                                      1.181     1.262 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.300    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_37
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.520 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.558    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_37
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.778 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.816    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_37
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.036 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.074    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_37
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.294 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.332    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_37
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.552 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.590    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_37
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.810 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.848    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_37
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_DOUTADOUT[3])
-                                                      0.120     2.968 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[3]
-                         net (fo=1, routed)           0.855     3.823    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_101
-    SLICE_X22Y128        LUT6 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.177     4.000 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_37/O
-                         net (fo=32, routed)          2.707     6.707    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[3]
-    RAMB36_X2Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/DINADIN[3]
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[15])
+                                                      1.143     1.224 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     1.259    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_22
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     1.479 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     1.514    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_22
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     1.734 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     1.769    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_22
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     1.989 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.024    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_22
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     2.244 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.279    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_22
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     2.499 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.534    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_22
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     2.754 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.789    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_22
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_DOUTADOUT[15])
+                                                      0.120     2.909 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTADOUT[15]
+                         net (fo=1, routed)           1.002     3.911    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_86
+    SLICE_X30Y129        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.147     4.058 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_2/O
+                         net (fo=5, routed)           0.120     4.178    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[15]
+    SLICE_X30Y128        LUT5 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.063     4.241 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_25/O
+                         net (fo=32, routed)          2.861     7.101    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[15]
+    RAMB36_X1Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17/DINADIN[15]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CLKARDCLK
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y5          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17/CLKARDCLK
                          clock pessimism              0.000    10.041    
                          clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y7          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[3])
-                                                     -0.302     9.704    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3
+    RAMB36_X1Y5          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[15])
+                                                     -0.290     9.716    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_17
   -------------------------------------------------------------------
-                         required time                          9.704    
-                         arrival time                          -6.707    
+                         required time                          9.716    
+                         arrival time                          -7.101    
   -------------------------------------------------------------------
-                         slack                                  2.997    
+                         slack                                  2.614    
 
-Slack (MET) :             3.044ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+Slack (MET) :             2.635ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKBWRCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/DINADIN[14]
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINBDIN[12]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.610ns  (logic 2.699ns (40.834%)  route 3.911ns (59.166%))
+  Data Path Delay:        7.007ns  (logic 2.724ns (38.877%)  route 4.283ns (61.123%))
   Logic Levels:           8  (LUT6=1 RAMB36E2=7)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.042ns = ( 10.042 - 10.000 ) 
+    Source Clock Delay      (SCD):    0.081ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKBWRCLK_CASDOUTB[12])
+                                                      1.133     1.214 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     1.245    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_57
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_CASDOUTB[12])
+                                                      0.220     1.465 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     1.496    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_57
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_CASDOUTB[12])
+                                                      0.220     1.716 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     1.747    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_57
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_CASDOUTB[12])
+                                                      0.220     1.967 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     1.998    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_57
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_CASDOUTB[12])
+                                                      0.220     2.218 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     2.249    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_57
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_CASDOUTB[12])
+                                                      0.220     2.469 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     2.500    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_57
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_CASDOUTB[12])
+                                                      0.220     2.720 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTB[12]
+                         net (fo=1, routed)           0.031     2.751    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_57
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINB[12]_DOUTBDOUT[12])
+                                                      0.120     2.871 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTBDOUT[12]
+                         net (fo=1, routed)           1.158     4.029    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_121
+    SLICE_X19Y126        LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.151     4.180 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_i_44__0/O
+                         net (fo=32, routed)          2.908     7.088    bd_0_i/hls_inst/inst/compute_U0/nxt_U/d1[12]
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/DINBDIN[12]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=3488, unset)         0.042    10.042    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16/CLKBWRCLK
+                         clock pessimism              0.000    10.042    
+                         clock uncertainty           -0.035    10.007    
+    RAMB36_X1Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_DINBDIN[12])
+                                                     -0.284     9.723    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_16
+  -------------------------------------------------------------------
+                         required time                          9.723    
+                         arrival time                          -7.088    
+  -------------------------------------------------------------------
+                         slack                                  2.635    
+
+Slack (MET) :             2.650ns  (required time - arrival time)
+  Source:                 bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_20/DINADIN[15]
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        6.985ns  (logic 2.793ns (39.987%)  route 4.192ns (60.013%))
+  Logic Levels:           9  (LUT5=1 LUT6=1 RAMB36E2=7)
   Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
     Source Clock Delay      (SCD):    0.081ns
@@ -392,336 +697,55 @@ Slack (MET) :             3.044ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock ap_clk rise edge)     0.000     0.000 r  
                                                       0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
+                         net (fo=3488, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
+    RAMB36_X4Y24         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[14])
-                                                      1.143     1.224 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     1.263    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_26
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_CASDOUTA[14])
-                                                      0.220     1.483 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     1.522    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_26
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_CASDOUTA[14])
-                                                      0.220     1.742 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     1.781    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_26
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_CASDOUTA[14])
-                                                      0.220     2.001 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     2.040    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_26
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_CASDOUTA[14])
-                                                      0.220     2.260 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     2.299    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_26
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_CASDOUTA[14])
-                                                      0.220     2.519 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     2.558    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_26
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_CASDOUTA[14])
-                                                      0.220     2.778 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[14]
-                         net (fo=1, routed)           0.039     2.817    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_26
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[14]_DOUTADOUT[14])
-                                                      0.120     2.937 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[14]
-                         net (fo=1, routed)           0.825     3.762    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_90
-    SLICE_X22Y127        LUT6 (Prop_H6LUT_SLICEL_I0_O)
-                                                      0.116     3.878 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_26/O
-                         net (fo=32, routed)          2.813     6.691    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[14]
-    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/DINADIN[14]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock ap_clk rise edge)    10.000    10.000 r  
-                                                      0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.000    10.041    
-                         clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[14])
-                                                     -0.271     9.735    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0
-  -------------------------------------------------------------------
-                         required time                          9.735    
-                         arrival time                          -6.691    
-  -------------------------------------------------------------------
-                         slack                                  3.044    
-
-Slack (MET) :             3.074ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_17/DINADIN[3]
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             ap_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.549ns  (logic 2.798ns (42.723%)  route 3.751ns (57.277%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
-  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
-    Source Clock Delay      (SCD):    0.081ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock ap_clk rise edge)     0.000     0.000 r  
-                                                      0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-  -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[3])
-                                                      1.181     1.262 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.300    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_37
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.520 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.558    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_37
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     1.778 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     1.816    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_37
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.036 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.074    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_37
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.294 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.332    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_37
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.552 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.590    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_37
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_CASDOUTA[3])
-                                                      0.220     2.810 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[3]
-                         net (fo=1, routed)           0.038     2.848    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_37
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[3]_DOUTADOUT[3])
-                                                      0.120     2.968 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[3]
-                         net (fo=1, routed)           0.855     3.823    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_101
-    SLICE_X22Y128        LUT6 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.177     4.000 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_37/O
-                         net (fo=32, routed)          2.630     6.630    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[3]
-    RAMB36_X3Y11         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_17/DINADIN[3]
+    RAMB36_X4Y24         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[15])
+                                                      1.143     1.224 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     1.259    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0_n_22
+    RAMB36_X4Y25         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     1.479 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     1.514    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_1_n_22
+    RAMB36_X4Y26         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     1.734 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     1.769    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2_n_22
+    RAMB36_X4Y27         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     1.989 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.024    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3_n_22
+    RAMB36_X4Y28         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     2.244 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.279    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_4_n_22
+    RAMB36_X4Y29         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     2.499 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.534    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_5_n_22
+    RAMB36_X4Y30         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_CASDOUTA[15])
+                                                      0.220     2.754 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6/CASDOUTA[15]
+                         net (fo=1, routed)           0.035     2.789    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_6_n_22
+    RAMB36_X4Y31         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[15]_DOUTADOUT[15])
+                                                      0.120     2.909 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7/DOUTADOUT[15]
+                         net (fo=1, routed)           1.002     3.911    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_7_n_86
+    SLICE_X30Y129        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.147     4.058 r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_i_2/O
+                         net (fo=5, routed)           0.120     4.178    bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/DINADIN[15]
+    SLICE_X30Y128        LUT5 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.063     4.241 r  bd_0_i/hls_inst/inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/ram_reg_bram_0_i_25/O
+                         net (fo=32, routed)          2.825     7.066    bd_0_i/hls_inst/inst/compute_U0/nxt_U/nxt_d0[15]
+    RAMB36_X1Y8          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_20/DINADIN[15]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)    10.000    10.000 r  
                                                       0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X3Y11         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_17/CLKARDCLK
+                         net (fo=3488, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
+    RAMB36_X1Y8          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_20/CLKARDCLK
                          clock pessimism              0.000    10.041    
                          clock uncertainty           -0.035    10.006    
-    RAMB36_X3Y11         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[3])
-                                                     -0.302     9.704    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_17
+    RAMB36_X1Y8          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[15])
+                                                     -0.290     9.716    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_20
   -------------------------------------------------------------------
-                         required time                          9.704    
-                         arrival time                          -6.630    
+                         required time                          9.716    
+                         arrival time                          -7.066    
   -------------------------------------------------------------------
-                         slack                                  3.074    
-
-Slack (MET) :             3.075ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/DINADIN[4]
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             ap_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.526ns  (logic 2.706ns (41.463%)  route 3.820ns (58.537%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
-  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
-    Source Clock Delay      (SCD):    0.081ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock ap_clk rise edge)     0.000     0.000 r  
-                                                      0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-  -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[4])
-                                                      1.168     1.249 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.280    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_36
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.500 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.531    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_36
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.751 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.782    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_36
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.002 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.033    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_36
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.253 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.284    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_36
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.504 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.535    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_36
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.755 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.786    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_36
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_DOUTADOUT[4])
-                                                      0.120     2.906 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[4]
-                         net (fo=1, routed)           0.895     3.801    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_100
-    SLICE_X24Y126        LUT6 (Prop_F6LUT_SLICEM_I0_O)
-                                                      0.098     3.899 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_36/O
-                         net (fo=32, routed)          2.708     6.607    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[4]
-    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/DINADIN[4]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock ap_clk rise edge)    10.000    10.000 r  
-                                                      0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y4          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.000    10.041    
-                         clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y4          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[4])
-                                                     -0.323     9.683    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_0
-  -------------------------------------------------------------------
-                         required time                          9.683    
-                         arrival time                          -6.607    
-  -------------------------------------------------------------------
-                         slack                                  3.075    
-
-Slack (MET) :             3.127ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/DINADIN[4]
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             ap_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.474ns  (logic 2.706ns (41.796%)  route 3.768ns (58.204%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
-  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
-    Source Clock Delay      (SCD):    0.081ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock ap_clk rise edge)     0.000     0.000 r  
-                                                      0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-  -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[4])
-                                                      1.168     1.249 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.280    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_36
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.500 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.531    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_36
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.751 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.782    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_36
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.002 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.033    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_36
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.253 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.284    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_36
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.504 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.535    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_36
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.755 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.786    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_36
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_DOUTADOUT[4])
-                                                      0.120     2.906 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[4]
-                         net (fo=1, routed)           0.895     3.801    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_100
-    SLICE_X24Y126        LUT6 (Prop_F6LUT_SLICEM_I0_O)
-                                                      0.098     3.899 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_36/O
-                         net (fo=32, routed)          2.656     6.555    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[4]
-    RAMB36_X2Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/DINADIN[4]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock ap_clk rise edge)    10.000    10.000 r  
-                                                      0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y7          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3/CLKARDCLK
-                         clock pessimism              0.000    10.041    
-                         clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y7          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[4])
-                                                     -0.323     9.683    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_3
-  -------------------------------------------------------------------
-                         required time                          9.683    
-                         arrival time                          -6.555    
-  -------------------------------------------------------------------
-                         slack                                  3.127    
-
-Slack (MET) :             3.145ns  (required time - arrival time)
-  Source:                 bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/DINADIN[4]
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             ap_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        6.457ns  (logic 2.706ns (41.908%)  route 3.751ns (58.092%))
-  Logic Levels:           8  (LUT6=1 RAMB36E2=7)
-  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.041ns = ( 10.041 - 10.000 ) 
-    Source Clock Delay      (SCD):    0.081ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock ap_clk rise edge)     0.000     0.000 r  
-                                                      0.000     0.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.081     0.081    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ap_clk
-    RAMB36_X0Y16         RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CLKARDCLK
-  -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y16         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_CASDOUTA[4])
-                                                      1.168     1.249 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.280    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_24_n_36
-    RAMB36_X0Y17         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.500 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.531    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_25_n_36
-    RAMB36_X0Y18         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     1.751 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     1.782    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_26_n_36
-    RAMB36_X0Y19         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.002 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.033    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_27_n_36
-    RAMB36_X0Y20         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.253 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.284    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_28_n_36
-    RAMB36_X0Y21         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.504 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.535    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_29_n_36
-    RAMB36_X0Y22         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_CASDOUTA[4])
-                                                      0.220     2.755 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30/CASDOUTA[4]
-                         net (fo=1, routed)           0.031     2.786    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_30_n_36
-    RAMB36_X0Y23         RAMB36E2 (Prop_RAMB36E2_RAMB36_CASDINA[4]_DOUTADOUT[4])
-                                                      0.120     2.906 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31/DOUTADOUT[4]
-                         net (fo=1, routed)           0.895     3.801    bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_31_n_100
-    SLICE_X24Y126        LUT6 (Prop_F6LUT_SLICEM_I0_O)
-                                                      0.098     3.899 r  bd_0_i/hls_inst/inst/compute_U0/nxt_U/ram_reg_bram_0_i_36/O
-                         net (fo=32, routed)          2.639     6.538    bd_0_i/hls_inst/inst/compute_U0/cur_U/nxt_q0[4]
-    RAMB36_X2Y6          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/DINADIN[4]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock ap_clk rise edge)    10.000    10.000 r  
-                                                      0.000    10.000 r  ap_clk (IN)
-                         net (fo=3470, unset)         0.041    10.041    bd_0_i/hls_inst/inst/compute_U0/cur_U/ap_clk
-    RAMB36_X2Y6          RAMB36E2                                     r  bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2/CLKARDCLK
-                         clock pessimism              0.000    10.041    
-                         clock uncertainty           -0.035    10.006    
-    RAMB36_X2Y6          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_DINADIN[4])
-                                                     -0.323     9.683    bd_0_i/hls_inst/inst/compute_U0/cur_U/ram_reg_bram_2
-  -------------------------------------------------------------------
-                         required time                          9.683    
-                         arrival time                          -6.538    
-  -------------------------------------------------------------------
-                         slack                                  3.145    
+                         slack                                  2.650    
 
 
 

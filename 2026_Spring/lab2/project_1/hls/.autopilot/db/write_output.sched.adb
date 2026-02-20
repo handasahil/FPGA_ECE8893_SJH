@@ -131,7 +131,7 @@
 						<name>i</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
+						<lineNumber>127</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -147,7 +147,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>126</second>
+										<second>127</second>
 									</item>
 								</second>
 							</item>
@@ -230,7 +230,7 @@
 						<name>trunc_ln</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
+						<lineNumber>127</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -246,7 +246,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>126</second>
+										<second>127</second>
 									</item>
 								</second>
 							</item>
@@ -286,10 +286,10 @@
 					<Obj>
 						<type>0</type>
 						<id>10</id>
-						<name>sext_ln126</name>
+						<name>sext_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
+						<lineNumber>127</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -305,7 +305,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>126</second>
+										<second>127</second>
 									</item>
 								</second>
 							</item>
@@ -345,7 +345,7 @@
 						<name>A_out_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
+						<lineNumber>127</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -361,7 +361,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>126</second>
+										<second>127</second>
 									</item>
 								</second>
 							</item>
@@ -402,7 +402,7 @@
 						<name>empty</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
+						<lineNumber>127</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -418,7 +418,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>126</second>
+										<second>127</second>
 									</item>
 								</second>
 							</item>
@@ -457,10 +457,10 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>i_write_ln126</name>
+						<name>i_write_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
+						<lineNumber>127</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -476,7 +476,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>126</second>
+										<second>127</second>
 									</item>
 								</second>
 							</item>
@@ -514,291 +514,6 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>br_ln126</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>66</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>8</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_12">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>16</id>
-						<name>i_1</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>i</originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>67</item>
-					<item>203</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>9</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_13">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>17</id>
-						<name>icmp_ln126</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>68</item>
-					<item>70</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.92</m_delay>
-				<m_topoIndex>10</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_14">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>18</id>
-						<name>add_ln126</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>71</item>
-					<item>73</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.92</m_delay>
-				<m_topoIndex>11</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_15">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>19</id>
-						<name>br_ln126</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>74</item>
-					<item>75</item>
-					<item>76</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>12</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_16">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>23</id>
 						<name>br_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -839,23 +554,23 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>77</item>
+					<item>66</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.48</m_delay>
-				<m_topoIndex>13</m_topoIndex>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>8</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_17">
+			<item class_id_reference="9" object_id="_12">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>25</id>
-						<name>j</name>
+						<id>16</id>
+						<name>i_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
 						<lineNumber>127</lineNumber>
@@ -879,7 +594,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>j</originalName>
+						<originalName>i</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
@@ -893,27 +608,25 @@
 					<bitwidth>9</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>4</count>
+					<count>2</count>
 					<item_version>0</item_version>
-					<item>78</item>
-					<item>79</item>
-					<item>80</item>
-					<item>81</item>
+					<item>67</item>
+					<item>203</item>
 				</oprand_edges>
-				<opcode>phi</opcode>
+				<opcode>load</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>14</m_topoIndex>
+				<m_topoIndex>9</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_18">
+			<item class_id_reference="9" object_id="_13">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>26</id>
+						<id>17</id>
 						<name>icmp_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -954,8 +667,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>82</item>
-					<item>83</item>
+					<item>68</item>
+					<item>70</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
 				<m_Display>0</m_Display>
@@ -963,14 +676,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.92</m_delay>
-				<m_topoIndex>15</m_topoIndex>
+				<m_topoIndex>10</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_19">
+			<item class_id_reference="9" object_id="_14">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>27</id>
+						<id>18</id>
 						<name>add_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -1011,8 +724,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>84</item>
-					<item>85</item>
+					<item>71</item>
+					<item>73</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 				<m_Display>0</m_Display>
@@ -1020,14 +733,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.92</m_delay>
-				<m_topoIndex>16</m_topoIndex>
+				<m_topoIndex>11</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_20">
+			<item class_id_reference="9" object_id="_15">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>28</id>
+						<id>19</id>
 						<name>br_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -1048,6 +761,293 @@
 											<second>write_output</second>
 										</first>
 										<second>127</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>74</item>
+					<item>75</item>
+					<item>76</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>12</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_16">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>23</id>
+						<name>br_ln128</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>128</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>128</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>77</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.48</m_delay>
+				<m_topoIndex>13</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_17">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>25</id>
+						<name>j</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>128</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>128</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>j</originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>9</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>78</item>
+					<item>79</item>
+					<item>80</item>
+					<item>81</item>
+				</oprand_edges>
+				<opcode>phi</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>14</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_18">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>26</id>
+						<name>icmp_ln128</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>128</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>128</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>82</item>
+					<item>83</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.92</m_delay>
+				<m_topoIndex>15</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_19">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>27</id>
+						<name>add_ln128</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>128</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>128</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>9</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>84</item>
+					<item>85</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.92</m_delay>
+				<m_topoIndex>16</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_20">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>28</id>
+						<name>br_ln128</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>128</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>128</second>
 									</item>
 								</second>
 							</item>
@@ -1089,7 +1089,7 @@
 						<name>grid_final_read</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>129</lineNumber>
+						<lineNumber>130</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1105,7 +1105,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>129</second>
+										<second>130</second>
 									</item>
 								</second>
 							</item>
@@ -1143,10 +1143,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>zext_ln129</name>
+						<name>zext_ln130</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>129</lineNumber>
+						<lineNumber>130</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1162,7 +1162,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>129</second>
+										<second>130</second>
 									</item>
 								</second>
 							</item>
@@ -1199,10 +1199,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>A_out_addr_write_ln129</name>
+						<name>A_out_addr_write_ln130</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>129</lineNumber>
+						<lineNumber>130</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1218,7 +1218,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>129</second>
+										<second>130</second>
 									</item>
 								</second>
 							</item>
@@ -1259,6 +1259,121 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
+						<name>br_ln128</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>128</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>128</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>99</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>23</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_25">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>37</id>
+						<name>i_write_ln127</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>127</lineNumber>
+						<contextFuncName>write_output</contextFuncName>
+						<contextNormFuncName>write_output</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>write_output</second>
+										</first>
+										<second>127</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>100</item>
+					<item>101</item>
+					<item>204</item>
+					<item>206</item>
+				</oprand_edges>
+				<opcode>store</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.48</m_delay>
+				<m_topoIndex>19</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_26">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>38</id>
 						<name>br_ln127</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -1299,121 +1414,6 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>99</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>23</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_25">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>37</id>
-						<name>i_write_ln126</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>100</item>
-					<item>101</item>
-					<item>204</item>
-					<item>206</item>
-				</oprand_edges>
-				<opcode>store</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.48</m_delay>
-				<m_topoIndex>19</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_26">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>38</id>
-						<name>br_ln126</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>126</lineNumber>
-						<contextFuncName>write_output</contextFuncName>
-						<contextNormFuncName>write_output</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>write_output</second>
-										</first>
-										<second>126</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
 					<item>102</item>
 				</oprand_edges>
 				<opcode>br</opcode>
@@ -1430,10 +1430,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>empty_38</name>
+						<name>empty_30</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>132</lineNumber>
+						<lineNumber>133</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1449,7 +1449,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>132</second>
+										<second>133</second>
 									</item>
 								</second>
 							</item>
@@ -1487,10 +1487,10 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>_ln132</name>
+						<name>_ln133</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>132</lineNumber>
+						<lineNumber>133</lineNumber>
 						<contextFuncName>write_output</contextFuncName>
 						<contextNormFuncName>write_output</contextNormFuncName>
 						<inlineStackInfo>
@@ -1506,7 +1506,7 @@
 											<first>top.cpp</first>
 											<second>write_output</second>
 										</first>
-										<second>132</second>
+										<second>133</second>
 									</item>
 								</second>
 							</item>
@@ -1835,7 +1835,7 @@
 				<Obj>
 					<type>3</type>
 					<id>20</id>
-					<name>VITIS_LOOP_127_2</name>
+					<name>VITIS_LOOP_128_2</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -1869,7 +1869,7 @@
 				<Obj>
 					<type>3</type>
 					<id>24</id>
-					<name>VITIS_LOOP_127_2.split</name>
+					<name>VITIS_LOOP_128_2.split</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -2472,8 +2472,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_101">
 			<mId>3</mId>
-			<mTag>VITIS_LOOP_126_1</mTag>
-			<mNormTag>VITIS_LOOP_126_1</mNormTag>
+			<mTag>VITIS_LOOP_127_1</mTag>
+			<mNormTag>VITIS_LOOP_127_1</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>3</count>
@@ -2521,8 +2521,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_103">
 			<mId>5</mId>
-			<mTag>VITIS_LOOP_127_2</mTag>
-			<mNormTag>VITIS_LOOP_127_2</mNormTag>
+			<mTag>VITIS_LOOP_128_2</mTag>
+			<mNormTag>VITIS_LOOP_128_2</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>

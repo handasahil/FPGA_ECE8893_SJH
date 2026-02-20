@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Fri Feb 20 10:14:38 2026
+<item name = "Date">Fri Feb 20 11:31:01 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6272825, 6272825, 62.728 ms, 62.728 ms, 6142256, 6142256, dataflow</column>
+<column name="">4079150, 4079150, 40.791 ms, 40.791 ms, 4079141, 4079141, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -32,8 +32,8 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="entry_proc_U0">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
-<column name="read_input_U0">read_input, 197128, 197128, 1.971 ms, 1.971 ms, 197128, 197128, no</column>
-<column name="compute_U0">compute, 6142255, 6142255, 61.423 ms, 61.423 ms, 6142255, 6142255, no</column>
+<column name="read_input_U0">read_input, 65547, 65547, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="compute_U0">compute, 4079140, 4079140, 40.791 ms, 40.791 ms, 4079140, 4079140, no</column>
 <column name="write_output_U0">write_output, 131591, 131591, 1.316 ms, 1.316 ms, 131591, 131591, no</column>
 </table>
 </item>
@@ -53,12 +53,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 12, -</column>
 <column name="FIFO">-, -, 297, 201, -</column>
-<column name="Instance">180, 6, 2582, 3775, 0</column>
+<column name="Instance">180, 6, 2614, 4125, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 18, -</column>
 <column name="Register">-, -, 2, -, -</column>
 <specialColumn name="Available">432, 360, 141120, 70560, 0</specialColumn>
-<specialColumn name="Utilization (%)">41, 1, 2, 5, 0</specialColumn>
+<specialColumn name="Utilization (%)">41, 1, 2, 6, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -67,10 +67,10 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="A_in_m_axi_U">A_in_m_axi, 2, 0, 671, 637, 0</column>
 <column name="A_out_m_axi_U">A_out_m_axi, 0, 0, 611, 666, 0</column>
-<column name="compute_U0">compute, 178, 6, 912, 1750, 0</column>
+<column name="compute_U0">compute, 178, 6, 889, 2166, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 176, 296, 0</column>
 <column name="entry_proc_U0">entry_proc, 0, 0, 3, 29, 0</column>
-<column name="read_input_U0">read_input, 0, 0, 74, 196, 0</column>
+<column name="read_input_U0">read_input, 0, 0, 129, 130, 0</column>
 <column name="write_output_U0">write_output, 0, 0, 135, 201, 0</column>
 </table>
 </item>

@@ -29,17 +29,17 @@
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
 |               | (1) lowering                |   346        | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           |   392        | high level synthesis optimizations                                                     |
+|               | (2) optimizations           |   398        | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
 +-----------------+-------------+--------------+---------------+--------------+-------------+---------------+
 | Function        | Location    | Compile/Link | Unroll/Inline | Array/Struct | Performance | HW Transforms |
 +-----------------+-------------+--------------+---------------+--------------+-------------+---------------+
-| + top_kernel    | top.cpp:137 | 6,483        | 344           | 354          | 340         | 392           |
-|    read_input   | top.cpp:6   |   29         |  15           |  22          |  22         |  25           |
-|    compute      | top.cpp:17  | 6,402        | 299           | 295          | 283         | 319           |
-|    write_output | top.cpp:125 |   29         |  15           |  22          |  20         |  26           |
+| + top_kernel    | top.cpp:138 | 6,483        | 344           | 354          | 340         | 398           |
+|    read_input   | top.cpp:6   |   29         |  15           |  22          |  22         |  26           |
+|    compute      | top.cpp:18  | 6,402        | 299           | 295          | 283         | 324           |
+|    write_output | top.cpp:126 |   29         |  15           |  22          |  20         |  26           |
 +-----------------+-------------+--------------+---------------+--------------+-------------+---------------+
 
 * Design Size Message Settings

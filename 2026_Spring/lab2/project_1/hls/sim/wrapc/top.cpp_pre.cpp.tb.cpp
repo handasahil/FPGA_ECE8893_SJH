@@ -59267,6 +59267,7 @@ void top_kernel(const data_t A_in[256][256],
 void read_input(const data_t A_in[256][256], data_t stream_out[256][256]) {
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
+#pragma HLS pipeline II=1
             stream_out[i][j] = A_in[i][j];
         }
     }
@@ -59294,7 +59295,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-
+#pragma HLS pipeline II=1
             cur[i][j] = stream_in[i][j];
         }
     }
@@ -59304,12 +59305,12 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
 
         for (int j = 0; j < 256; j++) {
-
+#pragma HLS pipeline II=1
             nxt[0][j] = cur[0][j];
             nxt[256 - 1][j] = cur[256 - 1][j];
         }
         for (int i = 0; i < 256; i++) {
-
+#pragma HLS pipeline II=1
             nxt[i][0] = cur[i][0];
             nxt[i][256 - 1] = cur[i][256 - 1];
         }
@@ -59365,7 +59366,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
         for (int i = 0; i < 256; i++) {
             for (int j = 0; j < 256; j++) {
-
+#pragma HLS pipeline II=1
                 cur[i][j] = nxt[i][j];
             }
         }
@@ -59374,7 +59375,7 @@ void compute(data_t stream_in[256][256], data_t stream_out[256][256]) {
 
     for (int i = 0; i < 256; i++) {
         for (int j = 0; j < 256; j++) {
-
+#pragma HLS pipeline II=1
             stream_out[i][j] = cur[i][j];
         }
     }
@@ -59440,5 +59441,5 @@ apatb_top_kernel_ir(A_in, A_out);
 return ;
 }
 #endif
-# 156 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
+# 157 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/top.cpp"
 

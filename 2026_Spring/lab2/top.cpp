@@ -6,6 +6,7 @@
 void read_input(const data_t A_in[NX][NY], data_t stream_out[NX][NY]) {
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
+        #pragma HLS pipeline II=1
             stream_out[i][j] = A_in[i][j];
         }
     }
@@ -33,7 +34,7 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
     // Initialize local 'cur' from the incoming channel
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
-        // #pragma HLS pipeline II=1    
+        #pragma HLS pipeline II=1    
             cur[i][j] = stream_in[i][j];
         }
     }
@@ -43,12 +44,12 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
         
         // Copy boundaries unchanged (Leave these as they are!)
         for (int j = 0; j < NY; j++) {
-        // #pragma HLS pipeline II=1
+        #pragma HLS pipeline II=1
             nxt[0][j]      = cur[0][j];
             nxt[NX - 1][j] = cur[NX - 1][j];
         }
         for (int i = 0; i < NX; i++) {
-        // #pragma HLS pipeline II=1
+        #pragma HLS pipeline II=1
             nxt[i][0]      = cur[i][0];
             nxt[i][NY - 1] = cur[i][NY - 1];
         }
@@ -104,7 +105,7 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
         // Baseline swap: full copy nxt -> cur
         for (int i = 0; i < NX; i++) {
             for (int j = 0; j < NY; j++) {
-            // #pragma HLS pipeline II=1
+            #pragma HLS pipeline II=1
                 cur[i][j] = nxt[i][j];
             }
         }
@@ -113,7 +114,7 @@ void compute(data_t stream_in[NX][NY], data_t stream_out[NX][NY]) {
     // Write final result to the outgoing channel
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
-        // #pragma HLS pipeline II=1
+        #pragma HLS pipeline II=1
             stream_out[i][j] = cur[i][j];
         }
     }

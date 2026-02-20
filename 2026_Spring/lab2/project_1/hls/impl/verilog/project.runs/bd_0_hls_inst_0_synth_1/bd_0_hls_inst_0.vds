@@ -3,8 +3,8 @@
 # SW Build 6233196 on Thu Sep 11 21:27:11 MDT 2025
 # IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
 # SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
-# Start of session at: Fri Feb 20 10:22:18 2026
-# Process ID         : 3993576
+# Start of session at: Fri Feb 20 11:38:21 2026
+# Process ID         : 469348
 # Current directory  : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1
 # Command line       : vivado -log bd_0_hls_inst_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_0_hls_inst_0.tcl
 # Log file           : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/bd_0_hls_inst_0.vds
@@ -13,16 +13,16 @@
 # Platform           : RedHatEnterprise
 # Operating System   : Red Hat Enterprise Linux release 8.10 (Ootpa)
 # Processor Detail   : Intel(R) Xeon(R) Gold 5117 CPU @ 2.00GHz
-# CPU Frequency      : 2800.000 MHz
+# CPU Frequency      : 2028.634 MHz
 # CPU Physical cores : 56
 # CPU Logical cores  : 112
 # Host memory        : 201166 MB
 # Swap memory        : 68719 MB
 # Total Virtual      : 269885 MB
-# Available Virtual  : 241490 MB
+# Available Virtual  : 215069 MB
 #-----------------------------------------------------------
 source bd_0_hls_inst_0.tcl -notrace
-INFO: Dispatch client connection id - 37765
+INFO: Dispatch client connection id - 37835
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/ip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/software/xilinx/2025.1.1/data/ip'.
@@ -33,127 +33,138 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg
 INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3993915
+INFO: [Synth 8-7075] Helper process launched with PID 474663
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138054 ; free virtual = 228609
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 105016 ; free virtual = 203614
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'bd_0_hls_inst_0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/synth/bd_0_hls_inst_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_control_s_axi' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_control_s_axi.v:9]
-INFO: [Synth 8-155] case statement is not full and has no default [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_control_s_axi.v:217]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_control_s_axi' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_control_s_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_load' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:284]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_fifo' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_srl' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_srl' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_fifo' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_mem' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2354]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_mem' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2354]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_load' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:284]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_read' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:782]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_srl__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_srl__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_burst_converter' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1036]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_burst_sequential' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1642]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_reg_slice' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_reg_slice' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_burst_sequential' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1642]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_burst_converter' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1036]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_reg_slice__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_reg_slice__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_read' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:782]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_in_m_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_store' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:318]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized3' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized3' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized3' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized3' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_store' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:318]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_write' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:1099]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_burst_converter' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:1394]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_burst_sequential' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2000]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_burst_sequential' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2000]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_burst_converter' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:1394]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_throttle' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2353]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized4' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized4' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized4' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized4' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_throttle' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2353]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_write' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:1099]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_entry_proc' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_entry_proc.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_entry_proc' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_entry_proc.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_read_input' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_read_input.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_read_input' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_read_input.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_cur_RAM_AUTO_1R1W' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_cur_RAM_AUTO_1R1W.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_cur_RAM_AUTO_1R1W' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_cur_RAM_AUTO_1R1W.v:7]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_nxt_RAM_AUTO_1R1W' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_nxt_RAM_AUTO_1R1W.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_nxt_RAM_AUTO_1R1W' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_nxt_RAM_AUTO_1R1W.v:7]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W.v:7]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_mul_39s_24ns_63_1_1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_mul_39s_24ns_63_1_1.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_mul_39s_24ns_63_1_1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_mul_39s_24ns_63_1_1.v:5]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_mul_39s_26ns_65_1_1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_mul_39s_26ns_65_1_1.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_mul_39s_26ns_65_1_1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_mul_39s_26ns_65_1_1.v:5]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_flow_control_loop_pipe_sequential_init' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_flow_control_loop_pipe_sequential_init' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_compute.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_write_output' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_write_output.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_write_output' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_write_output.v:9]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w64_d4_S' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w64_d4_S.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w64_d4_S_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w64_d4_S.v:128]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w64_d4_S_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w64_d4_S.v:128]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w64_d4_S' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w64_d4_S.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w24_d2_S' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w24_d2_S.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w24_d2_S_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w24_d2_S.v:128]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w24_d2_S_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w24_d2_S.v:128]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w24_d2_S' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_fifo_w24_d2_S.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_write_output_U0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_write_output_U0.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_write_output_U0_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_write_output_U0.v:124]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_write_output_U0_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_write_output_U0.v:124]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_write_output_U0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_write_output_U0.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_compute_U0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_compute_U0.v:10]
-INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_compute_U0_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_compute_U0.v:124]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_compute_U0_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_compute_U0.v:124]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_compute_U0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_start_for_compute_U0.v:10]
-INFO: [Synth 8-6155] done synthesizing module 'top_kernel' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_control_s_axi' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_control_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_control_s_axi.v:217]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_control_s_axi' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_control_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_load' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:284]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_fifo' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_srl' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_srl' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_fifo' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_mem' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2354]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_mem' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2354]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_load' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:284]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_read' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:782]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_srl__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_srl__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2314]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_fifo__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:2101]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_burst_converter' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1036]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_burst_sequential' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1642]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_reg_slice' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_reg_slice' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_burst_sequential' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1642]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_burst_converter' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1036]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_in_m_axi_reg_slice__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_reg_slice__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:1997]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi_read' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:782]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_in_m_axi' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_in_m_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_store' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:318]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized3' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized3' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized3' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized3' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_store' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:318]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_write' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:1099]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_burst_converter' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:1394]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_burst_sequential' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2000]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_burst_sequential' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2000]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_burst_converter' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:1394]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_throttle' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2353]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized4' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized4' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_srl__parameterized4' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2939]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_fifo__parameterized4' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2726]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_throttle' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2353]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_reg_slice__parameterized2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2622]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi_write' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:1099]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_A_out_m_axi' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_entry_proc' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_entry_proc.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_entry_proc' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_entry_proc.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_read_input' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_read_input.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_flow_control_loop_pipe' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_flow_control_loop_pipe.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_flow_control_loop_pipe' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_flow_control_loop_pipe.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_read_input' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_read_input.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_cur_RAM_AUTO_1R1W' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_cur_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_cur_RAM_AUTO_1R1W' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_cur_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_nxt_RAM_AUTO_1R1W' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_nxt_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_nxt_RAM_AUTO_1R1W' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_nxt_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_flow_control_loop_pipe_sequential_init' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_flow_control_loop_pipe_sequential_init' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_35_1_VITIS_LOOP_36_2.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_46_4' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_46_4.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_46_4' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_46_4.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_51_5' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_51_5.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_51_5' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_51_5.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W.v:7]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_mul_39s_24ns_63_1_1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_mul_39s_24ns_63_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_mul_39s_24ns_63_1_1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_mul_39s_24ns_63_1_1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_mul_39s_26ns_65_1_1' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_mul_39s_26ns_65_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_mul_39s_26ns_65_1_1' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_mul_39s_26ns_65_1_1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute_Pipeline_VITIS_LOOP_106_9_VITIS_LOOP_107_10.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_compute' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_compute.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_write_output' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_write_output.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_write_output' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_write_output.v:9]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w64_d4_S' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w64_d4_S.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w64_d4_S_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w64_d4_S.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w64_d4_S_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w64_d4_S.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w64_d4_S' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w64_d4_S.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w24_d2_S' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w24_d2_S.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_fifo_w24_d2_S_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w24_d2_S.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w24_d2_S_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w24_d2_S.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_fifo_w24_d2_S' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_fifo_w24_d2_S.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_write_output_U0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_write_output_U0.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_write_output_U0_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_write_output_U0.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_write_output_U0_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_write_output_U0.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_write_output_U0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_write_output_U0.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_compute_U0' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_compute_U0.v:10]
+INFO: [Synth 8-6157] synthesizing module 'top_kernel_start_for_compute_U0_ShiftReg' [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_compute_U0.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_compute_U0_ShiftReg' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_compute_U0.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel_start_for_compute_U0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_start_for_compute_U0.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'top_kernel' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel.v:9]
 INFO: [Synth 8-6155] done synthesizing module 'bd_0_hls_inst_0' (0#1) [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/synth/bd_0_hls_inst_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_control_s_axi.v:288]
-INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_control_s_axi.v:288]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 WARNING: [Synth 8-7129] Port addr[1] in module top_kernel_fifo_w24_d2_S_ShiftReg is either unconnected or has no load
@@ -223,72 +234,72 @@ WARNING: [Synth 8-7129] Port A_out1_num_data_valid[0] in module top_kernel_write
 WARNING: [Synth 8-7129] Port A_out1_fifo_cap[2] in module top_kernel_write_output is either unconnected or has no load
 WARNING: [Synth 8-7129] Port A_out1_fifo_cap[1] in module top_kernel_write_output is either unconnected or has no load
 WARNING: [Synth 8-7129] Port A_out1_fifo_cap[0] in module top_kernel_write_output is either unconnected or has no load
-WARNING: [Synth 8-7129] Port reset in module top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_line_buf_1_RAM_AUTO_1R1W is either unconnected or has no load
-WARNING: [Synth 8-7129] Port reset in module top_kernel_compute_nxt_RAM_AUTO_1R1W is either unconnected or has no load
-WARNING: [Synth 8-7129] Port reset in module top_kernel_compute_cur_RAM_AUTO_1R1W is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_initial_num_data_valid[2] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_initial_num_data_valid[1] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_initial_num_data_valid[0] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_initial_fifo_cap[2] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_initial_fifo_cap[1] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_initial_fifo_cap[0] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_final_num_data_valid[2] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_final_num_data_valid[1] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_final_num_data_valid[0] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_final_fifo_cap[2] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_final_fifo_cap[1] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port grid_final_fifo_cap[0] in module top_kernel_compute is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_AWREADY in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_WREADY in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[31] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[30] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[29] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[28] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[27] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[26] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[25] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RDATA[24] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RLAST in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RID[0] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RFIFONUM[8] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RFIFONUM[7] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RFIFONUM[6] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RFIFONUM[5] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RFIFONUM[4] in module top_kernel_read_input is either unconnected or has no load
-WARNING: [Synth 8-7129] Port m_axi_A_in_0_RFIFONUM[3] in module top_kernel_read_input is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_line_buf_1_RAM_AUTO_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[31] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[30] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[29] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[28] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[27] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[26] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[25] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[24] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[23] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[22] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[21] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[20] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[19] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[18] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[17] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[16] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[15] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[14] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[13] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[12] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[11] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[10] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[9] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[8] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[7] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[6] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[5] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[4] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[3] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[2] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[1] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port grid_final_num_data_valid[0] in module top_kernel_compute_Pipeline_VITIS_LOOP_115_11_VITIS_LOOP_116_12 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138026 ; free virtual = 228583
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104569 ; free virtual = 203185
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138033 ; free virtual = 228590
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104570 ; free virtual = 203185
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138033 ; free virtual = 228590
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104570 ; free virtual = 203186
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.11 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138034 ; free virtual = 228591
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104583 ; free virtual = 203198
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/constraints/top_kernel_ooc.xdc] for cell 'inst'
-create_clock: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 137991 ; free virtual = 228551
+create_clock: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104561 ; free virtual = 203178
 Finished Parsing XDC File [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/constraints/top_kernel_ooc.xdc] for cell 'inst'
 Parsing XDC File [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 137994 ; free virtual = 228554
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104562 ; free virtual = 203179
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.12 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 137995 ; free virtual = 228555
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.13 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 104573 ; free virtual = 203190
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138005 ; free virtual = 228565
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 107399 ; free virtual = 206018
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -296,13 +307,13 @@ Start Loading Part and Timing Information
 Loading part: xczu3eg-sbva484-1-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138005 ; free virtual = 228565
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 107399 ; free virtual = 206018
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138005 ; free virtual = 228566
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 107399 ; free virtual = 206018
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'top_kernel_control_s_axi'
 INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'top_kernel_control_s_axi'
@@ -312,8 +323,6 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'top_k
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'top_kernel_A_out_m_axi_reg_slice__parameterized0'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'top_kernel_A_out_m_axi_reg_slice__parameterized1'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'top_kernel_A_out_m_axi_reg_slice__parameterized2'
-INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
-INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
@@ -385,10 +394,9 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                      TWO |                               01 |                               01
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'top_kernel_A_out_m_axi_reg_slice__parameterized2'
-INFO: [Synth 8-3971] The signal "top_kernel_compute_cur_RAM_AUTO_1R1W:/ram_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-3971] The signal "top_kernel_compute_nxt_RAM_AUTO_1R1W:/ram_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 138003 ; free virtual = 228565
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 106102 ; free virtual = 204721
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -403,9 +411,10 @@ Detailed RTL Component Info :
 	   2 Input   26 Bit       Adders := 2     
 	   2 Input   25 Bit       Adders := 2     
 	   2 Input   24 Bit       Adders := 1     
-	   2 Input   16 Bit       Adders := 4     
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 5     
 	   2 Input   12 Bit       Adders := 4     
-	   2 Input    9 Bit       Adders := 17    
+	   2 Input    9 Bit       Adders := 18    
 	   3 Input    9 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 5     
 	   3 Input    8 Bit       Adders := 1     
@@ -422,7 +431,7 @@ Detailed RTL Component Info :
 	               97 Bit    Registers := 4     
 	               96 Bit    Registers := 2     
 	               73 Bit    Registers := 2     
-	               64 Bit    Registers := 7     
+	               64 Bit    Registers := 8     
 	               63 Bit    Registers := 1     
 	               56 Bit    Registers := 1     
 	               55 Bit    Registers := 1     
@@ -434,17 +443,18 @@ Detailed RTL Component Info :
 	               27 Bit    Registers := 2     
 	               24 Bit    Registers := 26    
 	               20 Bit    Registers := 2     
+	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 2     
 	               12 Bit    Registers := 2     
 	               10 Bit    Registers := 9     
-	                9 Bit    Registers := 32    
-	                8 Bit    Registers := 21    
+	                9 Bit    Registers := 21    
+	                8 Bit    Registers := 19    
 	                6 Bit    Registers := 5     
-	                5 Bit    Registers := 15    
+	                5 Bit    Registers := 14    
 	                4 Bit    Registers := 9     
 	                3 Bit    Registers := 9     
 	                2 Bit    Registers := 14    
-	                1 Bit    Registers := 126   
+	                1 Bit    Registers := 182   
 +---Multipliers : 
 	              27x39  Multipliers := 1     
 	              25x39  Multipliers := 1     
@@ -460,32 +470,29 @@ Detailed RTL Component Info :
 	   2 Input   40 Bit        Muxes := 1     
 	   2 Input   34 Bit        Muxes := 1     
 	   2 Input   32 Bit        Muxes := 2     
-	   2 Input   24 Bit        Muxes := 11    
+	   2 Input   24 Bit        Muxes := 10    
 	   3 Input   24 Bit        Muxes := 1     
 	   2 Input   20 Bit        Muxes := 2     
-	   2 Input   16 Bit        Muxes := 8     
-	   2 Input   15 Bit        Muxes := 1     
-	   2 Input   14 Bit        Muxes := 1     
-	   2 Input   13 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 2     
 	   4 Input   12 Bit        Muxes := 2     
-	   2 Input   12 Bit        Muxes := 3     
+	   2 Input   12 Bit        Muxes := 2     
 	   2 Input   11 Bit        Muxes := 1     
-	   2 Input   10 Bit        Muxes := 9     
-	   2 Input    9 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 8     
+	   2 Input    9 Bit        Muxes := 2     
 	   4 Input    9 Bit        Muxes := 2     
 	   4 Input    8 Bit        Muxes := 4     
-	   2 Input    7 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 5     
 	   2 Input    5 Bit        Muxes := 7     
 	   3 Input    5 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 9     
+	   2 Input    4 Bit        Muxes := 8     
 	   3 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 11    
-	   2 Input    2 Bit        Muxes := 104   
+	   2 Input    2 Bit        Muxes := 103   
 	   3 Input    2 Bit        Muxes := 18    
 	   4 Input    2 Bit        Muxes := 6     
-	   2 Input    1 Bit        Muxes := 163   
+	   2 Input    1 Bit        Muxes := 195   
 	   4 Input    1 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -504,35 +511,34 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3936] Found unconnected internal register 'bus_write/wreq_throttle/rs_req/data_p1_reg' and it is trimmed from '73' to '72' bits. [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2655]
-WARNING: [Synth 8-3936] Found unconnected internal register 'bus_write/wreq_throttle/rs_req/data_p2_reg' and it is trimmed from '73' to '72' bits. [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/17d8/hdl/verilog/top_kernel_A_out_m_axi.v:2676]
-DSP Report: Generating DSP mul_39s_24ns_63_1_1_U6/tmp_product, operation Mode is: (A:0x666000)*B2.
-DSP Report: register mul_39s_24ns_63_1_1_U6/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U6/tmp_product.
-DSP Report: operator mul_39s_24ns_63_1_1_U6/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U6/tmp_product.
-DSP Report: operator mul_39s_24ns_63_1_1_U6/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U6/tmp_product.
-DSP Report: Generating DSP mul_39s_24ns_63_1_1_U6/tmp_product, operation Mode is: (PCIN>>17)+(A:0x666000)*B2.
-DSP Report: register mul_39s_24ns_63_1_1_U6/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U6/tmp_product.
-DSP Report: operator mul_39s_24ns_63_1_1_U6/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U6/tmp_product.
-DSP Report: operator mul_39s_24ns_63_1_1_U6/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U6/tmp_product.
-DSP Report: Generating DSP mul_39s_26ns_65_1_1_U7/tmp_product, operation Mode is: (A:0x199a000)*B2.
-DSP Report: register mul_39s_26ns_65_1_1_U7/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U7/tmp_product.
-DSP Report: operator mul_39s_26ns_65_1_1_U7/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U7/tmp_product.
-DSP Report: operator mul_39s_26ns_65_1_1_U7/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U7/tmp_product.
-DSP Report: Generating DSP mul_39s_26ns_65_1_1_U7/tmp_product, operation Mode is: (PCIN>>17)+(A:0x199a000)*B2.
-DSP Report: register mul_39s_26ns_65_1_1_U7/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U7/tmp_product.
-DSP Report: operator mul_39s_26ns_65_1_1_U7/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U7/tmp_product.
-DSP Report: operator mul_39s_26ns_65_1_1_U7/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U7/tmp_product.
-INFO: [Synth 8-3971] The signal "inst/compute_U0/cur_U/ram_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3936] Found unconnected internal register 'bus_write/wreq_throttle/rs_req/data_p1_reg' and it is trimmed from '73' to '72' bits. [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2655]
+WARNING: [Synth 8-3936] Found unconnected internal register 'bus_write/wreq_throttle/rs_req/data_p2_reg' and it is trimmed from '73' to '72' bits. [/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ipshared/1fa6/hdl/verilog/top_kernel_A_out_m_axi.v:2676]
+DSP Report: Generating DSP mul_39s_24ns_63_1_1_U12/tmp_product, operation Mode is: (A:0x666000)*B2.
+DSP Report: register mul_39s_24ns_63_1_1_U12/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U12/tmp_product.
+DSP Report: operator mul_39s_24ns_63_1_1_U12/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U12/tmp_product.
+DSP Report: operator mul_39s_24ns_63_1_1_U12/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U12/tmp_product.
+DSP Report: Generating DSP mul_39s_24ns_63_1_1_U12/tmp_product, operation Mode is: (PCIN>>17)+(A:0x666000)*B2.
+DSP Report: register mul_39s_24ns_63_1_1_U12/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U12/tmp_product.
+DSP Report: operator mul_39s_24ns_63_1_1_U12/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U12/tmp_product.
+DSP Report: operator mul_39s_24ns_63_1_1_U12/tmp_product is absorbed into DSP mul_39s_24ns_63_1_1_U12/tmp_product.
+DSP Report: Generating DSP mul_39s_26ns_65_1_1_U13/tmp_product, operation Mode is: (A:0x199a000)*B2.
+DSP Report: register mul_39s_26ns_65_1_1_U13/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U13/tmp_product.
+DSP Report: operator mul_39s_26ns_65_1_1_U13/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U13/tmp_product.
+DSP Report: operator mul_39s_26ns_65_1_1_U13/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U13/tmp_product.
+DSP Report: Generating DSP mul_39s_26ns_65_1_1_U13/tmp_product, operation Mode is: (PCIN>>17)+(A:0x199a000)*B2.
+DSP Report: register mul_39s_26ns_65_1_1_U13/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U13/tmp_product.
+DSP Report: operator mul_39s_26ns_65_1_1_U13/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U13/tmp_product.
+DSP Report: operator mul_39s_26ns_65_1_1_U13/tmp_product is absorbed into DSP mul_39s_26ns_65_1_1_U13/tmp_product.
 INFO: [Synth 8-3971] The signal "inst/compute_U0/nxt_U/ram_reg" was recognized as a true dual port RAM template.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_wstate_reg[0]) is unused and will be removed from module top_kernel_control_s_axi.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_rstate_reg[0]) is unused and will be removed from module top_kernel_control_s_axi.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 137567 ; free virtual = 228130
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:01:27 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 111798 ; free virtual = 210403
 ---------------------------------------------------------------------------------
- Sort Area is  mul_39s_26ns_65_1_1_U7/tmp_product_0 : 0 0 : 1677 3373 : Used 1 time 0
- Sort Area is  mul_39s_26ns_65_1_1_U7/tmp_product_0 : 0 1 : 1696 3373 : Used 1 time 0
- Sort Area is  mul_39s_24ns_63_1_1_U6/tmp_product_3 : 0 0 : 1519 3057 : Used 1 time 0
- Sort Area is  mul_39s_24ns_63_1_1_U6/tmp_product_3 : 0 1 : 1538 3057 : Used 1 time 0
+ Sort Area is  mul_39s_26ns_65_1_1_U13/tmp_product_0 : 0 0 : 1677 3373 : Used 1 time 0
+ Sort Area is  mul_39s_26ns_65_1_1_U13/tmp_product_0 : 0 1 : 1696 3373 : Used 1 time 0
+ Sort Area is  mul_39s_24ns_63_1_1_U12/tmp_product_3 : 0 0 : 1519 3057 : Used 1 time 0
+ Sort Area is  mul_39s_24ns_63_1_1_U12/tmp_product_3 : 0 1 : 1538 3057 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -542,10 +548,10 @@ Block RAM: Preliminary Mapping Report (see note below)
 |Module Name       | RTL Object                                                                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
 +------------------+----------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 |inst/A_in_m_axi_U | load_unit_0/buff_rdata/U_fifo_mem/mem_reg                                        | 255 x 34(READ_FIRST)   | W |   | 255 x 34(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
-|inst/compute_U0   | cur_U/ram_reg                                                                    | 64 K x 24(READ_FIRST)  | W | R | 64 K x 24(READ_FIRST)  | W | R | Port A and B     | 0      | 44     | 8,8,8,8,8,4     | 
+|inst/compute_U0   | cur_U/ram_reg                                                                    | 64 K x 24(READ_FIRST)  | W | R | 64 K x 24(WRITE_FIRST) |   | R | Port A and B     | 0      | 44     | 8,8,8,8,8,4     | 
 |inst/compute_U0   | nxt_U/ram_reg                                                                    | 64 K x 24(NO_CHANGE)   | W |   | 64 K x 24(READ_FIRST)  | W | R | Port A and B     | 0      | 44     | 8,8,8,8,8,4     | 
-|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/line_buf_1_U/ram_reg | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
-|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/line_buf_U/ram_reg   | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
+|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/line_buf_1_U/ram_reg | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
+|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/line_buf_U/ram_reg   | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
 +------------------+----------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
@@ -554,10 +560,10 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 +------------------------------------------------------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name                                                 | DSP Mapping                 | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------------------------------------------------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | (A:0x666000)*B2             | 24     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | (PCIN>>17)+(A:0x666000)*B2  | 24     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | (A:0x199a000)*B2            | 26     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | (PCIN>>17)+(A:0x199a000)*B2 | 26     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | (A:0x666000)*B2             | 24     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | (PCIN>>17)+(A:0x666000)*B2  | 24     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | (A:0x199a000)*B2            | 26     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | (PCIN>>17)+(A:0x199a000)*B2 | 26     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 +------------------------------------------------------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -568,15 +574,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 137402 ; free virtual = 227968
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:37 ; elapsed = 00:01:43 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110923 ; free virtual = 209534
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5556] The block RAM "inst/compute_U0/cur_U/ram_reg" may be mapped as a cascade chain, because it is not timing critical.
-INFO: [Synth 8-3971] The signal "inst/compute_U0/cur_U/ram_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136852 ; free virtual = 227418
+Finished Timing Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:01:48 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110489 ; free virtual = 209113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -587,10 +591,10 @@ Block RAM: Final Mapping Report
 |Module Name       | RTL Object                                                                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
 +------------------+----------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 |inst/A_in_m_axi_U | load_unit_0/buff_rdata/U_fifo_mem/mem_reg                                        | 255 x 34(READ_FIRST)   | W |   | 255 x 34(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
-|inst/compute_U0   | cur_U/ram_reg                                                                    | 64 K x 24(READ_FIRST)  | W | R | 64 K x 24(READ_FIRST)  | W | R | Port A and B     | 0      | 44     | 8,8,8,8,8,4     | 
+|inst/compute_U0   | cur_U/ram_reg                                                                    | 64 K x 24(READ_FIRST)  | W | R | 64 K x 24(WRITE_FIRST) |   | R | Port A and B     | 0      | 44     | 8,8,8,8,8,4     | 
 |inst/compute_U0   | nxt_U/ram_reg                                                                    | 64 K x 24(NO_CHANGE)   | W |   | 64 K x 24(READ_FIRST)  | W | R | Port A and B     | 0      | 44     | 8,8,8,8,8,4     | 
-|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/line_buf_1_U/ram_reg | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
-|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/line_buf_U/ram_reg   | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
+|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/line_buf_1_U/ram_reg | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
+|inst/compute_U0   | grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/line_buf_U/ram_reg   | 256 x 24(READ_FIRST)   | W |   | 256 x 24(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |                 | 
 +------------------+----------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 
 ---------------------------------------------------------------------------------
@@ -618,10 +622,10 @@ INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/nxt_U/ram_reg_b
 INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/nxt_U/ram_reg_bram_31 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/nxt_U/ram_reg_bram_39 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/nxt_U/ram_reg_bram_43 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/line_buf_1_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/line_buf_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/line_buf_1_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/line_buf_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:11 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136914 ; free virtual = 227480
+Finished Technology Mapping : Time (s): cpu = 00:01:45 ; elapsed = 00:01:51 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110695 ; free virtual = 209319
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -639,37 +643,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136774 ; free virtual = 227341
+Finished IO Insertion : Time (s): cpu = 00:01:51 ; elapsed = 00:01:58 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110644 ; free virtual = 209268
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136773 ; free virtual = 227340
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:51 ; elapsed = 00:01:58 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110645 ; free virtual = 209269
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:18 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136759 ; free virtual = 227325
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110649 ; free virtual = 209273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:16 ; elapsed = 00:01:18 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136759 ; free virtual = 227325
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110619 ; free virtual = 209243
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136765 ; free virtual = 227332
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110641 ; free virtual = 209265
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136765 ; free virtual = 227332
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110641 ; free virtual = 209265
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -679,7 +683,7 @@ Static Shift Register Report:
 +------------+---------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name | RTL Name                                                                                                      | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +------------+---------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|top_kernel  | compute_U0/grp_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7_fu_330/and_ln83_reg_1163_pp0_iter3_reg_reg[0] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|top_kernel  | compute_U0/grp_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7_fu_109/and_ln84_reg_1053_pp0_iter3_reg_reg[0] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +------------+---------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 
@@ -710,10 +714,10 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +------------------------------------------------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name                                                 | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------------------------------------------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | A*B'          | 23     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | PCIN>>17+A*B' | 0      | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | A*B'          | 25     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top_kernel_compute_Pipeline_VITIS_LOOP_57_6_VITIS_LOOP_58_7 | PCIN>>17+A*B' | 0      | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | A*B'          | 23     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | PCIN>>17+A*B' | 0      | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | A*B'          | 25     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top_kernel_compute_Pipeline_VITIS_LOOP_58_6_VITIS_LOOP_59_7 | PCIN>>17+A*B' | 0      | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 +------------------------------------------------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
@@ -727,7 +731,7 @@ Report Cell Usage:
 +------+----------------+------+
 |      |Cell            |Count |
 +------+----------------+------+
-|1     |CARRY8          |   120|
+|1     |CARRY8          |   133|
 |2     |DSP_ALU         |     4|
 |3     |DSP_A_B_DATA    |     4|
 |4     |DSP_C_DATA      |     4|
@@ -736,48 +740,49 @@ Report Cell Usage:
 |7     |DSP_OUTPUT      |     4|
 |8     |DSP_PREADD      |     4|
 |9     |DSP_PREADD_DATA |     4|
-|10    |LUT1            |    94|
-|11    |LUT2            |   536|
-|12    |LUT3            |   745|
-|13    |LUT4            |   714|
-|14    |LUT5            |   321|
-|15    |LUT6            |   645|
-|16    |RAMB18E2        |     3|
-|17    |RAMB36E2        |    88|
-|35    |SRL16E          |   258|
-|36    |SRLC32E         |    28|
-|37    |FDRE            |  2954|
-|38    |FDSE            |    25|
+|10    |LUT1            |    88|
+|11    |LUT2            |   529|
+|12    |LUT3            |   733|
+|13    |LUT4            |   599|
+|14    |LUT5            |   332|
+|15    |LUT6            |   662|
+|16    |MUXF7           |     6|
+|17    |RAMB18E2        |     3|
+|18    |RAMB36E2        |    88|
+|36    |SRL16E          |   258|
+|37    |SRLC32E         |    28|
+|38    |FDRE            |  2973|
+|39    |FDSE            |    24|
 +------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136756 ; free virtual = 227323
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:52 ; elapsed = 00:01:59 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110627 ; free virtual = 209251
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 411 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136766 ; free virtual = 227333
-Synthesis Optimization Complete : Time (s): cpu = 00:01:16 ; elapsed = 00:01:19 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136764 ; free virtual = 227331
+Synthesis finished with 0 errors, 0 critical warnings and 473 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:42 ; elapsed = 00:01:48 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110646 ; free virtual = 209270
+Synthesis Optimization Complete : Time (s): cpu = 00:01:53 ; elapsed = 00:01:59 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110646 ; free virtual = 209270
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136930 ; free virtual = 227497
-INFO: [Netlist 29-17] Analyzing 124 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.12 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110805 ; free virtual = 209429
+INFO: [Netlist 29-17] Analyzing 143 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136870 ; free virtual = 227437
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110860 ; free virtual = 209484
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 4 instances
 
-Synth Design complete | Checksum: edbc2f1c
+Synth Design complete | Checksum: b38f8607
 INFO: [Common 17-83] Releasing license: Synthesis
-187 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+192 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:30 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136862 ; free virtual = 227430
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 3016.897; main = 2894.690; forked = 281.492
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5481.883; main = 4007.695; forked = 1598.234
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136862 ; free virtual = 227430
+synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:11 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110862 ; free virtual = 209487
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2865.812; main = 2718.447; forked = 234.023
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5511.785; main = 4002.598; forked = 1598.234
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110859 ; free virtual = 209484
 INFO: [Common 17-1381] The checkpoint '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/bd_0_hls_inst_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP bd_0_hls_inst_0, cache-ID = b18f19d61093d40d
-INFO: [Coretcl 2-1174] Renamed 59 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 136859 ; free virtual = 227433
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP bd_0_hls_inst_0, cache-ID = 4bf1f3ef4c3a7b96
+INFO: [Coretcl 2-1174] Renamed 70 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 110862 ; free virtual = 209494
 INFO: [Common 17-1381] The checkpoint '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/bd_0_hls_inst_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file bd_0_hls_inst_0_utilization_synth.rpt -pb bd_0_hls_inst_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 20 10:24:07 2026...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 20 11:40:52 2026...

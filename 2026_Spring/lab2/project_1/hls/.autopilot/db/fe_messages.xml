@@ -1,41 +1,59 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:24:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_input" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:25:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=line_buf complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:27:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:28:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=window complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:60:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:37:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:47:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:52:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:61:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:108:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:117:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="compute" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2/script.tcl:22:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top_kernel" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:138:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:139:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A_in offset=slave bundle=A_in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:139:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:140:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A_out offset=slave bundle=A_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:140:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:141:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:143:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:144:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:149:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:150:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=grid_initial depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:150:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:151:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=grid_final depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="top.cpp:63:19" msg_body="Loop 'VITIS_LOOP_63_8' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_63_8"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="top.cpp:64:19" msg_body="Loop 'VITIS_LOOP_64_8' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_64_8"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="top.cpp:17:0" msg_body="Unrolling loop 'VITIS_LOOP_63_8' (top.cpp:63:19) in function 'compute' completely with a factor of 3">
-        <args Factor="3" LoopLoc="top.cpp:63:19" LoopName="VITIS_LOOP_63_8"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="top.cpp:18:0" msg_body="Unrolling loop 'VITIS_LOOP_64_8' (top.cpp:64:19) in function 'compute' completely with a factor of 3">
+        <args Factor="3" LoopLoc="top.cpp:64:19" LoopName="VITIS_LOOP_64_8"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:23:12" msg_body="Applying array_partition to 'line_buf': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="top.cpp:24:12" msg_body="Applying array_partition to 'line_buf': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="line_buf"/>
     </msg>
 </xilinx:hls_fe_msgs>

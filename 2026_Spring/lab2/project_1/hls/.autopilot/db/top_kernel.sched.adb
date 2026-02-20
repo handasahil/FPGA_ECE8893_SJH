@@ -167,7 +167,7 @@
 						<name>A_out_r_read</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>143</lineNumber>
+						<lineNumber>144</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -183,7 +183,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>143</second>
+										<second>144</second>
 									</item>
 								</second>
 							</item>
@@ -224,7 +224,7 @@
 						<name>A_in_r_read</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>143</lineNumber>
+						<lineNumber>144</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -240,7 +240,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>143</second>
+										<second>144</second>
 									</item>
 								</second>
 							</item>
@@ -281,7 +281,7 @@
 						<name>A_out_r_c</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>143</lineNumber>
+						<lineNumber>144</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -297,7 +297,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>143</second>
+										<second>144</second>
 									</item>
 								</second>
 							</item>
@@ -337,7 +337,7 @@
 						<name>grid_initial</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>146</lineNumber>
+						<lineNumber>147</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -353,7 +353,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>146</second>
+										<second>147</second>
 									</item>
 								</second>
 							</item>
@@ -393,7 +393,7 @@
 						<name>grid_final</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>147</lineNumber>
+						<lineNumber>148</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -409,7 +409,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>147</second>
+										<second>148</second>
 									</item>
 								</second>
 							</item>
@@ -446,10 +446,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>_ln143</name>
+						<name>_ln144</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>143</lineNumber>
+						<lineNumber>144</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -465,7 +465,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>143</second>
+										<second>144</second>
 									</item>
 								</second>
 							</item>
@@ -504,65 +504,6 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>_ln153</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>153</lineNumber>
-						<contextFuncName>top_kernel</contextFuncName>
-						<contextNormFuncName>top_kernel</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>top_kernel</second>
-										</first>
-										<second>153</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>47</item>
-					<item>48</item>
-					<item>49</item>
-					<item>50</item>
-				</oprand_edges>
-				<opcode>call</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>7.30</m_delay>
-				<m_topoIndex>7</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_12">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>29</id>
 						<name>_ln154</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -603,10 +544,10 @@
 				<oprand_edges>
 					<count>4</count>
 					<item_version>0</item_version>
-					<item>52</item>
-					<item>53</item>
-					<item>54</item>
-					<item>327</item>
+					<item>47</item>
+					<item>48</item>
+					<item>49</item>
+					<item>50</item>
 				</oprand_edges>
 				<opcode>call</opcode>
 				<m_Display>0</m_Display>
@@ -614,14 +555,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>8</m_topoIndex>
+				<m_topoIndex>7</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_13">
+			<item class_id_reference="9" object_id="_12">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>30</id>
+						<id>29</id>
 						<name>_ln155</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
@@ -642,6 +583,65 @@
 											<second>top_kernel</second>
 										</first>
 										<second>155</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>52</item>
+					<item>53</item>
+					<item>54</item>
+					<item>327</item>
+				</oprand_edges>
+				<opcode>call</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>8</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_13">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>30</id>
+						<name>_ln156</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
+						<lineNumber>156</lineNumber>
+						<contextFuncName>top_kernel</contextFuncName>
+						<contextNormFuncName>top_kernel</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>top_kernel</second>
+										</first>
+										<second>156</second>
 									</item>
 								</second>
 							</item>
@@ -684,10 +684,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>_ln156</name>
+						<name>_ln157</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab2</fileDirectory>
-						<lineNumber>156</lineNumber>
+						<lineNumber>157</lineNumber>
 						<contextFuncName>top_kernel</contextFuncName>
 						<contextNormFuncName>top_kernel</contextNormFuncName>
 						<inlineStackInfo>
@@ -703,7 +703,7 @@
 											<first>top.cpp</first>
 											<second>top_kernel</second>
 										</first>
-										<second>156</second>
+										<second>157</second>
 									</item>
 								</second>
 							</item>
@@ -1125,8 +1125,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>6272825</mMinLatency>
-			<mMaxLatency>6272825</mMaxLatency>
+			<mMinLatency>4079150</mMinLatency>
+			<mMaxLatency>4079150</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_45">
 				<port_list class_id="24" tracking_level="0" version="0">
@@ -1467,28 +1467,28 @@
 		<item>
 			<first>28</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>29</first>
 			<second>
-				<first>3</first>
+				<first>2</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>30</first>
 			<second>
-				<first>5</first>
+				<first>4</first>
 				<second>1</second>
 			</second>
 		</item>
 		<item>
 			<first>31</first>
 			<second>
-				<first>6</first>
+				<first>5</first>
 				<second>0</second>
 			</second>
 		</item>
@@ -1500,7 +1500,7 @@
 			<first>32</first>
 			<second class_id="41" tracking_level="0" version="0">
 				<first>0</first>
-				<second>6</second>
+				<second>5</second>
 			</second>
 		</item>
 	</bblk_ent_exit>
