@@ -18,6 +18,94 @@ static inline data_t clamp_fp(data_t x, data_t lo, data_t hi) {
     return x;
 }
 
+// -------------------------
+// K0: preprocess
+// -------------------------
+void K0(const data_t in[N], data_t s0[N]) {
+    const coef_t alpha = (coef_t)0.875;
+    const coef_t beta  = (coef_t)0.125;
+
+    for (int k = 0; k < N; k++) {
+    #pragma HLS pipeline II=1
+        s0[k] = (data_t)((acc_t)alpha * (acc_t)in[k] + (acc_t)beta);
+
+        // out_k1.write(res);
+        // out_k2.write(res);
+    }
+}
+
+// -------------------------
+// K1: transform (3-tap + abs + clamp)
+// -------------------------
+void K1(const data_t s0[N], data_t s1[N]) {
+    const coef_t w0 = (coef_t)0.50;
+    const coef_t w1 = (coef_t)(-0.25);
+    const coef_t w2 = (coef_t)0.125;
+
+    for (int k = 0; k < N; k++) {
+        // Still using array lookbacks here
+        data_t x0 = s0[k];
+        data_t x1 = (k >= 1) ? s0[k - 1] : (data_t)0;
+        data_t x2 = (k >= 2) ? s0[k - 2] : (data_t)0;
+
+        acc_t acc = (acc_t)w0 * (acc_t)x0 + (acc_t)w1 * (acc_t)x1 + (acc_t)w2 * (acc_t)x2;
+        data_t y = (data_t)acc;
+        y = abs_fp(y);
+        s1[k] = clamp_fp(y, (data_t)0, (data_t)7.5);
+    }
+}
+
+ // -------------------------
+// K2: per-block statistic (delayed)
+// stats[b] = avg_abs(s0[block]) + eps
+// -------------------------
+void K2(const data_t s0[N], stat_t stats[N / BLOCK]) {
+    const stat_t eps = (stat_t)0.5;
+
+    for (int b = 0; b < (N / BLOCK); b++) {
+        acc_t sum_abs = 0;
+        int base = b * BLOCK;
+        for (int i = 0; i < BLOCK; i++) {
+            sum_abs += (acc_t)abs_fp(s0[base + i]);
+        }
+        stat_t avg_abs = (stat_t)(sum_abs / (acc_t)BLOCK);
+        stats[b] = avg_abs + eps;
+    }
+}
+
+// -------------------------
+// K3: join + normalize (1 division per block, multiply per element)
+// s3[k] = s1[k] * inv_stat(block(k))
+// -------------------------
+void K3(const data_t s1[N], const stat_t stats[N / BLOCK], data_t s3[N]) {
+    for (int b = 0; b < (N / BLOCK); b++) {
+        stat_t st = stats[b];
+        
+        // One division per block:
+        stat_t inv_st = (stat_t)((acc_t)1 / (acc_t)st);
+
+        int base = b * BLOCK;
+        for (int i = 0; i < BLOCK; i++) {
+            s3[base + i] = (data_t)((acc_t)s1[base + i] * (acc_t)inv_st);
+        }
+    }
+}
+
+// -------------------------
+// K4: postprocess + store
+// out[k] = clamp(s3[k] * gamma + delta, 0, 7.9)
+// -------------------------
+void K4(const data_t s3[N], data_t out[N]) {
+    const coef_t gamma = (coef_t)1.25;
+    const coef_t delta = (coef_t)0.05;
+
+    for (int k = 0; k < N; k++) {
+        data_t z = (data_t)((acc_t)gamma * (acc_t)s3[k] + (acc_t)delta);
+        z = clamp_fp(z, (data_t)0, (data_t)7.9);
+        out[k] = z;
+    }
+}
+
 void top_kernel(const data_t in[N], data_t out[N]) {
 
 #pragma HLS interface m_axi port=in offset=slave bundle=in
@@ -30,78 +118,9 @@ void top_kernel(const data_t in[N], data_t out[N]) {
     static stat_t stats[N / BLOCK];    // 1 stat per block
     static data_t s3[N];               // after normalize
 
-    // Coefficients (constants)
-    const coef_t alpha = (coef_t)0.875;
-    const coef_t beta  = (coef_t)0.125;
-
-    const coef_t w0 = (coef_t)0.50;
-    const coef_t w1 = (coef_t)(-0.25);
-    const coef_t w2 = (coef_t)0.125;
-
-    const stat_t eps = (stat_t)0.5;    // avoid tiny stats
-    const coef_t gamma = (coef_t)1.25;
-    const coef_t delta = (coef_t)0.05;
-
-    // -------------------------
-    // K0: preprocess
-    // -------------------------
-    for (int k = 0; k < N; k++) {
-        s0[k] = (data_t)((acc_t)alpha * (acc_t)in[k] + (acc_t)beta);
-    }
-
-    // -------------------------
-    // K1: transform (3-tap + abs + clamp)
-    // -------------------------
-    for (int k = 0; k < N; k++) {
-        data_t x0 = s0[k];
-        data_t x1 = (k >= 1) ? s0[k - 1] : (data_t)0;
-        data_t x2 = (k >= 2) ? s0[k - 2] : (data_t)0;
-
-        acc_t acc = (acc_t)w0 * (acc_t)x0 + (acc_t)w1 * (acc_t)x1 + (acc_t)w2 * (acc_t)x2;
-        data_t y = (data_t)acc;
-        y = abs_fp(y);
-        y = clamp_fp(y, (data_t)0, (data_t)7.5);
-        s1[k] = y;
-    }
-
-    // -------------------------
-    // K2: per-block statistic (delayed)
-    // stats[b] = avg_abs(s0[block]) + eps
-    // -------------------------
-    for (int b = 0; b < (N / BLOCK); b++) {
-        acc_t sum_abs = 0;
-        int base = b * BLOCK;
-        for (int i = 0; i < BLOCK; i++) {
-            sum_abs += (acc_t)abs_fp(s0[base + i]);
-        }
-        stat_t avg_abs = (stat_t)(sum_abs / (acc_t)BLOCK);
-        stats[b] = avg_abs + eps;
-    }
-
-    // -------------------------
-    // K3: join + normalize (1 division per block, multiply per element)
-    // s3[k] = s1[k] * inv_stat(block(k))
-    // -------------------------
-    for (int b = 0; b < (N / BLOCK); b++) {
-        stat_t st = stats[b];
-
-        // One division per block:
-        // inv_stat = 1 / st
-        stat_t inv_st = (stat_t)((acc_t)1 / (acc_t)st);
-
-        int base = b * BLOCK;
-        for (int i = 0; i < BLOCK; i++) {
-            s3[base + i] = (data_t)((acc_t)s1[base + i] * (acc_t)inv_st);
-        }
-    }
-
-    // -------------------------
-    // K4: postprocess + store
-    // out[k] = clamp(s3[k] * gamma + delta, 0, 7.9)
-    // -------------------------
-    for (int k = 0; k < N; k++) {
-        data_t z = (data_t)((acc_t)gamma * (acc_t)s3[k] + (acc_t)delta);
-        z = clamp_fp(z, (data_t)0, (data_t)7.9);
-        out[k] = z;
-    }
+    K0(in, s0);
+    K1(s0, s1);
+    K2(s0, stats);
+    K3(s1, stats, s3);
+    K4(s3, out);
 }
