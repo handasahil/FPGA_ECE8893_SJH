@@ -1,0 +1,444 @@
+  **** HLS Build v2025.1.1 6214317
+Sourcing Tcl script '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/script.tcl'
+INFO: [HLS 200-1510] Running: open_component project_1 
+INFO: [HLS 200-10] Creating and opening component '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2176] Writing Vitis IDE component file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/vitis-comp.json
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+INFO: [HLS 200-1510] Running: set_top top_kernel 
+INFO: [HLS 200-1510] Running: add_files top.cpp 
+INFO: [HLS 200-10] Adding design file 'top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb host.cpp 
+INFO: [HLS 200-10] Adding test bench file 'host.cpp' to the project
+INFO: [HLS 200-1510] Running: config_unroll -tripcount_threshold 0 
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-1510] Running: config_compile -pipeline_loops 0 
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.8 seconds. CPU system time: 0.23 seconds. Elapsed time: 8.6 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 8.76 seconds. CPU system time: 1.24 seconds. Elapsed time: 10.16 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 17,430 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,133 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 546 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 524 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 460 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 462 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 462 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 462 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 462 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 466 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 466 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 466 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 466 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 466 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 475 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 519 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-178] Inlining function 'abs_fp(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>)' into 'K1(hls::stream<ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&, hls::stream<ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&)' (top.cpp:43:0)
+INFO: [HLS 214-178] Inlining function 'clamp_fp(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>)' into 'K1(hls::stream<ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&, hls::stream<ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&)' (top.cpp:43:0)
+INFO: [HLS 214-178] Inlining function 'abs_fp(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>)' into 'K2(hls::stream<ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&, hls::stream<ap_fixed<32, 10, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&)' (top.cpp:69:0)
+INFO: [HLS 214-178] Inlining function 'clamp_fp(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>)' into 'K4(hls::stream<ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 0>&, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>*)' (top.cpp:109:0)
+INFO: [HLS 214-115] Multiple burst reads of length 65536 and bit width 32 in loop 'VITIS_LOOP_29_1'(top.cpp:29:22) has been inferred on bundle 'in_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:29:22)
+INFO: [HLS 214-115] Multiple burst writes of length 65536 and bit width 32 in loop 'VITIS_LOOP_113_1'(top.cpp:113:23) has been inferred on bundle 'out_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:113:23)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.44 seconds. CPU system time: 1.36 seconds. Elapsed time: 11.58 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+WARNING: [HLS 200-805] An internal stream 's0_to_k1' (top.cpp:128) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+WARNING: [HLS 200-805] An internal stream 's0_to_k2' (top.cpp:129) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+WARNING: [HLS 200-805] An internal stream 'k2_to_k3' (top.cpp:131) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+WARNING: [HLS 200-805] An internal stream 's3_to_k4' (top.cpp:132) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+INFO: [XFORM 203-712] Applying dataflow to function 'top_kernel' (top.cpp:120:1), detected/extracted 6 process function(s): 
+	 'entry_proc'
+	 'K0'
+	 'K1'
+	 'K2'
+	 'K3'
+	 'K4'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:74:9) to (top.cpp:78:13) in function 'K2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:52:9) to (top.cpp:51:22) in function 'K1'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.23 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_91_1'(top.cpp:91:22) and 'VITIS_LOOP_96_2'(top.cpp:96:26) in function 'K3' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_91_1' (top.cpp:91:22) in function 'K3'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.24 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'top_kernel' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.13 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'K0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_29_1'.
+INFO: [HLS 200-876] Unable to schedule the whole 8 cycles bus request operation ('empty', top.cpp:29) on port 'in_r' (top.cpp:29) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+Resolution: For help on HLS 200-876 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-876.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 11, loop 'VITIS_LOOP_29_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'K1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_51_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_51_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'K2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_73_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_73_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'K3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_91_1_VITIS_LOOP_96_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 58, loop 'VITIS_LOOP_91_1_VITIS_LOOP_96_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'K4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_113_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 9, loop 'VITIS_LOOP_113_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1020] Increasing the depth of FIFO start_for_K4_U0 (from entry_proc_U0 to K4_U0) to 4 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'K0' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'K0' pipeline 'VITIS_LOOP_29_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'K0'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'K1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'K1' pipeline 'VITIS_LOOP_51_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'K1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'K2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'K2' pipeline 'VITIS_LOOP_73_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'K2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.25 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'K3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'K3' pipeline 'VITIS_LOOP_91_1_VITIS_LOOP_96_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_34s_31s_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_50ns_34s_50_54_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'K3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'K4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'K4' pipeline 'VITIS_LOOP_113_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'K4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.26 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_r_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_r_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'top_kernel' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'in_r_r', 'out_r_r' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top_kernel'.
+INFO: [RTMG 210-285] Implementing FIFO 'out_r_r_c_U(top_kernel_fifo_w64_d5_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's0_to_k1_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's0_to_k2_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's1_to_k3_U(top_kernel_fifo_w32_d512_A)' using Vivado Default RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'k2_to_k3_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 's3_to_k4_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_K4_U0_U(top_kernel_start_for_K4_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_K1_U0_U(top_kernel_start_for_K1_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_K2_U0_U(top_kernel_start_for_K2_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_K3_U0_U(top_kernel_start_for_K3_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.48 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.98 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.82 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.07 seconds; current allocated memory: 0.000 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for top_kernel.
+INFO: [VLOG 209-307] Generating Verilog RTL for top_kernel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:35; Allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/vcxx/libexec/clang++"
+   Compiling host.cpp_pre.cpp.tb.cpp
+   Compiling apatb_top_kernel.cpp
+   Compiling top.cpp_pre.cpp.tb.cpp
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/host.cpp:2:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:9:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_common.h:677:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_private.h:68:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/hls_half.h:26:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/hls_fpo.h:140:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+/tools/software/xilinx/2025.1.1/Vitis/include/gmp.h:2304:345: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  do { mp_size_t __gmp_i; mp_limb_t __gmp_x; __gmp_i = (__gmp_ysize); if (__gmp_i != 0) { if (__gmpn_add_n (__gmp_wp, __gmp_xp, __gmp_yp, __gmp_i)) { do { if (__gmp_i >= (__gmp_xsize)) { (__gmp_c) = 1; goto __gmp_done; } __gmp_x = (__gmp_xp)[__gmp_i]; } while ((((__gmp_wp)[__gmp_i++] = (__gmp_x + 1) & ((~ (static_cast<mp_limb_t> (0))) >> 0)) == 0)); } } if ((__gmp_wp) != (__gmp_xp)) do { mp_size_t __gmp_j; for (__gmp_j = (__gmp_i); __gmp_j < (__gmp_xsize); __gmp_j++) (__gmp_wp)[__gmp_j] = (__gmp_xp)[__gmp_j]; } while (0); (__gmp_c) = 0; __gmp_done: ; } while (0);
+                                                                                                                                                                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/gmp.h:2304:345: note: remove extraneous parentheses around the comparison to silence this warning
+  do { mp_size_t __gmp_i; mp_limb_t __gmp_x; __gmp_i = (__gmp_ysize); if (__gmp_i != 0) { if (__gmpn_add_n (__gmp_wp, __gmp_xp, __gmp_yp, __gmp_i)) { do { if (__gmp_i >= (__gmp_xsize)) { (__gmp_c) = 1; goto __gmp_done; } __gmp_x = (__gmp_xp)[__gmp_i]; } while ((((__gmp_wp)[__gmp_i++] = (__gmp_x + 1) & ((~ (static_cast<mp_limb_t> (0))) >> 0)) == 0)); } } if ((__gmp_wp) != (__gmp_xp)) do { mp_size_t __gmp_j; for (__gmp_j = (__gmp_i); __gmp_j < (__gmp_xsize); __gmp_j++) (__gmp_wp)[__gmp_j] = (__gmp_xp)[__gmp_j]; } while (0); (__gmp_c) = 0; __gmp_done: ; } while (0);
+                                                                                                                                                                                                                                                                     ~                                                                                  ^   ~
+/tools/software/xilinx/2025.1.1/Vitis/include/gmp.h:2304:345: note: use '=' to turn this equality comparison into an assignment
+  do { mp_size_t __gmp_i; mp_limb_t __gmp_x; __gmp_i = (__gmp_ysize); if (__gmp_i != 0) { if (__gmpn_add_n (__gmp_wp, __gmp_xp, __gmp_yp, __gmp_i)) { do { if (__gmp_i >= (__gmp_xsize)) { (__gmp_c) = 1; goto __gmp_done; } __gmp_x = (__gmp_xp)[__gmp_i]; } while ((((__gmp_wp)[__gmp_i++] = (__gmp_x + 1) & ((~ (static_cast<mp_limb_t> (0))) >> 0)) == 0)); } } if ((__gmp_wp) != (__gmp_xp)) do { mp_size_t __gmp_j; for (__gmp_j = (__gmp_i); __gmp_j < (__gmp_xsize); __gmp_j++) (__gmp_wp)[__gmp_j] = (__gmp_xp)[__gmp_j]; } while (0); (__gmp_c) = 0; __gmp_done: ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                        ^~
+                                                                                                                                                                                                                                                                                                                                                        =
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/host.cpp:2:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:9:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_common.h:677:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_private.h:68:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/hls_half.h:26:
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:375:30: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        if (((fr)->_mpfr_exp == (0 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+             ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:375:30: note: remove extraneous parentheses around the comparison to silence this warning
+        if (((fr)->_mpfr_exp == (0 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+            ~                ^                                                ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:375:30: note: use '=' to turn this equality comparison into an assignment
+        if (((fr)->_mpfr_exp == (0 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                             ^~
+                             =
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:377:37: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        } else if (((fr)->_mpfr_exp == (2 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                    ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:377:37: note: remove extraneous parentheses around the comparison to silence this warning
+        } else if (((fr)->_mpfr_exp == (2 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                   ~                ^                                                ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:377:37: note: use '=' to turn this equality comparison into an assignment
+        } else if (((fr)->_mpfr_exp == (2 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                                    ^~
+                                    =
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:379:37: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        } else if (((fr)->_mpfr_exp == (1 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                    ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:379:37: note: remove extraneous parentheses around the comparison to silence this warning
+        } else if (((fr)->_mpfr_exp == (1 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                   ~                ^                                                ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:379:37: note: use '=' to turn this equality comparison into an assignment
+        } else if (((fr)->_mpfr_exp == (1 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                                    ^~
+                                    =
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/host.cpp:2:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:10:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:16:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_int.h:11:
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_int_base.h:394:22: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    do { if ((length == 0)) { fprintf(stderr, "WARNING: " "ap_int<> is being initialized with an empty C string, which can result in undefined behavior during simulation/synthesis"); fprintf(stderr, "\n"); } } while (0);
+              ~~~~~~~^~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_int_base.h:394:22: note: remove extraneous parentheses around the comparison to silence this warning
+    do { if ((length == 0)) { fprintf(stderr, "WARNING: " "ap_int<> is being initialized with an empty C string, which can result in undefined behavior during simulation/synthesis"); fprintf(stderr, "\n"); } } while (0);
+             ~       ^   ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_int_base.h:394:22: note: use '=' to turn this equality comparison into an assignment
+    do { if ((length == 0)) { fprintf(stderr, "WARNING: " "ap_int<> is being initialized with an empty C string, which can result in undefined behavior during simulation/synthesis"); fprintf(stderr, "\n"); } } while (0);
+                     ^~
+                     =
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/host.cpp:2:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:10:
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:447:21: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    do { if ((radix == 0)) { fprintf(stderr, "ERROR: " "ap_fixed_base(const char* \"%s\", %d), str=%s, radix = %d", s, rd, str.c_str(), radix); fprintf(stderr, "\n"); abort(); } } while (0);
+              ~~~~~~^~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:447:21: note: remove extraneous parentheses around the comparison to silence this warning
+    do { if ((radix == 0)) { fprintf(stderr, "ERROR: " "ap_fixed_base(const char* \"%s\", %d), str=%s, radix = %d", s, rd, str.c_str(), radix); fprintf(stderr, "\n"); abort(); } } while (0);
+             ~      ^   ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:447:21: note: use '=' to turn this equality comparison into an assignment
+    do { if ((radix == 0)) { fprintf(stderr, "ERROR: " "ap_fixed_base(const char* \"%s\", %d), str=%s, radix = %d", s, rd, str.c_str(), radix); fprintf(stderr, "\n"); abort(); } } while (0);
+                    ^~
+                    =
+6 warnings generated.
+apatb_top_kernel.cpp:39:14: warning: nested namespace definition is a C++17 extension; define each namespace separately [-Wc++17-extensions]
+namespace hls::sim
+             ^~~~~
+              { namespace sim
+apatb_top_kernel.cpp:86:14: warning: nested namespace definition is a C++17 extension; define each namespace separately [-Wc++17-extensions]
+namespace hls::sim
+             ^~~~~
+              { namespace sim
+2 warnings generated.
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/top.cpp:1:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:9:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_common.h:677:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_private.h:68:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/hls_half.h:26:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/hls_fpo.h:140:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+/tools/software/xilinx/2025.1.1/Vitis/include/gmp.h:2304:345: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+  do { mp_size_t __gmp_i; mp_limb_t __gmp_x; __gmp_i = (__gmp_ysize); if (__gmp_i != 0) { if (__gmpn_add_n (__gmp_wp, __gmp_xp, __gmp_yp, __gmp_i)) { do { if (__gmp_i >= (__gmp_xsize)) { (__gmp_c) = 1; goto __gmp_done; } __gmp_x = (__gmp_xp)[__gmp_i]; } while ((((__gmp_wp)[__gmp_i++] = (__gmp_x + 1) & ((~ (static_cast<mp_limb_t> (0))) >> 0)) == 0)); } } if ((__gmp_wp) != (__gmp_xp)) do { mp_size_t __gmp_j; for (__gmp_j = (__gmp_i); __gmp_j < (__gmp_xsize); __gmp_j++) (__gmp_wp)[__gmp_j] = (__gmp_xp)[__gmp_j]; } while (0); (__gmp_c) = 0; __gmp_done: ; } while (0);
+                                                                                                                                                                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/gmp.h:2304:345: note: remove extraneous parentheses around the comparison to silence this warning
+  do { mp_size_t __gmp_i; mp_limb_t __gmp_x; __gmp_i = (__gmp_ysize); if (__gmp_i != 0) { if (__gmpn_add_n (__gmp_wp, __gmp_xp, __gmp_yp, __gmp_i)) { do { if (__gmp_i >= (__gmp_xsize)) { (__gmp_c) = 1; goto __gmp_done; } __gmp_x = (__gmp_xp)[__gmp_i]; } while ((((__gmp_wp)[__gmp_i++] = (__gmp_x + 1) & ((~ (static_cast<mp_limb_t> (0))) >> 0)) == 0)); } } if ((__gmp_wp) != (__gmp_xp)) do { mp_size_t __gmp_j; for (__gmp_j = (__gmp_i); __gmp_j < (__gmp_xsize); __gmp_j++) (__gmp_wp)[__gmp_j] = (__gmp_xp)[__gmp_j]; } while (0); (__gmp_c) = 0; __gmp_done: ; } while (0);
+                                                                                                                                                                                                                                                                     ~                                                                                  ^   ~
+/tools/software/xilinx/2025.1.1/Vitis/include/gmp.h:2304:345: note: use '=' to turn this equality comparison into an assignment
+  do { mp_size_t __gmp_i; mp_limb_t __gmp_x; __gmp_i = (__gmp_ysize); if (__gmp_i != 0) { if (__gmpn_add_n (__gmp_wp, __gmp_xp, __gmp_yp, __gmp_i)) { do { if (__gmp_i >= (__gmp_xsize)) { (__gmp_c) = 1; goto __gmp_done; } __gmp_x = (__gmp_xp)[__gmp_i]; } while ((((__gmp_wp)[__gmp_i++] = (__gmp_x + 1) & ((~ (static_cast<mp_limb_t> (0))) >> 0)) == 0)); } } if ((__gmp_wp) != (__gmp_xp)) do { mp_size_t __gmp_j; for (__gmp_j = (__gmp_i); __gmp_j < (__gmp_xsize); __gmp_j++) (__gmp_wp)[__gmp_j] = (__gmp_xp)[__gmp_j]; } while (0); (__gmp_c) = 0; __gmp_done: ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                        ^~
+                                                                                                                                                                                                                                                                                                                                                        =
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/top.cpp:1:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:9:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_common.h:677:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_private.h:68:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/hls_half.h:26:
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:375:30: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        if (((fr)->_mpfr_exp == (0 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+             ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:375:30: note: remove extraneous parentheses around the comparison to silence this warning
+        if (((fr)->_mpfr_exp == (0 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+            ~                ^                                                ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:375:30: note: use '=' to turn this equality comparison into an assignment
+        if (((fr)->_mpfr_exp == (0 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                             ^~
+                             =
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:377:37: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        } else if (((fr)->_mpfr_exp == (2 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                    ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:377:37: note: remove extraneous parentheses around the comparison to silence this warning
+        } else if (((fr)->_mpfr_exp == (2 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                   ~                ^                                                ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:377:37: note: use '=' to turn this equality comparison into an assignment
+        } else if (((fr)->_mpfr_exp == (2 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                                    ^~
+                                    =
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:379:37: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+        } else if (((fr)->_mpfr_exp == (1 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                    ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:379:37: note: remove extraneous parentheses around the comparison to silence this warning
+        } else if (((fr)->_mpfr_exp == (1 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                   ~                ^                                                ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/hls_half_fpo.h:379:37: note: use '=' to turn this equality comparison into an assignment
+        } else if (((fr)->_mpfr_exp == (1 - ((mpfr_exp_t) (((mpfr_uexp_t) -1) >> 1))))) {
+                                    ^~
+                                    =
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/top.cpp:1:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:10:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:16:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_int.h:11:
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_int_base.h:394:22: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    do { if ((length == 0)) { fprintf(stderr, "WARNING: " "ap_int<> is being initialized with an empty C string, which can result in undefined behavior during simulation/synthesis"); fprintf(stderr, "\n"); } } while (0);
+              ~~~~~~~^~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_int_base.h:394:22: note: remove extraneous parentheses around the comparison to silence this warning
+    do { if ((length == 0)) { fprintf(stderr, "WARNING: " "ap_int<> is being initialized with an empty C string, which can result in undefined behavior during simulation/synthesis"); fprintf(stderr, "\n"); } } while (0);
+             ~       ^   ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_int_base.h:394:22: note: use '=' to turn this equality comparison into an assignment
+    do { if ((length == 0)) { fprintf(stderr, "WARNING: " "ap_int<> is being initialized with an empty C string, which can result in undefined behavior during simulation/synthesis"); fprintf(stderr, "\n"); } } while (0);
+                     ^~
+                     =
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/top.cpp:1:
+In file included from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/dcl.h:4:
+In file included from /tools/software/xilinx/2025.1.1/Vitis/include/ap_fixed.h:10:
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:447:21: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    do { if ((radix == 0)) { fprintf(stderr, "ERROR: " "ap_fixed_base(const char* \"%s\", %d), str=%s, radix = %d", s, rd, str.c_str(), radix); fprintf(stderr, "\n"); abort(); } } while (0);
+              ~~~~~~^~~~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:447:21: note: remove extraneous parentheses around the comparison to silence this warning
+    do { if ((radix == 0)) { fprintf(stderr, "ERROR: " "ap_fixed_base(const char* \"%s\", %d), str=%s, radix = %d", s, rd, str.c_str(), radix); fprintf(stderr, "\n"); abort(); } } while (0);
+             ~      ^   ~
+/tools/software/xilinx/2025.1.1/Vitis/include/etc/ap_fixed_base.h:447:21: note: use '=' to turn this equality comparison into an assignment
+    do { if ((radix == 0)) { fprintf(stderr, "ERROR: " "ap_fixed_base(const char* \"%s\", %d), str=%s, radix = %d", s, rd, str.c_str(), radix); fprintf(stderr, "\n"); abort(); } } while (0);
+                    ^~
+                    =
+/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/top.cpp:94:38: error: no member named 'recip' in namespace 'hls'
+        stat_t inv_st = (stat_t)hls::recip((double)st);
+                                ~~~~~^
+6 warnings and 1 error generated.
+make: *** [cosim.tv.mk:93: obj/top.cpp_pre.cpp.tb.o] Error 1
+ERROR: [COSIM 212-317] C++ compile error.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-321] EXE file generate failed.
+ERROR: [COSIM 212-331] Aborting co-simulation: C simulation failed, compilation errors.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:00:36; Allocated memory: 0.000 MB.
+command 'ap_source' returned error code
+    while executing
+"source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/script.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 53.06 seconds. Total CPU system time: 9.39 seconds. Total elapsed time: 83.98 seconds; peak allocated memory: 0.000 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

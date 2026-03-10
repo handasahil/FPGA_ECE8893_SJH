@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Tue Mar 10 15:12:57 2026
+<item name = "Date">Tue Mar 10 16:07:30 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -24,22 +24,23 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">852820, 852820, 8.528 ms, 8.528 ms, 852821, 852821, no</column>
+<column name="">65614, 65614, 0.656 ms, 0.656 ms, 65536, 65536, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_top_kernel_Pipeline_VITIS_LOOP_28_1_fu_192">top_kernel_Pipeline_VITIS_LOOP_28_1, 65539, 65539, 0.655 ms, 0.655 ms, 65537, 65537, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_K1_fu_201">K1, 327681, 327681, 3.277 ms, 3.277 ms, 327681, 327681, no</column>
-<column name="grp_K2_fu_209">K2, 131841, 131841, 1.318 ms, 1.318 ms, 131841, 131841, no</column>
-<column name="grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217">top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2, 65593, 65593, 0.656 ms, 0.656 ms, 65537, 65537, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="call_ln126_entry_proc_fu_126">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_K0_fu_133">K0, 65547, 65547, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_K1_fu_143">K1, 65538, 65538, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_K2_fu_149">K2, 65538, 65538, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_K3_fu_155">K3, 65594, 65594, 0.656 ms, 0.656 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_K4_fu_162">K4, 65545, 65545, 0.655 ms, 0.655 ms, 65536, 65536, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_100_1">262144, 262144, 4, -, -, 65536, no</column>
 </table>
 </item>
 </section>

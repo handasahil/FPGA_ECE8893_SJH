@@ -12,43 +12,35 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6 \
-    name s0 \
-    reset_level 1 \
-    sync_rst true \
+eval "cg_default_interface_gen_dc { \
+    id 9 \
+    name s0_to_k1 \
+    type fifo \
     dir I \
-    corename s0 \
-    op interface \
-    ports { s0_address0 { O 16 vector } s0_ce0 { O 1 bit } s0_q0 { I 32 vector } s0_address1 { O 16 vector } s0_ce1 { O 1 bit } s0_q1 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 's0'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 7 \
-    name s1 \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename s1 \
+    corename dc_s0_to_k1 \
     op interface \
-    ports { s1_address0 { O 16 vector } s1_ce0 { O 1 bit } s1_we0 { O 1 bit } s1_d0 { O 29 vector } } \
+    ports { s0_to_k1_dout { I 32 vector } s0_to_k1_empty_n { I 1 bit } s0_to_k1_read { O 1 bit } s0_to_k1_num_data_valid { I 3 vector } s0_to_k1_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 's1'"
-}
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 10 \
+    name s1_to_k3 \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_s1_to_k3 \
+    op interface \
+    ports { s1_to_k3_din { O 32 vector } s1_to_k3_full_n { I 1 bit } s1_to_k3_write { O 1 bit } s1_to_k3_num_data_valid { I 32 vector } s1_to_k3_fifo_cap { I 32 vector } } \
+} "
+}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
@@ -60,7 +52,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 
@@ -111,6 +103,27 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
+}
+
+
+# flow_control definition:
+set InstName top_kernel_flow_control_loop_pipe_U
+set CompName top_kernel_flow_control_loop_pipe
+set name flow_control_loop_pipe
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
+eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \
+    name ${name} \
+    prefix top_kernel_ \
+}"
+} else {
+puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $CompName BINDTYPE interface TYPE internal_upc_flow_control INSTNAME $InstName
 }
 
 

@@ -27,7 +27,7 @@ void K0(const data_t in[N], hls::stream<data_t>& out_k1, hls::stream<data_t>& ou
     const coef_t beta  = (coef_t)0.125;
 
     for (int k = 0; k < N; k++) {
-        #pragma HLS pipeline II=1
+    #pragma HLS pipeline II=1
         data_t val = in[k]; // Read from AXI memory
         data_t res = (data_t)((acc_t)alpha * (acc_t)val + (acc_t)beta);
         
@@ -49,7 +49,7 @@ void K1(hls::stream<data_t>& in, hls::stream<data_t>& out) {
     data_t x2 = (data_t)0;
 
     for (int k = 0; k < N; k++) {
-        #pragma HLS pipeline II=1
+    #pragma HLS pipeline II=1
         data_t x0 = in.read(); // Consume one token
 
         acc_t acc = (acc_t)w0 * (acc_t)x0 + (acc_t)w1 * (acc_t)x1 + (acc_t)w2 * (acc_t)x2;
@@ -68,18 +68,18 @@ void K1(hls::stream<data_t>& in, hls::stream<data_t>& out) {
 // -------------------------
 void K2(hls::stream<data_t>& in, hls::stream<stat_t>& out_stats) {
     const stat_t eps = (stat_t)0.5;
+    acc_t sum_abs = 0;
 
-    for (int b = 0; b < (N / BLOCK); b++) {
-        acc_t sum_abs = 0;
+    for (int k = 0; k < N; k++) {
+    #pragma HLS pipeline II=1
+        sum_abs += (acc_t)abs_fp(in.read());
         
-        for (int i = 0; i < BLOCK; i++) {
-            #pragma HLS pipeline II=1
-            sum_abs += (acc_t)abs_fp(in.read());
+        // Output the stat and reset the accumulator every 256 cycles
+        if ((k + 1) % BLOCK == 0) {
+            stat_t avg_abs = (stat_t)(sum_abs * (acc_t)(1.0 / BLOCK));
+            out_stats.write(avg_abs + eps);
+            sum_abs = 0; // Reset for the next block
         }
-        
-        // Compute and write the statistic once per block
-        stat_t avg_abs = (stat_t)(sum_abs / (acc_t)BLOCK);
-        out_stats.write(avg_abs + eps);
     }
 }
 

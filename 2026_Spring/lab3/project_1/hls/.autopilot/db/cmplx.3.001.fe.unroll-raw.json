@@ -1,42 +1,71 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "6 1 3 7 5",
+    "calls": "1 5 6 7 2",
     "control_depth": 0,
-    "def_use_depth": 0,
+    "def_use_depth": 1,
     "file": "top.cpp",
-    "fileloc": 107,
-    "instructions": 9,
+    "fileloc": 120,
+    "instructions": 20,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 1166
+    "total_instructions": 1133
   },
   "1": {
-    "basicblocks": 148,
-    "calls": "4 2",
+    "basicblocks": 57,
+    "calls": "",
     "control_depth": 6,
-    "def_use_depth": 16,
+    "def_use_depth": 12,
     "file": "top.cpp",
-    "fileloc": 37,
-    "instructions": 279,
+    "fileloc": 25,
+    "instructions": 110,
     "loads": {
-      "G": 3,
-      "L": 2
+      "L": 1
     },
-    "memory_accesses": 8,
-    "name": "K1",
-    "stores": {
-      "G": 1
-    },
-    "total_instructions": 364
+    "memory_accesses": 3,
+    "name": "K0",
+    "total_instructions": 110
   },
   "2": {
+    "basicblocks": 68,
+    "calls": "4",
+    "control_depth": 6,
+    "def_use_depth": 11,
+    "file": "top.cpp",
+    "fileloc": 109,
+    "instructions": 129,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "K4",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 142
+  },
+  "3": {
+    "basicblocks": 46,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 3,
+    "file": "top.cpp",
+    "fileloc": 12,
+    "instructions": 72,
+    "memory_accesses": 0,
+    "name": "abs_fp",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 72
+  },
+  "4": {
     "basicblocks": 6,
     "calls": "",
     "control_depth": 0,
     "def_use_depth": 2,
     "file": "top.cpp",
-    "fileloc": 15,
+    "fileloc": 16,
     "instructions": 13,
     "loads": {
       "L": 2
@@ -48,93 +77,46 @@
     },
     "total_instructions": 13
   },
-  "3": {
-    "basicblocks": 125,
-    "calls": "4",
+  "5": {
+    "basicblocks": 152,
+    "calls": "3 4",
     "control_depth": 6,
-    "def_use_depth": 6,
+    "def_use_depth": 13,
     "file": "top.cpp",
-    "fileloc": 59,
-    "instructions": 238,
+    "fileloc": 43,
+    "instructions": 269,
     "loads": {
-      "G": 1,
-      "L": 4
+      "L": 2
     },
     "memory_accesses": 6,
-    "name": "K2",
-    "stores": {
-      "G": 1
-    },
-    "total_instructions": 310
-  },
-  "4": {
-    "basicblocks": 46,
-    "calls": "",
-    "control_depth": 0,
-    "def_use_depth": 3,
-    "file": "top.cpp",
-    "fileloc": 11,
-    "instructions": 72,
-    "memory_accesses": 0,
-    "name": "abs_fp",
-    "stores": {
-      "L": 5
-    },
-    "total_instructions": 72
-  },
-  "5": {
-    "basicblocks": 68,
-    "calls": "2",
-    "control_depth": 6,
-    "def_use_depth": 12,
-    "file": "top.cpp",
-    "fileloc": 96,
-    "instructions": 137,
-    "loads": {
-      "G": 4,
-      "L": 1
-    },
-    "memory_accesses": 7,
-    "name": "K4",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 150
+    "name": "K1",
+    "total_instructions": 354
   },
   "6": {
-    "basicblocks": 57,
-    "calls": "",
-    "control_depth": 6,
-    "def_use_depth": 12,
+    "basicblocks": 132,
+    "calls": "3",
+    "control_depth": 7,
+    "def_use_depth": 14,
     "file": "top.cpp",
-    "fileloc": 24,
-    "instructions": 117,
+    "fileloc": 69,
+    "instructions": 234,
     "loads": {
       "L": 4
     },
-    "memory_accesses": 5,
-    "name": "K0",
-    "stores": {
-      "G": 1
-    },
-    "total_instructions": 117
+    "memory_accesses": 7,
+    "name": "K2",
+    "total_instructions": 306
   },
   "7": {
     "basicblocks": 102,
     "calls": "",
     "control_depth": 6,
-    "def_use_depth": 12,
+    "def_use_depth": 10,
     "file": "top.cpp",
-    "fileloc": 77,
-    "instructions": 216,
-    "loads": {
-      "G": 5
-    },
-    "memory_accesses": 5,
+    "fileloc": 90,
+    "instructions": 201,
+    "memory_accesses": 2,
     "name": "K3",
-    "stores": {
-      "G": 1
-    },
-    "total_instructions": 216
+    "total_instructions": 201
   }
 }

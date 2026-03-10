@@ -2216,7 +2216,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c77df5e0</spirit:value>
+            <spirit:value>9:30fc2097</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2230,11 +2230,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 10 19:19:56 UTC 2026</spirit:value>
+            <spirit:value>Tue Mar 10 20:14:16 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c77df5e0</spirit:value>
+            <spirit:value>9:30fc2097</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2248,11 +2248,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 10 19:16:49 UTC 2026</spirit:value>
+            <spirit:value>Tue Mar 10 20:11:10 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c77df5e0</spirit:value>
+            <spirit:value>9:30fc2097</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2263,7 +2263,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c77df5e0</spirit:value>
+            <spirit:value>9:30fc2097</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2279,11 +2279,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 10 19:16:48 UTC 2026</spirit:value>
+            <spirit:value>Tue Mar 10 20:11:10 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:3b17430e</spirit:value>
+            <spirit:value>9:1761714d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2299,11 +2299,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 10 19:16:49 UTC 2026</spirit:value>
+            <spirit:value>Tue Mar 10 20:11:10 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:3b17430e</spirit:value>
+            <spirit:value>9:1761714d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2319,11 +2319,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 10 19:16:48 UTC 2026</spirit:value>
+            <spirit:value>Tue Mar 10 20:11:10 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c77df5e0</spirit:value>
+            <spirit:value>9:30fc2097</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2339,11 +2339,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Mar 10 19:16:49 UTC 2026</spirit:value>
+            <spirit:value>Tue Mar 10 20:11:10 UTC 2026</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c77df5e0</spirit:value>
+            <spirit:value>9:30fc2097</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4515,98 +4515,122 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_control_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_control_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_entry_proc.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_in_r_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_fifo_w32_d2_S.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_K1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_fifo_w32_d512_A.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_K2.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_fifo_w64_d5_S.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_mul_28ns_34s_61_1_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_flow_control_loop_pipe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_out_r_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_hls_deadlock_detection_unit.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_s0_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_s0_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_hls_deadlock_detector.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_s1_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_s1_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_hls_deadlock_report_unit.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_s3_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_s3_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_in_r_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_sdiv_50ns_34s_50_54_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_sparsemux_7_2_32_1_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_stats_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_stats_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K2.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_top_kernel_Pipeline_VITIS_LOOP_28_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K3.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K4.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_mul_34s_31s_64_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_out_r_m_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_sdiv_50ns_34s_50_54_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_sparsemux_7_2_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K1_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K2_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K3_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K4_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4627,83 +4651,99 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_control_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_control_s_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_entry_proc.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_in_r_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_fifo_w32_d2_S.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_K1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_fifo_w32_d512_A.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_K2.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_fifo_w64_d5_S.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_mul_28ns_34s_61_1_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_flow_control_loop_pipe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_out_r_m_axi.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_hls_deadlock_detection_unit.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_s0_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_s0_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_hls_deadlock_detector.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_s1_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_s1_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_hls_deadlock_report_unit.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_s3_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_s3_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_in_r_m_axi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_sdiv_50ns_34s_50_54_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_sparsemux_7_2_32_1_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/top_kernel_stats_RAM_AUTO_1R1W.dat</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_stats_RAM_AUTO_1R1W.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K2.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_top_kernel_Pipeline_VITIS_LOOP_28_1.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K3.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_K4.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/93f4/hdl/verilog/top_kernel.v</spirit:name>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_mul_34s_31s_64_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_out_r_m_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_sdiv_50ns_34s_50_54_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_sparsemux_7_2_32_1_1.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K1_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K2_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K3_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel_start_for_K4_U0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/739d/hdl/verilog/top_kernel.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -4975,7 +5015,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="28">852820</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="28">65614</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -4986,7 +5026,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.II" spirit:order="29">852821</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.II" spirit:order="29">65536</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -5000,7 +5040,7 @@
     <xilinx:coreExtensions>
       <xilinx:displayName>Top_kernel</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2114514975</xilinx:coreRevision>
+      <xilinx:coreRevision>2114515030</xilinx:coreRevision>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -5119,10 +5159,10 @@
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a05a3312"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="15fa6ddb"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="df644fe8"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="75a5c1ed"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c360e4e5"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="ccfedfd4"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="44de9636"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="9745446b"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="5ecda409"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

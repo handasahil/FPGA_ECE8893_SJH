@@ -15,57 +15,37 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>no</PipelineType>
+<PipelineType>dataflow</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
 <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>852820</Best-caseLatency>
-<Average-caseLatency>852820</Average-caseLatency>
-<Worst-caseLatency>852820</Worst-caseLatency>
-<Best-caseRealTimeLatency>8.528 ms</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>8.528 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>8.528 ms</Worst-caseRealTimeLatency>
-<Interval-min>852821</Interval-min>
-<Interval-max>852821</Interval-max>
+<Best-caseLatency>65614</Best-caseLatency>
+<Average-caseLatency>65614</Average-caseLatency>
+<Worst-caseLatency>65614</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.656 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.656 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.656 ms</Worst-caseRealTimeLatency>
+<DataflowPipelineThroughput>65536</DataflowPipelineThroughput>
+<Interval-min>65536</Interval-min>
+<Interval-max>65536</Interval-max>
 <PerformancePragma>-</PerformancePragma>
 </SummaryOfOverallLatency>
-<SummaryOfLoopLatency>
-<VITIS_LOOP_100_1>
-<Slack>7.30</Slack>
-<TripCount>65536</TripCount>
-<isPerfectNested>0</isPerfectNested>
-<Latency>262144</Latency>
-<AbsoluteTimeLatency>2621440</AbsoluteTimeLatency>
-<IterationLatency>4</IterationLatency>
-<PerformancePragma>-</PerformancePragma>
-<InstanceList>
-</InstanceList>
-</VITIS_LOOP_100_1>
-</SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>top.cpp:100~top.cpp:123</SourceLocation>
-<SummaryOfLoopViolations>
-<VITIS_LOOP_100_1>
-<Name>VITIS_LOOP_100_1</Name>
-<IssueType>-</IssueType>
-<ViolationType>-</ViolationType>
-<SourceLocation>top.cpp:100~top.cpp:123</SourceLocation>
-</VITIS_LOOP_100_1>
-</SummaryOfLoopViolations>
+<SourceLocation>top.cpp:126</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>339</BRAM_18K>
+<BRAM_18K>4</BRAM_18K>
 <DSP>4</DSP>
-<FF>7815</FF>
-<LUT>9336</LUT>
+<FF>8323</FF>
+<LUT>9095</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

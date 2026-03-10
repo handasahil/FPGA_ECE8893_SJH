@@ -27,8 +27,8 @@ entry:
 ; Function Attrs: argmemonly noinline norecurse willreturn
 define internal fastcc void @copy_in([65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* readonly "unpacked"="0", [65536 x i32]* nocapture "unpacked"="1.0", [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* readonly "unpacked"="2", [65536 x i32]* nocapture "unpacked"="3.0") unnamed_addr #1 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.70"([65536 x i32]* %1, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %0)
-  call fastcc void @"onebyonecpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.70"([65536 x i32]* %3, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %2)
+  call fastcc void @"onebyonecpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.72"([65536 x i32]* %1, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %0)
+  call fastcc void @"onebyonecpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.72"([65536 x i32]* %3, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %2)
   ret void
 }
 
@@ -83,7 +83,7 @@ entry:
   br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.66"([65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* nonnull %dst, [65536 x i32]* %src, i64 65536)
+  call void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.68"([65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* nonnull %dst, [65536 x i32]* %src, i64 65536)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -91,7 +91,7 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.66"([65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* "unpacked"="0" %dst, [65536 x i32]* nocapture readonly "unpacked"="1.0" %src, i64 "unpacked"="2" %num) local_unnamed_addr #2 {
+define void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.68"([65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* "unpacked"="0" %dst, [65536 x i32]* nocapture readonly "unpacked"="1.0" %src, i64 "unpacked"="2" %num) local_unnamed_addr #2 {
 entry:
   %0 = icmp eq [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %dst, null
   br i1 %0, label %ret, label %copy
@@ -121,13 +121,13 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.70"([65536 x i32]* nocapture "unpacked"="0.0" %dst, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* readonly "unpacked"="1" %src) unnamed_addr #4 {
+define internal fastcc void @"onebyonecpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.72"([65536 x i32]* nocapture "unpacked"="0.0" %dst, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* readonly "unpacked"="1" %src) unnamed_addr #4 {
 entry:
   %0 = icmp eq [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %src, null
   br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.73"([65536 x i32]* %dst, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* nonnull %src, i64 65536)
+  call void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.75"([65536 x i32]* %dst, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* nonnull %src, i64 65536)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -135,7 +135,7 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.73"([65536 x i32]* nocapture "unpacked"="0.0" %dst, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* readonly "unpacked"="1" %src, i64 "unpacked"="2" %num) local_unnamed_addr #2 {
+define void @"arraycpy_hls.p0a65536struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>.75"([65536 x i32]* nocapture "unpacked"="0.0" %dst, [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* readonly "unpacked"="1" %src, i64 "unpacked"="2" %num) local_unnamed_addr #2 {
 entry:
   %0 = icmp eq [65536 x %"struct.ap_fixed<32, 6, AP_RND, AP_SAT, 0>"]* %src, null
   br i1 %0, label %ret, label %copy

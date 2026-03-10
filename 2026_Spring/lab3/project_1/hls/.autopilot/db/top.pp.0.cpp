@@ -6513,7 +6513,137 @@ typedef ap_fixed<32, 10, AP_RND, AP_SAT> coef_t;
 __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t in[(1 << 16)],
                 data_t out[(1 << 16)]);
 # 2 "top.cpp" 2
-# 11 "top.cpp"
+# 1 "/tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/hls_stream.h" 1
+# 12 "/tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/hls_stream.h"
+# 1 "/tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/hls_stream_39.h" 1
+# 23 "/tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/hls_stream_39.h"
+namespace hls {
+# 49 "/tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/hls_stream_39.h"
+template<typename __STREAM_T__, int DEPTH=0>
+class stream;
+
+template<typename __STREAM_T__>
+class stream<__STREAM_T__, 0>
+{
+  public:
+    using value_type = __STREAM_T__;
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream() {
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream(const char* name) {
+      (void)(name);
+    }
+
+
+  private:
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream(const stream< __STREAM_T__ >& chn):V(chn.V) {
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream& operator= (const stream< __STREAM_T__ >& chn) {
+        V = chn.V;
+        return *this;
+    }
+
+  public:
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void operator >> (__STREAM_T__& rdata) {
+        read(rdata);
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void operator << (const __STREAM_T__& wdata) {
+        write(wdata);
+    }
+
+
+  public:
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool empty() const {
+        return !__fpga_fifo_not_empty(&V);
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool full() const {
+        return !__fpga_fifo_not_full(&V);
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void read(__STREAM_T__& dout) {
+        __fpga_fifo_pop(&V, &dout);
+    }
+
+
+    inline __attribute__((noinline)) __attribute__((nodebug)) bool read_dep(__STREAM_T__& dout, volatile bool flag) {
+        __fpga_fifo_pop(&V, &dout);
+        return flag;
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) __STREAM_T__ read() {
+        __STREAM_T__ tmp;
+        read(tmp);
+        return tmp;
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool read_nb(__STREAM_T__& dout) {
+        __STREAM_T__ tmp;
+
+        if (__fpga_fifo_nb_pop(&V, &tmp)) {
+            dout = tmp;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void write(const __STREAM_T__& din) {
+        __fpga_fifo_push(&V, &din);
+    }
+
+
+    inline __attribute__((noinline)) __attribute__((nodebug)) bool write_dep(const __STREAM_T__& din, volatile bool flag) {
+        __fpga_fifo_push(&V, &din);
+        return flag;
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool write_nb(const __STREAM_T__& din) {
+        return __fpga_fifo_nb_push(&V, &din);
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) unsigned size() const {
+        return __fpga_fifo_size(&V);
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) unsigned capacity() const {
+        return __fpga_fifo_capacity(&V);
+    }
+
+
+    void set_name(const char* name) { (void)(name); }
+
+  public:
+    __STREAM_T__ V __attribute__((no_ctor));
+};
+
+template<typename __STREAM_T__, int DEPTH>
+class stream : public stream<__STREAM_T__, 0> {
+  public:
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream() {
+#pragma HLS stream variable=this depth=DEPTH
+ }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream(const char* name) {
+#pragma HLS stream variable=this depth=DEPTH
+ (void)(name);
+    }
+};
+}
+# 13 "/tools/software/xilinx/2025.1.1/Vitis/common/technology/autopilot/hls_stream.h" 2
+# 3 "top.cpp" 2
+# 12 "top.cpp"
 static inline data_t abs_fp(data_t x) {
     return (x < (data_t)0) ? (data_t)(-x) : x;
 }
@@ -6527,34 +6657,43 @@ static inline data_t clamp_fp(data_t x, data_t lo, data_t hi) {
 
 
 
-void K0(const data_t in[(1 << 16)], data_t s0[(1 << 16)]) {
+void K0(const data_t in[(1 << 16)], hls::stream<data_t>& out_k1, hls::stream<data_t>& out_k2) {
     const coef_t alpha = (coef_t)0.875;
     const coef_t beta = (coef_t)0.125;
 
-    VITIS_LOOP_28_1: for (int k = 0; k < (1 << 16); k++) {
+    VITIS_LOOP_29_1: for (int k = 0; k < (1 << 16); k++) {
 #pragma HLS pipeline II=1
- s0[k] = (data_t)((acc_t)alpha * (acc_t)in[k] + (acc_t)beta);
+ data_t val = in[k];
+        data_t res = (data_t)((acc_t)alpha * (acc_t)val + (acc_t)beta);
+
+
+        out_k1.write(res);
+        out_k2.write(res);
     }
 }
 
 
 
 
-void K1(const data_t s0[(1 << 16)], data_t s1[(1 << 16)]) {
+void K1(hls::stream<data_t>& in, hls::stream<data_t>& out) {
     const coef_t w0 = (coef_t)0.50;
     const coef_t w1 = (coef_t)(-0.25);
     const coef_t w2 = (coef_t)0.125;
 
-    VITIS_LOOP_42_1: for (int k = 0; k < (1 << 16); k++) {
+    data_t x1 = (data_t)0;
+    data_t x2 = (data_t)0;
 
-        data_t x0 = s0[k];
-        data_t x1 = (k >= 1) ? s0[k - 1] : (data_t)0;
-        data_t x2 = (k >= 2) ? s0[k - 2] : (data_t)0;
+    VITIS_LOOP_51_1: for (int k = 0; k < (1 << 16); k++) {
+#pragma HLS pipeline II=1
+ data_t x0 = in.read();
 
         acc_t acc = (acc_t)w0 * (acc_t)x0 + (acc_t)w1 * (acc_t)x1 + (acc_t)w2 * (acc_t)x2;
-        data_t y = (data_t)acc;
-        y = abs_fp(y);
-        s1[k] = clamp_fp(y, (data_t)0, (data_t)7.5);
+        data_t y = abs_fp((data_t)acc);
+        out.write(clamp_fp(y, (data_t)0, (data_t)7.5));
+
+
+        x2 = x1;
+        x1 = x0;
     }
 }
 
@@ -6562,17 +6701,20 @@ void K1(const data_t s0[(1 << 16)], data_t s1[(1 << 16)]) {
 
 
 
-void K2(const data_t s0[(1 << 16)], stat_t stats[(1 << 16) / 256]) {
+void K2(hls::stream<data_t>& in, hls::stream<stat_t>& out_stats) {
     const stat_t eps = (stat_t)0.5;
+    acc_t sum_abs = 0;
 
-    VITIS_LOOP_62_1: for (int b = 0; b < ((1 << 16) / 256); b++) {
-        acc_t sum_abs = 0;
-        int base = b * 256;
-        VITIS_LOOP_65_2: for (int i = 0; i < 256; i++) {
-            sum_abs += (acc_t)abs_fp(s0[base + i]);
+    VITIS_LOOP_73_1: for (int k = 0; k < (1 << 16); k++) {
+#pragma HLS pipeline II=1
+ sum_abs += (acc_t)abs_fp(in.read());
+
+
+        if ((k + 1) % 256 == 0) {
+            stat_t avg_abs = (stat_t)(sum_abs * (acc_t)(1.0 / 256));
+            out_stats.write(avg_abs + eps);
+            sum_abs = 0;
         }
-        stat_t avg_abs = (stat_t)(sum_abs / (acc_t)256);
-        stats[b] = avg_abs + eps;
     }
 }
 
@@ -6580,17 +6722,17 @@ void K2(const data_t s0[(1 << 16)], stat_t stats[(1 << 16) / 256]) {
 
 
 
-void K3(const data_t s1[(1 << 16)], const stat_t stats[(1 << 16) / 256], data_t s3[(1 << 16)]) {
-    VITIS_LOOP_78_1: for (int b = 0; b < ((1 << 16) / 256); b++) {
-        stat_t st = stats[b];
+void K3(hls::stream<data_t>& in_data, hls::stream<stat_t>& in_stats, hls::stream<data_t>& out) {
+    VITIS_LOOP_91_1: for (int b = 0; b < ((1 << 16) / 256); b++) {
 
-
+        stat_t st = in_stats.read();
         stat_t inv_st = (stat_t)((acc_t)1 / (acc_t)st);
 
-        int base = b * 256;
-        VITIS_LOOP_85_2: for (int i = 0; i < 256; i++) {
+        VITIS_LOOP_96_2: for (int i = 0; i < 256; i++) {
 #pragma HLS pipeline II=1
- s3[base + i] = (data_t)((acc_t)s1[base + i] * (acc_t)inv_st);
+
+ data_t val = in_data.read();
+            out.write((data_t)((acc_t)val * (acc_t)inv_st));
         }
     }
 }
@@ -6599,36 +6741,49 @@ void K3(const data_t s1[(1 << 16)], const stat_t stats[(1 << 16) / 256], data_t 
 
 
 
-void K4(const data_t s3[(1 << 16)], data_t out[(1 << 16)]) {
+void K4(hls::stream<data_t>& in, data_t out[(1 << 16)]) {
     const coef_t gamma = (coef_t)1.25;
     const coef_t delta = (coef_t)0.05;
 
-    VITIS_LOOP_100_1: for (int k = 0; k < (1 << 16); k++) {
-        data_t z = (data_t)((acc_t)gamma * (acc_t)s3[k] + (acc_t)delta);
-        z = clamp_fp(z, (data_t)0, (data_t)7.9);
-        out[k] = z;
+    VITIS_LOOP_113_1: for (int k = 0; k < (1 << 16); k++) {
+#pragma HLS pipeline II=1
+ data_t z = (data_t)((acc_t)gamma * (acc_t)in.read() + (acc_t)delta);
+        out[k] = clamp_fp(z, (data_t)0, (data_t)7.9);
     }
 }
 
 __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const data_t in[(1 << 16)], data_t out[(1 << 16)]) {
 #line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/script.tcl"
 #pragma HLSDIRECTIVE TOP name=top_kernel
-# 107 "top.cpp"
+# 120 "top.cpp"
 
 
 #pragma HLS interface m_axi port=in offset=slave bundle=in
 #pragma HLS interface m_axi port=out offset=slave bundle=out
 #pragma HLS interface s_axilite port=return
 
+#pragma HLS dataflow
 
- static data_t s0[(1 << 16)];
-    static data_t s1[(1 << 16)];
-    static stat_t stats[(1 << 16) / 256];
-    static data_t s3[(1 << 16)];
+ hls::stream<data_t> s0_to_k1("s0_to_k1");
+    hls::stream<data_t> s0_to_k2("s0_to_k2");
+    hls::stream<data_t> s1_to_k3("s1_to_k3");
+    hls::stream<stat_t> k2_to_k3("k2_to_k3");
+    hls::stream<data_t> s3_to_k4("s3_to_k4");
 
-    K0(in, s0);
-    K1(s0, s1);
-    K2(s0, stats);
-    K3(s1, stats, s3);
-    K4(s3, out);
+
+
+
+#pragma HLS stream variable=s1_to_k3 depth=512
+
+
+
+
+
+
+
+ K0(in, s0_to_k1, s0_to_k2);
+    K1(s0_to_k1, s1_to_k3);
+    K2(s0_to_k2, k2_to_k3);
+    K3(s1_to_k3, k2_to_k3, s3_to_k4);
+    K4(s3_to_k4, out);
 }

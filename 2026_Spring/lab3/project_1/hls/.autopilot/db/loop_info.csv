@@ -1,6 +1,5 @@
-,VITIS_LOOP_100_1,seq_loop_status1.csv
-grp_top_kernel_Pipeline_VITIS_LOOP_28_1_fu_192,VITIS_LOOP_28_1,upc_loop_status1.csv
-grp_K1_fu_201,VITIS_LOOP_42_1,seq_loop_status2.csv
-grp_K2_fu_209,VITIS_LOOP_65_2,seq_loop_status3.csv
-grp_K2_fu_209,VITIS_LOOP_62_1,seq_loop_status4.csv
-grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217,VITIS_LOOP_78_1_VITIS_LOOP_85_2,upc_loop_status2.csv
+K0_U0,VITIS_LOOP_29_1,upc_loop_status1.csv
+K1_U0,VITIS_LOOP_51_1,upc_loop_status2.csv
+K2_U0,VITIS_LOOP_73_1,upc_loop_status3.csv
+K3_U0,VITIS_LOOP_91_1_VITIS_LOOP_96_2,upc_loop_status4.csv
+K4_U0,VITIS_LOOP_113_1,upc_loop_status5.csv
