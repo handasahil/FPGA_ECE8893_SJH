@@ -1,0 +1,56 @@
+{
+  "0": {
+    "basicblocks": 13,
+    "calls": "1 2",
+    "control_depth": 1,
+    "def_use_depth": 21,
+    "file": "top.cpp",
+    "fileloc": 107,
+    "instructions": 245,
+    "loads": {
+      "G": 3
+    },
+    "memory_accesses": 6,
+    "name": "top_kernel",
+    "stores": {
+      "G": 2
+    },
+    "total_instructions": 502
+  },
+  "1": {
+    "basicblocks": 11,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 40,
+    "file": "top.cpp",
+    "fileloc": 37,
+    "instructions": 133,
+    "loads": {
+      "G": 3
+    },
+    "memory_accesses": 4,
+    "name": "K1",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 133
+  },
+  "2": {
+    "basicblocks": 10,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 23,
+    "file": "top.cpp",
+    "fileloc": 59,
+    "instructions": 124,
+    "loads": {
+      "G": 1
+    },
+    "memory_accesses": 1,
+    "name": "K2",
+    "stores": {
+      "G": 1
+    },
+    "total_instructions": 124
+  }
+}

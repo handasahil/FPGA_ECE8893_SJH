@@ -28,9 +28,6 @@ void K0(const data_t in[N], data_t s0[N]) {
     for (int k = 0; k < N; k++) {
     #pragma HLS pipeline II=1
         s0[k] = (data_t)((acc_t)alpha * (acc_t)in[k] + (acc_t)beta);
-
-        // out_k1.write(res);
-        // out_k2.write(res);
     }
 }
 
@@ -86,6 +83,7 @@ void K3(const data_t s1[N], const stat_t stats[N / BLOCK], data_t s3[N]) {
 
         int base = b * BLOCK;
         for (int i = 0; i < BLOCK; i++) {
+        #pragma HLS pipeline II=1
             s3[base + i] = (data_t)((acc_t)s1[base + i] * (acc_t)inv_st);
         }
     }

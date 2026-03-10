@@ -1,0 +1,1176 @@
+  **** HLS Build v2025.1.1 6214317
+Sourcing Tcl script '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/script.tcl'
+INFO: [HLS 200-1510] Running: open_component project_1 
+INFO: [HLS 200-10] Creating and opening component '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2176] Writing Vitis IDE component file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/vitis-comp.json
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+INFO: [HLS 200-1510] Running: set_top top_kernel 
+INFO: [HLS 200-1510] Running: add_files top.cpp 
+INFO: [HLS 200-10] Adding design file 'top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb host.cpp 
+INFO: [HLS 200-10] Adding test bench file 'host.cpp' to the project
+INFO: [HLS 200-1510] Running: config_unroll -tripcount_threshold 0 
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-1510] Running: config_compile -pipeline_loops 0 
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.77 seconds. CPU system time: 0.15 seconds. Elapsed time: 8.5 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.91 seconds. CPU system time: 1.19 seconds. Elapsed time: 8.2 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 16,602 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 26,905 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 13,812 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 13,273 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,444 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,446 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,446 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,446 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,446 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,451 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,449 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 12,448 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 83,234 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 13,606 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 13,612 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 13,631 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_94_6' is marked as complete unroll implied by the pipeline pragma (top.cpp:94:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_94_6' (top.cpp:94:26) in function 'top_kernel' completely with a factor of 256 (top.cpp:21:0)
+INFO: [HLS 214-178] Inlining function 'abs_fp(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>)' into 'top_kernel(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0> const*, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>*)' (top.cpp:21:0)
+INFO: [HLS 214-178] Inlining function 'clamp_fp(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>)' into 'top_kernel(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0> const*, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>*)' (top.cpp:21:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=128 dim=1' for array 'top_kernel(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0> const*, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>*)::s1' due to pipeline pragma (top.cpp:86:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=128 dim=1' for array 'top_kernel(ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0> const*, ap_fixed<32, 6, (ap_q_mode)0, (ap_o_mode)0, 0>*)::s3' due to pipeline pragma (top.cpp:86:9)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3': Cyclic partitioning with factor 128 on dimension 1. (top.cpp:31:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1': Cyclic partitioning with factor 128 on dimension 1. (top.cpp:29:0)
+INFO: [HLS 214-115] Multiple burst reads of length 65536 and bit width 32 in loop 'VITIS_LOOP_48_1'(top.cpp:48:22) has been inferred on bundle 'in_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:48:22)
+INFO: [HLS 214-115] Multiple burst writes of length 65536 and bit width 32 in loop 'VITIS_LOOP_103_7'(top.cpp:103:23) has been inferred on bundle 'out_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:103:23)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 17.16 seconds. CPU system time: 1.41 seconds. Elapsed time: 20.35 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1.19 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.24 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.15 seconds; current allocated memory: 0.000 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:55:31) to (top.cpp:64:15) in function 'top_kernel'... converting 8 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:72:15) to (top.cpp:74:26) in function 'top_kernel'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 6.77 seconds. CPU system time: 0.07 seconds. Elapsed time: 6.89 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 8.27 seconds. CPU system time: 0.06 seconds. Elapsed time: 8.39 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'top_kernel' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top_kernel_Pipeline_VITIS_LOOP_85_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_85_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 57, loop 'VITIS_LOOP_85_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 15.14 seconds. CPU system time: 0.34 seconds. Elapsed time: 15.7 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 8.84 seconds. CPU system time: 0.14 seconds. Elapsed time: 10 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6.69 seconds. CPU system time: 0.16 seconds. Elapsed time: 7.87 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.34 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.43 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top_kernel_Pipeline_VITIS_LOOP_85_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'top_kernel_Pipeline_VITIS_LOOP_85_5' pipeline 'VITIS_LOOP_85_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'top_kernel_Pipeline_VITIS_LOOP_85_5' is 381525 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'mul_27ns_34s_61_1_1': 255 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_34s_27ns_61_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_50ns_34s_50_54_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top_kernel_Pipeline_VITIS_LOOP_85_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 6.96 seconds. CPU system time: 0.19 seconds. Elapsed time: 7.33 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_r_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_r_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'top_kernel' to 's_axilite & ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_10_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_11_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_cud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_12_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_dEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_13_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_eOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_14_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_fYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_15_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_g8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_16_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_hbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_17_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_ibs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_18_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_jbC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_19_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_kbM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_20_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_lbW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_21_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_mb6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_22_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_ncg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_23_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_ocq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_24_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_pcA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_25_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_qcK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_26_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_rcU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_27_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_sc4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_28_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_tde' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_29_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_udo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_30_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_vdy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_31_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_wdI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_32_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_xdS' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_33_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_yd2' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_34_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_zec' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_35_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Aem' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_36_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Bew' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_37_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_CeG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_38_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_DeQ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_39_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Ee0' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_40_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Ffa' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_41_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Gfk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_42_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Hfu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_43_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_IfE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_44_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_JfO' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_45_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_KfY' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_46_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Lf8' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_47_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Mgi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_48_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Ngs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_49_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_OgC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_50_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_PgM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_51_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_QgW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_52_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Rg6' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_53_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Shg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_54_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Thq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_55_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_UhA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_56_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_VhK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_57_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_WhU' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_58_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Xh4' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_59_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Yie' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_60_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_Zio' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_61_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_0iy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_62_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_1iI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_63_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_2iS' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_64_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_3i2' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_65_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_4jc' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_66_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_5jm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_67_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_6jw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_68_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_7jG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_69_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_8jQ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_70_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_9j0' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_71_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bak' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_72_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bbk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_73_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bck' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_74_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bdk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_75_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bek' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_76_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bfk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_77_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bgk' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_78_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bhl' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_79_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bil' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_80_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bjl' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_81_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bkl' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_82_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bll' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_83_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bml' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_84_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bnm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_85_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bom' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_86_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bpm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_87_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bqm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_88_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_brm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_89_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bsm' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_90_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_btn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_91_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bun' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_92_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bvn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_93_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bwn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_94_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bxn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_95_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_byn' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_96_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bzo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_97_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bAo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_98_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bBo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_99_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bCo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_100_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bDo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_101_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bEo' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_102_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bFp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_103_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bGp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_104_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bHp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_105_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bIp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_106_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bJp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_107_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bKp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_108_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bLp' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_109_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bMq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_110_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bNq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_111_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bOq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_112_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bPq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_113_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bQq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_114_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bRq' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_115_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bSr' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_116_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bTr' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_117_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bUr' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_118_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bVr' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_119_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bWr' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_120_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bXr' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_121_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bYs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_122_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_bZs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_123_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_b0s' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_124_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_b1s' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_125_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_b2s' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_126_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_b3s' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_127_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s1_b4t' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_10_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_b5t' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_11_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_b6t' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_12_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_b7t' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_13_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_b8t' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_14_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_b9t' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_15_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cau' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_16_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cbu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_17_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_ccu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_18_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cdu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_19_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_ceu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_20_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cfu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_21_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cgu' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_22_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_chv' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_23_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_civ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_24_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cjv' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_25_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_ckv' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_26_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_clv' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_27_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cmv' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_28_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cnw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_29_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cow' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_30_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cpw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_31_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cqw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_32_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_crw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_33_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_csw' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_34_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_ctx' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_35_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cux' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_36_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cvx' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_37_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cwx' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_38_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cxx' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_39_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cyx' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_40_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_czy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_41_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cAy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_42_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cBy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_43_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cCy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_44_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cDy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_45_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cEy' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_46_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cFz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_47_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cGz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_48_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cHz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_49_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cIz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_50_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cJz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_51_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cKz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_52_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cLz' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_53_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cMA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_54_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cNA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_55_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cOA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_56_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cPA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_57_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cQA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_58_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cRA' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_59_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cSB' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_60_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cTB' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_61_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cUB' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_62_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cVB' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_63_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cWB' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_64_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cXB' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_65_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cYC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_66_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_cZC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_67_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c0C' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_68_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c1C' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_69_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c2C' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_70_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c3C' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_71_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c4D' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_72_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c5D' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_73_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c6D' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_74_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c7D' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_75_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c8D' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_76_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_c9D' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_77_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_daE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_78_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dbE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_79_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dcE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_80_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_ddE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_81_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_deE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_82_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dfE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_83_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dgE' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_84_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dhF' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_85_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_diF' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_86_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_djF' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_87_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dkF' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_88_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dlF' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_89_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dmF' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_90_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dnG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_91_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_doG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_92_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dpG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_93_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dqG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_94_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_drG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_95_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dsG' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_96_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dtH' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_97_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_duH' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_98_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dvH' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_99_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dwH' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_100_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dxH' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_101_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dyH' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_102_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dzI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_103_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dAI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_104_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dBI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_105_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dCI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_106_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dDI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_107_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dEI' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_108_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dFJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_109_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dGJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_110_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dHJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_111_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dIJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_112_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dJJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_113_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dKJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_114_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dLJ' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_115_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dMK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_116_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dNK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_117_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dOK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_118_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dPK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_119_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dQK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_120_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dRK' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_121_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dSL' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_122_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dTL' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_123_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dUL' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_124_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dVL' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_125_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dWL' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_126_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dXL' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_127_RAM_AUTO_1R1W' to 'p_ZZ10top_kernelPK8ap_fixedILi32ELi6EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS2_E2s3_dYM' due to the length limit 80
+INFO: [RTGEN 206-100] Bundling port 'in_r_r', 'out_r_r' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_257_7_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top_kernel'.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_s0_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_stats_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s3_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 15.81 seconds. CPU system time: 0.82 seconds. Elapsed time: 18.3 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2.56 seconds. CPU system time: 0.23 seconds. Elapsed time: 3.36 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 3.6 seconds. CPU system time: 0.2 seconds. Elapsed time: 3.95 seconds; current allocated memory: 0.000 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for top_kernel.
+INFO: [VLOG 209-307] Generating Verilog RTL for top_kernel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:02:01; Allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/tools/software/xilinx/2025.1.1/Vitis/lnx64/tools/vcxx/libexec/clang++"
+   Compiling host.cpp_pre.cpp.tb.cpp
+   Compiling apatb_top_kernel.cpp
+   Compiling top.cpp_pre.cpp.tb.cpp
+   Compiling apatb_top_kernel_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+TEST PASSED
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/software/xilinx/2025.1.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_top_kernel_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj top_kernel.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_20 -L floating_point_v7_0_25 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./top_kernel_subsystem -s top_kernel 
+Multi-threading is on. Using 110 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_top_kernel_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_top_kernel_Pipeline_VITIS_LOOP_85_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_top_kernel_Pipeline_VITIS_LOOP_85_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_mul_27ns_34s_61_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_mul_27ns_34s_61_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_mul_34s_27ns_61_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_mul_34s_27ns_61_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_sdiv_50ns_34s_50_54_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_50ns_34s_50_54_1_divider
+INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_50ns_34s_50_54_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_sparsemux_7_2_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_sparsemux_7_2_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_sparsemux_257_7_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_sparsemux_257_7_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_s0_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_s0_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s1_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s1_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_stats_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_stats_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s3_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s3_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_in_r_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_load
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_read
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_srl
+INFO: [VRFC 10-311] analyzing module top_kernel_in_r_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_out_r_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_store
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_write
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_srl
+INFO: [VRFC 10-311] analyzing module top_kernel_out_r_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/top_kernel_subsystem/top_kernel_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4468] File : /proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv, Line : 25994, RANDC variable size more than 8 bits. This will be treated as a RAND variable instead.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.top_kernel_subsystem_pkg
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.top_kernel_s0_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.top_kernel_top_kernel_ap_fixed_3...
+Compiling module xil_defaultlib.top_kernel_stats_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.top_kernel_top_kernel_ap_fixed_3...
+Compiling module xil_defaultlib.top_kernel_mul_27ns_34s_61_1_1(N...
+Compiling module xil_defaultlib.top_kernel_mul_34s_27ns_61_1_1(N...
+Compiling module xil_defaultlib.top_kernel_sdiv_50ns_34s_50_54_1...
+Compiling module xil_defaultlib.top_kernel_sdiv_50ns_34s_50_54_1...
+Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
+Compiling module xil_defaultlib.top_kernel_top_kernel_Pipeline_V...
+Compiling module xil_defaultlib.top_kernel_control_s_axi
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_mem(MEM_ST...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_fifo(MEM_S...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_load(NUM_R...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_reg_slice(...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_burst_sequ...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_reg_slice(...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_srl(DATA_W...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_fifo(DATA_...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi_read(C_USE...
+Compiling module xil_defaultlib.top_kernel_in_r_m_axi(C_M_AXI_AD...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_srl(DATA_...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_fifo(DATA...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_srl(DATA_...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_fifo(DATA...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_srl(DATA_...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_fifo(DATA...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_srl(DATA_...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_fifo(DATA...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_srl(DATA_...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_fifo(DATA...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_store(CON...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_reg_slice...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_burst_seq...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_reg_slice...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_srl(DATA_...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_fifo(DATA...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_reg_slice...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_throttle(...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_reg_slice...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi_write(CON...
+Compiling module xil_defaultlib.top_kernel_out_r_m_axi(C_M_AXI_A...
+Compiling module xil_defaultlib.top_kernel_sparsemux_7_2_32_1_1(...
+Compiling module xil_defaultlib.top_kernel_sparsemux_257_7_32_1_...
+Compiling module xil_defaultlib.top_kernel
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=64,STRB_WIDTH=...
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=6,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=32)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_top_kernel_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_kernel
+
+****** xsim v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:11 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Thu Mar  5 22:55:39 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/top_kernel/xsim_script.tcl
+# xsim {top_kernel} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=top_kernel_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {top_kernel.tcl}
+Time resolution is 1 ps
+source top_kernel.tcl
+## run all
+UVM_INFO /tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO /tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------------------------------
+Name                         Type                              Size  Value            
+--------------------------------------------------------------------------------------
+uvm_test_top                 top_kernel_test_lib               -     @369             
+  top_env                    top_kernel_env                    -     @380             
+    axi_lite_control         uvm_env                           -     @465             
+      item_rtr_port          uvm_analysis_port                 -     @484             
+      item_wtr_port          uvm_analysis_port                 -     @474             
+      master                 uvm_agent                         -     @897             
+        ardrv                uvm_driver #(REQ,RSP)             -     @1572            
+          item_read_imp      uvm_analysis_port                 -     @1601            
+          rsp_port           uvm_analysis_port                 -     @1591            
+          seq_item_port      uvm_seq_item_pull_port            -     @1581            
+          m_num_sent         integral                          32    'h0              
+        arsqr                axi_sequencer                     -     @1611            
+          rsp_export         uvm_analysis_export               -     @1620            
+          seq_item_export    uvm_seq_item_pull_imp             -     @1738            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        awdrv                uvm_driver #(REQ,RSP)             -     @1044            
+          item_read_imp      uvm_analysis_port                 -     @1073            
+          rsp_port           uvm_analysis_port                 -     @1063            
+          seq_item_port      uvm_seq_item_pull_port            -     @1053            
+          m_num_sent         integral                          32    'h0              
+        awsqr                axi_sequencer                     -     @1083            
+          rsp_export         uvm_analysis_export               -     @1092            
+          seq_item_export    uvm_seq_item_pull_imp             -     @1210            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        bdrv                 uvm_driver #(REQ,RSP)             -     @1396            
+          item_read_imp      uvm_analysis_port                 -     @1425            
+          rsp_port           uvm_analysis_port                 -     @1415            
+          seq_item_port      uvm_seq_item_pull_port            -     @1405            
+          m_num_sent         integral                          32    'h0              
+        bsqr                 axi_sequencer                     -     @1435            
+          rsp_export         uvm_analysis_export               -     @1444            
+          seq_item_export    uvm_seq_item_pull_imp             -     @1562            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        rdrv                 uvm_driver #(REQ,RSP)             -     @1748            
+          item_read_imp      uvm_analysis_port                 -     @1777            
+          rsp_port           uvm_analysis_port                 -     @1767            
+          seq_item_port      uvm_seq_item_pull_port            -     @1757            
+          m_num_sent         integral                          32    'h0              
+        rsqr                 axi_sequencer                     -     @1787            
+          rsp_export         uvm_analysis_export               -     @1796            
+          seq_item_export    uvm_seq_item_pull_imp             -     @1914            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        wdrv                 uvm_driver #(REQ,RSP)             -     @1220            
+          item_read_imp      uvm_analysis_port                 -     @1249            
+          rsp_port           uvm_analysis_port                 -     @1239            
+          seq_item_port      uvm_seq_item_pull_port            -     @1229            
+          m_num_sent         integral                          32    'h0              
+        wsqr                 axi_sequencer                     -     @1259            
+          rsp_export         uvm_analysis_export               -     @1268            
+          seq_item_export    uvm_seq_item_pull_imp             -     @1386            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+      monitor                uvm_monitor                       -     @719             
+        item_ar2r_port       uvm_analysis_port                 -     @788             
+        item_ar_port         uvm_analysis_port                 -     @758             
+        item_aw2b_port       uvm_analysis_port                 -     @778             
+        item_aw_port         uvm_analysis_port                 -     @728             
+        item_b_port          uvm_analysis_port                 -     @748             
+        item_r_port          uvm_analysis_port                 -     @768             
+        item_w_port          uvm_analysis_port                 -     @738             
+        checks_enable        integral                          1     'h1              
+        coverage_enable      integral                          1     'h1              
+      state                  axi_state                         -     @798             
+        ar2r_imp             uvm_analysis_imp_ar2r             -     @867             
+        ar_imp               uvm_analysis_imp_ar               -     @837             
+        aw2b_imp             uvm_analysis_imp_aw2b             -     @857             
+        aw_imp               uvm_analysis_imp_aw               -     @807             
+        b_imp                uvm_analysis_imp_b                -     @827             
+        item_rtr_port        uvm_analysis_port                 -     @887             
+        item_wtr_port        uvm_analysis_port                 -     @877             
+        r_imp                uvm_analysis_imp_r                -     @847             
+        w_imp                uvm_analysis_imp_w                -     @817             
+        avg_rate             integral                          32    'h0              
+        exp_rate             integral                          32    'h0              
+        win_size             integral                          32    'h0              
+        bqnum_for_slaseq     integral                          32    'h0              
+        rq_from_model_num    integral                          32    'h0              
+      vsqr                   axi_virtual_sequencer             -     @906             
+        rsp_export           uvm_analysis_export               -     @915             
+        seq_item_export      uvm_seq_item_pull_imp             -     @1033            
+        arbitration_queue    array                             0     -                
+        lock_queue           array                             0     -                
+        num_last_reqs        integral                          32    'd1              
+        num_last_rsps        integral                          32    'd1              
+      cfg                    axi_cfg                           -     @397             
+        has_checker          integral                          1     'h1              
+        has_coverage         integral                          1     'h1              
+        id_num               integral                          32    'h1              
+        reset_level          reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type             drv_type_enum                     32    MASTER           
+        write_latency_mode   latency_mode_enum                 32    CHANNEL_FIRST    
+        read_latency_mode    latency_mode_enum                 32    CHANNEL_FIRST    
+        clatency             axi_latency                       -     @463             
+          wr_latency         integral                          32    'h0              
+          rd_latency         integral                          32    'h0              
+    axi_master_in_r          uvm_env                           -     @403             
+      item_rtr_port          uvm_analysis_port                 -     @422             
+      item_wtr_port          uvm_analysis_port                 -     @412             
+      monitor                uvm_monitor                       -     @1997            
+        item_ar2r_port       uvm_analysis_port                 -     @2066            
+        item_ar_port         uvm_analysis_port                 -     @2036            
+        item_aw2b_port       uvm_analysis_port                 -     @2056            
+        item_aw_port         uvm_analysis_port                 -     @2006            
+        item_b_port          uvm_analysis_port                 -     @2026            
+        item_r_port          uvm_analysis_port                 -     @2046            
+        item_w_port          uvm_analysis_port                 -     @2016            
+        checks_enable        integral                          1     'h1              
+        coverage_enable      integral                          1     'h1              
+      slave                  uvm_agent                         -     @2175            
+        ardrv                uvm_driver #(REQ,RSP)             -     @2852            
+          item_read_imp      uvm_analysis_port                 -     @2881            
+          rsp_port           uvm_analysis_port                 -     @2871            
+          seq_item_port      uvm_seq_item_pull_port            -     @2861            
+          m_num_sent         integral                          32    'h0              
+        arsqr                axi_sequencer                     -     @2891            
+          rsp_export         uvm_analysis_export               -     @2900            
+          seq_item_export    uvm_seq_item_pull_imp             -     @3018            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        awdrv                uvm_driver #(REQ,RSP)             -     @2324            
+          item_read_imp      uvm_analysis_port                 -     @2353            
+          rsp_port           uvm_analysis_port                 -     @2343            
+          seq_item_port      uvm_seq_item_pull_port            -     @2333            
+          m_num_sent         integral                          32    'h0              
+        awsqr                axi_sequencer                     -     @2363            
+          rsp_export         uvm_analysis_export               -     @2372            
+          seq_item_export    uvm_seq_item_pull_imp             -     @2490            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        bdrv                 uvm_driver #(REQ,RSP)             -     @2676            
+          item_read_imp      uvm_analysis_port                 -     @2705            
+          rsp_port           uvm_analysis_port                 -     @2695            
+          seq_item_port      uvm_seq_item_pull_port            -     @2685            
+          m_num_sent         integral                          32    'h0              
+        bsqr                 axi_sequencer                     -     @2715            
+          rsp_export         uvm_analysis_export               -     @2724            
+          seq_item_export    uvm_seq_item_pull_imp             -     @2842            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        rdrv                 uvm_driver #(REQ,RSP)             -     @3028            
+          item_read_imp      uvm_analysis_port                 -     @3057            
+          rsp_port           uvm_analysis_port                 -     @3047            
+          seq_item_port      uvm_seq_item_pull_port            -     @3037            
+          m_num_sent         integral                          32    'h0              
+        rsqr                 axi_sequencer                     -     @3067            
+          rsp_export         uvm_analysis_export               -     @3076            
+          seq_item_export    uvm_seq_item_pull_imp             -     @3194            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        wdrv                 uvm_driver #(REQ,RSP)             -     @2500            
+          item_read_imp      uvm_analysis_port                 -     @2529            
+          rsp_port           uvm_analysis_port                 -     @2519            
+          seq_item_port      uvm_seq_item_pull_port            -     @2509            
+          m_num_sent         integral                          32    'h0              
+        wsqr                 axi_sequencer                     -     @2539            
+          rsp_export         uvm_analysis_export               -     @2548            
+          seq_item_export    uvm_seq_item_pull_imp             -     @2666            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+      state                  axi_state                         -     @2076            
+        ar2r_imp             uvm_analysis_imp_ar2r             -     @2145            
+        ar_imp               uvm_analysis_imp_ar               -     @2115            
+        aw2b_imp             uvm_analysis_imp_aw2b             -     @2135            
+        aw_imp               uvm_analysis_imp_aw               -     @2085            
+        b_imp                uvm_analysis_imp_b                -     @2105            
+        item_rtr_port        uvm_analysis_port                 -     @2165            
+        item_wtr_port        uvm_analysis_port                 -     @2155            
+        r_imp                uvm_analysis_imp_r                -     @2125            
+        w_imp                uvm_analysis_imp_w                -     @2095            
+        avg_rate             integral                          32    'h0              
+        exp_rate             integral                          32    'h0              
+        win_size             integral                          32    'h0              
+        bqnum_for_slaseq     integral                          32    'h0              
+        rq_from_model_num    integral                          32    'h0              
+      vsqr                   axi_virtual_sequencer             -     @2184            
+        rsp_export           uvm_analysis_export               -     @2193            
+        seq_item_export      uvm_seq_item_pull_imp             -     @2311            
+        arbitration_queue    array                             0     -                
+        lock_queue           array                             0     -                
+        num_last_reqs        integral                          32    'd1              
+        num_last_rsps        integral                          32    'd1              
+      cfg                    axi_cfg                           -     @395             
+        has_checker          integral                          1     'h1              
+        has_coverage         integral                          1     'h1              
+        id_num               integral                          32    'h1              
+        reset_level          reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type             drv_type_enum                     32    SLAVE            
+        write_latency_mode   latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode    latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency             axi_latency                       -     @398             
+          wr_latency         integral                          32    'h0              
+          rd_latency         integral                          32    'h0              
+    axi_master_out_r         uvm_env                           -     @434             
+      item_rtr_port          uvm_analysis_port                 -     @453             
+      item_wtr_port          uvm_analysis_port                 -     @443             
+      monitor                uvm_monitor                       -     @3275            
+        item_ar2r_port       uvm_analysis_port                 -     @3344            
+        item_ar_port         uvm_analysis_port                 -     @3314            
+        item_aw2b_port       uvm_analysis_port                 -     @3334            
+        item_aw_port         uvm_analysis_port                 -     @3284            
+        item_b_port          uvm_analysis_port                 -     @3304            
+        item_r_port          uvm_analysis_port                 -     @3324            
+        item_w_port          uvm_analysis_port                 -     @3294            
+        checks_enable        integral                          1     'h1              
+        coverage_enable      integral                          1     'h1              
+      slave                  uvm_agent                         -     @3453            
+        ardrv                uvm_driver #(REQ,RSP)             -     @4130            
+          item_read_imp      uvm_analysis_port                 -     @4159            
+          rsp_port           uvm_analysis_port                 -     @4149            
+          seq_item_port      uvm_seq_item_pull_port            -     @4139            
+          m_num_sent         integral                          32    'h0              
+        arsqr                axi_sequencer                     -     @4169            
+          rsp_export         uvm_analysis_export               -     @4178            
+          seq_item_export    uvm_seq_item_pull_imp             -     @4296            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        awdrv                uvm_driver #(REQ,RSP)             -     @3602            
+          item_read_imp      uvm_analysis_port                 -     @3631            
+          rsp_port           uvm_analysis_port                 -     @3621            
+          seq_item_port      uvm_seq_item_pull_port            -     @3611            
+          m_num_sent         integral                          32    'h0              
+        awsqr                axi_sequencer                     -     @3641            
+          rsp_export         uvm_analysis_export               -     @3650            
+          seq_item_export    uvm_seq_item_pull_imp             -     @3768            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        bdrv                 uvm_driver #(REQ,RSP)             -     @3954            
+          item_read_imp      uvm_analysis_port                 -     @3983            
+          rsp_port           uvm_analysis_port                 -     @3973            
+          seq_item_port      uvm_seq_item_pull_port            -     @3963            
+          m_num_sent         integral                          32    'h0              
+        bsqr                 axi_sequencer                     -     @3993            
+          rsp_export         uvm_analysis_export               -     @4002            
+          seq_item_export    uvm_seq_item_pull_imp             -     @4120            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        rdrv                 uvm_driver #(REQ,RSP)             -     @4306            
+          item_read_imp      uvm_analysis_port                 -     @4335            
+          rsp_port           uvm_analysis_port                 -     @4325            
+          seq_item_port      uvm_seq_item_pull_port            -     @4315            
+          m_num_sent         integral                          32    'h0              
+        rsqr                 axi_sequencer                     -     @4345            
+          rsp_export         uvm_analysis_export               -     @4354            
+          seq_item_export    uvm_seq_item_pull_imp             -     @4472            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+        wdrv                 uvm_driver #(REQ,RSP)             -     @3778            
+          item_read_imp      uvm_analysis_port                 -     @3807            
+          rsp_port           uvm_analysis_port                 -     @3797            
+          seq_item_port      uvm_seq_item_pull_port            -     @3787            
+          m_num_sent         integral                          32    'h0              
+        wsqr                 axi_sequencer                     -     @3817            
+          rsp_export         uvm_analysis_export               -     @3826            
+          seq_item_export    uvm_seq_item_pull_imp             -     @3944            
+          arbitration_queue  array                             0     -                
+          lock_queue         array                             0     -                
+          num_last_reqs      integral                          32    'd1              
+          num_last_rsps      integral                          32    'd1              
+      state                  axi_state                         -     @3354            
+        ar2r_imp             uvm_analysis_imp_ar2r             -     @3423            
+        ar_imp               uvm_analysis_imp_ar               -     @3393            
+        aw2b_imp             uvm_analysis_imp_aw2b             -     @3413            
+        aw_imp               uvm_analysis_imp_aw               -     @3363            
+        b_imp                uvm_analysis_imp_b                -     @3383            
+        item_rtr_port        uvm_analysis_port                 -     @3443            
+        item_wtr_port        uvm_analysis_port                 -     @3433            
+        r_imp                uvm_analysis_imp_r                -     @3403            
+        w_imp                uvm_analysis_imp_w                -     @3373            
+        avg_rate             integral                          32    'h0              
+        exp_rate             integral                          32    'h0              
+        win_size             integral                          32    'h0              
+        bqnum_for_slaseq     integral                          32    'h0              
+        rq_from_model_num    integral                          32    'h0              
+      vsqr                   axi_virtual_sequencer             -     @3462            
+        rsp_export           uvm_analysis_export               -     @3471            
+        seq_item_export      uvm_seq_item_pull_imp             -     @3589            
+        arbitration_queue    array                             0     -                
+        lock_queue           array                             0     -                
+        num_last_reqs        integral                          32    'd1              
+        num_last_rsps        integral                          32    'd1              
+      cfg                    axi_cfg                           -     @396             
+        has_checker          integral                          1     'h1              
+        has_coverage         integral                          1     'h1              
+        id_num               integral                          32    'h1              
+        reset_level          reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type             drv_type_enum                     32    SLAVE            
+        write_latency_mode   latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode    latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency             axi_latency                       -     @432             
+          wr_latency         integral                          32    'h0              
+          rd_latency         integral                          32    'h0              
+    refm                     top_kernel_reference_model        -     @494             
+      trans_num_idx          integral                          32    'h0              
+    subsys_mon               top_kernel_subsystem_monitor      -     @507             
+      control_rtr_imp        uvm_analysis_imp_axi_rtr_control  -     @566             
+      control_wtr_imp        uvm_analysis_imp_axi_wtr_control  -     @556             
+      in_r_rtr_imp           uvm_analysis_imp_axi_rtr_in_r     -     @526             
+      in_r_wtr_imp           uvm_analysis_imp_axi_wtr_in_r     -     @516             
+      out_r_rtr_imp          uvm_analysis_imp_axi_rtr_out_r    -     @546             
+      out_r_wtr_imp          uvm_analysis_imp_axi_wtr_out_r    -     @536             
+      scbd                   top_kernel_scoreboard             -     @4554            
+        refm                 top_kernel_reference_model        -     @494             
+          trans_num_idx      integral                          32    'h0              
+    top_kernel_virtual_sqr   top_kernel_virtual_sequencer      -     @576             
+      rsp_export             uvm_analysis_export               -     @585             
+      seq_item_export        uvm_seq_item_pull_imp             -     @703             
+      arbitration_queue      array                             0     -                
+      lock_queue             array                             0     -                
+      num_last_reqs          integral                          32    'd1              
+      num_last_rsps          integral                          32    'd1              
+    refm                     top_kernel_reference_model        -     @494             
+    top_kernel_virtual_sqr   top_kernel_virtual_sequencer      -     @576             
+    top_kernel_cfg           top_kernel_config                 -     @394             
+      in_r_cfg               axi_cfg                           -     @395             
+        has_checker          integral                          1     'h1              
+        has_coverage         integral                          1     'h1              
+        id_num               integral                          32    'h1              
+        reset_level          reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type             drv_type_enum                     32    SLAVE            
+        write_latency_mode   latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode    latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency             axi_latency                       -     @398             
+          wr_latency         integral                          32    'h0              
+          rd_latency         integral                          32    'h0              
+      out_r_cfg              axi_cfg                           -     @396             
+        has_checker          integral                          1     'h1              
+        has_coverage         integral                          1     'h1              
+        id_num               integral                          32    'h1              
+        reset_level          reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type             drv_type_enum                     32    SLAVE            
+        write_latency_mode   latency_mode_enum                 32    TRANSACTION_FIRST
+        read_latency_mode    latency_mode_enum                 32    TRANSACTION_FIRST
+        clatency             axi_latency                       -     @432             
+          wr_latency         integral                          32    'h0              
+          rd_latency         integral                          32    'h0              
+      control_cfg            axi_cfg                           -     @397             
+        has_checker          integral                          1     'h1              
+        has_coverage         integral                          1     'h1              
+        id_num               integral                          32    'h1              
+        reset_level          reset_level_enum                  32    RESET_LEVEL_LOW  
+        drv_type             drv_type_enum                     32    MASTER           
+        write_latency_mode   latency_mode_enum                 32    CHANNEL_FIRST    
+        read_latency_mode    latency_mode_enum                 32    CHANNEL_FIRST    
+        clatency             axi_latency                       -     @463             
+          wr_latency         integral                          32    'h0              
+          rd_latency         integral                          32    'h0              
+      check_ena              integral                          32    'h0              
+      cover_ena              integral                          32    'h0              
+--------------------------------------------------------------------------------------
+
+UVM_INFO /tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+// RTL Simulation : 1 / 1 [100.00%] @ "9841905000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 9841975 ns : File "/tools/software/xilinx//2025.1.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:00.15 ; elapsed = 00:14:32 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 59875 ; free virtual = 144216
+## quit
+INFO: xsimkernel Simulation Memory Usage: 6335660 KB (Peak: 6335660 KB), Simulation CPU Usage: 867050 ms
+INFO: [Common 17-206] Exiting xsim at Thu Mar  5 23:10:16 2026...
+INFO: [COSIM 212-316] Starting C post checking ...
+TEST PASSED
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:16:21; Allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: export_design -format ip_catalog -flow impl 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls_config.cfg
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:11 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Thu Mar  5 23:10:33 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/hls_data.json outdir=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip srcdir=/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls ippack_options_dict= ippack_options_dict=
+INFO: Copied 1 ipmisc file(s) to /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/misc
+INFO: Copied 19 verilog file(s) to /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/hdl/verilog
+INFO: Copied 15 vhdl file(s) to /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/hdl/vhdl
+INFO: Copied 10 swdriver file(s) to /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/drivers
+INFO: Import ports from HDL: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/hdl/vhdl/top_kernel.vhd (top_kernel)
+INFO: Add axi4lite interface s_axi_control
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst_n
+INFO: Add interrupt interface interrupt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/software/xilinx/2025.1.1/data/ip'.
+INFO: Add axi4full interface m_axi_in_r
+INFO: Add axi4full interface m_axi_out_r
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/component.xml
+INFO: Created IP archive /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip/xilinx_com_hls_top_kernel_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Thu Mar  5 23:10:49 2026...
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:11 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Thu Mar  5 23:11:13 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivado.tcl
+# source ./settings.tcl
+## set top_module top_kernel
+## set language verilog
+## set family zynquplus
+## set device xczu3eg
+## set package -sbva484
+## set speed -1-e
+## set clock ap_clk
+## set fsm_ext "off"
+## set add_io_buffers false 
+# source -notrace ./extraction.tcl
+# set vivado_proj_name project
+# set vivado_proj_dir .
+# set target_device "${device}${package}${speed}"
+# set target_clk_period_ns "10.000"
+# set target_clk_freq_hz [expr {floor(1000 / $target_clk_period_ns) * 1000000}]
+# set other_clks_freq_hz {}
+# set ip_vlnv xilinx.com:hls:top_kernel:1.0
+# set ip_repo_path ../ip
+# set bd_design_name bd_0
+# set bd_inst_name hls_inst
+# set bd_props {}
+# set has_synth true
+# set synth_design_args {-directive sdx_optimization_effort_high}
+# set synth_dcp ""
+# set synth_props {}
+# set has_impl 1
+# set impl_props {}
+# set has_subcore 0
+# set report_options [dict create]
+# dict set report_options report_level 2
+# dict set report_options report_max_paths 10
+# dict set report_options stdout_hls_reports 1
+# dict set report_options stdout_vivado_reports 0
+# dict set report_options hls_project project_1
+# dict set report_options hls_solution hls
+# dict set report_options has_synth $has_synth
+# dict set report_options has_impl $has_impl
+# dict set report_options vivado_reportbasename $top_module
+# dict set report_options vivado_reportdir ./report
+# dict set report_options hls_impl_dir ..
+# dict set report_options hls_reportdir ../report/$language
+# dict set report_options target_clk_period $target_clk_period_ns
+# dict set report_options target_device $target_device
+# dict set report_options language $language
+# dict set report_options clock_name $clock
+# dict set report_options error_if_impl_timing_fails false
+# dict set report_options topmodule "top_kernel"
+# dict set report_options funcmodules top_kernel_top_kernel_Pipeline_VITIS_LOOP_85_5
+# dict set report_options bindmodules {top_kernel_mul_27ns_34s_61_1_1 top_kernel_mul_34s_27ns_61_1_1 top_kernel_sdiv_50ns_34s_50_54_1 top_kernel_flow_control_loop_pipe_sequential_init top_kernel_sparsemux_7_2_32_1_1 top_kernel_sparsemux_257_7_32_1_1 top_kernel_s0_RAM_AUTO_1R1W top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s1_RAM_AUTO_1R1W top_kernel_stats_RAM_AUTO_1R1W top_kernel_top_kernel_ap_fixed_32_6_0_0_0_const_ap_fixed_32_6_0_0_0_s3_RAM_AUTO_1R1W top_kernel_in_r_m_axi top_kernel_out_r_m_axi top_kernel_control_s_axi}
+# dict set report_options max_module_depth 6
+# create_project $vivado_proj_name $vivado_proj_dir -part $target_device -force
+# set_property target_language $language [current_project]
+# if { ![file exists $ip_repo_path] } {
+#   error "Cannot find packaged HLS IP"
+# }
+# set_property ip_repo_paths [file normalize $ip_repo_path] [current_project]
+# update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/software/xilinx/2025.1.1/data/ip'.
+# create_bd_design bd_0
+Wrote  : </nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+# set cell_inst [create_bd_cell -type ip -vlnv $ip_vlnv $bd_inst_name]
+# if { [llength $bd_props] } { 
+#   set_property -dict $bd_props $cell_inst 
+# }
+# make_bd_pins_external $cell_inst
+# make_bd_intf_pins_external $cell_inst
+# set bd_clk_ports [get_bd_ports -filter {TYPE==clk}]
+# if { $target_clk_freq_hz ne "" } { 
+#   foreach bd_clk_port $bd_clk_ports {
+#     # Remove "_0" suffix from BD ports & interfaces so they match IP ports 
+#     set clk_name [regsub {_0$} [get_property name $bd_clk_port] {}]
+#     set port_freq_hz $target_clk_freq_hz
+#     if { [dict exists $other_clks_freq_hz $clk_name] } {
+#         set port_freq_hz [dict get $other_clks_freq_hz $clk_name]
+#     }
+#     set_property CONFIG.FREQ_HZ $port_freq_hz $bd_clk_port
+#   }
+# }
+# foreach bd_port [get_bd_intf_ports] {
+#   set_property name [regsub {_0$} [get_property name $bd_port] {}] $bd_port
+# }
+# foreach bd_port [get_bd_ports -filter {INTF!=TRUE}] {
+#   set_property name [regsub {_0$} [get_property name $bd_port] {}] $bd_port
+# }
+# set s_axi_addr_width_min 32
+# foreach bd_port [get_bd_intf_ports -filter {MODE == "Slave" && VLNV =~ "xilinx.com:interface:aximm_rtl:*"}] {
+#   set bd_port_addr_width [get_property CONFIG.ADDR_WIDTH $bd_port]
+#   if { $bd_port_addr_width < $s_axi_addr_width_min } {
+#     puts "INFO: Updating $bd_port CONFIG.ADDR_WIDTH to $s_axi_addr_width_min"
+#     set_property CONFIG.ADDR_WIDTH $s_axi_addr_width_min $bd_port
+#   }
+# }
+INFO: Updating /s_axi_control CONFIG.ADDR_WIDTH to 32
+# set_msg_config -id {[BD 41-1265]} -severity {CRITICAL WARNING} -new_severity {INFO}
+# assign_bd_address
+INFO: [BD 41-3093] Triggering Legacy Auto Assign Algorithm
+Slave segment '/hls_inst/s_axi_control/Reg' is being assigned into address space '/s_axi_control' at <0x0000_0000 [ 64K ]>.
+Slave segment '/m_axi_in_r/Reg' is being assigned into address space '/hls_inst/Data_m_axi_in_r' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/m_axi_out_r/Reg' is being assigned into address space '/hls_inst/Data_m_axi_out_r' at <0x44A0_0000 [ 64K ]>.
+Wrote  : </nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.srcs/sources_1/bd/bd_0/bd_0.bd> 
+Verilog Output written to : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v
+Verilog Output written to : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/sim/bd_0.v
+Verilog Output written to : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+# set toprtl [make_wrapper -files [get_files ${bd_design_name}.bd] -top]
+# add_files -norecurse $toprtl
+# set top_inst_name [file root [file tail $toprtl]]
+# puts "Using BD top: $top_inst_name"
+Using BD top: bd_0_wrapper
+# set xdc_files [glob -nocomplain ./*.xdc]
+# if { [llength $xdc_files] } {
+#     add_files -fileset constrs_1 -norecurse $xdc_files
+# }
+# launch_runs synth_1 -scripts_only
+INFO: [BD 41-1662] The design 'bd_0.bd' is already validated. Therefore parameter propagation will not be re-run.
+Verilog Output written to : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.v
+Verilog Output written to : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/sim/bd_0.v
+Verilog Output written to : /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/hdl/bd_0_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block hls_inst .
+Exporting to file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/hw_handoff/bd_0.hwh
+Generated Hardware Definition File /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/synth/bd_0.hwdef
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 0.000 ; gain = 0.000 ; free physical = 58104 ; free virtual = 142692
+# foreach run [get_runs -filter {IS_SYNTHESIS == 1}] {
+#   reset_run [get_runs $run]
+# }
+# set_property XPM_LIBRARIES {XPM_MEMORY XPM_FIFO} [current_project]
+# hls_vivado_reports_setup $report_options
+TIMESTAMP: HLS-REPORT: initialize report directories: 2026-03-05 23:11:39 EST
+# if { $has_subcore } { report_ip_status }
+# if { $has_synth || $has_impl } {
+#   # synth properties setting
+#   set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+#   set ip_inst [get_ips -quiet ${bd_design_name}*${bd_inst_name}*]
+#   if { ![llength $ip_inst] } {
+#       error "Cannot find HLS IP instance: ${bd_design_name}*${bd_inst_name}*"
+#   }
+#   set synth_run [get_runs -filter {IS_SYNTHESIS == 1} ${ip_inst}*]
+#   if { ![llength $synth_run] } {
+#       error "Cannot find synth run for HLS IP: ${ip_inst}*"
+#   }
+# 
+#   if { [llength $synth_design_args] } {
+#       set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value $synth_design_args -objects $synth_run
+#   }
+# 
+#   if { [llength $synth_props] } {
+#     set_property -dict $synth_props $synth_run
+#   }
+# 
+#   # launch run synth
+#   launch_runs synth_1
+#   wait_on_run synth_1
+#   # synth reports
+#   hls_vivado_reports_synth synth_1 $report_options
+#   if { $synth_dcp ne "" } {
+#     file mkdir [file dirname $synth_dcp]
+#     set run_dcp [glob -nocomplain [get_property DIRECTORY $synth_run]/*.dcp]
+#     if { [llength $run_dcp] != 1 } { error "Cannot find single dcp file for run $synth_run" }
+#     file copy -force $run_dcp $synth_dcp
+#   }
+# }
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Mar  5 23:11:39 2026] Launched bd_0_hls_inst_0_synth_1...
+Run output will be captured here: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/runme.log
+[Thu Mar  5 23:11:39 2026] Launched synth_1...
+Run output will be captured here: /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/project_1/hls/impl/verilog/project.runs/synth_1/runme.log
+[Thu Mar  5 23:11:39 2026] Waiting for synth_1 to finish...

@@ -1,0 +1,42 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="K0" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:86:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="K3" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab3/script.tcl:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top_kernel" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:109:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in offset=slave bundle=in" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:110:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out offset=slave bundle=out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:111:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:37:0" msg_body="Inlining function 'abs_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)' into 'K1(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="abs_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)" Callee-DebugLoc="File top.cpp Line 11 Column 0" Caller="K1(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 37 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:37:0" msg_body="Inlining function 'clamp_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)' into 'K1(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="clamp_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)" Callee-DebugLoc="File top.cpp Line 15 Column 0" Caller="K1(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 37 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:59:0" msg_body="Inlining function 'abs_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)' into 'K2(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 10, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="abs_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)" Callee-DebugLoc="File top.cpp Line 11 Column 0" Caller="K2(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 10, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 59 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:96:0" msg_body="Inlining function 'clamp_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)' into 'K4(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="clamp_fp(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;)" Callee-DebugLoc="File top.cpp Line 15 Column 0" Caller="K4(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 96 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:107:0" msg_body="Inlining function 'K0(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)' into 'top_kernel(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="K0(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Callee-DebugLoc="File top.cpp Line 24 Column 0" Caller="top_kernel(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 107 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:107:0" msg_body="Inlining function 'K3(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 10, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)' into 'top_kernel(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="K3(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 10, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Callee-DebugLoc="File top.cpp Line 77 Column 0" Caller="top_kernel(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 107 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="top.cpp:107:0" msg_body="Inlining function 'K4(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)' into 'top_kernel(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)'">
+        <args Callee="K4(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Callee-DebugLoc="File top.cpp Line 96 Column 0" Caller="top_kernel(ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt; const*, ap_fixed&lt;32, 6, (ap_q_mode)0, (ap_o_mode)0, 0&gt;*)" Caller-DebugLoc="File top.cpp Line 107 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

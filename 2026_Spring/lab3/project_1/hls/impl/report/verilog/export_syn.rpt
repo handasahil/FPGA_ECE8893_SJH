@@ -1,0 +1,808 @@
+================================================================
+== Vivado RTL Synthesis Results
+================================================================
++ General Information:
+    * Date:            Tue Mar 10 15:28:18 EDT 2026
+    * Version:         2025.1 (Build 6214317 on Sep 11 2025)
+    * Project:         project_1
+    * Solution:        hls (Vivado IP Flow Target)
+    * Product family:  zynquplus
+    * Target device:   xczu3eg-sbva484-1-e
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * RTL Synthesis target clock:  10 ns
+    * C-Synthesis target clock:    10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== RTL Synthesis Resource Summary
+================================================================
+LUT:              6584
+FF:               6611
+DSP:              4
+BRAM:             338
+URAM:             0
+SRL:              329
+
+
+================================================================
+== RTL Synthesis Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 7.927       |
++----------------+-------------+
+
+
+================================================================
+== RTL Synthesis Resources
+================================================================
++----------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                                                 | LUT  | FF   | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++----------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                                                 | 6584 | 6611 | 4   | 338  |      |     |        |      |         |          |        |
+|   (inst)                                                             | 8    | 226  |     |      |      |     |        |      |         |          |        |
+|   control_s_axi_U                                                    | 164  | 181  |     |      |      |     |        |      |         |          |        |
+|   grp_K1_fu_201                                                      | 386  | 140  |     |      |      |     |        |      |         |          |        |
+|   grp_K2_fu_209                                                      | 185  | 113  |     |      |      |     |        |      |         |          |        |
+|   grp_top_kernel_Pipeline_VITIS_LOOP_28_1_fu_192                     | 227  | 86   |     |      |      |     |        |      |         |          |        |
+|     (grp_top_kernel_Pipeline_VITIS_LOOP_28_1_fu_192)                 | 202  | 84   |     |      |      |     |        |      |         |          |        |
+|   grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217     | 3977 | 4108 | 4   |      |      |     |        |      |         |          |        |
+|     (grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217) | 413  | 221  |     |      |      |     |        |      |         |          |        |
+|     mul_28ns_34s_61_1_1_U11                                          |      |      |     |      |      |     |        |      |         |          |        |
+|     sdiv_50ns_34s_50_54_1_U12                                        | 3516 | 3885 |     |      |      |     |        |      |         |          |        |
+|   in_r_m_axi_U                                                       | 539  | 741  |     | 1    |      |     |        |      |         |          |        |
+|   out_r_m_axi_U                                                      | 726  | 1008 |     |      |      |     |        |      |         |          |        |
+|   s0_U                                                               | 205  | 4    |     | 116  |      |     |        |      |         |          |        |
+|   s1_U                                                               |      |      |     |      |      |     |        |      |         |          |        |
+|   s3_U                                                               | 95   | 2    |     | 116  |      |     |        |      |         |          |        |
+|   stats_U                                                            |      |      |     |      |      |     |        |      |         |          |        |
++----------------------------------------------------------------------+------+------+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== RTL Synthesis Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 9.33%  | OK     |
+| FD                                                        | 50%       | 4.68%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 1.14%  | OK     |
+| CARRY8                                                    | 25%       | 5.39%  | OK     |
+| MUXF7                                                     | 15%       | 0.00%  | OK     |
+| DSP                                                       | 80%       | 1.11%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 78.24% | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 39.67% | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 0      | OK     |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 1323      | 112    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 2.10   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.350ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.239ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== RTL Synthesis Timing Paths
+================================================================
+* Timing was met
++-------+-------+--------------------------------+--------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path  | SLACK | STARTPOINT PIN                 | ENDPOINT PIN                                                                               | LOGIC LEVELS | MAX FANOUT | DATAPATH DELAY | DATAPATH LOGIC | DATAPATH NET |
+|       |       |                                |                                                                                            |              |            |                |          DELAY |        DELAY |
++-------+-------+--------------------------------+--------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+| Path1 | 2.073 | s1_U/ram_reg_bram_16/CLKARDCLK | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[1]/D     |           23 |          1 |          7.864 |          6.467 |        1.397 |
+| Path2 | 2.074 | s1_U/ram_reg_bram_16/CLKARDCLK | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_8_reg_831_reg[0]/D      |           24 |          1 |          7.863 |          6.460 |        1.403 |
+| Path3 | 2.074 | s1_U/ram_reg_bram_16/CLKARDCLK | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/trunc_ln3_reg_837_reg[31]/D |           23 |          1 |          7.863 |          6.466 |        1.397 |
+| Path4 | 2.077 | s1_U/ram_reg_bram_16/CLKARDCLK | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[5]/D     |           24 |          1 |          7.860 |          6.455 |        1.405 |
+| Path5 | 2.085 | s1_U/ram_reg_bram_16/CLKARDCLK | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[3]/D     |           24 |          1 |          7.852 |          6.448 |        1.404 |
++-------+-------+--------------------------------+--------------------------------------------------------------------------------------------+--------------+------------+----------------+----------------+--------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path1 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[1]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_8_reg_831_reg[0]                                     | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/trunc_ln3_reg_837_reg[31]                                | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[5]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[3]                                    | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path2 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[1]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_8_reg_831_reg[0]                                     | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/trunc_ln3_reg_837_reg[31]                                | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[5]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[3]                                    | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path3 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[1]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_8_reg_831_reg[0]                                     | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/trunc_ln3_reg_837_reg[31]                                | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[5]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[3]                                    | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path4 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[1]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_8_reg_831_reg[0]                                     | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/trunc_ln3_reg_837_reg[31]                                | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[5]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[3]                                    | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | Path5 Cells                                                                                                             | Primitive Type         |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[1]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_8_reg_831_reg[0]                                     | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/trunc_ln3_reg_837_reg[31]                                | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[5]                                    | REGISTER.SDR.FDRE      |
+    | s1_U/ram_reg_bram_16                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_17                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_18                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_19                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_20                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_21                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_22                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/ram_reg_bram_23                                                                                                    | BLOCKRAM.BRAM.RAMB36E2 |
+    | s1_U/tmp_product__1_i_20                                                                                                | CLB.LUT.LUT6           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_19                                      | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_2                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product__1_i_1                                       | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_product_i_2                                          | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_A_B_DATA_INST    | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_PREADD_DATA_INST | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_MULTIPLIER_INST  | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_M_DATA_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_ALU_INST         | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product/DSP_OUTPUT_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_ALU_INST      | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_product__0/DSP_OUTPUT_INST   | ARITHMETIC.DSP.DSP48E2 |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837[25]_i_9        | CLB.LUT.LUT2           |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/trunc_ln3_reg_837_reg[25]_i_1    | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_14_reg_852_reg[1]_i_1        | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/mul_28ns_34s_61_1_1_U11/tmp_8_reg_831_reg[0]_i_1         | CLB.CARRY.CARRY8       |
+    | grp_top_kernel_Pipeline_VITIS_LOOP_78_1_VITIS_LOOP_85_2_fu_217/tmp_14_reg_852_reg[3]                                    | REGISTER.SDR.FDRE      |
+    +-------------------------------------------------------------------------------------------------------------------------+------------------------+
+
+
+================================================================
+== RTL Synthesis Vivado Reports
+================================================================
++--------------------------+-------------------------------------------------------------------+
+| Report Type              | Report Location                                                   |
++--------------------------+-------------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/top_kernel_design_analysis_synth.rpt          |
+| failfast                 | impl/verilog/report/top_kernel_failfast_synth.rpt                 |
+| power                    | impl/verilog/report/top_kernel_power_synth.rpt                    |
+| timing                   | impl/verilog/report/top_kernel_timing_synth.rpt                   |
+| timing_paths             | impl/verilog/report/top_kernel_timing_paths_synth.rpt             |
+| utilization              | impl/verilog/report/top_kernel_utilization_synth.rpt              |
+| utilization_hierarchical | impl/verilog/report/top_kernel_utilization_hierarchical_synth.rpt |
++--------------------------+-------------------------------------------------------------------+
+
+
