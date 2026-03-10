@@ -1,4 +1,5 @@
 #include "dcl.h"
+#include <hls_stream.h>
 
 // Baseline: 5-stage DAG written as array passes (correct but slow).
 // Conceptual kernels (should refactor into dataflow with hls::stream):
@@ -21,34 +22,43 @@ static inline data_t clamp_fp(data_t x, data_t lo, data_t hi) {
 // -------------------------
 // K0: preprocess
 // -------------------------
-void K0(const data_t in[N], data_t s0[N]) {
+void K0(const data_t in[N], hls::stream<data_t>& out_k1, hls::stream<data_t>& out_k2) {
     const coef_t alpha = (coef_t)0.875;
     const coef_t beta  = (coef_t)0.125;
 
     for (int k = 0; k < N; k++) {
-    #pragma HLS pipeline II=1
-        s0[k] = (data_t)((acc_t)alpha * (acc_t)in[k] + (acc_t)beta);
+        #pragma HLS pipeline II=1
+        data_t val = in[k]; // Read from AXI memory
+        data_t res = (data_t)((acc_t)alpha * (acc_t)val + (acc_t)beta);
+        
+        // Split the stream!
+        out_k1.write(res);
+        out_k2.write(res);
     }
 }
 
 // -------------------------
 // K1: transform (3-tap + abs + clamp)
 // -------------------------
-void K1(const data_t s0[N], data_t s1[N]) {
+void K1(hls::stream<data_t>& in, hls::stream<data_t>& out) {
     const coef_t w0 = (coef_t)0.50;
     const coef_t w1 = (coef_t)(-0.25);
     const coef_t w2 = (coef_t)0.125;
 
+    data_t x1 = (data_t)0;
+    data_t x2 = (data_t)0;
+
     for (int k = 0; k < N; k++) {
-        // Still using array lookbacks here
-        data_t x0 = s0[k];
-        data_t x1 = (k >= 1) ? s0[k - 1] : (data_t)0;
-        data_t x2 = (k >= 2) ? s0[k - 2] : (data_t)0;
+        #pragma HLS pipeline II=1
+        data_t x0 = in.read(); // Consume one token
 
         acc_t acc = (acc_t)w0 * (acc_t)x0 + (acc_t)w1 * (acc_t)x1 + (acc_t)w2 * (acc_t)x2;
-        data_t y = (data_t)acc;
-        y = abs_fp(y);
-        s1[k] = clamp_fp(y, (data_t)0, (data_t)7.5);
+        data_t y = abs_fp((data_t)acc);
+        out.write(clamp_fp(y, (data_t)0, (data_t)7.5));
+
+        // Shift the window for the next cycle
+        x2 = x1;
+        x1 = x0;
     }
 }
 
@@ -56,17 +66,20 @@ void K1(const data_t s0[N], data_t s1[N]) {
 // K2: per-block statistic (delayed)
 // stats[b] = avg_abs(s0[block]) + eps
 // -------------------------
-void K2(const data_t s0[N], stat_t stats[N / BLOCK]) {
+void K2(hls::stream<data_t>& in, hls::stream<stat_t>& out_stats) {
     const stat_t eps = (stat_t)0.5;
 
     for (int b = 0; b < (N / BLOCK); b++) {
         acc_t sum_abs = 0;
-        int base = b * BLOCK;
+        
         for (int i = 0; i < BLOCK; i++) {
-            sum_abs += (acc_t)abs_fp(s0[base + i]);
+            #pragma HLS pipeline II=1
+            sum_abs += (acc_t)abs_fp(in.read());
         }
+        
+        // Compute and write the statistic once per block
         stat_t avg_abs = (stat_t)(sum_abs / (acc_t)BLOCK);
-        stats[b] = avg_abs + eps;
+        out_stats.write(avg_abs + eps);
     }
 }
 
@@ -74,17 +87,17 @@ void K2(const data_t s0[N], stat_t stats[N / BLOCK]) {
 // K3: join + normalize (1 division per block, multiply per element)
 // s3[k] = s1[k] * inv_stat(block(k))
 // -------------------------
-void K3(const data_t s1[N], const stat_t stats[N / BLOCK], data_t s3[N]) {
+void K3(hls::stream<data_t>& in_data, hls::stream<stat_t>& in_stats, hls::stream<data_t>& out) {
     for (int b = 0; b < (N / BLOCK); b++) {
-        stat_t st = stats[b];
-        
-        // One division per block:
+        // Read the block statistic once at the start of the block
+        stat_t st = in_stats.read();
         stat_t inv_st = (stat_t)((acc_t)1 / (acc_t)st);
 
-        int base = b * BLOCK;
         for (int i = 0; i < BLOCK; i++) {
         #pragma HLS pipeline II=1
-            s3[base + i] = (data_t)((acc_t)s1[base + i] * (acc_t)inv_st);
+            // Stream the data points and normalize
+            data_t val = in_data.read();
+            out.write((data_t)((acc_t)val * (acc_t)inv_st));
         }
     }
 }
@@ -93,14 +106,14 @@ void K3(const data_t s1[N], const stat_t stats[N / BLOCK], data_t s3[N]) {
 // K4: postprocess + store
 // out[k] = clamp(s3[k] * gamma + delta, 0, 7.9)
 // -------------------------
-void K4(const data_t s3[N], data_t out[N]) {
+void K4(hls::stream<data_t>& in, data_t out[N]) {
     const coef_t gamma = (coef_t)1.25;
     const coef_t delta = (coef_t)0.05;
 
     for (int k = 0; k < N; k++) {
-        data_t z = (data_t)((acc_t)gamma * (acc_t)s3[k] + (acc_t)delta);
-        z = clamp_fp(z, (data_t)0, (data_t)7.9);
-        out[k] = z;
+        #pragma HLS pipeline II=1
+        data_t z = (data_t)((acc_t)gamma * (acc_t)in.read() + (acc_t)delta);
+        out[k] = clamp_fp(z, (data_t)0, (data_t)7.9); // Write to AXI memory
     }
 }
 
@@ -110,15 +123,28 @@ void top_kernel(const data_t in[N], data_t out[N]) {
 #pragma HLS interface m_axi port=out offset=slave bundle=out
 #pragma HLS interface s_axilite port=return
 
+#pragma HLS dataflow
 
-    static data_t s0[N];               // after preprocess
-    static data_t s1[N];               // after transform
-    static stat_t stats[N / BLOCK];    // 1 stat per block
-    static data_t s3[N];               // after normalize
+    hls::stream<data_t> s0_to_k1("s0_to_k1");
+    hls::stream<data_t> s0_to_k2("s0_to_k2");
+    hls::stream<data_t> s1_to_k3("s1_to_k3");
+    hls::stream<stat_t> k2_to_k3("k2_to_k3");
+    hls::stream<data_t> s3_to_k4("s3_to_k4");
 
-    K0(in, s0);
-    K1(s0, s1);
-    K2(s0, stats);
-    K3(s1, stats, s3);
-    K4(s3, out);
+    // K2 takes BLOCK cycles to produce a statistic. 
+    // K1 produces data every cycle. We must buffer K1's output 
+    // to prevent deadlock
+#pragma HLS stream variable=s1_to_k3 depth=512
+
+
+    // static data_t s0[N];               // after preprocess
+    // static data_t s1[N];               // after transform
+    // static stat_t stats[N / BLOCK];    // 1 stat per block
+    // static data_t s3[N];               // after normalize
+
+    K0(in, s0_to_k1, s0_to_k2);
+    K1(s0_to_k1, s1_to_k3);
+    K2(s0_to_k2, k2_to_k3);
+    K3(s1_to_k3, k2_to_k3, s3_to_k4);
+    K4(s3_to_k4, out);
 }
