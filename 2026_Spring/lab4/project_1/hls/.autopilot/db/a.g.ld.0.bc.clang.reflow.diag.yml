@@ -1,0 +1,745 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 517, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 518, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 111, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 519, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k3_bounding_box(Triangle const*, BoundingBox*)'
+    DebugLoc:        { File: top.cpp, Line: 202, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 520, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 297, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 521, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 431, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 517, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 518, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 111, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 519, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k3_bounding_box(Triangle const*, BoundingBox*)'
+    DebugLoc:        { File: top.cpp, Line: 202, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 520, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 297, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 521, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 431, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_top_kernel_ir
+Args:            
+  - Callee:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_top_kernel_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+Function:        apatb_top_kernel_ir
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        maxi
+  - String:          ' variable '''
+  - Name:            out_pixels
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=none'
+  - String:          ' mode in '
+  - Bitwidth:        '32'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        maxi
+  - String:          ' variable '''
+  - Name:            mvp_matrix
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=none'
+  - String:          ' mode in '
+  - Bitwidth:        '32'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '12'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep1seq
+  - ArrayName:       in_tris
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_10_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:10:22'
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.15
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 19, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.58
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 20, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.107
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 21, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.156
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 47, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.743
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 48, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.783
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 49, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.829
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 50, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.875
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 76, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.1423
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 77, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.1463
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 78, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.1509
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 79, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.1555
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        mvp2seq
+  - ArrayName:       mvp
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_10_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:10:22'
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.35
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 19, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.78
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 20, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.127
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 21, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.176
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 25, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.223
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 26, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.263
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 27, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.309
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 28, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.355
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 32, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.402
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 33, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.442
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 34, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.488
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 35, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.534
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 39, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.581
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 40, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.621
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 41, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.667
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 42, Column: 37 }
+  - OrigDirection:   read
+  - OrigID:          if.then.load.713
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            UnsupportedAccessType
+DebugLoc:        { File: top.cpp, Line: 12, Column: 22 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Unsupported access data type. Expected integer or floating point type but received '
+  - DataType:        '%struct.Triangle = type { %struct.Vec4, %struct.Vec4, %struct.Vec4, %struct.Vec3, %struct.Vec3, %struct.Vec3, %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>", i1 }'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 12, Column: 22 }
+  - OrigDirection:   read
+  - OrigID:          for.body.load.28
+  - ArrayName:       in_tris
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: top.cpp, Line: 14, Column: 24 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: top.cpp, Line: 14, Column: 24 }
+  - OrigDirection:   read
+  - OrigID:          for.body.load.76
+  - ArrayName:       in_tris
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_10_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:10:22'
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          scevgep1seq
+  - ArrayName:       in_tris
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_10_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:10:22'
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          mvp2seq
+  - ArrayName:       mvp
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_10_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:10:22'
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: top.cpp, Line: 440, Column: 23 }
+Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '4096'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        framebuffer1seq
+  - ArrayName:       framebuffer
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_440_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:440:23'
+  - String:          ' '
+  - Function:        'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 431, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+  - OrigDirection:   write
+  - OrigID:          for.inc.store.3
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          scevgep1seq
+  - ArrayName:       in_tris
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          mvp2seq
+  - ArrayName:       mvp
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: top.cpp, Line: 440, Column: 23 }
+Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 440, Column: 23 }
+  - OrigDirection:   write
+  - OrigID:          framebuffer1seq
+  - ArrayName:       framebuffer
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_441_2
+  - String:          ' '
+  - LoopLoc:         'top.cpp:441:27'
+  - String:          ' '
+  - Function:        'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 431, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-loop-flatten-cost-model
+Name:            FlattenOffInference
+DebugLoc:        { File: top.cpp, Line: 309, Column: 23 }
+Function:        _ZL12k4_rasterizePK8TrianglePK11BoundingBoxPA64_8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_4Vec3
+Args:            
+  - String:          'Automatically disabling loop flattening for loop '''
+  - LoopName:        VITIS_LOOP_309_3
+  - String:          '''.'
+...
+--- !Passed
+Pass:            reflow-loop-flatten-cost-model
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: top.cpp, Line: 309, Column: 23 }
+Function:        _ZL12k4_rasterizePK8TrianglePK11BoundingBoxPA64_8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_4Vec3
+Args:            
+  - PragmaType:      loop_flatten
+  - String:          ' '
+  - PragmaOptions:   off
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  k4_rasterize
+  - String:          ' '
+  - PragmaSrcLoc:    'top.cpp:309:23'
+    DebugLoc:        { File: top.cpp, Line: 309, Column: 23 }
+  - LoopName:        VITIS_LOOP_309_3
+  - String:          ' '
+  - LoopLoc:         'top.cpp:309:23'
+    DebugLoc:        { File: top.cpp, Line: 309, Column: 23 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            MismatchPortAndBurstAccessWidth
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_
+Args:            
+  - String:          Inferred burst reverted due to burst accesses data width is different from m_axi port width
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+  - OrigDirection:   read
+  - OrigID:          scevgep1seq
+  - ArrayName:       in_tris
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem2
+  - String:          ' '
+  - Function:        'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: top.cpp, Line: 18, Column: 36 }
+Function:        _ZL19k1_vertex_transformPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPS_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '16'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem2
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: top.cpp, Line: 440, Column: 23 }
+Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '4096'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_440_1
+  - String:          ' '
+  - LoopLoc:         'top.cpp:440:23'
+  - String:          ' '
+  - Function:        'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 431, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: top.cpp, Line: 440, Column: 23 }
+Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '4096'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_440_1
+  - String:          '''('
+  - LoopLoc:         'top.cpp:440:23'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 517, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 518, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 111, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 519, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k3_bounding_box(Triangle const*, BoundingBox*)'
+    DebugLoc:        { File: top.cpp, Line: 202, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 520, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 297, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 521, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 431, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 501, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

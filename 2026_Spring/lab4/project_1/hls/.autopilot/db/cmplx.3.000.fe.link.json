@@ -1,0 +1,104 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "2 3 4 5 1",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "top.cpp",
+    "fileloc": 499,
+    "instructions": 10,
+    "memory_accesses": 0,
+    "name": "top_kernel",
+    "total_instructions": 93587
+  },
+  "1": {
+    "basicblocks": 22,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 2,
+    "file": "top.cpp",
+    "fileloc": 429,
+    "instructions": 322,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 56,
+    "name": "k5_deferred_lighting",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 10940
+  },
+  "2": {
+    "basicblocks": 9,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 2,
+    "file": "top.cpp",
+    "fileloc": 7,
+    "instructions": 1042,
+    "loads": {
+      "L": 26
+    },
+    "memory_accesses": 147,
+    "name": "k1_vertex_transform",
+    "stores": {
+      "L": 25
+    },
+    "total_instructions": 31018
+  },
+  "3": {
+    "basicblocks": 24,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 2,
+    "file": "top.cpp",
+    "fileloc": 110,
+    "instructions": 703,
+    "loads": {
+      "L": 32
+    },
+    "memory_accesses": 129,
+    "name": "k2_perspective_divide",
+    "stores": {
+      "L": 31
+    },
+    "total_instructions": 21825
+  },
+  "4": {
+    "basicblocks": 38,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 3,
+    "file": "top.cpp",
+    "fileloc": 201,
+    "instructions": 273,
+    "loads": {
+      "L": 13
+    },
+    "memory_accesses": 53,
+    "name": "k3_bounding_box",
+    "stores": {
+      "L": 20
+    },
+    "total_instructions": 2209
+  },
+  "5": {
+    "basicblocks": 49,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 3,
+    "file": "top.cpp",
+    "fileloc": 296,
+    "instructions": 1159,
+    "loads": {
+      "L": 23
+    },
+    "memory_accesses": 132,
+    "name": "k4_rasterize",
+    "stores": {
+      "L": 18
+    },
+    "total_instructions": 27585
+  }
+}

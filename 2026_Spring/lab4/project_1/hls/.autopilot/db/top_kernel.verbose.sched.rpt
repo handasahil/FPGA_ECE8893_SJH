@@ -1,0 +1,200 @@
+
+
+================================================================
+== Vitis HLS Report for 'top_kernel'
+================================================================
+* Date:           Mon Mar 30 22:37:13 2026
+
+* Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
+* Project:        project_1
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 11 [1/1] (1.00ns)   --->   "%out_pixels_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %out_pixels" [top.cpp:499]   --->   Operation 11 'read' 'out_pixels_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 12 [1/1] (1.00ns)   --->   "%mvp_matrix_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %mvp_matrix" [top.cpp:499]   --->   Operation 12 'read' 'mvp_matrix_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 13 [1/1] (1.00ns)   --->   "%in_tris_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %in_tris" [top.cpp:499]   --->   Operation 13 'read' 'in_tris_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 14 [2/2] (0.00ns)   --->   "%call_ln517 = call void @k1_vertex_transform, i1024 %gmem0, i64 %in_tris_read, i32 %gmem2, i64 %mvp_matrix_read, i32 %clip_tris_v0_x, i32 %clip_tris_v0_y, i32 %clip_tris_v0_z, i32 %clip_tris_v0_w, i32 %clip_tris_v1_x, i32 %clip_tris_v1_y, i32 %clip_tris_v1_z, i32 %clip_tris_v1_w, i32 %clip_tris_v2_x, i32 %clip_tris_v2_y, i32 %clip_tris_v2_z, i32 %clip_tris_v2_w, i32 %clip_tris_n0_x, i32 %clip_tris_n0_y, i32 %clip_tris_n0_z, i32 %clip_tris_n1_x, i32 %clip_tris_n1_y, i32 %clip_tris_n1_z, i32 %clip_tris_n2_x, i32 %clip_tris_n2_y, i32 %clip_tris_n2_z, i1 %clip_tris_is_active" [top.cpp:517]   --->   Operation 14 'call' 'call_ln517' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 2 <SV = 1> <Delay = 0.90>
+ST_2 : Operation 15 [1/2] (0.90ns)   --->   "%call_ln517 = call void @k1_vertex_transform, i1024 %gmem0, i64 %in_tris_read, i32 %gmem2, i64 %mvp_matrix_read, i32 %clip_tris_v0_x, i32 %clip_tris_v0_y, i32 %clip_tris_v0_z, i32 %clip_tris_v0_w, i32 %clip_tris_v1_x, i32 %clip_tris_v1_y, i32 %clip_tris_v1_z, i32 %clip_tris_v1_w, i32 %clip_tris_v2_x, i32 %clip_tris_v2_y, i32 %clip_tris_v2_z, i32 %clip_tris_v2_w, i32 %clip_tris_n0_x, i32 %clip_tris_n0_y, i32 %clip_tris_n0_z, i32 %clip_tris_n1_x, i32 %clip_tris_n1_y, i32 %clip_tris_n1_z, i32 %clip_tris_n2_x, i32 %clip_tris_n2_y, i32 %clip_tris_n2_z, i1 %clip_tris_is_active" [top.cpp:517]   --->   Operation 15 'call' 'call_ln517' <Predicate = true> <Delay = 0.90> <CoreType = "Generic">   --->   Generic Core
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 16 [2/2] (0.00ns)   --->   "%call_ln518 = call void @k2_perspective_divide, i32 %clip_tris_v0_x, i32 %clip_tris_v0_y, i32 %clip_tris_v0_z, i32 %clip_tris_v0_w, i32 %clip_tris_v1_x, i32 %clip_tris_v1_y, i32 %clip_tris_v1_z, i32 %clip_tris_v1_w, i32 %clip_tris_v2_x, i32 %clip_tris_v2_y, i32 %clip_tris_v2_z, i32 %clip_tris_v2_w, i32 %clip_tris_n0_x, i32 %clip_tris_n0_y, i32 %clip_tris_n0_z, i32 %clip_tris_n1_x, i32 %clip_tris_n1_y, i32 %clip_tris_n1_z, i32 %clip_tris_n2_x, i32 %clip_tris_n2_y, i32 %clip_tris_n2_z, i1 %clip_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v0_z, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v1_z, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y, i32 %screen_tris_v2_z, i32 %screen_tris_n0_x, i32 %screen_tris_n0_y, i32 %screen_tris_n0_z, i32 %screen_tris_n1_x, i32 %screen_tris_n1_y, i32 %screen_tris_n1_z, i32 %screen_tris_n2_x, i32 %screen_tris_n2_y, i32 %screen_tris_n2_z, i1 %screen_tris_is_active" [top.cpp:518]   --->   Operation 16 'call' 'call_ln518' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 4 <SV = 3> <Delay = 0.90>
+ST_4 : Operation 17 [1/2] (0.90ns)   --->   "%call_ln518 = call void @k2_perspective_divide, i32 %clip_tris_v0_x, i32 %clip_tris_v0_y, i32 %clip_tris_v0_z, i32 %clip_tris_v0_w, i32 %clip_tris_v1_x, i32 %clip_tris_v1_y, i32 %clip_tris_v1_z, i32 %clip_tris_v1_w, i32 %clip_tris_v2_x, i32 %clip_tris_v2_y, i32 %clip_tris_v2_z, i32 %clip_tris_v2_w, i32 %clip_tris_n0_x, i32 %clip_tris_n0_y, i32 %clip_tris_n0_z, i32 %clip_tris_n1_x, i32 %clip_tris_n1_y, i32 %clip_tris_n1_z, i32 %clip_tris_n2_x, i32 %clip_tris_n2_y, i32 %clip_tris_n2_z, i1 %clip_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v0_z, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v1_z, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y, i32 %screen_tris_v2_z, i32 %screen_tris_n0_x, i32 %screen_tris_n0_y, i32 %screen_tris_n0_z, i32 %screen_tris_n1_x, i32 %screen_tris_n1_y, i32 %screen_tris_n1_z, i32 %screen_tris_n2_x, i32 %screen_tris_n2_y, i32 %screen_tris_n2_z, i1 %screen_tris_is_active" [top.cpp:518]   --->   Operation 17 'call' 'call_ln518' <Predicate = true> <Delay = 0.90> <CoreType = "Generic">   --->   Generic Core
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln519 = call void @k3_bounding_box, i1 %screen_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v1_x, i32 %screen_tris_v2_x, i32 %screen_tris_v0_y, i32 %screen_tris_v1_y, i32 %screen_tris_v2_y, i15 %bounds_min_x, i16 %bounds_max_x, i15 %bounds_min_y, i16 %bounds_max_y" [top.cpp:519]   --->   Operation 18 'call' 'call_ln519' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 6 <SV = 5> <Delay = 0.90>
+ST_6 : Operation 19 [1/2] (0.90ns)   --->   "%call_ln519 = call void @k3_bounding_box, i1 %screen_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v1_x, i32 %screen_tris_v2_x, i32 %screen_tris_v0_y, i32 %screen_tris_v1_y, i32 %screen_tris_v2_y, i15 %bounds_min_x, i16 %bounds_max_x, i15 %bounds_min_y, i16 %bounds_max_y" [top.cpp:519]   --->   Operation 19 'call' 'call_ln519' <Predicate = true> <Delay = 0.90> <CoreType = "Generic">   --->   Generic Core
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 20 [2/2] (0.00ns)   --->   "%call_ln520 = call void @k4_rasterize, i32 %depth_buffer, i32 %normal_buffer_x, i32 %normal_buffer_y, i32 %normal_buffer_z, i1 %screen_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y, i15 %bounds_min_y, i16 %bounds_max_y, i15 %bounds_min_x, i16 %bounds_max_x, i32 %screen_tris_v0_z, i32 %screen_tris_v1_z, i32 %screen_tris_v2_z, i32 %screen_tris_n0_x, i32 %screen_tris_n1_x, i32 %screen_tris_n2_x, i32 %screen_tris_n0_y, i32 %screen_tris_n1_y, i32 %screen_tris_n2_y, i32 %screen_tris_n0_z, i32 %screen_tris_n1_z, i32 %screen_tris_n2_z" [top.cpp:520]   --->   Operation 20 'call' 'call_ln520' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 8 <SV = 7> <Delay = 0.90>
+ST_8 : Operation 21 [1/2] (0.90ns)   --->   "%call_ln520 = call void @k4_rasterize, i32 %depth_buffer, i32 %normal_buffer_x, i32 %normal_buffer_y, i32 %normal_buffer_z, i1 %screen_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y, i15 %bounds_min_y, i16 %bounds_max_y, i15 %bounds_min_x, i16 %bounds_max_x, i32 %screen_tris_v0_z, i32 %screen_tris_v1_z, i32 %screen_tris_v2_z, i32 %screen_tris_n0_x, i32 %screen_tris_n1_x, i32 %screen_tris_n2_x, i32 %screen_tris_n0_y, i32 %screen_tris_n1_y, i32 %screen_tris_n2_y, i32 %screen_tris_n0_z, i32 %screen_tris_n1_z, i32 %screen_tris_n2_z" [top.cpp:520]   --->   Operation 21 'call' 'call_ln520' <Predicate = true> <Delay = 0.90> <CoreType = "Generic">   --->   Generic Core
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 22 [2/2] (7.30ns)   --->   "%call_ln521 = call void @k5_deferred_lighting, i32 %gmem1, i64 %out_pixels_read, i32 %depth_buffer, i32 %normal_buffer_x, i32 %normal_buffer_y, i32 %normal_buffer_z" [top.cpp:521]   --->   Operation 22 'call' 'call_ln521' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Generic Core
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 23 [1/1] (0.00ns)   --->   "%spectopmodule_ln499 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_11" [top.cpp:499]   --->   Operation 23 'spectopmodule' 'spectopmodule_ln499' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1024 %gmem0, void @empty_17, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_19, void @empty_5, void @empty_18, i32 16, i32 16, i32 16, i32 16, void @empty_18, void @empty_18, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1024 %gmem0"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem2, void @empty_17, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_3, void @empty_5, void @empty_18, i32 16, i32 16, i32 16, i32 16, void @empty_18, void @empty_18, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 27 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem2"   --->   Operation 27 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_17, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_4, void @empty_5, void @empty_18, i32 16, i32 16, i32 16, i32 16, void @empty_18, void @empty_18, i32 4294967295, i32 0, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 29 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem1"   --->   Operation 29 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_tris, void @empty_16, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_6, void @empty_0, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %in_tris, void @empty_1, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_18, void @empty_18, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %mvp_matrix, void @empty_16, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_6, void @empty_7, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %mvp_matrix, void @empty_1, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_18, void @empty_18, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %out_pixels, void @empty_16, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_6, void @empty_8, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %out_pixels, void @empty_1, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_18, void @empty_18, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_16, i32 0, i32 0, void @empty_18, i32 0, i32 0, void @empty_6, void @empty_18, void @empty_18, i32 0, i32 0, i32 0, i32 0, void @empty_18, void @empty_18, i32 4294967295, i32 0, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 37 [1/2] (0.00ns)   --->   "%call_ln521 = call void @k5_deferred_lighting, i32 %gmem1, i64 %out_pixels_read, i32 %depth_buffer, i32 %normal_buffer_x, i32 %normal_buffer_y, i32 %normal_buffer_z" [top.cpp:521]   --->   Operation 37 'call' 'call_ln521' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_10 : Operation 38 [1/1] (0.00ns)   --->   "%ret_ln522 = ret" [top.cpp:522]   --->   Operation 38 'ret' 'ret_ln522' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.000ns
+The critical path consists of the following:
+	s_axi read operation ('out_pixels_read', top.cpp:499) on port 'out_pixels' (top.cpp:499) [70]  (1.000 ns)
+
+ <State 2>: 0.907ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln517', top.cpp:517) to 'k1_vertex_transform' [73]  (0.907 ns)
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+ <State 4>: 0.907ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln518', top.cpp:518) to 'k2_perspective_divide' [74]  (0.907 ns)
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 0.907ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln519', top.cpp:519) to 'k3_bounding_box' [75]  (0.907 ns)
+
+ <State 7>: 0.000ns
+The critical path consists of the following:
+
+ <State 8>: 0.907ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln520', top.cpp:520) to 'k4_rasterize' [76]  (0.907 ns)
+
+ <State 9>: 7.300ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln521', top.cpp:521) to 'k5_deferred_lighting' [77]  (7.300 ns)
+
+ <State 10>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

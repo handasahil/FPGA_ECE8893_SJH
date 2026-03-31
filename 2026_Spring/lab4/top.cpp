@@ -8,97 +8,24 @@ static void k1_vertex_transform(const Triangle in_tris[MAX_TRIS],
                                 const data_t mvp[4][4], 
                                 Triangle clip_tris[MAX_TRIS]) {
     for (int i = 0; i < MAX_TRIS; i++) {
+    #pragma HLS pipeline II=1
         // Copy the entire struct first (cleanly passes through normals/colors)
         clip_tris[i] = in_tris[i];
         
-        if (in_tris[i].is_active) {
-            
-            // --- Vertex 0 ---
-            data_t v0_x;
-            v0_x = in_tris[i].v0.x * mvp[0][0];
-            v0_x += in_tris[i].v0.y * mvp[0][1];
-            v0_x += in_tris[i].v0.z * mvp[0][2];
-            v0_x += in_tris[i].v0.w * mvp[0][3];
-            clip_tris[i].v0.x = v0_x;
+        if (in_tris[i].is_active)  {
+            Vec4 verts[3] = {in_tris[i].v0, in_tris[i].v1, in_tris[i].v2};
+            Vec4 out_verts[3];
 
-            data_t v0_y;
-            v0_y = in_tris[i].v0.x * mvp[1][0];
-            v0_y += in_tris[i].v0.y * mvp[1][1];
-            v0_y += in_tris[i].v0.z * mvp[1][2];
-            v0_y += in_tris[i].v0.w * mvp[1][3];
-            clip_tris[i].v0.y = v0_y;
+            for (int v = 0; v < 3; v++) {
+                out_verts[v].x = verts[v].x * mvp[0][0] + verts[v].y * mvp[0][1] + verts[v].z * mvp[0][2] + verts[v].w * mvp[0][3];
+                out_verts[v].y = verts[v].x * mvp[1][0] + verts[v].y * mvp[1][1] + verts[v].z * mvp[1][2] + verts[v].w * mvp[1][3];
+                out_verts[v].z = verts[v].x * mvp[2][0] + verts[v].y * mvp[2][1] + verts[v].z * mvp[2][2] + verts[v].w * mvp[2][3];
+                out_verts[v].w = verts[v].x * mvp[3][0] + verts[v].y * mvp[3][1] + verts[v].z * mvp[3][2] + verts[v].w * mvp[3][3];
+            }
 
-            data_t v0_z;
-            v0_z = in_tris[i].v0.x * mvp[2][0];
-            v0_z += in_tris[i].v0.y * mvp[2][1];
-            v0_z += in_tris[i].v0.z * mvp[2][2];
-            v0_z += in_tris[i].v0.w * mvp[2][3];
-            clip_tris[i].v0.z = v0_z;
-
-            data_t v0_w;
-            v0_w = in_tris[i].v0.x * mvp[3][0];
-            v0_w += in_tris[i].v0.y * mvp[3][1];
-            v0_w += in_tris[i].v0.z * mvp[3][2];
-            v0_w += in_tris[i].v0.w * mvp[3][3];
-            clip_tris[i].v0.w = v0_w;
-
-            // --- Vertex 1 ---
-            data_t v1_x;
-            v1_x = in_tris[i].v1.x * mvp[0][0];
-            v1_x += in_tris[i].v1.y * mvp[0][1];
-            v1_x += in_tris[i].v1.z * mvp[0][2];
-            v1_x += in_tris[i].v1.w * mvp[0][3];
-            clip_tris[i].v1.x = v1_x;
-
-            data_t v1_y;
-            v1_y = in_tris[i].v1.x * mvp[1][0];
-            v1_y += in_tris[i].v1.y * mvp[1][1];
-            v1_y += in_tris[i].v1.z * mvp[1][2];
-            v1_y += in_tris[i].v1.w * mvp[1][3];
-            clip_tris[i].v1.y = v1_y;
-
-            data_t v1_z;
-            v1_z = in_tris[i].v1.x * mvp[2][0];
-            v1_z += in_tris[i].v1.y * mvp[2][1];
-            v1_z += in_tris[i].v1.z * mvp[2][2];
-            v1_z += in_tris[i].v1.w * mvp[2][3];
-            clip_tris[i].v1.z = v1_z;
-
-            data_t v1_w;
-            v1_w = in_tris[i].v1.x * mvp[3][0];
-            v1_w += in_tris[i].v1.y * mvp[3][1];
-            v1_w += in_tris[i].v1.z * mvp[3][2];
-            v1_w += in_tris[i].v1.w * mvp[3][3];
-            clip_tris[i].v1.w = v1_w;
-
-            // --- Vertex 2 ---
-            data_t v2_x;
-            v2_x = in_tris[i].v2.x * mvp[0][0];
-            v2_x += in_tris[i].v2.y * mvp[0][1];
-            v2_x += in_tris[i].v2.z * mvp[0][2];
-            v2_x += in_tris[i].v2.w * mvp[0][3];
-            clip_tris[i].v2.x = v2_x;
-
-            data_t v2_y;
-            v2_y = in_tris[i].v2.x * mvp[1][0];
-            v2_y += in_tris[i].v2.y * mvp[1][1];
-            v2_y += in_tris[i].v2.z * mvp[1][2];
-            v2_y += in_tris[i].v2.w * mvp[1][3];
-            clip_tris[i].v2.y = v2_y;
-
-            data_t v2_z;
-            v2_z = in_tris[i].v2.x * mvp[2][0];
-            v2_z += in_tris[i].v2.y * mvp[2][1];
-            v2_z += in_tris[i].v2.z * mvp[2][2];
-            v2_z += in_tris[i].v2.w * mvp[2][3];
-            clip_tris[i].v2.z = v2_z;
-
-            data_t v2_w;
-            v2_w = in_tris[i].v2.x * mvp[3][0];
-            v2_w += in_tris[i].v2.y * mvp[3][1];
-            v2_w += in_tris[i].v2.z * mvp[3][2];
-            v2_w += in_tris[i].v2.w * mvp[3][3];
-            clip_tris[i].v2.w = v2_w;
+            clip_tris[i].v0 = out_verts[0];
+            clip_tris[i].v1 = out_verts[1];
+            clip_tris[i].v2 = out_verts[2];
         }
     }
 }
@@ -201,90 +128,33 @@ static void k2_perspective_divide(const Triangle clip_tris[MAX_TRIS],
 static void k3_bounding_box(const Triangle screen_tris[MAX_TRIS], 
                             BoundingBox bounds[MAX_TRIS]) {
     for (int i = 0; i < MAX_TRIS; i++) {
+    #pragma HLS pipeline II=1
         if (screen_tris[i].is_active) {
-            
-            // --- Find Minimum X ---
-            data_t min_x;
-            min_x = screen_tris[i].v0.x;
-            if (screen_tris[i].v1.x < min_x) {
-                min_x = screen_tris[i].v1.x;
-            }
-            if (screen_tris[i].v2.x < min_x) {
-                min_x = screen_tris[i].v2.x;
-            }
+            data_t min_x = screen_tris[i].v0.x;
+            data_t max_x = screen_tris[i].v0.x;
+            data_t min_y = screen_tris[i].v0.y;
+            data_t max_y = screen_tris[i].v0.y;
 
-            // --- Find Maximum X ---
-            data_t max_x;
-            max_x = screen_tris[i].v0.x;
-            if (screen_tris[i].v1.x > max_x) {
-                max_x = screen_tris[i].v1.x;
-            }
-            if (screen_tris[i].v2.x > max_x) {
-                max_x = screen_tris[i].v2.x;
-            }
+            // Find min/max X
+            if (screen_tris[i].v1.x < min_x) min_x = screen_tris[i].v1.x;
+            if (screen_tris[i].v2.x < min_x) min_x = screen_tris[i].v2.x;
+            if (screen_tris[i].v1.x > max_x) max_x = screen_tris[i].v1.x;
+            if (screen_tris[i].v2.x > max_x) max_x = screen_tris[i].v2.x;
 
-            // --- Find Minimum Y ---
-            data_t min_y;
-            min_y = screen_tris[i].v0.y;
-            if (screen_tris[i].v1.y < min_y) {
-                min_y = screen_tris[i].v1.y;
-            }
-            if (screen_tris[i].v2.y < min_y) {
-                min_y = screen_tris[i].v2.y;
-            }
+            // Find min/max Y
+            if (screen_tris[i].v1.y < min_y) min_y = screen_tris[i].v1.y;
+            if (screen_tris[i].v2.y < min_y) min_y = screen_tris[i].v2.y;
+            if (screen_tris[i].v1.y > max_y) max_y = screen_tris[i].v1.y;
+            if (screen_tris[i].v2.y > max_y) max_y = screen_tris[i].v2.y;
 
-            // --- Find Maximum Y ---
-            data_t max_y;
-            max_y = screen_tris[i].v0.y;
-            if (screen_tris[i].v1.y > max_y) {
-                max_y = screen_tris[i].v1.y;
-            }
-            if (screen_tris[i].v2.y > max_y) {
-                max_y = screen_tris[i].v2.y;
-            }
-
-            // --- Explicit Clamping for Min X ---
-            int final_min_x;
-            if (min_x < (data_t)0) {
-                final_min_x = 0;
-            } else {
-                final_min_x = (int)min_x;
-            }
-            bounds[i].min_x = final_min_x;
-
-            // --- Explicit Clamping for Max X ---
-            int final_max_x;
-            if (max_x > (data_t)(WIDTH - 1)) {
-                final_max_x = WIDTH - 1;
-            } else {
-                final_max_x = (int)max_x;
-            }
-            bounds[i].max_x = final_max_x;
-
-            // --- Explicit Clamping for Min Y ---
-            int final_min_y;
-            if (min_y < (data_t)0) {
-                final_min_y = 0;
-            } else {
-                final_min_y = (int)min_y;
-            }
-            bounds[i].min_y = final_min_y;
-
-            // --- Explicit Clamping for Max Y ---
-            int final_max_y;
-            if (max_y > (data_t)(HEIGHT - 1)) {
-                final_max_y = HEIGHT - 1;
-            } else {
-                final_max_y = (int)max_y;
-            }
-            bounds[i].max_y = final_max_y;
-
+            // Clamp to screen edges
+            bounds[i].min_x = (min_x < (data_t)0) ? 0 : (int)min_x;
+            bounds[i].max_x = (max_x > (data_t)(WIDTH - 1)) ? (WIDTH - 1) : (int)max_x;
+            bounds[i].min_y = (min_y < (data_t)0) ? 0 : (int)min_y;
+            bounds[i].max_y = (max_y > (data_t)(HEIGHT - 1)) ? (HEIGHT - 1) : (int)max_y;
         } else {
-            // Explicit assignment for inactive triangles
-            bounds[i].min_x = 0; 
-            bounds[i].max_x = 0;
-            bounds[i].min_y = 0; 
-            bounds[i].max_y = 0;
+            bounds[i].min_x = 0; bounds[i].max_x = 0;
+            bounds[i].min_y = 0; bounds[i].max_y = 0;
         }
     }
 }
@@ -499,9 +369,10 @@ static void k5_deferred_lighting(const data_t depth_buffer[HEIGHT][WIDTH],
 void top_kernel(const Triangle in_tris[MAX_TRIS], 
                 const data_t mvp_matrix[4][4], 
                 data_t out_pixels[HEIGHT][WIDTH]) {
-// #pragma HLS interface m_axi port=in_tris offset=slave bundle=gmem0
-// #pragma HLS interface m_axi port=out_pixels offset=slave bundle=gmem1
-// #pragma HLS interface s_axilite port=return
+#pragma HLS interface m_axi port=in_tris offset=slave bundle=gmem0
+#pragma HLS interface m_axi port=out_pixels offset=slave bundle=gmem1
+#pragma HLS interface s_axilite port=return
+#pragma HLS DATAFLOW
 
     // Static intermediate buffers (These are what you will change to hls::stream!)
     static Triangle clip_tris[MAX_TRIS];

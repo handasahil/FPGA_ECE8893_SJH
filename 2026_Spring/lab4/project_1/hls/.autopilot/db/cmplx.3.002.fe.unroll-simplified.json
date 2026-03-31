@@ -1,0 +1,106 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "3 1 4 2 5",
+    "control_depth": 0,
+    "def_use_depth": 0,
+    "file": "top.cpp",
+    "fileloc": 499,
+    "instructions": 10,
+    "memory_accesses": 0,
+    "name": "top_kernel",
+    "total_instructions": 5147
+  },
+  "1": {
+    "basicblocks": 62,
+    "calls": "",
+    "control_depth": 5,
+    "def_use_depth": 36,
+    "file": "top.cpp",
+    "fileloc": 110,
+    "instructions": 953,
+    "loads": {
+      "G": 23,
+      "L": 3
+    },
+    "memory_accesses": 70,
+    "name": "k2_perspective_divide",
+    "stores": {
+      "G": 32,
+      "L": 9
+    },
+    "total_instructions": 959
+  },
+  "2": {
+    "basicblocks": 68,
+    "calls": "",
+    "control_depth": 6,
+    "def_use_depth": 89,
+    "file": "top.cpp",
+    "fileloc": 296,
+    "instructions": 1567,
+    "loads": {
+      "G": 24
+    },
+    "memory_accesses": 21,
+    "name": "k4_rasterize",
+    "stores": {
+      "G": 8
+    },
+    "total_instructions": 1567
+  },
+  "3": {
+    "basicblocks": 101,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 57,
+    "file": "top.cpp",
+    "fileloc": 7,
+    "instructions": 2242,
+    "loads": {
+      "L": 30
+    },
+    "memory_accesses": 65,
+    "name": "k1_vertex_transform",
+    "stores": {
+      "G": 35
+    },
+    "total_instructions": 2242
+  },
+  "4": {
+    "basicblocks": 22,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 11,
+    "file": "top.cpp",
+    "fileloc": 201,
+    "instructions": 112,
+    "loads": {
+      "G": 7
+    },
+    "memory_accesses": 15,
+    "name": "k3_bounding_box",
+    "stores": {
+      "G": 8
+    },
+    "total_instructions": 112
+  },
+  "5": {
+    "basicblocks": 16,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 58,
+    "file": "top.cpp",
+    "fileloc": 429,
+    "instructions": 257,
+    "loads": {
+      "G": 4
+    },
+    "memory_accesses": 6,
+    "name": "k5_deferred_lighting",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 257
+  }
+}
