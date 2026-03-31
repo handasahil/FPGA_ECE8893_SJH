@@ -3,22 +3,26 @@ MainSourceFile:  /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/h
 Diagnostics:     
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
-    FileOffset:      '214:18'
+    FileOffset:      '244:18'
     FilePath:        top.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
-    FileOffset:      '215:21'
+    FileOffset:      '245:21'
     FilePath:        top.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
-    FileOffset:      '216:24'
+    FileOffset:      '246:21'
     FilePath:        top.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
-    FileOffset:      '219:19'
+    FileOffset:      '247:24'
     FilePath:        top.cpp
   - DiagnosticName:  clang-diagnostic-warning
     Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
-    FileOffset:      '220:17'
+    FileOffset:      '256:16'
+    FilePath:        top.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
+    FileOffset:      '257:17'
     FilePath:        top.cpp
 ...

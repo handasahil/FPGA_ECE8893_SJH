@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Mon Mar 30 23:31:08 2026
+<item name = "Date">Tue Mar 31 00:58:59 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -31,11 +31,12 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="call_ln211_entry_proc_fu_192">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
-<column name="grp_k1_vertex_transform_fu_199">k1_vertex_transform, 2336, 2336, 23.360 us, 23.360 us, 2336, 2336, no</column>
-<column name="grp_k2_perspective_divide_fu_253">k2_perspective_divide, 385, 16513, 3.850 us, 0.165 ms, 385, 16513, no</column>
-<column name="grp_Block_entry_screen_tris_v0_x_rd_proc_fu_339">Block_entry_screen_tris_v0_x_rd_proc, ?, ?, ?, ?, ?, ?, no</column>
-<column name="grp_k5_deferred_lighting_fu_397">k5_deferred_lighting, 20615, 20615, 0.206 ms, 0.206 ms, 20615, 20615, no</column>
+<column name="call_ln241_entry_proc_fu_408">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
+<column name="grp_k1_vertex_transform_fu_415">k1_vertex_transform, 2071, 2071, 20.710 us, 20.710 us, 2048, 2048, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_k2_perspective_divide_fu_473">k2_perspective_divide, 385, 16513, 3.850 us, 0.165 ms, 385, 16513, no</column>
+<column name="grp_k3_bounding_box_fu_569">k3_bounding_box, 130, 130, 1.300 us, 1.300 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_k4_rasterize_fu_673">k4_rasterize, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_k5_deferred_lighting_fu_739">k5_deferred_lighting, 4106, 4106, 41.060 us, 41.060 us, 4096, 4096, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

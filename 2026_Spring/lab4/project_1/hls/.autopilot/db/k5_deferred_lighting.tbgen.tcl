@@ -2,9 +2,9 @@ set moduleName k5_deferred_lighting
 set isTopModule 0
 set isCombinational 0
 set isDatapathOnly 0
-set isPipelined 0
-set isPipelined_legacy 0
-set pipeline_type none
+set isPipelined 1
+set isPipelined_legacy 1
+set pipeline_type loop_auto_rewind
 set FunctionProtocol ap_ctrl_hs
 set isOneStateSeq 0
 set ProfileFlag 0
@@ -14,7 +14,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 11
+set cdfgNum 10
 set C_modelName {k5_deferred_lighting}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
@@ -50,6 +50,11 @@ set portList {
 	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
+	{ framebuffer_dout sc_in sc_lv 64 signal 1 } 
+	{ framebuffer_empty_n sc_in sc_logic 1 signal 1 } 
+	{ framebuffer_read sc_out sc_logic 1 signal 1 } 
+	{ framebuffer_num_data_valid sc_in sc_lv 4 signal 1 } 
+	{ framebuffer_fifo_cap sc_in sc_lv 4 signal 1 } 
 	{ m_axi_gmem1_0_AWVALID sc_out sc_logic 1 signal 0 } 
 	{ m_axi_gmem1_0_AWREADY sc_in sc_logic 1 signal 0 } 
 	{ m_axi_gmem1_0_AWADDR sc_out sc_lv 64 signal 0 } 
@@ -96,11 +101,6 @@ set portList {
 	{ m_axi_gmem1_0_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_gmem1_0_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem1_0_BUSER sc_in sc_lv 1 signal 0 } 
-	{ framebuffer_dout sc_in sc_lv 64 signal 1 } 
-	{ framebuffer_empty_n sc_in sc_logic 1 signal 1 } 
-	{ framebuffer_read sc_out sc_logic 1 signal 1 } 
-	{ framebuffer_num_data_valid sc_in sc_lv 4 signal 1 } 
-	{ framebuffer_fifo_cap sc_in sc_lv 4 signal 1 } 
 	{ depth_buffer_address0 sc_out sc_lv 12 signal 2 } 
 	{ depth_buffer_ce0 sc_out sc_logic 1 signal 2 } 
 	{ depth_buffer_q0 sc_in sc_lv 32 signal 2 } 
@@ -122,6 +122,11 @@ set NewPortList {[
  	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
+ 	{ "name": "framebuffer_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "framebuffer", "role": "dout" }} , 
+ 	{ "name": "framebuffer_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "framebuffer", "role": "empty_n" }} , 
+ 	{ "name": "framebuffer_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "framebuffer", "role": "read" }} , 
+ 	{ "name": "framebuffer_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "framebuffer", "role": "num_data_valid" }} , 
+ 	{ "name": "framebuffer_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "framebuffer", "role": "fifo_cap" }} , 
  	{ "name": "m_axi_gmem1_0_AWVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "0_AWVALID" }} , 
  	{ "name": "m_axi_gmem1_0_AWREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "0_AWREADY" }} , 
  	{ "name": "m_axi_gmem1_0_AWADDR", "direction": "out", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "gmem1", "role": "0_AWADDR" }} , 
@@ -168,11 +173,6 @@ set NewPortList {[
  	{ "name": "m_axi_gmem1_0_BRESP", "direction": "in", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "gmem1", "role": "0_BRESP" }} , 
  	{ "name": "m_axi_gmem1_0_BID", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "0_BID" }} , 
  	{ "name": "m_axi_gmem1_0_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem1", "role": "0_BUSER" }} , 
- 	{ "name": "framebuffer_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "framebuffer", "role": "dout" }} , 
- 	{ "name": "framebuffer_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "framebuffer", "role": "empty_n" }} , 
- 	{ "name": "framebuffer_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "framebuffer", "role": "read" }} , 
- 	{ "name": "framebuffer_num_data_valid", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "framebuffer", "role": "num_data_valid" }} , 
- 	{ "name": "framebuffer_fifo_cap", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "framebuffer", "role": "fifo_cap" }} , 
  	{ "name": "depth_buffer_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":12, "type": "signal", "bundle":{"name": "depth_buffer", "role": "address0" }} , 
  	{ "name": "depth_buffer_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "depth_buffer", "role": "ce0" }} , 
  	{ "name": "depth_buffer_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "depth_buffer", "role": "q0" }} , 
@@ -188,21 +188,22 @@ set NewPortList {[
 
 set ArgLastReadFirstWriteLatency {
 	k5_deferred_lighting {
-		gmem1 {Type O LastRead 3 FirstWrite 7}
-		framebuffer {Type I LastRead 0 FirstWrite -1}
-		depth_buffer {Type I LastRead 3 FirstWrite -1}
-		normal_buffer_x {Type I LastRead 3 FirstWrite -1}
-		normal_buffer_y {Type I LastRead 3 FirstWrite -1}
-		normal_buffer_z {Type I LastRead 3 FirstWrite -1}}}
+		gmem1 {Type O LastRead 5 FirstWrite 4}
+		framebuffer {Type I LastRead 1 FirstWrite -1}
+		depth_buffer {Type I LastRead 0 FirstWrite -1}
+		normal_buffer_x {Type I LastRead 0 FirstWrite -1}
+		normal_buffer_y {Type I LastRead 0 FirstWrite -1}
+		normal_buffer_z {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "20615", "Max" : "20615"}
-	, {"Name" : "Interval", "Min" : "20615", "Max" : "20615"}
+	{"Name" : "Latency", "Min" : "4106", "Max" : "4106"}
+	, {"Name" : "Interval", "Min" : "4106", "Max" : "4106"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 

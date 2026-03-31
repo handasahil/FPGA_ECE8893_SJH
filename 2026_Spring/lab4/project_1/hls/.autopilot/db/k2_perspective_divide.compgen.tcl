@@ -23,784 +23,695 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 79 \
+eval "cg_default_interface_gen_dc { \
+    id 41 \
     name clip_tris_v0_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v0_x \
+    corename dc_clip_tris_v0_x \
     op interface \
-    ports { clip_tris_v0_x_address0 { O 7 vector } clip_tris_v0_x_ce0 { O 1 bit } clip_tris_v0_x_q0 { I 32 vector } } \
+    ports { clip_tris_v0_x_dout { I 32 vector } clip_tris_v0_x_empty_n { I 1 bit } clip_tris_v0_x_read { O 1 bit } clip_tris_v0_x_num_data_valid { I 3 vector } clip_tris_v0_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v0_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 80 \
+eval "cg_default_interface_gen_dc { \
+    id 42 \
     name clip_tris_v0_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v0_y \
+    corename dc_clip_tris_v0_y \
     op interface \
-    ports { clip_tris_v0_y_address0 { O 7 vector } clip_tris_v0_y_ce0 { O 1 bit } clip_tris_v0_y_q0 { I 32 vector } } \
+    ports { clip_tris_v0_y_dout { I 32 vector } clip_tris_v0_y_empty_n { I 1 bit } clip_tris_v0_y_read { O 1 bit } clip_tris_v0_y_num_data_valid { I 3 vector } clip_tris_v0_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v0_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 81 \
+eval "cg_default_interface_gen_dc { \
+    id 43 \
     name clip_tris_v0_z \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v0_z \
+    corename dc_clip_tris_v0_z \
     op interface \
-    ports { clip_tris_v0_z_address0 { O 7 vector } clip_tris_v0_z_ce0 { O 1 bit } clip_tris_v0_z_q0 { I 32 vector } } \
+    ports { clip_tris_v0_z_dout { I 32 vector } clip_tris_v0_z_empty_n { I 1 bit } clip_tris_v0_z_read { O 1 bit } clip_tris_v0_z_num_data_valid { I 3 vector } clip_tris_v0_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v0_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 82 \
+eval "cg_default_interface_gen_dc { \
+    id 44 \
     name clip_tris_v0_w \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v0_w \
+    corename dc_clip_tris_v0_w \
     op interface \
-    ports { clip_tris_v0_w_address0 { O 7 vector } clip_tris_v0_w_ce0 { O 1 bit } clip_tris_v0_w_q0 { I 32 vector } } \
+    ports { clip_tris_v0_w_dout { I 32 vector } clip_tris_v0_w_empty_n { I 1 bit } clip_tris_v0_w_read { O 1 bit } clip_tris_v0_w_num_data_valid { I 3 vector } clip_tris_v0_w_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v0_w'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 83 \
+eval "cg_default_interface_gen_dc { \
+    id 45 \
     name clip_tris_v1_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v1_x \
+    corename dc_clip_tris_v1_x \
     op interface \
-    ports { clip_tris_v1_x_address0 { O 7 vector } clip_tris_v1_x_ce0 { O 1 bit } clip_tris_v1_x_q0 { I 32 vector } } \
+    ports { clip_tris_v1_x_dout { I 32 vector } clip_tris_v1_x_empty_n { I 1 bit } clip_tris_v1_x_read { O 1 bit } clip_tris_v1_x_num_data_valid { I 3 vector } clip_tris_v1_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v1_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 84 \
+eval "cg_default_interface_gen_dc { \
+    id 46 \
     name clip_tris_v1_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v1_y \
+    corename dc_clip_tris_v1_y \
     op interface \
-    ports { clip_tris_v1_y_address0 { O 7 vector } clip_tris_v1_y_ce0 { O 1 bit } clip_tris_v1_y_q0 { I 32 vector } } \
+    ports { clip_tris_v1_y_dout { I 32 vector } clip_tris_v1_y_empty_n { I 1 bit } clip_tris_v1_y_read { O 1 bit } clip_tris_v1_y_num_data_valid { I 3 vector } clip_tris_v1_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v1_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 85 \
+eval "cg_default_interface_gen_dc { \
+    id 47 \
     name clip_tris_v1_z \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v1_z \
+    corename dc_clip_tris_v1_z \
     op interface \
-    ports { clip_tris_v1_z_address0 { O 7 vector } clip_tris_v1_z_ce0 { O 1 bit } clip_tris_v1_z_q0 { I 32 vector } } \
+    ports { clip_tris_v1_z_dout { I 32 vector } clip_tris_v1_z_empty_n { I 1 bit } clip_tris_v1_z_read { O 1 bit } clip_tris_v1_z_num_data_valid { I 3 vector } clip_tris_v1_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v1_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 86 \
+eval "cg_default_interface_gen_dc { \
+    id 48 \
     name clip_tris_v1_w \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v1_w \
+    corename dc_clip_tris_v1_w \
     op interface \
-    ports { clip_tris_v1_w_address0 { O 7 vector } clip_tris_v1_w_ce0 { O 1 bit } clip_tris_v1_w_q0 { I 32 vector } } \
+    ports { clip_tris_v1_w_dout { I 32 vector } clip_tris_v1_w_empty_n { I 1 bit } clip_tris_v1_w_read { O 1 bit } clip_tris_v1_w_num_data_valid { I 3 vector } clip_tris_v1_w_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v1_w'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 87 \
+eval "cg_default_interface_gen_dc { \
+    id 49 \
     name clip_tris_v2_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v2_x \
+    corename dc_clip_tris_v2_x \
     op interface \
-    ports { clip_tris_v2_x_address0 { O 7 vector } clip_tris_v2_x_ce0 { O 1 bit } clip_tris_v2_x_q0 { I 32 vector } } \
+    ports { clip_tris_v2_x_dout { I 32 vector } clip_tris_v2_x_empty_n { I 1 bit } clip_tris_v2_x_read { O 1 bit } clip_tris_v2_x_num_data_valid { I 3 vector } clip_tris_v2_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v2_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 88 \
+eval "cg_default_interface_gen_dc { \
+    id 50 \
     name clip_tris_v2_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v2_y \
+    corename dc_clip_tris_v2_y \
     op interface \
-    ports { clip_tris_v2_y_address0 { O 7 vector } clip_tris_v2_y_ce0 { O 1 bit } clip_tris_v2_y_q0 { I 32 vector } } \
+    ports { clip_tris_v2_y_dout { I 32 vector } clip_tris_v2_y_empty_n { I 1 bit } clip_tris_v2_y_read { O 1 bit } clip_tris_v2_y_num_data_valid { I 3 vector } clip_tris_v2_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v2_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 89 \
+eval "cg_default_interface_gen_dc { \
+    id 51 \
     name clip_tris_v2_z \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v2_z \
+    corename dc_clip_tris_v2_z \
     op interface \
-    ports { clip_tris_v2_z_address0 { O 7 vector } clip_tris_v2_z_ce0 { O 1 bit } clip_tris_v2_z_q0 { I 32 vector } } \
+    ports { clip_tris_v2_z_dout { I 32 vector } clip_tris_v2_z_empty_n { I 1 bit } clip_tris_v2_z_read { O 1 bit } clip_tris_v2_z_num_data_valid { I 3 vector } clip_tris_v2_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v2_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 90 \
+eval "cg_default_interface_gen_dc { \
+    id 52 \
     name clip_tris_v2_w \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_v2_w \
+    corename dc_clip_tris_v2_w \
     op interface \
-    ports { clip_tris_v2_w_address0 { O 7 vector } clip_tris_v2_w_ce0 { O 1 bit } clip_tris_v2_w_q0 { I 32 vector } } \
+    ports { clip_tris_v2_w_dout { I 32 vector } clip_tris_v2_w_empty_n { I 1 bit } clip_tris_v2_w_read { O 1 bit } clip_tris_v2_w_num_data_valid { I 3 vector } clip_tris_v2_w_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_v2_w'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 91 \
+eval "cg_default_interface_gen_dc { \
+    id 53 \
     name clip_tris_n0_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n0_x \
+    corename dc_clip_tris_n0_x \
     op interface \
-    ports { clip_tris_n0_x_address0 { O 7 vector } clip_tris_n0_x_ce0 { O 1 bit } clip_tris_n0_x_q0 { I 32 vector } } \
+    ports { clip_tris_n0_x_dout { I 32 vector } clip_tris_n0_x_empty_n { I 1 bit } clip_tris_n0_x_read { O 1 bit } clip_tris_n0_x_num_data_valid { I 3 vector } clip_tris_n0_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n0_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 92 \
+eval "cg_default_interface_gen_dc { \
+    id 54 \
     name clip_tris_n0_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n0_y \
+    corename dc_clip_tris_n0_y \
     op interface \
-    ports { clip_tris_n0_y_address0 { O 7 vector } clip_tris_n0_y_ce0 { O 1 bit } clip_tris_n0_y_q0 { I 32 vector } } \
+    ports { clip_tris_n0_y_dout { I 32 vector } clip_tris_n0_y_empty_n { I 1 bit } clip_tris_n0_y_read { O 1 bit } clip_tris_n0_y_num_data_valid { I 3 vector } clip_tris_n0_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n0_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 93 \
+eval "cg_default_interface_gen_dc { \
+    id 55 \
     name clip_tris_n0_z \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n0_z \
+    corename dc_clip_tris_n0_z \
     op interface \
-    ports { clip_tris_n0_z_address0 { O 7 vector } clip_tris_n0_z_ce0 { O 1 bit } clip_tris_n0_z_q0 { I 32 vector } } \
+    ports { clip_tris_n0_z_dout { I 32 vector } clip_tris_n0_z_empty_n { I 1 bit } clip_tris_n0_z_read { O 1 bit } clip_tris_n0_z_num_data_valid { I 3 vector } clip_tris_n0_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n0_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 94 \
+eval "cg_default_interface_gen_dc { \
+    id 56 \
     name clip_tris_n1_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n1_x \
+    corename dc_clip_tris_n1_x \
     op interface \
-    ports { clip_tris_n1_x_address0 { O 7 vector } clip_tris_n1_x_ce0 { O 1 bit } clip_tris_n1_x_q0 { I 32 vector } } \
+    ports { clip_tris_n1_x_dout { I 32 vector } clip_tris_n1_x_empty_n { I 1 bit } clip_tris_n1_x_read { O 1 bit } clip_tris_n1_x_num_data_valid { I 3 vector } clip_tris_n1_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n1_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 95 \
+eval "cg_default_interface_gen_dc { \
+    id 57 \
     name clip_tris_n1_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n1_y \
+    corename dc_clip_tris_n1_y \
     op interface \
-    ports { clip_tris_n1_y_address0 { O 7 vector } clip_tris_n1_y_ce0 { O 1 bit } clip_tris_n1_y_q0 { I 32 vector } } \
+    ports { clip_tris_n1_y_dout { I 32 vector } clip_tris_n1_y_empty_n { I 1 bit } clip_tris_n1_y_read { O 1 bit } clip_tris_n1_y_num_data_valid { I 3 vector } clip_tris_n1_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n1_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 96 \
+eval "cg_default_interface_gen_dc { \
+    id 58 \
     name clip_tris_n1_z \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n1_z \
+    corename dc_clip_tris_n1_z \
     op interface \
-    ports { clip_tris_n1_z_address0 { O 7 vector } clip_tris_n1_z_ce0 { O 1 bit } clip_tris_n1_z_q0 { I 32 vector } } \
+    ports { clip_tris_n1_z_dout { I 32 vector } clip_tris_n1_z_empty_n { I 1 bit } clip_tris_n1_z_read { O 1 bit } clip_tris_n1_z_num_data_valid { I 3 vector } clip_tris_n1_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n1_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 97 \
+eval "cg_default_interface_gen_dc { \
+    id 59 \
     name clip_tris_n2_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n2_x \
+    corename dc_clip_tris_n2_x \
     op interface \
-    ports { clip_tris_n2_x_address0 { O 7 vector } clip_tris_n2_x_ce0 { O 1 bit } clip_tris_n2_x_q0 { I 32 vector } } \
+    ports { clip_tris_n2_x_dout { I 32 vector } clip_tris_n2_x_empty_n { I 1 bit } clip_tris_n2_x_read { O 1 bit } clip_tris_n2_x_num_data_valid { I 3 vector } clip_tris_n2_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n2_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 98 \
+eval "cg_default_interface_gen_dc { \
+    id 60 \
     name clip_tris_n2_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n2_y \
+    corename dc_clip_tris_n2_y \
     op interface \
-    ports { clip_tris_n2_y_address0 { O 7 vector } clip_tris_n2_y_ce0 { O 1 bit } clip_tris_n2_y_q0 { I 32 vector } } \
+    ports { clip_tris_n2_y_dout { I 32 vector } clip_tris_n2_y_empty_n { I 1 bit } clip_tris_n2_y_read { O 1 bit } clip_tris_n2_y_num_data_valid { I 3 vector } clip_tris_n2_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n2_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 99 \
+eval "cg_default_interface_gen_dc { \
+    id 61 \
     name clip_tris_n2_z \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename clip_tris_n2_z \
+    corename dc_clip_tris_n2_z \
     op interface \
-    ports { clip_tris_n2_z_address0 { O 7 vector } clip_tris_n2_z_ce0 { O 1 bit } clip_tris_n2_z_q0 { I 32 vector } } \
+    ports { clip_tris_n2_z_dout { I 32 vector } clip_tris_n2_z_empty_n { I 1 bit } clip_tris_n2_z_read { O 1 bit } clip_tris_n2_z_num_data_valid { I 3 vector } clip_tris_n2_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_n2_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 100 \
+eval "cg_default_interface_gen_dc { \
+    id 62 \
+    name clip_tris_color \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_clip_tris_color \
+    op interface \
+    ports { clip_tris_color_dout { I 32 vector } clip_tris_color_empty_n { I 1 bit } clip_tris_color_read { O 1 bit } clip_tris_color_num_data_valid { I 3 vector } clip_tris_color_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 63 \
     name clip_tris_is_active \
-    reset_level 1 \
-    sync_rst true \
+    type fifo \
     dir I \
-    corename clip_tris_is_active \
-    op interface \
-    ports { clip_tris_is_active_address0 { O 7 vector } clip_tris_is_active_ce0 { O 1 bit } clip_tris_is_active_q0 { I 1 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'clip_tris_is_active'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 101 \
-    name screen_tris_v0_x \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v0_x \
+    corename dc_clip_tris_is_active \
     op interface \
-    ports { screen_tris_v0_x_address0 { O 7 vector } screen_tris_v0_x_ce0 { O 1 bit } screen_tris_v0_x_we0 { O 1 bit } screen_tris_v0_x_d0 { O 32 vector } } \
+    ports { clip_tris_is_active_dout { I 1 vector } clip_tris_is_active_empty_n { I 1 bit } clip_tris_is_active_read { O 1 bit } clip_tris_is_active_num_data_valid { I 3 vector } clip_tris_is_active_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v0_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 102 \
-    name screen_tris_v0_y \
+eval "cg_default_interface_gen_dc { \
+    id 64 \
+    name screen_tris_in_v0_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v0_y \
+    corename dc_screen_tris_in_v0_x \
     op interface \
-    ports { screen_tris_v0_y_address0 { O 7 vector } screen_tris_v0_y_ce0 { O 1 bit } screen_tris_v0_y_we0 { O 1 bit } screen_tris_v0_y_d0 { O 32 vector } } \
+    ports { screen_tris_in_v0_x_din { O 32 vector } screen_tris_in_v0_x_full_n { I 1 bit } screen_tris_in_v0_x_write { O 1 bit } screen_tris_in_v0_x_num_data_valid { I 3 vector } screen_tris_in_v0_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v0_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 103 \
-    name screen_tris_v0_z \
+eval "cg_default_interface_gen_dc { \
+    id 65 \
+    name screen_tris_in_v0_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v0_z \
+    corename dc_screen_tris_in_v0_y \
     op interface \
-    ports { screen_tris_v0_z_address0 { O 7 vector } screen_tris_v0_z_ce0 { O 1 bit } screen_tris_v0_z_we0 { O 1 bit } screen_tris_v0_z_d0 { O 32 vector } } \
+    ports { screen_tris_in_v0_y_din { O 32 vector } screen_tris_in_v0_y_full_n { I 1 bit } screen_tris_in_v0_y_write { O 1 bit } screen_tris_in_v0_y_num_data_valid { I 3 vector } screen_tris_in_v0_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v0_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 104 \
-    name screen_tris_v1_x \
+eval "cg_default_interface_gen_dc { \
+    id 66 \
+    name screen_tris_in_v0_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v1_x \
+    corename dc_screen_tris_in_v0_z \
     op interface \
-    ports { screen_tris_v1_x_address0 { O 7 vector } screen_tris_v1_x_ce0 { O 1 bit } screen_tris_v1_x_we0 { O 1 bit } screen_tris_v1_x_d0 { O 32 vector } } \
+    ports { screen_tris_in_v0_z_din { O 32 vector } screen_tris_in_v0_z_full_n { I 1 bit } screen_tris_in_v0_z_write { O 1 bit } screen_tris_in_v0_z_num_data_valid { I 3 vector } screen_tris_in_v0_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v1_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 105 \
-    name screen_tris_v1_y \
+eval "cg_default_interface_gen_dc { \
+    id 67 \
+    name screen_tris_in_v0_w \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v1_y \
+    corename dc_screen_tris_in_v0_w \
     op interface \
-    ports { screen_tris_v1_y_address0 { O 7 vector } screen_tris_v1_y_ce0 { O 1 bit } screen_tris_v1_y_we0 { O 1 bit } screen_tris_v1_y_d0 { O 32 vector } } \
+    ports { screen_tris_in_v0_w_din { O 32 vector } screen_tris_in_v0_w_full_n { I 1 bit } screen_tris_in_v0_w_write { O 1 bit } screen_tris_in_v0_w_num_data_valid { I 3 vector } screen_tris_in_v0_w_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v1_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 106 \
-    name screen_tris_v1_z \
+eval "cg_default_interface_gen_dc { \
+    id 68 \
+    name screen_tris_in_v1_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v1_z \
+    corename dc_screen_tris_in_v1_x \
     op interface \
-    ports { screen_tris_v1_z_address0 { O 7 vector } screen_tris_v1_z_ce0 { O 1 bit } screen_tris_v1_z_we0 { O 1 bit } screen_tris_v1_z_d0 { O 32 vector } } \
+    ports { screen_tris_in_v1_x_din { O 32 vector } screen_tris_in_v1_x_full_n { I 1 bit } screen_tris_in_v1_x_write { O 1 bit } screen_tris_in_v1_x_num_data_valid { I 3 vector } screen_tris_in_v1_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v1_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 107 \
-    name screen_tris_v2_x \
+eval "cg_default_interface_gen_dc { \
+    id 69 \
+    name screen_tris_in_v1_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v2_x \
+    corename dc_screen_tris_in_v1_y \
     op interface \
-    ports { screen_tris_v2_x_address0 { O 7 vector } screen_tris_v2_x_ce0 { O 1 bit } screen_tris_v2_x_we0 { O 1 bit } screen_tris_v2_x_d0 { O 32 vector } } \
+    ports { screen_tris_in_v1_y_din { O 32 vector } screen_tris_in_v1_y_full_n { I 1 bit } screen_tris_in_v1_y_write { O 1 bit } screen_tris_in_v1_y_num_data_valid { I 3 vector } screen_tris_in_v1_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v2_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 108 \
-    name screen_tris_v2_y \
+eval "cg_default_interface_gen_dc { \
+    id 70 \
+    name screen_tris_in_v1_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v2_y \
+    corename dc_screen_tris_in_v1_z \
     op interface \
-    ports { screen_tris_v2_y_address0 { O 7 vector } screen_tris_v2_y_ce0 { O 1 bit } screen_tris_v2_y_we0 { O 1 bit } screen_tris_v2_y_d0 { O 32 vector } } \
+    ports { screen_tris_in_v1_z_din { O 32 vector } screen_tris_in_v1_z_full_n { I 1 bit } screen_tris_in_v1_z_write { O 1 bit } screen_tris_in_v1_z_num_data_valid { I 3 vector } screen_tris_in_v1_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v2_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 109 \
-    name screen_tris_v2_z \
+eval "cg_default_interface_gen_dc { \
+    id 71 \
+    name screen_tris_in_v1_w \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_v2_z \
+    corename dc_screen_tris_in_v1_w \
     op interface \
-    ports { screen_tris_v2_z_address0 { O 7 vector } screen_tris_v2_z_ce0 { O 1 bit } screen_tris_v2_z_we0 { O 1 bit } screen_tris_v2_z_d0 { O 32 vector } } \
+    ports { screen_tris_in_v1_w_din { O 32 vector } screen_tris_in_v1_w_full_n { I 1 bit } screen_tris_in_v1_w_write { O 1 bit } screen_tris_in_v1_w_num_data_valid { I 3 vector } screen_tris_in_v1_w_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v2_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 110 \
-    name screen_tris_n0_x \
+eval "cg_default_interface_gen_dc { \
+    id 72 \
+    name screen_tris_in_v2_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n0_x \
+    corename dc_screen_tris_in_v2_x \
     op interface \
-    ports { screen_tris_n0_x_address0 { O 7 vector } screen_tris_n0_x_ce0 { O 1 bit } screen_tris_n0_x_we0 { O 1 bit } screen_tris_n0_x_d0 { O 32 vector } } \
+    ports { screen_tris_in_v2_x_din { O 32 vector } screen_tris_in_v2_x_full_n { I 1 bit } screen_tris_in_v2_x_write { O 1 bit } screen_tris_in_v2_x_num_data_valid { I 3 vector } screen_tris_in_v2_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n0_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 111 \
-    name screen_tris_n0_y \
+eval "cg_default_interface_gen_dc { \
+    id 73 \
+    name screen_tris_in_v2_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n0_y \
+    corename dc_screen_tris_in_v2_y \
     op interface \
-    ports { screen_tris_n0_y_address0 { O 7 vector } screen_tris_n0_y_ce0 { O 1 bit } screen_tris_n0_y_we0 { O 1 bit } screen_tris_n0_y_d0 { O 32 vector } } \
+    ports { screen_tris_in_v2_y_din { O 32 vector } screen_tris_in_v2_y_full_n { I 1 bit } screen_tris_in_v2_y_write { O 1 bit } screen_tris_in_v2_y_num_data_valid { I 3 vector } screen_tris_in_v2_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n0_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 112 \
-    name screen_tris_n0_z \
+eval "cg_default_interface_gen_dc { \
+    id 74 \
+    name screen_tris_in_v2_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n0_z \
+    corename dc_screen_tris_in_v2_z \
     op interface \
-    ports { screen_tris_n0_z_address0 { O 7 vector } screen_tris_n0_z_ce0 { O 1 bit } screen_tris_n0_z_we0 { O 1 bit } screen_tris_n0_z_d0 { O 32 vector } } \
+    ports { screen_tris_in_v2_z_din { O 32 vector } screen_tris_in_v2_z_full_n { I 1 bit } screen_tris_in_v2_z_write { O 1 bit } screen_tris_in_v2_z_num_data_valid { I 3 vector } screen_tris_in_v2_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n0_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 113 \
-    name screen_tris_n1_x \
+eval "cg_default_interface_gen_dc { \
+    id 75 \
+    name screen_tris_in_v2_w \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n1_x \
+    corename dc_screen_tris_in_v2_w \
     op interface \
-    ports { screen_tris_n1_x_address0 { O 7 vector } screen_tris_n1_x_ce0 { O 1 bit } screen_tris_n1_x_we0 { O 1 bit } screen_tris_n1_x_d0 { O 32 vector } } \
+    ports { screen_tris_in_v2_w_din { O 32 vector } screen_tris_in_v2_w_full_n { I 1 bit } screen_tris_in_v2_w_write { O 1 bit } screen_tris_in_v2_w_num_data_valid { I 3 vector } screen_tris_in_v2_w_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n1_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 114 \
-    name screen_tris_n1_y \
+eval "cg_default_interface_gen_dc { \
+    id 76 \
+    name screen_tris_in_n0_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n1_y \
+    corename dc_screen_tris_in_n0_x \
     op interface \
-    ports { screen_tris_n1_y_address0 { O 7 vector } screen_tris_n1_y_ce0 { O 1 bit } screen_tris_n1_y_we0 { O 1 bit } screen_tris_n1_y_d0 { O 32 vector } } \
+    ports { screen_tris_in_n0_x_din { O 32 vector } screen_tris_in_n0_x_full_n { I 1 bit } screen_tris_in_n0_x_write { O 1 bit } screen_tris_in_n0_x_num_data_valid { I 3 vector } screen_tris_in_n0_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n1_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 115 \
-    name screen_tris_n1_z \
+eval "cg_default_interface_gen_dc { \
+    id 77 \
+    name screen_tris_in_n0_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n1_z \
+    corename dc_screen_tris_in_n0_y \
     op interface \
-    ports { screen_tris_n1_z_address0 { O 7 vector } screen_tris_n1_z_ce0 { O 1 bit } screen_tris_n1_z_we0 { O 1 bit } screen_tris_n1_z_d0 { O 32 vector } } \
+    ports { screen_tris_in_n0_y_din { O 32 vector } screen_tris_in_n0_y_full_n { I 1 bit } screen_tris_in_n0_y_write { O 1 bit } screen_tris_in_n0_y_num_data_valid { I 3 vector } screen_tris_in_n0_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n1_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 116 \
-    name screen_tris_n2_x \
+eval "cg_default_interface_gen_dc { \
+    id 78 \
+    name screen_tris_in_n0_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n2_x \
+    corename dc_screen_tris_in_n0_z \
     op interface \
-    ports { screen_tris_n2_x_address0 { O 7 vector } screen_tris_n2_x_ce0 { O 1 bit } screen_tris_n2_x_we0 { O 1 bit } screen_tris_n2_x_d0 { O 32 vector } } \
+    ports { screen_tris_in_n0_z_din { O 32 vector } screen_tris_in_n0_z_full_n { I 1 bit } screen_tris_in_n0_z_write { O 1 bit } screen_tris_in_n0_z_num_data_valid { I 3 vector } screen_tris_in_n0_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n2_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 117 \
-    name screen_tris_n2_y \
+eval "cg_default_interface_gen_dc { \
+    id 79 \
+    name screen_tris_in_n1_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n2_y \
+    corename dc_screen_tris_in_n1_x \
     op interface \
-    ports { screen_tris_n2_y_address0 { O 7 vector } screen_tris_n2_y_ce0 { O 1 bit } screen_tris_n2_y_we0 { O 1 bit } screen_tris_n2_y_d0 { O 32 vector } } \
+    ports { screen_tris_in_n1_x_din { O 32 vector } screen_tris_in_n1_x_full_n { I 1 bit } screen_tris_in_n1_x_write { O 1 bit } screen_tris_in_n1_x_num_data_valid { I 3 vector } screen_tris_in_n1_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n2_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 118 \
-    name screen_tris_n2_z \
+eval "cg_default_interface_gen_dc { \
+    id 80 \
+    name screen_tris_in_n1_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_n2_z \
+    corename dc_screen_tris_in_n1_y \
     op interface \
-    ports { screen_tris_n2_z_address0 { O 7 vector } screen_tris_n2_z_ce0 { O 1 bit } screen_tris_n2_z_we0 { O 1 bit } screen_tris_n2_z_d0 { O 32 vector } } \
+    ports { screen_tris_in_n1_y_din { O 32 vector } screen_tris_in_n1_y_full_n { I 1 bit } screen_tris_in_n1_y_write { O 1 bit } screen_tris_in_n1_y_num_data_valid { I 3 vector } screen_tris_in_n1_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_n2_z'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 119 \
-    name screen_tris_is_active \
+eval "cg_default_interface_gen_dc { \
+    id 81 \
+    name screen_tris_in_n1_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename screen_tris_is_active \
+    corename dc_screen_tris_in_n1_z \
     op interface \
-    ports { screen_tris_is_active_address0 { O 7 vector } screen_tris_is_active_ce0 { O 1 bit } screen_tris_is_active_we0 { O 1 bit } screen_tris_is_active_d0 { O 1 vector } } \
+    ports { screen_tris_in_n1_z_din { O 32 vector } screen_tris_in_n1_z_full_n { I 1 bit } screen_tris_in_n1_z_write { O 1 bit } screen_tris_in_n1_z_num_data_valid { I 3 vector } screen_tris_in_n1_z_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_is_active'"
-}
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 82 \
+    name screen_tris_in_n2_x \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n2_x \
+    op interface \
+    ports { screen_tris_in_n2_x_din { O 32 vector } screen_tris_in_n2_x_full_n { I 1 bit } screen_tris_in_n2_x_write { O 1 bit } screen_tris_in_n2_x_num_data_valid { I 3 vector } screen_tris_in_n2_x_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 83 \
+    name screen_tris_in_n2_y \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n2_y \
+    op interface \
+    ports { screen_tris_in_n2_y_din { O 32 vector } screen_tris_in_n2_y_full_n { I 1 bit } screen_tris_in_n2_y_write { O 1 bit } screen_tris_in_n2_y_num_data_valid { I 3 vector } screen_tris_in_n2_y_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 84 \
+    name screen_tris_in_n2_z \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n2_z \
+    op interface \
+    ports { screen_tris_in_n2_z_din { O 32 vector } screen_tris_in_n2_z_full_n { I 1 bit } screen_tris_in_n2_z_write { O 1 bit } screen_tris_in_n2_z_num_data_valid { I 3 vector } screen_tris_in_n2_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 85 \
+    name screen_tris_in_color \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_color \
+    op interface \
+    ports { screen_tris_in_color_din { O 32 vector } screen_tris_in_color_full_n { I 1 bit } screen_tris_in_color_write { O 1 bit } screen_tris_in_color_num_data_valid { I 3 vector } screen_tris_in_color_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 86 \
+    name screen_tris_in_is_active \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_is_active \
+    op interface \
+    ports { screen_tris_in_is_active_din { O 1 vector } screen_tris_in_is_active_full_n { I 1 bit } screen_tris_in_is_active_write { O 1 bit } screen_tris_in_is_active_num_data_valid { I 3 vector } screen_tris_in_is_active_fifo_cap { I 3 vector } } \
+} "
+}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {

@@ -30,11 +30,11 @@
             forever begin
                 @(posedge in_intf.clock);
                 this.total_run_time = this.total_run_time + 32'h1;
-                if (in_intf.cur_state == in_intf.iter_start_state && ((this.last_state == in_intf.pre_loop_state0 && in_intf.pre_states_valid[0] == 1'b1) || (this.last_state == in_intf.pre_loop_state1 && in_intf.pre_states_valid[1] == 1'b1) || (this.last_state == in_intf.pre_loop_state2 && in_intf.pre_states_valid[2] == 1'b1))) begin
+                if (in_intf.cur_state == in_intf.iter_start_state && (this.last_state == in_intf.pre_loop_state0 && in_intf.pre_states_valid == 1'b1)) begin
                     this.loop_start_arr.push_back(this.total_run_time);
                     this.iter_start_index.push_back(this.iter_start_arr.size);
                 end
-                if (in_intf.cur_state == in_intf.iter_start_state && (((this.last_state == in_intf.pre_loop_state0 && in_intf.pre_states_valid[0] == 1'b1) || (this.last_state == in_intf.pre_loop_state1 && in_intf.pre_states_valid[1] == 1'b1) || (this.last_state == in_intf.pre_loop_state2 && in_intf.pre_states_valid[2] == 1'b1)) || (this.last_state == in_intf.iter_end_state0 && in_intf.iter_end_states_valid == 1'b1)) && in_intf.one_state_loop == 1'b0) begin
+                if (in_intf.cur_state == in_intf.iter_start_state && ((this.last_state == in_intf.pre_loop_state0 && in_intf.pre_states_valid == 1'b1) || (this.last_state == in_intf.iter_end_state0 && in_intf.iter_end_states_valid == 1'b1)) && in_intf.one_state_loop == 1'b0) begin
                     this.iter_start_arr.push_back(this.total_run_time);
                  end else if (in_intf.cur_state == in_intf.iter_start_state && this.last_state_block == 1'b0 && in_intf.one_state_loop == 1'b1) begin
                     this.iter_start_arr.push_back(this.total_run_time);

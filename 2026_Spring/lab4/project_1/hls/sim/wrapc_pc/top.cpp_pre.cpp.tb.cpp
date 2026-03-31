@@ -59291,17 +59291,18 @@ void top_kernel(const Triangle in_tris[128],
 
 
 
-
 static void k1_vertex_transform(const Triangle in_tris[128],
-                         const data_t mvp[4][4],
-                         Triangle clip_tris[128]) {
+                                const data_t mvp[4][4],
+                                Triangle clip_tris[128]) {
     for (int i = 0; i < 128; i++) {
 #pragma HLS pipeline II=1
 
-        clip_tris[i] = in_tris[i];
 
-        if (in_tris[i].is_active) {
-            Vec4 verts[3] = {in_tris[i].v0, in_tris[i].v1, in_tris[i].v2};
+        Triangle curr_tri = in_tris[i];
+
+
+        if (curr_tri.is_active) {
+            Vec4 verts[3] = {curr_tri.v0, curr_tri.v1, curr_tri.v2};
             Vec4 out_verts[3];
 
             for (int v = 0; v < 3; v++) {
@@ -59311,27 +59312,32 @@ static void k1_vertex_transform(const Triangle in_tris[128],
                 out_verts[v].w = verts[v].x * mvp[3][0] + verts[v].y * mvp[3][1] + verts[v].z * mvp[3][2] + verts[v].w * mvp[3][3];
             }
 
-            clip_tris[i].v0 = out_verts[0];
-            clip_tris[i].v1 = out_verts[1];
-            clip_tris[i].v2 = out_verts[2];
+            curr_tri.v0 = out_verts[0];
+            curr_tri.v1 = out_verts[1];
+            curr_tri.v2 = out_verts[2];
         }
+
+
+        clip_tris[i] = curr_tri;
     }
 }
 
 
 
 
-
 static void k2_perspective_divide(const Triangle clip_tris[128],
-                           Triangle screen_tris[128]) {
+                                  Triangle screen_tris[128]) {
     const data_t half_w = (data_t)(64 / 2.0);
     const data_t half_h = (data_t)(64 / 2.0);
 
     for (int i = 0; i < 128; i++) {
-        screen_tris[i] = clip_tris[i];
 
-        if (clip_tris[i].is_active) {
-            Vec4 verts[3] = {clip_tris[i].v0, clip_tris[i].v1, clip_tris[i].v2};
+
+        Triangle curr_tri = clip_tris[i];
+
+
+        if (curr_tri.is_active) {
+            Vec4 verts[3] = {curr_tri.v0, curr_tri.v1, curr_tri.v2};
 
             for (int v = 0; v < 3; v++) {
 
@@ -59347,51 +59353,63 @@ static void k2_perspective_divide(const Triangle clip_tris[128],
                 verts[v].z = verts[v].z * w_inv;
             }
 
-            screen_tris[i].v0 = verts[0];
-            screen_tris[i].v1 = verts[1];
-            screen_tris[i].v2 = verts[2];
+            curr_tri.v0 = verts[0];
+            curr_tri.v1 = verts[1];
+            curr_tri.v2 = verts[2];
         }
+
+
+        screen_tris[i] = curr_tri;
     }
 }
 
 
 
 
+static void k3_bounding_box(const Triangle screen_tris_in[128],
+                            Triangle screen_tris_out[128],
+                            BoundingBox bounds[128]) {
 
-static void k3_bounding_box(const Triangle screen_tris[128],
-                     BoundingBox bounds[128]) {
     for (int i = 0; i < 128; i++) {
 #pragma HLS pipeline II=1
-        if (screen_tris[i].is_active) {
-            data_t min_x = screen_tris[i].v0.x;
-            data_t max_x = screen_tris[i].v0.x;
-            data_t min_y = screen_tris[i].v0.y;
-            data_t max_y = screen_tris[i].v0.y;
 
 
-            if (screen_tris[i].v1.x < min_x) min_x = screen_tris[i].v1.x;
-            if (screen_tris[i].v2.x < min_x) min_x = screen_tris[i].v2.x;
-            if (screen_tris[i].v1.x > max_x) max_x = screen_tris[i].v1.x;
-            if (screen_tris[i].v2.x > max_x) max_x = screen_tris[i].v2.x;
+        Triangle curr_tri = screen_tris_in[i];
 
 
-            if (screen_tris[i].v1.y < min_y) min_y = screen_tris[i].v1.y;
-            if (screen_tris[i].v2.y < min_y) min_y = screen_tris[i].v2.y;
-            if (screen_tris[i].v1.y > max_y) max_y = screen_tris[i].v1.y;
-            if (screen_tris[i].v2.y > max_y) max_y = screen_tris[i].v2.y;
+        BoundingBox curr_bounds;
+
+        if (curr_tri.is_active) {
+            data_t min_x = curr_tri.v0.x;
+            data_t max_x = curr_tri.v0.x;
+            data_t min_y = curr_tri.v0.y;
+            data_t max_y = curr_tri.v0.y;
+
+            if (curr_tri.v1.x < min_x) min_x = curr_tri.v1.x;
+            if (curr_tri.v2.x < min_x) min_x = curr_tri.v2.x;
+            if (curr_tri.v1.x > max_x) max_x = curr_tri.v1.x;
+            if (curr_tri.v2.x > max_x) max_x = curr_tri.v2.x;
+
+            if (curr_tri.v1.y < min_y) min_y = curr_tri.v1.y;
+            if (curr_tri.v2.y < min_y) min_y = curr_tri.v2.y;
+            if (curr_tri.v1.y > max_y) max_y = curr_tri.v1.y;
+            if (curr_tri.v2.y > max_y) max_y = curr_tri.v2.y;
 
 
-            bounds[i].min_x = (min_x < (data_t)0) ? 0 : (int)min_x;
-            bounds[i].max_x = (max_x > (data_t)(64 - 1)) ? (64 - 1) : (int)max_x;
-            bounds[i].min_y = (min_y < (data_t)0) ? 0 : (int)min_y;
-            bounds[i].max_y = (max_y > (data_t)(64 - 1)) ? (64 - 1) : (int)max_y;
+            curr_bounds.min_x = (min_x < (data_t)0) ? 0 : min_x.to_int();
+            curr_bounds.max_x = (max_x > (data_t)(64 - 1)) ? (64 - 1) : max_x.to_int();
+            curr_bounds.min_y = (min_y < (data_t)0) ? 0 : min_y.to_int();
+            curr_bounds.max_y = (max_y > (data_t)(64 - 1)) ? (64 - 1) : max_y.to_int();
         } else {
-            bounds[i].min_x = 0; bounds[i].max_x = 0;
-            bounds[i].min_y = 0; bounds[i].max_y = 0;
+            curr_bounds.min_x = 0; curr_bounds.max_x = 0;
+            curr_bounds.min_y = 0; curr_bounds.max_y = 0;
         }
+
+
+        bounds[i] = curr_bounds;
+        screen_tris_out[i] = curr_tri;
     }
 }
-
 
 
 
@@ -59412,18 +59430,28 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
 
 
     for (int i = 0; i < 128; i++) {
-        if (!tris[i].is_active) continue;
 
-        data_t x0 = tris[i].v0.x, y0 = tris[i].v0.y;
-        data_t x1 = tris[i].v1.x, y1 = tris[i].v1.y;
-        data_t x2 = tris[i].v2.x, y2 = tris[i].v2.y;
+
+
+        Triangle curr_tri = tris[i];
+        BoundingBox curr_bounds = bounds[i];
+
+        if (!curr_tri.is_active) continue;
+
+
+        data_t x0 = curr_tri.v0.x, y0 = curr_tri.v0.y;
+        data_t x1 = curr_tri.v1.x, y1 = curr_tri.v1.y;
+        data_t x2 = curr_tri.v2.x, y2 = curr_tri.v2.y;
 
         data_t area = (x1 - x0) * (y2 - y0) - (x2 - x0) * (y1 - y0);
         if (area == (data_t)0) continue;
         data_t inv_area = (data_t)1.0 / area;
 
-        for (int y = bounds[i].min_y; y <= bounds[i].max_y; y++) {
-            for (int x = bounds[i].min_x; x <= bounds[i].max_x; x++) {
+
+        for (int y = curr_bounds.min_y; y <= curr_bounds.max_y; y++) {
+            for (int x = curr_bounds.min_x; x <= curr_bounds.max_x; x++) {
+#pragma HLS pipeline II=1
+
                 data_t px = (data_t)x + (data_t)0.5;
                 data_t py = (data_t)y + (data_t)0.5;
 
@@ -59432,15 +59460,15 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
                 data_t w2 = ((x0 - px) * (y1 - py) - (x1 - px) * (y0 - py)) * inv_area;
 
                 if (w0 >= (data_t)0 && w1 >= (data_t)0 && w2 >= (data_t)0) {
-                    data_t z = w0 * tris[i].v0.z + w1 * tris[i].v1.z + w2 * tris[i].v2.z;
 
+                    data_t z = w0 * curr_tri.v0.z + w1 * curr_tri.v1.z + w2 * curr_tri.v2.z;
 
                     if (z < local_depth[y][x]) {
                         local_depth[y][x] = z;
 
-                        local_normal[y][x].x = w0 * tris[i].n0.x + w1 * tris[i].n1.x + w2 * tris[i].n2.x;
-                        local_normal[y][x].y = w0 * tris[i].n0.y + w1 * tris[i].n1.y + w2 * tris[i].n2.y;
-                        local_normal[y][x].z = w0 * tris[i].n0.z + w1 * tris[i].n1.z + w2 * tris[i].n2.z;
+                        local_normal[y][x].x = w0 * curr_tri.n0.x + w1 * curr_tri.n1.x + w2 * curr_tri.n2.x;
+                        local_normal[y][x].y = w0 * curr_tri.n0.y + w1 * curr_tri.n1.y + w2 * curr_tri.n2.y;
+                        local_normal[y][x].z = w0 * curr_tri.n0.z + w1 * curr_tri.n1.z + w2 * curr_tri.n2.z;
                     }
                 }
             }
@@ -59470,6 +59498,7 @@ static void k5_deferred_lighting(const data_t depth_buffer[64][64],
 
     for (int y = 0; y < 64; y++) {
         for (int x = 0; x < 64; x++) {
+#pragma HLS pipeline II=1
             if (depth_buffer[y][x] == (data_t)9999.0) {
 
                 framebuffer[y][x] = (data_t)0.0;
@@ -59494,14 +59523,22 @@ void top_kernel(const Triangle in_tris[128],
                 const data_t mvp_matrix[4][4],
                 data_t out_pixels[64][64]) {
 #pragma HLS interface m_axi port=in_tris offset=slave bundle=gmem0
+#pragma HLS interface m_axi port=mvp_matrix offset=slave bundle=gmem2
 #pragma HLS interface m_axi port=out_pixels offset=slave bundle=gmem1
 #pragma HLS interface s_axilite port=return
 #pragma HLS DATAFLOW
 
 
     static Triangle clip_tris[128];
-    static Triangle screen_tris[128];
+    static Triangle screen_tris_in[128];
+    static Triangle screen_tris_out[128];
     static BoundingBox bounds[128];
+
+
+#pragma HLS stream variable=clip_tris depth=2
+#pragma HLS stream variable=screen_tris_in depth=2
+#pragma HLS stream variable=screen_tris_out depth=2
+#pragma HLS stream variable=bounds depth=2
 
 
     static data_t depth_buffer[64][64];
@@ -59509,9 +59546,9 @@ void top_kernel(const Triangle in_tris[128],
 
 
     k1_vertex_transform(in_tris, mvp_matrix, clip_tris);
-    k2_perspective_divide(clip_tris, screen_tris);
-    k3_bounding_box(screen_tris, bounds);
-    k4_rasterize(screen_tris, bounds, depth_buffer, normal_buffer);
+    k2_perspective_divide(clip_tris, screen_tris_in);
+    k3_bounding_box(screen_tris_in, screen_tris_out, bounds);
+    k4_rasterize(screen_tris_out, bounds, depth_buffer, normal_buffer);
     k5_deferred_lighting(depth_buffer, normal_buffer, out_pixels);
 }
 #ifndef HLS_FASTSIM
@@ -59539,5 +59576,5 @@ apatb_top_kernel_ir(in_tris, mvp_matrix, out_pixels);
 return ;
 }
 #endif
-# 228 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/top.cpp"
+# 265 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/top.cpp"
 

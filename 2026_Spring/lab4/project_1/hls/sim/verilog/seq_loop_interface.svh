@@ -3,10 +3,8 @@
     `timescale 1ns/1ps
     interface seq_loop_intf#(parameter FSM_WIDTH = 2)(input clock, input reset);
         logic [FSM_WIDTH-1:0] cur_state;
-        logic [2:0] pre_states_valid;
+        logic pre_states_valid;
         logic [FSM_WIDTH-1:0] pre_loop_state0;
-        logic [FSM_WIDTH-1:0] pre_loop_state1;
-        logic [FSM_WIDTH-1:0] pre_loop_state2;
         logic post_states_valid;
         logic [FSM_WIDTH-1:0] post_loop_state0;
         logic quit_states_valid;

@@ -15,6 +15,7 @@
         top_kernel_config top_kernel_cfg;                                                                         
                                                                                                                     
         axi_pkg::axi_env#(64,128,8,3,1) axi_master_gmem0;
+        axi_pkg::axi_env#(64,4,8,3,1) axi_master_gmem2;
         axi_pkg::axi_env#(64,4,8,3,1) axi_master_gmem1;
         axi_pkg::axi_env#(6,4,4,3,1) axi_lite_control;
                                                                                                                     
@@ -50,6 +51,14 @@
         top_kernel_cfg.gmem0_cfg.read_latency_mode = TRANSACTION_FIRST;
         uvm_config_db#(axi_pkg::axi_cfg)::set(this, "axi_master_gmem0*", "cfg", top_kernel_cfg.gmem0_cfg);
         axi_master_gmem0 = axi_pkg::axi_env#(64,128,8,3,1)::type_id::create("axi_master_gmem0", this);
+
+        top_kernel_cfg.gmem2_cfg.set_default();
+        top_kernel_cfg.gmem2_cfg.drv_type = axi_pkg::SLAVE;
+        top_kernel_cfg.gmem2_cfg.reset_level = axi_pkg::RESET_LEVEL_LOW;
+        top_kernel_cfg.gmem2_cfg.write_latency_mode = TRANSACTION_FIRST;
+        top_kernel_cfg.gmem2_cfg.read_latency_mode = TRANSACTION_FIRST;
+        uvm_config_db#(axi_pkg::axi_cfg)::set(this, "axi_master_gmem2*", "cfg", top_kernel_cfg.gmem2_cfg);
+        axi_master_gmem2 = axi_pkg::axi_env#(64,4,8,3,1)::type_id::create("axi_master_gmem2", this);
 
         top_kernel_cfg.gmem1_cfg.set_default();
         top_kernel_cfg.gmem1_cfg.drv_type = axi_pkg::SLAVE;
@@ -93,6 +102,11 @@
         axi_master_gmem0.item_wtr_port.connect(subsys_mon.gmem0_wtr_imp);
         axi_master_gmem0.item_rtr_port.connect(subsys_mon.gmem0_rtr_imp);
         uvm_callbacks#(axi_pkg::axi_state, axi_pkg::axi_state_cbs)::add(axi_master_gmem0.state, refm.axi_memaccess_cb_gmem0);
+        if(top_kernel_cfg.gmem2_cfg.drv_type==axi_pkg::MASTER ||top_kernel_cfg.gmem2_cfg.drv_type==axi_pkg::SLAVE)
+            top_kernel_virtual_sqr.gmem2_sqr = axi_master_gmem2.vsqr;
+        axi_master_gmem2.item_wtr_port.connect(subsys_mon.gmem2_wtr_imp);
+        axi_master_gmem2.item_rtr_port.connect(subsys_mon.gmem2_rtr_imp);
+        uvm_callbacks#(axi_pkg::axi_state, axi_pkg::axi_state_cbs)::add(axi_master_gmem2.state, refm.axi_memaccess_cb_gmem2);
         if(top_kernel_cfg.gmem1_cfg.drv_type==axi_pkg::MASTER ||top_kernel_cfg.gmem1_cfg.drv_type==axi_pkg::SLAVE)
             top_kernel_virtual_sqr.gmem1_sqr = axi_master_gmem1.vsqr;
         axi_master_gmem1.item_wtr_port.connect(subsys_mon.gmem1_wtr_imp);

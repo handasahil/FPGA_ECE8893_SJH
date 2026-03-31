@@ -8,6 +8,8 @@
     "port_stall_constraint" : { 
         "gmem0 wr"    : "{ delay == 0;}" ,
         "gmem0 rd"    : "{ delay == 0;}" ,
+        "gmem2 wr"    : "{ delay == 0;}" ,
+        "gmem2 rd"    : "{ delay == 0;}" ,
         "gmem1 wr"    : "{ delay == 0;}" ,
         "gmem1 rd"    : "{ delay == 0;}" ,
         "control wctrl"    : "{ delay == 0;}" ,

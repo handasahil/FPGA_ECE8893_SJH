@@ -31,11 +31,14 @@ using namespace std;
 #define AUTOTB_TVOUT_gmem0 "../tv/cdatafile/c.top_kernel.autotvout_gmem0.dat"
 #define AUTOTB_TVIN_gmem1 "../tv/cdatafile/c.top_kernel.autotvin_gmem1.dat"
 #define AUTOTB_TVOUT_gmem1 "../tv/cdatafile/c.top_kernel.autotvout_gmem1.dat"
+#define AUTOTB_TVIN_gmem2 "../tv/cdatafile/c.top_kernel.autotvin_gmem2.dat"
+#define AUTOTB_TVOUT_gmem2 "../tv/cdatafile/c.top_kernel.autotvout_gmem2.dat"
 
 
 // tvout file define:
 #define AUTOTB_TVOUT_PC_gmem0 "../tv/rtldatafile/rtl.top_kernel.autotvout_gmem0.dat"
 #define AUTOTB_TVOUT_PC_gmem1 "../tv/rtldatafile/rtl.top_kernel.autotvout_gmem1.dat"
+#define AUTOTB_TVOUT_PC_gmem2 "../tv/rtldatafile/rtl.top_kernel.autotvout_gmem2.dat"
 
 
 namespace hls::sim
@@ -1256,8 +1259,20 @@ void apatb_top_kernel_hw(void* __xlx_apatb_param_in_tris, void* __xlx_apatb_para
   };
   port0.param = &__xlx_offset_byte_param_in_tris;
 
-  static hls::sim::Byte<4> __xlx_offset_byte_param_out_pixels;
+  static hls::sim::Byte<4> __xlx_offset_byte_param_mvp_matrix;
   static hls::sim::Register port1 {
+    .name = "mvp_matrix",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_mvp_matrix),
+#endif
+  };
+  port1.param = &__xlx_offset_byte_param_mvp_matrix;
+
+  static hls::sim::Byte<4> __xlx_offset_byte_param_out_pixels;
+  static hls::sim::Register port2 {
     .name = "out_pixels",
     .width = 32,
 #ifdef POST_CHECK
@@ -1266,12 +1281,12 @@ void apatb_top_kernel_hw(void* __xlx_apatb_param_in_tris, void* __xlx_apatb_para
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out_pixels),
 #endif
   };
-  port1.param = &__xlx_offset_byte_param_out_pixels;
+  port2.param = &__xlx_offset_byte_param_out_pixels;
 
 #ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port2 {
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port3 {
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port2 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port3 {
 #endif
     .width = 1024,
     .asize = 128,
@@ -1289,14 +1304,14 @@ void apatb_top_kernel_hw(void* __xlx_apatb_param_in_tris, void* __xlx_apatb_para
     .hasWrite = { false },
     .max_nbytes = { 0 },
   };
-  port2.param = { __xlx_apatb_param_in_tris };
-  port2.mname = { "in_tris" };
-  port2.nbytes = { 11776 };
+  port3.param = { __xlx_apatb_param_in_tris };
+  port3.mname = { "in_tris" };
+  port3.nbytes = { 11776 };
 
 #ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port3 {
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port4 {
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port3 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
 #endif
     .width = 32,
     .asize = 4,
@@ -1323,57 +1338,59 @@ void apatb_top_kernel_hw(void* __xlx_apatb_param_in_tris, void* __xlx_apatb_para
     .hasWrite = { true },
     .max_nbytes = { 0 },
   };
-  port3.param = { __xlx_apatb_param_out_pixels };
-  port3.mname = { "out_pixels" };
-  port3.nbytes = { 16384 };
+  port4.param = { __xlx_apatb_param_out_pixels };
+  port4.mname = { "out_pixels" };
+  port4.nbytes = { 16384 };
 
 #ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port4 {
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port5 {
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
 #endif
     .width = 32,
     .asize = 4,
     .hbm = false,
-    .name = { "mvp_matrix" },
+    .name = { "gmem2" },
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
 #ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_mvp_matrix),
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem2),
 #else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_mvp_matrix),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem2),
 #endif
 #endif
     .hasWrite = { false },
     .max_nbytes = { 0 },
   };
-  port4.param = { __xlx_apatb_param_mvp_matrix };
-  port4.mname = { "mvp_matrix" };
-  port4.nbytes = { 64 };
+  port5.param = { __xlx_apatb_param_mvp_matrix };
+  port5.mname = { "mvp_matrix" };
+  port5.nbytes = { 64 };
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port3);
+    check(port4);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     tcl.containsVLA = 0;
     CodeState = DUMP_INPUTS;
     delay_dump(port0, port0.iwriter, tcl.AESL_transaction);
     delay_dump(port1, port1.iwriter, tcl.AESL_transaction);
-    dump(port2, port2.iwriter, tcl.AESL_transaction);
+    delay_dump(port2, port2.iwriter, tcl.AESL_transaction);
     dump(port3, port3.iwriter, tcl.AESL_transaction);
     dump(port4, port4.iwriter, tcl.AESL_transaction);
+    dump(port5, port5.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
     port4.doTCL(tcl);
+    port5.doTCL(tcl);
     CodeState = CALL_C_DUT;
     top_kernel_hw_stub_wrapper(__xlx_apatb_param_in_tris, __xlx_apatb_param_mvp_matrix, __xlx_apatb_param_out_pixels);
     CodeState = DUMP_OUTPUTS;
-    dump(port3, port3.owriter, tcl.AESL_transaction);
+    dump(port4, port4.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

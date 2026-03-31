@@ -241,6 +241,24 @@
                 "SV": "::bd_0_imp:",
                 "TM": "both",
                 "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
+                "BA": "0x0000000044A00000",
+                "HA": "0x0000000044A0FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "Data_m_axi_gmem2",
+                "MX": "/hls_inst",
+                "MI": "m_axi_gmem2",
+                "MS": "SEG_m_axi_gmem2_Reg",
+                "MV": "xilinx.com:hls:top_kernel:1.0",
+                "SX": "/",
+                "SI": "m_axi_gmem2",
+                "SS": "Reg",
+                "SV": "::bd_0_imp:",
+                "TM": "both",
+                "TU": "register"
             }
         },
         "edges": [
@@ -264,6 +282,11 @@
             },
             {
                 "src": "V5",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V6",
                 "trg": "V2",
                 "EH": "2"
             }

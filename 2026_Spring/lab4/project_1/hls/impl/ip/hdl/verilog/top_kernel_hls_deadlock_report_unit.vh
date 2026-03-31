@@ -1,5 +1,5 @@
    
-    parameter PROC_NUM = 5;
+    parameter PROC_NUM = 6;
     parameter ST_IDLE = 3'b000;
     parameter ST_FILTER_FAKE = 3'b001;
     parameter ST_DL_DETECTED = 3'b010;
@@ -216,7 +216,7 @@
     endfunction
 
     // get the proc path based on dl vector
-    function [528:0] proc_path(input [PROC_NUM - 1:0] dl_vec);
+    function [408:0] proc_path(input [PROC_NUM - 1:0] dl_vec);
         integer index;
         begin
             index = proc_index(dl_vec);
@@ -231,9 +231,12 @@
                     proc_path = "top_kernel_top_kernel.k2_perspective_divide_U0";
                 end
                 3 : begin
-                    proc_path = "top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0";
+                    proc_path = "top_kernel_top_kernel.k3_bounding_box_U0";
                 end
                 4 : begin
+                    proc_path = "top_kernel_top_kernel.k4_rasterize_U0";
+                end
+                5 : begin
                     proc_path = "top_kernel_top_kernel.k5_deferred_lighting_U0";
                 end
                 default : begin
@@ -254,7 +257,7 @@
     endtask
 
     // print the start of a cycle
-    task print_cycle_start(input reg [528:0] proc_path, input integer cycle_id);
+    task print_cycle_start(input reg [408:0] proc_path, input integer cycle_id);
         begin
             $display("/////////////////////////");
             $display("// Dependence cycle %0d:", cycle_id);
@@ -279,7 +282,7 @@
     endtask
 
     // print one proc component in the cycle
-    task print_cycle_proc_comp(input reg [528:0] proc_path, input integer cycle_comp_id);
+    task print_cycle_proc_comp(input reg [408:0] proc_path, input integer cycle_comp_id);
         begin
             $display("// (%0d): Process: %0s", cycle_comp_id, proc_path);
             $fdisplay(fp, "Dependence_Process_ID %0d", cycle_comp_id);
@@ -289,7 +292,7 @@
 
     // print one channel component in the cycle
     task print_cycle_chan_comp(input [PROC_NUM - 1:0] dl_vec1, input [PROC_NUM - 1:0] dl_vec2);
-        reg [400:0] chan_path;
+        reg [504:0] chan_path;
         integer index1;
         integer index2;
         begin
@@ -298,7 +301,7 @@
             case (index1)
                 0 : begin // for proc 'top_kernel_top_kernel.entry_proc_U0'
                     case(index2)
-                    4: begin //  for dep proc 'top_kernel_top_kernel.k5_deferred_lighting_U0'
+                    5: begin //  for dep proc 'top_kernel_top_kernel.k5_deferred_lighting_U0'
 // for dep channel 'top_kernel_top_kernel.out_pixels_c_U' info is :
 // blk sig is {~top_kernel_top_kernel_inst.entry_proc_U0.out_pixels_c_blk_n data_FIFO}
                         if ((~entry_proc_U0.out_pixels_c_blk_n)) begin
@@ -326,313 +329,332 @@
                 1 : begin // for proc 'top_kernel_top_kernel.k1_vertex_transform_U0'
                     case(index2)
                     2: begin //  for dep proc 'top_kernel_top_kernel.k2_perspective_divide_U0'
-// for dep channel 'top_kernel_top_kernel.clip_tris_is_active_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_is_active_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_is_active_U.t_read} data_PIPO}
-                        if ((~clip_tris_is_active_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_is_active_U.t_read)) begin
-                            if (~clip_tris_is_active_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_is_active_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_is_active_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_is_active_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_is_active_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_is_active_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n0_x_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n0_x_U.t_read} data_PIPO}
-                        if ((~clip_tris_n0_x_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n0_x_U.t_read)) begin
-                            if (~clip_tris_n0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_x_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_x_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n0_y_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n0_y_U.t_read} data_PIPO}
-                        if ((~clip_tris_n0_y_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n0_y_U.t_read)) begin
-                            if (~clip_tris_n0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_y_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_y_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n0_z_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n0_z_U.t_read} data_PIPO}
-                        if ((~clip_tris_n0_z_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n0_z_U.t_read)) begin
-                            if (~clip_tris_n0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_z_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_z_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n1_x_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n1_x_U.t_read} data_PIPO}
-                        if ((~clip_tris_n1_x_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n1_x_U.t_read)) begin
-                            if (~clip_tris_n1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_x_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_x_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n1_y_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n1_y_U.t_read} data_PIPO}
-                        if ((~clip_tris_n1_y_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n1_y_U.t_read)) begin
-                            if (~clip_tris_n1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_y_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_y_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n1_z_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n1_z_U.t_read} data_PIPO}
-                        if ((~clip_tris_n1_z_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n1_z_U.t_read)) begin
-                            if (~clip_tris_n1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_z_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_z_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n2_x_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n2_x_U.t_read} data_PIPO}
-                        if ((~clip_tris_n2_x_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n2_x_U.t_read)) begin
-                            if (~clip_tris_n2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_x_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_x_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n2_y_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n2_y_U.t_read} data_PIPO}
-                        if ((~clip_tris_n2_y_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n2_y_U.t_read)) begin
-                            if (~clip_tris_n2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_y_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_y_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_n2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n2_z_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_n2_z_U.t_read} data_PIPO}
-                        if ((~clip_tris_n2_z_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_n2_z_U.t_read)) begin
-                            if (~clip_tris_n2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_z_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_n2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_z_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
-// for dep channel 'top_kernel_top_kernel.clip_tris_v0_w_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_w_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v0_w_U.t_read} data_PIPO}
-                        if ((~clip_tris_v0_w_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v0_w_U.t_read)) begin
-                            if (~clip_tris_v0_w_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_w_U");
-                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
-                            end
-                            else if (~clip_tris_v0_w_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_w_U");
-                                $fdisplay(fp, "Dependence_Channel_status FULL");
-                            end
-                        end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_x_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v0_x_U.t_read} data_PIPO}
-                        if ((~clip_tris_v0_x_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v0_x_U.t_read)) begin
-                            if (~clip_tris_v0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v0_x_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v0_x_blk_n)) begin
+                            if (~clip_tris_v0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_y_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v0_y_U.t_read} data_PIPO}
-                        if ((~clip_tris_v0_y_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v0_y_U.t_read)) begin
-                            if (~clip_tris_v0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v0_y_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v0_y_blk_n)) begin
+                            if (~clip_tris_v0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_z_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v0_z_U.t_read} data_PIPO}
-                        if ((~clip_tris_v0_z_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v0_z_U.t_read)) begin
-                            if (~clip_tris_v0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v0_z_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v0_z_blk_n)) begin
+                            if (~clip_tris_v0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.clip_tris_v1_w_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_w_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v1_w_U.t_read} data_PIPO}
-                        if ((~clip_tris_v1_w_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v1_w_U.t_read)) begin
-                            if (~clip_tris_v1_w_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_w_U");
+// for dep channel 'top_kernel_top_kernel.clip_tris_v0_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v0_w_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v0_w_blk_n)) begin
+                            if (~clip_tris_v0_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_w_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_w_U");
+                            else if (~clip_tris_v0_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_x_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v1_x_U.t_read} data_PIPO}
-                        if ((~clip_tris_v1_x_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v1_x_U.t_read)) begin
-                            if (~clip_tris_v1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v1_x_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v1_x_blk_n)) begin
+                            if (~clip_tris_v1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_y_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v1_y_U.t_read} data_PIPO}
-                        if ((~clip_tris_v1_y_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v1_y_U.t_read)) begin
-                            if (~clip_tris_v1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v1_y_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v1_y_blk_n)) begin
+                            if (~clip_tris_v1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_z_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v1_z_U.t_read} data_PIPO}
-                        if ((~clip_tris_v1_z_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v1_z_U.t_read)) begin
-                            if (~clip_tris_v1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v1_z_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v1_z_blk_n)) begin
+                            if (~clip_tris_v1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.clip_tris_v2_w_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_w_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v2_w_U.t_read} data_PIPO}
-                        if ((~clip_tris_v2_w_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v2_w_U.t_read)) begin
-                            if (~clip_tris_v2_w_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_w_U");
+// for dep channel 'top_kernel_top_kernel.clip_tris_v1_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v1_w_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v1_w_blk_n)) begin
+                            if (~clip_tris_v1_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_w_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_w_U");
+                            else if (~clip_tris_v1_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_x_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v2_x_U.t_read} data_PIPO}
-                        if ((~clip_tris_v2_x_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v2_x_U.t_read)) begin
-                            if (~clip_tris_v2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v2_x_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v2_x_blk_n)) begin
+                            if (~clip_tris_v2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_y_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v2_y_U.t_read} data_PIPO}
-                        if ((~clip_tris_v2_y_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v2_y_U.t_read)) begin
-                            if (~clip_tris_v2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v2_y_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v2_y_blk_n)) begin
+                            if (~clip_tris_v2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_z_U.i_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.clip_tris_v2_z_U.t_read} data_PIPO}
-                        if ((~clip_tris_v2_z_U.i_full_n & k1_vertex_transform_U0.ap_done & ap_done_reg_0 & ~clip_tris_v2_z_U.t_read)) begin
-                            if (~clip_tris_v2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v2_z_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v2_z_blk_n)) begin
+                            if (~clip_tris_v2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                            else if (~clip_tris_v2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_v2_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_v2_w_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_v2_w_blk_n)) begin
+                            if (~clip_tris_v2_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_v2_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n0_x_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n0_x_blk_n)) begin
+                            if (~clip_tris_n0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n0_y_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n0_y_blk_n)) begin
+                            if (~clip_tris_n0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n0_z_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n0_z_blk_n)) begin
+                            if (~clip_tris_n0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n1_x_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n1_x_blk_n)) begin
+                            if (~clip_tris_n1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n1_y_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n1_y_blk_n)) begin
+                            if (~clip_tris_n1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n1_z_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n1_z_blk_n)) begin
+                            if (~clip_tris_n1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n2_x_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n2_x_blk_n)) begin
+                            if (~clip_tris_n2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n2_y_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n2_y_blk_n)) begin
+                            if (~clip_tris_n2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_n2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_n2_z_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_n2_z_blk_n)) begin
+                            if (~clip_tris_n2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_n2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_color_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_color_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_color_blk_n)) begin
+                            if (~clip_tris_color_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_color_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_color_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_color_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_is_active_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k1_vertex_transform_U0.clip_tris_is_active_blk_n data_FIFO}
+                        if ((~k1_vertex_transform_U0.clip_tris_is_active_blk_n)) begin
+                            if (~clip_tris_is_active_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_is_active_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_is_active_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_is_active_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.start_for_k2_perspective_divide_U0_U' info is :
+// blk sig is {{~top_kernel_top_kernel_inst.start_for_k2_perspective_divide_U0_U.if_full_n & top_kernel_top_kernel_inst.k1_vertex_transform_U0.ap_start & ~top_kernel_top_kernel_inst.k1_vertex_transform_U0.real_start & (trans_in_cnt_0 == trans_out_cnt_0) & ~top_kernel_top_kernel_inst.start_for_k2_perspective_divide_U0_U.if_read} start_FIFO}
+                        if ((~start_for_k2_perspective_divide_U0_U.if_full_n & k1_vertex_transform_U0.ap_start & ~k1_vertex_transform_U0.real_start & (trans_in_cnt_0 == trans_out_cnt_0) & ~start_for_k2_perspective_divide_U0_U.if_read)) begin
+                            $display("//      Blocked by full output start propagation FIFO 'top_kernel_top_kernel.start_for_k2_perspective_divide_U0_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0',");
                         end
                     end
                     0: begin //  for dep proc 'top_kernel_top_kernel.entry_proc_U0'
@@ -648,590 +670,1388 @@
                     case(index2)
                     1: begin //  for dep proc 'top_kernel_top_kernel.k1_vertex_transform_U0'
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_x_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v0_x_U.i_write} data_PIPO}
-                        if ((~clip_tris_v0_x_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v0_x_U.i_write)) begin
-                            if (~clip_tris_v0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v0_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v0_x_blk_n)) begin
+                            if (~clip_tris_v0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_y_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v0_y_U.i_write} data_PIPO}
-                        if ((~clip_tris_v0_y_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v0_y_U.i_write)) begin
-                            if (~clip_tris_v0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v0_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v0_y_blk_n)) begin
+                            if (~clip_tris_v0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_z_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v0_z_U.i_write} data_PIPO}
-                        if ((~clip_tris_v0_z_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v0_z_U.i_write)) begin
-                            if (~clip_tris_v0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v0_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v0_z_blk_n)) begin
+                            if (~clip_tris_v0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v0_w_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v0_w_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v0_w_U.i_write} data_PIPO}
-                        if ((~clip_tris_v0_w_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v0_w_U.i_write)) begin
-                            if (~clip_tris_v0_w_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v0_w_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v0_w_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v0_w_blk_n)) begin
+                            if (~clip_tris_v0_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v0_w_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v0_w_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v0_w_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v0_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v0_w_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_x_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v1_x_U.i_write} data_PIPO}
-                        if ((~clip_tris_v1_x_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v1_x_U.i_write)) begin
-                            if (~clip_tris_v1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v1_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v1_x_blk_n)) begin
+                            if (~clip_tris_v1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_y_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v1_y_U.i_write} data_PIPO}
-                        if ((~clip_tris_v1_y_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v1_y_U.i_write)) begin
-                            if (~clip_tris_v1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v1_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v1_y_blk_n)) begin
+                            if (~clip_tris_v1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_z_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v1_z_U.i_write} data_PIPO}
-                        if ((~clip_tris_v1_z_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v1_z_U.i_write)) begin
-                            if (~clip_tris_v1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v1_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v1_z_blk_n)) begin
+                            if (~clip_tris_v1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v1_w_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v1_w_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v1_w_U.i_write} data_PIPO}
-                        if ((~clip_tris_v1_w_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v1_w_U.i_write)) begin
-                            if (~clip_tris_v1_w_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v1_w_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v1_w_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v1_w_blk_n)) begin
+                            if (~clip_tris_v1_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v1_w_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v1_w_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v1_w_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v1_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v1_w_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_x_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v2_x_U.i_write} data_PIPO}
-                        if ((~clip_tris_v2_x_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v2_x_U.i_write)) begin
-                            if (~clip_tris_v2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v2_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v2_x_blk_n)) begin
+                            if (~clip_tris_v2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_y_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v2_y_U.i_write} data_PIPO}
-                        if ((~clip_tris_v2_y_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v2_y_U.i_write)) begin
-                            if (~clip_tris_v2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v2_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v2_y_blk_n)) begin
+                            if (~clip_tris_v2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_z_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v2_z_U.i_write} data_PIPO}
-                        if ((~clip_tris_v2_z_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v2_z_U.i_write)) begin
-                            if (~clip_tris_v2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v2_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v2_z_blk_n)) begin
+                            if (~clip_tris_v2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_v2_w_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_v2_w_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_v2_w_U.i_write} data_PIPO}
-                        if ((~clip_tris_v2_w_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_v2_w_U.i_write)) begin
-                            if (~clip_tris_v2_w_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_v2_w_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_v2_w_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_v2_w_blk_n)) begin
+                            if (~clip_tris_v2_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_v2_w_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_v2_w_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_v2_w_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_v2_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_v2_w_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_v2_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n0_x_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n0_x_U.i_write} data_PIPO}
-                        if ((~clip_tris_n0_x_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n0_x_U.i_write)) begin
-                            if (~clip_tris_n0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n0_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n0_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n0_x_blk_n)) begin
+                            if (~clip_tris_n0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n0_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n0_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n0_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n0_y_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n0_y_U.i_write} data_PIPO}
-                        if ((~clip_tris_n0_y_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n0_y_U.i_write)) begin
-                            if (~clip_tris_n0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n0_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n0_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n0_y_blk_n)) begin
+                            if (~clip_tris_n0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n0_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n0_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n0_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n0_z_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n0_z_U.i_write} data_PIPO}
-                        if ((~clip_tris_n0_z_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n0_z_U.i_write)) begin
-                            if (~clip_tris_n0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n0_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n0_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n0_z_blk_n)) begin
+                            if (~clip_tris_n0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n0_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n0_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n0_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n1_x_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n1_x_U.i_write} data_PIPO}
-                        if ((~clip_tris_n1_x_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n1_x_U.i_write)) begin
-                            if (~clip_tris_n1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n1_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n1_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n1_x_blk_n)) begin
+                            if (~clip_tris_n1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n1_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n1_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n1_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n1_y_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n1_y_U.i_write} data_PIPO}
-                        if ((~clip_tris_n1_y_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n1_y_U.i_write)) begin
-                            if (~clip_tris_n1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n1_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n1_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n1_y_blk_n)) begin
+                            if (~clip_tris_n1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n1_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n1_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n1_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n1_z_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n1_z_U.i_write} data_PIPO}
-                        if ((~clip_tris_n1_z_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n1_z_U.i_write)) begin
-                            if (~clip_tris_n1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n1_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n1_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n1_z_blk_n)) begin
+                            if (~clip_tris_n1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n1_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n1_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n1_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n2_x_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n2_x_U.i_write} data_PIPO}
-                        if ((~clip_tris_n2_x_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n2_x_U.i_write)) begin
-                            if (~clip_tris_n2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n2_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n2_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n2_x_blk_n)) begin
+                            if (~clip_tris_n2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n2_x_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n2_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n2_x_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n2_y_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n2_y_U.i_write} data_PIPO}
-                        if ((~clip_tris_n2_y_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n2_y_U.i_write)) begin
-                            if (~clip_tris_n2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n2_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n2_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n2_y_blk_n)) begin
+                            if (~clip_tris_n2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n2_y_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n2_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n2_y_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_n2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_n2_z_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_n2_z_U.i_write} data_PIPO}
-                        if ((~clip_tris_n2_z_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_n2_z_U.i_write)) begin
-                            if (~clip_tris_n2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_n2_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_n2_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_n2_z_blk_n)) begin
+                            if (~clip_tris_n2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_n2_z_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_n2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_n2_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_n2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_n2_z_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.clip_tris_color_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_color_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_color_blk_n)) begin
+                            if (~clip_tris_color_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_color_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~clip_tris_color_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_color_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_color_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.clip_tris_is_active_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.clip_tris_is_active_U.t_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.clip_tris_is_active_U.i_write} data_PIPO}
-                        if ((~clip_tris_is_active_U.t_empty_n & k2_perspective_divide_U0.ap_idle & ~clip_tris_is_active_U.i_write)) begin
-                            if (~clip_tris_is_active_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.clip_tris_is_active_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.clip_tris_is_active_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.clip_tris_is_active_blk_n)) begin
+                            if (~clip_tris_is_active_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.clip_tris_is_active_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_is_active_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~clip_tris_is_active_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.clip_tris_is_active_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
+                            else if (~clip_tris_is_active_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.clip_tris_is_active_U' read by process 'top_kernel_top_kernel.k1_vertex_transform_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.clip_tris_is_active_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
+                        end
+// for dep channel 'top_kernel_top_kernel.start_for_k2_perspective_divide_U0_U' info is :
+// blk sig is {{~top_kernel_top_kernel_inst.start_for_k2_perspective_divide_U0_U.if_empty_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_idle & ~top_kernel_top_kernel_inst.start_for_k2_perspective_divide_U0_U.if_write} start_FIFO}
+                        if ((~start_for_k2_perspective_divide_U0_U.if_empty_n & k2_perspective_divide_U0.ap_idle & ~start_for_k2_perspective_divide_U0_U.if_write)) begin
+                            $display("//      Blocked by missing 'ap_start' from start propagation FIFO 'top_kernel_top_kernel.start_for_k2_perspective_divide_U0_U' written by process 'top_kernel_top_kernel.k1_vertex_transform_U0',");
                         end
                     end
-                    3: begin //  for dep proc 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'
-// for dep channel 'top_kernel_top_kernel.screen_tris_v0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v0_x_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v0_x_U.t_read} data_PIPO}
-                        if ((~screen_tris_v0_x_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v0_x_U.t_read)) begin
-                            if (~screen_tris_v0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v0_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_x_U");
+                    3: begin //  for dep proc 'top_kernel_top_kernel.k3_bounding_box_U0'
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v0_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v0_x_blk_n)) begin
+                            if (~screen_tris_in_v0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v0_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_x_U");
+                            else if (~screen_tris_in_v0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v0_y_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v0_y_U.t_read} data_PIPO}
-                        if ((~screen_tris_v0_y_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v0_y_U.t_read)) begin
-                            if (~screen_tris_v0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v0_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v0_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v0_y_blk_n)) begin
+                            if (~screen_tris_in_v0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v0_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_y_U");
+                            else if (~screen_tris_in_v0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v0_z_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v0_z_U.t_read} data_PIPO}
-                        if ((~screen_tris_v0_z_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v0_z_U.t_read)) begin
-                            if (~screen_tris_v0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v0_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v0_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v0_z_blk_n)) begin
+                            if (~screen_tris_in_v0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v0_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_z_U");
+                            else if (~screen_tris_in_v0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v1_x_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v1_x_U.t_read} data_PIPO}
-                        if ((~screen_tris_v1_x_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v1_x_U.t_read)) begin
-                            if (~screen_tris_v1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v1_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v0_w_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v0_w_blk_n)) begin
+                            if (~screen_tris_in_v0_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_w_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v1_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_x_U");
+                            else if (~screen_tris_in_v0_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_w_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v1_y_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v1_y_U.t_read} data_PIPO}
-                        if ((~screen_tris_v1_y_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v1_y_U.t_read)) begin
-                            if (~screen_tris_v1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v1_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v1_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v1_x_blk_n)) begin
+                            if (~screen_tris_in_v1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v1_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_y_U");
+                            else if (~screen_tris_in_v1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v1_z_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v1_z_U.t_read} data_PIPO}
-                        if ((~screen_tris_v1_z_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v1_z_U.t_read)) begin
-                            if (~screen_tris_v1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v1_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v1_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v1_y_blk_n)) begin
+                            if (~screen_tris_in_v1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v1_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_z_U");
+                            else if (~screen_tris_in_v1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v2_x_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v2_x_U.t_read} data_PIPO}
-                        if ((~screen_tris_v2_x_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v2_x_U.t_read)) begin
-                            if (~screen_tris_v2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v2_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v1_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v1_z_blk_n)) begin
+                            if (~screen_tris_in_v1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v2_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_x_U");
+                            else if (~screen_tris_in_v1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v2_y_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v2_y_U.t_read} data_PIPO}
-                        if ((~screen_tris_v2_y_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v2_y_U.t_read)) begin
-                            if (~screen_tris_v2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v2_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v1_w_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v1_w_blk_n)) begin
+                            if (~screen_tris_in_v1_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_w_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v2_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_y_U");
+                            else if (~screen_tris_in_v1_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_w_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v2_z_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_v2_z_U.t_read} data_PIPO}
-                        if ((~screen_tris_v2_z_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_v2_z_U.t_read)) begin
-                            if (~screen_tris_v2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v2_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v2_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v2_x_blk_n)) begin
+                            if (~screen_tris_in_v2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v2_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_z_U");
+                            else if (~screen_tris_in_v2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n0_x_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n0_x_U.t_read} data_PIPO}
-                        if ((~screen_tris_n0_x_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n0_x_U.t_read)) begin
-                            if (~screen_tris_n0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n0_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v2_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v2_y_blk_n)) begin
+                            if (~screen_tris_in_v2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n0_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_x_U");
+                            else if (~screen_tris_in_v2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n0_y_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n0_y_U.t_read} data_PIPO}
-                        if ((~screen_tris_n0_y_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n0_y_U.t_read)) begin
-                            if (~screen_tris_n0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n0_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v2_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v2_z_blk_n)) begin
+                            if (~screen_tris_in_v2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n0_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_y_U");
+                            else if (~screen_tris_in_v2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n0_z_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n0_z_U.t_read} data_PIPO}
-                        if ((~screen_tris_n0_z_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n0_z_U.t_read)) begin
-                            if (~screen_tris_n0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n0_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_v2_w_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_v2_w_blk_n)) begin
+                            if (~screen_tris_in_v2_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_w_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n0_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_z_U");
+                            else if (~screen_tris_in_v2_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_w_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n1_x_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n1_x_U.t_read} data_PIPO}
-                        if ((~screen_tris_n1_x_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n1_x_U.t_read)) begin
-                            if (~screen_tris_n1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n1_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n0_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n0_x_blk_n)) begin
+                            if (~screen_tris_in_n0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n0_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n1_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_x_U");
+                            else if (~screen_tris_in_n0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n0_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n1_y_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n1_y_U.t_read} data_PIPO}
-                        if ((~screen_tris_n1_y_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n1_y_U.t_read)) begin
-                            if (~screen_tris_n1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n1_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n0_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n0_y_blk_n)) begin
+                            if (~screen_tris_in_n0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n0_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n1_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_y_U");
+                            else if (~screen_tris_in_n0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n0_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n1_z_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n1_z_U.t_read} data_PIPO}
-                        if ((~screen_tris_n1_z_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n1_z_U.t_read)) begin
-                            if (~screen_tris_n1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n1_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n0_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n0_z_blk_n)) begin
+                            if (~screen_tris_in_n0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n0_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n1_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_z_U");
+                            else if (~screen_tris_in_n0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n0_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n2_x_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n2_x_U.t_read} data_PIPO}
-                        if ((~screen_tris_n2_x_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n2_x_U.t_read)) begin
-                            if (~screen_tris_n2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n2_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n1_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n1_x_blk_n)) begin
+                            if (~screen_tris_in_n1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n1_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n2_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_x_U");
+                            else if (~screen_tris_in_n1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n1_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n2_y_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n2_y_U.t_read} data_PIPO}
-                        if ((~screen_tris_n2_y_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n2_y_U.t_read)) begin
-                            if (~screen_tris_n2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n2_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n1_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n1_y_blk_n)) begin
+                            if (~screen_tris_in_n1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n1_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n2_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_y_U");
+                            else if (~screen_tris_in_n1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n1_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n2_z_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_n2_z_U.t_read} data_PIPO}
-                        if ((~screen_tris_n2_z_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_n2_z_U.t_read)) begin
-                            if (~screen_tris_n2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n2_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n1_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n1_z_blk_n)) begin
+                            if (~screen_tris_in_n1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n1_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n2_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_z_U");
+                            else if (~screen_tris_in_n1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n1_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_is_active_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_is_active_U.i_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~top_kernel_top_kernel_inst.screen_tris_is_active_U.t_read} data_PIPO}
-                        if ((~screen_tris_is_active_U.i_full_n & k2_perspective_divide_U0.ap_done & ap_done_reg_1 & ~screen_tris_is_active_U.t_read)) begin
-                            if (~screen_tris_is_active_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_is_active_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_is_active_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n2_x_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n2_x_blk_n)) begin
+                            if (~screen_tris_in_n2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n2_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_is_active_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_is_active_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_is_active_U");
+                            else if (~screen_tris_in_n2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n2_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n2_y_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n2_y_blk_n)) begin
+                            if (~screen_tris_in_n2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n2_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n2_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_n2_z_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_n2_z_blk_n)) begin
+                            if (~screen_tris_in_n2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n2_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n2_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_color_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_color_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_color_blk_n)) begin
+                            if (~screen_tris_in_color_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_color_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_color_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_color_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_is_active_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k2_perspective_divide_U0.screen_tris_in_is_active_blk_n data_FIFO}
+                        if ((~k2_perspective_divide_U0.screen_tris_in_is_active_blk_n)) begin
+                            if (~screen_tris_in_is_active_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_is_active_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_is_active_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_is_active_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.start_for_k3_bounding_box_U0_U' info is :
+// blk sig is {{~top_kernel_top_kernel_inst.start_for_k3_bounding_box_U0_U.if_full_n & top_kernel_top_kernel_inst.k2_perspective_divide_U0.ap_start & ~top_kernel_top_kernel_inst.k2_perspective_divide_U0.real_start & (trans_in_cnt_1 == trans_out_cnt_1) & ~top_kernel_top_kernel_inst.start_for_k3_bounding_box_U0_U.if_read} start_FIFO}
+                        if ((~start_for_k3_bounding_box_U0_U.if_full_n & k2_perspective_divide_U0.ap_start & ~k2_perspective_divide_U0.real_start & (trans_in_cnt_1 == trans_out_cnt_1) & ~start_for_k3_bounding_box_U0_U.if_read)) begin
+                            $display("//      Blocked by full output start propagation FIFO 'top_kernel_top_kernel.start_for_k3_bounding_box_U0_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0',");
                         end
                     end
                     endcase
                 end
-                3 : begin // for proc 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'
+                3 : begin // for proc 'top_kernel_top_kernel.k3_bounding_box_U0'
                     case(index2)
-                    4: begin //  for dep proc 'top_kernel_top_kernel.k5_deferred_lighting_U0'
+                    2: begin //  for dep proc 'top_kernel_top_kernel.k2_perspective_divide_U0'
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v0_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v0_x_blk_n)) begin
+                            if (~screen_tris_in_v0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v0_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v0_y_blk_n)) begin
+                            if (~screen_tris_in_v0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v0_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v0_z_blk_n)) begin
+                            if (~screen_tris_in_v0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v0_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v0_w_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v0_w_blk_n)) begin
+                            if (~screen_tris_in_v0_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v0_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v0_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v0_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v0_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v1_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v1_x_blk_n)) begin
+                            if (~screen_tris_in_v1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v1_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v1_y_blk_n)) begin
+                            if (~screen_tris_in_v1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v1_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v1_z_blk_n)) begin
+                            if (~screen_tris_in_v1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v1_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v1_w_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v1_w_blk_n)) begin
+                            if (~screen_tris_in_v1_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v1_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v1_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v1_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v1_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v2_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v2_x_blk_n)) begin
+                            if (~screen_tris_in_v2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v2_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v2_y_blk_n)) begin
+                            if (~screen_tris_in_v2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v2_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v2_z_blk_n)) begin
+                            if (~screen_tris_in_v2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_v2_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_v2_w_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_v2_w_blk_n)) begin
+                            if (~screen_tris_in_v2_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_v2_w_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_v2_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_v2_w_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_v2_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n0_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n0_x_blk_n)) begin
+                            if (~screen_tris_in_n0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n0_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n0_y_blk_n)) begin
+                            if (~screen_tris_in_n0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n0_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n0_z_blk_n)) begin
+                            if (~screen_tris_in_n0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n1_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n1_x_blk_n)) begin
+                            if (~screen_tris_in_n1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n1_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n1_y_blk_n)) begin
+                            if (~screen_tris_in_n1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n1_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n1_z_blk_n)) begin
+                            if (~screen_tris_in_n1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n2_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n2_x_blk_n)) begin
+                            if (~screen_tris_in_n2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n2_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n2_y_blk_n)) begin
+                            if (~screen_tris_in_n2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_n2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_n2_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_n2_z_blk_n)) begin
+                            if (~screen_tris_in_n2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_n2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_n2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_n2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_color_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_color_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_color_blk_n)) begin
+                            if (~screen_tris_in_color_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_color_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_color_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_color_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_in_is_active_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_in_is_active_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_in_is_active_blk_n)) begin
+                            if (~screen_tris_in_is_active_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_in_is_active_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_in_is_active_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_in_is_active_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_in_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.start_for_k3_bounding_box_U0_U' info is :
+// blk sig is {{~top_kernel_top_kernel_inst.start_for_k3_bounding_box_U0_U.if_empty_n & top_kernel_top_kernel_inst.k3_bounding_box_U0.ap_idle & ~top_kernel_top_kernel_inst.start_for_k3_bounding_box_U0_U.if_write} start_FIFO}
+                        if ((~start_for_k3_bounding_box_U0_U.if_empty_n & k3_bounding_box_U0.ap_idle & ~start_for_k3_bounding_box_U0_U.if_write)) begin
+                            $display("//      Blocked by missing 'ap_start' from start propagation FIFO 'top_kernel_top_kernel.start_for_k3_bounding_box_U0_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0',");
+                        end
+                    end
+                    4: begin //  for dep proc 'top_kernel_top_kernel.k4_rasterize_U0'
+// for dep channel 'top_kernel_top_kernel.bounds_min_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.bounds_min_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.bounds_min_x_blk_n)) begin
+                            if (~bounds_min_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_min_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_min_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_min_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_min_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.bounds_min_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.bounds_min_y_blk_n)) begin
+                            if (~bounds_min_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_min_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_min_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_min_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_max_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.bounds_max_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.bounds_max_x_blk_n)) begin
+                            if (~bounds_max_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_max_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_max_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_max_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_max_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.bounds_max_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.bounds_max_y_blk_n)) begin
+                            if (~bounds_max_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_max_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_max_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_max_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v0_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v0_x_blk_n)) begin
+                            if (~screen_tris_out_v0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v0_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v0_y_blk_n)) begin
+                            if (~screen_tris_out_v0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v0_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v0_z_blk_n)) begin
+                            if (~screen_tris_out_v0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v0_w_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v0_w_blk_n)) begin
+                            if (~screen_tris_out_v0_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_w_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v0_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_w_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v1_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v1_x_blk_n)) begin
+                            if (~screen_tris_out_v1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v1_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v1_y_blk_n)) begin
+                            if (~screen_tris_out_v1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v1_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v1_z_blk_n)) begin
+                            if (~screen_tris_out_v1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v1_w_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v1_w_blk_n)) begin
+                            if (~screen_tris_out_v1_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_w_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v1_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_w_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v2_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v2_x_blk_n)) begin
+                            if (~screen_tris_out_v2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v2_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v2_y_blk_n)) begin
+                            if (~screen_tris_out_v2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v2_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v2_z_blk_n)) begin
+                            if (~screen_tris_out_v2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_v2_w_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_v2_w_blk_n)) begin
+                            if (~screen_tris_out_v2_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_w_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_v2_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_w_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_w_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n0_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n0_x_blk_n)) begin
+                            if (~screen_tris_out_n0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n0_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n0_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n0_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n0_y_blk_n)) begin
+                            if (~screen_tris_out_n0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n0_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n0_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n0_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n0_z_blk_n)) begin
+                            if (~screen_tris_out_n0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n0_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n0_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n1_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n1_x_blk_n)) begin
+                            if (~screen_tris_out_n1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n1_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n1_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n1_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n1_y_blk_n)) begin
+                            if (~screen_tris_out_n1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n1_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n1_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n1_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n1_z_blk_n)) begin
+                            if (~screen_tris_out_n1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n1_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n1_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n2_x_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n2_x_blk_n)) begin
+                            if (~screen_tris_out_n2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n2_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n2_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n2_y_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n2_y_blk_n)) begin
+                            if (~screen_tris_out_n2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n2_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n2_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_n2_z_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_n2_z_blk_n)) begin
+                            if (~screen_tris_out_n2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n2_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n2_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_color_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_color_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_color_blk_n)) begin
+                            if (~screen_tris_out_color_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_color_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_color_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_color_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_is_active_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k3_bounding_box_U0.screen_tris_out_is_active_blk_n data_FIFO}
+                        if ((~k3_bounding_box_U0.screen_tris_out_is_active_blk_n)) begin
+                            if (~screen_tris_out_is_active_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_is_active_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_is_active_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_is_active_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.start_for_k4_rasterize_U0_U' info is :
+// blk sig is {{~top_kernel_top_kernel_inst.start_for_k4_rasterize_U0_U.if_full_n & top_kernel_top_kernel_inst.k3_bounding_box_U0.ap_start & ~top_kernel_top_kernel_inst.k3_bounding_box_U0.real_start & (trans_in_cnt_2 == trans_out_cnt_2) & ~top_kernel_top_kernel_inst.start_for_k4_rasterize_U0_U.if_read} start_FIFO}
+                        if ((~start_for_k4_rasterize_U0_U.if_full_n & k3_bounding_box_U0.ap_start & ~k3_bounding_box_U0.real_start & (trans_in_cnt_2 == trans_out_cnt_2) & ~start_for_k4_rasterize_U0_U.if_read)) begin
+                            $display("//      Blocked by full output start propagation FIFO 'top_kernel_top_kernel.start_for_k4_rasterize_U0_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0',");
+                        end
+                    end
+                    endcase
+                end
+                4 : begin // for proc 'top_kernel_top_kernel.k4_rasterize_U0'
+                    case(index2)
+                    5: begin //  for dep proc 'top_kernel_top_kernel.k5_deferred_lighting_U0'
 // for dep channel 'top_kernel_top_kernel.depth_buffer_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.depth_buffer_U.i_full_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~top_kernel_top_kernel_inst.depth_buffer_U.t_read} data_PIPO}
-                        if ((~depth_buffer_U.i_full_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~depth_buffer_U.t_read)) begin
+// blk sig is {{~top_kernel_top_kernel_inst.depth_buffer_U.i_full_n & top_kernel_top_kernel_inst.k4_rasterize_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.depth_buffer_U.t_read} data_PIPO}
+                        if ((~depth_buffer_U.i_full_n & k4_rasterize_U0.ap_done & ap_done_reg_0 & ~depth_buffer_U.t_read)) begin
                             if (~depth_buffer_U.t_empty_n) begin
                                 $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.depth_buffer_U' written by process 'top_kernel_top_kernel.k5_deferred_lighting_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.depth_buffer_U");
@@ -1244,8 +2064,8 @@
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.normal_buffer_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_x_U.i_full_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~top_kernel_top_kernel_inst.normal_buffer_x_U.t_read} data_PIPO}
-                        if ((~normal_buffer_x_U.i_full_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~normal_buffer_x_U.t_read)) begin
+// blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_x_U.i_full_n & top_kernel_top_kernel_inst.k4_rasterize_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.normal_buffer_x_U.t_read} data_PIPO}
+                        if ((~normal_buffer_x_U.i_full_n & k4_rasterize_U0.ap_done & ap_done_reg_0 & ~normal_buffer_x_U.t_read)) begin
                             if (~normal_buffer_x_U.t_empty_n) begin
                                 $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_x_U' written by process 'top_kernel_top_kernel.k5_deferred_lighting_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_x_U");
@@ -1258,8 +2078,8 @@
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.normal_buffer_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_y_U.i_full_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~top_kernel_top_kernel_inst.normal_buffer_y_U.t_read} data_PIPO}
-                        if ((~normal_buffer_y_U.i_full_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~normal_buffer_y_U.t_read)) begin
+// blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_y_U.i_full_n & top_kernel_top_kernel_inst.k4_rasterize_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.normal_buffer_y_U.t_read} data_PIPO}
+                        if ((~normal_buffer_y_U.i_full_n & k4_rasterize_U0.ap_done & ap_done_reg_0 & ~normal_buffer_y_U.t_read)) begin
                             if (~normal_buffer_y_U.t_empty_n) begin
                                 $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_y_U' written by process 'top_kernel_top_kernel.k5_deferred_lighting_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_y_U");
@@ -1272,8 +2092,8 @@
                             end
                         end
 // for dep channel 'top_kernel_top_kernel.normal_buffer_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_z_U.i_full_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~top_kernel_top_kernel_inst.normal_buffer_z_U.t_read} data_PIPO}
-                        if ((~normal_buffer_z_U.i_full_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_done & ap_done_reg_2 & ~normal_buffer_z_U.t_read)) begin
+// blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_z_U.i_full_n & top_kernel_top_kernel_inst.k4_rasterize_U0.ap_done & ap_done_reg_0 & ~top_kernel_top_kernel_inst.normal_buffer_z_U.t_read} data_PIPO}
+                        if ((~normal_buffer_z_U.i_full_n & k4_rasterize_U0.ap_done & ap_done_reg_0 & ~normal_buffer_z_U.t_read)) begin
                             if (~normal_buffer_z_U.t_empty_n) begin
                                 $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_z_U' written by process 'top_kernel_top_kernel.k5_deferred_lighting_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_z_U");
@@ -1286,277 +2106,394 @@
                             end
                         end
                     end
-                    2: begin //  for dep proc 'top_kernel_top_kernel.k2_perspective_divide_U0'
-// for dep channel 'top_kernel_top_kernel.screen_tris_is_active_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_is_active_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_is_active_U.i_write} data_PIPO}
-                        if ((~screen_tris_is_active_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_is_active_U.i_write)) begin
-                            if (~screen_tris_is_active_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_is_active_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_is_active_U");
+                    3: begin //  for dep proc 'top_kernel_top_kernel.k3_bounding_box_U0'
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v0_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v0_x_blk_n)) begin
+                            if (~screen_tris_out_v0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_is_active_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_is_active_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_is_active_U");
+                            else if (~screen_tris_out_v0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n0_x_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n0_x_U.i_write} data_PIPO}
-                        if ((~screen_tris_n0_x_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n0_x_U.i_write)) begin
-                            if (~screen_tris_n0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v0_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v0_y_blk_n)) begin
+                            if (~screen_tris_out_v0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_x_U");
+                            else if (~screen_tris_out_v0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n0_y_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n0_y_U.i_write} data_PIPO}
-                        if ((~screen_tris_n0_y_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n0_y_U.i_write)) begin
-                            if (~screen_tris_n0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v0_z_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v0_z_blk_n)) begin
+                            if (~screen_tris_out_v0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_y_U");
+                            else if (~screen_tris_out_v0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n0_z_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n0_z_U.i_write} data_PIPO}
-                        if ((~screen_tris_n0_z_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n0_z_U.i_write)) begin
-                            if (~screen_tris_n0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v0_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v0_w_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v0_w_blk_n)) begin
+                            if (~screen_tris_out_v0_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v0_w_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n0_z_U");
+                            else if (~screen_tris_out_v0_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v0_w_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v0_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n1_x_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n1_x_U.i_write} data_PIPO}
-                        if ((~screen_tris_n1_x_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n1_x_U.i_write)) begin
-                            if (~screen_tris_n1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v1_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v1_x_blk_n)) begin
+                            if (~screen_tris_out_v1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_x_U");
+                            else if (~screen_tris_out_v1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n1_y_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n1_y_U.i_write} data_PIPO}
-                        if ((~screen_tris_n1_y_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n1_y_U.i_write)) begin
-                            if (~screen_tris_n1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v1_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v1_y_blk_n)) begin
+                            if (~screen_tris_out_v1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_y_U");
+                            else if (~screen_tris_out_v1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n1_z_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n1_z_U.i_write} data_PIPO}
-                        if ((~screen_tris_n1_z_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n1_z_U.i_write)) begin
-                            if (~screen_tris_n1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v1_z_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v1_z_blk_n)) begin
+                            if (~screen_tris_out_v1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n1_z_U");
+                            else if (~screen_tris_out_v1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n2_x_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n2_x_U.i_write} data_PIPO}
-                        if ((~screen_tris_n2_x_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n2_x_U.i_write)) begin
-                            if (~screen_tris_n2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v1_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v1_w_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v1_w_blk_n)) begin
+                            if (~screen_tris_out_v1_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v1_w_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_x_U");
+                            else if (~screen_tris_out_v1_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v1_w_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v1_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n2_y_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n2_y_U.i_write} data_PIPO}
-                        if ((~screen_tris_n2_y_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n2_y_U.i_write)) begin
-                            if (~screen_tris_n2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v2_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v2_x_blk_n)) begin
+                            if (~screen_tris_out_v2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_y_U");
+                            else if (~screen_tris_out_v2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_n2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_n2_z_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_n2_z_U.i_write} data_PIPO}
-                        if ((~screen_tris_n2_z_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_n2_z_U.i_write)) begin
-                            if (~screen_tris_n2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_n2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v2_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v2_y_blk_n)) begin
+                            if (~screen_tris_out_v2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_n2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_n2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_n2_z_U");
+                            else if (~screen_tris_out_v2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v0_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v0_x_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v0_x_U.i_write} data_PIPO}
-                        if ((~screen_tris_v0_x_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v0_x_U.i_write)) begin
-                            if (~screen_tris_v0_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v0_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v2_z_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v2_z_blk_n)) begin
+                            if (~screen_tris_out_v2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v0_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v0_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_x_U");
+                            else if (~screen_tris_out_v2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v0_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v0_y_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v0_y_U.i_write} data_PIPO}
-                        if ((~screen_tris_v0_y_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v0_y_U.i_write)) begin
-                            if (~screen_tris_v0_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v0_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_v2_w_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_v2_w_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_v2_w_blk_n)) begin
+                            if (~screen_tris_out_v2_w_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_v2_w_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v0_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v0_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_y_U");
+                            else if (~screen_tris_out_v2_w_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_v2_w_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_v2_w_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v0_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v0_z_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v0_z_U.i_write} data_PIPO}
-                        if ((~screen_tris_v0_z_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v0_z_U.i_write)) begin
-                            if (~screen_tris_v0_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v0_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n0_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n0_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n0_x_blk_n)) begin
+                            if (~screen_tris_out_n0_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n0_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v0_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v0_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v0_z_U");
+                            else if (~screen_tris_out_n0_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n0_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v1_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v1_x_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v1_x_U.i_write} data_PIPO}
-                        if ((~screen_tris_v1_x_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v1_x_U.i_write)) begin
-                            if (~screen_tris_v1_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v1_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n0_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n0_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n0_y_blk_n)) begin
+                            if (~screen_tris_out_n0_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n0_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v1_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v1_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_x_U");
+                            else if (~screen_tris_out_n0_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n0_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v1_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v1_y_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v1_y_U.i_write} data_PIPO}
-                        if ((~screen_tris_v1_y_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v1_y_U.i_write)) begin
-                            if (~screen_tris_v1_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v1_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n0_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n0_z_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n0_z_blk_n)) begin
+                            if (~screen_tris_out_n0_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n0_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v1_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v1_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_y_U");
+                            else if (~screen_tris_out_n0_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n0_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n0_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v1_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v1_z_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v1_z_U.i_write} data_PIPO}
-                        if ((~screen_tris_v1_z_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v1_z_U.i_write)) begin
-                            if (~screen_tris_v1_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v1_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n1_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n1_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n1_x_blk_n)) begin
+                            if (~screen_tris_out_n1_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n1_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v1_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v1_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v1_z_U");
+                            else if (~screen_tris_out_n1_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n1_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v2_x_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v2_x_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v2_x_U.i_write} data_PIPO}
-                        if ((~screen_tris_v2_x_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v2_x_U.i_write)) begin
-                            if (~screen_tris_v2_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v2_x_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_x_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n1_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n1_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n1_y_blk_n)) begin
+                            if (~screen_tris_out_n1_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n1_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v2_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v2_x_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_x_U");
+                            else if (~screen_tris_out_n1_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n1_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v2_y_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v2_y_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v2_y_U.i_write} data_PIPO}
-                        if ((~screen_tris_v2_y_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v2_y_U.i_write)) begin
-                            if (~screen_tris_v2_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v2_y_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_y_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n1_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n1_z_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n1_z_blk_n)) begin
+                            if (~screen_tris_out_n1_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n1_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v2_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v2_y_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_y_U");
+                            else if (~screen_tris_out_n1_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n1_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n1_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
                         end
-// for dep channel 'top_kernel_top_kernel.screen_tris_v2_z_U' info is :
-// blk sig is {{~top_kernel_top_kernel_inst.screen_tris_v2_z_U.t_empty_n & top_kernel_top_kernel_inst.Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~top_kernel_top_kernel_inst.screen_tris_v2_z_U.i_write} data_PIPO}
-                        if ((~screen_tris_v2_z_U.t_empty_n & Block_entry_screen_tris_v0_x_rd_proc_U0.ap_idle & ~screen_tris_v2_z_U.i_write)) begin
-                            if (~screen_tris_v2_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.screen_tris_v2_z_U' written by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_z_U");
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n2_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n2_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n2_x_blk_n)) begin
+                            if (~screen_tris_out_n2_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n2_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
-                            else if (~screen_tris_v2_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.screen_tris_v2_z_U' read by process 'top_kernel_top_kernel.k2_perspective_divide_U0'");
-                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_v2_z_U");
+                            else if (~screen_tris_out_n2_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n2_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n2_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n2_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n2_y_blk_n)) begin
+                            if (~screen_tris_out_n2_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n2_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n2_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n2_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_n2_z_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_n2_z_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_n2_z_blk_n)) begin
+                            if (~screen_tris_out_n2_z_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_n2_z_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_n2_z_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_n2_z_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_n2_z_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_color_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_color_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_color_blk_n)) begin
+                            if (~screen_tris_out_color_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_color_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_color_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_color_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_color_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.screen_tris_out_is_active_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.screen_tris_out_is_active_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.screen_tris_out_is_active_blk_n)) begin
+                            if (~screen_tris_out_is_active_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.screen_tris_out_is_active_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~screen_tris_out_is_active_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.screen_tris_out_is_active_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.screen_tris_out_is_active_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_min_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.bounds_min_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.bounds_min_x_blk_n)) begin
+                            if (~bounds_min_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_min_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_min_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_min_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_min_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.bounds_min_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.bounds_min_y_blk_n)) begin
+                            if (~bounds_min_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_min_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_min_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_min_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_min_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_max_x_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.bounds_max_x_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.bounds_max_x_blk_n)) begin
+                            if (~bounds_max_x_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_max_x_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_max_x_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_max_x_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_x_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.bounds_max_y_U' info is :
+// blk sig is {~top_kernel_top_kernel_inst.k4_rasterize_U0.bounds_max_y_blk_n data_FIFO}
+                        if ((~k4_rasterize_U0.bounds_max_y_blk_n)) begin
+                            if (~bounds_max_y_U.if_empty_n) begin
+                                $display("//      Blocked by empty input FIFO 'top_kernel_top_kernel.bounds_max_y_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status EMPTY");
+                            end
+                            else if (~bounds_max_y_U.if_full_n) begin
+                                $display("//      Blocked by full output FIFO 'top_kernel_top_kernel.bounds_max_y_U' read by process 'top_kernel_top_kernel.k3_bounding_box_U0'");
+                                $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.bounds_max_y_U");
+                                $fdisplay(fp, "Dependence_Channel_status FULL");
+                            end
+                        end
+// for dep channel 'top_kernel_top_kernel.start_for_k4_rasterize_U0_U' info is :
+// blk sig is {{~top_kernel_top_kernel_inst.start_for_k4_rasterize_U0_U.if_empty_n & top_kernel_top_kernel_inst.k4_rasterize_U0.ap_idle & ~top_kernel_top_kernel_inst.start_for_k4_rasterize_U0_U.if_write} start_FIFO}
+                        if ((~start_for_k4_rasterize_U0_U.if_empty_n & k4_rasterize_U0.ap_idle & ~start_for_k4_rasterize_U0_U.if_write)) begin
+                            $display("//      Blocked by missing 'ap_start' from start propagation FIFO 'top_kernel_top_kernel.start_for_k4_rasterize_U0_U' written by process 'top_kernel_top_kernel.k3_bounding_box_U0',");
                         end
                     end
                     endcase
                 end
-                4 : begin // for proc 'top_kernel_top_kernel.k5_deferred_lighting_U0'
+                5 : begin // for proc 'top_kernel_top_kernel.k5_deferred_lighting_U0'
                     case(index2)
                     0: begin //  for dep proc 'top_kernel_top_kernel.entry_proc_U0'
 // for dep channel 'top_kernel_top_kernel.out_pixels_c_U' info is :
@@ -1574,17 +2511,17 @@
                             end
                         end
                     end
-                    3: begin //  for dep proc 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'
+                    4: begin //  for dep proc 'top_kernel_top_kernel.k4_rasterize_U0'
 // for dep channel 'top_kernel_top_kernel.depth_buffer_U' info is :
 // blk sig is {{~top_kernel_top_kernel_inst.depth_buffer_U.t_empty_n & top_kernel_top_kernel_inst.k5_deferred_lighting_U0.ap_idle & ~top_kernel_top_kernel_inst.depth_buffer_U.i_write} data_PIPO}
                         if ((~depth_buffer_U.t_empty_n & k5_deferred_lighting_U0.ap_idle & ~depth_buffer_U.i_write)) begin
                             if (~depth_buffer_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.depth_buffer_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.depth_buffer_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.depth_buffer_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~depth_buffer_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.depth_buffer_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.depth_buffer_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.depth_buffer_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
@@ -1593,12 +2530,12 @@
 // blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_x_U.t_empty_n & top_kernel_top_kernel_inst.k5_deferred_lighting_U0.ap_idle & ~top_kernel_top_kernel_inst.normal_buffer_x_U.i_write} data_PIPO}
                         if ((~normal_buffer_x_U.t_empty_n & k5_deferred_lighting_U0.ap_idle & ~normal_buffer_x_U.i_write)) begin
                             if (~normal_buffer_x_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_x_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_x_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~normal_buffer_x_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.normal_buffer_x_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.normal_buffer_x_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_x_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
@@ -1607,12 +2544,12 @@
 // blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_y_U.t_empty_n & top_kernel_top_kernel_inst.k5_deferred_lighting_U0.ap_idle & ~top_kernel_top_kernel_inst.normal_buffer_y_U.i_write} data_PIPO}
                         if ((~normal_buffer_y_U.t_empty_n & k5_deferred_lighting_U0.ap_idle & ~normal_buffer_y_U.i_write)) begin
                             if (~normal_buffer_y_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_y_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_y_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~normal_buffer_y_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.normal_buffer_y_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.normal_buffer_y_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_y_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end
@@ -1621,12 +2558,12 @@
 // blk sig is {{~top_kernel_top_kernel_inst.normal_buffer_z_U.t_empty_n & top_kernel_top_kernel_inst.k5_deferred_lighting_U0.ap_idle & ~top_kernel_top_kernel_inst.normal_buffer_z_U.i_write} data_PIPO}
                         if ((~normal_buffer_z_U.t_empty_n & k5_deferred_lighting_U0.ap_idle & ~normal_buffer_z_U.i_write)) begin
                             if (~normal_buffer_z_U.t_empty_n) begin
-                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_z_U' written by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by empty input PIPO 'top_kernel_top_kernel.normal_buffer_z_U' written by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status EMPTY");
                             end
                             else if (~normal_buffer_z_U.i_full_n) begin
-                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.normal_buffer_z_U' read by process 'top_kernel_top_kernel.Block_entry_screen_tris_v0_x_rd_proc_U0'");
+                                $display("//      Blocked by full output PIPO 'top_kernel_top_kernel.normal_buffer_z_U' read by process 'top_kernel_top_kernel.k4_rasterize_U0'");
                                 $fdisplay(fp, "Dependence_Channel_path top_kernel_top_kernel.normal_buffer_z_U");
                                 $fdisplay(fp, "Dependence_Channel_status FULL");
                             end

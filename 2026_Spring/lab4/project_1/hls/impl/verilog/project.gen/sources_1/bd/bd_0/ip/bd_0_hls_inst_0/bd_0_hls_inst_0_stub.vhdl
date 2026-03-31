@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1.1 (lin64) Build 6233196 Thu Sep 11 21:27:11 MDT 2025
--- Date        : Mon Mar 30 23:39:30 2026
+-- Date        : Tue Mar 31 01:06:29 2026
 -- Host        : ece-linlabsrv01 running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
 -- Command     : write_vhdl -force -mode synth_stub
 --               /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/impl/verilog/project.gen/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/bd_0_hls_inst_0_stub.vhdl
@@ -15,10 +15,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity bd_0_hls_inst_0 is
   Port ( 
-    mvp_matrix_ce0 : out STD_LOGIC;
-    mvp_matrix_we0 : out STD_LOGIC;
-    mvp_matrix_ce1 : out STD_LOGIC;
-    mvp_matrix_we1 : out STD_LOGIC;
     s_axi_control_ARADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
     s_axi_control_ARREADY : out STD_LOGIC;
     s_axi_control_ARVALID : in STD_LOGIC;
@@ -119,18 +115,52 @@ entity bd_0_hls_inst_0 is
     m_axi_gmem1_WREADY : in STD_LOGIC;
     m_axi_gmem1_WSTRB : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_gmem1_WVALID : out STD_LOGIC;
-    mvp_matrix_address0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    mvp_matrix_d0 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    mvp_matrix_q0 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    mvp_matrix_address1 : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    mvp_matrix_d1 : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    mvp_matrix_q1 : in STD_LOGIC_VECTOR ( 31 downto 0 )
+    m_axi_gmem2_ARADDR : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axi_gmem2_ARBURST : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_gmem2_ARCACHE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_ARID : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axi_gmem2_ARLEN : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    m_axi_gmem2_ARLOCK : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_gmem2_ARPROT : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_gmem2_ARQOS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_ARREADY : in STD_LOGIC;
+    m_axi_gmem2_ARREGION : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_ARSIZE : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_gmem2_ARVALID : out STD_LOGIC;
+    m_axi_gmem2_AWADDR : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axi_gmem2_AWBURST : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_gmem2_AWCACHE : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_AWID : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axi_gmem2_AWLEN : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    m_axi_gmem2_AWLOCK : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_gmem2_AWPROT : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_gmem2_AWQOS : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_AWREADY : in STD_LOGIC;
+    m_axi_gmem2_AWREGION : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_AWSIZE : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_gmem2_AWVALID : out STD_LOGIC;
+    m_axi_gmem2_BID : in STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axi_gmem2_BREADY : out STD_LOGIC;
+    m_axi_gmem2_BRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_gmem2_BVALID : in STD_LOGIC;
+    m_axi_gmem2_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    m_axi_gmem2_RID : in STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axi_gmem2_RLAST : in STD_LOGIC;
+    m_axi_gmem2_RREADY : out STD_LOGIC;
+    m_axi_gmem2_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axi_gmem2_RVALID : in STD_LOGIC;
+    m_axi_gmem2_WDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    m_axi_gmem2_WID : out STD_LOGIC_VECTOR ( 0 to 0 );
+    m_axi_gmem2_WLAST : out STD_LOGIC;
+    m_axi_gmem2_WREADY : in STD_LOGIC;
+    m_axi_gmem2_WSTRB : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axi_gmem2_WVALID : out STD_LOGIC
   );
 
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of bd_0_hls_inst_0 : entity is "bd_0_hls_inst_0,top_kernel,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of bd_0_hls_inst_0 : entity is "bd_0_hls_inst_0,top_kernel,{x_ipProduct=Vivado 2025.1.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=top_kernel,x_ipVersion=1.0,x_ipCoreRevision=2114544273,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CONTROL_ADDR_WIDTH=6,C_S_AXI_CONTROL_DATA_WIDTH=32,C_M_AXI_GMEM0_ID_WIDTH=1,C_M_AXI_GMEM0_ADDR_WIDTH=64,C_M_AXI_GMEM0_DATA_WIDTH=1024,C_M_AXI_GMEM0_AWUSER_WIDTH=1,C_M_AXI_GMEM0_ARUSER_WIDTH=1,C_M_AXI_GMEM0_WUSER_WIDTH=1,C_M_AXI_GMEM0_RUSER_WIDTH=1,C_M_AXI_GMEM0_BUSER_WIDTH=1,C_M_AXI_GMEM0_USER_VALUE=0x00000000,C_M_AXI_GMEM0_PROT_VALUE=000,C_M_AXI_GMEM0_CACHE_VALUE=0011,C_M_AXI_GMEM1_ID_WIDTH=1,C_M_AXI_GMEM1_ADDR_WIDTH=64,C_M_AXI_GMEM1_DATA_WIDTH=32,C_M_AXI_GMEM1_AWUSER_WIDTH=1,C_M_AXI_GMEM1_ARUSER_WIDTH=1,C_M_AXI_GMEM1_WUSER_WIDTH=1,C_M_AXI_GMEM1_RUSER_WIDTH=1,C_M_AXI_GMEM1_BUSER_WIDTH=1,C_M_AXI_GMEM1_USER_VALUE=0x00000000,C_M_AXI_GMEM1_PROT_VALUE=000,C_M_AXI_GMEM1_CACHE_VALUE=0011}";
+  attribute CORE_GENERATION_INFO of bd_0_hls_inst_0 : entity is "bd_0_hls_inst_0,top_kernel,{x_ipProduct=Vivado 2025.1.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=top_kernel,x_ipVersion=1.0,x_ipCoreRevision=2114544360,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_CONTROL_ADDR_WIDTH=6,C_S_AXI_CONTROL_DATA_WIDTH=32,C_M_AXI_GMEM0_ID_WIDTH=1,C_M_AXI_GMEM0_ADDR_WIDTH=64,C_M_AXI_GMEM0_DATA_WIDTH=1024,C_M_AXI_GMEM0_AWUSER_WIDTH=1,C_M_AXI_GMEM0_ARUSER_WIDTH=1,C_M_AXI_GMEM0_WUSER_WIDTH=1,C_M_AXI_GMEM0_RUSER_WIDTH=1,C_M_AXI_GMEM0_BUSER_WIDTH=1,C_M_AXI_GMEM0_USER_VALUE=0x00000000,C_M_AXI_GMEM0_PROT_VALUE=000,C_M_AXI_GMEM0_CACHE_VALUE=0011,C_M_AXI_GMEM1_ID_WIDTH=1,C_M_AXI_GMEM1_ADDR_WIDTH=64,C_M_AXI_GMEM1_DATA_WIDTH=32,C_M_AXI_GMEM1_AWUSER_WIDTH=1,C_M_AXI_GMEM1_ARUSER_WIDTH=1,C_M_AXI_GMEM1_WUSER_WIDTH=1,C_M_AXI_GMEM1_RUSER_WIDTH=1,C_M_AXI_GMEM1_BUSER_WIDTH=1,C_M_AXI_GMEM1_USER_VALUE=0x00000000,C_M_AXI_GMEM1_PROT_VALUE=000,C_M_AXI_GMEM1_CACHE_VALUE=0011,C_M_AXI_GMEM2_ID_WIDTH=1,C_M_AXI_GMEM2_ADDR_WIDTH=64,C_M_AXI_GMEM2_DATA_WIDTH=32,C_M_AXI_GMEM2_AWUSER_WIDTH=1,C_M_AXI_GMEM2_ARUSER_WIDTH=1,C_M_AXI_GMEM2_WUSER_WIDTH=1,C_M_AXI_GMEM2_RUSER_WIDTH=1,C_M_AXI_GMEM2_BUSER_WIDTH=1,C_M_AXI_GMEM2_USER_VALUE=0x00000000,C_M_AXI_GMEM2_PROT_VALUE=000,C_M_AXI_GMEM2_CACHE_VALUE=0011}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of bd_0_hls_inst_0 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;
@@ -143,7 +173,7 @@ architecture stub of bd_0_hls_inst_0 is
   attribute syn_black_box : boolean;
   attribute black_box_pad_pin : string;
   attribute syn_black_box of stub : architecture is true;
-  attribute black_box_pad_pin of stub : architecture is "mvp_matrix_ce0,mvp_matrix_we0,mvp_matrix_ce1,mvp_matrix_we1,s_axi_control_ARADDR[5:0],s_axi_control_ARREADY,s_axi_control_ARVALID,s_axi_control_AWADDR[5:0],s_axi_control_AWREADY,s_axi_control_AWVALID,s_axi_control_BREADY,s_axi_control_BRESP[1:0],s_axi_control_BVALID,s_axi_control_RDATA[31:0],s_axi_control_RREADY,s_axi_control_RRESP[1:0],s_axi_control_RVALID,s_axi_control_WDATA[31:0],s_axi_control_WREADY,s_axi_control_WSTRB[3:0],s_axi_control_WVALID,ap_clk,ap_rst_n,interrupt,m_axi_gmem0_ARADDR[63:0],m_axi_gmem0_ARBURST[1:0],m_axi_gmem0_ARCACHE[3:0],m_axi_gmem0_ARID[0:0],m_axi_gmem0_ARLEN[7:0],m_axi_gmem0_ARLOCK[1:0],m_axi_gmem0_ARPROT[2:0],m_axi_gmem0_ARQOS[3:0],m_axi_gmem0_ARREADY,m_axi_gmem0_ARREGION[3:0],m_axi_gmem0_ARSIZE[2:0],m_axi_gmem0_ARVALID,m_axi_gmem0_AWADDR[63:0],m_axi_gmem0_AWBURST[1:0],m_axi_gmem0_AWCACHE[3:0],m_axi_gmem0_AWID[0:0],m_axi_gmem0_AWLEN[7:0],m_axi_gmem0_AWLOCK[1:0],m_axi_gmem0_AWPROT[2:0],m_axi_gmem0_AWQOS[3:0],m_axi_gmem0_AWREADY,m_axi_gmem0_AWREGION[3:0],m_axi_gmem0_AWSIZE[2:0],m_axi_gmem0_AWVALID,m_axi_gmem0_BID[0:0],m_axi_gmem0_BREADY,m_axi_gmem0_BRESP[1:0],m_axi_gmem0_BVALID,m_axi_gmem0_RDATA[1023:0],m_axi_gmem0_RID[0:0],m_axi_gmem0_RLAST,m_axi_gmem0_RREADY,m_axi_gmem0_RRESP[1:0],m_axi_gmem0_RVALID,m_axi_gmem0_WDATA[1023:0],m_axi_gmem0_WID[0:0],m_axi_gmem0_WLAST,m_axi_gmem0_WREADY,m_axi_gmem0_WSTRB[127:0],m_axi_gmem0_WVALID,m_axi_gmem1_ARADDR[63:0],m_axi_gmem1_ARBURST[1:0],m_axi_gmem1_ARCACHE[3:0],m_axi_gmem1_ARID[0:0],m_axi_gmem1_ARLEN[7:0],m_axi_gmem1_ARLOCK[1:0],m_axi_gmem1_ARPROT[2:0],m_axi_gmem1_ARQOS[3:0],m_axi_gmem1_ARREADY,m_axi_gmem1_ARREGION[3:0],m_axi_gmem1_ARSIZE[2:0],m_axi_gmem1_ARVALID,m_axi_gmem1_AWADDR[63:0],m_axi_gmem1_AWBURST[1:0],m_axi_gmem1_AWCACHE[3:0],m_axi_gmem1_AWID[0:0],m_axi_gmem1_AWLEN[7:0],m_axi_gmem1_AWLOCK[1:0],m_axi_gmem1_AWPROT[2:0],m_axi_gmem1_AWQOS[3:0],m_axi_gmem1_AWREADY,m_axi_gmem1_AWREGION[3:0],m_axi_gmem1_AWSIZE[2:0],m_axi_gmem1_AWVALID,m_axi_gmem1_BID[0:0],m_axi_gmem1_BREADY,m_axi_gmem1_BRESP[1:0],m_axi_gmem1_BVALID,m_axi_gmem1_RDATA[31:0],m_axi_gmem1_RID[0:0],m_axi_gmem1_RLAST,m_axi_gmem1_RREADY,m_axi_gmem1_RRESP[1:0],m_axi_gmem1_RVALID,m_axi_gmem1_WDATA[31:0],m_axi_gmem1_WID[0:0],m_axi_gmem1_WLAST,m_axi_gmem1_WREADY,m_axi_gmem1_WSTRB[3:0],m_axi_gmem1_WVALID,mvp_matrix_address0[3:0],mvp_matrix_d0[31:0],mvp_matrix_q0[31:0],mvp_matrix_address1[3:0],mvp_matrix_d1[31:0],mvp_matrix_q1[31:0]";
+  attribute black_box_pad_pin of stub : architecture is "s_axi_control_ARADDR[5:0],s_axi_control_ARREADY,s_axi_control_ARVALID,s_axi_control_AWADDR[5:0],s_axi_control_AWREADY,s_axi_control_AWVALID,s_axi_control_BREADY,s_axi_control_BRESP[1:0],s_axi_control_BVALID,s_axi_control_RDATA[31:0],s_axi_control_RREADY,s_axi_control_RRESP[1:0],s_axi_control_RVALID,s_axi_control_WDATA[31:0],s_axi_control_WREADY,s_axi_control_WSTRB[3:0],s_axi_control_WVALID,ap_clk,ap_rst_n,interrupt,m_axi_gmem0_ARADDR[63:0],m_axi_gmem0_ARBURST[1:0],m_axi_gmem0_ARCACHE[3:0],m_axi_gmem0_ARID[0:0],m_axi_gmem0_ARLEN[7:0],m_axi_gmem0_ARLOCK[1:0],m_axi_gmem0_ARPROT[2:0],m_axi_gmem0_ARQOS[3:0],m_axi_gmem0_ARREADY,m_axi_gmem0_ARREGION[3:0],m_axi_gmem0_ARSIZE[2:0],m_axi_gmem0_ARVALID,m_axi_gmem0_AWADDR[63:0],m_axi_gmem0_AWBURST[1:0],m_axi_gmem0_AWCACHE[3:0],m_axi_gmem0_AWID[0:0],m_axi_gmem0_AWLEN[7:0],m_axi_gmem0_AWLOCK[1:0],m_axi_gmem0_AWPROT[2:0],m_axi_gmem0_AWQOS[3:0],m_axi_gmem0_AWREADY,m_axi_gmem0_AWREGION[3:0],m_axi_gmem0_AWSIZE[2:0],m_axi_gmem0_AWVALID,m_axi_gmem0_BID[0:0],m_axi_gmem0_BREADY,m_axi_gmem0_BRESP[1:0],m_axi_gmem0_BVALID,m_axi_gmem0_RDATA[1023:0],m_axi_gmem0_RID[0:0],m_axi_gmem0_RLAST,m_axi_gmem0_RREADY,m_axi_gmem0_RRESP[1:0],m_axi_gmem0_RVALID,m_axi_gmem0_WDATA[1023:0],m_axi_gmem0_WID[0:0],m_axi_gmem0_WLAST,m_axi_gmem0_WREADY,m_axi_gmem0_WSTRB[127:0],m_axi_gmem0_WVALID,m_axi_gmem1_ARADDR[63:0],m_axi_gmem1_ARBURST[1:0],m_axi_gmem1_ARCACHE[3:0],m_axi_gmem1_ARID[0:0],m_axi_gmem1_ARLEN[7:0],m_axi_gmem1_ARLOCK[1:0],m_axi_gmem1_ARPROT[2:0],m_axi_gmem1_ARQOS[3:0],m_axi_gmem1_ARREADY,m_axi_gmem1_ARREGION[3:0],m_axi_gmem1_ARSIZE[2:0],m_axi_gmem1_ARVALID,m_axi_gmem1_AWADDR[63:0],m_axi_gmem1_AWBURST[1:0],m_axi_gmem1_AWCACHE[3:0],m_axi_gmem1_AWID[0:0],m_axi_gmem1_AWLEN[7:0],m_axi_gmem1_AWLOCK[1:0],m_axi_gmem1_AWPROT[2:0],m_axi_gmem1_AWQOS[3:0],m_axi_gmem1_AWREADY,m_axi_gmem1_AWREGION[3:0],m_axi_gmem1_AWSIZE[2:0],m_axi_gmem1_AWVALID,m_axi_gmem1_BID[0:0],m_axi_gmem1_BREADY,m_axi_gmem1_BRESP[1:0],m_axi_gmem1_BVALID,m_axi_gmem1_RDATA[31:0],m_axi_gmem1_RID[0:0],m_axi_gmem1_RLAST,m_axi_gmem1_RREADY,m_axi_gmem1_RRESP[1:0],m_axi_gmem1_RVALID,m_axi_gmem1_WDATA[31:0],m_axi_gmem1_WID[0:0],m_axi_gmem1_WLAST,m_axi_gmem1_WREADY,m_axi_gmem1_WSTRB[3:0],m_axi_gmem1_WVALID,m_axi_gmem2_ARADDR[63:0],m_axi_gmem2_ARBURST[1:0],m_axi_gmem2_ARCACHE[3:0],m_axi_gmem2_ARID[0:0],m_axi_gmem2_ARLEN[7:0],m_axi_gmem2_ARLOCK[1:0],m_axi_gmem2_ARPROT[2:0],m_axi_gmem2_ARQOS[3:0],m_axi_gmem2_ARREADY,m_axi_gmem2_ARREGION[3:0],m_axi_gmem2_ARSIZE[2:0],m_axi_gmem2_ARVALID,m_axi_gmem2_AWADDR[63:0],m_axi_gmem2_AWBURST[1:0],m_axi_gmem2_AWCACHE[3:0],m_axi_gmem2_AWID[0:0],m_axi_gmem2_AWLEN[7:0],m_axi_gmem2_AWLOCK[1:0],m_axi_gmem2_AWPROT[2:0],m_axi_gmem2_AWQOS[3:0],m_axi_gmem2_AWREADY,m_axi_gmem2_AWREGION[3:0],m_axi_gmem2_AWSIZE[2:0],m_axi_gmem2_AWVALID,m_axi_gmem2_BID[0:0],m_axi_gmem2_BREADY,m_axi_gmem2_BRESP[1:0],m_axi_gmem2_BVALID,m_axi_gmem2_RDATA[31:0],m_axi_gmem2_RID[0:0],m_axi_gmem2_RLAST,m_axi_gmem2_RREADY,m_axi_gmem2_RRESP[1:0],m_axi_gmem2_RVALID,m_axi_gmem2_WDATA[31:0],m_axi_gmem2_WID[0:0],m_axi_gmem2_WLAST,m_axi_gmem2_WREADY,m_axi_gmem2_WSTRB[3:0],m_axi_gmem2_WVALID";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of s_axi_control_ARADDR : signal is "xilinx.com:interface:aximm:1.0 s_axi_control ARADDR";
   attribute X_INTERFACE_MODE : string;
@@ -168,7 +198,7 @@ architecture stub of bd_0_hls_inst_0 is
   attribute X_INTERFACE_INFO of s_axi_control_WVALID : signal is "xilinx.com:interface:aximm:1.0 s_axi_control WVALID";
   attribute X_INTERFACE_INFO of ap_clk : signal is "xilinx.com:signal:clock:1.0 ap_clk CLK";
   attribute X_INTERFACE_MODE of ap_clk : signal is "slave";
-  attribute X_INTERFACE_PARAMETER of ap_clk : signal is "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_control:m_axi_gmem0:m_axi_gmem1, ASSOCIATED_RESET ap_rst_n, FREQ_HZ 100000000.0, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN bd_0_ap_clk_0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of ap_clk : signal is "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_control:m_axi_gmem0:m_axi_gmem1:m_axi_gmem2, ASSOCIATED_RESET ap_rst_n, FREQ_HZ 100000000.0, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN bd_0_ap_clk_0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of ap_rst_n : signal is "xilinx.com:signal:reset:1.0 ap_rst_n RST";
   attribute X_INTERFACE_MODE of ap_rst_n : signal is "slave";
   attribute X_INTERFACE_PARAMETER of ap_rst_n : signal is "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
@@ -259,24 +289,48 @@ architecture stub of bd_0_hls_inst_0 is
   attribute X_INTERFACE_INFO of m_axi_gmem1_WREADY : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem1 WREADY";
   attribute X_INTERFACE_INFO of m_axi_gmem1_WSTRB : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem1 WSTRB";
   attribute X_INTERFACE_INFO of m_axi_gmem1_WVALID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem1 WVALID";
-  attribute X_INTERFACE_INFO of mvp_matrix_address0 : signal is "xilinx.com:signal:data:1.0 mvp_matrix_address0 DATA";
-  attribute X_INTERFACE_MODE of mvp_matrix_address0 : signal is "master";
-  attribute X_INTERFACE_PARAMETER of mvp_matrix_address0 : signal is "XIL_INTERFACENAME mvp_matrix_address0, LAYERED_METADATA undef";
-  attribute X_INTERFACE_INFO of mvp_matrix_d0 : signal is "xilinx.com:signal:data:1.0 mvp_matrix_d0 DATA";
-  attribute X_INTERFACE_MODE of mvp_matrix_d0 : signal is "master";
-  attribute X_INTERFACE_PARAMETER of mvp_matrix_d0 : signal is "XIL_INTERFACENAME mvp_matrix_d0, LAYERED_METADATA undef";
-  attribute X_INTERFACE_INFO of mvp_matrix_q0 : signal is "xilinx.com:signal:data:1.0 mvp_matrix_q0 DATA";
-  attribute X_INTERFACE_MODE of mvp_matrix_q0 : signal is "slave";
-  attribute X_INTERFACE_PARAMETER of mvp_matrix_q0 : signal is "XIL_INTERFACENAME mvp_matrix_q0, LAYERED_METADATA undef";
-  attribute X_INTERFACE_INFO of mvp_matrix_address1 : signal is "xilinx.com:signal:data:1.0 mvp_matrix_address1 DATA";
-  attribute X_INTERFACE_MODE of mvp_matrix_address1 : signal is "master";
-  attribute X_INTERFACE_PARAMETER of mvp_matrix_address1 : signal is "XIL_INTERFACENAME mvp_matrix_address1, LAYERED_METADATA undef";
-  attribute X_INTERFACE_INFO of mvp_matrix_d1 : signal is "xilinx.com:signal:data:1.0 mvp_matrix_d1 DATA";
-  attribute X_INTERFACE_MODE of mvp_matrix_d1 : signal is "master";
-  attribute X_INTERFACE_PARAMETER of mvp_matrix_d1 : signal is "XIL_INTERFACENAME mvp_matrix_d1, LAYERED_METADATA undef";
-  attribute X_INTERFACE_INFO of mvp_matrix_q1 : signal is "xilinx.com:signal:data:1.0 mvp_matrix_q1 DATA";
-  attribute X_INTERFACE_MODE of mvp_matrix_q1 : signal is "slave";
-  attribute X_INTERFACE_PARAMETER of mvp_matrix_q1 : signal is "XIL_INTERFACENAME mvp_matrix_q1, LAYERED_METADATA undef";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARADDR : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARADDR";
+  attribute X_INTERFACE_MODE of m_axi_gmem2_ARADDR : signal is "master";
+  attribute X_INTERFACE_PARAMETER of m_axi_gmem2_ARADDR : signal is "XIL_INTERFACENAME m_axi_gmem2, NUM_READ_OUTSTANDING 16, NUM_WRITE_OUTSTANDING 16, MAX_READ_BURST_LENGTH 16, MAX_WRITE_BURST_LENGTH 16, MAX_BURST_LENGTH 256, PROTOCOL AXI4, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, SUPPORTS_NARROW_BURST 0, ADDR_WIDTH 64, DATA_WIDTH 32, FREQ_HZ 100000000.0, ID_WIDTH 1, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.0, CLK_DOMAIN bd_0_ap_clk_0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARBURST : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARBURST";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARCACHE : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARCACHE";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARLEN : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARLEN";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARLOCK : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARLOCK";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARPROT : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARPROT";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARQOS : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARQOS";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARREADY : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARREADY";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARREGION : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARREGION";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARSIZE : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARSIZE";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_ARVALID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 ARVALID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWADDR : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWADDR";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWBURST : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWBURST";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWCACHE : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWCACHE";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWLEN : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWLEN";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWLOCK : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWLOCK";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWPROT : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWPROT";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWQOS : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWQOS";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWREADY : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWREADY";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWREGION : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWREGION";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWSIZE : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWSIZE";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_AWVALID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 AWVALID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_BID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 BID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_BREADY : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 BREADY";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_BRESP : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 BRESP";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_BVALID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 BVALID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_RDATA : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 RDATA";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_RID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 RID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_RLAST : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 RLAST";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_RREADY : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 RREADY";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_RRESP : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 RRESP";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_RVALID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 RVALID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_WDATA : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 WDATA";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_WID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 WID";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_WLAST : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 WLAST";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_WREADY : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 WREADY";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_WSTRB : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 WSTRB";
+  attribute X_INTERFACE_INFO of m_axi_gmem2_WVALID : signal is "xilinx.com:interface:aximm:1.0 m_axi_gmem2 WVALID";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of stub : architecture is "top_kernel,Vivado 2025.1.1";
 begin

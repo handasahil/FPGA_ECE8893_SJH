@@ -95,6 +95,25 @@ u64 XTop_kernel_Get_in_tris(XTop_kernel *InstancePtr) {
     return Data;
 }
 
+void XTop_kernel_Set_mvp_matrix(XTop_kernel *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XTop_kernel_WriteReg(InstancePtr->Control_BaseAddress, XTOP_KERNEL_CONTROL_ADDR_MVP_MATRIX_DATA, (u32)(Data));
+    XTop_kernel_WriteReg(InstancePtr->Control_BaseAddress, XTOP_KERNEL_CONTROL_ADDR_MVP_MATRIX_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XTop_kernel_Get_mvp_matrix(XTop_kernel *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XTop_kernel_ReadReg(InstancePtr->Control_BaseAddress, XTOP_KERNEL_CONTROL_ADDR_MVP_MATRIX_DATA);
+    Data += (u64)XTop_kernel_ReadReg(InstancePtr->Control_BaseAddress, XTOP_KERNEL_CONTROL_ADDR_MVP_MATRIX_DATA + 4) << 32;
+    return Data;
+}
+
 void XTop_kernel_Set_out_pixels(XTop_kernel *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

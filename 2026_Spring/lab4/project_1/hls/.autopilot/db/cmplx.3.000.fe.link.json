@@ -1,23 +1,41 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "3 2 4 5 1",
+    "calls": "3 4 1 5 2",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 205,
-    "instructions": 9,
+    "fileloc": 234,
+    "instructions": 14,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 44222
+    "total_instructions": 44143
   },
   "1": {
+    "basicblocks": 38,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 3,
+    "file": "top.cpp",
+    "fileloc": 81,
+    "instructions": 237,
+    "loads": {
+      "L": 16
+    },
+    "memory_accesses": 59,
+    "name": "k3_bounding_box",
+    "stores": {
+      "L": 23
+    },
+    "total_instructions": 2165
+  },
+  "2": {
     "basicblocks": 20,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 2,
     "file": "top.cpp",
-    "fileloc": 175,
+    "fileloc": 203,
     "instructions": 200,
     "loads": {
       "L": 5
@@ -29,76 +47,58 @@
     },
     "total_instructions": 9844
   },
-  "2": {
-    "basicblocks": 20,
-    "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 2,
-    "file": "top.cpp",
-    "fileloc": 37,
-    "instructions": 238,
-    "loads": {
-      "L": 11
-    },
-    "memory_accesses": 26,
-    "name": "k2_perspective_divide",
-    "stores": {
-      "L": 10
-    },
-    "total_instructions": 7936
-  },
   "3": {
     "basicblocks": 15,
     "calls": "",
     "control_depth": 1,
     "def_use_depth": 2,
     "file": "top.cpp",
-    "fileloc": 7,
-    "instructions": 381,
+    "fileloc": 6,
+    "instructions": 374,
     "loads": {
-      "L": 12
+      "L": 13
     },
     "memory_accesses": 40,
     "name": "k1_vertex_transform",
     "stores": {
-      "L": 11
+      "L": 12
     },
-    "total_instructions": 6113
+    "total_instructions": 6106
   },
   "4": {
-    "basicblocks": 38,
+    "basicblocks": 20,
     "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 3,
+    "control_depth": 2,
+    "def_use_depth": 2,
     "file": "top.cpp",
-    "fileloc": 73,
-    "instructions": 273,
+    "fileloc": 40,
+    "instructions": 231,
     "loads": {
-      "L": 13
+      "L": 12
     },
-    "memory_accesses": 53,
-    "name": "k3_bounding_box",
+    "memory_accesses": 26,
+    "name": "k2_perspective_divide",
     "stores": {
-      "L": 20
+      "L": 11
     },
-    "total_instructions": 2209
+    "total_instructions": 7929
   },
   "5": {
-    "basicblocks": 61,
+    "basicblocks": 62,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 3,
     "file": "top.cpp",
-    "fileloc": 110,
-    "instructions": 784,
+    "fileloc": 128,
+    "instructions": 758,
     "loads": {
-      "L": 19
+      "L": 21
     },
     "memory_accesses": 87,
     "name": "k4_rasterize",
     "stores": {
-      "L": 14
+      "L": 16
     },
-    "total_instructions": 18111
+    "total_instructions": 18085
   }
 }

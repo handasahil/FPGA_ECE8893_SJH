@@ -2,18 +2,19 @@
 
 // =========================================================================
 // KERNEL 1: Vertex Transformation
-// Applies a 4x4 Model-View-Projection matrix to all vertices.
 // =========================================================================
 static void k1_vertex_transform(const Triangle in_tris[MAX_TRIS], 
-                         const data_t mvp[4][4], 
-                         Triangle clip_tris[MAX_TRIS]) {
+                                const data_t mvp[4][4], 
+                                Triangle clip_tris[MAX_TRIS]) {
     for (int i = 0; i < MAX_TRIS; i++) {
     #pragma HLS pipeline II=1
 
-        clip_tris[i] = in_tris[i];
+        // 1. Read from the memory array into a LOCAL variable
+        Triangle curr_tri = in_tris[i];
         
-        if (in_tris[i].is_active) {
-            Vec4 verts[3] = {in_tris[i].v0, in_tris[i].v1, in_tris[i].v2};
+        // 2. Modify the LOCAL variable
+        if (curr_tri.is_active) {
+            Vec4 verts[3] = {curr_tri.v0, curr_tri.v1, curr_tri.v2};
             Vec4 out_verts[3];
 
             for (int v = 0; v < 3; v++) {
@@ -23,27 +24,32 @@ static void k1_vertex_transform(const Triangle in_tris[MAX_TRIS],
                 out_verts[v].w = verts[v].x * mvp[3][0] + verts[v].y * mvp[3][1] + verts[v].z * mvp[3][2] + verts[v].w * mvp[3][3];
             }
 
-            clip_tris[i].v0 = out_verts[0];
-            clip_tris[i].v1 = out_verts[1];
-            clip_tris[i].v2 = out_verts[2];
+            curr_tri.v0 = out_verts[0];
+            curr_tri.v1 = out_verts[1];
+            curr_tri.v2 = out_verts[2];
         }
+        
+        // 3. Write the fully assembled struct to the stream EXACTLY ONCE
+        clip_tris[i] = curr_tri;
     }
 }
 
 // =========================================================================
 // KERNEL 2: Perspective Divide & Screen Mapping
-// Flattens the 3D coordinates into 2D screen coordinates.
 // =========================================================================
 static void k2_perspective_divide(const Triangle clip_tris[MAX_TRIS], 
-                           Triangle screen_tris[MAX_TRIS]) {
+                                  Triangle screen_tris[MAX_TRIS]) {
     const data_t half_w = (data_t)(WIDTH / 2.0);
     const data_t half_h = (data_t)(HEIGHT / 2.0);
 
     for (int i = 0; i < MAX_TRIS; i++) {
-        screen_tris[i] = clip_tris[i];
+        
+        // THE FIX: Pop the triangle from the FIFO EXACTLY ONCE
+        Triangle curr_tri = clip_tris[i];
 
-        if (clip_tris[i].is_active) {
-            Vec4 verts[3] = {clip_tris[i].v0, clip_tris[i].v1, clip_tris[i].v2};
+        // Do all checks and math on the local 'curr_tri' variable!
+        if (curr_tri.is_active) {
+            Vec4 verts[3] = {curr_tri.v0, curr_tri.v1, curr_tri.v2};
             
             for (int v = 0; v < 3; v++) {
                 // Avoid divide by zero
@@ -59,51 +65,63 @@ static void k2_perspective_divide(const Triangle clip_tris[MAX_TRIS],
                 verts[v].z = verts[v].z * w_inv; // Depth
             }
 
-            screen_tris[i].v0 = verts[0];
-            screen_tris[i].v1 = verts[1];
-            screen_tris[i].v2 = verts[2];
+            curr_tri.v0 = verts[0];
+            curr_tri.v1 = verts[1];
+            curr_tri.v2 = verts[2];
         }
+        
+        // Push the finished triangle into the output FIFO EXACTLY ONCE
+        screen_tris[i] = curr_tri;
     }
 }
 
 // =========================================================================
-// KERNEL 3: Bounding Box Setup
-// Calculates the 2D bounding box for each triangle to limit rasterization.
+// KERNEL 3: Bounding Box Setup (DATAFLOW COMPLIANT)
 // =========================================================================
-static void k3_bounding_box(const Triangle screen_tris[MAX_TRIS], 
-                     BoundingBox bounds[MAX_TRIS]) {
+static void k3_bounding_box(const Triangle screen_tris_in[MAX_TRIS], 
+                            Triangle screen_tris_out[MAX_TRIS],
+                            BoundingBox bounds[MAX_TRIS]) {
+                            
     for (int i = 0; i < MAX_TRIS; i++) {
     #pragma HLS pipeline II=1
-        if (screen_tris[i].is_active) {
-            data_t min_x = screen_tris[i].v0.x;
-            data_t max_x = screen_tris[i].v0.x;
-            data_t min_y = screen_tris[i].v0.y;
-            data_t max_y = screen_tris[i].v0.y;
+    
+        // 1. Read the triangle ONCE
+        Triangle curr_tri = screen_tris_in[i];
+        
+        // 2. Create a LOCAL bounding box variable
+        BoundingBox curr_bounds;
 
-            // Find min/max X
-            if (screen_tris[i].v1.x < min_x) min_x = screen_tris[i].v1.x;
-            if (screen_tris[i].v2.x < min_x) min_x = screen_tris[i].v2.x;
-            if (screen_tris[i].v1.x > max_x) max_x = screen_tris[i].v1.x;
-            if (screen_tris[i].v2.x > max_x) max_x = screen_tris[i].v2.x;
+        if (curr_tri.is_active) {
+            data_t min_x = curr_tri.v0.x;
+            data_t max_x = curr_tri.v0.x;
+            data_t min_y = curr_tri.v0.y;
+            data_t max_y = curr_tri.v0.y;
 
-            // Find min/max Y
-            if (screen_tris[i].v1.y < min_y) min_y = screen_tris[i].v1.y;
-            if (screen_tris[i].v2.y < min_y) min_y = screen_tris[i].v2.y;
-            if (screen_tris[i].v1.y > max_y) max_y = screen_tris[i].v1.y;
-            if (screen_tris[i].v2.y > max_y) max_y = screen_tris[i].v2.y;
+            if (curr_tri.v1.x < min_x) min_x = curr_tri.v1.x;
+            if (curr_tri.v2.x < min_x) min_x = curr_tri.v2.x;
+            if (curr_tri.v1.x > max_x) max_x = curr_tri.v1.x;
+            if (curr_tri.v2.x > max_x) max_x = curr_tri.v2.x;
 
-            // Clamp to screen edges
-            bounds[i].min_x = (min_x < (data_t)0) ? 0 : (int)min_x;
-            bounds[i].max_x = (max_x > (data_t)(WIDTH - 1)) ? (WIDTH - 1) : (int)max_x;
-            bounds[i].min_y = (min_y < (data_t)0) ? 0 : (int)min_y;
-            bounds[i].max_y = (max_y > (data_t)(HEIGHT - 1)) ? (HEIGHT - 1) : (int)max_y;
+            if (curr_tri.v1.y < min_y) min_y = curr_tri.v1.y;
+            if (curr_tri.v2.y < min_y) min_y = curr_tri.v2.y;
+            if (curr_tri.v1.y > max_y) max_y = curr_tri.v1.y;
+            if (curr_tri.v2.y > max_y) max_y = curr_tri.v2.y;
+
+            // Modify the LOCAL variable
+            curr_bounds.min_x = (min_x < (data_t)0) ? 0 : min_x.to_int();
+            curr_bounds.max_x = (max_x > (data_t)(WIDTH - 1)) ? (WIDTH - 1) : max_x.to_int();
+            curr_bounds.min_y = (min_y < (data_t)0) ? 0 : min_y.to_int();
+            curr_bounds.max_y = (max_y > (data_t)(HEIGHT - 1)) ? (HEIGHT - 1) : max_y.to_int();
         } else {
-            bounds[i].min_x = 0; bounds[i].max_x = 0;
-            bounds[i].min_y = 0; bounds[i].max_y = 0;
+            curr_bounds.min_x = 0; curr_bounds.max_x = 0;
+            curr_bounds.min_y = 0; curr_bounds.max_y = 0;
         }
+        
+        // 3. Push to the output streams EXACTLY ONCE
+        bounds[i] = curr_bounds;
+        screen_tris_out[i] = curr_tri;
     }
 }
-
 // =========================================================================
 // KERNEL 4: Rasterization (DATAFLOW COMPLIANT)
 // =========================================================================
@@ -114,7 +132,7 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
     data_t local_depth[HEIGHT][WIDTH];
     Vec3 local_normal[HEIGHT][WIDTH];
 
-    // 2. Initialize the local buffers (NOT the output channels)
+    // 2. Initialize the local buffers
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             local_depth[y][x] = (data_t)9999.0;
@@ -122,20 +140,30 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
         }
     }
 
-    // 3. Perform Rasterization exclusively on the local memory
+    // 3. Perform Rasterization
     for (int i = 0; i < MAX_TRIS; i++) {
-        if (!tris[i].is_active) continue;
+        
+        // THE FIX: Read from the streams EXACTLY ONCE per triangle!
+        // This forces the hardware to consume every struct member (including .w)
+        Triangle curr_tri = tris[i];
+        BoundingBox curr_bounds = bounds[i];
 
-        data_t x0 = tris[i].v0.x, y0 = tris[i].v0.y;
-        data_t x1 = tris[i].v1.x, y1 = tris[i].v1.y;
-        data_t x2 = tris[i].v2.x, y2 = tris[i].v2.y;
+        if (!curr_tri.is_active) continue;
+
+        // Use the local 'curr_tri' instead of 'tris[i]'
+        data_t x0 = curr_tri.v0.x, y0 = curr_tri.v0.y;
+        data_t x1 = curr_tri.v1.x, y1 = curr_tri.v1.y;
+        data_t x2 = curr_tri.v2.x, y2 = curr_tri.v2.y;
 
         data_t area = (x1 - x0) * (y2 - y0) - (x2 - x0) * (y1 - y0);
         if (area == (data_t)0) continue;
         data_t inv_area = (data_t)1.0 / area;
 
-        for (int y = bounds[i].min_y; y <= bounds[i].max_y; y++) {
-            for (int x = bounds[i].min_x; x <= bounds[i].max_x; x++) {
+        // THE FIX: Use the local 'curr_bounds' so we don't accidentally read the FIFO twice!
+        for (int y = curr_bounds.min_y; y <= curr_bounds.max_y; y++) {
+            for (int x = curr_bounds.min_x; x <= curr_bounds.max_x; x++) {
+            #pragma HLS pipeline II=1
+            
                 data_t px = (data_t)x + (data_t)0.5;
                 data_t py = (data_t)y + (data_t)0.5;
 
@@ -144,22 +172,22 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
                 data_t w2 = ((x0 - px) * (y1 - py) - (x1 - px) * (y0 - py)) * inv_area;
 
                 if (w0 >= (data_t)0 && w1 >= (data_t)0 && w2 >= (data_t)0) {
-                    data_t z = w0 * tris[i].v0.z + w1 * tris[i].v1.z + w2 * tris[i].v2.z;
+                    // Use 'curr_tri' for the depth and normal lookups
+                    data_t z = w0 * curr_tri.v0.z + w1 * curr_tri.v1.z + w2 * curr_tri.v2.z;
 
-                    // Read-Modify-Write happens ONLY on local memory now!
                     if (z < local_depth[y][x]) {
                         local_depth[y][x] = z;
                         
-                        local_normal[y][x].x = w0 * tris[i].n0.x + w1 * tris[i].n1.x + w2 * tris[i].n2.x;
-                        local_normal[y][x].y = w0 * tris[i].n0.y + w1 * tris[i].n1.y + w2 * tris[i].n2.y;
-                        local_normal[y][x].z = w0 * tris[i].n0.z + w1 * tris[i].n1.z + w2 * tris[i].n2.z;
+                        local_normal[y][x].x = w0 * curr_tri.n0.x + w1 * curr_tri.n1.x + w2 * curr_tri.n2.x;
+                        local_normal[y][x].y = w0 * curr_tri.n0.y + w1 * curr_tri.n1.y + w2 * curr_tri.n2.y;
+                        local_normal[y][x].z = w0 * curr_tri.n0.z + w1 * curr_tri.n1.z + w2 * curr_tri.n2.z;
                     }
                 }
             }
         }
     }
 
-    // 4. STREAM OUT to the DATAFLOW channels (Strictly Write-Only)
+    // 4. STREAM OUT to the DATAFLOW channels
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             depth_buffer_out[y][x] = local_depth[y][x];
@@ -182,6 +210,7 @@ static void k5_deferred_lighting(const data_t depth_buffer[HEIGHT][WIDTH],
 
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
+        #pragma HLS pipeline II=1
             if (depth_buffer[y][x] == (data_t)9999.0) {
                 // Background color
                 framebuffer[y][x] = (data_t)0.0; 
@@ -206,23 +235,31 @@ void top_kernel(const Triangle in_tris[MAX_TRIS],
                 const data_t mvp_matrix[4][4], 
                 data_t out_pixels[HEIGHT][WIDTH]) {
 #pragma HLS interface m_axi port=in_tris offset=slave bundle=gmem0
+#pragma HLS interface m_axi port=mvp_matrix offset=slave bundle=gmem2 
 #pragma HLS interface m_axi port=out_pixels offset=slave bundle=gmem1
 #pragma HLS interface s_axilite port=return
 #pragma HLS DATAFLOW
 
-    // Static intermediate buffers (These are what you will change to hls::stream!)
+    // 1. Declare the static arrays FIRST
     static Triangle clip_tris[MAX_TRIS];
-    static Triangle screen_tris[MAX_TRIS];
+    static Triangle screen_tris_in[MAX_TRIS];   // Wire from K2 to K3
+    static Triangle screen_tris_out[MAX_TRIS];  // Wire from K3 to K4
     static BoundingBox bounds[MAX_TRIS];
+
+    // 2. Apply the stream pragmas
+    #pragma HLS stream variable=clip_tris depth=2 
+    #pragma HLS stream variable=screen_tris_in depth=2 
+    #pragma HLS stream variable=screen_tris_out depth=2 
+    #pragma HLS stream variable=bounds depth=2 
     
     // G-Buffers
     static data_t depth_buffer[HEIGHT][WIDTH];
     static Vec3 normal_buffer[HEIGHT][WIDTH];
 
-    // Sequential Pipeline Execution
+    // 3. Pipeline Execution (Notice the Chaining!)
     k1_vertex_transform(in_tris, mvp_matrix, clip_tris);
-    k2_perspective_divide(clip_tris, screen_tris);
-    k3_bounding_box(screen_tris, bounds);
-    k4_rasterize(screen_tris, bounds, depth_buffer, normal_buffer);
+    k2_perspective_divide(clip_tris, screen_tris_in);
+    k3_bounding_box(screen_tris_in, screen_tris_out, bounds); // Passes triangles through
+    k4_rasterize(screen_tris_out, bounds, depth_buffer, normal_buffer); // Reads the passed-through triangles
     k5_deferred_lighting(depth_buffer, normal_buffer, out_pixels);
 }

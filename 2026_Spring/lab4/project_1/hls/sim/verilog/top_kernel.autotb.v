@@ -18,16 +18,18 @@
 `define AUTOTB_CLOCK_PERIOD_DIV2 5.00
 
 `define AESL_DEPTH_gmem0 1
+`define AESL_DEPTH_gmem2 1
 `define AESL_DEPTH_gmem1 1
 `define AESL_DEPTH_in_tris 1
-`define AESL_MEM_mvp_matrix AESL_automem_mvp_matrix
-`define AESL_MEM_INST_mvp_matrix mem_inst_mvp_matrix
+`define AESL_DEPTH_mvp_matrix 1
 `define AESL_DEPTH_out_pixels 1
 `define AUTOTB_TVIN_gmem0  "../tv/cdatafile/c.top_kernel.autotvin_gmem0.dat"
+`define AUTOTB_TVIN_gmem2  "../tv/cdatafile/c.top_kernel.autotvin_gmem2.dat"
 `define AUTOTB_TVIN_in_tris  "../tv/cdatafile/c.top_kernel.autotvin_in_tris.dat"
 `define AUTOTB_TVIN_mvp_matrix  "../tv/cdatafile/c.top_kernel.autotvin_mvp_matrix.dat"
 `define AUTOTB_TVIN_out_pixels  "../tv/cdatafile/c.top_kernel.autotvin_out_pixels.dat"
 `define AUTOTB_TVIN_gmem0_out_wrapc  "../tv/rtldatafile/rtl.top_kernel.autotvin_gmem0.dat"
+`define AUTOTB_TVIN_gmem2_out_wrapc  "../tv/rtldatafile/rtl.top_kernel.autotvin_gmem2.dat"
 `define AUTOTB_TVIN_in_tris_out_wrapc  "../tv/rtldatafile/rtl.top_kernel.autotvin_in_tris.dat"
 `define AUTOTB_TVIN_mvp_matrix_out_wrapc  "../tv/rtldatafile/rtl.top_kernel.autotvin_mvp_matrix.dat"
 `define AUTOTB_TVIN_out_pixels_out_wrapc  "../tv/rtldatafile/rtl.top_kernel.autotvin_out_pixels.dat"
@@ -40,8 +42,9 @@ parameter PROGRESS_TIMEOUT = 10000000;
 parameter LATENCY_ESTIMATION = -1;
 parameter LENGTH_gmem0 = 92;
 parameter LENGTH_gmem1 = 4096;
+parameter LENGTH_gmem2 = 16;
 parameter LENGTH_in_tris = 1;
-parameter LENGTH_mvp_matrix = 16;
+parameter LENGTH_mvp_matrix = 1;
 parameter LENGTH_out_pixels = 1;
 
 reg AESL_clock;
@@ -170,16 +173,51 @@ wire  gmem1_BREADY;
 wire [1 : 0] gmem1_BRESP;
 wire [0 : 0] gmem1_BID;
 wire [0 : 0] gmem1_BUSER;
-wire [3 : 0] mvp_matrix_address0;
-wire  mvp_matrix_ce0;
-wire [31 : 0] mvp_matrix_d0;
-wire [31 : 0] mvp_matrix_q0;
-wire  mvp_matrix_we0;
-wire [3 : 0] mvp_matrix_address1;
-wire  mvp_matrix_ce1;
-wire [31 : 0] mvp_matrix_d1;
-wire [31 : 0] mvp_matrix_q1;
-wire  mvp_matrix_we1;
+wire  gmem2_AWVALID;
+wire  gmem2_AWREADY;
+wire [63 : 0] gmem2_AWADDR;
+wire [0 : 0] gmem2_AWID;
+wire [7 : 0] gmem2_AWLEN;
+wire [2 : 0] gmem2_AWSIZE;
+wire [1 : 0] gmem2_AWBURST;
+wire [1 : 0] gmem2_AWLOCK;
+wire [3 : 0] gmem2_AWCACHE;
+wire [2 : 0] gmem2_AWPROT;
+wire [3 : 0] gmem2_AWQOS;
+wire [3 : 0] gmem2_AWREGION;
+wire [0 : 0] gmem2_AWUSER;
+wire  gmem2_WVALID;
+wire  gmem2_WREADY;
+wire [31 : 0] gmem2_WDATA;
+wire [3 : 0] gmem2_WSTRB;
+wire  gmem2_WLAST;
+wire [0 : 0] gmem2_WID;
+wire [0 : 0] gmem2_WUSER;
+wire  gmem2_ARVALID;
+wire  gmem2_ARREADY;
+wire [63 : 0] gmem2_ARADDR;
+wire [0 : 0] gmem2_ARID;
+wire [7 : 0] gmem2_ARLEN;
+wire [2 : 0] gmem2_ARSIZE;
+wire [1 : 0] gmem2_ARBURST;
+wire [1 : 0] gmem2_ARLOCK;
+wire [3 : 0] gmem2_ARCACHE;
+wire [2 : 0] gmem2_ARPROT;
+wire [3 : 0] gmem2_ARQOS;
+wire [3 : 0] gmem2_ARREGION;
+wire [0 : 0] gmem2_ARUSER;
+wire  gmem2_RVALID;
+wire  gmem2_RREADY;
+wire [31 : 0] gmem2_RDATA;
+wire  gmem2_RLAST;
+wire [0 : 0] gmem2_RID;
+wire [0 : 0] gmem2_RUSER;
+wire [1 : 0] gmem2_RRESP;
+wire  gmem2_BVALID;
+wire  gmem2_BREADY;
+wire [1 : 0] gmem2_BRESP;
+wire [0 : 0] gmem2_BID;
+wire [0 : 0] gmem2_BUSER;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -320,16 +358,51 @@ wire ap_rst_n_n;
     .m_axi_gmem1_BRESP(gmem1_BRESP),
     .m_axi_gmem1_BID(gmem1_BID),
     .m_axi_gmem1_BUSER(gmem1_BUSER),
-    .mvp_matrix_address0(mvp_matrix_address0),
-    .mvp_matrix_ce0(mvp_matrix_ce0),
-    .mvp_matrix_d0(mvp_matrix_d0),
-    .mvp_matrix_q0(mvp_matrix_q0),
-    .mvp_matrix_we0(mvp_matrix_we0),
-    .mvp_matrix_address1(mvp_matrix_address1),
-    .mvp_matrix_ce1(mvp_matrix_ce1),
-    .mvp_matrix_d1(mvp_matrix_d1),
-    .mvp_matrix_q1(mvp_matrix_q1),
-    .mvp_matrix_we1(mvp_matrix_we1));
+    .m_axi_gmem2_AWVALID(gmem2_AWVALID),
+    .m_axi_gmem2_AWREADY(gmem2_AWREADY),
+    .m_axi_gmem2_AWADDR(gmem2_AWADDR),
+    .m_axi_gmem2_AWID(gmem2_AWID),
+    .m_axi_gmem2_AWLEN(gmem2_AWLEN),
+    .m_axi_gmem2_AWSIZE(gmem2_AWSIZE),
+    .m_axi_gmem2_AWBURST(gmem2_AWBURST),
+    .m_axi_gmem2_AWLOCK(gmem2_AWLOCK),
+    .m_axi_gmem2_AWCACHE(gmem2_AWCACHE),
+    .m_axi_gmem2_AWPROT(gmem2_AWPROT),
+    .m_axi_gmem2_AWQOS(gmem2_AWQOS),
+    .m_axi_gmem2_AWREGION(gmem2_AWREGION),
+    .m_axi_gmem2_AWUSER(gmem2_AWUSER),
+    .m_axi_gmem2_WVALID(gmem2_WVALID),
+    .m_axi_gmem2_WREADY(gmem2_WREADY),
+    .m_axi_gmem2_WDATA(gmem2_WDATA),
+    .m_axi_gmem2_WSTRB(gmem2_WSTRB),
+    .m_axi_gmem2_WLAST(gmem2_WLAST),
+    .m_axi_gmem2_WID(gmem2_WID),
+    .m_axi_gmem2_WUSER(gmem2_WUSER),
+    .m_axi_gmem2_ARVALID(gmem2_ARVALID),
+    .m_axi_gmem2_ARREADY(gmem2_ARREADY),
+    .m_axi_gmem2_ARADDR(gmem2_ARADDR),
+    .m_axi_gmem2_ARID(gmem2_ARID),
+    .m_axi_gmem2_ARLEN(gmem2_ARLEN),
+    .m_axi_gmem2_ARSIZE(gmem2_ARSIZE),
+    .m_axi_gmem2_ARBURST(gmem2_ARBURST),
+    .m_axi_gmem2_ARLOCK(gmem2_ARLOCK),
+    .m_axi_gmem2_ARCACHE(gmem2_ARCACHE),
+    .m_axi_gmem2_ARPROT(gmem2_ARPROT),
+    .m_axi_gmem2_ARQOS(gmem2_ARQOS),
+    .m_axi_gmem2_ARREGION(gmem2_ARREGION),
+    .m_axi_gmem2_ARUSER(gmem2_ARUSER),
+    .m_axi_gmem2_RVALID(gmem2_RVALID),
+    .m_axi_gmem2_RREADY(gmem2_RREADY),
+    .m_axi_gmem2_RDATA(gmem2_RDATA),
+    .m_axi_gmem2_RLAST(gmem2_RLAST),
+    .m_axi_gmem2_RID(gmem2_RID),
+    .m_axi_gmem2_RUSER(gmem2_RUSER),
+    .m_axi_gmem2_RRESP(gmem2_RRESP),
+    .m_axi_gmem2_BVALID(gmem2_BVALID),
+    .m_axi_gmem2_BREADY(gmem2_BREADY),
+    .m_axi_gmem2_BRESP(gmem2_BRESP),
+    .m_axi_gmem2_BID(gmem2_BID),
+    .m_axi_gmem2_BUSER(gmem2_BUSER));
 assign ap_clk = AESL_clock;
 assign ap_rst_n = AESL_reset;
 assign ap_rst_n_n = ~AESL_reset;
@@ -360,56 +433,6 @@ initial begin
 end
 
     sv_module_top svtb_top();
-//------------------------arraymvp_matrix Instantiation--------------
-
-// The input and output of arraymvp_matrix
-wire    arraymvp_matrix_ce0, arraymvp_matrix_ce1;
-wire [4 - 1 : 0]    arraymvp_matrix_we0, arraymvp_matrix_we1;
-wire    [3 : 0]    arraymvp_matrix_address0, arraymvp_matrix_address1;
-wire    [31 : 0]    arraymvp_matrix_din0, arraymvp_matrix_din1;
-wire    [31 : 0]    arraymvp_matrix_dout0, arraymvp_matrix_dout1;
-wire    arraymvp_matrix_ready;
-wire    arraymvp_matrix_done;
-
-`AESL_MEM_mvp_matrix `AESL_MEM_INST_mvp_matrix(
-    .clk        (AESL_clock),
-    .rst        (AESL_reset),
-    .ce0        (arraymvp_matrix_ce0),
-    .we0        (arraymvp_matrix_we0),
-    .address0   (arraymvp_matrix_address0),
-    .din0       (arraymvp_matrix_din0),
-    .dout0      (arraymvp_matrix_dout0),
-    .ce1        (arraymvp_matrix_ce1),
-    .we1        (arraymvp_matrix_we1),
-    .address1   (arraymvp_matrix_address1),
-    .din1       (arraymvp_matrix_din1),
-    .dout1      (arraymvp_matrix_dout1),
-    .ready      (arraymvp_matrix_ready),
-    .done    (arraymvp_matrix_done)
-);
-
-// Assignment between dut and arraymvp_matrix
-assign arraymvp_matrix_address0 = mvp_matrix_address0;
-assign arraymvp_matrix_ce0 = mvp_matrix_ce0;
-assign mvp_matrix_q0 = arraymvp_matrix_dout0;
-assign arraymvp_matrix_we0 = 0;
-assign arraymvp_matrix_din0 = 0;
-assign arraymvp_matrix_address1 = mvp_matrix_address1;
-assign arraymvp_matrix_ce1 = mvp_matrix_ce1;
-assign mvp_matrix_q1 = arraymvp_matrix_dout1;
-assign arraymvp_matrix_we1 = 0;
-assign arraymvp_matrix_din1 = 0;
-assign arraymvp_matrix_ready=    ready;
-assign arraymvp_matrix_done = 0;
-
-event mvp_matrix_reshape_ap_done_evt;
-event mvp_matrix_reshape_ap_ready_evt;
-initial begin
-     `AESL_MEM_INST_mvp_matrix.initialed       = svtb_top.misc_if.initialed_evt  ;
-     `AESL_MEM_INST_mvp_matrix.finished        = svtb_top.misc_if.finished_evt   ;
-     `AESL_MEM_INST_mvp_matrix.dut2tb_ap_ready = svtb_top.misc_if.dut2tb_ap_ready_evt;
-     `AESL_MEM_INST_mvp_matrix.dut2tb_ap_done = svtb_top.misc_if.dut2tb_ap_ready_evt;
-end
 
 ////////////////////////////////////////////
 // progress and performance

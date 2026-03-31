@@ -101,6 +101,8 @@ void XTop_kernel_DisableAutoRestart(XTop_kernel *InstancePtr);
 
 void XTop_kernel_Set_in_tris(XTop_kernel *InstancePtr, u64 Data);
 u64 XTop_kernel_Get_in_tris(XTop_kernel *InstancePtr);
+void XTop_kernel_Set_mvp_matrix(XTop_kernel *InstancePtr, u64 Data);
+u64 XTop_kernel_Get_mvp_matrix(XTop_kernel *InstancePtr);
 void XTop_kernel_Set_out_pixels(XTop_kernel *InstancePtr, u64 Data);
 u64 XTop_kernel_Get_out_pixels(XTop_kernel *InstancePtr);
 

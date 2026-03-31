@@ -5,6 +5,11 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler top_kernel_sparsemux_9_3_16_1_1 BINDTYPE {op} TYPE {sparsemux} IMPL {onehotencoding_realdef}
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -12,214 +17,755 @@ if {${::AESL::PGuard_autoexp_gen}} {
     AESL_LIB_XILADAPTER::native_axis_begin
 }
 
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 123 \
-    name bounds_max_x \
+eval "cg_default_interface_gen_dc { \
+    id 91 \
+    name screen_tris_in_v0_x \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename bounds_max_x \
+    corename dc_screen_tris_in_v0_x \
     op interface \
-    ports { bounds_max_x_address0 { O 7 vector } bounds_max_x_ce0 { O 1 bit } bounds_max_x_we0 { O 1 bit } bounds_max_x_d0 { O 16 vector } bounds_max_x_address1 { O 7 vector } bounds_max_x_ce1 { O 1 bit } bounds_max_x_we1 { O 1 bit } bounds_max_x_d1 { O 16 vector } } \
+    ports { screen_tris_in_v0_x_dout { I 32 vector } screen_tris_in_v0_x_empty_n { I 1 bit } screen_tris_in_v0_x_read { O 1 bit } screen_tris_in_v0_x_num_data_valid { I 3 vector } screen_tris_in_v0_x_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bounds_max_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 124 \
-    name bounds_max_y \
+eval "cg_default_interface_gen_dc { \
+    id 92 \
+    name screen_tris_in_v0_y \
+    type fifo \
+    dir I \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename bounds_max_y \
+    corename dc_screen_tris_in_v0_y \
     op interface \
-    ports { bounds_max_y_address0 { O 7 vector } bounds_max_y_ce0 { O 1 bit } bounds_max_y_we0 { O 1 bit } bounds_max_y_d0 { O 16 vector } bounds_max_y_address1 { O 7 vector } bounds_max_y_ce1 { O 1 bit } bounds_max_y_we1 { O 1 bit } bounds_max_y_d1 { O 16 vector } } \
+    ports { screen_tris_in_v0_y_dout { I 32 vector } screen_tris_in_v0_y_empty_n { I 1 bit } screen_tris_in_v0_y_read { O 1 bit } screen_tris_in_v0_y_num_data_valid { I 3 vector } screen_tris_in_v0_y_fifo_cap { I 3 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bounds_max_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 125 \
+eval "cg_default_interface_gen_dc { \
+    id 93 \
+    name screen_tris_in_v0_z \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v0_z \
+    op interface \
+    ports { screen_tris_in_v0_z_dout { I 32 vector } screen_tris_in_v0_z_empty_n { I 1 bit } screen_tris_in_v0_z_read { O 1 bit } screen_tris_in_v0_z_num_data_valid { I 3 vector } screen_tris_in_v0_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 94 \
+    name screen_tris_in_v0_w \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v0_w \
+    op interface \
+    ports { screen_tris_in_v0_w_dout { I 32 vector } screen_tris_in_v0_w_empty_n { I 1 bit } screen_tris_in_v0_w_read { O 1 bit } screen_tris_in_v0_w_num_data_valid { I 3 vector } screen_tris_in_v0_w_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 95 \
+    name screen_tris_in_v1_x \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v1_x \
+    op interface \
+    ports { screen_tris_in_v1_x_dout { I 32 vector } screen_tris_in_v1_x_empty_n { I 1 bit } screen_tris_in_v1_x_read { O 1 bit } screen_tris_in_v1_x_num_data_valid { I 3 vector } screen_tris_in_v1_x_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 96 \
+    name screen_tris_in_v1_y \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v1_y \
+    op interface \
+    ports { screen_tris_in_v1_y_dout { I 32 vector } screen_tris_in_v1_y_empty_n { I 1 bit } screen_tris_in_v1_y_read { O 1 bit } screen_tris_in_v1_y_num_data_valid { I 3 vector } screen_tris_in_v1_y_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 97 \
+    name screen_tris_in_v1_z \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v1_z \
+    op interface \
+    ports { screen_tris_in_v1_z_dout { I 32 vector } screen_tris_in_v1_z_empty_n { I 1 bit } screen_tris_in_v1_z_read { O 1 bit } screen_tris_in_v1_z_num_data_valid { I 3 vector } screen_tris_in_v1_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 98 \
+    name screen_tris_in_v1_w \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v1_w \
+    op interface \
+    ports { screen_tris_in_v1_w_dout { I 32 vector } screen_tris_in_v1_w_empty_n { I 1 bit } screen_tris_in_v1_w_read { O 1 bit } screen_tris_in_v1_w_num_data_valid { I 3 vector } screen_tris_in_v1_w_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 99 \
+    name screen_tris_in_v2_x \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v2_x \
+    op interface \
+    ports { screen_tris_in_v2_x_dout { I 32 vector } screen_tris_in_v2_x_empty_n { I 1 bit } screen_tris_in_v2_x_read { O 1 bit } screen_tris_in_v2_x_num_data_valid { I 3 vector } screen_tris_in_v2_x_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 100 \
+    name screen_tris_in_v2_y \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v2_y \
+    op interface \
+    ports { screen_tris_in_v2_y_dout { I 32 vector } screen_tris_in_v2_y_empty_n { I 1 bit } screen_tris_in_v2_y_read { O 1 bit } screen_tris_in_v2_y_num_data_valid { I 3 vector } screen_tris_in_v2_y_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 101 \
+    name screen_tris_in_v2_z \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v2_z \
+    op interface \
+    ports { screen_tris_in_v2_z_dout { I 32 vector } screen_tris_in_v2_z_empty_n { I 1 bit } screen_tris_in_v2_z_read { O 1 bit } screen_tris_in_v2_z_num_data_valid { I 3 vector } screen_tris_in_v2_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 102 \
+    name screen_tris_in_v2_w \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_v2_w \
+    op interface \
+    ports { screen_tris_in_v2_w_dout { I 32 vector } screen_tris_in_v2_w_empty_n { I 1 bit } screen_tris_in_v2_w_read { O 1 bit } screen_tris_in_v2_w_num_data_valid { I 3 vector } screen_tris_in_v2_w_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 103 \
+    name screen_tris_in_n0_x \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n0_x \
+    op interface \
+    ports { screen_tris_in_n0_x_dout { I 32 vector } screen_tris_in_n0_x_empty_n { I 1 bit } screen_tris_in_n0_x_read { O 1 bit } screen_tris_in_n0_x_num_data_valid { I 3 vector } screen_tris_in_n0_x_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 104 \
+    name screen_tris_in_n0_y \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n0_y \
+    op interface \
+    ports { screen_tris_in_n0_y_dout { I 32 vector } screen_tris_in_n0_y_empty_n { I 1 bit } screen_tris_in_n0_y_read { O 1 bit } screen_tris_in_n0_y_num_data_valid { I 3 vector } screen_tris_in_n0_y_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 105 \
+    name screen_tris_in_n0_z \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n0_z \
+    op interface \
+    ports { screen_tris_in_n0_z_dout { I 32 vector } screen_tris_in_n0_z_empty_n { I 1 bit } screen_tris_in_n0_z_read { O 1 bit } screen_tris_in_n0_z_num_data_valid { I 3 vector } screen_tris_in_n0_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 106 \
+    name screen_tris_in_n1_x \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n1_x \
+    op interface \
+    ports { screen_tris_in_n1_x_dout { I 32 vector } screen_tris_in_n1_x_empty_n { I 1 bit } screen_tris_in_n1_x_read { O 1 bit } screen_tris_in_n1_x_num_data_valid { I 3 vector } screen_tris_in_n1_x_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 107 \
+    name screen_tris_in_n1_y \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n1_y \
+    op interface \
+    ports { screen_tris_in_n1_y_dout { I 32 vector } screen_tris_in_n1_y_empty_n { I 1 bit } screen_tris_in_n1_y_read { O 1 bit } screen_tris_in_n1_y_num_data_valid { I 3 vector } screen_tris_in_n1_y_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 108 \
+    name screen_tris_in_n1_z \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n1_z \
+    op interface \
+    ports { screen_tris_in_n1_z_dout { I 32 vector } screen_tris_in_n1_z_empty_n { I 1 bit } screen_tris_in_n1_z_read { O 1 bit } screen_tris_in_n1_z_num_data_valid { I 3 vector } screen_tris_in_n1_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 109 \
+    name screen_tris_in_n2_x \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n2_x \
+    op interface \
+    ports { screen_tris_in_n2_x_dout { I 32 vector } screen_tris_in_n2_x_empty_n { I 1 bit } screen_tris_in_n2_x_read { O 1 bit } screen_tris_in_n2_x_num_data_valid { I 3 vector } screen_tris_in_n2_x_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 110 \
+    name screen_tris_in_n2_y \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n2_y \
+    op interface \
+    ports { screen_tris_in_n2_y_dout { I 32 vector } screen_tris_in_n2_y_empty_n { I 1 bit } screen_tris_in_n2_y_read { O 1 bit } screen_tris_in_n2_y_num_data_valid { I 3 vector } screen_tris_in_n2_y_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 111 \
+    name screen_tris_in_n2_z \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_n2_z \
+    op interface \
+    ports { screen_tris_in_n2_z_dout { I 32 vector } screen_tris_in_n2_z_empty_n { I 1 bit } screen_tris_in_n2_z_read { O 1 bit } screen_tris_in_n2_z_num_data_valid { I 3 vector } screen_tris_in_n2_z_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 112 \
+    name screen_tris_in_color \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_color \
+    op interface \
+    ports { screen_tris_in_color_dout { I 32 vector } screen_tris_in_color_empty_n { I 1 bit } screen_tris_in_color_read { O 1 bit } screen_tris_in_color_num_data_valid { I 3 vector } screen_tris_in_color_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 113 \
+    name screen_tris_in_is_active \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_in_is_active \
+    op interface \
+    ports { screen_tris_in_is_active_dout { I 1 vector } screen_tris_in_is_active_empty_n { I 1 bit } screen_tris_in_is_active_read { O 1 bit } screen_tris_in_is_active_num_data_valid { I 3 vector } screen_tris_in_is_active_fifo_cap { I 3 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 114 \
     name bounds_min_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename bounds_min_x \
+    corename dc_bounds_min_x \
     op interface \
-    ports { bounds_min_x_address0 { O 7 vector } bounds_min_x_ce0 { O 1 bit } bounds_min_x_we0 { O 1 bit } bounds_min_x_d0 { O 15 vector } bounds_min_x_address1 { O 7 vector } bounds_min_x_ce1 { O 1 bit } bounds_min_x_we1 { O 1 bit } bounds_min_x_d1 { O 15 vector } } \
+    ports { bounds_min_x_din { O 32 vector } bounds_min_x_full_n { I 1 bit } bounds_min_x_write { O 1 bit } bounds_min_x_num_data_valid { I 32 vector } bounds_min_x_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bounds_min_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 126 \
+eval "cg_default_interface_gen_dc { \
+    id 115 \
     name bounds_min_y \
-    reset_level 1 \
-    sync_rst true \
+    type fifo \
     dir O \
-    corename bounds_min_y \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_bounds_min_y \
     op interface \
-    ports { bounds_min_y_address0 { O 7 vector } bounds_min_y_ce0 { O 1 bit } bounds_min_y_we0 { O 1 bit } bounds_min_y_d0 { O 15 vector } bounds_min_y_address1 { O 7 vector } bounds_min_y_ce1 { O 1 bit } bounds_min_y_we1 { O 1 bit } bounds_min_y_d1 { O 15 vector } } \
+    ports { bounds_min_y_din { O 32 vector } bounds_min_y_full_n { I 1 bit } bounds_min_y_write { O 1 bit } bounds_min_y_num_data_valid { I 32 vector } bounds_min_y_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bounds_min_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
+    id 116 \
+    name bounds_max_x \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_bounds_max_x \
+    op interface \
+    ports { bounds_max_x_din { O 32 vector } bounds_max_x_full_n { I 1 bit } bounds_max_x_write { O 1 bit } bounds_max_x_num_data_valid { I 32 vector } bounds_max_x_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 117 \
+    name bounds_max_y \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_bounds_max_y \
+    op interface \
+    ports { bounds_max_y_din { O 32 vector } bounds_max_y_full_n { I 1 bit } bounds_max_y_write { O 1 bit } bounds_max_y_num_data_valid { I 32 vector } bounds_max_y_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 118 \
+    name screen_tris_out_v0_x \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v0_x \
+    op interface \
+    ports { screen_tris_out_v0_x_din { O 32 vector } screen_tris_out_v0_x_full_n { I 1 bit } screen_tris_out_v0_x_write { O 1 bit } screen_tris_out_v0_x_num_data_valid { I 32 vector } screen_tris_out_v0_x_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 119 \
+    name screen_tris_out_v0_y \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v0_y \
+    op interface \
+    ports { screen_tris_out_v0_y_din { O 32 vector } screen_tris_out_v0_y_full_n { I 1 bit } screen_tris_out_v0_y_write { O 1 bit } screen_tris_out_v0_y_num_data_valid { I 32 vector } screen_tris_out_v0_y_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 120 \
+    name screen_tris_out_v0_z \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v0_z \
+    op interface \
+    ports { screen_tris_out_v0_z_din { O 32 vector } screen_tris_out_v0_z_full_n { I 1 bit } screen_tris_out_v0_z_write { O 1 bit } screen_tris_out_v0_z_num_data_valid { I 32 vector } screen_tris_out_v0_z_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 121 \
+    name screen_tris_out_v0_w \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v0_w \
+    op interface \
+    ports { screen_tris_out_v0_w_din { O 32 vector } screen_tris_out_v0_w_full_n { I 1 bit } screen_tris_out_v0_w_write { O 1 bit } screen_tris_out_v0_w_num_data_valid { I 32 vector } screen_tris_out_v0_w_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 122 \
+    name screen_tris_out_v1_x \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v1_x \
+    op interface \
+    ports { screen_tris_out_v1_x_din { O 32 vector } screen_tris_out_v1_x_full_n { I 1 bit } screen_tris_out_v1_x_write { O 1 bit } screen_tris_out_v1_x_num_data_valid { I 32 vector } screen_tris_out_v1_x_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 123 \
+    name screen_tris_out_v1_y \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v1_y \
+    op interface \
+    ports { screen_tris_out_v1_y_din { O 32 vector } screen_tris_out_v1_y_full_n { I 1 bit } screen_tris_out_v1_y_write { O 1 bit } screen_tris_out_v1_y_num_data_valid { I 32 vector } screen_tris_out_v1_y_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 124 \
+    name screen_tris_out_v1_z \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v1_z \
+    op interface \
+    ports { screen_tris_out_v1_z_din { O 32 vector } screen_tris_out_v1_z_full_n { I 1 bit } screen_tris_out_v1_z_write { O 1 bit } screen_tris_out_v1_z_num_data_valid { I 32 vector } screen_tris_out_v1_z_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 125 \
+    name screen_tris_out_v1_w \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v1_w \
+    op interface \
+    ports { screen_tris_out_v1_w_din { O 32 vector } screen_tris_out_v1_w_full_n { I 1 bit } screen_tris_out_v1_w_write { O 1 bit } screen_tris_out_v1_w_num_data_valid { I 32 vector } screen_tris_out_v1_w_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 126 \
+    name screen_tris_out_v2_x \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_v2_x \
+    op interface \
+    ports { screen_tris_out_v2_x_din { O 32 vector } screen_tris_out_v2_x_full_n { I 1 bit } screen_tris_out_v2_x_write { O 1 bit } screen_tris_out_v2_x_num_data_valid { I 32 vector } screen_tris_out_v2_x_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
     id 127 \
-    name screen_tris_is_active \
+    name screen_tris_out_v2_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_is_active \
+    corename dc_screen_tris_out_v2_y \
     op interface \
-    ports { screen_tris_is_active_address0 { O 7 vector } screen_tris_is_active_ce0 { O 1 bit } screen_tris_is_active_q0 { I 1 vector } } \
+    ports { screen_tris_out_v2_y_din { O 32 vector } screen_tris_out_v2_y_full_n { I 1 bit } screen_tris_out_v2_y_write { O 1 bit } screen_tris_out_v2_y_num_data_valid { I 32 vector } screen_tris_out_v2_y_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_is_active'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
     id 128 \
-    name screen_tris_v0_x \
+    name screen_tris_out_v2_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_v0_x \
+    corename dc_screen_tris_out_v2_z \
     op interface \
-    ports { screen_tris_v0_x_address0 { O 7 vector } screen_tris_v0_x_ce0 { O 1 bit } screen_tris_v0_x_q0 { I 32 vector } } \
+    ports { screen_tris_out_v2_z_din { O 32 vector } screen_tris_out_v2_z_full_n { I 1 bit } screen_tris_out_v2_z_write { O 1 bit } screen_tris_out_v2_z_num_data_valid { I 32 vector } screen_tris_out_v2_z_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v0_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
     id 129 \
-    name screen_tris_v0_y \
+    name screen_tris_out_v2_w \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_v0_y \
+    corename dc_screen_tris_out_v2_w \
     op interface \
-    ports { screen_tris_v0_y_address0 { O 7 vector } screen_tris_v0_y_ce0 { O 1 bit } screen_tris_v0_y_q0 { I 32 vector } } \
+    ports { screen_tris_out_v2_w_din { O 32 vector } screen_tris_out_v2_w_full_n { I 1 bit } screen_tris_out_v2_w_write { O 1 bit } screen_tris_out_v2_w_num_data_valid { I 32 vector } screen_tris_out_v2_w_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v0_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
     id 130 \
-    name screen_tris_v1_x \
+    name screen_tris_out_n0_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_v1_x \
+    corename dc_screen_tris_out_n0_x \
     op interface \
-    ports { screen_tris_v1_x_address0 { O 7 vector } screen_tris_v1_x_ce0 { O 1 bit } screen_tris_v1_x_q0 { I 32 vector } } \
+    ports { screen_tris_out_n0_x_din { O 32 vector } screen_tris_out_n0_x_full_n { I 1 bit } screen_tris_out_n0_x_write { O 1 bit } screen_tris_out_n0_x_num_data_valid { I 32 vector } screen_tris_out_n0_x_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v1_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
     id 131 \
-    name screen_tris_v1_y \
+    name screen_tris_out_n0_y \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_v1_y \
+    corename dc_screen_tris_out_n0_y \
     op interface \
-    ports { screen_tris_v1_y_address0 { O 7 vector } screen_tris_v1_y_ce0 { O 1 bit } screen_tris_v1_y_q0 { I 32 vector } } \
+    ports { screen_tris_out_n0_y_din { O 32 vector } screen_tris_out_n0_y_full_n { I 1 bit } screen_tris_out_n0_y_write { O 1 bit } screen_tris_out_n0_y_num_data_valid { I 32 vector } screen_tris_out_n0_y_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v1_y'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
     id 132 \
-    name screen_tris_v2_x \
+    name screen_tris_out_n0_z \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_v2_x \
+    corename dc_screen_tris_out_n0_z \
     op interface \
-    ports { screen_tris_v2_x_address0 { O 7 vector } screen_tris_v2_x_ce0 { O 1 bit } screen_tris_v2_x_q0 { I 32 vector } } \
+    ports { screen_tris_out_n0_z_din { O 32 vector } screen_tris_out_n0_z_full_n { I 1 bit } screen_tris_out_n0_z_write { O 1 bit } screen_tris_out_n0_z_num_data_valid { I 32 vector } screen_tris_out_n0_z_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v2_x'"
-}
 }
 
-
-# XIL_BRAM:
+# Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+eval "cg_default_interface_gen_dc { \
     id 133 \
-    name screen_tris_v2_y \
+    name screen_tris_out_n1_x \
+    type fifo \
+    dir O \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename screen_tris_v2_y \
+    corename dc_screen_tris_out_n1_x \
     op interface \
-    ports { screen_tris_v2_y_address0 { O 7 vector } screen_tris_v2_y_ce0 { O 1 bit } screen_tris_v2_y_q0 { I 32 vector } } \
+    ports { screen_tris_out_n1_x_din { O 32 vector } screen_tris_out_n1_x_full_n { I 1 bit } screen_tris_out_n1_x_write { O 1 bit } screen_tris_out_n1_x_num_data_valid { I 32 vector } screen_tris_out_n1_x_fifo_cap { I 32 vector } } \
 } "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'screen_tris_v2_y'"
-}
 }
 
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 134 \
+    name screen_tris_out_n1_y \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_n1_y \
+    op interface \
+    ports { screen_tris_out_n1_y_din { O 32 vector } screen_tris_out_n1_y_full_n { I 1 bit } screen_tris_out_n1_y_write { O 1 bit } screen_tris_out_n1_y_num_data_valid { I 32 vector } screen_tris_out_n1_y_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 135 \
+    name screen_tris_out_n1_z \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_n1_z \
+    op interface \
+    ports { screen_tris_out_n1_z_din { O 32 vector } screen_tris_out_n1_z_full_n { I 1 bit } screen_tris_out_n1_z_write { O 1 bit } screen_tris_out_n1_z_num_data_valid { I 32 vector } screen_tris_out_n1_z_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 136 \
+    name screen_tris_out_n2_x \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_n2_x \
+    op interface \
+    ports { screen_tris_out_n2_x_din { O 32 vector } screen_tris_out_n2_x_full_n { I 1 bit } screen_tris_out_n2_x_write { O 1 bit } screen_tris_out_n2_x_num_data_valid { I 32 vector } screen_tris_out_n2_x_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 137 \
+    name screen_tris_out_n2_y \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_n2_y \
+    op interface \
+    ports { screen_tris_out_n2_y_din { O 32 vector } screen_tris_out_n2_y_full_n { I 1 bit } screen_tris_out_n2_y_write { O 1 bit } screen_tris_out_n2_y_num_data_valid { I 32 vector } screen_tris_out_n2_y_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 138 \
+    name screen_tris_out_n2_z \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_n2_z \
+    op interface \
+    ports { screen_tris_out_n2_z_din { O 32 vector } screen_tris_out_n2_z_full_n { I 1 bit } screen_tris_out_n2_z_write { O 1 bit } screen_tris_out_n2_z_num_data_valid { I 32 vector } screen_tris_out_n2_z_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 139 \
+    name screen_tris_out_color \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_color \
+    op interface \
+    ports { screen_tris_out_color_din { O 32 vector } screen_tris_out_color_full_n { I 1 bit } screen_tris_out_color_write { O 1 bit } screen_tris_out_color_num_data_valid { I 32 vector } screen_tris_out_color_fifo_cap { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 140 \
+    name screen_tris_out_is_active \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_screen_tris_out_is_active \
+    op interface \
+    ports { screen_tris_out_is_active_din { O 1 vector } screen_tris_out_is_active_full_n { I 1 bit } screen_tris_out_is_active_write { O 1 bit } screen_tris_out_is_active_num_data_valid { I 32 vector } screen_tris_out_is_active_fifo_cap { I 32 vector } } \
+} "
+}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
@@ -231,7 +777,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 
@@ -286,9 +832,9 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 
 # flow_control definition:
-set InstName top_kernel_flow_control_loop_pipe_sequential_init_U
-set CompName top_kernel_flow_control_loop_pipe_sequential_init
-set name flow_control_loop_pipe_sequential_init
+set InstName top_kernel_flow_control_loop_pipe_U
+set CompName top_kernel_flow_control_loop_pipe
+set name flow_control_loop_pipe
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
 if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
 eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \

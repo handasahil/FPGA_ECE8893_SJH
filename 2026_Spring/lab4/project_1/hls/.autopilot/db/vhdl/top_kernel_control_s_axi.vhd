@@ -36,6 +36,7 @@ port (
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
     in_tris               :out  STD_LOGIC_VECTOR(63 downto 0);
+    mvp_matrix            :out  STD_LOGIC_VECTOR(63 downto 0);
     out_pixels            :out  STD_LOGIC_VECTOR(63 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
@@ -71,11 +72,16 @@ end entity top_kernel_control_s_axi;
 -- 0x14 : Data signal of in_tris
 --        bit 31~0 - in_tris[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of out_pixels
---        bit 31~0 - out_pixels[31:0] (Read/Write)
--- 0x20 : Data signal of out_pixels
---        bit 31~0 - out_pixels[63:32] (Read/Write)
+-- 0x1c : Data signal of mvp_matrix
+--        bit 31~0 - mvp_matrix[31:0] (Read/Write)
+-- 0x20 : Data signal of mvp_matrix
+--        bit 31~0 - mvp_matrix[63:32] (Read/Write)
 -- 0x24 : reserved
+-- 0x28 : Data signal of out_pixels
+--        bit 31~0 - out_pixels[31:0] (Read/Write)
+-- 0x2c : Data signal of out_pixels
+--        bit 31~0 - out_pixels[63:32] (Read/Write)
+-- 0x30 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of top_kernel_control_s_axi is
@@ -90,9 +96,12 @@ architecture behave of top_kernel_control_s_axi is
     constant ADDR_IN_TRIS_DATA_0    : INTEGER := 16#10#;
     constant ADDR_IN_TRIS_DATA_1    : INTEGER := 16#14#;
     constant ADDR_IN_TRIS_CTRL      : INTEGER := 16#18#;
-    constant ADDR_OUT_PIXELS_DATA_0 : INTEGER := 16#1c#;
-    constant ADDR_OUT_PIXELS_DATA_1 : INTEGER := 16#20#;
-    constant ADDR_OUT_PIXELS_CTRL   : INTEGER := 16#24#;
+    constant ADDR_MVP_MATRIX_DATA_0 : INTEGER := 16#1c#;
+    constant ADDR_MVP_MATRIX_DATA_1 : INTEGER := 16#20#;
+    constant ADDR_MVP_MATRIX_CTRL   : INTEGER := 16#24#;
+    constant ADDR_OUT_PIXELS_DATA_0 : INTEGER := 16#28#;
+    constant ADDR_OUT_PIXELS_DATA_1 : INTEGER := 16#2c#;
+    constant ADDR_OUT_PIXELS_CTRL   : INTEGER := 16#30#;
     constant ADDR_BITS         : INTEGER := 6;
 
     signal AWREADY_t           : STD_LOGIC;
@@ -123,6 +132,7 @@ architecture behave of top_kernel_control_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_in_tris         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_mvp_matrix      : UNSIGNED(63 downto 0) := (others => '0');
     signal int_out_pixels      : UNSIGNED(63 downto 0) := (others => '0');
 
 
@@ -257,6 +267,10 @@ begin
                         rdata_data <= RESIZE(int_in_tris(31 downto 0), 32);
                     when ADDR_IN_TRIS_DATA_1 =>
                         rdata_data <= RESIZE(int_in_tris(63 downto 32), 32);
+                    when ADDR_MVP_MATRIX_DATA_0 =>
+                        rdata_data <= RESIZE(int_mvp_matrix(31 downto 0), 32);
+                    when ADDR_MVP_MATRIX_DATA_1 =>
+                        rdata_data <= RESIZE(int_mvp_matrix(63 downto 32), 32);
                     when ADDR_OUT_PIXELS_DATA_0 =>
                         rdata_data <= RESIZE(int_out_pixels(31 downto 0), 32);
                     when ADDR_OUT_PIXELS_DATA_1 =>
@@ -276,6 +290,7 @@ begin
     task_ap_ready        <= ap_ready and not int_auto_restart;
     auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     in_tris              <= STD_LOGIC_VECTOR(int_in_tris);
+    mvp_matrix           <= STD_LOGIC_VECTOR(int_mvp_matrix);
     out_pixels           <= STD_LOGIC_VECTOR(int_out_pixels);
 
     process (ACLK)
@@ -469,6 +484,32 @@ begin
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_IN_TRIS_DATA_1) then
                     int_in_tris(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_in_tris(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_mvp_matrix(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_MVP_MATRIX_DATA_0) then
+                    int_mvp_matrix(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_mvp_matrix(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_mvp_matrix(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_MVP_MATRIX_DATA_1) then
+                    int_mvp_matrix(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_mvp_matrix(63 downto 32));
                 end if;
             end if;
         end if;

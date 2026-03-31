@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.1.1 (lin64) Build 6233196 Thu Sep 11 21:27:11 MDT 2025
-//Date        : Mon Mar 30 23:34:07 2026
+//Date        : Tue Mar 31 01:01:48 2026
 //Host        : ece-linlabsrv01 running 64-bit Red Hat Enterprise Linux release 8.10 (Ootpa)
 //Command     : generate_target bd_0_wrapper.bd
 //Design      : bd_0_wrapper
@@ -94,16 +94,46 @@ module bd_0_wrapper
     m_axi_gmem1_wready,
     m_axi_gmem1_wstrb,
     m_axi_gmem1_wvalid,
-    mvp_matrix_address0,
-    mvp_matrix_address1,
-    mvp_matrix_ce0,
-    mvp_matrix_ce1,
-    mvp_matrix_d0,
-    mvp_matrix_d1,
-    mvp_matrix_q0,
-    mvp_matrix_q1,
-    mvp_matrix_we0,
-    mvp_matrix_we1,
+    m_axi_gmem2_araddr,
+    m_axi_gmem2_arburst,
+    m_axi_gmem2_arcache,
+    m_axi_gmem2_arid,
+    m_axi_gmem2_arlen,
+    m_axi_gmem2_arlock,
+    m_axi_gmem2_arprot,
+    m_axi_gmem2_arqos,
+    m_axi_gmem2_arready,
+    m_axi_gmem2_arregion,
+    m_axi_gmem2_arsize,
+    m_axi_gmem2_arvalid,
+    m_axi_gmem2_awaddr,
+    m_axi_gmem2_awburst,
+    m_axi_gmem2_awcache,
+    m_axi_gmem2_awid,
+    m_axi_gmem2_awlen,
+    m_axi_gmem2_awlock,
+    m_axi_gmem2_awprot,
+    m_axi_gmem2_awqos,
+    m_axi_gmem2_awready,
+    m_axi_gmem2_awregion,
+    m_axi_gmem2_awsize,
+    m_axi_gmem2_awvalid,
+    m_axi_gmem2_bid,
+    m_axi_gmem2_bready,
+    m_axi_gmem2_bresp,
+    m_axi_gmem2_bvalid,
+    m_axi_gmem2_rdata,
+    m_axi_gmem2_rid,
+    m_axi_gmem2_rlast,
+    m_axi_gmem2_rready,
+    m_axi_gmem2_rresp,
+    m_axi_gmem2_rvalid,
+    m_axi_gmem2_wdata,
+    m_axi_gmem2_wid,
+    m_axi_gmem2_wlast,
+    m_axi_gmem2_wready,
+    m_axi_gmem2_wstrb,
+    m_axi_gmem2_wvalid,
     s_axi_control_araddr,
     s_axi_control_arready,
     s_axi_control_arvalid,
@@ -204,16 +234,46 @@ module bd_0_wrapper
   input m_axi_gmem1_wready;
   output [3:0]m_axi_gmem1_wstrb;
   output m_axi_gmem1_wvalid;
-  output [3:0]mvp_matrix_address0;
-  output [3:0]mvp_matrix_address1;
-  output mvp_matrix_ce0;
-  output mvp_matrix_ce1;
-  output [31:0]mvp_matrix_d0;
-  output [31:0]mvp_matrix_d1;
-  input [31:0]mvp_matrix_q0;
-  input [31:0]mvp_matrix_q1;
-  output mvp_matrix_we0;
-  output mvp_matrix_we1;
+  output [63:0]m_axi_gmem2_araddr;
+  output [1:0]m_axi_gmem2_arburst;
+  output [3:0]m_axi_gmem2_arcache;
+  output [0:0]m_axi_gmem2_arid;
+  output [7:0]m_axi_gmem2_arlen;
+  output [1:0]m_axi_gmem2_arlock;
+  output [2:0]m_axi_gmem2_arprot;
+  output [3:0]m_axi_gmem2_arqos;
+  input m_axi_gmem2_arready;
+  output [3:0]m_axi_gmem2_arregion;
+  output [2:0]m_axi_gmem2_arsize;
+  output m_axi_gmem2_arvalid;
+  output [63:0]m_axi_gmem2_awaddr;
+  output [1:0]m_axi_gmem2_awburst;
+  output [3:0]m_axi_gmem2_awcache;
+  output [0:0]m_axi_gmem2_awid;
+  output [7:0]m_axi_gmem2_awlen;
+  output [1:0]m_axi_gmem2_awlock;
+  output [2:0]m_axi_gmem2_awprot;
+  output [3:0]m_axi_gmem2_awqos;
+  input m_axi_gmem2_awready;
+  output [3:0]m_axi_gmem2_awregion;
+  output [2:0]m_axi_gmem2_awsize;
+  output m_axi_gmem2_awvalid;
+  input [0:0]m_axi_gmem2_bid;
+  output m_axi_gmem2_bready;
+  input [1:0]m_axi_gmem2_bresp;
+  input m_axi_gmem2_bvalid;
+  input [31:0]m_axi_gmem2_rdata;
+  input [0:0]m_axi_gmem2_rid;
+  input m_axi_gmem2_rlast;
+  output m_axi_gmem2_rready;
+  input [1:0]m_axi_gmem2_rresp;
+  input m_axi_gmem2_rvalid;
+  output [31:0]m_axi_gmem2_wdata;
+  output [0:0]m_axi_gmem2_wid;
+  output m_axi_gmem2_wlast;
+  input m_axi_gmem2_wready;
+  output [3:0]m_axi_gmem2_wstrb;
+  output m_axi_gmem2_wvalid;
   input [5:0]s_axi_control_araddr;
   output s_axi_control_arready;
   input s_axi_control_arvalid;
@@ -315,16 +375,46 @@ module bd_0_wrapper
   wire m_axi_gmem1_wready;
   wire [3:0]m_axi_gmem1_wstrb;
   wire m_axi_gmem1_wvalid;
-  wire [3:0]mvp_matrix_address0;
-  wire [3:0]mvp_matrix_address1;
-  wire mvp_matrix_ce0;
-  wire mvp_matrix_ce1;
-  wire [31:0]mvp_matrix_d0;
-  wire [31:0]mvp_matrix_d1;
-  wire [31:0]mvp_matrix_q0;
-  wire [31:0]mvp_matrix_q1;
-  wire mvp_matrix_we0;
-  wire mvp_matrix_we1;
+  wire [63:0]m_axi_gmem2_araddr;
+  wire [1:0]m_axi_gmem2_arburst;
+  wire [3:0]m_axi_gmem2_arcache;
+  wire [0:0]m_axi_gmem2_arid;
+  wire [7:0]m_axi_gmem2_arlen;
+  wire [1:0]m_axi_gmem2_arlock;
+  wire [2:0]m_axi_gmem2_arprot;
+  wire [3:0]m_axi_gmem2_arqos;
+  wire m_axi_gmem2_arready;
+  wire [3:0]m_axi_gmem2_arregion;
+  wire [2:0]m_axi_gmem2_arsize;
+  wire m_axi_gmem2_arvalid;
+  wire [63:0]m_axi_gmem2_awaddr;
+  wire [1:0]m_axi_gmem2_awburst;
+  wire [3:0]m_axi_gmem2_awcache;
+  wire [0:0]m_axi_gmem2_awid;
+  wire [7:0]m_axi_gmem2_awlen;
+  wire [1:0]m_axi_gmem2_awlock;
+  wire [2:0]m_axi_gmem2_awprot;
+  wire [3:0]m_axi_gmem2_awqos;
+  wire m_axi_gmem2_awready;
+  wire [3:0]m_axi_gmem2_awregion;
+  wire [2:0]m_axi_gmem2_awsize;
+  wire m_axi_gmem2_awvalid;
+  wire [0:0]m_axi_gmem2_bid;
+  wire m_axi_gmem2_bready;
+  wire [1:0]m_axi_gmem2_bresp;
+  wire m_axi_gmem2_bvalid;
+  wire [31:0]m_axi_gmem2_rdata;
+  wire [0:0]m_axi_gmem2_rid;
+  wire m_axi_gmem2_rlast;
+  wire m_axi_gmem2_rready;
+  wire [1:0]m_axi_gmem2_rresp;
+  wire m_axi_gmem2_rvalid;
+  wire [31:0]m_axi_gmem2_wdata;
+  wire [0:0]m_axi_gmem2_wid;
+  wire m_axi_gmem2_wlast;
+  wire m_axi_gmem2_wready;
+  wire [3:0]m_axi_gmem2_wstrb;
+  wire m_axi_gmem2_wvalid;
   wire [5:0]s_axi_control_araddr;
   wire s_axi_control_arready;
   wire s_axi_control_arvalid;
@@ -427,16 +517,46 @@ module bd_0_wrapper
         .m_axi_gmem1_wready(m_axi_gmem1_wready),
         .m_axi_gmem1_wstrb(m_axi_gmem1_wstrb),
         .m_axi_gmem1_wvalid(m_axi_gmem1_wvalid),
-        .mvp_matrix_address0(mvp_matrix_address0),
-        .mvp_matrix_address1(mvp_matrix_address1),
-        .mvp_matrix_ce0(mvp_matrix_ce0),
-        .mvp_matrix_ce1(mvp_matrix_ce1),
-        .mvp_matrix_d0(mvp_matrix_d0),
-        .mvp_matrix_d1(mvp_matrix_d1),
-        .mvp_matrix_q0(mvp_matrix_q0),
-        .mvp_matrix_q1(mvp_matrix_q1),
-        .mvp_matrix_we0(mvp_matrix_we0),
-        .mvp_matrix_we1(mvp_matrix_we1),
+        .m_axi_gmem2_araddr(m_axi_gmem2_araddr),
+        .m_axi_gmem2_arburst(m_axi_gmem2_arburst),
+        .m_axi_gmem2_arcache(m_axi_gmem2_arcache),
+        .m_axi_gmem2_arid(m_axi_gmem2_arid),
+        .m_axi_gmem2_arlen(m_axi_gmem2_arlen),
+        .m_axi_gmem2_arlock(m_axi_gmem2_arlock),
+        .m_axi_gmem2_arprot(m_axi_gmem2_arprot),
+        .m_axi_gmem2_arqos(m_axi_gmem2_arqos),
+        .m_axi_gmem2_arready(m_axi_gmem2_arready),
+        .m_axi_gmem2_arregion(m_axi_gmem2_arregion),
+        .m_axi_gmem2_arsize(m_axi_gmem2_arsize),
+        .m_axi_gmem2_arvalid(m_axi_gmem2_arvalid),
+        .m_axi_gmem2_awaddr(m_axi_gmem2_awaddr),
+        .m_axi_gmem2_awburst(m_axi_gmem2_awburst),
+        .m_axi_gmem2_awcache(m_axi_gmem2_awcache),
+        .m_axi_gmem2_awid(m_axi_gmem2_awid),
+        .m_axi_gmem2_awlen(m_axi_gmem2_awlen),
+        .m_axi_gmem2_awlock(m_axi_gmem2_awlock),
+        .m_axi_gmem2_awprot(m_axi_gmem2_awprot),
+        .m_axi_gmem2_awqos(m_axi_gmem2_awqos),
+        .m_axi_gmem2_awready(m_axi_gmem2_awready),
+        .m_axi_gmem2_awregion(m_axi_gmem2_awregion),
+        .m_axi_gmem2_awsize(m_axi_gmem2_awsize),
+        .m_axi_gmem2_awvalid(m_axi_gmem2_awvalid),
+        .m_axi_gmem2_bid(m_axi_gmem2_bid),
+        .m_axi_gmem2_bready(m_axi_gmem2_bready),
+        .m_axi_gmem2_bresp(m_axi_gmem2_bresp),
+        .m_axi_gmem2_bvalid(m_axi_gmem2_bvalid),
+        .m_axi_gmem2_rdata(m_axi_gmem2_rdata),
+        .m_axi_gmem2_rid(m_axi_gmem2_rid),
+        .m_axi_gmem2_rlast(m_axi_gmem2_rlast),
+        .m_axi_gmem2_rready(m_axi_gmem2_rready),
+        .m_axi_gmem2_rresp(m_axi_gmem2_rresp),
+        .m_axi_gmem2_rvalid(m_axi_gmem2_rvalid),
+        .m_axi_gmem2_wdata(m_axi_gmem2_wdata),
+        .m_axi_gmem2_wid(m_axi_gmem2_wid),
+        .m_axi_gmem2_wlast(m_axi_gmem2_wlast),
+        .m_axi_gmem2_wready(m_axi_gmem2_wready),
+        .m_axi_gmem2_wstrb(m_axi_gmem2_wstrb),
+        .m_axi_gmem2_wvalid(m_axi_gmem2_wvalid),
         .s_axi_control_araddr(s_axi_control_araddr),
         .s_axi_control_arready(s_axi_control_arready),
         .s_axi_control_arvalid(s_axi_control_arvalid),

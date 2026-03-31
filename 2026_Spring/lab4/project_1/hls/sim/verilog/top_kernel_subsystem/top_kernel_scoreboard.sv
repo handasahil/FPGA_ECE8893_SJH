@@ -47,6 +47,11 @@
                     end
                     for(int j=0; j<refm.ap_done_cnt; j++) begin
                         if(j<refm.trans_num_total) begin
+                            refm.mem_blk_pages_gmem2.tvout_dump_frontpage(0);
+                        end
+                    end
+                    for(int j=0; j<refm.ap_done_cnt; j++) begin
+                        if(j<refm.trans_num_total) begin
                             refm.mem_blk_pages_gmem1.tvout_dump_frontpage(1);
                         end
                     end
@@ -62,6 +67,12 @@
         endfunction
 
         virtual function void write_axi_rtr_gmem0(axi_pkg::axi_transfer tr);
+        endfunction
+
+        virtual function void write_axi_wtr_gmem2(axi_pkg::axi_transfer tr);
+        endfunction
+
+        virtual function void write_axi_rtr_gmem2(axi_pkg::axi_transfer tr);
         endfunction
 
         virtual function void write_axi_wtr_gmem1(axi_pkg::axi_transfer tr);

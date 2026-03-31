@@ -33,6 +33,7 @@ module top_kernel_control_s_axi
     input  wire                          RREADY,
     output wire                          interrupt,
     output wire [63:0]                   in_tris,
+    output wire [63:0]                   mvp_matrix,
     output wire [63:0]                   out_pixels,
     output wire                          ap_start,
     input  wire                          ap_done,
@@ -66,11 +67,16 @@ module top_kernel_control_s_axi
 // 0x14 : Data signal of in_tris
 //        bit 31~0 - in_tris[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of out_pixels
-//        bit 31~0 - out_pixels[31:0] (Read/Write)
-// 0x20 : Data signal of out_pixels
-//        bit 31~0 - out_pixels[63:32] (Read/Write)
+// 0x1c : Data signal of mvp_matrix
+//        bit 31~0 - mvp_matrix[31:0] (Read/Write)
+// 0x20 : Data signal of mvp_matrix
+//        bit 31~0 - mvp_matrix[63:32] (Read/Write)
 // 0x24 : reserved
+// 0x28 : Data signal of out_pixels
+//        bit 31~0 - out_pixels[31:0] (Read/Write)
+// 0x2c : Data signal of out_pixels
+//        bit 31~0 - out_pixels[63:32] (Read/Write)
+// 0x30 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -82,9 +88,12 @@ localparam
     ADDR_IN_TRIS_DATA_0    = 6'h10,
     ADDR_IN_TRIS_DATA_1    = 6'h14,
     ADDR_IN_TRIS_CTRL      = 6'h18,
-    ADDR_OUT_PIXELS_DATA_0 = 6'h1c,
-    ADDR_OUT_PIXELS_DATA_1 = 6'h20,
-    ADDR_OUT_PIXELS_CTRL   = 6'h24,
+    ADDR_MVP_MATRIX_DATA_0 = 6'h1c,
+    ADDR_MVP_MATRIX_DATA_1 = 6'h20,
+    ADDR_MVP_MATRIX_CTRL   = 6'h24,
+    ADDR_OUT_PIXELS_DATA_0 = 6'h28,
+    ADDR_OUT_PIXELS_DATA_1 = 6'h2c,
+    ADDR_OUT_PIXELS_CTRL   = 6'h30,
     WRIDLE                 = 2'd0,
     WRDATA                 = 2'd1,
     WRRESP                 = 2'd2,
@@ -122,6 +131,7 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_in_tris = 'b0;
+    reg  [63:0]                   int_mvp_matrix = 'b0;
     reg  [63:0]                   int_out_pixels = 'b0;
 
 //------------------------Instantiation------------------
@@ -238,6 +248,12 @@ always @(posedge ACLK) begin
                 ADDR_IN_TRIS_DATA_1: begin
                     rdata <= int_in_tris[63:32];
                 end
+                ADDR_MVP_MATRIX_DATA_0: begin
+                    rdata <= int_mvp_matrix[31:0];
+                end
+                ADDR_MVP_MATRIX_DATA_1: begin
+                    rdata <= int_mvp_matrix[63:32];
+                end
                 ADDR_OUT_PIXELS_DATA_0: begin
                     rdata <= int_out_pixels[31:0];
                 end
@@ -257,6 +273,7 @@ assign task_ap_done      = (ap_done && !auto_restart_status) || auto_restart_don
 assign task_ap_ready     = ap_ready && !int_auto_restart;
 assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
 assign in_tris           = int_in_tris;
+assign mvp_matrix        = int_mvp_matrix;
 assign out_pixels        = int_out_pixels;
 // int_interrupt
 always @(posedge ACLK) begin
@@ -407,6 +424,26 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_IN_TRIS_DATA_1)
             int_in_tris[63:32] <= (WDATA[31:0] & wmask) | (int_in_tris[63:32] & ~wmask);
+    end
+end
+
+// int_mvp_matrix[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_mvp_matrix[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_MVP_MATRIX_DATA_0)
+            int_mvp_matrix[31:0] <= (WDATA[31:0] & wmask) | (int_mvp_matrix[31:0] & ~wmask);
+    end
+end
+
+// int_mvp_matrix[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_mvp_matrix[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_MVP_MATRIX_DATA_1)
+            int_mvp_matrix[63:32] <= (WDATA[31:0] & wmask) | (int_mvp_matrix[63:32] & ~wmask);
     end
 end
 

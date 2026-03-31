@@ -83,6 +83,57 @@ module sv_module_top;
     end
 
 
+    axi_if #(64,4,8,3,1)  axi_gmem2_if (.clk  (apatb_top_kernel_top.AESL_clock), .rst(apatb_top_kernel_top.AESL_reset));
+    assign axi_gmem2_if.AWVALID = apatb_top_kernel_top.gmem2_AWVALID;
+    assign apatb_top_kernel_top.gmem2_AWREADY = axi_gmem2_if.AWREADY;
+    assign axi_gmem2_if.AWADDR = apatb_top_kernel_top.gmem2_AWADDR;
+    assign axi_gmem2_if.AWID = apatb_top_kernel_top.gmem2_AWID;
+    assign axi_gmem2_if.AWLEN = apatb_top_kernel_top.gmem2_AWLEN;
+    assign axi_gmem2_if.AWSIZE = apatb_top_kernel_top.gmem2_AWSIZE;
+    assign axi_gmem2_if.AWBURST = apatb_top_kernel_top.gmem2_AWBURST;
+    assign axi_gmem2_if.AWLOCK = apatb_top_kernel_top.gmem2_AWLOCK;
+    assign axi_gmem2_if.AWCACHE = apatb_top_kernel_top.gmem2_AWCACHE;
+    assign axi_gmem2_if.AWPROT = apatb_top_kernel_top.gmem2_AWPROT;
+    assign axi_gmem2_if.AWQOS = apatb_top_kernel_top.gmem2_AWQOS;
+    assign axi_gmem2_if.AWREGION = apatb_top_kernel_top.gmem2_AWREGION;
+    assign axi_gmem2_if.AWUSER = apatb_top_kernel_top.gmem2_AWUSER;
+    assign axi_gmem2_if.WVALID = apatb_top_kernel_top.gmem2_WVALID;
+    assign apatb_top_kernel_top.gmem2_WREADY = axi_gmem2_if.WREADY;
+    assign axi_gmem2_if.WDATA = apatb_top_kernel_top.gmem2_WDATA;
+    assign axi_gmem2_if.WSTRB = apatb_top_kernel_top.gmem2_WSTRB;
+    assign axi_gmem2_if.WLAST = apatb_top_kernel_top.gmem2_WLAST;
+    assign axi_gmem2_if.WID = apatb_top_kernel_top.gmem2_WID;
+    assign axi_gmem2_if.WUSER = apatb_top_kernel_top.gmem2_WUSER;
+    assign axi_gmem2_if.ARVALID = apatb_top_kernel_top.gmem2_ARVALID;
+    assign apatb_top_kernel_top.gmem2_ARREADY = axi_gmem2_if.ARREADY;
+    assign axi_gmem2_if.ARADDR = apatb_top_kernel_top.gmem2_ARADDR;
+    assign axi_gmem2_if.ARID = apatb_top_kernel_top.gmem2_ARID;
+    assign axi_gmem2_if.ARLEN = apatb_top_kernel_top.gmem2_ARLEN;
+    assign axi_gmem2_if.ARSIZE = apatb_top_kernel_top.gmem2_ARSIZE;
+    assign axi_gmem2_if.ARBURST = apatb_top_kernel_top.gmem2_ARBURST;
+    assign axi_gmem2_if.ARLOCK = apatb_top_kernel_top.gmem2_ARLOCK;
+    assign axi_gmem2_if.ARCACHE = apatb_top_kernel_top.gmem2_ARCACHE;
+    assign axi_gmem2_if.ARPROT = apatb_top_kernel_top.gmem2_ARPROT;
+    assign axi_gmem2_if.ARQOS = apatb_top_kernel_top.gmem2_ARQOS;
+    assign axi_gmem2_if.ARREGION = apatb_top_kernel_top.gmem2_ARREGION;
+    assign axi_gmem2_if.ARUSER = apatb_top_kernel_top.gmem2_ARUSER;
+    assign apatb_top_kernel_top.gmem2_RVALID = axi_gmem2_if.RVALID;
+    assign axi_gmem2_if.RREADY = apatb_top_kernel_top.gmem2_RREADY;
+    assign apatb_top_kernel_top.gmem2_RDATA = axi_gmem2_if.RDATA;
+    assign apatb_top_kernel_top.gmem2_RLAST = axi_gmem2_if.RLAST;
+    assign apatb_top_kernel_top.gmem2_RID = axi_gmem2_if.RID;
+    assign apatb_top_kernel_top.gmem2_RUSER = axi_gmem2_if.RUSER;
+    assign apatb_top_kernel_top.gmem2_RRESP = axi_gmem2_if.RRESP;
+    assign apatb_top_kernel_top.gmem2_BVALID = axi_gmem2_if.BVALID;
+    assign axi_gmem2_if.BREADY = apatb_top_kernel_top.gmem2_BREADY;
+    assign apatb_top_kernel_top.gmem2_BRESP = axi_gmem2_if.BRESP;
+    assign apatb_top_kernel_top.gmem2_BID = axi_gmem2_if.BID;
+    assign apatb_top_kernel_top.gmem2_BUSER = axi_gmem2_if.BUSER;
+    initial begin
+        uvm_config_db #( virtual axi_if#(64,4,8,3,1) )::set(null, "uvm_test_top.top_env.axi_master_gmem2.*", "vif", axi_gmem2_if);
+    end
+
+
     axi_if #(64,4,8,3,1)  axi_gmem1_if (.clk  (apatb_top_kernel_top.AESL_clock), .rst(apatb_top_kernel_top.AESL_reset));
     assign axi_gmem1_if.AWVALID = apatb_top_kernel_top.gmem1_AWVALID;
     assign apatb_top_kernel_top.gmem1_AWREADY = axi_gmem1_if.AWREADY;

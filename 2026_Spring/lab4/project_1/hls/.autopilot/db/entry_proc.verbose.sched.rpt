@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'entry_proc'
 ================================================================
-* Date:           Mon Mar 30 23:31:04 2026
+* Date:           Tue Mar 31 00:58:56 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  2.158 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  2.149 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -74,10 +74,10 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 2.15>
+State 1 <SV = 0> <Delay = 2.14>
 ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %out_pixels_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str, i32 4294967295, i32 0, i32 0"   --->   Operation 2 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%out_pixels_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %out_pixels"   --->   Operation 3 'read' 'out_pixels_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] ( I:2.15ns O:2.15ns )   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.i64P0A, i64 %out_pixels_c, i64 %out_pixels_read"   --->   Operation 4 'write' 'write_ln0' <Predicate = true> <Delay = 2.15> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 5> <FIFO>
+ST_1 : Operation 4 [1/1] ( I:2.14ns O:2.14ns )   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.i64P0A, i64 %out_pixels_c, i64 %out_pixels_read"   --->   Operation 4 'write' 'write_ln0' <Predicate = true> <Delay = 2.14> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 2.14> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 6> <FIFO>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 5 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
 
 
@@ -86,10 +86,10 @@ ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 5
 ============================================================
 Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 
- <State 1>: 2.158ns
+ <State 1>: 2.149ns
 The critical path consists of the following:
 	wire read operation ('out_pixels_read') on port 'out_pixels' [4]  (0.000 ns)
-	fifo write operation ('write_ln0') on port 'out_pixels_c' [5]  (2.158 ns)
+	fifo write operation ('write_ln0') on port 'out_pixels_c' [5]  (2.149 ns)
 
 
 ============================================================

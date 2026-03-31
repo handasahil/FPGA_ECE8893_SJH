@@ -10,6 +10,7 @@
                                                                        
     class top_kernel_virtual_sequencer extends uvm_sequencer;         
         axi_pkg::axi_virtual_sequencer gmem0_sqr; 
+        axi_pkg::axi_virtual_sequencer gmem2_sqr; 
         axi_pkg::axi_virtual_sequencer gmem1_sqr; 
         axi_pkg::axi_virtual_sequencer control_sqr; 
  

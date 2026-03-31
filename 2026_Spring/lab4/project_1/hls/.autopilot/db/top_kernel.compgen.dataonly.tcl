@@ -10,13 +10,21 @@ in_tris {
 	offset 16
 	offset_end 27
 }
-out_pixels { 
+mvp_matrix { 
 	dir I
 	width 64
 	depth 1
 	mode ap_none
 	offset 28
 	offset_end 39
+}
+out_pixels { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 40
+	offset_end 51
 }
 ap_start { }
 ap_done { }

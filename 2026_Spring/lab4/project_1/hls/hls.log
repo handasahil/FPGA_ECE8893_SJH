@@ -20,197 +20,261 @@ INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e
 INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
 INFO: [HLS 200-1510] Running: csynth_design 
 INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.51 seconds. CPU system time: 0.14 seconds. Elapsed time: 9.21 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.51 seconds. CPU system time: 0.17 seconds. Elapsed time: 9.25 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
-WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:214:18)
-WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:215:21)
-WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:216:24)
-WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:219:19)
-WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:220:17)
-WARNING: [HLS 200-471] Dataflow form checks found 5 issue(s) in file top.cpp
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.71 seconds. CPU system time: 1.11 seconds. Elapsed time: 10.95 seconds; current allocated memory: 0.000 MB.
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:244:18)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:245:21)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:246:21)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:247:24)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:256:16)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:257:17)
+WARNING: [HLS 200-471] Dataflow form checks found 6 issue(s) in file top.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.16 seconds. CPU system time: 1.12 seconds. Elapsed time: 10.44 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 44,222 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 5,011 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,230 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,109 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,016 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,018 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,018 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,035 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,052 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,058 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,024 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,024 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,022 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,022 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,105 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 2,130 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 214-291] Loop 'VITIS_LOOP_19_2' is marked as complete unroll implied by the pipeline pragma (top.cpp:19:30)
-INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_19_2' (top.cpp:19:30) in function 'k1_vertex_transform' completely with a factor of 3 (top.cpp:9:0)
-INFO: [HLS 214-241] Aggregating bram variable 'mvp_matrix' with compact=bit mode in 32-bits (top.cpp:207:0)
+INFO: [HLS 200-1995] There were 44,143 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,236 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,574 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,239 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,146 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,149 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,149 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,239 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,256 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,176 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,142 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,142 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,140 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,140 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,165 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,406 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_20_2' is marked as complete unroll implied by the pipeline pragma (top.cpp:20:30)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_20_2' (top.cpp:20:30) in function 'k1_vertex_transform' completely with a factor of 3 (top.cpp:8:0)
 INFO: [HLS 214-241] Aggregating maxi variable 'out_pixels' with compact=none mode in 32-bits
-INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_42_1'. (top.cpp:42:22)
-INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_126_3'. (top.cpp:126:23)
-INFO: [HLS 214-115] Multiple burst writes of length 4096 and bit width 32 in loop 'VITIS_LOOP_183_1'(top.cpp:183:23) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:183:23)
-WARNING: [HLS 214-475] Merging processes 'k4_rasterize' and 'k3_bounding_box' in function 'top_kernel' due to reads on 'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])::screen_tris (.v0.x)' (top.cpp:207:0)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.21 seconds. CPU system time: 1.11 seconds. Elapsed time: 9.7 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 214-241] Aggregating maxi variable 'mvp_matrix' with compact=none mode in 32-bits (top.cpp:236:0)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_45_1'. (top.cpp:45:22)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_144_3'. (top.cpp:144:23)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.w' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.w' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.w' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.color' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.is_active' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.w' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.w' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.w' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.color' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.is_active' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_x' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_y' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_x' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_y' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.w' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.w' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.w' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.color' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.is_active' (top.cpp:246:0)
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 32 has been inferred on bundle 'gmem2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst writes of length 4096 and bit width 32 in loop 'VITIS_LOOP_211_1'(top.cpp:211:23) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:211:23)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.71 seconds. CPU system time: 1.04 seconds. Elapsed time: 9.65 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
-WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 128 for loop 'VITIS_LOOP_126_3' (top.cpp:126:32) in function 'k4_rasterize'.
-INFO: [XFORM 203-712] Applying dataflow to function 'top_kernel' (top.cpp:205:1), detected/extracted 5 process function(s): 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 128 for loop 'VITIS_LOOP_144_3' (top.cpp:144:32) in function 'k4_rasterize'.
+INFO: [XFORM 203-712] Applying dataflow to function 'top_kernel' (top.cpp:234:1), detected/extracted 6 process function(s): 
 	 'entry_proc'
 	 'k1_vertex_transform'
 	 'k2_perspective_divide'
-	 'Block_entry_screen_tris (.v0.x)_rd_proc'
+	 'k3_bounding_box'
+	 'k4_rasterize'
 	 'k5_deferred_lighting'.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:184:36) to (top.cpp:184:27) in function 'k5_deferred_lighting'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:78:46) to (top.cpp:100:9) in function 'k3_bounding_box'... converting 11 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.66 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.69 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.63 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.69 seconds; current allocated memory: 0.000 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:213:9) to (top.cpp:212:27) in function 'k5_deferred_lighting'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:86:9) to (top.cpp:85:22) in function 'k3_bounding_box'... converting 12 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.98 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.01 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_211_1'(top.cpp:211:23) and 'VITIS_LOOP_212_2'(top.cpp:212:27) in function 'k5_deferred_lighting' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_163_4'(top.cpp:163:27) and 'VITIS_LOOP_164_5'(top.cpp:164:31) in function 'k4_rasterize' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_211_1' (top.cpp:211:23) in function 'k5_deferred_lighting'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_163_4' (top.cpp:163:27) in function 'k4_rasterize'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.69 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.76 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'top_kernel' ...
-WARNING: [SYN 201-103] Legalizing function name 'Block_entry_screen_tris (.v0.x)_rd_proc' to 'Block_entry_screen_tris_v0_x_rd_proc'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_10_1'.
-WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', top.cpp:16) on port 'gmem0' (top.cpp:16) and bus read operation ('gmem0_addr_read', top.cpp:13) on port 'gmem0' (top.cpp:13).
-WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', top.cpp:16) on port 'gmem0' (top.cpp:16) and bus read operation ('gmem0_addr_read', top.cpp:13) on port 'gmem0' (top.cpp:13).
-WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', top.cpp:16) on port 'gmem0' (top.cpp:16) and bus read operation ('gmem0_addr_read', top.cpp:13) on port 'gmem0' (top.cpp:13).
-WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', top.cpp:16) on port 'gmem0' (top.cpp:16) and bus read operation ('gmem0_addr_read', top.cpp:13) on port 'gmem0' (top.cpp:13).
-WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem0_addr_read_3', top.cpp:16) on port 'gmem0' (top.cpp:16) and bus read operation ('gmem0_addr_read', top.cpp:13) on port 'gmem0' (top.cpp:13).
-WARNING: [HLS 200-885] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to schedule bus read operation ('gmem0_addr_2_read', top.cpp:16) on port 'gmem0' (top.cpp:16) due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array.
-WARNING: [HLS 200-885] The II Violation in module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' (loop 'VITIS_LOOP_10_1'): Unable to schedule bus read operation ('gmem0_addr_3_read', top.cpp:16) on port 'gmem0' (top.cpp:16) due to limited memory ports (II = 17). Please consider using a memory core with more ports or partitioning the array.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 18, Depth = 40, loop 'VITIS_LOOP_10_1'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.88 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.93 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.33 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'k1_vertex_transform' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_9_1'.
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 16, Depth = 38, loop 'VITIS_LOOP_9_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.38 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.89 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.92 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'k2_perspective_divide' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'k3_bounding_box' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_75_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_75_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_85_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_85_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_163_4_VITIS_LOOP_164_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 7, loop 'VITIS_LOOP_163_4_VITIS_LOOP_164_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.4 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.43 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'k4_rasterize' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.51 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.53 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'Block_entry_screen_tris_v0_x_rd_proc' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'k5_deferred_lighting' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_211_1_VITIS_LOOP_212_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 10, loop 'VITIS_LOOP_211_1_VITIS_LOOP_212_2'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'top_kernel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 0.000 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.11 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1' pipeline 'VITIS_LOOP_10_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 3 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'k1_vertex_transform_Pipeline_VITIS_LOOP_10_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.35 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'k1_vertex_transform' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k1_vertex_transform' pipeline 'VITIS_LOOP_9_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 3 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'k1_vertex_transform'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.47 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.61 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.31 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.53 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'k2_perspective_divide' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -219,70 +283,146 @@ INFO: [RTGEN 206-100] Generating core module 'sdiv_34ns_32s_34_38_seq_1': 1 inst
 INFO: [RTGEN 206-100] Finished creating RTL model for 'k2_perspective_divide'.
 INFO: [RTMG 210-278] Implementing memory 'top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W' using auto RAMs.
 INFO: [RTMG 210-278] Implementing memory 'top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.55 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.79 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'k3_bounding_box' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k3_bounding_box' pipeline 'VITIS_LOOP_75_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_16_1_1': 2 instance(s).
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k3_bounding_box' pipeline 'VITIS_LOOP_85_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_16_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'k3_bounding_box'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.22 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.32 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.35 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.43 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5' pipeline 'VITIS_LOOP_163_4_VITIS_LOOP_164_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_63_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_33s_33s_65_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_66s_32s_97_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.31 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'k4_rasterize' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_63_1_1': 3 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 6 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_33s_33s_65_1_1': 6 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_66s_32s_97_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_33s_33s_65_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_64ns_128_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sdiv_34ns_32s_34_38_seq_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'k4_rasterize'.
 INFO: [RTMG 210-278] Implementing memory 'top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.27 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_screen_tris_v0_x_rd_proc' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_screen_tris_v0_x_rd_proc'.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_Block_entry_screen_tris_v0_x_rd_proc_bounds_max_x_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_Block_entry_screen_tris_v0_x_rd_proc_bounds_min_x_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.36 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.5 seconds; current allocated memory: 0.000 MB.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_k4_rasterize_local_normal_x_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.34 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.43 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'k5_deferred_lighting' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k5_deferred_lighting' pipeline 'VITIS_LOOP_211_1_VITIS_LOOP_212_2' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'mul_32s_17s_49_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'k5_deferred_lighting'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.28 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'top_kernel' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
 INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem2' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem1' to 'm_axi'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_tris' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/mvp_matrix' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/mvp_matrix' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_pixels' to 's_axilite & ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'top_kernel' to 's_axilite & ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'in_tris', 'out_pixels' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Bundling port 'in_tris', 'mvp_matrix', 'out_pixels' and 'return' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'top_kernel'.
-INFO: [HLS 200-741] Implementing PIPO top_kernel_clip_tris_is_active_RAM_AUTO_1R1W using a single memory for all blocks
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_clip_tris_is_active_RAM_AUTO_1R1W_memcore' using auto RAMs.
-INFO: [HLS 200-741] Implementing PIPO top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W using a single memory for all blocks
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W_memcore' using auto RAMs.
-INFO: [HLS 200-740] Implementing PIPO top_kernel_clip_tris_v0_w_RAM_AUTO_1R1W using a separate memory for each block
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_clip_tris_v0_w_RAM_AUTO_1R1W_memcore' using auto RAMs.
 INFO: [HLS 200-741] Implementing PIPO top_kernel_depth_buffer_RAM_AUTO_1R1W using a single memory for all blocks
 INFO: [RTMG 210-278] Implementing memory 'top_kernel_depth_buffer_RAM_AUTO_1R1W_memcore' using auto RAMs.
-INFO: [RTMG 210-285] Implementing FIFO 'out_pixels_c_U(top_kernel_fifo_w64_d5_S)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.27 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.61 seconds. CPU system time: 0.17 seconds. Elapsed time: 1.37 seconds; current allocated memory: 0.000 MB.
+INFO: [RTMG 210-285] Implementing FIFO 'out_pixels_c_U(top_kernel_fifo_w64_d6_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_color_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_is_active_U(top_kernel_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_color_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_is_active_U(top_kernel_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_min_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_min_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_max_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_max_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_color_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_is_active_U(top_kernel_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_k2_perspective_divide_U0_U(top_kernel_start_for_k2_perspective_divide_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_k3_bounding_box_U0_U(top_kernel_start_for_k3_bounding_box_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_k4_rasterize_U0_U(top_kernel_start_for_k4_rasterize_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.5 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.58 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.27 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.18 seconds. CPU system time: 0.15 seconds. Elapsed time: 1.42 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.22 seconds. CPU system time: 0.15 seconds. Elapsed time: 1.43 seconds; current allocated memory: 0.000 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for top_kernel.
 INFO: [VLOG 209-307] Generating Verilog RTL for top_kernel.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
 INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:41; Allocated memory: 0.000 MB.
 INFO: [HLS 200-1510] Running: cosim_design 
 INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
 INFO: [COSIM 212-47] Using XSIM for RTL simulation.
 INFO: [COSIM 212-14] Instrumenting C test bench ...
 INFO: [COSIM 212-302] Starting C TB testing ... 
@@ -294,10 +434,467 @@ INFO: [COSIM 212-15] Starting XSIM ...
 INFO: [COSIM 212-316] Starting C post checking ...
 INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
-INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:42; Allocated memory: 0.000 MB.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:31; Allocated memory: 0.000 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2025.1.1 (64-bit)
+Tool Version Limit: 2025.05
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_unroll -tripcount_threshold=0
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-1464] Running solution command: config_compile -pipeline_loops=0
+INFO: [HLS 200-2174] Applying component config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../top.cpp' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(6)
+INFO: [HLS 200-10] Adding design file 'top.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../host.cpp' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding test bench file 'host.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=top_kernel' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(5)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_unroll -tripcount_threshold=0
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-1464] Running solution command: config_compile -pipeline_loops=0
+INFO: [HLS 200-1464] Running solution command: config_compile -complex-mul-dsp=0
+INFO: [HLS 200-1465] Applying config ini 'part=xczu3eg-sbva484-1-e' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(1)
+INFO: [HLS 200-1465] Applying config ini 'clock=10ns' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(4)
+INFO: [HLS 200-1465] Applying config ini 'syn.compile.pipeline_loops=0' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying config ini 'syn.unroll.tripcount_threshold=0' from /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg(10)
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-2176] Writing Vitis IDE component file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/vitis-comp.json
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+INFO: [HLS 200-1510] Running: set_top top_kernel 
+INFO: [HLS 200-1510] Running: add_files top.cpp 
+INFO: [HLS 200-10] Adding design file 'top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb host.cpp 
+INFO: [HLS 200-10] Adding test bench file 'host.cpp' to the project
+INFO: [HLS 200-1510] Running: config_unroll -tripcount_threshold 0 
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-1510] Running: config_compile -pipeline_loops 0 
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.47 seconds. CPU system time: 0.16 seconds. Elapsed time: 9.25 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:244:18)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:245:21)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:246:21)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:247:24)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:256:16)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:257:17)
+WARNING: [HLS 200-471] Dataflow form checks found 6 issue(s) in file top.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.32 seconds. CPU system time: 1.21 seconds. Elapsed time: 10.86 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 44,143 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 5,236 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,574 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,239 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,146 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,149 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,149 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,239 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,256 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,176 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,142 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,142 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,140 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,140 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,165 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,406 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_20_2' is marked as complete unroll implied by the pipeline pragma (top.cpp:20:30)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_20_2' (top.cpp:20:30) in function 'k1_vertex_transform' completely with a factor of 3 (top.cpp:8:0)
+INFO: [HLS 214-241] Aggregating maxi variable 'out_pixels' with compact=none mode in 32-bits
+INFO: [HLS 214-241] Aggregating maxi variable 'mvp_matrix' with compact=none mode in 32-bits (top.cpp:236:0)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_45_1'. (top.cpp:45:22)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_144_3'. (top.cpp:144:23)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.w' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.w' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.w' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.x' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.y' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.z' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.color' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.is_active' (top.cpp:244:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.w' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.w' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.w' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.x' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.y' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.z' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.color' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.is_active' (top.cpp:245:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_x' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_y' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_x' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_y' (top.cpp:247:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.w' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.w' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.w' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.x' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.y' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.z' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.color' (top.cpp:246:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.is_active' (top.cpp:246:0)
+INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 32 has been inferred on bundle 'gmem2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 214-115] Multiple burst writes of length 4096 and bit width 32 in loop 'VITIS_LOOP_211_1'(top.cpp:211:23) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:211:23)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 6.74 seconds. CPU system time: 1.12 seconds. Elapsed time: 9.65 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 128 for loop 'VITIS_LOOP_144_3' (top.cpp:144:32) in function 'k4_rasterize'.
+INFO: [XFORM 203-712] Applying dataflow to function 'top_kernel' (top.cpp:234:1), detected/extracted 6 process function(s): 
+	 'entry_proc'
+	 'k1_vertex_transform'
+	 'k2_perspective_divide'
+	 'k3_bounding_box'
+	 'k4_rasterize'
+	 'k5_deferred_lighting'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:213:9) to (top.cpp:212:27) in function 'k5_deferred_lighting'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:86:9) to (top.cpp:85:22) in function 'k3_bounding_box'... converting 12 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.01 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_211_1'(top.cpp:211:23) and 'VITIS_LOOP_212_2'(top.cpp:212:27) in function 'k5_deferred_lighting' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_163_4'(top.cpp:163:27) and 'VITIS_LOOP_164_5'(top.cpp:164:31) in function 'k4_rasterize' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_211_1' (top.cpp:211:23) in function 'k5_deferred_lighting'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_163_4' (top.cpp:163:27) in function 'k4_rasterize'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.82 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.89 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'top_kernel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.19 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.07 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k1_vertex_transform' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_9_1'.
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+WARNING: [HLS 200-880] The II Violation in module 'k1_vertex_transform' (loop 'VITIS_LOOP_9_1'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between bus read operation ('gmem2_addr_read_15', top.cpp:6) on port 'gmem2' (top.cpp:6) and bus read operation ('gmem2_addr_read', top.cpp:6) on port 'gmem2' (top.cpp:6).
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 16, Depth = 38, loop 'VITIS_LOOP_9_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.93 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.96 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.15 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.2 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k2_perspective_divide' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.33 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k3_bounding_box' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_85_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_85_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.07 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_163_4_VITIS_LOOP_164_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 7, loop 'VITIS_LOOP_163_4_VITIS_LOOP_164_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.42 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.09 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k4_rasterize' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'k5_deferred_lighting' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_211_1_VITIS_LOOP_212_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 10, loop 'VITIS_LOOP_211_1_VITIS_LOOP_212_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'top_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 0.000 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k1_vertex_transform' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k1_vertex_transform' pipeline 'VITIS_LOOP_9_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k1_vertex_transform'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.38 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k2_perspective_divide' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_34ns_32s_34_38_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k2_perspective_divide'.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.59 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.71 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k3_bounding_box' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k3_bounding_box' pipeline 'VITIS_LOOP_85_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_16_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_16_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k3_bounding_box'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.36 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.45 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5' pipeline 'VITIS_LOOP_163_4_VITIS_LOOP_164_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_63_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_33s_33s_65_1_1': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_66s_32s_97_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.28 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.35 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k4_rasterize' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_33s_33s_65_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_64ns_128_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_34ns_32s_34_38_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k4_rasterize'.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_k4_rasterize_local_normal_x_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.35 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.43 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'k5_deferred_lighting' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'k5_deferred_lighting' pipeline 'VITIS_LOOP_211_1_VITIS_LOOP_212_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_17s_49_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'k5_deferred_lighting'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.22 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.3 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'top_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem2' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_tris' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/mvp_matrix' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_pixels' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'top_kernel' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'in_tris', 'mvp_matrix', 'out_pixels' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'top_kernel'.
+INFO: [HLS 200-741] Implementing PIPO top_kernel_depth_buffer_RAM_AUTO_1R1W using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'top_kernel_depth_buffer_RAM_AUTO_1R1W_memcore' using auto RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'out_pixels_c_U(top_kernel_fifo_w64_d6_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v0_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v1_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_v2_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_n2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_color_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'clip_tris_is_active_U(top_kernel_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v0_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v1_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_v2_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_n2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_color_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_in_is_active_U(top_kernel_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_min_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_min_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_max_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'bounds_max_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v0_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v1_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_v2_w_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n0_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n0_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n0_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n1_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n1_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n1_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n2_x_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n2_y_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_n2_z_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_color_U(top_kernel_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'screen_tris_out_is_active_U(top_kernel_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_k2_perspective_divide_U0_U(top_kernel_start_for_k2_perspective_divide_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_k3_bounding_box_U0_U(top_kernel_start_for_k3_bounding_box_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_k4_rasterize_U0_U(top_kernel_start_for_k4_rasterize_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.52 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.6 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.09 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.23 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.44 seconds; current allocated memory: 0.000 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for top_kernel.
+INFO: [VLOG 209-307] Generating Verilog RTL for top_kernel.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:42; Allocated memory: 0.000 MB.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:35; Allocated memory: 0.000 MB.
 INFO: [HLS 200-1510] Running: export_design -format ip_catalog -flow impl 
 INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
 INFO: [HLS 200-802] Generated output file project_1/hls/impl/export.zip
-INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:19:19; Allocated memory: 0.000 MB.
+INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:19:04; Allocated memory: 0.000 MB.

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'k1_vertex_transform'" level="0">
-<item name = "Date">Mon Mar 30 23:31:07 2026
+<item name = "Date">Tue Mar 31 00:58:57 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2336, 2336, 23.360 us, 23.360 us, 2336, 2336, no</column>
+<column name="">2071, 2071, 20.710 us, 20.710 us, 2048, 2048, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,6 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_9_1">2069, 2069, 38, 16, 1, 128, yes</column>
 </table>
 </item>
 </section>

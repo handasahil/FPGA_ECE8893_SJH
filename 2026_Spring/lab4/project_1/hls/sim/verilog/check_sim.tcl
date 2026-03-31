@@ -77,6 +77,7 @@ proc check_tvin_file {} {
 	}
     set rtlfilelist {
          "c.top_kernel.autotvin_gmem0.dat"
+         "c.top_kernel.autotvin_gmem2.dat"
          "c.top_kernel.autotvin_in_tris.dat"
          "c.top_kernel.autotvin_mvp_matrix.dat"
          "c.top_kernel.autotvin_out_pixels.dat"

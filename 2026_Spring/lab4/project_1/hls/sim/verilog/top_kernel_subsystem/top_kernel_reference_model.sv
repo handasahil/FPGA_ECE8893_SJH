@@ -17,6 +17,7 @@ class memaccess_axi_state_cbs extends axi_pkg::axi_state_cbs;
     //endfunction
     virtual function void memmodel_read_fromar(ref logic[7:0] data[$], input longint addr, input longint len);
         if(memid=="gmem0") refm.mem_blk_pages_gmem0.read_elems_pipepage(data, addr, len);
+        if(memid=="gmem2") refm.mem_blk_pages_gmem2.read_elems_pipepage(data, addr, len);
         if(memid=="gmem1") refm.mem_blk_pages_gmem1.read_elems_pipepage(data, addr, len);
     endfunction
 endclass
@@ -25,11 +26,16 @@ class top_kernel_reference_model extends uvm_component;
 `define TV_IN_gmem0 "../tv/cdatafile/c.top_kernel.autotvin_gmem0.dat"
 `define TV_OUT_gmem0 "../tv/rtldatafile/rtl.top_kernel.autotvout_gmem0.dat"
 `define TV_IN_OFFSET_in_tris "../tv/cdatafile/c.top_kernel.autotvin_in_tris.dat"
+`define TV_IN_gmem2 "../tv/cdatafile/c.top_kernel.autotvin_gmem2.dat"
+`define TV_OUT_gmem2 "../tv/rtldatafile/rtl.top_kernel.autotvout_gmem2.dat"
+`define TV_IN_OFFSET_mvp_matrix "../tv/cdatafile/c.top_kernel.autotvin_mvp_matrix.dat"
 `define TV_IN_gmem1 "../tv/cdatafile/c.top_kernel.autotvin_gmem1.dat"
 `define TV_OUT_gmem1 "../tv/rtldatafile/rtl.top_kernel.autotvout_gmem1.dat"
 `define TV_IN_OFFSET_out_pixels "../tv/cdatafile/c.top_kernel.autotvin_out_pixels.dat"
 `define TV_IN_in_tris "../tv/cdatafile/c.top_kernel.autotvin_in_tris.dat"
 `define TV_OUT_in_tris ""
+`define TV_IN_mvp_matrix "../tv/cdatafile/c.top_kernel.autotvin_mvp_matrix.dat"
+`define TV_OUT_mvp_matrix ""
 `define TV_IN_out_pixels "../tv/cdatafile/c.top_kernel.autotvin_out_pixels.dat"
 `define TV_OUT_out_pixels ""
     bit  write_data_finish_control;
@@ -51,6 +57,10 @@ class top_kernel_reference_model extends uvm_component;
     int blk_id_gmem0 = 0;
     memaccess_axi_state_cbs axi_memaccess_cb_gmem0;
 
+    mem_model_pages_with_diffofst#(32,8) mem_blk_pages_gmem2;
+    int blk_id_gmem2 = 0;
+    memaccess_axi_state_cbs axi_memaccess_cb_gmem2;
+
     mem_model_pages_with_diffofst#(32,8) mem_blk_pages_gmem1;
     int blk_id_gmem1 = 0;
     memaccess_axi_state_cbs axi_memaccess_cb_gmem1;
@@ -67,6 +77,9 @@ class top_kernel_reference_model extends uvm_component;
         axi_memaccess_cb_gmem0 = new;
         axi_memaccess_cb_gmem0.refm = this;
         axi_memaccess_cb_gmem0.memid = "gmem0";
+        axi_memaccess_cb_gmem2 = new;
+        axi_memaccess_cb_gmem2.refm = this;
+        axi_memaccess_cb_gmem2.memid = "gmem2";
         axi_memaccess_cb_gmem1 = new;
         axi_memaccess_cb_gmem1.refm = this;
         axi_memaccess_cb_gmem1.memid = "gmem1";
@@ -86,6 +99,14 @@ misc_if.dut2tb_ap_done = 0;
         mem_blk_pages_gmem0.maxi_bundlevar_fpath["in_tris"]=`TV_IN_OFFSET_in_tris;
         mem_blk_pages_gmem0.set_binary(1);
         mem_blk_pages_gmem0.tvinload_pagechk_atinit(fpath, 92*((1024+7)/8), 0, 0, "");
+        fpath.delete();
+
+        fpath.push_back(`TV_IN_gmem2);
+        mem_blk_pages_gmem2 = mem_model_pages_with_diffofst#(32,8)::type_id::create("mem_blk_pages_gmem2");
+        mem_blk_pages_gmem2.whole_page_size=128;
+        mem_blk_pages_gmem2.maxi_bundlevar_fpath["mvp_matrix"]=`TV_IN_OFFSET_mvp_matrix;
+        mem_blk_pages_gmem2.set_binary(1);
+        mem_blk_pages_gmem2.tvinload_pagechk_atinit(fpath, 16*((32+7)/8), 0, 0, "");
         fpath.delete();
 
         fpath.push_back(`TV_IN_gmem1);
@@ -152,6 +173,7 @@ misc_if.dut2tb_ap_done = 0;
             for(int i=1; i<1; i++) begin
                 @dut2tb_ap_ready;
                 mem_blk_pages_gmem0.incr_rd_page_idx() ;
+                mem_blk_pages_gmem2.incr_rd_page_idx() ;
                 mem_blk_pages_gmem1.incr_rd_page_idx() ;
             end
             forever begin
@@ -172,6 +194,13 @@ misc_if.dut2tb_ap_done = 0;
     endfunction
 
     virtual function void write_axi_rtr_gmem0(axi_pkg::axi_transfer tr);
+    endfunction
+
+    virtual function void write_axi_wtr_gmem2(axi_pkg::axi_transfer tr);
+        mem_blk_pages_gmem2.write_elems_pipepage(tr.data,tr.byte_addr);
+    endfunction
+
+    virtual function void write_axi_rtr_gmem2(axi_pkg::axi_transfer tr);
     endfunction
 
     virtual function void write_axi_wtr_gmem1(axi_pkg::axi_transfer tr);

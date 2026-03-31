@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'k3_bounding_box'
 ================================================================
-* Date:           Mon Mar 30 23:31:10 2026
+* Date:           Tue Mar 31 00:59:01 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  6.644 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  6.532 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
     |   min   |   max   |    min   |    max   | min | max |                      Type                      |
     +---------+---------+----------+----------+-----+-----+------------------------------------------------+
-    |      132|      132|  1.320 us|  1.320 us|  129|  129|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    |      130|      130|  1.300 us|  1.300 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
     +---------+---------+----------+----------+-----+-----+------------------------------------------------+
 
     + Detail: 
@@ -41,7 +41,7 @@
         |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_75_1  |      130|      130|         4|          1|          1|   128|       yes|
+        |- VITIS_LOOP_85_1  |      128|      128|         2|          1|          1|   128|       yes|
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -54,30 +54,30 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|    841|    -|
+|Expression       |        -|    -|       0|    964|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |        -|    -|       0|     18|    -|
+|Instance         |        -|    -|       0|     23|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       0|     36|    -|
-|Register         |        -|    -|     121|     32|    -|
+|Multiplexer      |        -|    -|       0|    495|    -|
+|Register         |        -|    -|     753|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|     121|    927|    0|
+|Total            |        0|    0|     753|   1482|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      432|  360|  141120|  70560|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        0|    0|      ~0|      1|    0|
+|Utilization (%)  |        0|    0|      ~0|      2|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +---------------------------+----------------------+---------+----+---+----+-----+
-    |          Instance         |        Module        | BRAM_18K| DSP| FF| LUT| URAM|
-    +---------------------------+----------------------+---------+----+---+----+-----+
-    |sparsemux_7_2_16_1_1_U120  |sparsemux_7_2_16_1_1  |        0|   0|  0|   9|    0|
-    |sparsemux_7_2_16_1_1_U121  |sparsemux_7_2_16_1_1  |        0|   0|  0|   9|    0|
-    +---------------------------+----------------------+---------+----+---+----+-----+
-    |Total                      |                      |        0|   0|  0|  18|    0|
-    +---------------------------+----------------------+---------+----+---+----+-----+
+    +--------------------------+----------------------+---------+----+---+----+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +--------------------------+----------------------+---------+----+---+----+-----+
+    |sparsemux_7_2_16_1_1_U87  |sparsemux_7_2_16_1_1  |        0|   0|  0|   9|    0|
+    |sparsemux_9_3_16_1_1_U88  |sparsemux_9_3_16_1_1  |        0|   0|  0|  14|    0|
+    +--------------------------+----------------------+---------+----+---+----+-----+
+    |Total                     |                      |        0|   0|  0|  23|    0|
+    +--------------------------+----------------------+---------+----+---+----+-----+
 
     * DSP: 
     N/A
@@ -89,78 +89,223 @@
     N/A
 
     * Expression: 
-    +-----------------------+----------+----+---+----+------------+------------+
-    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +-----------------------+----------+----+---+----+------------+------------+
-    |add_ln75_fu_295_p2     |         +|   0|  0|  15|           8|           1|
-    |add_ln97_fu_482_p2     |         +|   0|  0|  23|          16|           1|
-    |add_ln99_fu_595_p2     |         +|   0|  0|  23|          16|           1|
-    |and_ln97_fu_502_p2     |       and|   0|  0|   2|           1|           1|
-    |and_ln99_fu_615_p2     |       and|   0|  0|   2|           1|           1|
-    |icmp_ln75_fu_289_p2    |      icmp|   0|  0|  16|           8|           9|
-    |icmp_ln84_fu_311_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln85_fu_325_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln86_fu_339_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln87_fu_353_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln90_fu_367_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln91_fu_381_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln92_fu_395_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln93_fu_409_p2    |      icmp|   0|  0|  39|          32|          32|
-    |icmp_ln97_1_fu_476_p2  |      icmp|   0|  0|  23|          16|           1|
-    |icmp_ln97_fu_450_p2    |      icmp|   0|  0|  39|          32|          22|
-    |icmp_ln99_1_fu_589_p2  |      icmp|   0|  0|  23|          16|           1|
-    |icmp_ln99_fu_563_p2    |      icmp|   0|  0|  39|          32|          22|
-    |cond109_i_fu_516_p4    |    select|   0|  0|  16|           1|          16|
-    |cond119_i_fu_554_p3    |    select|   0|  0|  15|           1|           1|
-    |cond129_i_fu_629_p4    |    select|   0|  0|  16|           1|          16|
-    |cond_i_fu_441_p3       |    select|   0|  0|  15|           1|           1|
-    |max_x_1_fu_345_p3      |    select|   0|  0|  32|           1|          32|
-    |max_x_3_fu_359_p3      |    select|   0|  0|  32|           1|          32|
-    |max_y_1_fu_401_p3      |    select|   0|  0|  32|           1|          32|
-    |max_y_3_fu_415_p3      |    select|   0|  0|  32|           1|          32|
-    |min_x_3_fu_331_p3      |    select|   0|  0|  32|           1|          32|
-    |min_x_fu_317_p3        |    select|   0|  0|  32|           1|          32|
-    |min_y_3_fu_387_p3      |    select|   0|  0|  32|           1|          32|
-    |min_y_fu_373_p3        |    select|   0|  0|  32|           1|          32|
-    |ap_enable_pp0          |       xor|   0|  0|   2|           1|           2|
-    |xor_ln97_fu_496_p2     |       xor|   0|  0|   2|           1|           2|
-    |xor_ln99_fu_609_p2     |       xor|   0|  0|   2|           1|           2|
-    +-----------------------+----------+----+---+----+------------+------------+
-    |Total                  |          |   0|  0| 841|         417|         612|
-    +-----------------------+----------+----+---+----+------------+------------+
+    +----------------------------------------+----------+----+---+----+------------+------------+
+    |              Variable Name             | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln112_fu_688_p2                     |         +|   0|  0|  23|          16|           1|
+    |add_ln114_fu_800_p2                     |         +|   0|  0|  23|          16|           1|
+    |i_fu_535_p2                             |         +|   0|  0|  14|           7|           1|
+    |and_ln112_fu_708_p2                     |       and|   0|  0|   2|           1|           1|
+    |and_ln114_1_fu_851_p2                   |       and|   0|  0|   2|           1|           1|
+    |and_ln114_2_fu_857_p2                   |       and|   0|  0|   2|           1|           1|
+    |and_ln114_fu_840_p2                     |       and|   0|  0|   2|           1|           1|
+    |ap_condition_1075                       |       and|   0|  0|   2|           1|           1|
+    |icmp_ln100_fu_552_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln101_fu_562_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln102_fu_523_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln103_fu_579_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln105_fu_591_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln106_fu_601_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln107_fu_529_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln108_fu_618_p2                    |      icmp|   0|  0|  39|          32|          32|
+    |icmp_ln112_1_fu_682_p2                  |      icmp|   0|  0|  23|          16|           1|
+    |icmp_ln112_fu_656_p2                    |      icmp|   0|  0|  39|          32|          22|
+    |icmp_ln114_1_fu_794_p2                  |      icmp|   0|  0|  23|          16|           1|
+    |icmp_ln114_fu_768_p2                    |      icmp|   0|  0|  39|          32|          22|
+    |icmp_ln85_fu_541_p2                     |      icmp|   0|  0|  14|           7|           2|
+    |ap_block_pp0_stage0_01001_grp1          |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp10         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp11         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp12         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp13         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp14         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp15         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp16         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp17         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp18         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp19         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp20         |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp3          |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp4          |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp5          |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp6          |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_01001_grp9          |        or|   0|  0|   2|           1|           1|
+    |ap_block_pp0_stage0_11001               |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp1   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp10  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp11  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp12  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp13  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp14  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp15  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp16  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp17  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp18  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp19  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp20  |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp3   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp4   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp5   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp6   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state1_pp0_stage0_iter0_grp9   |        or|   0|  0|   2|           1|           1|
+    |ap_block_state2_pp0_stage0_iter1_grp1   |        or|   0|  0|   2|           1|           1|
+    |curr_bounds_max_x_1_fu_828_p3           |    select|   0|  0|  16|           1|          16|
+    |curr_bounds_max_x_fu_722_p4             |    select|   0|  0|  16|           1|          16|
+    |curr_bounds_max_y_fu_872_p6             |    select|   0|  0|  16|           1|          16|
+    |curr_bounds_min_x_1_fu_814_p3           |    select|   0|  0|  15|           1|          15|
+    |curr_bounds_min_x_fu_648_p3             |    select|   0|  0|  15|           1|           1|
+    |curr_bounds_min_y_1_fu_821_p3           |    select|   0|  0|  15|           1|          15|
+    |curr_bounds_min_y_fu_760_p3             |    select|   0|  0|  15|           1|           1|
+    |max_x_1_fu_574_p3                       |    select|   0|  0|  32|           1|          32|
+    |max_x_3_fu_584_p3                       |    select|   0|  0|  32|           1|          32|
+    |max_y_1_fu_613_p3                       |    select|   0|  0|  32|           1|          32|
+    |max_y_3_fu_623_p3                       |    select|   0|  0|  32|           1|          32|
+    |min_x_3_fu_567_p3                       |    select|   0|  0|  32|           1|          32|
+    |min_x_fu_556_p3                         |    select|   0|  0|  32|           1|          32|
+    |min_y_3_fu_606_p3                       |    select|   0|  0|  32|           1|          32|
+    |min_y_fu_595_p3                         |    select|   0|  0|  32|           1|          32|
+    |ap_enable_pp0                           |       xor|   0|  0|   2|           1|           2|
+    |xor_ln112_fu_702_p2                     |       xor|   0|  0|   2|           1|           2|
+    |xor_ln114_fu_845_p2                     |       xor|   0|  0|   2|           1|           2|
+    |xor_ln89_fu_835_p2                      |       xor|   0|  0|   2|           1|           2|
+    +----------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                   |          |   0|  0| 964|         458|         692|
+    +----------------------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
-    +-------------------------+----+-----------+-----+-----------+
-    |           Name          | LUT| Input Size| Bits| Total Bits|
-    +-------------------------+----+-----------+-----+-----------+
-    |ap_done_int              |   9|          2|    1|          2|
-    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
-    |ap_sig_allocacmp_i_2     |   9|          2|    8|         16|
-    |i_fu_82                  |   9|          2|    8|         16|
-    +-------------------------+----+-----------+-----+-----------+
-    |Total                    |  36|          8|   18|         36|
-    +-------------------------+----+-----------+-----+-----------+
+    +----------------------------------+----+-----------+-----+-----------+
+    |               Name               | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                       |   9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i1_load          |   9|          2|    7|         14|
+    |bounds_max_x_blk_n                |   9|          2|    1|          2|
+    |bounds_max_y_blk_n                |   9|          2|    1|          2|
+    |bounds_min_x_blk_n                |   9|          2|    1|          2|
+    |bounds_min_y_blk_n                |   9|          2|    1|          2|
+    |i1_fu_184                         |   9|          2|    7|         14|
+    |real_start                        |   9|          2|    1|          2|
+    |screen_tris_in_color_blk_n        |   9|          2|    1|          2|
+    |screen_tris_in_is_active_blk_n    |   9|          2|    1|          2|
+    |screen_tris_in_n0_x_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n0_y_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n0_z_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n1_x_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n1_y_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n1_z_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n2_x_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n2_y_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_n2_z_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v0_w_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v0_x_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v0_y_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v0_z_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v1_w_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v1_x_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v1_y_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v1_z_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v2_w_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v2_x_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v2_y_blk_n         |   9|          2|    1|          2|
+    |screen_tris_in_v2_z_blk_n         |   9|          2|    1|          2|
+    |screen_tris_out_color_blk_n       |   9|          2|    1|          2|
+    |screen_tris_out_is_active_blk_n   |   9|          2|    1|          2|
+    |screen_tris_out_n0_x_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n0_y_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n0_z_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n1_x_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n1_y_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n1_z_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n2_x_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n2_y_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_n2_z_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v0_w_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v0_x_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v0_y_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v0_z_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v1_w_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v1_x_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v1_y_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v1_z_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v2_w_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v2_x_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v2_y_blk_n        |   9|          2|    1|          2|
+    |screen_tris_out_v2_z_blk_n        |   9|          2|    1|          2|
+    +----------------------------------+----+-----------+-----+-----------+
+    |Total                             | 495|        110|   67|        134|
+    +----------------------------------+----+-----------+-----+-----------+
 
     * Register: 
     +--------------------------------------------------+----+----+-----+-----------+
     |                       Name                       | FF | LUT| Bits| Const Bits|
     +--------------------------------------------------+----+----+-----+-----------+
     |ap_CS_fsm                                         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp10_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp10_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp11_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp11_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp12_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp12_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp13_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp13_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp14_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp14_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp15_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp15_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp16_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp16_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp17_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp17_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp18_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp18_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp19_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp19_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp1_done_reg         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp1_done_reg_iter0   |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp20_done_reg        |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp20_done_reg_iter0  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp3_done_reg         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp3_done_reg_iter0   |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp4_done_reg         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp4_done_reg_iter0   |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp5_done_reg         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp5_done_reg_iter0   |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp6_done_reg         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp6_done_reg_iter0   |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp9_done_reg         |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp9_done_reg_iter0   |   1|   0|    1|          0|
     |ap_done_reg                                       |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter1                           |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter2                           |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter3                           |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter1_reg                  |   1|   0|    1|          0|
-    |ap_loop_exit_ready_pp0_iter2_reg                  |   1|   0|    1|          0|
-    |cond109_i_reg_717                                 |  16|   0|   16|          0|
-    |cond129_i_reg_722                                 |  16|   0|   16|          0|
-    |i_fu_82                                           |   8|   0|    8|          0|
-    |screen_tris_is_active_load_reg_683                |   1|   0|    1|          0|
-    |screen_tris_is_active_load_reg_683_pp0_iter2_reg  |   1|   0|    1|          0|
-    |zext_ln75_reg_660                                 |   8|   0|   64|         56|
-    |zext_ln75_reg_660                                 |  64|  32|   64|         56|
+    |curr_tri_color_reg_1048                           |  32|   0|   32|          0|
+    |curr_tri_is_active_reg_1053                       |   1|   0|    1|          0|
+    |curr_tri_n0_x_reg_1003                            |  32|   0|   32|          0|
+    |curr_tri_n0_y_reg_1008                            |  32|   0|   32|          0|
+    |curr_tri_n0_z_reg_1013                            |  32|   0|   32|          0|
+    |curr_tri_n1_x_reg_1018                            |  32|   0|   32|          0|
+    |curr_tri_n1_y_reg_1023                            |  32|   0|   32|          0|
+    |curr_tri_n1_z_reg_1028                            |  32|   0|   32|          0|
+    |curr_tri_n2_x_reg_1033                            |  32|   0|   32|          0|
+    |curr_tri_n2_y_reg_1038                            |  32|   0|   32|          0|
+    |curr_tri_n2_z_reg_1043                            |  32|   0|   32|          0|
+    |curr_tri_v0_w_reg_944                             |  32|   0|   32|          0|
+    |curr_tri_v0_x_reg_923                             |  32|   0|   32|          0|
+    |curr_tri_v0_y_reg_931                             |  32|   0|   32|          0|
+    |curr_tri_v0_z_reg_939                             |  32|   0|   32|          0|
+    |curr_tri_v1_w_reg_970                             |  32|   0|   32|          0|
+    |curr_tri_v1_x_reg_949                             |  32|   0|   32|          0|
+    |curr_tri_v1_y_reg_957                             |  32|   0|   32|          0|
+    |curr_tri_v1_z_reg_965                             |  32|   0|   32|          0|
+    |curr_tri_v2_w_reg_998                             |  32|   0|   32|          0|
+    |curr_tri_v2_x_reg_975                             |  32|   0|   32|          0|
+    |curr_tri_v2_y_reg_984                             |  32|   0|   32|          0|
+    |curr_tri_v2_z_reg_993                             |  32|   0|   32|          0|
+    |i1_fu_184                                         |   7|   0|    7|          0|
+    |icmp_ln102_reg_1064                               |   1|   0|    1|          0|
+    |icmp_ln107_reg_1069                               |   1|   0|    1|          0|
+    |start_once_reg                                    |   1|   0|    1|          0|
     +--------------------------------------------------+----+----+-----+-----------+
-    |Total                                             | 121|  32|  177|        112|
+    |Total                                             | 753|   0|  753|          0|
     +--------------------------------------------------+----+----+-----+-----------+
 
 
@@ -169,67 +314,268 @@
 == Interface
 ================================================================
 * Summary: 
-+--------------------------------+-----+-----+------------+-----------------------+--------------+
-|            RTL Ports           | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
-+--------------------------------+-----+-----+------------+-----------------------+--------------+
-|ap_clk                          |   in|    1|  ap_ctrl_hs|        k3_bounding_box|  return value|
-|ap_rst                          |   in|    1|  ap_ctrl_hs|        k3_bounding_box|  return value|
-|ap_start                        |   in|    1|  ap_ctrl_hs|        k3_bounding_box|  return value|
-|ap_done                         |  out|    1|  ap_ctrl_hs|        k3_bounding_box|  return value|
-|ap_idle                         |  out|    1|  ap_ctrl_hs|        k3_bounding_box|  return value|
-|ap_ready                        |  out|    1|  ap_ctrl_hs|        k3_bounding_box|  return value|
-|bounds_max_x_address0           |  out|    7|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_ce0                |  out|    1|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_we0                |  out|    1|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_d0                 |  out|   16|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_address1           |  out|    7|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_ce1                |  out|    1|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_we1                |  out|    1|   ap_memory|           bounds_max_x|         array|
-|bounds_max_x_d1                 |  out|   16|   ap_memory|           bounds_max_x|         array|
-|bounds_max_y_address0           |  out|    7|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_ce0                |  out|    1|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_we0                |  out|    1|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_d0                 |  out|   16|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_address1           |  out|    7|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_ce1                |  out|    1|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_we1                |  out|    1|   ap_memory|           bounds_max_y|         array|
-|bounds_max_y_d1                 |  out|   16|   ap_memory|           bounds_max_y|         array|
-|bounds_min_x_address0           |  out|    7|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_ce0                |  out|    1|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_we0                |  out|    1|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_d0                 |  out|   15|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_address1           |  out|    7|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_ce1                |  out|    1|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_we1                |  out|    1|   ap_memory|           bounds_min_x|         array|
-|bounds_min_x_d1                 |  out|   15|   ap_memory|           bounds_min_x|         array|
-|bounds_min_y_address0           |  out|    7|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_ce0                |  out|    1|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_we0                |  out|    1|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_d0                 |  out|   15|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_address1           |  out|    7|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_ce1                |  out|    1|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_we1                |  out|    1|   ap_memory|           bounds_min_y|         array|
-|bounds_min_y_d1                 |  out|   15|   ap_memory|           bounds_min_y|         array|
-|screen_tris_is_active_address0  |  out|    7|   ap_memory|  screen_tris_is_active|         array|
-|screen_tris_is_active_ce0       |  out|    1|   ap_memory|  screen_tris_is_active|         array|
-|screen_tris_is_active_q0        |   in|    1|   ap_memory|  screen_tris_is_active|         array|
-|screen_tris_v0_x_address0       |  out|    7|   ap_memory|       screen_tris_v0_x|         array|
-|screen_tris_v0_x_ce0            |  out|    1|   ap_memory|       screen_tris_v0_x|         array|
-|screen_tris_v0_x_q0             |   in|   32|   ap_memory|       screen_tris_v0_x|         array|
-|screen_tris_v0_y_address0       |  out|    7|   ap_memory|       screen_tris_v0_y|         array|
-|screen_tris_v0_y_ce0            |  out|    1|   ap_memory|       screen_tris_v0_y|         array|
-|screen_tris_v0_y_q0             |   in|   32|   ap_memory|       screen_tris_v0_y|         array|
-|screen_tris_v1_x_address0       |  out|    7|   ap_memory|       screen_tris_v1_x|         array|
-|screen_tris_v1_x_ce0            |  out|    1|   ap_memory|       screen_tris_v1_x|         array|
-|screen_tris_v1_x_q0             |   in|   32|   ap_memory|       screen_tris_v1_x|         array|
-|screen_tris_v1_y_address0       |  out|    7|   ap_memory|       screen_tris_v1_y|         array|
-|screen_tris_v1_y_ce0            |  out|    1|   ap_memory|       screen_tris_v1_y|         array|
-|screen_tris_v1_y_q0             |   in|   32|   ap_memory|       screen_tris_v1_y|         array|
-|screen_tris_v2_x_address0       |  out|    7|   ap_memory|       screen_tris_v2_x|         array|
-|screen_tris_v2_x_ce0            |  out|    1|   ap_memory|       screen_tris_v2_x|         array|
-|screen_tris_v2_x_q0             |   in|   32|   ap_memory|       screen_tris_v2_x|         array|
-|screen_tris_v2_y_address0       |  out|    7|   ap_memory|       screen_tris_v2_y|         array|
-|screen_tris_v2_y_ce0            |  out|    1|   ap_memory|       screen_tris_v2_y|         array|
-|screen_tris_v2_y_q0             |   in|   32|   ap_memory|       screen_tris_v2_y|         array|
-+--------------------------------+-----+-----+------------+-----------------------+--------------+
++------------------------------------------+-----+-----+------------+---------------------------+--------------+
+|                 RTL Ports                | Dir | Bits|  Protocol  |       Source Object       |    C Type    |
++------------------------------------------+-----+-----+------------+---------------------------+--------------+
+|ap_clk                                    |   in|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|ap_rst                                    |   in|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|ap_start                                  |   in|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|start_full_n                              |   in|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|ap_done                                   |  out|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|ap_continue                               |   in|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|ap_idle                                   |  out|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|ap_ready                                  |  out|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|start_out                                 |  out|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|start_write                               |  out|    1|  ap_ctrl_hs|            k3_bounding_box|  return value|
+|screen_tris_in_v0_x_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v0_x|       pointer|
+|screen_tris_in_v0_x_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v0_x|       pointer|
+|screen_tris_in_v0_x_read                  |  out|    1|     ap_fifo|        screen_tris_in_v0_x|       pointer|
+|screen_tris_in_v0_x_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v0_x|       pointer|
+|screen_tris_in_v0_x_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v0_x|       pointer|
+|screen_tris_in_v0_y_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v0_y|       pointer|
+|screen_tris_in_v0_y_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v0_y|       pointer|
+|screen_tris_in_v0_y_read                  |  out|    1|     ap_fifo|        screen_tris_in_v0_y|       pointer|
+|screen_tris_in_v0_y_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v0_y|       pointer|
+|screen_tris_in_v0_y_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v0_y|       pointer|
+|screen_tris_in_v0_z_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v0_z|       pointer|
+|screen_tris_in_v0_z_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v0_z|       pointer|
+|screen_tris_in_v0_z_read                  |  out|    1|     ap_fifo|        screen_tris_in_v0_z|       pointer|
+|screen_tris_in_v0_z_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v0_z|       pointer|
+|screen_tris_in_v0_z_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v0_z|       pointer|
+|screen_tris_in_v0_w_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v0_w|       pointer|
+|screen_tris_in_v0_w_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v0_w|       pointer|
+|screen_tris_in_v0_w_read                  |  out|    1|     ap_fifo|        screen_tris_in_v0_w|       pointer|
+|screen_tris_in_v0_w_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v0_w|       pointer|
+|screen_tris_in_v0_w_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v0_w|       pointer|
+|screen_tris_in_v1_x_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v1_x|       pointer|
+|screen_tris_in_v1_x_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v1_x|       pointer|
+|screen_tris_in_v1_x_read                  |  out|    1|     ap_fifo|        screen_tris_in_v1_x|       pointer|
+|screen_tris_in_v1_x_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v1_x|       pointer|
+|screen_tris_in_v1_x_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v1_x|       pointer|
+|screen_tris_in_v1_y_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v1_y|       pointer|
+|screen_tris_in_v1_y_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v1_y|       pointer|
+|screen_tris_in_v1_y_read                  |  out|    1|     ap_fifo|        screen_tris_in_v1_y|       pointer|
+|screen_tris_in_v1_y_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v1_y|       pointer|
+|screen_tris_in_v1_y_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v1_y|       pointer|
+|screen_tris_in_v1_z_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v1_z|       pointer|
+|screen_tris_in_v1_z_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v1_z|       pointer|
+|screen_tris_in_v1_z_read                  |  out|    1|     ap_fifo|        screen_tris_in_v1_z|       pointer|
+|screen_tris_in_v1_z_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v1_z|       pointer|
+|screen_tris_in_v1_z_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v1_z|       pointer|
+|screen_tris_in_v1_w_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v1_w|       pointer|
+|screen_tris_in_v1_w_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v1_w|       pointer|
+|screen_tris_in_v1_w_read                  |  out|    1|     ap_fifo|        screen_tris_in_v1_w|       pointer|
+|screen_tris_in_v1_w_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v1_w|       pointer|
+|screen_tris_in_v1_w_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v1_w|       pointer|
+|screen_tris_in_v2_x_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v2_x|       pointer|
+|screen_tris_in_v2_x_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v2_x|       pointer|
+|screen_tris_in_v2_x_read                  |  out|    1|     ap_fifo|        screen_tris_in_v2_x|       pointer|
+|screen_tris_in_v2_x_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v2_x|       pointer|
+|screen_tris_in_v2_x_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v2_x|       pointer|
+|screen_tris_in_v2_y_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v2_y|       pointer|
+|screen_tris_in_v2_y_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v2_y|       pointer|
+|screen_tris_in_v2_y_read                  |  out|    1|     ap_fifo|        screen_tris_in_v2_y|       pointer|
+|screen_tris_in_v2_y_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v2_y|       pointer|
+|screen_tris_in_v2_y_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v2_y|       pointer|
+|screen_tris_in_v2_z_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v2_z|       pointer|
+|screen_tris_in_v2_z_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v2_z|       pointer|
+|screen_tris_in_v2_z_read                  |  out|    1|     ap_fifo|        screen_tris_in_v2_z|       pointer|
+|screen_tris_in_v2_z_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v2_z|       pointer|
+|screen_tris_in_v2_z_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v2_z|       pointer|
+|screen_tris_in_v2_w_dout                  |   in|   32|     ap_fifo|        screen_tris_in_v2_w|       pointer|
+|screen_tris_in_v2_w_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_v2_w|       pointer|
+|screen_tris_in_v2_w_read                  |  out|    1|     ap_fifo|        screen_tris_in_v2_w|       pointer|
+|screen_tris_in_v2_w_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_v2_w|       pointer|
+|screen_tris_in_v2_w_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_v2_w|       pointer|
+|screen_tris_in_n0_x_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n0_x|       pointer|
+|screen_tris_in_n0_x_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n0_x|       pointer|
+|screen_tris_in_n0_x_read                  |  out|    1|     ap_fifo|        screen_tris_in_n0_x|       pointer|
+|screen_tris_in_n0_x_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n0_x|       pointer|
+|screen_tris_in_n0_x_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n0_x|       pointer|
+|screen_tris_in_n0_y_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n0_y|       pointer|
+|screen_tris_in_n0_y_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n0_y|       pointer|
+|screen_tris_in_n0_y_read                  |  out|    1|     ap_fifo|        screen_tris_in_n0_y|       pointer|
+|screen_tris_in_n0_y_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n0_y|       pointer|
+|screen_tris_in_n0_y_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n0_y|       pointer|
+|screen_tris_in_n0_z_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n0_z|       pointer|
+|screen_tris_in_n0_z_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n0_z|       pointer|
+|screen_tris_in_n0_z_read                  |  out|    1|     ap_fifo|        screen_tris_in_n0_z|       pointer|
+|screen_tris_in_n0_z_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n0_z|       pointer|
+|screen_tris_in_n0_z_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n0_z|       pointer|
+|screen_tris_in_n1_x_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n1_x|       pointer|
+|screen_tris_in_n1_x_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n1_x|       pointer|
+|screen_tris_in_n1_x_read                  |  out|    1|     ap_fifo|        screen_tris_in_n1_x|       pointer|
+|screen_tris_in_n1_x_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n1_x|       pointer|
+|screen_tris_in_n1_x_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n1_x|       pointer|
+|screen_tris_in_n1_y_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n1_y|       pointer|
+|screen_tris_in_n1_y_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n1_y|       pointer|
+|screen_tris_in_n1_y_read                  |  out|    1|     ap_fifo|        screen_tris_in_n1_y|       pointer|
+|screen_tris_in_n1_y_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n1_y|       pointer|
+|screen_tris_in_n1_y_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n1_y|       pointer|
+|screen_tris_in_n1_z_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n1_z|       pointer|
+|screen_tris_in_n1_z_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n1_z|       pointer|
+|screen_tris_in_n1_z_read                  |  out|    1|     ap_fifo|        screen_tris_in_n1_z|       pointer|
+|screen_tris_in_n1_z_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n1_z|       pointer|
+|screen_tris_in_n1_z_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n1_z|       pointer|
+|screen_tris_in_n2_x_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n2_x|       pointer|
+|screen_tris_in_n2_x_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n2_x|       pointer|
+|screen_tris_in_n2_x_read                  |  out|    1|     ap_fifo|        screen_tris_in_n2_x|       pointer|
+|screen_tris_in_n2_x_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n2_x|       pointer|
+|screen_tris_in_n2_x_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n2_x|       pointer|
+|screen_tris_in_n2_y_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n2_y|       pointer|
+|screen_tris_in_n2_y_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n2_y|       pointer|
+|screen_tris_in_n2_y_read                  |  out|    1|     ap_fifo|        screen_tris_in_n2_y|       pointer|
+|screen_tris_in_n2_y_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n2_y|       pointer|
+|screen_tris_in_n2_y_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n2_y|       pointer|
+|screen_tris_in_n2_z_dout                  |   in|   32|     ap_fifo|        screen_tris_in_n2_z|       pointer|
+|screen_tris_in_n2_z_empty_n               |   in|    1|     ap_fifo|        screen_tris_in_n2_z|       pointer|
+|screen_tris_in_n2_z_read                  |  out|    1|     ap_fifo|        screen_tris_in_n2_z|       pointer|
+|screen_tris_in_n2_z_num_data_valid        |   in|    3|     ap_fifo|        screen_tris_in_n2_z|       pointer|
+|screen_tris_in_n2_z_fifo_cap              |   in|    3|     ap_fifo|        screen_tris_in_n2_z|       pointer|
+|screen_tris_in_color_dout                 |   in|   32|     ap_fifo|       screen_tris_in_color|       pointer|
+|screen_tris_in_color_empty_n              |   in|    1|     ap_fifo|       screen_tris_in_color|       pointer|
+|screen_tris_in_color_read                 |  out|    1|     ap_fifo|       screen_tris_in_color|       pointer|
+|screen_tris_in_color_num_data_valid       |   in|    3|     ap_fifo|       screen_tris_in_color|       pointer|
+|screen_tris_in_color_fifo_cap             |   in|    3|     ap_fifo|       screen_tris_in_color|       pointer|
+|screen_tris_in_is_active_dout             |   in|    1|     ap_fifo|   screen_tris_in_is_active|       pointer|
+|screen_tris_in_is_active_empty_n          |   in|    1|     ap_fifo|   screen_tris_in_is_active|       pointer|
+|screen_tris_in_is_active_read             |  out|    1|     ap_fifo|   screen_tris_in_is_active|       pointer|
+|screen_tris_in_is_active_num_data_valid   |   in|    3|     ap_fifo|   screen_tris_in_is_active|       pointer|
+|screen_tris_in_is_active_fifo_cap         |   in|    3|     ap_fifo|   screen_tris_in_is_active|       pointer|
+|bounds_min_x_din                          |  out|   32|     ap_fifo|               bounds_min_x|       pointer|
+|bounds_min_x_full_n                       |   in|    1|     ap_fifo|               bounds_min_x|       pointer|
+|bounds_min_x_write                        |  out|    1|     ap_fifo|               bounds_min_x|       pointer|
+|bounds_min_x_num_data_valid               |   in|   32|     ap_fifo|               bounds_min_x|       pointer|
+|bounds_min_x_fifo_cap                     |   in|   32|     ap_fifo|               bounds_min_x|       pointer|
+|bounds_min_y_din                          |  out|   32|     ap_fifo|               bounds_min_y|       pointer|
+|bounds_min_y_full_n                       |   in|    1|     ap_fifo|               bounds_min_y|       pointer|
+|bounds_min_y_write                        |  out|    1|     ap_fifo|               bounds_min_y|       pointer|
+|bounds_min_y_num_data_valid               |   in|   32|     ap_fifo|               bounds_min_y|       pointer|
+|bounds_min_y_fifo_cap                     |   in|   32|     ap_fifo|               bounds_min_y|       pointer|
+|bounds_max_x_din                          |  out|   32|     ap_fifo|               bounds_max_x|       pointer|
+|bounds_max_x_full_n                       |   in|    1|     ap_fifo|               bounds_max_x|       pointer|
+|bounds_max_x_write                        |  out|    1|     ap_fifo|               bounds_max_x|       pointer|
+|bounds_max_x_num_data_valid               |   in|   32|     ap_fifo|               bounds_max_x|       pointer|
+|bounds_max_x_fifo_cap                     |   in|   32|     ap_fifo|               bounds_max_x|       pointer|
+|bounds_max_y_din                          |  out|   32|     ap_fifo|               bounds_max_y|       pointer|
+|bounds_max_y_full_n                       |   in|    1|     ap_fifo|               bounds_max_y|       pointer|
+|bounds_max_y_write                        |  out|    1|     ap_fifo|               bounds_max_y|       pointer|
+|bounds_max_y_num_data_valid               |   in|   32|     ap_fifo|               bounds_max_y|       pointer|
+|bounds_max_y_fifo_cap                     |   in|   32|     ap_fifo|               bounds_max_y|       pointer|
+|screen_tris_out_v0_x_din                  |  out|   32|     ap_fifo|       screen_tris_out_v0_x|       pointer|
+|screen_tris_out_v0_x_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v0_x|       pointer|
+|screen_tris_out_v0_x_write                |  out|    1|     ap_fifo|       screen_tris_out_v0_x|       pointer|
+|screen_tris_out_v0_x_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v0_x|       pointer|
+|screen_tris_out_v0_x_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v0_x|       pointer|
+|screen_tris_out_v0_y_din                  |  out|   32|     ap_fifo|       screen_tris_out_v0_y|       pointer|
+|screen_tris_out_v0_y_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v0_y|       pointer|
+|screen_tris_out_v0_y_write                |  out|    1|     ap_fifo|       screen_tris_out_v0_y|       pointer|
+|screen_tris_out_v0_y_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v0_y|       pointer|
+|screen_tris_out_v0_y_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v0_y|       pointer|
+|screen_tris_out_v0_z_din                  |  out|   32|     ap_fifo|       screen_tris_out_v0_z|       pointer|
+|screen_tris_out_v0_z_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v0_z|       pointer|
+|screen_tris_out_v0_z_write                |  out|    1|     ap_fifo|       screen_tris_out_v0_z|       pointer|
+|screen_tris_out_v0_z_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v0_z|       pointer|
+|screen_tris_out_v0_z_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v0_z|       pointer|
+|screen_tris_out_v0_w_din                  |  out|   32|     ap_fifo|       screen_tris_out_v0_w|       pointer|
+|screen_tris_out_v0_w_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v0_w|       pointer|
+|screen_tris_out_v0_w_write                |  out|    1|     ap_fifo|       screen_tris_out_v0_w|       pointer|
+|screen_tris_out_v0_w_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v0_w|       pointer|
+|screen_tris_out_v0_w_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v0_w|       pointer|
+|screen_tris_out_v1_x_din                  |  out|   32|     ap_fifo|       screen_tris_out_v1_x|       pointer|
+|screen_tris_out_v1_x_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v1_x|       pointer|
+|screen_tris_out_v1_x_write                |  out|    1|     ap_fifo|       screen_tris_out_v1_x|       pointer|
+|screen_tris_out_v1_x_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v1_x|       pointer|
+|screen_tris_out_v1_x_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v1_x|       pointer|
+|screen_tris_out_v1_y_din                  |  out|   32|     ap_fifo|       screen_tris_out_v1_y|       pointer|
+|screen_tris_out_v1_y_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v1_y|       pointer|
+|screen_tris_out_v1_y_write                |  out|    1|     ap_fifo|       screen_tris_out_v1_y|       pointer|
+|screen_tris_out_v1_y_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v1_y|       pointer|
+|screen_tris_out_v1_y_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v1_y|       pointer|
+|screen_tris_out_v1_z_din                  |  out|   32|     ap_fifo|       screen_tris_out_v1_z|       pointer|
+|screen_tris_out_v1_z_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v1_z|       pointer|
+|screen_tris_out_v1_z_write                |  out|    1|     ap_fifo|       screen_tris_out_v1_z|       pointer|
+|screen_tris_out_v1_z_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v1_z|       pointer|
+|screen_tris_out_v1_z_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v1_z|       pointer|
+|screen_tris_out_v1_w_din                  |  out|   32|     ap_fifo|       screen_tris_out_v1_w|       pointer|
+|screen_tris_out_v1_w_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v1_w|       pointer|
+|screen_tris_out_v1_w_write                |  out|    1|     ap_fifo|       screen_tris_out_v1_w|       pointer|
+|screen_tris_out_v1_w_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v1_w|       pointer|
+|screen_tris_out_v1_w_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v1_w|       pointer|
+|screen_tris_out_v2_x_din                  |  out|   32|     ap_fifo|       screen_tris_out_v2_x|       pointer|
+|screen_tris_out_v2_x_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v2_x|       pointer|
+|screen_tris_out_v2_x_write                |  out|    1|     ap_fifo|       screen_tris_out_v2_x|       pointer|
+|screen_tris_out_v2_x_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v2_x|       pointer|
+|screen_tris_out_v2_x_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v2_x|       pointer|
+|screen_tris_out_v2_y_din                  |  out|   32|     ap_fifo|       screen_tris_out_v2_y|       pointer|
+|screen_tris_out_v2_y_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v2_y|       pointer|
+|screen_tris_out_v2_y_write                |  out|    1|     ap_fifo|       screen_tris_out_v2_y|       pointer|
+|screen_tris_out_v2_y_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v2_y|       pointer|
+|screen_tris_out_v2_y_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v2_y|       pointer|
+|screen_tris_out_v2_z_din                  |  out|   32|     ap_fifo|       screen_tris_out_v2_z|       pointer|
+|screen_tris_out_v2_z_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v2_z|       pointer|
+|screen_tris_out_v2_z_write                |  out|    1|     ap_fifo|       screen_tris_out_v2_z|       pointer|
+|screen_tris_out_v2_z_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v2_z|       pointer|
+|screen_tris_out_v2_z_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v2_z|       pointer|
+|screen_tris_out_v2_w_din                  |  out|   32|     ap_fifo|       screen_tris_out_v2_w|       pointer|
+|screen_tris_out_v2_w_full_n               |   in|    1|     ap_fifo|       screen_tris_out_v2_w|       pointer|
+|screen_tris_out_v2_w_write                |  out|    1|     ap_fifo|       screen_tris_out_v2_w|       pointer|
+|screen_tris_out_v2_w_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_v2_w|       pointer|
+|screen_tris_out_v2_w_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_v2_w|       pointer|
+|screen_tris_out_n0_x_din                  |  out|   32|     ap_fifo|       screen_tris_out_n0_x|       pointer|
+|screen_tris_out_n0_x_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n0_x|       pointer|
+|screen_tris_out_n0_x_write                |  out|    1|     ap_fifo|       screen_tris_out_n0_x|       pointer|
+|screen_tris_out_n0_x_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n0_x|       pointer|
+|screen_tris_out_n0_x_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n0_x|       pointer|
+|screen_tris_out_n0_y_din                  |  out|   32|     ap_fifo|       screen_tris_out_n0_y|       pointer|
+|screen_tris_out_n0_y_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n0_y|       pointer|
+|screen_tris_out_n0_y_write                |  out|    1|     ap_fifo|       screen_tris_out_n0_y|       pointer|
+|screen_tris_out_n0_y_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n0_y|       pointer|
+|screen_tris_out_n0_y_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n0_y|       pointer|
+|screen_tris_out_n0_z_din                  |  out|   32|     ap_fifo|       screen_tris_out_n0_z|       pointer|
+|screen_tris_out_n0_z_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n0_z|       pointer|
+|screen_tris_out_n0_z_write                |  out|    1|     ap_fifo|       screen_tris_out_n0_z|       pointer|
+|screen_tris_out_n0_z_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n0_z|       pointer|
+|screen_tris_out_n0_z_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n0_z|       pointer|
+|screen_tris_out_n1_x_din                  |  out|   32|     ap_fifo|       screen_tris_out_n1_x|       pointer|
+|screen_tris_out_n1_x_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n1_x|       pointer|
+|screen_tris_out_n1_x_write                |  out|    1|     ap_fifo|       screen_tris_out_n1_x|       pointer|
+|screen_tris_out_n1_x_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n1_x|       pointer|
+|screen_tris_out_n1_x_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n1_x|       pointer|
+|screen_tris_out_n1_y_din                  |  out|   32|     ap_fifo|       screen_tris_out_n1_y|       pointer|
+|screen_tris_out_n1_y_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n1_y|       pointer|
+|screen_tris_out_n1_y_write                |  out|    1|     ap_fifo|       screen_tris_out_n1_y|       pointer|
+|screen_tris_out_n1_y_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n1_y|       pointer|
+|screen_tris_out_n1_y_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n1_y|       pointer|
+|screen_tris_out_n1_z_din                  |  out|   32|     ap_fifo|       screen_tris_out_n1_z|       pointer|
+|screen_tris_out_n1_z_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n1_z|       pointer|
+|screen_tris_out_n1_z_write                |  out|    1|     ap_fifo|       screen_tris_out_n1_z|       pointer|
+|screen_tris_out_n1_z_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n1_z|       pointer|
+|screen_tris_out_n1_z_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n1_z|       pointer|
+|screen_tris_out_n2_x_din                  |  out|   32|     ap_fifo|       screen_tris_out_n2_x|       pointer|
+|screen_tris_out_n2_x_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n2_x|       pointer|
+|screen_tris_out_n2_x_write                |  out|    1|     ap_fifo|       screen_tris_out_n2_x|       pointer|
+|screen_tris_out_n2_x_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n2_x|       pointer|
+|screen_tris_out_n2_x_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n2_x|       pointer|
+|screen_tris_out_n2_y_din                  |  out|   32|     ap_fifo|       screen_tris_out_n2_y|       pointer|
+|screen_tris_out_n2_y_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n2_y|       pointer|
+|screen_tris_out_n2_y_write                |  out|    1|     ap_fifo|       screen_tris_out_n2_y|       pointer|
+|screen_tris_out_n2_y_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n2_y|       pointer|
+|screen_tris_out_n2_y_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n2_y|       pointer|
+|screen_tris_out_n2_z_din                  |  out|   32|     ap_fifo|       screen_tris_out_n2_z|       pointer|
+|screen_tris_out_n2_z_full_n               |   in|    1|     ap_fifo|       screen_tris_out_n2_z|       pointer|
+|screen_tris_out_n2_z_write                |  out|    1|     ap_fifo|       screen_tris_out_n2_z|       pointer|
+|screen_tris_out_n2_z_num_data_valid       |   in|   32|     ap_fifo|       screen_tris_out_n2_z|       pointer|
+|screen_tris_out_n2_z_fifo_cap             |   in|   32|     ap_fifo|       screen_tris_out_n2_z|       pointer|
+|screen_tris_out_color_din                 |  out|   32|     ap_fifo|      screen_tris_out_color|       pointer|
+|screen_tris_out_color_full_n              |   in|    1|     ap_fifo|      screen_tris_out_color|       pointer|
+|screen_tris_out_color_write               |  out|    1|     ap_fifo|      screen_tris_out_color|       pointer|
+|screen_tris_out_color_num_data_valid      |   in|   32|     ap_fifo|      screen_tris_out_color|       pointer|
+|screen_tris_out_color_fifo_cap            |   in|   32|     ap_fifo|      screen_tris_out_color|       pointer|
+|screen_tris_out_is_active_din             |  out|    1|     ap_fifo|  screen_tris_out_is_active|       pointer|
+|screen_tris_out_is_active_full_n          |   in|    1|     ap_fifo|  screen_tris_out_is_active|       pointer|
+|screen_tris_out_is_active_write           |  out|    1|     ap_fifo|  screen_tris_out_is_active|       pointer|
+|screen_tris_out_is_active_num_data_valid  |   in|   32|     ap_fifo|  screen_tris_out_is_active|       pointer|
+|screen_tris_out_is_active_fifo_cap        |   in|   32|     ap_fifo|  screen_tris_out_is_active|       pointer|
++------------------------------------------+-----+-----+------------+---------------------------+--------------+
 

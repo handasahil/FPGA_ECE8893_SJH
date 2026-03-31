@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'k3_bounding_box'" level="0">
-<item name = "Date">Mon Mar 30 23:31:07 2026
+<item name = "Date">Tue Mar 31 00:58:58 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.644 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.532 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">132, 132, 1.320 us, 1.320 us, 129, 129, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">130, 130, 1.300 us, 1.300 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_75_1">130, 130, 4, 1, 1, 128, yes</column>
+<column name="- VITIS_LOOP_85_1">128, 128, 2, 1, 1, 128, yes</column>
 </table>
 </item>
 </section>

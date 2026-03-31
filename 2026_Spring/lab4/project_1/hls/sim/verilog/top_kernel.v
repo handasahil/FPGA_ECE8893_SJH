@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=237,HLS_SYN_DSP=0,HLS_SYN_FF=16386,HLS_SYN_LUT=31881,HLS_VERSION=2025_1_1}" *)
+(* CORE_GENERATION_INFO="top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=155,HLS_SYN_DSP=0,HLS_SYN_FF=25921,HLS_SYN_LUT=29762,HLS_VERSION=2025_1_1}" *)
 
 module top_kernel (
         s_axi_control_AWVALID,
@@ -119,16 +119,51 @@ module top_kernel (
         m_axi_gmem1_BRESP,
         m_axi_gmem1_BID,
         m_axi_gmem1_BUSER,
-        mvp_matrix_address0,
-        mvp_matrix_ce0,
-        mvp_matrix_d0,
-        mvp_matrix_q0,
-        mvp_matrix_we0,
-        mvp_matrix_address1,
-        mvp_matrix_ce1,
-        mvp_matrix_d1,
-        mvp_matrix_q1,
-        mvp_matrix_we1
+        m_axi_gmem2_AWVALID,
+        m_axi_gmem2_AWREADY,
+        m_axi_gmem2_AWADDR,
+        m_axi_gmem2_AWID,
+        m_axi_gmem2_AWLEN,
+        m_axi_gmem2_AWSIZE,
+        m_axi_gmem2_AWBURST,
+        m_axi_gmem2_AWLOCK,
+        m_axi_gmem2_AWCACHE,
+        m_axi_gmem2_AWPROT,
+        m_axi_gmem2_AWQOS,
+        m_axi_gmem2_AWREGION,
+        m_axi_gmem2_AWUSER,
+        m_axi_gmem2_WVALID,
+        m_axi_gmem2_WREADY,
+        m_axi_gmem2_WDATA,
+        m_axi_gmem2_WSTRB,
+        m_axi_gmem2_WLAST,
+        m_axi_gmem2_WID,
+        m_axi_gmem2_WUSER,
+        m_axi_gmem2_ARVALID,
+        m_axi_gmem2_ARREADY,
+        m_axi_gmem2_ARADDR,
+        m_axi_gmem2_ARID,
+        m_axi_gmem2_ARLEN,
+        m_axi_gmem2_ARSIZE,
+        m_axi_gmem2_ARBURST,
+        m_axi_gmem2_ARLOCK,
+        m_axi_gmem2_ARCACHE,
+        m_axi_gmem2_ARPROT,
+        m_axi_gmem2_ARQOS,
+        m_axi_gmem2_ARREGION,
+        m_axi_gmem2_ARUSER,
+        m_axi_gmem2_RVALID,
+        m_axi_gmem2_RREADY,
+        m_axi_gmem2_RDATA,
+        m_axi_gmem2_RLAST,
+        m_axi_gmem2_RID,
+        m_axi_gmem2_RUSER,
+        m_axi_gmem2_RRESP,
+        m_axi_gmem2_BVALID,
+        m_axi_gmem2_BREADY,
+        m_axi_gmem2_BRESP,
+        m_axi_gmem2_BID,
+        m_axi_gmem2_BUSER
 );
 
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
@@ -157,12 +192,24 @@ parameter    C_M_AXI_GMEM1_BUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM1_USER_VALUE = 0;
 parameter    C_M_AXI_GMEM1_PROT_VALUE = 0;
 parameter    C_M_AXI_GMEM1_CACHE_VALUE = 3;
+parameter    C_M_AXI_GMEM2_ID_WIDTH = 1;
+parameter    C_M_AXI_GMEM2_ADDR_WIDTH = 64;
+parameter    C_M_AXI_GMEM2_DATA_WIDTH = 32;
+parameter    C_M_AXI_GMEM2_AWUSER_WIDTH = 1;
+parameter    C_M_AXI_GMEM2_ARUSER_WIDTH = 1;
+parameter    C_M_AXI_GMEM2_WUSER_WIDTH = 1;
+parameter    C_M_AXI_GMEM2_RUSER_WIDTH = 1;
+parameter    C_M_AXI_GMEM2_BUSER_WIDTH = 1;
+parameter    C_M_AXI_GMEM2_USER_VALUE = 0;
+parameter    C_M_AXI_GMEM2_PROT_VALUE = 0;
+parameter    C_M_AXI_GMEM2_CACHE_VALUE = 3;
 
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_GMEM0_WSTRB_WIDTH = (1024 / 8);
 parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_GMEM1_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_GMEM2_WSTRB_WIDTH = (32 / 8);
 
 input   s_axi_control_AWVALID;
 output   s_axi_control_AWREADY;
@@ -274,19 +321,55 @@ output   m_axi_gmem1_BREADY;
 input  [1:0] m_axi_gmem1_BRESP;
 input  [C_M_AXI_GMEM1_ID_WIDTH - 1:0] m_axi_gmem1_BID;
 input  [C_M_AXI_GMEM1_BUSER_WIDTH - 1:0] m_axi_gmem1_BUSER;
-output  [3:0] mvp_matrix_address0;
-output   mvp_matrix_ce0;
-output  [31:0] mvp_matrix_d0;
-input  [31:0] mvp_matrix_q0;
-output   mvp_matrix_we0;
-output  [3:0] mvp_matrix_address1;
-output   mvp_matrix_ce1;
-output  [31:0] mvp_matrix_d1;
-input  [31:0] mvp_matrix_q1;
-output   mvp_matrix_we1;
+output   m_axi_gmem2_AWVALID;
+input   m_axi_gmem2_AWREADY;
+output  [C_M_AXI_GMEM2_ADDR_WIDTH - 1:0] m_axi_gmem2_AWADDR;
+output  [C_M_AXI_GMEM2_ID_WIDTH - 1:0] m_axi_gmem2_AWID;
+output  [7:0] m_axi_gmem2_AWLEN;
+output  [2:0] m_axi_gmem2_AWSIZE;
+output  [1:0] m_axi_gmem2_AWBURST;
+output  [1:0] m_axi_gmem2_AWLOCK;
+output  [3:0] m_axi_gmem2_AWCACHE;
+output  [2:0] m_axi_gmem2_AWPROT;
+output  [3:0] m_axi_gmem2_AWQOS;
+output  [3:0] m_axi_gmem2_AWREGION;
+output  [C_M_AXI_GMEM2_AWUSER_WIDTH - 1:0] m_axi_gmem2_AWUSER;
+output   m_axi_gmem2_WVALID;
+input   m_axi_gmem2_WREADY;
+output  [C_M_AXI_GMEM2_DATA_WIDTH - 1:0] m_axi_gmem2_WDATA;
+output  [C_M_AXI_GMEM2_WSTRB_WIDTH - 1:0] m_axi_gmem2_WSTRB;
+output   m_axi_gmem2_WLAST;
+output  [C_M_AXI_GMEM2_ID_WIDTH - 1:0] m_axi_gmem2_WID;
+output  [C_M_AXI_GMEM2_WUSER_WIDTH - 1:0] m_axi_gmem2_WUSER;
+output   m_axi_gmem2_ARVALID;
+input   m_axi_gmem2_ARREADY;
+output  [C_M_AXI_GMEM2_ADDR_WIDTH - 1:0] m_axi_gmem2_ARADDR;
+output  [C_M_AXI_GMEM2_ID_WIDTH - 1:0] m_axi_gmem2_ARID;
+output  [7:0] m_axi_gmem2_ARLEN;
+output  [2:0] m_axi_gmem2_ARSIZE;
+output  [1:0] m_axi_gmem2_ARBURST;
+output  [1:0] m_axi_gmem2_ARLOCK;
+output  [3:0] m_axi_gmem2_ARCACHE;
+output  [2:0] m_axi_gmem2_ARPROT;
+output  [3:0] m_axi_gmem2_ARQOS;
+output  [3:0] m_axi_gmem2_ARREGION;
+output  [C_M_AXI_GMEM2_ARUSER_WIDTH - 1:0] m_axi_gmem2_ARUSER;
+input   m_axi_gmem2_RVALID;
+output   m_axi_gmem2_RREADY;
+input  [C_M_AXI_GMEM2_DATA_WIDTH - 1:0] m_axi_gmem2_RDATA;
+input   m_axi_gmem2_RLAST;
+input  [C_M_AXI_GMEM2_ID_WIDTH - 1:0] m_axi_gmem2_RID;
+input  [C_M_AXI_GMEM2_RUSER_WIDTH - 1:0] m_axi_gmem2_RUSER;
+input  [1:0] m_axi_gmem2_RRESP;
+input   m_axi_gmem2_BVALID;
+output   m_axi_gmem2_BREADY;
+input  [1:0] m_axi_gmem2_BRESP;
+input  [C_M_AXI_GMEM2_ID_WIDTH - 1:0] m_axi_gmem2_BID;
+input  [C_M_AXI_GMEM2_BUSER_WIDTH - 1:0] m_axi_gmem2_BUSER;
 
  reg    ap_rst_n_inv;
 wire   [63:0] in_tris;
+wire   [63:0] mvp_matrix;
 wire   [63:0] out_pixels;
 wire    ap_start;
 wire    ap_ready;
@@ -313,6 +396,17 @@ wire    gmem1_0_BVALID;
 wire   [1:0] gmem1_0_BRESP;
 wire   [0:0] gmem1_0_BID;
 wire   [0:0] gmem1_0_BUSER;
+wire    gmem2_0_AWREADY;
+wire    gmem2_0_WREADY;
+wire    gmem2_0_ARREADY;
+wire    gmem2_0_RVALID;
+wire   [31:0] gmem2_0_RDATA;
+wire    gmem2_0_RLAST;
+wire   [0:0] gmem2_0_RID;
+wire   [8:0] gmem2_0_RFIFONUM;
+wire   [0:0] gmem2_0_RUSER;
+wire   [1:0] gmem2_0_RRESP;
+wire    gmem2_0_BVALID;
 wire    entry_proc_U0_ap_start;
 wire    entry_proc_U0_ap_done;
 wire    entry_proc_U0_ap_continue;
@@ -325,6 +419,38 @@ wire    k1_vertex_transform_U0_ap_done;
 wire    k1_vertex_transform_U0_ap_continue;
 wire    k1_vertex_transform_U0_ap_idle;
 wire    k1_vertex_transform_U0_ap_ready;
+wire    k1_vertex_transform_U0_m_axi_gmem2_0_AWVALID;
+wire   [63:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWADDR;
+wire   [0:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWID;
+wire   [31:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWLEN;
+wire   [2:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWSIZE;
+wire   [1:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWBURST;
+wire   [1:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWLOCK;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWCACHE;
+wire   [2:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWPROT;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWQOS;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWREGION;
+wire   [0:0] k1_vertex_transform_U0_m_axi_gmem2_0_AWUSER;
+wire    k1_vertex_transform_U0_m_axi_gmem2_0_WVALID;
+wire   [31:0] k1_vertex_transform_U0_m_axi_gmem2_0_WDATA;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_WSTRB;
+wire    k1_vertex_transform_U0_m_axi_gmem2_0_WLAST;
+wire   [0:0] k1_vertex_transform_U0_m_axi_gmem2_0_WID;
+wire   [0:0] k1_vertex_transform_U0_m_axi_gmem2_0_WUSER;
+wire    k1_vertex_transform_U0_m_axi_gmem2_0_ARVALID;
+wire   [63:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARADDR;
+wire   [0:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARID;
+wire   [31:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARLEN;
+wire   [2:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARSIZE;
+wire   [1:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARBURST;
+wire   [1:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARLOCK;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARCACHE;
+wire   [2:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARPROT;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARQOS;
+wire   [3:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARREGION;
+wire   [0:0] k1_vertex_transform_U0_m_axi_gmem2_0_ARUSER;
+wire    k1_vertex_transform_U0_m_axi_gmem2_0_RREADY;
+wire    k1_vertex_transform_U0_m_axi_gmem2_0_BREADY;
 wire    k1_vertex_transform_U0_m_axi_gmem0_0_AWVALID;
 wire   [63:0] k1_vertex_transform_U0_m_axi_gmem0_0_AWADDR;
 wire   [0:0] k1_vertex_transform_U0_m_axi_gmem0_0_AWID;
@@ -357,296 +483,318 @@ wire   [3:0] k1_vertex_transform_U0_m_axi_gmem0_0_ARREGION;
 wire   [0:0] k1_vertex_transform_U0_m_axi_gmem0_0_ARUSER;
 wire    k1_vertex_transform_U0_m_axi_gmem0_0_RREADY;
 wire    k1_vertex_transform_U0_m_axi_gmem0_0_BREADY;
-wire   [3:0] k1_vertex_transform_U0_mvp_matrix_address0;
-wire    k1_vertex_transform_U0_mvp_matrix_ce0;
-wire   [3:0] k1_vertex_transform_U0_mvp_matrix_address1;
-wire    k1_vertex_transform_U0_mvp_matrix_ce1;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_is_active_address0;
-wire    k1_vertex_transform_U0_clip_tris_is_active_ce0;
-wire    k1_vertex_transform_U0_clip_tris_is_active_we0;
-wire   [0:0] k1_vertex_transform_U0_clip_tris_is_active_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n0_x_address0;
-wire    k1_vertex_transform_U0_clip_tris_n0_x_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n0_x_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n0_x_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n0_y_address0;
-wire    k1_vertex_transform_U0_clip_tris_n0_y_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n0_y_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n0_y_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n0_z_address0;
-wire    k1_vertex_transform_U0_clip_tris_n0_z_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n0_z_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n0_z_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n1_x_address0;
-wire    k1_vertex_transform_U0_clip_tris_n1_x_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n1_x_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n1_x_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n1_y_address0;
-wire    k1_vertex_transform_U0_clip_tris_n1_y_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n1_y_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n1_y_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n1_z_address0;
-wire    k1_vertex_transform_U0_clip_tris_n1_z_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n1_z_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n1_z_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n2_x_address0;
-wire    k1_vertex_transform_U0_clip_tris_n2_x_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n2_x_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n2_x_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n2_y_address0;
-wire    k1_vertex_transform_U0_clip_tris_n2_y_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n2_y_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n2_y_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_n2_z_address0;
-wire    k1_vertex_transform_U0_clip_tris_n2_z_ce0;
-wire    k1_vertex_transform_U0_clip_tris_n2_z_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_n2_z_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v0_w_address0;
-wire    k1_vertex_transform_U0_clip_tris_v0_w_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v0_w_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_w_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v0_w_address1;
-wire    k1_vertex_transform_U0_clip_tris_v0_w_ce1;
-wire    k1_vertex_transform_U0_clip_tris_v0_w_we1;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_w_d1;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v0_x_address0;
-wire    k1_vertex_transform_U0_clip_tris_v0_x_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v0_x_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_x_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v0_y_address0;
-wire    k1_vertex_transform_U0_clip_tris_v0_y_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v0_y_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_y_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v0_z_address0;
-wire    k1_vertex_transform_U0_clip_tris_v0_z_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v0_z_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_z_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v1_w_address0;
-wire    k1_vertex_transform_U0_clip_tris_v1_w_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v1_w_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_w_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v1_x_address0;
-wire    k1_vertex_transform_U0_clip_tris_v1_x_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v1_x_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_x_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v1_y_address0;
-wire    k1_vertex_transform_U0_clip_tris_v1_y_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v1_y_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_y_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v1_z_address0;
-wire    k1_vertex_transform_U0_clip_tris_v1_z_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v1_z_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_z_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v2_w_address0;
-wire    k1_vertex_transform_U0_clip_tris_v2_w_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v2_w_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_w_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v2_x_address0;
-wire    k1_vertex_transform_U0_clip_tris_v2_x_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v2_x_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_x_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v2_y_address0;
-wire    k1_vertex_transform_U0_clip_tris_v2_y_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v2_y_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_y_d0;
-wire   [6:0] k1_vertex_transform_U0_clip_tris_v2_z_address0;
-wire    k1_vertex_transform_U0_clip_tris_v2_z_ce0;
-wire    k1_vertex_transform_U0_clip_tris_v2_z_we0;
-wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_z_d0;
-wire    ap_channel_done_clip_tris_v2_z;
-wire    k1_vertex_transform_U0_clip_tris_v2_z_full_n;
-reg    ap_sync_reg_channel_write_clip_tris_v2_z;
-wire    ap_sync_channel_write_clip_tris_v2_z;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_x_din;
+wire    k1_vertex_transform_U0_clip_tris_v0_x_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_y_din;
+wire    k1_vertex_transform_U0_clip_tris_v0_y_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_z_din;
+wire    k1_vertex_transform_U0_clip_tris_v0_z_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v0_w_din;
+wire    k1_vertex_transform_U0_clip_tris_v0_w_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_x_din;
+wire    k1_vertex_transform_U0_clip_tris_v1_x_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_y_din;
+wire    k1_vertex_transform_U0_clip_tris_v1_y_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_z_din;
+wire    k1_vertex_transform_U0_clip_tris_v1_z_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v1_w_din;
+wire    k1_vertex_transform_U0_clip_tris_v1_w_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_x_din;
+wire    k1_vertex_transform_U0_clip_tris_v2_x_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_y_din;
+wire    k1_vertex_transform_U0_clip_tris_v2_y_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_z_din;
+wire    k1_vertex_transform_U0_clip_tris_v2_z_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_v2_w_din;
+wire    k1_vertex_transform_U0_clip_tris_v2_w_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n0_x_din;
+wire    k1_vertex_transform_U0_clip_tris_n0_x_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n0_y_din;
+wire    k1_vertex_transform_U0_clip_tris_n0_y_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n0_z_din;
+wire    k1_vertex_transform_U0_clip_tris_n0_z_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n1_x_din;
+wire    k1_vertex_transform_U0_clip_tris_n1_x_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n1_y_din;
+wire    k1_vertex_transform_U0_clip_tris_n1_y_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n1_z_din;
+wire    k1_vertex_transform_U0_clip_tris_n1_z_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n2_x_din;
+wire    k1_vertex_transform_U0_clip_tris_n2_x_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n2_y_din;
+wire    k1_vertex_transform_U0_clip_tris_n2_y_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_n2_z_din;
+wire    k1_vertex_transform_U0_clip_tris_n2_z_write;
+wire   [31:0] k1_vertex_transform_U0_clip_tris_color_din;
+wire    k1_vertex_transform_U0_clip_tris_color_write;
+wire   [0:0] k1_vertex_transform_U0_clip_tris_is_active_din;
+wire    k1_vertex_transform_U0_clip_tris_is_active_write;
+wire    k1_vertex_transform_U0_start_out;
+wire    k1_vertex_transform_U0_start_write;
 wire    k2_perspective_divide_U0_ap_start;
 wire    k2_perspective_divide_U0_ap_done;
 wire    k2_perspective_divide_U0_ap_continue;
 wire    k2_perspective_divide_U0_ap_idle;
 wire    k2_perspective_divide_U0_ap_ready;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v0_x_address0;
-wire    k2_perspective_divide_U0_clip_tris_v0_x_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v0_y_address0;
-wire    k2_perspective_divide_U0_clip_tris_v0_y_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v0_z_address0;
-wire    k2_perspective_divide_U0_clip_tris_v0_z_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v0_w_address0;
-wire    k2_perspective_divide_U0_clip_tris_v0_w_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v1_x_address0;
-wire    k2_perspective_divide_U0_clip_tris_v1_x_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v1_y_address0;
-wire    k2_perspective_divide_U0_clip_tris_v1_y_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v1_z_address0;
-wire    k2_perspective_divide_U0_clip_tris_v1_z_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v1_w_address0;
-wire    k2_perspective_divide_U0_clip_tris_v1_w_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v2_x_address0;
-wire    k2_perspective_divide_U0_clip_tris_v2_x_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v2_y_address0;
-wire    k2_perspective_divide_U0_clip_tris_v2_y_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v2_z_address0;
-wire    k2_perspective_divide_U0_clip_tris_v2_z_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_v2_w_address0;
-wire    k2_perspective_divide_U0_clip_tris_v2_w_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n0_x_address0;
-wire    k2_perspective_divide_U0_clip_tris_n0_x_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n0_y_address0;
-wire    k2_perspective_divide_U0_clip_tris_n0_y_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n0_z_address0;
-wire    k2_perspective_divide_U0_clip_tris_n0_z_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n1_x_address0;
-wire    k2_perspective_divide_U0_clip_tris_n1_x_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n1_y_address0;
-wire    k2_perspective_divide_U0_clip_tris_n1_y_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n1_z_address0;
-wire    k2_perspective_divide_U0_clip_tris_n1_z_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n2_x_address0;
-wire    k2_perspective_divide_U0_clip_tris_n2_x_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n2_y_address0;
-wire    k2_perspective_divide_U0_clip_tris_n2_y_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_n2_z_address0;
-wire    k2_perspective_divide_U0_clip_tris_n2_z_ce0;
-wire   [6:0] k2_perspective_divide_U0_clip_tris_is_active_address0;
-wire    k2_perspective_divide_U0_clip_tris_is_active_ce0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v0_x_address0;
-wire    k2_perspective_divide_U0_screen_tris_v0_x_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v0_x_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v0_x_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v0_y_address0;
-wire    k2_perspective_divide_U0_screen_tris_v0_y_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v0_y_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v0_y_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v0_z_address0;
-wire    k2_perspective_divide_U0_screen_tris_v0_z_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v0_z_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v0_z_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v1_x_address0;
-wire    k2_perspective_divide_U0_screen_tris_v1_x_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v1_x_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v1_x_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v1_y_address0;
-wire    k2_perspective_divide_U0_screen_tris_v1_y_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v1_y_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v1_y_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v1_z_address0;
-wire    k2_perspective_divide_U0_screen_tris_v1_z_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v1_z_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v1_z_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v2_x_address0;
-wire    k2_perspective_divide_U0_screen_tris_v2_x_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v2_x_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v2_x_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v2_y_address0;
-wire    k2_perspective_divide_U0_screen_tris_v2_y_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v2_y_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v2_y_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_v2_z_address0;
-wire    k2_perspective_divide_U0_screen_tris_v2_z_ce0;
-wire    k2_perspective_divide_U0_screen_tris_v2_z_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_v2_z_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n0_x_address0;
-wire    k2_perspective_divide_U0_screen_tris_n0_x_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n0_x_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n0_x_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n0_y_address0;
-wire    k2_perspective_divide_U0_screen_tris_n0_y_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n0_y_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n0_y_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n0_z_address0;
-wire    k2_perspective_divide_U0_screen_tris_n0_z_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n0_z_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n0_z_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n1_x_address0;
-wire    k2_perspective_divide_U0_screen_tris_n1_x_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n1_x_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n1_x_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n1_y_address0;
-wire    k2_perspective_divide_U0_screen_tris_n1_y_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n1_y_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n1_y_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n1_z_address0;
-wire    k2_perspective_divide_U0_screen_tris_n1_z_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n1_z_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n1_z_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n2_x_address0;
-wire    k2_perspective_divide_U0_screen_tris_n2_x_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n2_x_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n2_x_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n2_y_address0;
-wire    k2_perspective_divide_U0_screen_tris_n2_y_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n2_y_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n2_y_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_n2_z_address0;
-wire    k2_perspective_divide_U0_screen_tris_n2_z_ce0;
-wire    k2_perspective_divide_U0_screen_tris_n2_z_we0;
-wire   [31:0] k2_perspective_divide_U0_screen_tris_n2_z_d0;
-wire   [6:0] k2_perspective_divide_U0_screen_tris_is_active_address0;
-wire    k2_perspective_divide_U0_screen_tris_is_active_ce0;
-wire    k2_perspective_divide_U0_screen_tris_is_active_we0;
-wire   [0:0] k2_perspective_divide_U0_screen_tris_is_active_d0;
-wire    ap_channel_done_screen_tris_is_active;
-wire    k2_perspective_divide_U0_screen_tris_is_active_full_n;
-reg    ap_sync_reg_channel_write_screen_tris_is_active;
-wire    ap_sync_channel_write_screen_tris_is_active;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_start;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_idle;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready;
-wire   [11:0] Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_ce0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_we0;
-wire   [31:0] Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_d0;
-wire   [11:0] Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_ce0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_we0;
-wire   [31:0] Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_d0;
-wire   [11:0] Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_ce0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_we0;
-wire   [31:0] Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_d0;
-wire   [11:0] Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_ce0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_we0;
-wire   [31:0] Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_d0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_ce0;
-wire   [6:0] Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_address0;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_ce0;
+wire    k2_perspective_divide_U0_start_out;
+wire    k2_perspective_divide_U0_start_write;
+wire    k2_perspective_divide_U0_clip_tris_v0_x_read;
+wire    k2_perspective_divide_U0_clip_tris_v0_y_read;
+wire    k2_perspective_divide_U0_clip_tris_v0_z_read;
+wire    k2_perspective_divide_U0_clip_tris_v0_w_read;
+wire    k2_perspective_divide_U0_clip_tris_v1_x_read;
+wire    k2_perspective_divide_U0_clip_tris_v1_y_read;
+wire    k2_perspective_divide_U0_clip_tris_v1_z_read;
+wire    k2_perspective_divide_U0_clip_tris_v1_w_read;
+wire    k2_perspective_divide_U0_clip_tris_v2_x_read;
+wire    k2_perspective_divide_U0_clip_tris_v2_y_read;
+wire    k2_perspective_divide_U0_clip_tris_v2_z_read;
+wire    k2_perspective_divide_U0_clip_tris_v2_w_read;
+wire    k2_perspective_divide_U0_clip_tris_n0_x_read;
+wire    k2_perspective_divide_U0_clip_tris_n0_y_read;
+wire    k2_perspective_divide_U0_clip_tris_n0_z_read;
+wire    k2_perspective_divide_U0_clip_tris_n1_x_read;
+wire    k2_perspective_divide_U0_clip_tris_n1_y_read;
+wire    k2_perspective_divide_U0_clip_tris_n1_z_read;
+wire    k2_perspective_divide_U0_clip_tris_n2_x_read;
+wire    k2_perspective_divide_U0_clip_tris_n2_y_read;
+wire    k2_perspective_divide_U0_clip_tris_n2_z_read;
+wire    k2_perspective_divide_U0_clip_tris_color_read;
+wire    k2_perspective_divide_U0_clip_tris_is_active_read;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_x_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v0_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_y_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v0_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_z_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v0_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_w_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v0_w_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_x_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v1_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_y_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v1_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_z_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v1_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_w_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v1_w_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_x_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v2_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_y_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v2_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_z_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v2_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_w_din;
+wire    k2_perspective_divide_U0_screen_tris_in_v2_w_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_x_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n0_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_y_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n0_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_z_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n0_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_x_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n1_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_y_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n1_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_z_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n1_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_x_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n2_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_y_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n2_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_z_din;
+wire    k2_perspective_divide_U0_screen_tris_in_n2_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_color_din;
+wire    k2_perspective_divide_U0_screen_tris_in_color_write;
+wire   [0:0] k2_perspective_divide_U0_screen_tris_in_is_active_din;
+wire    k2_perspective_divide_U0_screen_tris_in_is_active_write;
+wire    k3_bounding_box_U0_ap_start;
+wire    k3_bounding_box_U0_ap_done;
+wire    k3_bounding_box_U0_ap_continue;
+wire    k3_bounding_box_U0_ap_idle;
+wire    k3_bounding_box_U0_ap_ready;
+wire    k3_bounding_box_U0_screen_tris_in_v0_x_read;
+wire    k3_bounding_box_U0_screen_tris_in_v0_y_read;
+wire    k3_bounding_box_U0_screen_tris_in_v0_z_read;
+wire    k3_bounding_box_U0_screen_tris_in_v0_w_read;
+wire    k3_bounding_box_U0_screen_tris_in_v1_x_read;
+wire    k3_bounding_box_U0_screen_tris_in_v1_y_read;
+wire    k3_bounding_box_U0_screen_tris_in_v1_z_read;
+wire    k3_bounding_box_U0_screen_tris_in_v1_w_read;
+wire    k3_bounding_box_U0_screen_tris_in_v2_x_read;
+wire    k3_bounding_box_U0_screen_tris_in_v2_y_read;
+wire    k3_bounding_box_U0_screen_tris_in_v2_z_read;
+wire    k3_bounding_box_U0_screen_tris_in_v2_w_read;
+wire    k3_bounding_box_U0_screen_tris_in_n0_x_read;
+wire    k3_bounding_box_U0_screen_tris_in_n0_y_read;
+wire    k3_bounding_box_U0_screen_tris_in_n0_z_read;
+wire    k3_bounding_box_U0_screen_tris_in_n1_x_read;
+wire    k3_bounding_box_U0_screen_tris_in_n1_y_read;
+wire    k3_bounding_box_U0_screen_tris_in_n1_z_read;
+wire    k3_bounding_box_U0_screen_tris_in_n2_x_read;
+wire    k3_bounding_box_U0_screen_tris_in_n2_y_read;
+wire    k3_bounding_box_U0_screen_tris_in_n2_z_read;
+wire    k3_bounding_box_U0_screen_tris_in_color_read;
+wire    k3_bounding_box_U0_screen_tris_in_is_active_read;
+wire   [31:0] k3_bounding_box_U0_bounds_min_x_din;
+wire    k3_bounding_box_U0_bounds_min_x_write;
+wire   [31:0] k3_bounding_box_U0_bounds_min_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_bounds_min_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_bounds_min_y_din;
+wire    k3_bounding_box_U0_bounds_min_y_write;
+wire   [31:0] k3_bounding_box_U0_bounds_min_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_bounds_min_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_bounds_max_x_din;
+wire    k3_bounding_box_U0_bounds_max_x_write;
+wire   [31:0] k3_bounding_box_U0_bounds_max_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_bounds_max_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_bounds_max_y_din;
+wire    k3_bounding_box_U0_bounds_max_y_write;
+wire   [31:0] k3_bounding_box_U0_bounds_max_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_bounds_max_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_x_din;
+wire    k3_bounding_box_U0_screen_tris_out_v0_x_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_y_din;
+wire    k3_bounding_box_U0_screen_tris_out_v0_y_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_z_din;
+wire    k3_bounding_box_U0_screen_tris_out_v0_z_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_z_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_z_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_w_din;
+wire    k3_bounding_box_U0_screen_tris_out_v0_w_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_w_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v0_w_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_x_din;
+wire    k3_bounding_box_U0_screen_tris_out_v1_x_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_y_din;
+wire    k3_bounding_box_U0_screen_tris_out_v1_y_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_z_din;
+wire    k3_bounding_box_U0_screen_tris_out_v1_z_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_z_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_z_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_w_din;
+wire    k3_bounding_box_U0_screen_tris_out_v1_w_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_w_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v1_w_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_x_din;
+wire    k3_bounding_box_U0_screen_tris_out_v2_x_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_y_din;
+wire    k3_bounding_box_U0_screen_tris_out_v2_y_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_z_din;
+wire    k3_bounding_box_U0_screen_tris_out_v2_z_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_z_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_z_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_w_din;
+wire    k3_bounding_box_U0_screen_tris_out_v2_w_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_w_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_v2_w_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_x_din;
+wire    k3_bounding_box_U0_screen_tris_out_n0_x_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_y_din;
+wire    k3_bounding_box_U0_screen_tris_out_n0_y_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_z_din;
+wire    k3_bounding_box_U0_screen_tris_out_n0_z_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_z_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n0_z_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_x_din;
+wire    k3_bounding_box_U0_screen_tris_out_n1_x_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_y_din;
+wire    k3_bounding_box_U0_screen_tris_out_n1_y_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_z_din;
+wire    k3_bounding_box_U0_screen_tris_out_n1_z_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_z_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n1_z_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_x_din;
+wire    k3_bounding_box_U0_screen_tris_out_n2_x_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_x_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_x_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_y_din;
+wire    k3_bounding_box_U0_screen_tris_out_n2_y_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_y_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_y_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_z_din;
+wire    k3_bounding_box_U0_screen_tris_out_n2_z_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_z_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_n2_z_fifo_cap;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_color_din;
+wire    k3_bounding_box_U0_screen_tris_out_color_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_color_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_color_fifo_cap;
+wire   [0:0] k3_bounding_box_U0_screen_tris_out_is_active_din;
+wire    k3_bounding_box_U0_screen_tris_out_is_active_write;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_is_active_num_data_valid;
+wire   [31:0] k3_bounding_box_U0_screen_tris_out_is_active_fifo_cap;
+wire    k3_bounding_box_U0_start_out;
+wire    k3_bounding_box_U0_start_write;
+wire    k4_rasterize_U0_ap_start;
+wire    k4_rasterize_U0_ap_done;
+wire    k4_rasterize_U0_ap_continue;
+wire    k4_rasterize_U0_ap_idle;
+wire    k4_rasterize_U0_ap_ready;
+wire   [11:0] k4_rasterize_U0_depth_buffer_address0;
+wire    k4_rasterize_U0_depth_buffer_ce0;
+wire    k4_rasterize_U0_depth_buffer_we0;
+wire   [31:0] k4_rasterize_U0_depth_buffer_d0;
+wire   [11:0] k4_rasterize_U0_normal_buffer_x_address0;
+wire    k4_rasterize_U0_normal_buffer_x_ce0;
+wire    k4_rasterize_U0_normal_buffer_x_we0;
+wire   [31:0] k4_rasterize_U0_normal_buffer_x_d0;
+wire   [11:0] k4_rasterize_U0_normal_buffer_y_address0;
+wire    k4_rasterize_U0_normal_buffer_y_ce0;
+wire    k4_rasterize_U0_normal_buffer_y_we0;
+wire   [31:0] k4_rasterize_U0_normal_buffer_y_d0;
+wire   [11:0] k4_rasterize_U0_normal_buffer_z_address0;
+wire    k4_rasterize_U0_normal_buffer_z_ce0;
+wire    k4_rasterize_U0_normal_buffer_z_we0;
+wire   [31:0] k4_rasterize_U0_normal_buffer_z_d0;
+wire    k4_rasterize_U0_screen_tris_out_v0_x_read;
+wire    k4_rasterize_U0_screen_tris_out_v0_y_read;
+wire    k4_rasterize_U0_screen_tris_out_v0_z_read;
+wire    k4_rasterize_U0_screen_tris_out_v0_w_read;
+wire    k4_rasterize_U0_screen_tris_out_v1_x_read;
+wire    k4_rasterize_U0_screen_tris_out_v1_y_read;
+wire    k4_rasterize_U0_screen_tris_out_v1_z_read;
+wire    k4_rasterize_U0_screen_tris_out_v1_w_read;
+wire    k4_rasterize_U0_screen_tris_out_v2_x_read;
+wire    k4_rasterize_U0_screen_tris_out_v2_y_read;
+wire    k4_rasterize_U0_screen_tris_out_v2_z_read;
+wire    k4_rasterize_U0_screen_tris_out_v2_w_read;
+wire    k4_rasterize_U0_screen_tris_out_n0_x_read;
+wire    k4_rasterize_U0_screen_tris_out_n0_y_read;
+wire    k4_rasterize_U0_screen_tris_out_n0_z_read;
+wire    k4_rasterize_U0_screen_tris_out_n1_x_read;
+wire    k4_rasterize_U0_screen_tris_out_n1_y_read;
+wire    k4_rasterize_U0_screen_tris_out_n1_z_read;
+wire    k4_rasterize_U0_screen_tris_out_n2_x_read;
+wire    k4_rasterize_U0_screen_tris_out_n2_y_read;
+wire    k4_rasterize_U0_screen_tris_out_n2_z_read;
+wire    k4_rasterize_U0_screen_tris_out_color_read;
+wire    k4_rasterize_U0_screen_tris_out_is_active_read;
+wire    k4_rasterize_U0_bounds_min_x_read;
+wire    k4_rasterize_U0_bounds_min_y_read;
+wire    k4_rasterize_U0_bounds_max_x_read;
+wire    k4_rasterize_U0_bounds_max_y_read;
 wire    ap_channel_done_normal_buffer_z;
-wire    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_full_n;
+wire    k4_rasterize_U0_normal_buffer_z_full_n;
 reg    ap_sync_reg_channel_write_normal_buffer_z;
 wire    ap_sync_channel_write_normal_buffer_z;
 wire    k5_deferred_lighting_U0_ap_start;
@@ -654,6 +802,7 @@ wire    k5_deferred_lighting_U0_ap_done;
 wire    k5_deferred_lighting_U0_ap_continue;
 wire    k5_deferred_lighting_U0_ap_idle;
 wire    k5_deferred_lighting_U0_ap_ready;
+wire    k5_deferred_lighting_U0_framebuffer_read;
 wire    k5_deferred_lighting_U0_m_axi_gmem1_0_AWVALID;
 wire   [63:0] k5_deferred_lighting_U0_m_axi_gmem1_0_AWADDR;
 wire   [0:0] k5_deferred_lighting_U0_m_axi_gmem1_0_AWID;
@@ -686,7 +835,6 @@ wire   [3:0] k5_deferred_lighting_U0_m_axi_gmem1_0_ARREGION;
 wire   [0:0] k5_deferred_lighting_U0_m_axi_gmem1_0_ARUSER;
 wire    k5_deferred_lighting_U0_m_axi_gmem1_0_RREADY;
 wire    k5_deferred_lighting_U0_m_axi_gmem1_0_BREADY;
-wire    k5_deferred_lighting_U0_framebuffer_read;
 wire   [11:0] k5_deferred_lighting_U0_depth_buffer_address0;
 wire    k5_deferred_lighting_U0_depth_buffer_ce0;
 wire   [11:0] k5_deferred_lighting_U0_normal_buffer_x_address0;
@@ -695,170 +843,6 @@ wire   [11:0] k5_deferred_lighting_U0_normal_buffer_y_address0;
 wire    k5_deferred_lighting_U0_normal_buffer_y_ce0;
 wire   [11:0] k5_deferred_lighting_U0_normal_buffer_z_address0;
 wire    k5_deferred_lighting_U0_normal_buffer_z_ce0;
-wire   [0:0] clip_tris_is_active_i_q0;
-wire   [0:0] clip_tris_is_active_t_q0;
-wire    clip_tris_is_active_i_full_n;
-wire    clip_tris_is_active_t_empty_n;
-wire   [31:0] clip_tris_n0_x_i_q0;
-wire   [31:0] clip_tris_n0_x_t_q0;
-wire    clip_tris_n0_x_i_full_n;
-wire    clip_tris_n0_x_t_empty_n;
-wire   [31:0] clip_tris_n0_y_i_q0;
-wire   [31:0] clip_tris_n0_y_t_q0;
-wire    clip_tris_n0_y_i_full_n;
-wire    clip_tris_n0_y_t_empty_n;
-wire   [31:0] clip_tris_n0_z_i_q0;
-wire   [31:0] clip_tris_n0_z_t_q0;
-wire    clip_tris_n0_z_i_full_n;
-wire    clip_tris_n0_z_t_empty_n;
-wire   [31:0] clip_tris_n1_x_i_q0;
-wire   [31:0] clip_tris_n1_x_t_q0;
-wire    clip_tris_n1_x_i_full_n;
-wire    clip_tris_n1_x_t_empty_n;
-wire   [31:0] clip_tris_n1_y_i_q0;
-wire   [31:0] clip_tris_n1_y_t_q0;
-wire    clip_tris_n1_y_i_full_n;
-wire    clip_tris_n1_y_t_empty_n;
-wire   [31:0] clip_tris_n1_z_i_q0;
-wire   [31:0] clip_tris_n1_z_t_q0;
-wire    clip_tris_n1_z_i_full_n;
-wire    clip_tris_n1_z_t_empty_n;
-wire   [31:0] clip_tris_n2_x_i_q0;
-wire   [31:0] clip_tris_n2_x_t_q0;
-wire    clip_tris_n2_x_i_full_n;
-wire    clip_tris_n2_x_t_empty_n;
-wire   [31:0] clip_tris_n2_y_i_q0;
-wire   [31:0] clip_tris_n2_y_t_q0;
-wire    clip_tris_n2_y_i_full_n;
-wire    clip_tris_n2_y_t_empty_n;
-wire   [31:0] clip_tris_n2_z_i_q0;
-wire   [31:0] clip_tris_n2_z_t_q0;
-wire    clip_tris_n2_z_i_full_n;
-wire    clip_tris_n2_z_t_empty_n;
-wire   [31:0] clip_tris_v0_w_i_q0;
-wire   [31:0] clip_tris_v0_w_t_q0;
-wire    clip_tris_v0_w_i_full_n;
-wire    clip_tris_v0_w_t_empty_n;
-wire   [31:0] clip_tris_v0_x_i_q0;
-wire   [31:0] clip_tris_v0_x_t_q0;
-wire    clip_tris_v0_x_i_full_n;
-wire    clip_tris_v0_x_t_empty_n;
-wire   [31:0] clip_tris_v0_y_i_q0;
-wire   [31:0] clip_tris_v0_y_t_q0;
-wire    clip_tris_v0_y_i_full_n;
-wire    clip_tris_v0_y_t_empty_n;
-wire   [31:0] clip_tris_v0_z_i_q0;
-wire   [31:0] clip_tris_v0_z_t_q0;
-wire    clip_tris_v0_z_i_full_n;
-wire    clip_tris_v0_z_t_empty_n;
-wire   [31:0] clip_tris_v1_w_i_q0;
-wire   [31:0] clip_tris_v1_w_t_q0;
-wire    clip_tris_v1_w_i_full_n;
-wire    clip_tris_v1_w_t_empty_n;
-wire   [31:0] clip_tris_v1_x_i_q0;
-wire   [31:0] clip_tris_v1_x_t_q0;
-wire    clip_tris_v1_x_i_full_n;
-wire    clip_tris_v1_x_t_empty_n;
-wire   [31:0] clip_tris_v1_y_i_q0;
-wire   [31:0] clip_tris_v1_y_t_q0;
-wire    clip_tris_v1_y_i_full_n;
-wire    clip_tris_v1_y_t_empty_n;
-wire   [31:0] clip_tris_v1_z_i_q0;
-wire   [31:0] clip_tris_v1_z_t_q0;
-wire    clip_tris_v1_z_i_full_n;
-wire    clip_tris_v1_z_t_empty_n;
-wire   [31:0] clip_tris_v2_w_i_q0;
-wire   [31:0] clip_tris_v2_w_t_q0;
-wire    clip_tris_v2_w_i_full_n;
-wire    clip_tris_v2_w_t_empty_n;
-wire   [31:0] clip_tris_v2_x_i_q0;
-wire   [31:0] clip_tris_v2_x_t_q0;
-wire    clip_tris_v2_x_i_full_n;
-wire    clip_tris_v2_x_t_empty_n;
-wire   [31:0] clip_tris_v2_y_i_q0;
-wire   [31:0] clip_tris_v2_y_t_q0;
-wire    clip_tris_v2_y_i_full_n;
-wire    clip_tris_v2_y_t_empty_n;
-wire   [31:0] clip_tris_v2_z_i_q0;
-wire   [31:0] clip_tris_v2_z_t_q0;
-wire    clip_tris_v2_z_i_full_n;
-wire    clip_tris_v2_z_t_empty_n;
-wire   [31:0] screen_tris_v0_x_i_q0;
-wire   [31:0] screen_tris_v0_x_t_q0;
-wire    screen_tris_v0_x_i_full_n;
-wire    screen_tris_v0_x_t_empty_n;
-wire   [31:0] screen_tris_v0_y_i_q0;
-wire   [31:0] screen_tris_v0_y_t_q0;
-wire    screen_tris_v0_y_i_full_n;
-wire    screen_tris_v0_y_t_empty_n;
-wire   [31:0] screen_tris_v0_z_i_q0;
-wire   [31:0] screen_tris_v0_z_t_q0;
-wire    screen_tris_v0_z_i_full_n;
-wire    screen_tris_v0_z_t_empty_n;
-wire   [31:0] screen_tris_v1_x_i_q0;
-wire   [31:0] screen_tris_v1_x_t_q0;
-wire    screen_tris_v1_x_i_full_n;
-wire    screen_tris_v1_x_t_empty_n;
-wire   [31:0] screen_tris_v1_y_i_q0;
-wire   [31:0] screen_tris_v1_y_t_q0;
-wire    screen_tris_v1_y_i_full_n;
-wire    screen_tris_v1_y_t_empty_n;
-wire   [31:0] screen_tris_v1_z_i_q0;
-wire   [31:0] screen_tris_v1_z_t_q0;
-wire    screen_tris_v1_z_i_full_n;
-wire    screen_tris_v1_z_t_empty_n;
-wire   [31:0] screen_tris_v2_x_i_q0;
-wire   [31:0] screen_tris_v2_x_t_q0;
-wire    screen_tris_v2_x_i_full_n;
-wire    screen_tris_v2_x_t_empty_n;
-wire   [31:0] screen_tris_v2_y_i_q0;
-wire   [31:0] screen_tris_v2_y_t_q0;
-wire    screen_tris_v2_y_i_full_n;
-wire    screen_tris_v2_y_t_empty_n;
-wire   [31:0] screen_tris_v2_z_i_q0;
-wire   [31:0] screen_tris_v2_z_t_q0;
-wire    screen_tris_v2_z_i_full_n;
-wire    screen_tris_v2_z_t_empty_n;
-wire   [31:0] screen_tris_n0_x_i_q0;
-wire   [31:0] screen_tris_n0_x_t_q0;
-wire    screen_tris_n0_x_i_full_n;
-wire    screen_tris_n0_x_t_empty_n;
-wire   [31:0] screen_tris_n0_y_i_q0;
-wire   [31:0] screen_tris_n0_y_t_q0;
-wire    screen_tris_n0_y_i_full_n;
-wire    screen_tris_n0_y_t_empty_n;
-wire   [31:0] screen_tris_n0_z_i_q0;
-wire   [31:0] screen_tris_n0_z_t_q0;
-wire    screen_tris_n0_z_i_full_n;
-wire    screen_tris_n0_z_t_empty_n;
-wire   [31:0] screen_tris_n1_x_i_q0;
-wire   [31:0] screen_tris_n1_x_t_q0;
-wire    screen_tris_n1_x_i_full_n;
-wire    screen_tris_n1_x_t_empty_n;
-wire   [31:0] screen_tris_n1_y_i_q0;
-wire   [31:0] screen_tris_n1_y_t_q0;
-wire    screen_tris_n1_y_i_full_n;
-wire    screen_tris_n1_y_t_empty_n;
-wire   [31:0] screen_tris_n1_z_i_q0;
-wire   [31:0] screen_tris_n1_z_t_q0;
-wire    screen_tris_n1_z_i_full_n;
-wire    screen_tris_n1_z_t_empty_n;
-wire   [31:0] screen_tris_n2_x_i_q0;
-wire   [31:0] screen_tris_n2_x_t_q0;
-wire    screen_tris_n2_x_i_full_n;
-wire    screen_tris_n2_x_t_empty_n;
-wire   [31:0] screen_tris_n2_y_i_q0;
-wire   [31:0] screen_tris_n2_y_t_q0;
-wire    screen_tris_n2_y_i_full_n;
-wire    screen_tris_n2_y_t_empty_n;
-wire   [31:0] screen_tris_n2_z_i_q0;
-wire   [31:0] screen_tris_n2_z_t_q0;
-wire    screen_tris_n2_z_i_full_n;
-wire    screen_tris_n2_z_t_empty_n;
-wire   [0:0] screen_tris_is_active_i_q0;
-wire   [0:0] screen_tris_is_active_t_q0;
-wire    screen_tris_is_active_i_full_n;
-wire    screen_tris_is_active_t_empty_n;
 wire   [31:0] depth_buffer_i_q0;
 wire   [31:0] depth_buffer_t_q0;
 wire    depth_buffer_i_full_n;
@@ -880,17 +864,392 @@ wire   [63:0] out_pixels_c_dout;
 wire    out_pixels_c_empty_n;
 wire   [3:0] out_pixels_c_num_data_valid;
 wire   [3:0] out_pixels_c_fifo_cap;
+wire    clip_tris_v0_x_full_n;
+wire   [31:0] clip_tris_v0_x_dout;
+wire    clip_tris_v0_x_empty_n;
+wire   [2:0] clip_tris_v0_x_num_data_valid;
+wire   [2:0] clip_tris_v0_x_fifo_cap;
+wire    clip_tris_v0_y_full_n;
+wire   [31:0] clip_tris_v0_y_dout;
+wire    clip_tris_v0_y_empty_n;
+wire   [2:0] clip_tris_v0_y_num_data_valid;
+wire   [2:0] clip_tris_v0_y_fifo_cap;
+wire    clip_tris_v0_z_full_n;
+wire   [31:0] clip_tris_v0_z_dout;
+wire    clip_tris_v0_z_empty_n;
+wire   [2:0] clip_tris_v0_z_num_data_valid;
+wire   [2:0] clip_tris_v0_z_fifo_cap;
+wire    clip_tris_v0_w_full_n;
+wire   [31:0] clip_tris_v0_w_dout;
+wire    clip_tris_v0_w_empty_n;
+wire   [2:0] clip_tris_v0_w_num_data_valid;
+wire   [2:0] clip_tris_v0_w_fifo_cap;
+wire    clip_tris_v1_x_full_n;
+wire   [31:0] clip_tris_v1_x_dout;
+wire    clip_tris_v1_x_empty_n;
+wire   [2:0] clip_tris_v1_x_num_data_valid;
+wire   [2:0] clip_tris_v1_x_fifo_cap;
+wire    clip_tris_v1_y_full_n;
+wire   [31:0] clip_tris_v1_y_dout;
+wire    clip_tris_v1_y_empty_n;
+wire   [2:0] clip_tris_v1_y_num_data_valid;
+wire   [2:0] clip_tris_v1_y_fifo_cap;
+wire    clip_tris_v1_z_full_n;
+wire   [31:0] clip_tris_v1_z_dout;
+wire    clip_tris_v1_z_empty_n;
+wire   [2:0] clip_tris_v1_z_num_data_valid;
+wire   [2:0] clip_tris_v1_z_fifo_cap;
+wire    clip_tris_v1_w_full_n;
+wire   [31:0] clip_tris_v1_w_dout;
+wire    clip_tris_v1_w_empty_n;
+wire   [2:0] clip_tris_v1_w_num_data_valid;
+wire   [2:0] clip_tris_v1_w_fifo_cap;
+wire    clip_tris_v2_x_full_n;
+wire   [31:0] clip_tris_v2_x_dout;
+wire    clip_tris_v2_x_empty_n;
+wire   [2:0] clip_tris_v2_x_num_data_valid;
+wire   [2:0] clip_tris_v2_x_fifo_cap;
+wire    clip_tris_v2_y_full_n;
+wire   [31:0] clip_tris_v2_y_dout;
+wire    clip_tris_v2_y_empty_n;
+wire   [2:0] clip_tris_v2_y_num_data_valid;
+wire   [2:0] clip_tris_v2_y_fifo_cap;
+wire    clip_tris_v2_z_full_n;
+wire   [31:0] clip_tris_v2_z_dout;
+wire    clip_tris_v2_z_empty_n;
+wire   [2:0] clip_tris_v2_z_num_data_valid;
+wire   [2:0] clip_tris_v2_z_fifo_cap;
+wire    clip_tris_v2_w_full_n;
+wire   [31:0] clip_tris_v2_w_dout;
+wire    clip_tris_v2_w_empty_n;
+wire   [2:0] clip_tris_v2_w_num_data_valid;
+wire   [2:0] clip_tris_v2_w_fifo_cap;
+wire    clip_tris_n0_x_full_n;
+wire   [31:0] clip_tris_n0_x_dout;
+wire    clip_tris_n0_x_empty_n;
+wire   [2:0] clip_tris_n0_x_num_data_valid;
+wire   [2:0] clip_tris_n0_x_fifo_cap;
+wire    clip_tris_n0_y_full_n;
+wire   [31:0] clip_tris_n0_y_dout;
+wire    clip_tris_n0_y_empty_n;
+wire   [2:0] clip_tris_n0_y_num_data_valid;
+wire   [2:0] clip_tris_n0_y_fifo_cap;
+wire    clip_tris_n0_z_full_n;
+wire   [31:0] clip_tris_n0_z_dout;
+wire    clip_tris_n0_z_empty_n;
+wire   [2:0] clip_tris_n0_z_num_data_valid;
+wire   [2:0] clip_tris_n0_z_fifo_cap;
+wire    clip_tris_n1_x_full_n;
+wire   [31:0] clip_tris_n1_x_dout;
+wire    clip_tris_n1_x_empty_n;
+wire   [2:0] clip_tris_n1_x_num_data_valid;
+wire   [2:0] clip_tris_n1_x_fifo_cap;
+wire    clip_tris_n1_y_full_n;
+wire   [31:0] clip_tris_n1_y_dout;
+wire    clip_tris_n1_y_empty_n;
+wire   [2:0] clip_tris_n1_y_num_data_valid;
+wire   [2:0] clip_tris_n1_y_fifo_cap;
+wire    clip_tris_n1_z_full_n;
+wire   [31:0] clip_tris_n1_z_dout;
+wire    clip_tris_n1_z_empty_n;
+wire   [2:0] clip_tris_n1_z_num_data_valid;
+wire   [2:0] clip_tris_n1_z_fifo_cap;
+wire    clip_tris_n2_x_full_n;
+wire   [31:0] clip_tris_n2_x_dout;
+wire    clip_tris_n2_x_empty_n;
+wire   [2:0] clip_tris_n2_x_num_data_valid;
+wire   [2:0] clip_tris_n2_x_fifo_cap;
+wire    clip_tris_n2_y_full_n;
+wire   [31:0] clip_tris_n2_y_dout;
+wire    clip_tris_n2_y_empty_n;
+wire   [2:0] clip_tris_n2_y_num_data_valid;
+wire   [2:0] clip_tris_n2_y_fifo_cap;
+wire    clip_tris_n2_z_full_n;
+wire   [31:0] clip_tris_n2_z_dout;
+wire    clip_tris_n2_z_empty_n;
+wire   [2:0] clip_tris_n2_z_num_data_valid;
+wire   [2:0] clip_tris_n2_z_fifo_cap;
+wire    clip_tris_color_full_n;
+wire   [31:0] clip_tris_color_dout;
+wire    clip_tris_color_empty_n;
+wire   [2:0] clip_tris_color_num_data_valid;
+wire   [2:0] clip_tris_color_fifo_cap;
+wire    clip_tris_is_active_full_n;
+wire   [0:0] clip_tris_is_active_dout;
+wire    clip_tris_is_active_empty_n;
+wire   [2:0] clip_tris_is_active_num_data_valid;
+wire   [2:0] clip_tris_is_active_fifo_cap;
+wire    screen_tris_in_v0_x_full_n;
+wire   [31:0] screen_tris_in_v0_x_dout;
+wire    screen_tris_in_v0_x_empty_n;
+wire   [2:0] screen_tris_in_v0_x_num_data_valid;
+wire   [2:0] screen_tris_in_v0_x_fifo_cap;
+wire    screen_tris_in_v0_y_full_n;
+wire   [31:0] screen_tris_in_v0_y_dout;
+wire    screen_tris_in_v0_y_empty_n;
+wire   [2:0] screen_tris_in_v0_y_num_data_valid;
+wire   [2:0] screen_tris_in_v0_y_fifo_cap;
+wire    screen_tris_in_v0_z_full_n;
+wire   [31:0] screen_tris_in_v0_z_dout;
+wire    screen_tris_in_v0_z_empty_n;
+wire   [2:0] screen_tris_in_v0_z_num_data_valid;
+wire   [2:0] screen_tris_in_v0_z_fifo_cap;
+wire    screen_tris_in_v0_w_full_n;
+wire   [31:0] screen_tris_in_v0_w_dout;
+wire    screen_tris_in_v0_w_empty_n;
+wire   [2:0] screen_tris_in_v0_w_num_data_valid;
+wire   [2:0] screen_tris_in_v0_w_fifo_cap;
+wire    screen_tris_in_v1_x_full_n;
+wire   [31:0] screen_tris_in_v1_x_dout;
+wire    screen_tris_in_v1_x_empty_n;
+wire   [2:0] screen_tris_in_v1_x_num_data_valid;
+wire   [2:0] screen_tris_in_v1_x_fifo_cap;
+wire    screen_tris_in_v1_y_full_n;
+wire   [31:0] screen_tris_in_v1_y_dout;
+wire    screen_tris_in_v1_y_empty_n;
+wire   [2:0] screen_tris_in_v1_y_num_data_valid;
+wire   [2:0] screen_tris_in_v1_y_fifo_cap;
+wire    screen_tris_in_v1_z_full_n;
+wire   [31:0] screen_tris_in_v1_z_dout;
+wire    screen_tris_in_v1_z_empty_n;
+wire   [2:0] screen_tris_in_v1_z_num_data_valid;
+wire   [2:0] screen_tris_in_v1_z_fifo_cap;
+wire    screen_tris_in_v1_w_full_n;
+wire   [31:0] screen_tris_in_v1_w_dout;
+wire    screen_tris_in_v1_w_empty_n;
+wire   [2:0] screen_tris_in_v1_w_num_data_valid;
+wire   [2:0] screen_tris_in_v1_w_fifo_cap;
+wire    screen_tris_in_v2_x_full_n;
+wire   [31:0] screen_tris_in_v2_x_dout;
+wire    screen_tris_in_v2_x_empty_n;
+wire   [2:0] screen_tris_in_v2_x_num_data_valid;
+wire   [2:0] screen_tris_in_v2_x_fifo_cap;
+wire    screen_tris_in_v2_y_full_n;
+wire   [31:0] screen_tris_in_v2_y_dout;
+wire    screen_tris_in_v2_y_empty_n;
+wire   [2:0] screen_tris_in_v2_y_num_data_valid;
+wire   [2:0] screen_tris_in_v2_y_fifo_cap;
+wire    screen_tris_in_v2_z_full_n;
+wire   [31:0] screen_tris_in_v2_z_dout;
+wire    screen_tris_in_v2_z_empty_n;
+wire   [2:0] screen_tris_in_v2_z_num_data_valid;
+wire   [2:0] screen_tris_in_v2_z_fifo_cap;
+wire    screen_tris_in_v2_w_full_n;
+wire   [31:0] screen_tris_in_v2_w_dout;
+wire    screen_tris_in_v2_w_empty_n;
+wire   [2:0] screen_tris_in_v2_w_num_data_valid;
+wire   [2:0] screen_tris_in_v2_w_fifo_cap;
+wire    screen_tris_in_n0_x_full_n;
+wire   [31:0] screen_tris_in_n0_x_dout;
+wire    screen_tris_in_n0_x_empty_n;
+wire   [2:0] screen_tris_in_n0_x_num_data_valid;
+wire   [2:0] screen_tris_in_n0_x_fifo_cap;
+wire    screen_tris_in_n0_y_full_n;
+wire   [31:0] screen_tris_in_n0_y_dout;
+wire    screen_tris_in_n0_y_empty_n;
+wire   [2:0] screen_tris_in_n0_y_num_data_valid;
+wire   [2:0] screen_tris_in_n0_y_fifo_cap;
+wire    screen_tris_in_n0_z_full_n;
+wire   [31:0] screen_tris_in_n0_z_dout;
+wire    screen_tris_in_n0_z_empty_n;
+wire   [2:0] screen_tris_in_n0_z_num_data_valid;
+wire   [2:0] screen_tris_in_n0_z_fifo_cap;
+wire    screen_tris_in_n1_x_full_n;
+wire   [31:0] screen_tris_in_n1_x_dout;
+wire    screen_tris_in_n1_x_empty_n;
+wire   [2:0] screen_tris_in_n1_x_num_data_valid;
+wire   [2:0] screen_tris_in_n1_x_fifo_cap;
+wire    screen_tris_in_n1_y_full_n;
+wire   [31:0] screen_tris_in_n1_y_dout;
+wire    screen_tris_in_n1_y_empty_n;
+wire   [2:0] screen_tris_in_n1_y_num_data_valid;
+wire   [2:0] screen_tris_in_n1_y_fifo_cap;
+wire    screen_tris_in_n1_z_full_n;
+wire   [31:0] screen_tris_in_n1_z_dout;
+wire    screen_tris_in_n1_z_empty_n;
+wire   [2:0] screen_tris_in_n1_z_num_data_valid;
+wire   [2:0] screen_tris_in_n1_z_fifo_cap;
+wire    screen_tris_in_n2_x_full_n;
+wire   [31:0] screen_tris_in_n2_x_dout;
+wire    screen_tris_in_n2_x_empty_n;
+wire   [2:0] screen_tris_in_n2_x_num_data_valid;
+wire   [2:0] screen_tris_in_n2_x_fifo_cap;
+wire    screen_tris_in_n2_y_full_n;
+wire   [31:0] screen_tris_in_n2_y_dout;
+wire    screen_tris_in_n2_y_empty_n;
+wire   [2:0] screen_tris_in_n2_y_num_data_valid;
+wire   [2:0] screen_tris_in_n2_y_fifo_cap;
+wire    screen_tris_in_n2_z_full_n;
+wire   [31:0] screen_tris_in_n2_z_dout;
+wire    screen_tris_in_n2_z_empty_n;
+wire   [2:0] screen_tris_in_n2_z_num_data_valid;
+wire   [2:0] screen_tris_in_n2_z_fifo_cap;
+wire    screen_tris_in_color_full_n;
+wire   [31:0] screen_tris_in_color_dout;
+wire    screen_tris_in_color_empty_n;
+wire   [2:0] screen_tris_in_color_num_data_valid;
+wire   [2:0] screen_tris_in_color_fifo_cap;
+wire    screen_tris_in_is_active_full_n;
+wire   [0:0] screen_tris_in_is_active_dout;
+wire    screen_tris_in_is_active_empty_n;
+wire   [2:0] screen_tris_in_is_active_num_data_valid;
+wire   [2:0] screen_tris_in_is_active_fifo_cap;
+wire    bounds_min_x_full_n;
+wire   [31:0] bounds_min_x_dout;
+wire    bounds_min_x_empty_n;
+wire   [2:0] bounds_min_x_num_data_valid;
+wire   [2:0] bounds_min_x_fifo_cap;
+wire    bounds_min_y_full_n;
+wire   [31:0] bounds_min_y_dout;
+wire    bounds_min_y_empty_n;
+wire   [2:0] bounds_min_y_num_data_valid;
+wire   [2:0] bounds_min_y_fifo_cap;
+wire    bounds_max_x_full_n;
+wire   [31:0] bounds_max_x_dout;
+wire    bounds_max_x_empty_n;
+wire   [2:0] bounds_max_x_num_data_valid;
+wire   [2:0] bounds_max_x_fifo_cap;
+wire    bounds_max_y_full_n;
+wire   [31:0] bounds_max_y_dout;
+wire    bounds_max_y_empty_n;
+wire   [2:0] bounds_max_y_num_data_valid;
+wire   [2:0] bounds_max_y_fifo_cap;
+wire    screen_tris_out_v0_x_full_n;
+wire   [31:0] screen_tris_out_v0_x_dout;
+wire    screen_tris_out_v0_x_empty_n;
+wire   [2:0] screen_tris_out_v0_x_num_data_valid;
+wire   [2:0] screen_tris_out_v0_x_fifo_cap;
+wire    screen_tris_out_v0_y_full_n;
+wire   [31:0] screen_tris_out_v0_y_dout;
+wire    screen_tris_out_v0_y_empty_n;
+wire   [2:0] screen_tris_out_v0_y_num_data_valid;
+wire   [2:0] screen_tris_out_v0_y_fifo_cap;
+wire    screen_tris_out_v0_z_full_n;
+wire   [31:0] screen_tris_out_v0_z_dout;
+wire    screen_tris_out_v0_z_empty_n;
+wire   [2:0] screen_tris_out_v0_z_num_data_valid;
+wire   [2:0] screen_tris_out_v0_z_fifo_cap;
+wire    screen_tris_out_v0_w_full_n;
+wire   [31:0] screen_tris_out_v0_w_dout;
+wire    screen_tris_out_v0_w_empty_n;
+wire   [2:0] screen_tris_out_v0_w_num_data_valid;
+wire   [2:0] screen_tris_out_v0_w_fifo_cap;
+wire    screen_tris_out_v1_x_full_n;
+wire   [31:0] screen_tris_out_v1_x_dout;
+wire    screen_tris_out_v1_x_empty_n;
+wire   [2:0] screen_tris_out_v1_x_num_data_valid;
+wire   [2:0] screen_tris_out_v1_x_fifo_cap;
+wire    screen_tris_out_v1_y_full_n;
+wire   [31:0] screen_tris_out_v1_y_dout;
+wire    screen_tris_out_v1_y_empty_n;
+wire   [2:0] screen_tris_out_v1_y_num_data_valid;
+wire   [2:0] screen_tris_out_v1_y_fifo_cap;
+wire    screen_tris_out_v1_z_full_n;
+wire   [31:0] screen_tris_out_v1_z_dout;
+wire    screen_tris_out_v1_z_empty_n;
+wire   [2:0] screen_tris_out_v1_z_num_data_valid;
+wire   [2:0] screen_tris_out_v1_z_fifo_cap;
+wire    screen_tris_out_v1_w_full_n;
+wire   [31:0] screen_tris_out_v1_w_dout;
+wire    screen_tris_out_v1_w_empty_n;
+wire   [2:0] screen_tris_out_v1_w_num_data_valid;
+wire   [2:0] screen_tris_out_v1_w_fifo_cap;
+wire    screen_tris_out_v2_x_full_n;
+wire   [31:0] screen_tris_out_v2_x_dout;
+wire    screen_tris_out_v2_x_empty_n;
+wire   [2:0] screen_tris_out_v2_x_num_data_valid;
+wire   [2:0] screen_tris_out_v2_x_fifo_cap;
+wire    screen_tris_out_v2_y_full_n;
+wire   [31:0] screen_tris_out_v2_y_dout;
+wire    screen_tris_out_v2_y_empty_n;
+wire   [2:0] screen_tris_out_v2_y_num_data_valid;
+wire   [2:0] screen_tris_out_v2_y_fifo_cap;
+wire    screen_tris_out_v2_z_full_n;
+wire   [31:0] screen_tris_out_v2_z_dout;
+wire    screen_tris_out_v2_z_empty_n;
+wire   [2:0] screen_tris_out_v2_z_num_data_valid;
+wire   [2:0] screen_tris_out_v2_z_fifo_cap;
+wire    screen_tris_out_v2_w_full_n;
+wire   [31:0] screen_tris_out_v2_w_dout;
+wire    screen_tris_out_v2_w_empty_n;
+wire   [2:0] screen_tris_out_v2_w_num_data_valid;
+wire   [2:0] screen_tris_out_v2_w_fifo_cap;
+wire    screen_tris_out_n0_x_full_n;
+wire   [31:0] screen_tris_out_n0_x_dout;
+wire    screen_tris_out_n0_x_empty_n;
+wire   [2:0] screen_tris_out_n0_x_num_data_valid;
+wire   [2:0] screen_tris_out_n0_x_fifo_cap;
+wire    screen_tris_out_n0_y_full_n;
+wire   [31:0] screen_tris_out_n0_y_dout;
+wire    screen_tris_out_n0_y_empty_n;
+wire   [2:0] screen_tris_out_n0_y_num_data_valid;
+wire   [2:0] screen_tris_out_n0_y_fifo_cap;
+wire    screen_tris_out_n0_z_full_n;
+wire   [31:0] screen_tris_out_n0_z_dout;
+wire    screen_tris_out_n0_z_empty_n;
+wire   [2:0] screen_tris_out_n0_z_num_data_valid;
+wire   [2:0] screen_tris_out_n0_z_fifo_cap;
+wire    screen_tris_out_n1_x_full_n;
+wire   [31:0] screen_tris_out_n1_x_dout;
+wire    screen_tris_out_n1_x_empty_n;
+wire   [2:0] screen_tris_out_n1_x_num_data_valid;
+wire   [2:0] screen_tris_out_n1_x_fifo_cap;
+wire    screen_tris_out_n1_y_full_n;
+wire   [31:0] screen_tris_out_n1_y_dout;
+wire    screen_tris_out_n1_y_empty_n;
+wire   [2:0] screen_tris_out_n1_y_num_data_valid;
+wire   [2:0] screen_tris_out_n1_y_fifo_cap;
+wire    screen_tris_out_n1_z_full_n;
+wire   [31:0] screen_tris_out_n1_z_dout;
+wire    screen_tris_out_n1_z_empty_n;
+wire   [2:0] screen_tris_out_n1_z_num_data_valid;
+wire   [2:0] screen_tris_out_n1_z_fifo_cap;
+wire    screen_tris_out_n2_x_full_n;
+wire   [31:0] screen_tris_out_n2_x_dout;
+wire    screen_tris_out_n2_x_empty_n;
+wire   [2:0] screen_tris_out_n2_x_num_data_valid;
+wire   [2:0] screen_tris_out_n2_x_fifo_cap;
+wire    screen_tris_out_n2_y_full_n;
+wire   [31:0] screen_tris_out_n2_y_dout;
+wire    screen_tris_out_n2_y_empty_n;
+wire   [2:0] screen_tris_out_n2_y_num_data_valid;
+wire   [2:0] screen_tris_out_n2_y_fifo_cap;
+wire    screen_tris_out_n2_z_full_n;
+wire   [31:0] screen_tris_out_n2_z_dout;
+wire    screen_tris_out_n2_z_empty_n;
+wire   [2:0] screen_tris_out_n2_z_num_data_valid;
+wire   [2:0] screen_tris_out_n2_z_fifo_cap;
+wire    screen_tris_out_color_full_n;
+wire   [31:0] screen_tris_out_color_dout;
+wire    screen_tris_out_color_empty_n;
+wire   [2:0] screen_tris_out_color_num_data_valid;
+wire   [2:0] screen_tris_out_color_fifo_cap;
+wire    screen_tris_out_is_active_full_n;
+wire   [0:0] screen_tris_out_is_active_dout;
+wire    screen_tris_out_is_active_empty_n;
+wire   [2:0] screen_tris_out_is_active_num_data_valid;
+wire   [2:0] screen_tris_out_is_active_fifo_cap;
 wire    ap_sync_ready;
 reg    ap_sync_reg_entry_proc_U0_ap_ready;
 wire    ap_sync_entry_proc_U0_ap_ready;
 reg    ap_sync_reg_k1_vertex_transform_U0_ap_ready;
 wire    ap_sync_k1_vertex_transform_U0_ap_ready;
+wire   [0:0] start_for_k2_perspective_divide_U0_din;
+wire    start_for_k2_perspective_divide_U0_full_n;
+wire   [0:0] start_for_k2_perspective_divide_U0_dout;
+wire    start_for_k2_perspective_divide_U0_empty_n;
+wire   [0:0] start_for_k3_bounding_box_U0_din;
+wire    start_for_k3_bounding_box_U0_full_n;
+wire   [0:0] start_for_k3_bounding_box_U0_dout;
+wire    start_for_k3_bounding_box_U0_empty_n;
+wire   [0:0] start_for_k4_rasterize_U0_din;
+wire    start_for_k4_rasterize_U0_full_n;
+wire   [0:0] start_for_k4_rasterize_U0_dout;
+wire    start_for_k4_rasterize_U0_empty_n;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_sync_reg_channel_write_clip_tris_v2_z = 1'b0;
-#0 ap_sync_reg_channel_write_screen_tris_is_active = 1'b0;
 #0 ap_sync_reg_channel_write_normal_buffer_z = 1'b0;
 #0 ap_sync_reg_entry_proc_U0_ap_ready = 1'b0;
 #0 ap_sync_reg_k1_vertex_transform_U0_ap_ready = 1'b0;
@@ -921,6 +1280,7 @@ control_s_axi_U(
     .ARESET(ap_rst_n_inv),
     .ACLK_EN(1'b1),
     .in_tris(in_tris),
+    .mvp_matrix(mvp_matrix),
     .out_pixels(out_pixels),
     .ap_start(ap_start),
     .interrupt(interrupt),
@@ -1113,6 +1473,98 @@ gmem1_m_axi_U(
     .I_CH0_BREADY(k5_deferred_lighting_U0_m_axi_gmem1_0_BREADY)
 );
 
+top_kernel_gmem2_m_axi #(
+    .CONSERVATIVE( 1 ),
+    .USER_MAXREQS( 7 ),
+    .MAX_READ_BURST_LENGTH( 16 ),
+    .MAX_WRITE_BURST_LENGTH( 16 ),
+    .C_M_AXI_ID_WIDTH( C_M_AXI_GMEM2_ID_WIDTH ),
+    .C_M_AXI_ADDR_WIDTH( C_M_AXI_GMEM2_ADDR_WIDTH ),
+    .C_M_AXI_DATA_WIDTH( C_M_AXI_GMEM2_DATA_WIDTH ),
+    .C_M_AXI_AWUSER_WIDTH( C_M_AXI_GMEM2_AWUSER_WIDTH ),
+    .C_M_AXI_ARUSER_WIDTH( C_M_AXI_GMEM2_ARUSER_WIDTH ),
+    .C_M_AXI_WUSER_WIDTH( C_M_AXI_GMEM2_WUSER_WIDTH ),
+    .C_M_AXI_RUSER_WIDTH( C_M_AXI_GMEM2_RUSER_WIDTH ),
+    .C_M_AXI_BUSER_WIDTH( C_M_AXI_GMEM2_BUSER_WIDTH ),
+    .C_USER_VALUE( C_M_AXI_GMEM2_USER_VALUE ),
+    .C_PROT_VALUE( C_M_AXI_GMEM2_PROT_VALUE ),
+    .C_CACHE_VALUE( C_M_AXI_GMEM2_CACHE_VALUE ),
+    .CH0_NUM_READ_OUTSTANDING( 16 ),
+    .CH0_NUM_WRITE_OUTSTANDING( 16 ),
+    .CH0_USER_RFIFONUM_WIDTH( 9 ),
+    .CH0_USER_DW( 32 ),
+    .CH0_USER_AW( 64 ),
+    .NUM_READ_OUTSTANDING( 16 ),
+    .NUM_WRITE_OUTSTANDING( 0 ))
+gmem2_m_axi_U(
+    .AWVALID(m_axi_gmem2_AWVALID),
+    .AWREADY(m_axi_gmem2_AWREADY),
+    .AWADDR(m_axi_gmem2_AWADDR),
+    .AWID(m_axi_gmem2_AWID),
+    .AWLEN(m_axi_gmem2_AWLEN),
+    .AWSIZE(m_axi_gmem2_AWSIZE),
+    .AWBURST(m_axi_gmem2_AWBURST),
+    .AWLOCK(m_axi_gmem2_AWLOCK),
+    .AWCACHE(m_axi_gmem2_AWCACHE),
+    .AWPROT(m_axi_gmem2_AWPROT),
+    .AWQOS(m_axi_gmem2_AWQOS),
+    .AWREGION(m_axi_gmem2_AWREGION),
+    .AWUSER(m_axi_gmem2_AWUSER),
+    .WVALID(m_axi_gmem2_WVALID),
+    .WREADY(m_axi_gmem2_WREADY),
+    .WDATA(m_axi_gmem2_WDATA),
+    .WSTRB(m_axi_gmem2_WSTRB),
+    .WLAST(m_axi_gmem2_WLAST),
+    .WID(m_axi_gmem2_WID),
+    .WUSER(m_axi_gmem2_WUSER),
+    .ARVALID(m_axi_gmem2_ARVALID),
+    .ARREADY(m_axi_gmem2_ARREADY),
+    .ARADDR(m_axi_gmem2_ARADDR),
+    .ARID(m_axi_gmem2_ARID),
+    .ARLEN(m_axi_gmem2_ARLEN),
+    .ARSIZE(m_axi_gmem2_ARSIZE),
+    .ARBURST(m_axi_gmem2_ARBURST),
+    .ARLOCK(m_axi_gmem2_ARLOCK),
+    .ARCACHE(m_axi_gmem2_ARCACHE),
+    .ARPROT(m_axi_gmem2_ARPROT),
+    .ARQOS(m_axi_gmem2_ARQOS),
+    .ARREGION(m_axi_gmem2_ARREGION),
+    .ARUSER(m_axi_gmem2_ARUSER),
+    .RVALID(m_axi_gmem2_RVALID),
+    .RREADY(m_axi_gmem2_RREADY),
+    .RDATA(m_axi_gmem2_RDATA),
+    .RLAST(m_axi_gmem2_RLAST),
+    .RID(m_axi_gmem2_RID),
+    .RUSER(m_axi_gmem2_RUSER),
+    .RRESP(m_axi_gmem2_RRESP),
+    .BVALID(m_axi_gmem2_BVALID),
+    .BREADY(m_axi_gmem2_BREADY),
+    .BRESP(m_axi_gmem2_BRESP),
+    .BID(m_axi_gmem2_BID),
+    .BUSER(m_axi_gmem2_BUSER),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .I_CH0_ARVALID(k1_vertex_transform_U0_m_axi_gmem2_0_ARVALID),
+    .I_CH0_ARREADY(gmem2_0_ARREADY),
+    .I_CH0_ARADDR(k1_vertex_transform_U0_m_axi_gmem2_0_ARADDR),
+    .I_CH0_ARLEN(k1_vertex_transform_U0_m_axi_gmem2_0_ARLEN),
+    .I_CH0_RVALID(gmem2_0_RVALID),
+    .I_CH0_RREADY(k1_vertex_transform_U0_m_axi_gmem2_0_RREADY),
+    .I_CH0_RDATA(gmem2_0_RDATA),
+    .I_CH0_RFIFONUM(gmem2_0_RFIFONUM),
+    .I_CH0_AWVALID(1'b0),
+    .I_CH0_AWREADY(gmem2_0_AWREADY),
+    .I_CH0_AWADDR(64'd0),
+    .I_CH0_AWLEN(32'd0),
+    .I_CH0_WVALID(1'b0),
+    .I_CH0_WREADY(gmem2_0_WREADY),
+    .I_CH0_WDATA(32'd0),
+    .I_CH0_WSTRB(4'd0),
+    .I_CH0_BVALID(gmem2_0_BVALID),
+    .I_CH0_BREADY(1'b0)
+);
+
 top_kernel_entry_proc entry_proc_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
@@ -1133,10 +1585,57 @@ top_kernel_k1_vertex_transform k1_vertex_transform_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .ap_start(k1_vertex_transform_U0_ap_start),
+    .start_full_n(start_for_k2_perspective_divide_U0_full_n),
     .ap_done(k1_vertex_transform_U0_ap_done),
     .ap_continue(k1_vertex_transform_U0_ap_continue),
     .ap_idle(k1_vertex_transform_U0_ap_idle),
     .ap_ready(k1_vertex_transform_U0_ap_ready),
+    .m_axi_gmem2_0_AWVALID(k1_vertex_transform_U0_m_axi_gmem2_0_AWVALID),
+    .m_axi_gmem2_0_AWREADY(1'b0),
+    .m_axi_gmem2_0_AWADDR(k1_vertex_transform_U0_m_axi_gmem2_0_AWADDR),
+    .m_axi_gmem2_0_AWID(k1_vertex_transform_U0_m_axi_gmem2_0_AWID),
+    .m_axi_gmem2_0_AWLEN(k1_vertex_transform_U0_m_axi_gmem2_0_AWLEN),
+    .m_axi_gmem2_0_AWSIZE(k1_vertex_transform_U0_m_axi_gmem2_0_AWSIZE),
+    .m_axi_gmem2_0_AWBURST(k1_vertex_transform_U0_m_axi_gmem2_0_AWBURST),
+    .m_axi_gmem2_0_AWLOCK(k1_vertex_transform_U0_m_axi_gmem2_0_AWLOCK),
+    .m_axi_gmem2_0_AWCACHE(k1_vertex_transform_U0_m_axi_gmem2_0_AWCACHE),
+    .m_axi_gmem2_0_AWPROT(k1_vertex_transform_U0_m_axi_gmem2_0_AWPROT),
+    .m_axi_gmem2_0_AWQOS(k1_vertex_transform_U0_m_axi_gmem2_0_AWQOS),
+    .m_axi_gmem2_0_AWREGION(k1_vertex_transform_U0_m_axi_gmem2_0_AWREGION),
+    .m_axi_gmem2_0_AWUSER(k1_vertex_transform_U0_m_axi_gmem2_0_AWUSER),
+    .m_axi_gmem2_0_WVALID(k1_vertex_transform_U0_m_axi_gmem2_0_WVALID),
+    .m_axi_gmem2_0_WREADY(1'b0),
+    .m_axi_gmem2_0_WDATA(k1_vertex_transform_U0_m_axi_gmem2_0_WDATA),
+    .m_axi_gmem2_0_WSTRB(k1_vertex_transform_U0_m_axi_gmem2_0_WSTRB),
+    .m_axi_gmem2_0_WLAST(k1_vertex_transform_U0_m_axi_gmem2_0_WLAST),
+    .m_axi_gmem2_0_WID(k1_vertex_transform_U0_m_axi_gmem2_0_WID),
+    .m_axi_gmem2_0_WUSER(k1_vertex_transform_U0_m_axi_gmem2_0_WUSER),
+    .m_axi_gmem2_0_ARVALID(k1_vertex_transform_U0_m_axi_gmem2_0_ARVALID),
+    .m_axi_gmem2_0_ARREADY(gmem2_0_ARREADY),
+    .m_axi_gmem2_0_ARADDR(k1_vertex_transform_U0_m_axi_gmem2_0_ARADDR),
+    .m_axi_gmem2_0_ARID(k1_vertex_transform_U0_m_axi_gmem2_0_ARID),
+    .m_axi_gmem2_0_ARLEN(k1_vertex_transform_U0_m_axi_gmem2_0_ARLEN),
+    .m_axi_gmem2_0_ARSIZE(k1_vertex_transform_U0_m_axi_gmem2_0_ARSIZE),
+    .m_axi_gmem2_0_ARBURST(k1_vertex_transform_U0_m_axi_gmem2_0_ARBURST),
+    .m_axi_gmem2_0_ARLOCK(k1_vertex_transform_U0_m_axi_gmem2_0_ARLOCK),
+    .m_axi_gmem2_0_ARCACHE(k1_vertex_transform_U0_m_axi_gmem2_0_ARCACHE),
+    .m_axi_gmem2_0_ARPROT(k1_vertex_transform_U0_m_axi_gmem2_0_ARPROT),
+    .m_axi_gmem2_0_ARQOS(k1_vertex_transform_U0_m_axi_gmem2_0_ARQOS),
+    .m_axi_gmem2_0_ARREGION(k1_vertex_transform_U0_m_axi_gmem2_0_ARREGION),
+    .m_axi_gmem2_0_ARUSER(k1_vertex_transform_U0_m_axi_gmem2_0_ARUSER),
+    .m_axi_gmem2_0_RVALID(gmem2_0_RVALID),
+    .m_axi_gmem2_0_RREADY(k1_vertex_transform_U0_m_axi_gmem2_0_RREADY),
+    .m_axi_gmem2_0_RDATA(gmem2_0_RDATA),
+    .m_axi_gmem2_0_RLAST(gmem2_0_RLAST),
+    .m_axi_gmem2_0_RID(gmem2_0_RID),
+    .m_axi_gmem2_0_RFIFONUM(gmem2_0_RFIFONUM),
+    .m_axi_gmem2_0_RUSER(gmem2_0_RUSER),
+    .m_axi_gmem2_0_RRESP(gmem2_0_RRESP),
+    .m_axi_gmem2_0_BVALID(1'b0),
+    .m_axi_gmem2_0_BREADY(k1_vertex_transform_U0_m_axi_gmem2_0_BREADY),
+    .m_axi_gmem2_0_BRESP(2'd0),
+    .m_axi_gmem2_0_BID(1'd0),
+    .m_axi_gmem2_0_BUSER(1'd0),
     .m_axi_gmem0_0_AWVALID(k1_vertex_transform_U0_m_axi_gmem0_0_AWVALID),
     .m_axi_gmem0_0_AWREADY(1'b0),
     .m_axi_gmem0_0_AWADDR(k1_vertex_transform_U0_m_axi_gmem0_0_AWADDR),
@@ -1183,340 +1682,792 @@ top_kernel_k1_vertex_transform k1_vertex_transform_U0(
     .m_axi_gmem0_0_BRESP(2'd0),
     .m_axi_gmem0_0_BID(1'd0),
     .m_axi_gmem0_0_BUSER(1'd0),
+    .clip_tris_v0_x_din(k1_vertex_transform_U0_clip_tris_v0_x_din),
+    .clip_tris_v0_x_full_n(clip_tris_v0_x_full_n),
+    .clip_tris_v0_x_write(k1_vertex_transform_U0_clip_tris_v0_x_write),
+    .clip_tris_v0_x_num_data_valid(clip_tris_v0_x_num_data_valid),
+    .clip_tris_v0_x_fifo_cap(clip_tris_v0_x_fifo_cap),
+    .clip_tris_v0_y_din(k1_vertex_transform_U0_clip_tris_v0_y_din),
+    .clip_tris_v0_y_full_n(clip_tris_v0_y_full_n),
+    .clip_tris_v0_y_write(k1_vertex_transform_U0_clip_tris_v0_y_write),
+    .clip_tris_v0_y_num_data_valid(clip_tris_v0_y_num_data_valid),
+    .clip_tris_v0_y_fifo_cap(clip_tris_v0_y_fifo_cap),
+    .clip_tris_v0_z_din(k1_vertex_transform_U0_clip_tris_v0_z_din),
+    .clip_tris_v0_z_full_n(clip_tris_v0_z_full_n),
+    .clip_tris_v0_z_write(k1_vertex_transform_U0_clip_tris_v0_z_write),
+    .clip_tris_v0_z_num_data_valid(clip_tris_v0_z_num_data_valid),
+    .clip_tris_v0_z_fifo_cap(clip_tris_v0_z_fifo_cap),
+    .clip_tris_v0_w_din(k1_vertex_transform_U0_clip_tris_v0_w_din),
+    .clip_tris_v0_w_full_n(clip_tris_v0_w_full_n),
+    .clip_tris_v0_w_write(k1_vertex_transform_U0_clip_tris_v0_w_write),
+    .clip_tris_v0_w_num_data_valid(clip_tris_v0_w_num_data_valid),
+    .clip_tris_v0_w_fifo_cap(clip_tris_v0_w_fifo_cap),
+    .clip_tris_v1_x_din(k1_vertex_transform_U0_clip_tris_v1_x_din),
+    .clip_tris_v1_x_full_n(clip_tris_v1_x_full_n),
+    .clip_tris_v1_x_write(k1_vertex_transform_U0_clip_tris_v1_x_write),
+    .clip_tris_v1_x_num_data_valid(clip_tris_v1_x_num_data_valid),
+    .clip_tris_v1_x_fifo_cap(clip_tris_v1_x_fifo_cap),
+    .clip_tris_v1_y_din(k1_vertex_transform_U0_clip_tris_v1_y_din),
+    .clip_tris_v1_y_full_n(clip_tris_v1_y_full_n),
+    .clip_tris_v1_y_write(k1_vertex_transform_U0_clip_tris_v1_y_write),
+    .clip_tris_v1_y_num_data_valid(clip_tris_v1_y_num_data_valid),
+    .clip_tris_v1_y_fifo_cap(clip_tris_v1_y_fifo_cap),
+    .clip_tris_v1_z_din(k1_vertex_transform_U0_clip_tris_v1_z_din),
+    .clip_tris_v1_z_full_n(clip_tris_v1_z_full_n),
+    .clip_tris_v1_z_write(k1_vertex_transform_U0_clip_tris_v1_z_write),
+    .clip_tris_v1_z_num_data_valid(clip_tris_v1_z_num_data_valid),
+    .clip_tris_v1_z_fifo_cap(clip_tris_v1_z_fifo_cap),
+    .clip_tris_v1_w_din(k1_vertex_transform_U0_clip_tris_v1_w_din),
+    .clip_tris_v1_w_full_n(clip_tris_v1_w_full_n),
+    .clip_tris_v1_w_write(k1_vertex_transform_U0_clip_tris_v1_w_write),
+    .clip_tris_v1_w_num_data_valid(clip_tris_v1_w_num_data_valid),
+    .clip_tris_v1_w_fifo_cap(clip_tris_v1_w_fifo_cap),
+    .clip_tris_v2_x_din(k1_vertex_transform_U0_clip_tris_v2_x_din),
+    .clip_tris_v2_x_full_n(clip_tris_v2_x_full_n),
+    .clip_tris_v2_x_write(k1_vertex_transform_U0_clip_tris_v2_x_write),
+    .clip_tris_v2_x_num_data_valid(clip_tris_v2_x_num_data_valid),
+    .clip_tris_v2_x_fifo_cap(clip_tris_v2_x_fifo_cap),
+    .clip_tris_v2_y_din(k1_vertex_transform_U0_clip_tris_v2_y_din),
+    .clip_tris_v2_y_full_n(clip_tris_v2_y_full_n),
+    .clip_tris_v2_y_write(k1_vertex_transform_U0_clip_tris_v2_y_write),
+    .clip_tris_v2_y_num_data_valid(clip_tris_v2_y_num_data_valid),
+    .clip_tris_v2_y_fifo_cap(clip_tris_v2_y_fifo_cap),
+    .clip_tris_v2_z_din(k1_vertex_transform_U0_clip_tris_v2_z_din),
+    .clip_tris_v2_z_full_n(clip_tris_v2_z_full_n),
+    .clip_tris_v2_z_write(k1_vertex_transform_U0_clip_tris_v2_z_write),
+    .clip_tris_v2_z_num_data_valid(clip_tris_v2_z_num_data_valid),
+    .clip_tris_v2_z_fifo_cap(clip_tris_v2_z_fifo_cap),
+    .clip_tris_v2_w_din(k1_vertex_transform_U0_clip_tris_v2_w_din),
+    .clip_tris_v2_w_full_n(clip_tris_v2_w_full_n),
+    .clip_tris_v2_w_write(k1_vertex_transform_U0_clip_tris_v2_w_write),
+    .clip_tris_v2_w_num_data_valid(clip_tris_v2_w_num_data_valid),
+    .clip_tris_v2_w_fifo_cap(clip_tris_v2_w_fifo_cap),
+    .clip_tris_n0_x_din(k1_vertex_transform_U0_clip_tris_n0_x_din),
+    .clip_tris_n0_x_full_n(clip_tris_n0_x_full_n),
+    .clip_tris_n0_x_write(k1_vertex_transform_U0_clip_tris_n0_x_write),
+    .clip_tris_n0_x_num_data_valid(clip_tris_n0_x_num_data_valid),
+    .clip_tris_n0_x_fifo_cap(clip_tris_n0_x_fifo_cap),
+    .clip_tris_n0_y_din(k1_vertex_transform_U0_clip_tris_n0_y_din),
+    .clip_tris_n0_y_full_n(clip_tris_n0_y_full_n),
+    .clip_tris_n0_y_write(k1_vertex_transform_U0_clip_tris_n0_y_write),
+    .clip_tris_n0_y_num_data_valid(clip_tris_n0_y_num_data_valid),
+    .clip_tris_n0_y_fifo_cap(clip_tris_n0_y_fifo_cap),
+    .clip_tris_n0_z_din(k1_vertex_transform_U0_clip_tris_n0_z_din),
+    .clip_tris_n0_z_full_n(clip_tris_n0_z_full_n),
+    .clip_tris_n0_z_write(k1_vertex_transform_U0_clip_tris_n0_z_write),
+    .clip_tris_n0_z_num_data_valid(clip_tris_n0_z_num_data_valid),
+    .clip_tris_n0_z_fifo_cap(clip_tris_n0_z_fifo_cap),
+    .clip_tris_n1_x_din(k1_vertex_transform_U0_clip_tris_n1_x_din),
+    .clip_tris_n1_x_full_n(clip_tris_n1_x_full_n),
+    .clip_tris_n1_x_write(k1_vertex_transform_U0_clip_tris_n1_x_write),
+    .clip_tris_n1_x_num_data_valid(clip_tris_n1_x_num_data_valid),
+    .clip_tris_n1_x_fifo_cap(clip_tris_n1_x_fifo_cap),
+    .clip_tris_n1_y_din(k1_vertex_transform_U0_clip_tris_n1_y_din),
+    .clip_tris_n1_y_full_n(clip_tris_n1_y_full_n),
+    .clip_tris_n1_y_write(k1_vertex_transform_U0_clip_tris_n1_y_write),
+    .clip_tris_n1_y_num_data_valid(clip_tris_n1_y_num_data_valid),
+    .clip_tris_n1_y_fifo_cap(clip_tris_n1_y_fifo_cap),
+    .clip_tris_n1_z_din(k1_vertex_transform_U0_clip_tris_n1_z_din),
+    .clip_tris_n1_z_full_n(clip_tris_n1_z_full_n),
+    .clip_tris_n1_z_write(k1_vertex_transform_U0_clip_tris_n1_z_write),
+    .clip_tris_n1_z_num_data_valid(clip_tris_n1_z_num_data_valid),
+    .clip_tris_n1_z_fifo_cap(clip_tris_n1_z_fifo_cap),
+    .clip_tris_n2_x_din(k1_vertex_transform_U0_clip_tris_n2_x_din),
+    .clip_tris_n2_x_full_n(clip_tris_n2_x_full_n),
+    .clip_tris_n2_x_write(k1_vertex_transform_U0_clip_tris_n2_x_write),
+    .clip_tris_n2_x_num_data_valid(clip_tris_n2_x_num_data_valid),
+    .clip_tris_n2_x_fifo_cap(clip_tris_n2_x_fifo_cap),
+    .clip_tris_n2_y_din(k1_vertex_transform_U0_clip_tris_n2_y_din),
+    .clip_tris_n2_y_full_n(clip_tris_n2_y_full_n),
+    .clip_tris_n2_y_write(k1_vertex_transform_U0_clip_tris_n2_y_write),
+    .clip_tris_n2_y_num_data_valid(clip_tris_n2_y_num_data_valid),
+    .clip_tris_n2_y_fifo_cap(clip_tris_n2_y_fifo_cap),
+    .clip_tris_n2_z_din(k1_vertex_transform_U0_clip_tris_n2_z_din),
+    .clip_tris_n2_z_full_n(clip_tris_n2_z_full_n),
+    .clip_tris_n2_z_write(k1_vertex_transform_U0_clip_tris_n2_z_write),
+    .clip_tris_n2_z_num_data_valid(clip_tris_n2_z_num_data_valid),
+    .clip_tris_n2_z_fifo_cap(clip_tris_n2_z_fifo_cap),
+    .clip_tris_color_din(k1_vertex_transform_U0_clip_tris_color_din),
+    .clip_tris_color_full_n(clip_tris_color_full_n),
+    .clip_tris_color_write(k1_vertex_transform_U0_clip_tris_color_write),
+    .clip_tris_color_num_data_valid(clip_tris_color_num_data_valid),
+    .clip_tris_color_fifo_cap(clip_tris_color_fifo_cap),
+    .clip_tris_is_active_din(k1_vertex_transform_U0_clip_tris_is_active_din),
+    .clip_tris_is_active_full_n(clip_tris_is_active_full_n),
+    .clip_tris_is_active_write(k1_vertex_transform_U0_clip_tris_is_active_write),
+    .clip_tris_is_active_num_data_valid(clip_tris_is_active_num_data_valid),
+    .clip_tris_is_active_fifo_cap(clip_tris_is_active_fifo_cap),
+    .start_out(k1_vertex_transform_U0_start_out),
+    .start_write(k1_vertex_transform_U0_start_write),
     .in_tris(in_tris),
-    .mvp_matrix_address0(k1_vertex_transform_U0_mvp_matrix_address0),
-    .mvp_matrix_ce0(k1_vertex_transform_U0_mvp_matrix_ce0),
-    .mvp_matrix_q0(mvp_matrix_q0),
-    .mvp_matrix_address1(k1_vertex_transform_U0_mvp_matrix_address1),
-    .mvp_matrix_ce1(k1_vertex_transform_U0_mvp_matrix_ce1),
-    .mvp_matrix_q1(mvp_matrix_q1),
-    .clip_tris_is_active_address0(k1_vertex_transform_U0_clip_tris_is_active_address0),
-    .clip_tris_is_active_ce0(k1_vertex_transform_U0_clip_tris_is_active_ce0),
-    .clip_tris_is_active_we0(k1_vertex_transform_U0_clip_tris_is_active_we0),
-    .clip_tris_is_active_d0(k1_vertex_transform_U0_clip_tris_is_active_d0),
-    .clip_tris_n0_x_address0(k1_vertex_transform_U0_clip_tris_n0_x_address0),
-    .clip_tris_n0_x_ce0(k1_vertex_transform_U0_clip_tris_n0_x_ce0),
-    .clip_tris_n0_x_we0(k1_vertex_transform_U0_clip_tris_n0_x_we0),
-    .clip_tris_n0_x_d0(k1_vertex_transform_U0_clip_tris_n0_x_d0),
-    .clip_tris_n0_y_address0(k1_vertex_transform_U0_clip_tris_n0_y_address0),
-    .clip_tris_n0_y_ce0(k1_vertex_transform_U0_clip_tris_n0_y_ce0),
-    .clip_tris_n0_y_we0(k1_vertex_transform_U0_clip_tris_n0_y_we0),
-    .clip_tris_n0_y_d0(k1_vertex_transform_U0_clip_tris_n0_y_d0),
-    .clip_tris_n0_z_address0(k1_vertex_transform_U0_clip_tris_n0_z_address0),
-    .clip_tris_n0_z_ce0(k1_vertex_transform_U0_clip_tris_n0_z_ce0),
-    .clip_tris_n0_z_we0(k1_vertex_transform_U0_clip_tris_n0_z_we0),
-    .clip_tris_n0_z_d0(k1_vertex_transform_U0_clip_tris_n0_z_d0),
-    .clip_tris_n1_x_address0(k1_vertex_transform_U0_clip_tris_n1_x_address0),
-    .clip_tris_n1_x_ce0(k1_vertex_transform_U0_clip_tris_n1_x_ce0),
-    .clip_tris_n1_x_we0(k1_vertex_transform_U0_clip_tris_n1_x_we0),
-    .clip_tris_n1_x_d0(k1_vertex_transform_U0_clip_tris_n1_x_d0),
-    .clip_tris_n1_y_address0(k1_vertex_transform_U0_clip_tris_n1_y_address0),
-    .clip_tris_n1_y_ce0(k1_vertex_transform_U0_clip_tris_n1_y_ce0),
-    .clip_tris_n1_y_we0(k1_vertex_transform_U0_clip_tris_n1_y_we0),
-    .clip_tris_n1_y_d0(k1_vertex_transform_U0_clip_tris_n1_y_d0),
-    .clip_tris_n1_z_address0(k1_vertex_transform_U0_clip_tris_n1_z_address0),
-    .clip_tris_n1_z_ce0(k1_vertex_transform_U0_clip_tris_n1_z_ce0),
-    .clip_tris_n1_z_we0(k1_vertex_transform_U0_clip_tris_n1_z_we0),
-    .clip_tris_n1_z_d0(k1_vertex_transform_U0_clip_tris_n1_z_d0),
-    .clip_tris_n2_x_address0(k1_vertex_transform_U0_clip_tris_n2_x_address0),
-    .clip_tris_n2_x_ce0(k1_vertex_transform_U0_clip_tris_n2_x_ce0),
-    .clip_tris_n2_x_we0(k1_vertex_transform_U0_clip_tris_n2_x_we0),
-    .clip_tris_n2_x_d0(k1_vertex_transform_U0_clip_tris_n2_x_d0),
-    .clip_tris_n2_y_address0(k1_vertex_transform_U0_clip_tris_n2_y_address0),
-    .clip_tris_n2_y_ce0(k1_vertex_transform_U0_clip_tris_n2_y_ce0),
-    .clip_tris_n2_y_we0(k1_vertex_transform_U0_clip_tris_n2_y_we0),
-    .clip_tris_n2_y_d0(k1_vertex_transform_U0_clip_tris_n2_y_d0),
-    .clip_tris_n2_z_address0(k1_vertex_transform_U0_clip_tris_n2_z_address0),
-    .clip_tris_n2_z_ce0(k1_vertex_transform_U0_clip_tris_n2_z_ce0),
-    .clip_tris_n2_z_we0(k1_vertex_transform_U0_clip_tris_n2_z_we0),
-    .clip_tris_n2_z_d0(k1_vertex_transform_U0_clip_tris_n2_z_d0),
-    .clip_tris_v0_w_address0(k1_vertex_transform_U0_clip_tris_v0_w_address0),
-    .clip_tris_v0_w_ce0(k1_vertex_transform_U0_clip_tris_v0_w_ce0),
-    .clip_tris_v0_w_we0(k1_vertex_transform_U0_clip_tris_v0_w_we0),
-    .clip_tris_v0_w_d0(k1_vertex_transform_U0_clip_tris_v0_w_d0),
-    .clip_tris_v0_w_address1(k1_vertex_transform_U0_clip_tris_v0_w_address1),
-    .clip_tris_v0_w_ce1(k1_vertex_transform_U0_clip_tris_v0_w_ce1),
-    .clip_tris_v0_w_we1(k1_vertex_transform_U0_clip_tris_v0_w_we1),
-    .clip_tris_v0_w_d1(k1_vertex_transform_U0_clip_tris_v0_w_d1),
-    .clip_tris_v0_x_address0(k1_vertex_transform_U0_clip_tris_v0_x_address0),
-    .clip_tris_v0_x_ce0(k1_vertex_transform_U0_clip_tris_v0_x_ce0),
-    .clip_tris_v0_x_we0(k1_vertex_transform_U0_clip_tris_v0_x_we0),
-    .clip_tris_v0_x_d0(k1_vertex_transform_U0_clip_tris_v0_x_d0),
-    .clip_tris_v0_y_address0(k1_vertex_transform_U0_clip_tris_v0_y_address0),
-    .clip_tris_v0_y_ce0(k1_vertex_transform_U0_clip_tris_v0_y_ce0),
-    .clip_tris_v0_y_we0(k1_vertex_transform_U0_clip_tris_v0_y_we0),
-    .clip_tris_v0_y_d0(k1_vertex_transform_U0_clip_tris_v0_y_d0),
-    .clip_tris_v0_z_address0(k1_vertex_transform_U0_clip_tris_v0_z_address0),
-    .clip_tris_v0_z_ce0(k1_vertex_transform_U0_clip_tris_v0_z_ce0),
-    .clip_tris_v0_z_we0(k1_vertex_transform_U0_clip_tris_v0_z_we0),
-    .clip_tris_v0_z_d0(k1_vertex_transform_U0_clip_tris_v0_z_d0),
-    .clip_tris_v1_w_address0(k1_vertex_transform_U0_clip_tris_v1_w_address0),
-    .clip_tris_v1_w_ce0(k1_vertex_transform_U0_clip_tris_v1_w_ce0),
-    .clip_tris_v1_w_we0(k1_vertex_transform_U0_clip_tris_v1_w_we0),
-    .clip_tris_v1_w_d0(k1_vertex_transform_U0_clip_tris_v1_w_d0),
-    .clip_tris_v1_x_address0(k1_vertex_transform_U0_clip_tris_v1_x_address0),
-    .clip_tris_v1_x_ce0(k1_vertex_transform_U0_clip_tris_v1_x_ce0),
-    .clip_tris_v1_x_we0(k1_vertex_transform_U0_clip_tris_v1_x_we0),
-    .clip_tris_v1_x_d0(k1_vertex_transform_U0_clip_tris_v1_x_d0),
-    .clip_tris_v1_y_address0(k1_vertex_transform_U0_clip_tris_v1_y_address0),
-    .clip_tris_v1_y_ce0(k1_vertex_transform_U0_clip_tris_v1_y_ce0),
-    .clip_tris_v1_y_we0(k1_vertex_transform_U0_clip_tris_v1_y_we0),
-    .clip_tris_v1_y_d0(k1_vertex_transform_U0_clip_tris_v1_y_d0),
-    .clip_tris_v1_z_address0(k1_vertex_transform_U0_clip_tris_v1_z_address0),
-    .clip_tris_v1_z_ce0(k1_vertex_transform_U0_clip_tris_v1_z_ce0),
-    .clip_tris_v1_z_we0(k1_vertex_transform_U0_clip_tris_v1_z_we0),
-    .clip_tris_v1_z_d0(k1_vertex_transform_U0_clip_tris_v1_z_d0),
-    .clip_tris_v2_w_address0(k1_vertex_transform_U0_clip_tris_v2_w_address0),
-    .clip_tris_v2_w_ce0(k1_vertex_transform_U0_clip_tris_v2_w_ce0),
-    .clip_tris_v2_w_we0(k1_vertex_transform_U0_clip_tris_v2_w_we0),
-    .clip_tris_v2_w_d0(k1_vertex_transform_U0_clip_tris_v2_w_d0),
-    .clip_tris_v2_x_address0(k1_vertex_transform_U0_clip_tris_v2_x_address0),
-    .clip_tris_v2_x_ce0(k1_vertex_transform_U0_clip_tris_v2_x_ce0),
-    .clip_tris_v2_x_we0(k1_vertex_transform_U0_clip_tris_v2_x_we0),
-    .clip_tris_v2_x_d0(k1_vertex_transform_U0_clip_tris_v2_x_d0),
-    .clip_tris_v2_y_address0(k1_vertex_transform_U0_clip_tris_v2_y_address0),
-    .clip_tris_v2_y_ce0(k1_vertex_transform_U0_clip_tris_v2_y_ce0),
-    .clip_tris_v2_y_we0(k1_vertex_transform_U0_clip_tris_v2_y_we0),
-    .clip_tris_v2_y_d0(k1_vertex_transform_U0_clip_tris_v2_y_d0),
-    .clip_tris_v2_z_address0(k1_vertex_transform_U0_clip_tris_v2_z_address0),
-    .clip_tris_v2_z_ce0(k1_vertex_transform_U0_clip_tris_v2_z_ce0),
-    .clip_tris_v2_z_we0(k1_vertex_transform_U0_clip_tris_v2_z_we0),
-    .clip_tris_v2_z_d0(k1_vertex_transform_U0_clip_tris_v2_z_d0)
+    .mvp(mvp_matrix)
 );
 
 top_kernel_k2_perspective_divide k2_perspective_divide_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .ap_start(k2_perspective_divide_U0_ap_start),
+    .start_full_n(start_for_k3_bounding_box_U0_full_n),
     .ap_done(k2_perspective_divide_U0_ap_done),
     .ap_continue(k2_perspective_divide_U0_ap_continue),
     .ap_idle(k2_perspective_divide_U0_ap_idle),
     .ap_ready(k2_perspective_divide_U0_ap_ready),
-    .clip_tris_v0_x_address0(k2_perspective_divide_U0_clip_tris_v0_x_address0),
-    .clip_tris_v0_x_ce0(k2_perspective_divide_U0_clip_tris_v0_x_ce0),
-    .clip_tris_v0_x_q0(clip_tris_v0_x_t_q0),
-    .clip_tris_v0_y_address0(k2_perspective_divide_U0_clip_tris_v0_y_address0),
-    .clip_tris_v0_y_ce0(k2_perspective_divide_U0_clip_tris_v0_y_ce0),
-    .clip_tris_v0_y_q0(clip_tris_v0_y_t_q0),
-    .clip_tris_v0_z_address0(k2_perspective_divide_U0_clip_tris_v0_z_address0),
-    .clip_tris_v0_z_ce0(k2_perspective_divide_U0_clip_tris_v0_z_ce0),
-    .clip_tris_v0_z_q0(clip_tris_v0_z_t_q0),
-    .clip_tris_v0_w_address0(k2_perspective_divide_U0_clip_tris_v0_w_address0),
-    .clip_tris_v0_w_ce0(k2_perspective_divide_U0_clip_tris_v0_w_ce0),
-    .clip_tris_v0_w_q0(clip_tris_v0_w_t_q0),
-    .clip_tris_v1_x_address0(k2_perspective_divide_U0_clip_tris_v1_x_address0),
-    .clip_tris_v1_x_ce0(k2_perspective_divide_U0_clip_tris_v1_x_ce0),
-    .clip_tris_v1_x_q0(clip_tris_v1_x_t_q0),
-    .clip_tris_v1_y_address0(k2_perspective_divide_U0_clip_tris_v1_y_address0),
-    .clip_tris_v1_y_ce0(k2_perspective_divide_U0_clip_tris_v1_y_ce0),
-    .clip_tris_v1_y_q0(clip_tris_v1_y_t_q0),
-    .clip_tris_v1_z_address0(k2_perspective_divide_U0_clip_tris_v1_z_address0),
-    .clip_tris_v1_z_ce0(k2_perspective_divide_U0_clip_tris_v1_z_ce0),
-    .clip_tris_v1_z_q0(clip_tris_v1_z_t_q0),
-    .clip_tris_v1_w_address0(k2_perspective_divide_U0_clip_tris_v1_w_address0),
-    .clip_tris_v1_w_ce0(k2_perspective_divide_U0_clip_tris_v1_w_ce0),
-    .clip_tris_v1_w_q0(clip_tris_v1_w_t_q0),
-    .clip_tris_v2_x_address0(k2_perspective_divide_U0_clip_tris_v2_x_address0),
-    .clip_tris_v2_x_ce0(k2_perspective_divide_U0_clip_tris_v2_x_ce0),
-    .clip_tris_v2_x_q0(clip_tris_v2_x_t_q0),
-    .clip_tris_v2_y_address0(k2_perspective_divide_U0_clip_tris_v2_y_address0),
-    .clip_tris_v2_y_ce0(k2_perspective_divide_U0_clip_tris_v2_y_ce0),
-    .clip_tris_v2_y_q0(clip_tris_v2_y_t_q0),
-    .clip_tris_v2_z_address0(k2_perspective_divide_U0_clip_tris_v2_z_address0),
-    .clip_tris_v2_z_ce0(k2_perspective_divide_U0_clip_tris_v2_z_ce0),
-    .clip_tris_v2_z_q0(clip_tris_v2_z_t_q0),
-    .clip_tris_v2_w_address0(k2_perspective_divide_U0_clip_tris_v2_w_address0),
-    .clip_tris_v2_w_ce0(k2_perspective_divide_U0_clip_tris_v2_w_ce0),
-    .clip_tris_v2_w_q0(clip_tris_v2_w_t_q0),
-    .clip_tris_n0_x_address0(k2_perspective_divide_U0_clip_tris_n0_x_address0),
-    .clip_tris_n0_x_ce0(k2_perspective_divide_U0_clip_tris_n0_x_ce0),
-    .clip_tris_n0_x_q0(clip_tris_n0_x_t_q0),
-    .clip_tris_n0_y_address0(k2_perspective_divide_U0_clip_tris_n0_y_address0),
-    .clip_tris_n0_y_ce0(k2_perspective_divide_U0_clip_tris_n0_y_ce0),
-    .clip_tris_n0_y_q0(clip_tris_n0_y_t_q0),
-    .clip_tris_n0_z_address0(k2_perspective_divide_U0_clip_tris_n0_z_address0),
-    .clip_tris_n0_z_ce0(k2_perspective_divide_U0_clip_tris_n0_z_ce0),
-    .clip_tris_n0_z_q0(clip_tris_n0_z_t_q0),
-    .clip_tris_n1_x_address0(k2_perspective_divide_U0_clip_tris_n1_x_address0),
-    .clip_tris_n1_x_ce0(k2_perspective_divide_U0_clip_tris_n1_x_ce0),
-    .clip_tris_n1_x_q0(clip_tris_n1_x_t_q0),
-    .clip_tris_n1_y_address0(k2_perspective_divide_U0_clip_tris_n1_y_address0),
-    .clip_tris_n1_y_ce0(k2_perspective_divide_U0_clip_tris_n1_y_ce0),
-    .clip_tris_n1_y_q0(clip_tris_n1_y_t_q0),
-    .clip_tris_n1_z_address0(k2_perspective_divide_U0_clip_tris_n1_z_address0),
-    .clip_tris_n1_z_ce0(k2_perspective_divide_U0_clip_tris_n1_z_ce0),
-    .clip_tris_n1_z_q0(clip_tris_n1_z_t_q0),
-    .clip_tris_n2_x_address0(k2_perspective_divide_U0_clip_tris_n2_x_address0),
-    .clip_tris_n2_x_ce0(k2_perspective_divide_U0_clip_tris_n2_x_ce0),
-    .clip_tris_n2_x_q0(clip_tris_n2_x_t_q0),
-    .clip_tris_n2_y_address0(k2_perspective_divide_U0_clip_tris_n2_y_address0),
-    .clip_tris_n2_y_ce0(k2_perspective_divide_U0_clip_tris_n2_y_ce0),
-    .clip_tris_n2_y_q0(clip_tris_n2_y_t_q0),
-    .clip_tris_n2_z_address0(k2_perspective_divide_U0_clip_tris_n2_z_address0),
-    .clip_tris_n2_z_ce0(k2_perspective_divide_U0_clip_tris_n2_z_ce0),
-    .clip_tris_n2_z_q0(clip_tris_n2_z_t_q0),
-    .clip_tris_is_active_address0(k2_perspective_divide_U0_clip_tris_is_active_address0),
-    .clip_tris_is_active_ce0(k2_perspective_divide_U0_clip_tris_is_active_ce0),
-    .clip_tris_is_active_q0(clip_tris_is_active_t_q0),
-    .screen_tris_v0_x_address0(k2_perspective_divide_U0_screen_tris_v0_x_address0),
-    .screen_tris_v0_x_ce0(k2_perspective_divide_U0_screen_tris_v0_x_ce0),
-    .screen_tris_v0_x_we0(k2_perspective_divide_U0_screen_tris_v0_x_we0),
-    .screen_tris_v0_x_d0(k2_perspective_divide_U0_screen_tris_v0_x_d0),
-    .screen_tris_v0_y_address0(k2_perspective_divide_U0_screen_tris_v0_y_address0),
-    .screen_tris_v0_y_ce0(k2_perspective_divide_U0_screen_tris_v0_y_ce0),
-    .screen_tris_v0_y_we0(k2_perspective_divide_U0_screen_tris_v0_y_we0),
-    .screen_tris_v0_y_d0(k2_perspective_divide_U0_screen_tris_v0_y_d0),
-    .screen_tris_v0_z_address0(k2_perspective_divide_U0_screen_tris_v0_z_address0),
-    .screen_tris_v0_z_ce0(k2_perspective_divide_U0_screen_tris_v0_z_ce0),
-    .screen_tris_v0_z_we0(k2_perspective_divide_U0_screen_tris_v0_z_we0),
-    .screen_tris_v0_z_d0(k2_perspective_divide_U0_screen_tris_v0_z_d0),
-    .screen_tris_v1_x_address0(k2_perspective_divide_U0_screen_tris_v1_x_address0),
-    .screen_tris_v1_x_ce0(k2_perspective_divide_U0_screen_tris_v1_x_ce0),
-    .screen_tris_v1_x_we0(k2_perspective_divide_U0_screen_tris_v1_x_we0),
-    .screen_tris_v1_x_d0(k2_perspective_divide_U0_screen_tris_v1_x_d0),
-    .screen_tris_v1_y_address0(k2_perspective_divide_U0_screen_tris_v1_y_address0),
-    .screen_tris_v1_y_ce0(k2_perspective_divide_U0_screen_tris_v1_y_ce0),
-    .screen_tris_v1_y_we0(k2_perspective_divide_U0_screen_tris_v1_y_we0),
-    .screen_tris_v1_y_d0(k2_perspective_divide_U0_screen_tris_v1_y_d0),
-    .screen_tris_v1_z_address0(k2_perspective_divide_U0_screen_tris_v1_z_address0),
-    .screen_tris_v1_z_ce0(k2_perspective_divide_U0_screen_tris_v1_z_ce0),
-    .screen_tris_v1_z_we0(k2_perspective_divide_U0_screen_tris_v1_z_we0),
-    .screen_tris_v1_z_d0(k2_perspective_divide_U0_screen_tris_v1_z_d0),
-    .screen_tris_v2_x_address0(k2_perspective_divide_U0_screen_tris_v2_x_address0),
-    .screen_tris_v2_x_ce0(k2_perspective_divide_U0_screen_tris_v2_x_ce0),
-    .screen_tris_v2_x_we0(k2_perspective_divide_U0_screen_tris_v2_x_we0),
-    .screen_tris_v2_x_d0(k2_perspective_divide_U0_screen_tris_v2_x_d0),
-    .screen_tris_v2_y_address0(k2_perspective_divide_U0_screen_tris_v2_y_address0),
-    .screen_tris_v2_y_ce0(k2_perspective_divide_U0_screen_tris_v2_y_ce0),
-    .screen_tris_v2_y_we0(k2_perspective_divide_U0_screen_tris_v2_y_we0),
-    .screen_tris_v2_y_d0(k2_perspective_divide_U0_screen_tris_v2_y_d0),
-    .screen_tris_v2_z_address0(k2_perspective_divide_U0_screen_tris_v2_z_address0),
-    .screen_tris_v2_z_ce0(k2_perspective_divide_U0_screen_tris_v2_z_ce0),
-    .screen_tris_v2_z_we0(k2_perspective_divide_U0_screen_tris_v2_z_we0),
-    .screen_tris_v2_z_d0(k2_perspective_divide_U0_screen_tris_v2_z_d0),
-    .screen_tris_n0_x_address0(k2_perspective_divide_U0_screen_tris_n0_x_address0),
-    .screen_tris_n0_x_ce0(k2_perspective_divide_U0_screen_tris_n0_x_ce0),
-    .screen_tris_n0_x_we0(k2_perspective_divide_U0_screen_tris_n0_x_we0),
-    .screen_tris_n0_x_d0(k2_perspective_divide_U0_screen_tris_n0_x_d0),
-    .screen_tris_n0_y_address0(k2_perspective_divide_U0_screen_tris_n0_y_address0),
-    .screen_tris_n0_y_ce0(k2_perspective_divide_U0_screen_tris_n0_y_ce0),
-    .screen_tris_n0_y_we0(k2_perspective_divide_U0_screen_tris_n0_y_we0),
-    .screen_tris_n0_y_d0(k2_perspective_divide_U0_screen_tris_n0_y_d0),
-    .screen_tris_n0_z_address0(k2_perspective_divide_U0_screen_tris_n0_z_address0),
-    .screen_tris_n0_z_ce0(k2_perspective_divide_U0_screen_tris_n0_z_ce0),
-    .screen_tris_n0_z_we0(k2_perspective_divide_U0_screen_tris_n0_z_we0),
-    .screen_tris_n0_z_d0(k2_perspective_divide_U0_screen_tris_n0_z_d0),
-    .screen_tris_n1_x_address0(k2_perspective_divide_U0_screen_tris_n1_x_address0),
-    .screen_tris_n1_x_ce0(k2_perspective_divide_U0_screen_tris_n1_x_ce0),
-    .screen_tris_n1_x_we0(k2_perspective_divide_U0_screen_tris_n1_x_we0),
-    .screen_tris_n1_x_d0(k2_perspective_divide_U0_screen_tris_n1_x_d0),
-    .screen_tris_n1_y_address0(k2_perspective_divide_U0_screen_tris_n1_y_address0),
-    .screen_tris_n1_y_ce0(k2_perspective_divide_U0_screen_tris_n1_y_ce0),
-    .screen_tris_n1_y_we0(k2_perspective_divide_U0_screen_tris_n1_y_we0),
-    .screen_tris_n1_y_d0(k2_perspective_divide_U0_screen_tris_n1_y_d0),
-    .screen_tris_n1_z_address0(k2_perspective_divide_U0_screen_tris_n1_z_address0),
-    .screen_tris_n1_z_ce0(k2_perspective_divide_U0_screen_tris_n1_z_ce0),
-    .screen_tris_n1_z_we0(k2_perspective_divide_U0_screen_tris_n1_z_we0),
-    .screen_tris_n1_z_d0(k2_perspective_divide_U0_screen_tris_n1_z_d0),
-    .screen_tris_n2_x_address0(k2_perspective_divide_U0_screen_tris_n2_x_address0),
-    .screen_tris_n2_x_ce0(k2_perspective_divide_U0_screen_tris_n2_x_ce0),
-    .screen_tris_n2_x_we0(k2_perspective_divide_U0_screen_tris_n2_x_we0),
-    .screen_tris_n2_x_d0(k2_perspective_divide_U0_screen_tris_n2_x_d0),
-    .screen_tris_n2_y_address0(k2_perspective_divide_U0_screen_tris_n2_y_address0),
-    .screen_tris_n2_y_ce0(k2_perspective_divide_U0_screen_tris_n2_y_ce0),
-    .screen_tris_n2_y_we0(k2_perspective_divide_U0_screen_tris_n2_y_we0),
-    .screen_tris_n2_y_d0(k2_perspective_divide_U0_screen_tris_n2_y_d0),
-    .screen_tris_n2_z_address0(k2_perspective_divide_U0_screen_tris_n2_z_address0),
-    .screen_tris_n2_z_ce0(k2_perspective_divide_U0_screen_tris_n2_z_ce0),
-    .screen_tris_n2_z_we0(k2_perspective_divide_U0_screen_tris_n2_z_we0),
-    .screen_tris_n2_z_d0(k2_perspective_divide_U0_screen_tris_n2_z_d0),
-    .screen_tris_is_active_address0(k2_perspective_divide_U0_screen_tris_is_active_address0),
-    .screen_tris_is_active_ce0(k2_perspective_divide_U0_screen_tris_is_active_ce0),
-    .screen_tris_is_active_we0(k2_perspective_divide_U0_screen_tris_is_active_we0),
-    .screen_tris_is_active_d0(k2_perspective_divide_U0_screen_tris_is_active_d0)
+    .start_out(k2_perspective_divide_U0_start_out),
+    .start_write(k2_perspective_divide_U0_start_write),
+    .clip_tris_v0_x_dout(clip_tris_v0_x_dout),
+    .clip_tris_v0_x_empty_n(clip_tris_v0_x_empty_n),
+    .clip_tris_v0_x_read(k2_perspective_divide_U0_clip_tris_v0_x_read),
+    .clip_tris_v0_x_num_data_valid(clip_tris_v0_x_num_data_valid),
+    .clip_tris_v0_x_fifo_cap(clip_tris_v0_x_fifo_cap),
+    .clip_tris_v0_y_dout(clip_tris_v0_y_dout),
+    .clip_tris_v0_y_empty_n(clip_tris_v0_y_empty_n),
+    .clip_tris_v0_y_read(k2_perspective_divide_U0_clip_tris_v0_y_read),
+    .clip_tris_v0_y_num_data_valid(clip_tris_v0_y_num_data_valid),
+    .clip_tris_v0_y_fifo_cap(clip_tris_v0_y_fifo_cap),
+    .clip_tris_v0_z_dout(clip_tris_v0_z_dout),
+    .clip_tris_v0_z_empty_n(clip_tris_v0_z_empty_n),
+    .clip_tris_v0_z_read(k2_perspective_divide_U0_clip_tris_v0_z_read),
+    .clip_tris_v0_z_num_data_valid(clip_tris_v0_z_num_data_valid),
+    .clip_tris_v0_z_fifo_cap(clip_tris_v0_z_fifo_cap),
+    .clip_tris_v0_w_dout(clip_tris_v0_w_dout),
+    .clip_tris_v0_w_empty_n(clip_tris_v0_w_empty_n),
+    .clip_tris_v0_w_read(k2_perspective_divide_U0_clip_tris_v0_w_read),
+    .clip_tris_v0_w_num_data_valid(clip_tris_v0_w_num_data_valid),
+    .clip_tris_v0_w_fifo_cap(clip_tris_v0_w_fifo_cap),
+    .clip_tris_v1_x_dout(clip_tris_v1_x_dout),
+    .clip_tris_v1_x_empty_n(clip_tris_v1_x_empty_n),
+    .clip_tris_v1_x_read(k2_perspective_divide_U0_clip_tris_v1_x_read),
+    .clip_tris_v1_x_num_data_valid(clip_tris_v1_x_num_data_valid),
+    .clip_tris_v1_x_fifo_cap(clip_tris_v1_x_fifo_cap),
+    .clip_tris_v1_y_dout(clip_tris_v1_y_dout),
+    .clip_tris_v1_y_empty_n(clip_tris_v1_y_empty_n),
+    .clip_tris_v1_y_read(k2_perspective_divide_U0_clip_tris_v1_y_read),
+    .clip_tris_v1_y_num_data_valid(clip_tris_v1_y_num_data_valid),
+    .clip_tris_v1_y_fifo_cap(clip_tris_v1_y_fifo_cap),
+    .clip_tris_v1_z_dout(clip_tris_v1_z_dout),
+    .clip_tris_v1_z_empty_n(clip_tris_v1_z_empty_n),
+    .clip_tris_v1_z_read(k2_perspective_divide_U0_clip_tris_v1_z_read),
+    .clip_tris_v1_z_num_data_valid(clip_tris_v1_z_num_data_valid),
+    .clip_tris_v1_z_fifo_cap(clip_tris_v1_z_fifo_cap),
+    .clip_tris_v1_w_dout(clip_tris_v1_w_dout),
+    .clip_tris_v1_w_empty_n(clip_tris_v1_w_empty_n),
+    .clip_tris_v1_w_read(k2_perspective_divide_U0_clip_tris_v1_w_read),
+    .clip_tris_v1_w_num_data_valid(clip_tris_v1_w_num_data_valid),
+    .clip_tris_v1_w_fifo_cap(clip_tris_v1_w_fifo_cap),
+    .clip_tris_v2_x_dout(clip_tris_v2_x_dout),
+    .clip_tris_v2_x_empty_n(clip_tris_v2_x_empty_n),
+    .clip_tris_v2_x_read(k2_perspective_divide_U0_clip_tris_v2_x_read),
+    .clip_tris_v2_x_num_data_valid(clip_tris_v2_x_num_data_valid),
+    .clip_tris_v2_x_fifo_cap(clip_tris_v2_x_fifo_cap),
+    .clip_tris_v2_y_dout(clip_tris_v2_y_dout),
+    .clip_tris_v2_y_empty_n(clip_tris_v2_y_empty_n),
+    .clip_tris_v2_y_read(k2_perspective_divide_U0_clip_tris_v2_y_read),
+    .clip_tris_v2_y_num_data_valid(clip_tris_v2_y_num_data_valid),
+    .clip_tris_v2_y_fifo_cap(clip_tris_v2_y_fifo_cap),
+    .clip_tris_v2_z_dout(clip_tris_v2_z_dout),
+    .clip_tris_v2_z_empty_n(clip_tris_v2_z_empty_n),
+    .clip_tris_v2_z_read(k2_perspective_divide_U0_clip_tris_v2_z_read),
+    .clip_tris_v2_z_num_data_valid(clip_tris_v2_z_num_data_valid),
+    .clip_tris_v2_z_fifo_cap(clip_tris_v2_z_fifo_cap),
+    .clip_tris_v2_w_dout(clip_tris_v2_w_dout),
+    .clip_tris_v2_w_empty_n(clip_tris_v2_w_empty_n),
+    .clip_tris_v2_w_read(k2_perspective_divide_U0_clip_tris_v2_w_read),
+    .clip_tris_v2_w_num_data_valid(clip_tris_v2_w_num_data_valid),
+    .clip_tris_v2_w_fifo_cap(clip_tris_v2_w_fifo_cap),
+    .clip_tris_n0_x_dout(clip_tris_n0_x_dout),
+    .clip_tris_n0_x_empty_n(clip_tris_n0_x_empty_n),
+    .clip_tris_n0_x_read(k2_perspective_divide_U0_clip_tris_n0_x_read),
+    .clip_tris_n0_x_num_data_valid(clip_tris_n0_x_num_data_valid),
+    .clip_tris_n0_x_fifo_cap(clip_tris_n0_x_fifo_cap),
+    .clip_tris_n0_y_dout(clip_tris_n0_y_dout),
+    .clip_tris_n0_y_empty_n(clip_tris_n0_y_empty_n),
+    .clip_tris_n0_y_read(k2_perspective_divide_U0_clip_tris_n0_y_read),
+    .clip_tris_n0_y_num_data_valid(clip_tris_n0_y_num_data_valid),
+    .clip_tris_n0_y_fifo_cap(clip_tris_n0_y_fifo_cap),
+    .clip_tris_n0_z_dout(clip_tris_n0_z_dout),
+    .clip_tris_n0_z_empty_n(clip_tris_n0_z_empty_n),
+    .clip_tris_n0_z_read(k2_perspective_divide_U0_clip_tris_n0_z_read),
+    .clip_tris_n0_z_num_data_valid(clip_tris_n0_z_num_data_valid),
+    .clip_tris_n0_z_fifo_cap(clip_tris_n0_z_fifo_cap),
+    .clip_tris_n1_x_dout(clip_tris_n1_x_dout),
+    .clip_tris_n1_x_empty_n(clip_tris_n1_x_empty_n),
+    .clip_tris_n1_x_read(k2_perspective_divide_U0_clip_tris_n1_x_read),
+    .clip_tris_n1_x_num_data_valid(clip_tris_n1_x_num_data_valid),
+    .clip_tris_n1_x_fifo_cap(clip_tris_n1_x_fifo_cap),
+    .clip_tris_n1_y_dout(clip_tris_n1_y_dout),
+    .clip_tris_n1_y_empty_n(clip_tris_n1_y_empty_n),
+    .clip_tris_n1_y_read(k2_perspective_divide_U0_clip_tris_n1_y_read),
+    .clip_tris_n1_y_num_data_valid(clip_tris_n1_y_num_data_valid),
+    .clip_tris_n1_y_fifo_cap(clip_tris_n1_y_fifo_cap),
+    .clip_tris_n1_z_dout(clip_tris_n1_z_dout),
+    .clip_tris_n1_z_empty_n(clip_tris_n1_z_empty_n),
+    .clip_tris_n1_z_read(k2_perspective_divide_U0_clip_tris_n1_z_read),
+    .clip_tris_n1_z_num_data_valid(clip_tris_n1_z_num_data_valid),
+    .clip_tris_n1_z_fifo_cap(clip_tris_n1_z_fifo_cap),
+    .clip_tris_n2_x_dout(clip_tris_n2_x_dout),
+    .clip_tris_n2_x_empty_n(clip_tris_n2_x_empty_n),
+    .clip_tris_n2_x_read(k2_perspective_divide_U0_clip_tris_n2_x_read),
+    .clip_tris_n2_x_num_data_valid(clip_tris_n2_x_num_data_valid),
+    .clip_tris_n2_x_fifo_cap(clip_tris_n2_x_fifo_cap),
+    .clip_tris_n2_y_dout(clip_tris_n2_y_dout),
+    .clip_tris_n2_y_empty_n(clip_tris_n2_y_empty_n),
+    .clip_tris_n2_y_read(k2_perspective_divide_U0_clip_tris_n2_y_read),
+    .clip_tris_n2_y_num_data_valid(clip_tris_n2_y_num_data_valid),
+    .clip_tris_n2_y_fifo_cap(clip_tris_n2_y_fifo_cap),
+    .clip_tris_n2_z_dout(clip_tris_n2_z_dout),
+    .clip_tris_n2_z_empty_n(clip_tris_n2_z_empty_n),
+    .clip_tris_n2_z_read(k2_perspective_divide_U0_clip_tris_n2_z_read),
+    .clip_tris_n2_z_num_data_valid(clip_tris_n2_z_num_data_valid),
+    .clip_tris_n2_z_fifo_cap(clip_tris_n2_z_fifo_cap),
+    .clip_tris_color_dout(clip_tris_color_dout),
+    .clip_tris_color_empty_n(clip_tris_color_empty_n),
+    .clip_tris_color_read(k2_perspective_divide_U0_clip_tris_color_read),
+    .clip_tris_color_num_data_valid(clip_tris_color_num_data_valid),
+    .clip_tris_color_fifo_cap(clip_tris_color_fifo_cap),
+    .clip_tris_is_active_dout(clip_tris_is_active_dout),
+    .clip_tris_is_active_empty_n(clip_tris_is_active_empty_n),
+    .clip_tris_is_active_read(k2_perspective_divide_U0_clip_tris_is_active_read),
+    .clip_tris_is_active_num_data_valid(clip_tris_is_active_num_data_valid),
+    .clip_tris_is_active_fifo_cap(clip_tris_is_active_fifo_cap),
+    .screen_tris_in_v0_x_din(k2_perspective_divide_U0_screen_tris_in_v0_x_din),
+    .screen_tris_in_v0_x_full_n(screen_tris_in_v0_x_full_n),
+    .screen_tris_in_v0_x_write(k2_perspective_divide_U0_screen_tris_in_v0_x_write),
+    .screen_tris_in_v0_x_num_data_valid(screen_tris_in_v0_x_num_data_valid),
+    .screen_tris_in_v0_x_fifo_cap(screen_tris_in_v0_x_fifo_cap),
+    .screen_tris_in_v0_y_din(k2_perspective_divide_U0_screen_tris_in_v0_y_din),
+    .screen_tris_in_v0_y_full_n(screen_tris_in_v0_y_full_n),
+    .screen_tris_in_v0_y_write(k2_perspective_divide_U0_screen_tris_in_v0_y_write),
+    .screen_tris_in_v0_y_num_data_valid(screen_tris_in_v0_y_num_data_valid),
+    .screen_tris_in_v0_y_fifo_cap(screen_tris_in_v0_y_fifo_cap),
+    .screen_tris_in_v0_z_din(k2_perspective_divide_U0_screen_tris_in_v0_z_din),
+    .screen_tris_in_v0_z_full_n(screen_tris_in_v0_z_full_n),
+    .screen_tris_in_v0_z_write(k2_perspective_divide_U0_screen_tris_in_v0_z_write),
+    .screen_tris_in_v0_z_num_data_valid(screen_tris_in_v0_z_num_data_valid),
+    .screen_tris_in_v0_z_fifo_cap(screen_tris_in_v0_z_fifo_cap),
+    .screen_tris_in_v0_w_din(k2_perspective_divide_U0_screen_tris_in_v0_w_din),
+    .screen_tris_in_v0_w_full_n(screen_tris_in_v0_w_full_n),
+    .screen_tris_in_v0_w_write(k2_perspective_divide_U0_screen_tris_in_v0_w_write),
+    .screen_tris_in_v0_w_num_data_valid(screen_tris_in_v0_w_num_data_valid),
+    .screen_tris_in_v0_w_fifo_cap(screen_tris_in_v0_w_fifo_cap),
+    .screen_tris_in_v1_x_din(k2_perspective_divide_U0_screen_tris_in_v1_x_din),
+    .screen_tris_in_v1_x_full_n(screen_tris_in_v1_x_full_n),
+    .screen_tris_in_v1_x_write(k2_perspective_divide_U0_screen_tris_in_v1_x_write),
+    .screen_tris_in_v1_x_num_data_valid(screen_tris_in_v1_x_num_data_valid),
+    .screen_tris_in_v1_x_fifo_cap(screen_tris_in_v1_x_fifo_cap),
+    .screen_tris_in_v1_y_din(k2_perspective_divide_U0_screen_tris_in_v1_y_din),
+    .screen_tris_in_v1_y_full_n(screen_tris_in_v1_y_full_n),
+    .screen_tris_in_v1_y_write(k2_perspective_divide_U0_screen_tris_in_v1_y_write),
+    .screen_tris_in_v1_y_num_data_valid(screen_tris_in_v1_y_num_data_valid),
+    .screen_tris_in_v1_y_fifo_cap(screen_tris_in_v1_y_fifo_cap),
+    .screen_tris_in_v1_z_din(k2_perspective_divide_U0_screen_tris_in_v1_z_din),
+    .screen_tris_in_v1_z_full_n(screen_tris_in_v1_z_full_n),
+    .screen_tris_in_v1_z_write(k2_perspective_divide_U0_screen_tris_in_v1_z_write),
+    .screen_tris_in_v1_z_num_data_valid(screen_tris_in_v1_z_num_data_valid),
+    .screen_tris_in_v1_z_fifo_cap(screen_tris_in_v1_z_fifo_cap),
+    .screen_tris_in_v1_w_din(k2_perspective_divide_U0_screen_tris_in_v1_w_din),
+    .screen_tris_in_v1_w_full_n(screen_tris_in_v1_w_full_n),
+    .screen_tris_in_v1_w_write(k2_perspective_divide_U0_screen_tris_in_v1_w_write),
+    .screen_tris_in_v1_w_num_data_valid(screen_tris_in_v1_w_num_data_valid),
+    .screen_tris_in_v1_w_fifo_cap(screen_tris_in_v1_w_fifo_cap),
+    .screen_tris_in_v2_x_din(k2_perspective_divide_U0_screen_tris_in_v2_x_din),
+    .screen_tris_in_v2_x_full_n(screen_tris_in_v2_x_full_n),
+    .screen_tris_in_v2_x_write(k2_perspective_divide_U0_screen_tris_in_v2_x_write),
+    .screen_tris_in_v2_x_num_data_valid(screen_tris_in_v2_x_num_data_valid),
+    .screen_tris_in_v2_x_fifo_cap(screen_tris_in_v2_x_fifo_cap),
+    .screen_tris_in_v2_y_din(k2_perspective_divide_U0_screen_tris_in_v2_y_din),
+    .screen_tris_in_v2_y_full_n(screen_tris_in_v2_y_full_n),
+    .screen_tris_in_v2_y_write(k2_perspective_divide_U0_screen_tris_in_v2_y_write),
+    .screen_tris_in_v2_y_num_data_valid(screen_tris_in_v2_y_num_data_valid),
+    .screen_tris_in_v2_y_fifo_cap(screen_tris_in_v2_y_fifo_cap),
+    .screen_tris_in_v2_z_din(k2_perspective_divide_U0_screen_tris_in_v2_z_din),
+    .screen_tris_in_v2_z_full_n(screen_tris_in_v2_z_full_n),
+    .screen_tris_in_v2_z_write(k2_perspective_divide_U0_screen_tris_in_v2_z_write),
+    .screen_tris_in_v2_z_num_data_valid(screen_tris_in_v2_z_num_data_valid),
+    .screen_tris_in_v2_z_fifo_cap(screen_tris_in_v2_z_fifo_cap),
+    .screen_tris_in_v2_w_din(k2_perspective_divide_U0_screen_tris_in_v2_w_din),
+    .screen_tris_in_v2_w_full_n(screen_tris_in_v2_w_full_n),
+    .screen_tris_in_v2_w_write(k2_perspective_divide_U0_screen_tris_in_v2_w_write),
+    .screen_tris_in_v2_w_num_data_valid(screen_tris_in_v2_w_num_data_valid),
+    .screen_tris_in_v2_w_fifo_cap(screen_tris_in_v2_w_fifo_cap),
+    .screen_tris_in_n0_x_din(k2_perspective_divide_U0_screen_tris_in_n0_x_din),
+    .screen_tris_in_n0_x_full_n(screen_tris_in_n0_x_full_n),
+    .screen_tris_in_n0_x_write(k2_perspective_divide_U0_screen_tris_in_n0_x_write),
+    .screen_tris_in_n0_x_num_data_valid(screen_tris_in_n0_x_num_data_valid),
+    .screen_tris_in_n0_x_fifo_cap(screen_tris_in_n0_x_fifo_cap),
+    .screen_tris_in_n0_y_din(k2_perspective_divide_U0_screen_tris_in_n0_y_din),
+    .screen_tris_in_n0_y_full_n(screen_tris_in_n0_y_full_n),
+    .screen_tris_in_n0_y_write(k2_perspective_divide_U0_screen_tris_in_n0_y_write),
+    .screen_tris_in_n0_y_num_data_valid(screen_tris_in_n0_y_num_data_valid),
+    .screen_tris_in_n0_y_fifo_cap(screen_tris_in_n0_y_fifo_cap),
+    .screen_tris_in_n0_z_din(k2_perspective_divide_U0_screen_tris_in_n0_z_din),
+    .screen_tris_in_n0_z_full_n(screen_tris_in_n0_z_full_n),
+    .screen_tris_in_n0_z_write(k2_perspective_divide_U0_screen_tris_in_n0_z_write),
+    .screen_tris_in_n0_z_num_data_valid(screen_tris_in_n0_z_num_data_valid),
+    .screen_tris_in_n0_z_fifo_cap(screen_tris_in_n0_z_fifo_cap),
+    .screen_tris_in_n1_x_din(k2_perspective_divide_U0_screen_tris_in_n1_x_din),
+    .screen_tris_in_n1_x_full_n(screen_tris_in_n1_x_full_n),
+    .screen_tris_in_n1_x_write(k2_perspective_divide_U0_screen_tris_in_n1_x_write),
+    .screen_tris_in_n1_x_num_data_valid(screen_tris_in_n1_x_num_data_valid),
+    .screen_tris_in_n1_x_fifo_cap(screen_tris_in_n1_x_fifo_cap),
+    .screen_tris_in_n1_y_din(k2_perspective_divide_U0_screen_tris_in_n1_y_din),
+    .screen_tris_in_n1_y_full_n(screen_tris_in_n1_y_full_n),
+    .screen_tris_in_n1_y_write(k2_perspective_divide_U0_screen_tris_in_n1_y_write),
+    .screen_tris_in_n1_y_num_data_valid(screen_tris_in_n1_y_num_data_valid),
+    .screen_tris_in_n1_y_fifo_cap(screen_tris_in_n1_y_fifo_cap),
+    .screen_tris_in_n1_z_din(k2_perspective_divide_U0_screen_tris_in_n1_z_din),
+    .screen_tris_in_n1_z_full_n(screen_tris_in_n1_z_full_n),
+    .screen_tris_in_n1_z_write(k2_perspective_divide_U0_screen_tris_in_n1_z_write),
+    .screen_tris_in_n1_z_num_data_valid(screen_tris_in_n1_z_num_data_valid),
+    .screen_tris_in_n1_z_fifo_cap(screen_tris_in_n1_z_fifo_cap),
+    .screen_tris_in_n2_x_din(k2_perspective_divide_U0_screen_tris_in_n2_x_din),
+    .screen_tris_in_n2_x_full_n(screen_tris_in_n2_x_full_n),
+    .screen_tris_in_n2_x_write(k2_perspective_divide_U0_screen_tris_in_n2_x_write),
+    .screen_tris_in_n2_x_num_data_valid(screen_tris_in_n2_x_num_data_valid),
+    .screen_tris_in_n2_x_fifo_cap(screen_tris_in_n2_x_fifo_cap),
+    .screen_tris_in_n2_y_din(k2_perspective_divide_U0_screen_tris_in_n2_y_din),
+    .screen_tris_in_n2_y_full_n(screen_tris_in_n2_y_full_n),
+    .screen_tris_in_n2_y_write(k2_perspective_divide_U0_screen_tris_in_n2_y_write),
+    .screen_tris_in_n2_y_num_data_valid(screen_tris_in_n2_y_num_data_valid),
+    .screen_tris_in_n2_y_fifo_cap(screen_tris_in_n2_y_fifo_cap),
+    .screen_tris_in_n2_z_din(k2_perspective_divide_U0_screen_tris_in_n2_z_din),
+    .screen_tris_in_n2_z_full_n(screen_tris_in_n2_z_full_n),
+    .screen_tris_in_n2_z_write(k2_perspective_divide_U0_screen_tris_in_n2_z_write),
+    .screen_tris_in_n2_z_num_data_valid(screen_tris_in_n2_z_num_data_valid),
+    .screen_tris_in_n2_z_fifo_cap(screen_tris_in_n2_z_fifo_cap),
+    .screen_tris_in_color_din(k2_perspective_divide_U0_screen_tris_in_color_din),
+    .screen_tris_in_color_full_n(screen_tris_in_color_full_n),
+    .screen_tris_in_color_write(k2_perspective_divide_U0_screen_tris_in_color_write),
+    .screen_tris_in_color_num_data_valid(screen_tris_in_color_num_data_valid),
+    .screen_tris_in_color_fifo_cap(screen_tris_in_color_fifo_cap),
+    .screen_tris_in_is_active_din(k2_perspective_divide_U0_screen_tris_in_is_active_din),
+    .screen_tris_in_is_active_full_n(screen_tris_in_is_active_full_n),
+    .screen_tris_in_is_active_write(k2_perspective_divide_U0_screen_tris_in_is_active_write),
+    .screen_tris_in_is_active_num_data_valid(screen_tris_in_is_active_num_data_valid),
+    .screen_tris_in_is_active_fifo_cap(screen_tris_in_is_active_fifo_cap)
 );
 
-top_kernel_Block_entry_screen_tris_v0_x_rd_proc Block_entry_screen_tris_v0_x_rd_proc_U0(
+top_kernel_k3_bounding_box k3_bounding_box_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_start),
-    .ap_done(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done),
-    .ap_continue(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue),
-    .ap_idle(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_idle),
-    .ap_ready(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready),
-    .depth_buffer_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_address0),
-    .depth_buffer_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_ce0),
-    .depth_buffer_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_we0),
-    .depth_buffer_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_d0),
-    .normal_buffer_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_address0),
-    .normal_buffer_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_ce0),
-    .normal_buffer_x_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_we0),
-    .normal_buffer_x_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_d0),
-    .normal_buffer_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_address0),
-    .normal_buffer_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_ce0),
-    .normal_buffer_y_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_we0),
-    .normal_buffer_y_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_d0),
-    .normal_buffer_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_address0),
-    .normal_buffer_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_ce0),
-    .normal_buffer_z_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_we0),
-    .normal_buffer_z_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_d0),
-    .screen_tris_is_active_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_address0),
-    .screen_tris_is_active_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_ce0),
-    .screen_tris_is_active_q0(screen_tris_is_active_t_q0),
-    .screen_tris_n0_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_address0),
-    .screen_tris_n0_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_ce0),
-    .screen_tris_n0_x_q0(screen_tris_n0_x_t_q0),
-    .screen_tris_n0_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_address0),
-    .screen_tris_n0_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_ce0),
-    .screen_tris_n0_y_q0(screen_tris_n0_y_t_q0),
-    .screen_tris_n0_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_address0),
-    .screen_tris_n0_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_ce0),
-    .screen_tris_n0_z_q0(screen_tris_n0_z_t_q0),
-    .screen_tris_n1_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_address0),
-    .screen_tris_n1_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_ce0),
-    .screen_tris_n1_x_q0(screen_tris_n1_x_t_q0),
-    .screen_tris_n1_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_address0),
-    .screen_tris_n1_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_ce0),
-    .screen_tris_n1_y_q0(screen_tris_n1_y_t_q0),
-    .screen_tris_n1_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_address0),
-    .screen_tris_n1_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_ce0),
-    .screen_tris_n1_z_q0(screen_tris_n1_z_t_q0),
-    .screen_tris_n2_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_address0),
-    .screen_tris_n2_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_ce0),
-    .screen_tris_n2_x_q0(screen_tris_n2_x_t_q0),
-    .screen_tris_n2_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_address0),
-    .screen_tris_n2_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_ce0),
-    .screen_tris_n2_y_q0(screen_tris_n2_y_t_q0),
-    .screen_tris_n2_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_address0),
-    .screen_tris_n2_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_ce0),
-    .screen_tris_n2_z_q0(screen_tris_n2_z_t_q0),
-    .screen_tris_v0_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_address0),
-    .screen_tris_v0_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_ce0),
-    .screen_tris_v0_x_q0(screen_tris_v0_x_t_q0),
-    .screen_tris_v0_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_address0),
-    .screen_tris_v0_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_ce0),
-    .screen_tris_v0_y_q0(screen_tris_v0_y_t_q0),
-    .screen_tris_v0_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_address0),
-    .screen_tris_v0_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_ce0),
-    .screen_tris_v0_z_q0(screen_tris_v0_z_t_q0),
-    .screen_tris_v1_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_address0),
-    .screen_tris_v1_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_ce0),
-    .screen_tris_v1_x_q0(screen_tris_v1_x_t_q0),
-    .screen_tris_v1_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_address0),
-    .screen_tris_v1_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_ce0),
-    .screen_tris_v1_y_q0(screen_tris_v1_y_t_q0),
-    .screen_tris_v1_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_address0),
-    .screen_tris_v1_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_ce0),
-    .screen_tris_v1_z_q0(screen_tris_v1_z_t_q0),
-    .screen_tris_v2_x_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_address0),
-    .screen_tris_v2_x_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_ce0),
-    .screen_tris_v2_x_q0(screen_tris_v2_x_t_q0),
-    .screen_tris_v2_y_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_address0),
-    .screen_tris_v2_y_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_ce0),
-    .screen_tris_v2_y_q0(screen_tris_v2_y_t_q0),
-    .screen_tris_v2_z_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_address0),
-    .screen_tris_v2_z_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_ce0),
-    .screen_tris_v2_z_q0(screen_tris_v2_z_t_q0)
+    .ap_start(k3_bounding_box_U0_ap_start),
+    .start_full_n(start_for_k4_rasterize_U0_full_n),
+    .ap_done(k3_bounding_box_U0_ap_done),
+    .ap_continue(k3_bounding_box_U0_ap_continue),
+    .ap_idle(k3_bounding_box_U0_ap_idle),
+    .ap_ready(k3_bounding_box_U0_ap_ready),
+    .screen_tris_in_v0_x_dout(screen_tris_in_v0_x_dout),
+    .screen_tris_in_v0_x_empty_n(screen_tris_in_v0_x_empty_n),
+    .screen_tris_in_v0_x_read(k3_bounding_box_U0_screen_tris_in_v0_x_read),
+    .screen_tris_in_v0_x_num_data_valid(screen_tris_in_v0_x_num_data_valid),
+    .screen_tris_in_v0_x_fifo_cap(screen_tris_in_v0_x_fifo_cap),
+    .screen_tris_in_v0_y_dout(screen_tris_in_v0_y_dout),
+    .screen_tris_in_v0_y_empty_n(screen_tris_in_v0_y_empty_n),
+    .screen_tris_in_v0_y_read(k3_bounding_box_U0_screen_tris_in_v0_y_read),
+    .screen_tris_in_v0_y_num_data_valid(screen_tris_in_v0_y_num_data_valid),
+    .screen_tris_in_v0_y_fifo_cap(screen_tris_in_v0_y_fifo_cap),
+    .screen_tris_in_v0_z_dout(screen_tris_in_v0_z_dout),
+    .screen_tris_in_v0_z_empty_n(screen_tris_in_v0_z_empty_n),
+    .screen_tris_in_v0_z_read(k3_bounding_box_U0_screen_tris_in_v0_z_read),
+    .screen_tris_in_v0_z_num_data_valid(screen_tris_in_v0_z_num_data_valid),
+    .screen_tris_in_v0_z_fifo_cap(screen_tris_in_v0_z_fifo_cap),
+    .screen_tris_in_v0_w_dout(screen_tris_in_v0_w_dout),
+    .screen_tris_in_v0_w_empty_n(screen_tris_in_v0_w_empty_n),
+    .screen_tris_in_v0_w_read(k3_bounding_box_U0_screen_tris_in_v0_w_read),
+    .screen_tris_in_v0_w_num_data_valid(screen_tris_in_v0_w_num_data_valid),
+    .screen_tris_in_v0_w_fifo_cap(screen_tris_in_v0_w_fifo_cap),
+    .screen_tris_in_v1_x_dout(screen_tris_in_v1_x_dout),
+    .screen_tris_in_v1_x_empty_n(screen_tris_in_v1_x_empty_n),
+    .screen_tris_in_v1_x_read(k3_bounding_box_U0_screen_tris_in_v1_x_read),
+    .screen_tris_in_v1_x_num_data_valid(screen_tris_in_v1_x_num_data_valid),
+    .screen_tris_in_v1_x_fifo_cap(screen_tris_in_v1_x_fifo_cap),
+    .screen_tris_in_v1_y_dout(screen_tris_in_v1_y_dout),
+    .screen_tris_in_v1_y_empty_n(screen_tris_in_v1_y_empty_n),
+    .screen_tris_in_v1_y_read(k3_bounding_box_U0_screen_tris_in_v1_y_read),
+    .screen_tris_in_v1_y_num_data_valid(screen_tris_in_v1_y_num_data_valid),
+    .screen_tris_in_v1_y_fifo_cap(screen_tris_in_v1_y_fifo_cap),
+    .screen_tris_in_v1_z_dout(screen_tris_in_v1_z_dout),
+    .screen_tris_in_v1_z_empty_n(screen_tris_in_v1_z_empty_n),
+    .screen_tris_in_v1_z_read(k3_bounding_box_U0_screen_tris_in_v1_z_read),
+    .screen_tris_in_v1_z_num_data_valid(screen_tris_in_v1_z_num_data_valid),
+    .screen_tris_in_v1_z_fifo_cap(screen_tris_in_v1_z_fifo_cap),
+    .screen_tris_in_v1_w_dout(screen_tris_in_v1_w_dout),
+    .screen_tris_in_v1_w_empty_n(screen_tris_in_v1_w_empty_n),
+    .screen_tris_in_v1_w_read(k3_bounding_box_U0_screen_tris_in_v1_w_read),
+    .screen_tris_in_v1_w_num_data_valid(screen_tris_in_v1_w_num_data_valid),
+    .screen_tris_in_v1_w_fifo_cap(screen_tris_in_v1_w_fifo_cap),
+    .screen_tris_in_v2_x_dout(screen_tris_in_v2_x_dout),
+    .screen_tris_in_v2_x_empty_n(screen_tris_in_v2_x_empty_n),
+    .screen_tris_in_v2_x_read(k3_bounding_box_U0_screen_tris_in_v2_x_read),
+    .screen_tris_in_v2_x_num_data_valid(screen_tris_in_v2_x_num_data_valid),
+    .screen_tris_in_v2_x_fifo_cap(screen_tris_in_v2_x_fifo_cap),
+    .screen_tris_in_v2_y_dout(screen_tris_in_v2_y_dout),
+    .screen_tris_in_v2_y_empty_n(screen_tris_in_v2_y_empty_n),
+    .screen_tris_in_v2_y_read(k3_bounding_box_U0_screen_tris_in_v2_y_read),
+    .screen_tris_in_v2_y_num_data_valid(screen_tris_in_v2_y_num_data_valid),
+    .screen_tris_in_v2_y_fifo_cap(screen_tris_in_v2_y_fifo_cap),
+    .screen_tris_in_v2_z_dout(screen_tris_in_v2_z_dout),
+    .screen_tris_in_v2_z_empty_n(screen_tris_in_v2_z_empty_n),
+    .screen_tris_in_v2_z_read(k3_bounding_box_U0_screen_tris_in_v2_z_read),
+    .screen_tris_in_v2_z_num_data_valid(screen_tris_in_v2_z_num_data_valid),
+    .screen_tris_in_v2_z_fifo_cap(screen_tris_in_v2_z_fifo_cap),
+    .screen_tris_in_v2_w_dout(screen_tris_in_v2_w_dout),
+    .screen_tris_in_v2_w_empty_n(screen_tris_in_v2_w_empty_n),
+    .screen_tris_in_v2_w_read(k3_bounding_box_U0_screen_tris_in_v2_w_read),
+    .screen_tris_in_v2_w_num_data_valid(screen_tris_in_v2_w_num_data_valid),
+    .screen_tris_in_v2_w_fifo_cap(screen_tris_in_v2_w_fifo_cap),
+    .screen_tris_in_n0_x_dout(screen_tris_in_n0_x_dout),
+    .screen_tris_in_n0_x_empty_n(screen_tris_in_n0_x_empty_n),
+    .screen_tris_in_n0_x_read(k3_bounding_box_U0_screen_tris_in_n0_x_read),
+    .screen_tris_in_n0_x_num_data_valid(screen_tris_in_n0_x_num_data_valid),
+    .screen_tris_in_n0_x_fifo_cap(screen_tris_in_n0_x_fifo_cap),
+    .screen_tris_in_n0_y_dout(screen_tris_in_n0_y_dout),
+    .screen_tris_in_n0_y_empty_n(screen_tris_in_n0_y_empty_n),
+    .screen_tris_in_n0_y_read(k3_bounding_box_U0_screen_tris_in_n0_y_read),
+    .screen_tris_in_n0_y_num_data_valid(screen_tris_in_n0_y_num_data_valid),
+    .screen_tris_in_n0_y_fifo_cap(screen_tris_in_n0_y_fifo_cap),
+    .screen_tris_in_n0_z_dout(screen_tris_in_n0_z_dout),
+    .screen_tris_in_n0_z_empty_n(screen_tris_in_n0_z_empty_n),
+    .screen_tris_in_n0_z_read(k3_bounding_box_U0_screen_tris_in_n0_z_read),
+    .screen_tris_in_n0_z_num_data_valid(screen_tris_in_n0_z_num_data_valid),
+    .screen_tris_in_n0_z_fifo_cap(screen_tris_in_n0_z_fifo_cap),
+    .screen_tris_in_n1_x_dout(screen_tris_in_n1_x_dout),
+    .screen_tris_in_n1_x_empty_n(screen_tris_in_n1_x_empty_n),
+    .screen_tris_in_n1_x_read(k3_bounding_box_U0_screen_tris_in_n1_x_read),
+    .screen_tris_in_n1_x_num_data_valid(screen_tris_in_n1_x_num_data_valid),
+    .screen_tris_in_n1_x_fifo_cap(screen_tris_in_n1_x_fifo_cap),
+    .screen_tris_in_n1_y_dout(screen_tris_in_n1_y_dout),
+    .screen_tris_in_n1_y_empty_n(screen_tris_in_n1_y_empty_n),
+    .screen_tris_in_n1_y_read(k3_bounding_box_U0_screen_tris_in_n1_y_read),
+    .screen_tris_in_n1_y_num_data_valid(screen_tris_in_n1_y_num_data_valid),
+    .screen_tris_in_n1_y_fifo_cap(screen_tris_in_n1_y_fifo_cap),
+    .screen_tris_in_n1_z_dout(screen_tris_in_n1_z_dout),
+    .screen_tris_in_n1_z_empty_n(screen_tris_in_n1_z_empty_n),
+    .screen_tris_in_n1_z_read(k3_bounding_box_U0_screen_tris_in_n1_z_read),
+    .screen_tris_in_n1_z_num_data_valid(screen_tris_in_n1_z_num_data_valid),
+    .screen_tris_in_n1_z_fifo_cap(screen_tris_in_n1_z_fifo_cap),
+    .screen_tris_in_n2_x_dout(screen_tris_in_n2_x_dout),
+    .screen_tris_in_n2_x_empty_n(screen_tris_in_n2_x_empty_n),
+    .screen_tris_in_n2_x_read(k3_bounding_box_U0_screen_tris_in_n2_x_read),
+    .screen_tris_in_n2_x_num_data_valid(screen_tris_in_n2_x_num_data_valid),
+    .screen_tris_in_n2_x_fifo_cap(screen_tris_in_n2_x_fifo_cap),
+    .screen_tris_in_n2_y_dout(screen_tris_in_n2_y_dout),
+    .screen_tris_in_n2_y_empty_n(screen_tris_in_n2_y_empty_n),
+    .screen_tris_in_n2_y_read(k3_bounding_box_U0_screen_tris_in_n2_y_read),
+    .screen_tris_in_n2_y_num_data_valid(screen_tris_in_n2_y_num_data_valid),
+    .screen_tris_in_n2_y_fifo_cap(screen_tris_in_n2_y_fifo_cap),
+    .screen_tris_in_n2_z_dout(screen_tris_in_n2_z_dout),
+    .screen_tris_in_n2_z_empty_n(screen_tris_in_n2_z_empty_n),
+    .screen_tris_in_n2_z_read(k3_bounding_box_U0_screen_tris_in_n2_z_read),
+    .screen_tris_in_n2_z_num_data_valid(screen_tris_in_n2_z_num_data_valid),
+    .screen_tris_in_n2_z_fifo_cap(screen_tris_in_n2_z_fifo_cap),
+    .screen_tris_in_color_dout(screen_tris_in_color_dout),
+    .screen_tris_in_color_empty_n(screen_tris_in_color_empty_n),
+    .screen_tris_in_color_read(k3_bounding_box_U0_screen_tris_in_color_read),
+    .screen_tris_in_color_num_data_valid(screen_tris_in_color_num_data_valid),
+    .screen_tris_in_color_fifo_cap(screen_tris_in_color_fifo_cap),
+    .screen_tris_in_is_active_dout(screen_tris_in_is_active_dout),
+    .screen_tris_in_is_active_empty_n(screen_tris_in_is_active_empty_n),
+    .screen_tris_in_is_active_read(k3_bounding_box_U0_screen_tris_in_is_active_read),
+    .screen_tris_in_is_active_num_data_valid(screen_tris_in_is_active_num_data_valid),
+    .screen_tris_in_is_active_fifo_cap(screen_tris_in_is_active_fifo_cap),
+    .bounds_min_x_din(k3_bounding_box_U0_bounds_min_x_din),
+    .bounds_min_x_full_n(bounds_min_x_full_n),
+    .bounds_min_x_write(k3_bounding_box_U0_bounds_min_x_write),
+    .bounds_min_x_num_data_valid(k3_bounding_box_U0_bounds_min_x_num_data_valid),
+    .bounds_min_x_fifo_cap(k3_bounding_box_U0_bounds_min_x_fifo_cap),
+    .bounds_min_y_din(k3_bounding_box_U0_bounds_min_y_din),
+    .bounds_min_y_full_n(bounds_min_y_full_n),
+    .bounds_min_y_write(k3_bounding_box_U0_bounds_min_y_write),
+    .bounds_min_y_num_data_valid(k3_bounding_box_U0_bounds_min_y_num_data_valid),
+    .bounds_min_y_fifo_cap(k3_bounding_box_U0_bounds_min_y_fifo_cap),
+    .bounds_max_x_din(k3_bounding_box_U0_bounds_max_x_din),
+    .bounds_max_x_full_n(bounds_max_x_full_n),
+    .bounds_max_x_write(k3_bounding_box_U0_bounds_max_x_write),
+    .bounds_max_x_num_data_valid(k3_bounding_box_U0_bounds_max_x_num_data_valid),
+    .bounds_max_x_fifo_cap(k3_bounding_box_U0_bounds_max_x_fifo_cap),
+    .bounds_max_y_din(k3_bounding_box_U0_bounds_max_y_din),
+    .bounds_max_y_full_n(bounds_max_y_full_n),
+    .bounds_max_y_write(k3_bounding_box_U0_bounds_max_y_write),
+    .bounds_max_y_num_data_valid(k3_bounding_box_U0_bounds_max_y_num_data_valid),
+    .bounds_max_y_fifo_cap(k3_bounding_box_U0_bounds_max_y_fifo_cap),
+    .screen_tris_out_v0_x_din(k3_bounding_box_U0_screen_tris_out_v0_x_din),
+    .screen_tris_out_v0_x_full_n(screen_tris_out_v0_x_full_n),
+    .screen_tris_out_v0_x_write(k3_bounding_box_U0_screen_tris_out_v0_x_write),
+    .screen_tris_out_v0_x_num_data_valid(k3_bounding_box_U0_screen_tris_out_v0_x_num_data_valid),
+    .screen_tris_out_v0_x_fifo_cap(k3_bounding_box_U0_screen_tris_out_v0_x_fifo_cap),
+    .screen_tris_out_v0_y_din(k3_bounding_box_U0_screen_tris_out_v0_y_din),
+    .screen_tris_out_v0_y_full_n(screen_tris_out_v0_y_full_n),
+    .screen_tris_out_v0_y_write(k3_bounding_box_U0_screen_tris_out_v0_y_write),
+    .screen_tris_out_v0_y_num_data_valid(k3_bounding_box_U0_screen_tris_out_v0_y_num_data_valid),
+    .screen_tris_out_v0_y_fifo_cap(k3_bounding_box_U0_screen_tris_out_v0_y_fifo_cap),
+    .screen_tris_out_v0_z_din(k3_bounding_box_U0_screen_tris_out_v0_z_din),
+    .screen_tris_out_v0_z_full_n(screen_tris_out_v0_z_full_n),
+    .screen_tris_out_v0_z_write(k3_bounding_box_U0_screen_tris_out_v0_z_write),
+    .screen_tris_out_v0_z_num_data_valid(k3_bounding_box_U0_screen_tris_out_v0_z_num_data_valid),
+    .screen_tris_out_v0_z_fifo_cap(k3_bounding_box_U0_screen_tris_out_v0_z_fifo_cap),
+    .screen_tris_out_v0_w_din(k3_bounding_box_U0_screen_tris_out_v0_w_din),
+    .screen_tris_out_v0_w_full_n(screen_tris_out_v0_w_full_n),
+    .screen_tris_out_v0_w_write(k3_bounding_box_U0_screen_tris_out_v0_w_write),
+    .screen_tris_out_v0_w_num_data_valid(k3_bounding_box_U0_screen_tris_out_v0_w_num_data_valid),
+    .screen_tris_out_v0_w_fifo_cap(k3_bounding_box_U0_screen_tris_out_v0_w_fifo_cap),
+    .screen_tris_out_v1_x_din(k3_bounding_box_U0_screen_tris_out_v1_x_din),
+    .screen_tris_out_v1_x_full_n(screen_tris_out_v1_x_full_n),
+    .screen_tris_out_v1_x_write(k3_bounding_box_U0_screen_tris_out_v1_x_write),
+    .screen_tris_out_v1_x_num_data_valid(k3_bounding_box_U0_screen_tris_out_v1_x_num_data_valid),
+    .screen_tris_out_v1_x_fifo_cap(k3_bounding_box_U0_screen_tris_out_v1_x_fifo_cap),
+    .screen_tris_out_v1_y_din(k3_bounding_box_U0_screen_tris_out_v1_y_din),
+    .screen_tris_out_v1_y_full_n(screen_tris_out_v1_y_full_n),
+    .screen_tris_out_v1_y_write(k3_bounding_box_U0_screen_tris_out_v1_y_write),
+    .screen_tris_out_v1_y_num_data_valid(k3_bounding_box_U0_screen_tris_out_v1_y_num_data_valid),
+    .screen_tris_out_v1_y_fifo_cap(k3_bounding_box_U0_screen_tris_out_v1_y_fifo_cap),
+    .screen_tris_out_v1_z_din(k3_bounding_box_U0_screen_tris_out_v1_z_din),
+    .screen_tris_out_v1_z_full_n(screen_tris_out_v1_z_full_n),
+    .screen_tris_out_v1_z_write(k3_bounding_box_U0_screen_tris_out_v1_z_write),
+    .screen_tris_out_v1_z_num_data_valid(k3_bounding_box_U0_screen_tris_out_v1_z_num_data_valid),
+    .screen_tris_out_v1_z_fifo_cap(k3_bounding_box_U0_screen_tris_out_v1_z_fifo_cap),
+    .screen_tris_out_v1_w_din(k3_bounding_box_U0_screen_tris_out_v1_w_din),
+    .screen_tris_out_v1_w_full_n(screen_tris_out_v1_w_full_n),
+    .screen_tris_out_v1_w_write(k3_bounding_box_U0_screen_tris_out_v1_w_write),
+    .screen_tris_out_v1_w_num_data_valid(k3_bounding_box_U0_screen_tris_out_v1_w_num_data_valid),
+    .screen_tris_out_v1_w_fifo_cap(k3_bounding_box_U0_screen_tris_out_v1_w_fifo_cap),
+    .screen_tris_out_v2_x_din(k3_bounding_box_U0_screen_tris_out_v2_x_din),
+    .screen_tris_out_v2_x_full_n(screen_tris_out_v2_x_full_n),
+    .screen_tris_out_v2_x_write(k3_bounding_box_U0_screen_tris_out_v2_x_write),
+    .screen_tris_out_v2_x_num_data_valid(k3_bounding_box_U0_screen_tris_out_v2_x_num_data_valid),
+    .screen_tris_out_v2_x_fifo_cap(k3_bounding_box_U0_screen_tris_out_v2_x_fifo_cap),
+    .screen_tris_out_v2_y_din(k3_bounding_box_U0_screen_tris_out_v2_y_din),
+    .screen_tris_out_v2_y_full_n(screen_tris_out_v2_y_full_n),
+    .screen_tris_out_v2_y_write(k3_bounding_box_U0_screen_tris_out_v2_y_write),
+    .screen_tris_out_v2_y_num_data_valid(k3_bounding_box_U0_screen_tris_out_v2_y_num_data_valid),
+    .screen_tris_out_v2_y_fifo_cap(k3_bounding_box_U0_screen_tris_out_v2_y_fifo_cap),
+    .screen_tris_out_v2_z_din(k3_bounding_box_U0_screen_tris_out_v2_z_din),
+    .screen_tris_out_v2_z_full_n(screen_tris_out_v2_z_full_n),
+    .screen_tris_out_v2_z_write(k3_bounding_box_U0_screen_tris_out_v2_z_write),
+    .screen_tris_out_v2_z_num_data_valid(k3_bounding_box_U0_screen_tris_out_v2_z_num_data_valid),
+    .screen_tris_out_v2_z_fifo_cap(k3_bounding_box_U0_screen_tris_out_v2_z_fifo_cap),
+    .screen_tris_out_v2_w_din(k3_bounding_box_U0_screen_tris_out_v2_w_din),
+    .screen_tris_out_v2_w_full_n(screen_tris_out_v2_w_full_n),
+    .screen_tris_out_v2_w_write(k3_bounding_box_U0_screen_tris_out_v2_w_write),
+    .screen_tris_out_v2_w_num_data_valid(k3_bounding_box_U0_screen_tris_out_v2_w_num_data_valid),
+    .screen_tris_out_v2_w_fifo_cap(k3_bounding_box_U0_screen_tris_out_v2_w_fifo_cap),
+    .screen_tris_out_n0_x_din(k3_bounding_box_U0_screen_tris_out_n0_x_din),
+    .screen_tris_out_n0_x_full_n(screen_tris_out_n0_x_full_n),
+    .screen_tris_out_n0_x_write(k3_bounding_box_U0_screen_tris_out_n0_x_write),
+    .screen_tris_out_n0_x_num_data_valid(k3_bounding_box_U0_screen_tris_out_n0_x_num_data_valid),
+    .screen_tris_out_n0_x_fifo_cap(k3_bounding_box_U0_screen_tris_out_n0_x_fifo_cap),
+    .screen_tris_out_n0_y_din(k3_bounding_box_U0_screen_tris_out_n0_y_din),
+    .screen_tris_out_n0_y_full_n(screen_tris_out_n0_y_full_n),
+    .screen_tris_out_n0_y_write(k3_bounding_box_U0_screen_tris_out_n0_y_write),
+    .screen_tris_out_n0_y_num_data_valid(k3_bounding_box_U0_screen_tris_out_n0_y_num_data_valid),
+    .screen_tris_out_n0_y_fifo_cap(k3_bounding_box_U0_screen_tris_out_n0_y_fifo_cap),
+    .screen_tris_out_n0_z_din(k3_bounding_box_U0_screen_tris_out_n0_z_din),
+    .screen_tris_out_n0_z_full_n(screen_tris_out_n0_z_full_n),
+    .screen_tris_out_n0_z_write(k3_bounding_box_U0_screen_tris_out_n0_z_write),
+    .screen_tris_out_n0_z_num_data_valid(k3_bounding_box_U0_screen_tris_out_n0_z_num_data_valid),
+    .screen_tris_out_n0_z_fifo_cap(k3_bounding_box_U0_screen_tris_out_n0_z_fifo_cap),
+    .screen_tris_out_n1_x_din(k3_bounding_box_U0_screen_tris_out_n1_x_din),
+    .screen_tris_out_n1_x_full_n(screen_tris_out_n1_x_full_n),
+    .screen_tris_out_n1_x_write(k3_bounding_box_U0_screen_tris_out_n1_x_write),
+    .screen_tris_out_n1_x_num_data_valid(k3_bounding_box_U0_screen_tris_out_n1_x_num_data_valid),
+    .screen_tris_out_n1_x_fifo_cap(k3_bounding_box_U0_screen_tris_out_n1_x_fifo_cap),
+    .screen_tris_out_n1_y_din(k3_bounding_box_U0_screen_tris_out_n1_y_din),
+    .screen_tris_out_n1_y_full_n(screen_tris_out_n1_y_full_n),
+    .screen_tris_out_n1_y_write(k3_bounding_box_U0_screen_tris_out_n1_y_write),
+    .screen_tris_out_n1_y_num_data_valid(k3_bounding_box_U0_screen_tris_out_n1_y_num_data_valid),
+    .screen_tris_out_n1_y_fifo_cap(k3_bounding_box_U0_screen_tris_out_n1_y_fifo_cap),
+    .screen_tris_out_n1_z_din(k3_bounding_box_U0_screen_tris_out_n1_z_din),
+    .screen_tris_out_n1_z_full_n(screen_tris_out_n1_z_full_n),
+    .screen_tris_out_n1_z_write(k3_bounding_box_U0_screen_tris_out_n1_z_write),
+    .screen_tris_out_n1_z_num_data_valid(k3_bounding_box_U0_screen_tris_out_n1_z_num_data_valid),
+    .screen_tris_out_n1_z_fifo_cap(k3_bounding_box_U0_screen_tris_out_n1_z_fifo_cap),
+    .screen_tris_out_n2_x_din(k3_bounding_box_U0_screen_tris_out_n2_x_din),
+    .screen_tris_out_n2_x_full_n(screen_tris_out_n2_x_full_n),
+    .screen_tris_out_n2_x_write(k3_bounding_box_U0_screen_tris_out_n2_x_write),
+    .screen_tris_out_n2_x_num_data_valid(k3_bounding_box_U0_screen_tris_out_n2_x_num_data_valid),
+    .screen_tris_out_n2_x_fifo_cap(k3_bounding_box_U0_screen_tris_out_n2_x_fifo_cap),
+    .screen_tris_out_n2_y_din(k3_bounding_box_U0_screen_tris_out_n2_y_din),
+    .screen_tris_out_n2_y_full_n(screen_tris_out_n2_y_full_n),
+    .screen_tris_out_n2_y_write(k3_bounding_box_U0_screen_tris_out_n2_y_write),
+    .screen_tris_out_n2_y_num_data_valid(k3_bounding_box_U0_screen_tris_out_n2_y_num_data_valid),
+    .screen_tris_out_n2_y_fifo_cap(k3_bounding_box_U0_screen_tris_out_n2_y_fifo_cap),
+    .screen_tris_out_n2_z_din(k3_bounding_box_U0_screen_tris_out_n2_z_din),
+    .screen_tris_out_n2_z_full_n(screen_tris_out_n2_z_full_n),
+    .screen_tris_out_n2_z_write(k3_bounding_box_U0_screen_tris_out_n2_z_write),
+    .screen_tris_out_n2_z_num_data_valid(k3_bounding_box_U0_screen_tris_out_n2_z_num_data_valid),
+    .screen_tris_out_n2_z_fifo_cap(k3_bounding_box_U0_screen_tris_out_n2_z_fifo_cap),
+    .screen_tris_out_color_din(k3_bounding_box_U0_screen_tris_out_color_din),
+    .screen_tris_out_color_full_n(screen_tris_out_color_full_n),
+    .screen_tris_out_color_write(k3_bounding_box_U0_screen_tris_out_color_write),
+    .screen_tris_out_color_num_data_valid(k3_bounding_box_U0_screen_tris_out_color_num_data_valid),
+    .screen_tris_out_color_fifo_cap(k3_bounding_box_U0_screen_tris_out_color_fifo_cap),
+    .screen_tris_out_is_active_din(k3_bounding_box_U0_screen_tris_out_is_active_din),
+    .screen_tris_out_is_active_full_n(screen_tris_out_is_active_full_n),
+    .screen_tris_out_is_active_write(k3_bounding_box_U0_screen_tris_out_is_active_write),
+    .screen_tris_out_is_active_num_data_valid(k3_bounding_box_U0_screen_tris_out_is_active_num_data_valid),
+    .screen_tris_out_is_active_fifo_cap(k3_bounding_box_U0_screen_tris_out_is_active_fifo_cap),
+    .start_out(k3_bounding_box_U0_start_out),
+    .start_write(k3_bounding_box_U0_start_write)
+);
+
+top_kernel_k4_rasterize k4_rasterize_U0(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(k4_rasterize_U0_ap_start),
+    .ap_done(k4_rasterize_U0_ap_done),
+    .ap_continue(k4_rasterize_U0_ap_continue),
+    .ap_idle(k4_rasterize_U0_ap_idle),
+    .ap_ready(k4_rasterize_U0_ap_ready),
+    .depth_buffer_address0(k4_rasterize_U0_depth_buffer_address0),
+    .depth_buffer_ce0(k4_rasterize_U0_depth_buffer_ce0),
+    .depth_buffer_we0(k4_rasterize_U0_depth_buffer_we0),
+    .depth_buffer_d0(k4_rasterize_U0_depth_buffer_d0),
+    .normal_buffer_x_address0(k4_rasterize_U0_normal_buffer_x_address0),
+    .normal_buffer_x_ce0(k4_rasterize_U0_normal_buffer_x_ce0),
+    .normal_buffer_x_we0(k4_rasterize_U0_normal_buffer_x_we0),
+    .normal_buffer_x_d0(k4_rasterize_U0_normal_buffer_x_d0),
+    .normal_buffer_y_address0(k4_rasterize_U0_normal_buffer_y_address0),
+    .normal_buffer_y_ce0(k4_rasterize_U0_normal_buffer_y_ce0),
+    .normal_buffer_y_we0(k4_rasterize_U0_normal_buffer_y_we0),
+    .normal_buffer_y_d0(k4_rasterize_U0_normal_buffer_y_d0),
+    .normal_buffer_z_address0(k4_rasterize_U0_normal_buffer_z_address0),
+    .normal_buffer_z_ce0(k4_rasterize_U0_normal_buffer_z_ce0),
+    .normal_buffer_z_we0(k4_rasterize_U0_normal_buffer_z_we0),
+    .normal_buffer_z_d0(k4_rasterize_U0_normal_buffer_z_d0),
+    .screen_tris_out_v0_x_dout(screen_tris_out_v0_x_dout),
+    .screen_tris_out_v0_x_empty_n(screen_tris_out_v0_x_empty_n),
+    .screen_tris_out_v0_x_read(k4_rasterize_U0_screen_tris_out_v0_x_read),
+    .screen_tris_out_v0_x_num_data_valid(screen_tris_out_v0_x_num_data_valid),
+    .screen_tris_out_v0_x_fifo_cap(screen_tris_out_v0_x_fifo_cap),
+    .screen_tris_out_v0_y_dout(screen_tris_out_v0_y_dout),
+    .screen_tris_out_v0_y_empty_n(screen_tris_out_v0_y_empty_n),
+    .screen_tris_out_v0_y_read(k4_rasterize_U0_screen_tris_out_v0_y_read),
+    .screen_tris_out_v0_y_num_data_valid(screen_tris_out_v0_y_num_data_valid),
+    .screen_tris_out_v0_y_fifo_cap(screen_tris_out_v0_y_fifo_cap),
+    .screen_tris_out_v0_z_dout(screen_tris_out_v0_z_dout),
+    .screen_tris_out_v0_z_empty_n(screen_tris_out_v0_z_empty_n),
+    .screen_tris_out_v0_z_read(k4_rasterize_U0_screen_tris_out_v0_z_read),
+    .screen_tris_out_v0_z_num_data_valid(screen_tris_out_v0_z_num_data_valid),
+    .screen_tris_out_v0_z_fifo_cap(screen_tris_out_v0_z_fifo_cap),
+    .screen_tris_out_v0_w_dout(screen_tris_out_v0_w_dout),
+    .screen_tris_out_v0_w_empty_n(screen_tris_out_v0_w_empty_n),
+    .screen_tris_out_v0_w_read(k4_rasterize_U0_screen_tris_out_v0_w_read),
+    .screen_tris_out_v0_w_num_data_valid(screen_tris_out_v0_w_num_data_valid),
+    .screen_tris_out_v0_w_fifo_cap(screen_tris_out_v0_w_fifo_cap),
+    .screen_tris_out_v1_x_dout(screen_tris_out_v1_x_dout),
+    .screen_tris_out_v1_x_empty_n(screen_tris_out_v1_x_empty_n),
+    .screen_tris_out_v1_x_read(k4_rasterize_U0_screen_tris_out_v1_x_read),
+    .screen_tris_out_v1_x_num_data_valid(screen_tris_out_v1_x_num_data_valid),
+    .screen_tris_out_v1_x_fifo_cap(screen_tris_out_v1_x_fifo_cap),
+    .screen_tris_out_v1_y_dout(screen_tris_out_v1_y_dout),
+    .screen_tris_out_v1_y_empty_n(screen_tris_out_v1_y_empty_n),
+    .screen_tris_out_v1_y_read(k4_rasterize_U0_screen_tris_out_v1_y_read),
+    .screen_tris_out_v1_y_num_data_valid(screen_tris_out_v1_y_num_data_valid),
+    .screen_tris_out_v1_y_fifo_cap(screen_tris_out_v1_y_fifo_cap),
+    .screen_tris_out_v1_z_dout(screen_tris_out_v1_z_dout),
+    .screen_tris_out_v1_z_empty_n(screen_tris_out_v1_z_empty_n),
+    .screen_tris_out_v1_z_read(k4_rasterize_U0_screen_tris_out_v1_z_read),
+    .screen_tris_out_v1_z_num_data_valid(screen_tris_out_v1_z_num_data_valid),
+    .screen_tris_out_v1_z_fifo_cap(screen_tris_out_v1_z_fifo_cap),
+    .screen_tris_out_v1_w_dout(screen_tris_out_v1_w_dout),
+    .screen_tris_out_v1_w_empty_n(screen_tris_out_v1_w_empty_n),
+    .screen_tris_out_v1_w_read(k4_rasterize_U0_screen_tris_out_v1_w_read),
+    .screen_tris_out_v1_w_num_data_valid(screen_tris_out_v1_w_num_data_valid),
+    .screen_tris_out_v1_w_fifo_cap(screen_tris_out_v1_w_fifo_cap),
+    .screen_tris_out_v2_x_dout(screen_tris_out_v2_x_dout),
+    .screen_tris_out_v2_x_empty_n(screen_tris_out_v2_x_empty_n),
+    .screen_tris_out_v2_x_read(k4_rasterize_U0_screen_tris_out_v2_x_read),
+    .screen_tris_out_v2_x_num_data_valid(screen_tris_out_v2_x_num_data_valid),
+    .screen_tris_out_v2_x_fifo_cap(screen_tris_out_v2_x_fifo_cap),
+    .screen_tris_out_v2_y_dout(screen_tris_out_v2_y_dout),
+    .screen_tris_out_v2_y_empty_n(screen_tris_out_v2_y_empty_n),
+    .screen_tris_out_v2_y_read(k4_rasterize_U0_screen_tris_out_v2_y_read),
+    .screen_tris_out_v2_y_num_data_valid(screen_tris_out_v2_y_num_data_valid),
+    .screen_tris_out_v2_y_fifo_cap(screen_tris_out_v2_y_fifo_cap),
+    .screen_tris_out_v2_z_dout(screen_tris_out_v2_z_dout),
+    .screen_tris_out_v2_z_empty_n(screen_tris_out_v2_z_empty_n),
+    .screen_tris_out_v2_z_read(k4_rasterize_U0_screen_tris_out_v2_z_read),
+    .screen_tris_out_v2_z_num_data_valid(screen_tris_out_v2_z_num_data_valid),
+    .screen_tris_out_v2_z_fifo_cap(screen_tris_out_v2_z_fifo_cap),
+    .screen_tris_out_v2_w_dout(screen_tris_out_v2_w_dout),
+    .screen_tris_out_v2_w_empty_n(screen_tris_out_v2_w_empty_n),
+    .screen_tris_out_v2_w_read(k4_rasterize_U0_screen_tris_out_v2_w_read),
+    .screen_tris_out_v2_w_num_data_valid(screen_tris_out_v2_w_num_data_valid),
+    .screen_tris_out_v2_w_fifo_cap(screen_tris_out_v2_w_fifo_cap),
+    .screen_tris_out_n0_x_dout(screen_tris_out_n0_x_dout),
+    .screen_tris_out_n0_x_empty_n(screen_tris_out_n0_x_empty_n),
+    .screen_tris_out_n0_x_read(k4_rasterize_U0_screen_tris_out_n0_x_read),
+    .screen_tris_out_n0_x_num_data_valid(screen_tris_out_n0_x_num_data_valid),
+    .screen_tris_out_n0_x_fifo_cap(screen_tris_out_n0_x_fifo_cap),
+    .screen_tris_out_n0_y_dout(screen_tris_out_n0_y_dout),
+    .screen_tris_out_n0_y_empty_n(screen_tris_out_n0_y_empty_n),
+    .screen_tris_out_n0_y_read(k4_rasterize_U0_screen_tris_out_n0_y_read),
+    .screen_tris_out_n0_y_num_data_valid(screen_tris_out_n0_y_num_data_valid),
+    .screen_tris_out_n0_y_fifo_cap(screen_tris_out_n0_y_fifo_cap),
+    .screen_tris_out_n0_z_dout(screen_tris_out_n0_z_dout),
+    .screen_tris_out_n0_z_empty_n(screen_tris_out_n0_z_empty_n),
+    .screen_tris_out_n0_z_read(k4_rasterize_U0_screen_tris_out_n0_z_read),
+    .screen_tris_out_n0_z_num_data_valid(screen_tris_out_n0_z_num_data_valid),
+    .screen_tris_out_n0_z_fifo_cap(screen_tris_out_n0_z_fifo_cap),
+    .screen_tris_out_n1_x_dout(screen_tris_out_n1_x_dout),
+    .screen_tris_out_n1_x_empty_n(screen_tris_out_n1_x_empty_n),
+    .screen_tris_out_n1_x_read(k4_rasterize_U0_screen_tris_out_n1_x_read),
+    .screen_tris_out_n1_x_num_data_valid(screen_tris_out_n1_x_num_data_valid),
+    .screen_tris_out_n1_x_fifo_cap(screen_tris_out_n1_x_fifo_cap),
+    .screen_tris_out_n1_y_dout(screen_tris_out_n1_y_dout),
+    .screen_tris_out_n1_y_empty_n(screen_tris_out_n1_y_empty_n),
+    .screen_tris_out_n1_y_read(k4_rasterize_U0_screen_tris_out_n1_y_read),
+    .screen_tris_out_n1_y_num_data_valid(screen_tris_out_n1_y_num_data_valid),
+    .screen_tris_out_n1_y_fifo_cap(screen_tris_out_n1_y_fifo_cap),
+    .screen_tris_out_n1_z_dout(screen_tris_out_n1_z_dout),
+    .screen_tris_out_n1_z_empty_n(screen_tris_out_n1_z_empty_n),
+    .screen_tris_out_n1_z_read(k4_rasterize_U0_screen_tris_out_n1_z_read),
+    .screen_tris_out_n1_z_num_data_valid(screen_tris_out_n1_z_num_data_valid),
+    .screen_tris_out_n1_z_fifo_cap(screen_tris_out_n1_z_fifo_cap),
+    .screen_tris_out_n2_x_dout(screen_tris_out_n2_x_dout),
+    .screen_tris_out_n2_x_empty_n(screen_tris_out_n2_x_empty_n),
+    .screen_tris_out_n2_x_read(k4_rasterize_U0_screen_tris_out_n2_x_read),
+    .screen_tris_out_n2_x_num_data_valid(screen_tris_out_n2_x_num_data_valid),
+    .screen_tris_out_n2_x_fifo_cap(screen_tris_out_n2_x_fifo_cap),
+    .screen_tris_out_n2_y_dout(screen_tris_out_n2_y_dout),
+    .screen_tris_out_n2_y_empty_n(screen_tris_out_n2_y_empty_n),
+    .screen_tris_out_n2_y_read(k4_rasterize_U0_screen_tris_out_n2_y_read),
+    .screen_tris_out_n2_y_num_data_valid(screen_tris_out_n2_y_num_data_valid),
+    .screen_tris_out_n2_y_fifo_cap(screen_tris_out_n2_y_fifo_cap),
+    .screen_tris_out_n2_z_dout(screen_tris_out_n2_z_dout),
+    .screen_tris_out_n2_z_empty_n(screen_tris_out_n2_z_empty_n),
+    .screen_tris_out_n2_z_read(k4_rasterize_U0_screen_tris_out_n2_z_read),
+    .screen_tris_out_n2_z_num_data_valid(screen_tris_out_n2_z_num_data_valid),
+    .screen_tris_out_n2_z_fifo_cap(screen_tris_out_n2_z_fifo_cap),
+    .screen_tris_out_color_dout(screen_tris_out_color_dout),
+    .screen_tris_out_color_empty_n(screen_tris_out_color_empty_n),
+    .screen_tris_out_color_read(k4_rasterize_U0_screen_tris_out_color_read),
+    .screen_tris_out_color_num_data_valid(screen_tris_out_color_num_data_valid),
+    .screen_tris_out_color_fifo_cap(screen_tris_out_color_fifo_cap),
+    .screen_tris_out_is_active_dout(screen_tris_out_is_active_dout),
+    .screen_tris_out_is_active_empty_n(screen_tris_out_is_active_empty_n),
+    .screen_tris_out_is_active_read(k4_rasterize_U0_screen_tris_out_is_active_read),
+    .screen_tris_out_is_active_num_data_valid(screen_tris_out_is_active_num_data_valid),
+    .screen_tris_out_is_active_fifo_cap(screen_tris_out_is_active_fifo_cap),
+    .bounds_min_x_dout(bounds_min_x_dout),
+    .bounds_min_x_empty_n(bounds_min_x_empty_n),
+    .bounds_min_x_read(k4_rasterize_U0_bounds_min_x_read),
+    .bounds_min_x_num_data_valid(bounds_min_x_num_data_valid),
+    .bounds_min_x_fifo_cap(bounds_min_x_fifo_cap),
+    .bounds_min_y_dout(bounds_min_y_dout),
+    .bounds_min_y_empty_n(bounds_min_y_empty_n),
+    .bounds_min_y_read(k4_rasterize_U0_bounds_min_y_read),
+    .bounds_min_y_num_data_valid(bounds_min_y_num_data_valid),
+    .bounds_min_y_fifo_cap(bounds_min_y_fifo_cap),
+    .bounds_max_x_dout(bounds_max_x_dout),
+    .bounds_max_x_empty_n(bounds_max_x_empty_n),
+    .bounds_max_x_read(k4_rasterize_U0_bounds_max_x_read),
+    .bounds_max_x_num_data_valid(bounds_max_x_num_data_valid),
+    .bounds_max_x_fifo_cap(bounds_max_x_fifo_cap),
+    .bounds_max_y_dout(bounds_max_y_dout),
+    .bounds_max_y_empty_n(bounds_max_y_empty_n),
+    .bounds_max_y_read(k4_rasterize_U0_bounds_max_y_read),
+    .bounds_max_y_num_data_valid(bounds_max_y_num_data_valid),
+    .bounds_max_y_fifo_cap(bounds_max_y_fifo_cap)
 );
 
 top_kernel_k5_deferred_lighting k5_deferred_lighting_U0(
@@ -1527,6 +2478,11 @@ top_kernel_k5_deferred_lighting k5_deferred_lighting_U0(
     .ap_continue(k5_deferred_lighting_U0_ap_continue),
     .ap_idle(k5_deferred_lighting_U0_ap_idle),
     .ap_ready(k5_deferred_lighting_U0_ap_ready),
+    .framebuffer_dout(out_pixels_c_dout),
+    .framebuffer_empty_n(out_pixels_c_empty_n),
+    .framebuffer_read(k5_deferred_lighting_U0_framebuffer_read),
+    .framebuffer_num_data_valid(out_pixels_c_num_data_valid),
+    .framebuffer_fifo_cap(out_pixels_c_fifo_cap),
     .m_axi_gmem1_0_AWVALID(k5_deferred_lighting_U0_m_axi_gmem1_0_AWVALID),
     .m_axi_gmem1_0_AWREADY(gmem1_0_AWREADY),
     .m_axi_gmem1_0_AWADDR(k5_deferred_lighting_U0_m_axi_gmem1_0_AWADDR),
@@ -1573,11 +2529,6 @@ top_kernel_k5_deferred_lighting k5_deferred_lighting_U0(
     .m_axi_gmem1_0_BRESP(gmem1_0_BRESP),
     .m_axi_gmem1_0_BID(gmem1_0_BID),
     .m_axi_gmem1_0_BUSER(gmem1_0_BUSER),
-    .framebuffer_dout(out_pixels_c_dout),
-    .framebuffer_empty_n(out_pixels_c_empty_n),
-    .framebuffer_read(k5_deferred_lighting_U0_framebuffer_read),
-    .framebuffer_num_data_valid(out_pixels_c_num_data_valid),
-    .framebuffer_fifo_cap(out_pixels_c_fifo_cap),
     .depth_buffer_address0(k5_deferred_lighting_U0_depth_buffer_address0),
     .depth_buffer_ce0(k5_deferred_lighting_U0_depth_buffer_ce0),
     .depth_buffer_q0(depth_buffer_t_q0),
@@ -1592,1039 +2543,6 @@ top_kernel_k5_deferred_lighting k5_deferred_lighting_U0(
     .normal_buffer_z_q0(normal_buffer_z_t_q0)
 );
 
-top_kernel_clip_tris_is_active_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_is_active_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_is_active_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_is_active_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_is_active_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_is_active_d0),
-    .i_q0(clip_tris_is_active_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_is_active_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_is_active_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(clip_tris_is_active_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_is_active_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_is_active_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n0_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n0_x_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n0_x_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n0_x_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n0_x_d0),
-    .i_q0(clip_tris_n0_x_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n0_x_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n0_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n0_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n0_x_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n0_x_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n0_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n0_y_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n0_y_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n0_y_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n0_y_d0),
-    .i_q0(clip_tris_n0_y_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n0_y_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n0_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n0_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n0_y_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n0_y_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n0_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n0_z_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n0_z_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n0_z_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n0_z_d0),
-    .i_q0(clip_tris_n0_z_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n0_z_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n0_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n0_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n0_z_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n0_z_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n1_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n1_x_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n1_x_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n1_x_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n1_x_d0),
-    .i_q0(clip_tris_n1_x_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n1_x_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n1_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n1_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n1_x_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n1_x_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n1_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n1_y_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n1_y_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n1_y_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n1_y_d0),
-    .i_q0(clip_tris_n1_y_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n1_y_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n1_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n1_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n1_y_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n1_y_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n1_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n1_z_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n1_z_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n1_z_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n1_z_d0),
-    .i_q0(clip_tris_n1_z_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n1_z_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n1_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n1_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n1_z_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n1_z_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n2_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n2_x_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n2_x_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n2_x_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n2_x_d0),
-    .i_q0(clip_tris_n2_x_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n2_x_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n2_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n2_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n2_x_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n2_x_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n2_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n2_y_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n2_y_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n2_y_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n2_y_d0),
-    .i_q0(clip_tris_n2_y_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n2_y_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n2_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n2_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n2_y_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n2_y_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_n2_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_n2_z_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_n2_z_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_n2_z_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_n2_z_d0),
-    .i_q0(clip_tris_n2_z_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_n2_z_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_n2_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_n2_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_n2_z_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_n2_z_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_v0_w_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v0_w_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v0_w_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v0_w_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v0_w_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v0_w_d0),
-    .i_q0(clip_tris_v0_w_i_q0),
-    .i_address1(k1_vertex_transform_U0_clip_tris_v0_w_address1),
-    .i_ce1(k1_vertex_transform_U0_clip_tris_v0_w_ce1),
-    .i_we1(k1_vertex_transform_U0_clip_tris_v0_w_we1),
-    .i_d1(k1_vertex_transform_U0_clip_tris_v0_w_d1),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v0_w_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v0_w_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v0_w_t_q0),
-    .t_address1(7'd0),
-    .t_ce1(1'b0),
-    .t_we1(1'b0),
-    .t_d1(32'd0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v0_w_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v0_w_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v0_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v0_x_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v0_x_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v0_x_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v0_x_d0),
-    .i_q0(clip_tris_v0_x_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v0_x_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v0_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v0_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v0_x_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v0_x_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v0_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v0_y_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v0_y_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v0_y_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v0_y_d0),
-    .i_q0(clip_tris_v0_y_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v0_y_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v0_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v0_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v0_y_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v0_y_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v0_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v0_z_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v0_z_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v0_z_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v0_z_d0),
-    .i_q0(clip_tris_v0_z_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v0_z_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v0_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v0_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v0_z_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v0_z_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v1_w_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v1_w_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v1_w_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v1_w_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v1_w_d0),
-    .i_q0(clip_tris_v1_w_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v1_w_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v1_w_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v1_w_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v1_w_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v1_w_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v1_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v1_x_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v1_x_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v1_x_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v1_x_d0),
-    .i_q0(clip_tris_v1_x_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v1_x_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v1_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v1_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v1_x_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v1_x_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v1_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v1_y_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v1_y_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v1_y_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v1_y_d0),
-    .i_q0(clip_tris_v1_y_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v1_y_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v1_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v1_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v1_y_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v1_y_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v1_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v1_z_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v1_z_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v1_z_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v1_z_d0),
-    .i_q0(clip_tris_v1_z_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v1_z_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v1_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v1_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v1_z_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v1_z_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v2_w_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v2_w_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v2_w_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v2_w_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v2_w_d0),
-    .i_q0(clip_tris_v2_w_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v2_w_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v2_w_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v2_w_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v2_w_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v2_w_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v2_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v2_x_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v2_x_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v2_x_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v2_x_d0),
-    .i_q0(clip_tris_v2_x_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v2_x_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v2_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v2_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v2_x_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v2_x_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v2_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v2_y_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v2_y_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v2_y_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v2_y_d0),
-    .i_q0(clip_tris_v2_y_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v2_y_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v2_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v2_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v2_y_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v2_y_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-clip_tris_v2_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k1_vertex_transform_U0_clip_tris_v2_z_address0),
-    .i_ce0(k1_vertex_transform_U0_clip_tris_v2_z_ce0),
-    .i_we0(k1_vertex_transform_U0_clip_tris_v2_z_we0),
-    .i_d0(k1_vertex_transform_U0_clip_tris_v2_z_d0),
-    .i_q0(clip_tris_v2_z_i_q0),
-    .t_address0(k2_perspective_divide_U0_clip_tris_v2_z_address0),
-    .t_ce0(k2_perspective_divide_U0_clip_tris_v2_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(clip_tris_v2_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(clip_tris_v2_z_i_full_n),
-    .i_write(ap_channel_done_clip_tris_v2_z),
-    .t_empty_n(clip_tris_v2_z_t_empty_n),
-    .t_read(k2_perspective_divide_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v0_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v0_x_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v0_x_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v0_x_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v0_x_d0),
-    .i_q0(screen_tris_v0_x_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v0_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v0_x_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v0_x_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v0_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v0_y_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v0_y_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v0_y_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v0_y_d0),
-    .i_q0(screen_tris_v0_y_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v0_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v0_y_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v0_y_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v0_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v0_z_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v0_z_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v0_z_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v0_z_d0),
-    .i_q0(screen_tris_v0_z_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v0_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v0_z_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v0_z_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v1_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v1_x_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v1_x_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v1_x_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v1_x_d0),
-    .i_q0(screen_tris_v1_x_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v1_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v1_x_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v1_x_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v1_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v1_y_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v1_y_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v1_y_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v1_y_d0),
-    .i_q0(screen_tris_v1_y_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v1_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v1_y_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v1_y_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v1_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v1_z_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v1_z_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v1_z_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v1_z_d0),
-    .i_q0(screen_tris_v1_z_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v1_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v1_z_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v1_z_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v2_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v2_x_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v2_x_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v2_x_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v2_x_d0),
-    .i_q0(screen_tris_v2_x_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v2_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v2_x_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v2_x_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v2_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v2_y_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v2_y_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v2_y_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v2_y_d0),
-    .i_q0(screen_tris_v2_y_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v2_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v2_y_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v2_y_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_v2_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_v2_z_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_v2_z_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_v2_z_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_v2_z_d0),
-    .i_q0(screen_tris_v2_z_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_v2_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_v2_z_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_v2_z_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n0_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n0_x_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n0_x_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n0_x_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n0_x_d0),
-    .i_q0(screen_tris_n0_x_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n0_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n0_x_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n0_x_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n0_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n0_y_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n0_y_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n0_y_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n0_y_d0),
-    .i_q0(screen_tris_n0_y_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n0_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n0_y_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n0_y_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n0_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n0_z_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n0_z_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n0_z_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n0_z_d0),
-    .i_q0(screen_tris_n0_z_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n0_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n0_z_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n0_z_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n1_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n1_x_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n1_x_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n1_x_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n1_x_d0),
-    .i_q0(screen_tris_n1_x_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n1_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n1_x_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n1_x_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n1_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n1_y_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n1_y_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n1_y_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n1_y_d0),
-    .i_q0(screen_tris_n1_y_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n1_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n1_y_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n1_y_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n1_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n1_z_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n1_z_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n1_z_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n1_z_d0),
-    .i_q0(screen_tris_n1_z_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n1_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n1_z_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n1_z_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n2_x_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n2_x_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n2_x_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n2_x_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n2_x_d0),
-    .i_q0(screen_tris_n2_x_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n2_x_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n2_x_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n2_x_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n2_y_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n2_y_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n2_y_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n2_y_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n2_y_d0),
-    .i_q0(screen_tris_n2_y_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n2_y_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n2_y_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n2_y_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_n2_z_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_n2_z_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_n2_z_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_n2_z_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_n2_z_d0),
-    .i_q0(screen_tris_n2_z_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(screen_tris_n2_z_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_n2_z_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_n2_z_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
-top_kernel_clip_tris_is_active_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 128 ),
-    .AddressWidth( 7 ))
-screen_tris_is_active_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .i_address0(k2_perspective_divide_U0_screen_tris_is_active_address0),
-    .i_ce0(k2_perspective_divide_U0_screen_tris_is_active_ce0),
-    .i_we0(k2_perspective_divide_U0_screen_tris_is_active_we0),
-    .i_d0(k2_perspective_divide_U0_screen_tris_is_active_d0),
-    .i_q0(screen_tris_is_active_i_q0),
-    .t_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_address0),
-    .t_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(screen_tris_is_active_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(screen_tris_is_active_i_full_n),
-    .i_write(ap_channel_done_screen_tris_is_active),
-    .t_empty_n(screen_tris_is_active_t_empty_n),
-    .t_read(Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready)
-);
-
 top_kernel_depth_buffer_RAM_AUTO_1R1W #(
     .DataWidth( 32 ),
     .AddressRange( 4096 ),
@@ -2632,10 +2550,10 @@ top_kernel_depth_buffer_RAM_AUTO_1R1W #(
 depth_buffer_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_address0),
-    .i_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_ce0),
-    .i_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_we0),
-    .i_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_d0),
+    .i_address0(k4_rasterize_U0_depth_buffer_address0),
+    .i_ce0(k4_rasterize_U0_depth_buffer_ce0),
+    .i_we0(k4_rasterize_U0_depth_buffer_we0),
+    .i_d0(k4_rasterize_U0_depth_buffer_d0),
     .i_q0(depth_buffer_i_q0),
     .t_address0(k5_deferred_lighting_U0_depth_buffer_address0),
     .t_ce0(k5_deferred_lighting_U0_depth_buffer_ce0),
@@ -2657,10 +2575,10 @@ top_kernel_depth_buffer_RAM_AUTO_1R1W #(
 normal_buffer_x_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_address0),
-    .i_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_ce0),
-    .i_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_we0),
-    .i_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_d0),
+    .i_address0(k4_rasterize_U0_normal_buffer_x_address0),
+    .i_ce0(k4_rasterize_U0_normal_buffer_x_ce0),
+    .i_we0(k4_rasterize_U0_normal_buffer_x_we0),
+    .i_d0(k4_rasterize_U0_normal_buffer_x_d0),
     .i_q0(normal_buffer_x_i_q0),
     .t_address0(k5_deferred_lighting_U0_normal_buffer_x_address0),
     .t_ce0(k5_deferred_lighting_U0_normal_buffer_x_ce0),
@@ -2682,10 +2600,10 @@ top_kernel_depth_buffer_RAM_AUTO_1R1W #(
 normal_buffer_y_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_address0),
-    .i_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_ce0),
-    .i_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_we0),
-    .i_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_d0),
+    .i_address0(k4_rasterize_U0_normal_buffer_y_address0),
+    .i_ce0(k4_rasterize_U0_normal_buffer_y_ce0),
+    .i_we0(k4_rasterize_U0_normal_buffer_y_we0),
+    .i_d0(k4_rasterize_U0_normal_buffer_y_d0),
     .i_q0(normal_buffer_y_i_q0),
     .t_address0(k5_deferred_lighting_U0_normal_buffer_y_address0),
     .t_ce0(k5_deferred_lighting_U0_normal_buffer_y_ce0),
@@ -2707,10 +2625,10 @@ top_kernel_depth_buffer_RAM_AUTO_1R1W #(
 normal_buffer_z_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
-    .i_address0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_address0),
-    .i_ce0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_ce0),
-    .i_we0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_we0),
-    .i_d0(Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_d0),
+    .i_address0(k4_rasterize_U0_normal_buffer_z_address0),
+    .i_ce0(k4_rasterize_U0_normal_buffer_z_ce0),
+    .i_we0(k4_rasterize_U0_normal_buffer_z_we0),
+    .i_d0(k4_rasterize_U0_normal_buffer_z_d0),
     .i_q0(normal_buffer_z_i_q0),
     .t_address0(k5_deferred_lighting_U0_normal_buffer_z_address0),
     .t_ce0(k5_deferred_lighting_U0_normal_buffer_z_ce0),
@@ -2725,7 +2643,7 @@ normal_buffer_z_U(
     .t_read(k5_deferred_lighting_U0_ap_ready)
 );
 
-top_kernel_fifo_w64_d5_S out_pixels_c_U(
+top_kernel_fifo_w64_d6_S out_pixels_c_U(
     .clk(ap_clk),
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
@@ -2740,38 +2658,1148 @@ top_kernel_fifo_w64_d5_S out_pixels_c_U(
     .if_fifo_cap(out_pixels_c_fifo_cap)
 );
 
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_clip_tris_v2_z <= 1'b0;
-    end else begin
-        if (((k1_vertex_transform_U0_ap_done & k1_vertex_transform_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_clip_tris_v2_z <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_clip_tris_v2_z <= ap_sync_channel_write_clip_tris_v2_z;
-        end
-    end
-end
+top_kernel_fifo_w32_d2_S clip_tris_v0_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v0_x_din),
+    .if_full_n(clip_tris_v0_x_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v0_x_write),
+    .if_dout(clip_tris_v0_x_dout),
+    .if_empty_n(clip_tris_v0_x_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v0_x_read),
+    .if_num_data_valid(clip_tris_v0_x_num_data_valid),
+    .if_fifo_cap(clip_tris_v0_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v0_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v0_y_din),
+    .if_full_n(clip_tris_v0_y_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v0_y_write),
+    .if_dout(clip_tris_v0_y_dout),
+    .if_empty_n(clip_tris_v0_y_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v0_y_read),
+    .if_num_data_valid(clip_tris_v0_y_num_data_valid),
+    .if_fifo_cap(clip_tris_v0_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v0_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v0_z_din),
+    .if_full_n(clip_tris_v0_z_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v0_z_write),
+    .if_dout(clip_tris_v0_z_dout),
+    .if_empty_n(clip_tris_v0_z_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v0_z_read),
+    .if_num_data_valid(clip_tris_v0_z_num_data_valid),
+    .if_fifo_cap(clip_tris_v0_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v0_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v0_w_din),
+    .if_full_n(clip_tris_v0_w_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v0_w_write),
+    .if_dout(clip_tris_v0_w_dout),
+    .if_empty_n(clip_tris_v0_w_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v0_w_read),
+    .if_num_data_valid(clip_tris_v0_w_num_data_valid),
+    .if_fifo_cap(clip_tris_v0_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v1_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v1_x_din),
+    .if_full_n(clip_tris_v1_x_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v1_x_write),
+    .if_dout(clip_tris_v1_x_dout),
+    .if_empty_n(clip_tris_v1_x_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v1_x_read),
+    .if_num_data_valid(clip_tris_v1_x_num_data_valid),
+    .if_fifo_cap(clip_tris_v1_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v1_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v1_y_din),
+    .if_full_n(clip_tris_v1_y_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v1_y_write),
+    .if_dout(clip_tris_v1_y_dout),
+    .if_empty_n(clip_tris_v1_y_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v1_y_read),
+    .if_num_data_valid(clip_tris_v1_y_num_data_valid),
+    .if_fifo_cap(clip_tris_v1_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v1_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v1_z_din),
+    .if_full_n(clip_tris_v1_z_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v1_z_write),
+    .if_dout(clip_tris_v1_z_dout),
+    .if_empty_n(clip_tris_v1_z_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v1_z_read),
+    .if_num_data_valid(clip_tris_v1_z_num_data_valid),
+    .if_fifo_cap(clip_tris_v1_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v1_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v1_w_din),
+    .if_full_n(clip_tris_v1_w_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v1_w_write),
+    .if_dout(clip_tris_v1_w_dout),
+    .if_empty_n(clip_tris_v1_w_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v1_w_read),
+    .if_num_data_valid(clip_tris_v1_w_num_data_valid),
+    .if_fifo_cap(clip_tris_v1_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v2_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v2_x_din),
+    .if_full_n(clip_tris_v2_x_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v2_x_write),
+    .if_dout(clip_tris_v2_x_dout),
+    .if_empty_n(clip_tris_v2_x_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v2_x_read),
+    .if_num_data_valid(clip_tris_v2_x_num_data_valid),
+    .if_fifo_cap(clip_tris_v2_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v2_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v2_y_din),
+    .if_full_n(clip_tris_v2_y_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v2_y_write),
+    .if_dout(clip_tris_v2_y_dout),
+    .if_empty_n(clip_tris_v2_y_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v2_y_read),
+    .if_num_data_valid(clip_tris_v2_y_num_data_valid),
+    .if_fifo_cap(clip_tris_v2_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v2_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v2_z_din),
+    .if_full_n(clip_tris_v2_z_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v2_z_write),
+    .if_dout(clip_tris_v2_z_dout),
+    .if_empty_n(clip_tris_v2_z_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v2_z_read),
+    .if_num_data_valid(clip_tris_v2_z_num_data_valid),
+    .if_fifo_cap(clip_tris_v2_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_v2_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_v2_w_din),
+    .if_full_n(clip_tris_v2_w_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_v2_w_write),
+    .if_dout(clip_tris_v2_w_dout),
+    .if_empty_n(clip_tris_v2_w_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_v2_w_read),
+    .if_num_data_valid(clip_tris_v2_w_num_data_valid),
+    .if_fifo_cap(clip_tris_v2_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n0_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n0_x_din),
+    .if_full_n(clip_tris_n0_x_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n0_x_write),
+    .if_dout(clip_tris_n0_x_dout),
+    .if_empty_n(clip_tris_n0_x_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n0_x_read),
+    .if_num_data_valid(clip_tris_n0_x_num_data_valid),
+    .if_fifo_cap(clip_tris_n0_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n0_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n0_y_din),
+    .if_full_n(clip_tris_n0_y_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n0_y_write),
+    .if_dout(clip_tris_n0_y_dout),
+    .if_empty_n(clip_tris_n0_y_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n0_y_read),
+    .if_num_data_valid(clip_tris_n0_y_num_data_valid),
+    .if_fifo_cap(clip_tris_n0_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n0_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n0_z_din),
+    .if_full_n(clip_tris_n0_z_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n0_z_write),
+    .if_dout(clip_tris_n0_z_dout),
+    .if_empty_n(clip_tris_n0_z_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n0_z_read),
+    .if_num_data_valid(clip_tris_n0_z_num_data_valid),
+    .if_fifo_cap(clip_tris_n0_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n1_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n1_x_din),
+    .if_full_n(clip_tris_n1_x_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n1_x_write),
+    .if_dout(clip_tris_n1_x_dout),
+    .if_empty_n(clip_tris_n1_x_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n1_x_read),
+    .if_num_data_valid(clip_tris_n1_x_num_data_valid),
+    .if_fifo_cap(clip_tris_n1_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n1_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n1_y_din),
+    .if_full_n(clip_tris_n1_y_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n1_y_write),
+    .if_dout(clip_tris_n1_y_dout),
+    .if_empty_n(clip_tris_n1_y_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n1_y_read),
+    .if_num_data_valid(clip_tris_n1_y_num_data_valid),
+    .if_fifo_cap(clip_tris_n1_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n1_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n1_z_din),
+    .if_full_n(clip_tris_n1_z_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n1_z_write),
+    .if_dout(clip_tris_n1_z_dout),
+    .if_empty_n(clip_tris_n1_z_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n1_z_read),
+    .if_num_data_valid(clip_tris_n1_z_num_data_valid),
+    .if_fifo_cap(clip_tris_n1_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n2_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n2_x_din),
+    .if_full_n(clip_tris_n2_x_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n2_x_write),
+    .if_dout(clip_tris_n2_x_dout),
+    .if_empty_n(clip_tris_n2_x_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n2_x_read),
+    .if_num_data_valid(clip_tris_n2_x_num_data_valid),
+    .if_fifo_cap(clip_tris_n2_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n2_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n2_y_din),
+    .if_full_n(clip_tris_n2_y_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n2_y_write),
+    .if_dout(clip_tris_n2_y_dout),
+    .if_empty_n(clip_tris_n2_y_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n2_y_read),
+    .if_num_data_valid(clip_tris_n2_y_num_data_valid),
+    .if_fifo_cap(clip_tris_n2_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_n2_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_n2_z_din),
+    .if_full_n(clip_tris_n2_z_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_n2_z_write),
+    .if_dout(clip_tris_n2_z_dout),
+    .if_empty_n(clip_tris_n2_z_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_n2_z_read),
+    .if_num_data_valid(clip_tris_n2_z_num_data_valid),
+    .if_fifo_cap(clip_tris_n2_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S clip_tris_color_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_color_din),
+    .if_full_n(clip_tris_color_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_color_write),
+    .if_dout(clip_tris_color_dout),
+    .if_empty_n(clip_tris_color_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_color_read),
+    .if_num_data_valid(clip_tris_color_num_data_valid),
+    .if_fifo_cap(clip_tris_color_fifo_cap)
+);
+
+top_kernel_fifo_w1_d2_S clip_tris_is_active_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k1_vertex_transform_U0_clip_tris_is_active_din),
+    .if_full_n(clip_tris_is_active_full_n),
+    .if_write(k1_vertex_transform_U0_clip_tris_is_active_write),
+    .if_dout(clip_tris_is_active_dout),
+    .if_empty_n(clip_tris_is_active_empty_n),
+    .if_read(k2_perspective_divide_U0_clip_tris_is_active_read),
+    .if_num_data_valid(clip_tris_is_active_num_data_valid),
+    .if_fifo_cap(clip_tris_is_active_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v0_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v0_x_din),
+    .if_full_n(screen_tris_in_v0_x_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v0_x_write),
+    .if_dout(screen_tris_in_v0_x_dout),
+    .if_empty_n(screen_tris_in_v0_x_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v0_x_read),
+    .if_num_data_valid(screen_tris_in_v0_x_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v0_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v0_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v0_y_din),
+    .if_full_n(screen_tris_in_v0_y_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v0_y_write),
+    .if_dout(screen_tris_in_v0_y_dout),
+    .if_empty_n(screen_tris_in_v0_y_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v0_y_read),
+    .if_num_data_valid(screen_tris_in_v0_y_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v0_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v0_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v0_z_din),
+    .if_full_n(screen_tris_in_v0_z_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v0_z_write),
+    .if_dout(screen_tris_in_v0_z_dout),
+    .if_empty_n(screen_tris_in_v0_z_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v0_z_read),
+    .if_num_data_valid(screen_tris_in_v0_z_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v0_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v0_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v0_w_din),
+    .if_full_n(screen_tris_in_v0_w_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v0_w_write),
+    .if_dout(screen_tris_in_v0_w_dout),
+    .if_empty_n(screen_tris_in_v0_w_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v0_w_read),
+    .if_num_data_valid(screen_tris_in_v0_w_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v0_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v1_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v1_x_din),
+    .if_full_n(screen_tris_in_v1_x_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v1_x_write),
+    .if_dout(screen_tris_in_v1_x_dout),
+    .if_empty_n(screen_tris_in_v1_x_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v1_x_read),
+    .if_num_data_valid(screen_tris_in_v1_x_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v1_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v1_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v1_y_din),
+    .if_full_n(screen_tris_in_v1_y_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v1_y_write),
+    .if_dout(screen_tris_in_v1_y_dout),
+    .if_empty_n(screen_tris_in_v1_y_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v1_y_read),
+    .if_num_data_valid(screen_tris_in_v1_y_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v1_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v1_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v1_z_din),
+    .if_full_n(screen_tris_in_v1_z_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v1_z_write),
+    .if_dout(screen_tris_in_v1_z_dout),
+    .if_empty_n(screen_tris_in_v1_z_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v1_z_read),
+    .if_num_data_valid(screen_tris_in_v1_z_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v1_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v1_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v1_w_din),
+    .if_full_n(screen_tris_in_v1_w_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v1_w_write),
+    .if_dout(screen_tris_in_v1_w_dout),
+    .if_empty_n(screen_tris_in_v1_w_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v1_w_read),
+    .if_num_data_valid(screen_tris_in_v1_w_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v1_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v2_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v2_x_din),
+    .if_full_n(screen_tris_in_v2_x_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v2_x_write),
+    .if_dout(screen_tris_in_v2_x_dout),
+    .if_empty_n(screen_tris_in_v2_x_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v2_x_read),
+    .if_num_data_valid(screen_tris_in_v2_x_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v2_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v2_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v2_y_din),
+    .if_full_n(screen_tris_in_v2_y_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v2_y_write),
+    .if_dout(screen_tris_in_v2_y_dout),
+    .if_empty_n(screen_tris_in_v2_y_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v2_y_read),
+    .if_num_data_valid(screen_tris_in_v2_y_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v2_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v2_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v2_z_din),
+    .if_full_n(screen_tris_in_v2_z_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v2_z_write),
+    .if_dout(screen_tris_in_v2_z_dout),
+    .if_empty_n(screen_tris_in_v2_z_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v2_z_read),
+    .if_num_data_valid(screen_tris_in_v2_z_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v2_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_v2_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_v2_w_din),
+    .if_full_n(screen_tris_in_v2_w_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_v2_w_write),
+    .if_dout(screen_tris_in_v2_w_dout),
+    .if_empty_n(screen_tris_in_v2_w_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_v2_w_read),
+    .if_num_data_valid(screen_tris_in_v2_w_num_data_valid),
+    .if_fifo_cap(screen_tris_in_v2_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n0_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n0_x_din),
+    .if_full_n(screen_tris_in_n0_x_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n0_x_write),
+    .if_dout(screen_tris_in_n0_x_dout),
+    .if_empty_n(screen_tris_in_n0_x_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n0_x_read),
+    .if_num_data_valid(screen_tris_in_n0_x_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n0_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n0_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n0_y_din),
+    .if_full_n(screen_tris_in_n0_y_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n0_y_write),
+    .if_dout(screen_tris_in_n0_y_dout),
+    .if_empty_n(screen_tris_in_n0_y_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n0_y_read),
+    .if_num_data_valid(screen_tris_in_n0_y_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n0_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n0_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n0_z_din),
+    .if_full_n(screen_tris_in_n0_z_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n0_z_write),
+    .if_dout(screen_tris_in_n0_z_dout),
+    .if_empty_n(screen_tris_in_n0_z_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n0_z_read),
+    .if_num_data_valid(screen_tris_in_n0_z_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n0_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n1_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n1_x_din),
+    .if_full_n(screen_tris_in_n1_x_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n1_x_write),
+    .if_dout(screen_tris_in_n1_x_dout),
+    .if_empty_n(screen_tris_in_n1_x_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n1_x_read),
+    .if_num_data_valid(screen_tris_in_n1_x_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n1_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n1_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n1_y_din),
+    .if_full_n(screen_tris_in_n1_y_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n1_y_write),
+    .if_dout(screen_tris_in_n1_y_dout),
+    .if_empty_n(screen_tris_in_n1_y_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n1_y_read),
+    .if_num_data_valid(screen_tris_in_n1_y_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n1_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n1_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n1_z_din),
+    .if_full_n(screen_tris_in_n1_z_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n1_z_write),
+    .if_dout(screen_tris_in_n1_z_dout),
+    .if_empty_n(screen_tris_in_n1_z_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n1_z_read),
+    .if_num_data_valid(screen_tris_in_n1_z_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n1_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n2_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n2_x_din),
+    .if_full_n(screen_tris_in_n2_x_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n2_x_write),
+    .if_dout(screen_tris_in_n2_x_dout),
+    .if_empty_n(screen_tris_in_n2_x_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n2_x_read),
+    .if_num_data_valid(screen_tris_in_n2_x_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n2_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n2_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n2_y_din),
+    .if_full_n(screen_tris_in_n2_y_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n2_y_write),
+    .if_dout(screen_tris_in_n2_y_dout),
+    .if_empty_n(screen_tris_in_n2_y_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n2_y_read),
+    .if_num_data_valid(screen_tris_in_n2_y_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n2_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_n2_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_n2_z_din),
+    .if_full_n(screen_tris_in_n2_z_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_n2_z_write),
+    .if_dout(screen_tris_in_n2_z_dout),
+    .if_empty_n(screen_tris_in_n2_z_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_n2_z_read),
+    .if_num_data_valid(screen_tris_in_n2_z_num_data_valid),
+    .if_fifo_cap(screen_tris_in_n2_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_in_color_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_color_din),
+    .if_full_n(screen_tris_in_color_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_color_write),
+    .if_dout(screen_tris_in_color_dout),
+    .if_empty_n(screen_tris_in_color_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_color_read),
+    .if_num_data_valid(screen_tris_in_color_num_data_valid),
+    .if_fifo_cap(screen_tris_in_color_fifo_cap)
+);
+
+top_kernel_fifo_w1_d2_S screen_tris_in_is_active_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k2_perspective_divide_U0_screen_tris_in_is_active_din),
+    .if_full_n(screen_tris_in_is_active_full_n),
+    .if_write(k2_perspective_divide_U0_screen_tris_in_is_active_write),
+    .if_dout(screen_tris_in_is_active_dout),
+    .if_empty_n(screen_tris_in_is_active_empty_n),
+    .if_read(k3_bounding_box_U0_screen_tris_in_is_active_read),
+    .if_num_data_valid(screen_tris_in_is_active_num_data_valid),
+    .if_fifo_cap(screen_tris_in_is_active_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S bounds_min_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_bounds_min_x_din),
+    .if_full_n(bounds_min_x_full_n),
+    .if_write(k3_bounding_box_U0_bounds_min_x_write),
+    .if_dout(bounds_min_x_dout),
+    .if_empty_n(bounds_min_x_empty_n),
+    .if_read(k4_rasterize_U0_bounds_min_x_read),
+    .if_num_data_valid(bounds_min_x_num_data_valid),
+    .if_fifo_cap(bounds_min_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S bounds_min_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_bounds_min_y_din),
+    .if_full_n(bounds_min_y_full_n),
+    .if_write(k3_bounding_box_U0_bounds_min_y_write),
+    .if_dout(bounds_min_y_dout),
+    .if_empty_n(bounds_min_y_empty_n),
+    .if_read(k4_rasterize_U0_bounds_min_y_read),
+    .if_num_data_valid(bounds_min_y_num_data_valid),
+    .if_fifo_cap(bounds_min_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S bounds_max_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_bounds_max_x_din),
+    .if_full_n(bounds_max_x_full_n),
+    .if_write(k3_bounding_box_U0_bounds_max_x_write),
+    .if_dout(bounds_max_x_dout),
+    .if_empty_n(bounds_max_x_empty_n),
+    .if_read(k4_rasterize_U0_bounds_max_x_read),
+    .if_num_data_valid(bounds_max_x_num_data_valid),
+    .if_fifo_cap(bounds_max_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S bounds_max_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_bounds_max_y_din),
+    .if_full_n(bounds_max_y_full_n),
+    .if_write(k3_bounding_box_U0_bounds_max_y_write),
+    .if_dout(bounds_max_y_dout),
+    .if_empty_n(bounds_max_y_empty_n),
+    .if_read(k4_rasterize_U0_bounds_max_y_read),
+    .if_num_data_valid(bounds_max_y_num_data_valid),
+    .if_fifo_cap(bounds_max_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v0_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v0_x_din),
+    .if_full_n(screen_tris_out_v0_x_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v0_x_write),
+    .if_dout(screen_tris_out_v0_x_dout),
+    .if_empty_n(screen_tris_out_v0_x_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v0_x_read),
+    .if_num_data_valid(screen_tris_out_v0_x_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v0_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v0_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v0_y_din),
+    .if_full_n(screen_tris_out_v0_y_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v0_y_write),
+    .if_dout(screen_tris_out_v0_y_dout),
+    .if_empty_n(screen_tris_out_v0_y_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v0_y_read),
+    .if_num_data_valid(screen_tris_out_v0_y_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v0_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v0_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v0_z_din),
+    .if_full_n(screen_tris_out_v0_z_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v0_z_write),
+    .if_dout(screen_tris_out_v0_z_dout),
+    .if_empty_n(screen_tris_out_v0_z_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v0_z_read),
+    .if_num_data_valid(screen_tris_out_v0_z_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v0_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v0_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v0_w_din),
+    .if_full_n(screen_tris_out_v0_w_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v0_w_write),
+    .if_dout(screen_tris_out_v0_w_dout),
+    .if_empty_n(screen_tris_out_v0_w_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v0_w_read),
+    .if_num_data_valid(screen_tris_out_v0_w_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v0_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v1_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v1_x_din),
+    .if_full_n(screen_tris_out_v1_x_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v1_x_write),
+    .if_dout(screen_tris_out_v1_x_dout),
+    .if_empty_n(screen_tris_out_v1_x_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v1_x_read),
+    .if_num_data_valid(screen_tris_out_v1_x_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v1_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v1_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v1_y_din),
+    .if_full_n(screen_tris_out_v1_y_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v1_y_write),
+    .if_dout(screen_tris_out_v1_y_dout),
+    .if_empty_n(screen_tris_out_v1_y_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v1_y_read),
+    .if_num_data_valid(screen_tris_out_v1_y_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v1_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v1_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v1_z_din),
+    .if_full_n(screen_tris_out_v1_z_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v1_z_write),
+    .if_dout(screen_tris_out_v1_z_dout),
+    .if_empty_n(screen_tris_out_v1_z_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v1_z_read),
+    .if_num_data_valid(screen_tris_out_v1_z_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v1_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v1_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v1_w_din),
+    .if_full_n(screen_tris_out_v1_w_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v1_w_write),
+    .if_dout(screen_tris_out_v1_w_dout),
+    .if_empty_n(screen_tris_out_v1_w_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v1_w_read),
+    .if_num_data_valid(screen_tris_out_v1_w_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v1_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v2_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v2_x_din),
+    .if_full_n(screen_tris_out_v2_x_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v2_x_write),
+    .if_dout(screen_tris_out_v2_x_dout),
+    .if_empty_n(screen_tris_out_v2_x_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v2_x_read),
+    .if_num_data_valid(screen_tris_out_v2_x_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v2_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v2_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v2_y_din),
+    .if_full_n(screen_tris_out_v2_y_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v2_y_write),
+    .if_dout(screen_tris_out_v2_y_dout),
+    .if_empty_n(screen_tris_out_v2_y_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v2_y_read),
+    .if_num_data_valid(screen_tris_out_v2_y_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v2_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v2_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v2_z_din),
+    .if_full_n(screen_tris_out_v2_z_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v2_z_write),
+    .if_dout(screen_tris_out_v2_z_dout),
+    .if_empty_n(screen_tris_out_v2_z_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v2_z_read),
+    .if_num_data_valid(screen_tris_out_v2_z_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v2_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_v2_w_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_v2_w_din),
+    .if_full_n(screen_tris_out_v2_w_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_v2_w_write),
+    .if_dout(screen_tris_out_v2_w_dout),
+    .if_empty_n(screen_tris_out_v2_w_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_v2_w_read),
+    .if_num_data_valid(screen_tris_out_v2_w_num_data_valid),
+    .if_fifo_cap(screen_tris_out_v2_w_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n0_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n0_x_din),
+    .if_full_n(screen_tris_out_n0_x_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n0_x_write),
+    .if_dout(screen_tris_out_n0_x_dout),
+    .if_empty_n(screen_tris_out_n0_x_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n0_x_read),
+    .if_num_data_valid(screen_tris_out_n0_x_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n0_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n0_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n0_y_din),
+    .if_full_n(screen_tris_out_n0_y_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n0_y_write),
+    .if_dout(screen_tris_out_n0_y_dout),
+    .if_empty_n(screen_tris_out_n0_y_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n0_y_read),
+    .if_num_data_valid(screen_tris_out_n0_y_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n0_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n0_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n0_z_din),
+    .if_full_n(screen_tris_out_n0_z_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n0_z_write),
+    .if_dout(screen_tris_out_n0_z_dout),
+    .if_empty_n(screen_tris_out_n0_z_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n0_z_read),
+    .if_num_data_valid(screen_tris_out_n0_z_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n0_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n1_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n1_x_din),
+    .if_full_n(screen_tris_out_n1_x_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n1_x_write),
+    .if_dout(screen_tris_out_n1_x_dout),
+    .if_empty_n(screen_tris_out_n1_x_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n1_x_read),
+    .if_num_data_valid(screen_tris_out_n1_x_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n1_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n1_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n1_y_din),
+    .if_full_n(screen_tris_out_n1_y_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n1_y_write),
+    .if_dout(screen_tris_out_n1_y_dout),
+    .if_empty_n(screen_tris_out_n1_y_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n1_y_read),
+    .if_num_data_valid(screen_tris_out_n1_y_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n1_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n1_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n1_z_din),
+    .if_full_n(screen_tris_out_n1_z_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n1_z_write),
+    .if_dout(screen_tris_out_n1_z_dout),
+    .if_empty_n(screen_tris_out_n1_z_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n1_z_read),
+    .if_num_data_valid(screen_tris_out_n1_z_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n1_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n2_x_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n2_x_din),
+    .if_full_n(screen_tris_out_n2_x_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n2_x_write),
+    .if_dout(screen_tris_out_n2_x_dout),
+    .if_empty_n(screen_tris_out_n2_x_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n2_x_read),
+    .if_num_data_valid(screen_tris_out_n2_x_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n2_x_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n2_y_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n2_y_din),
+    .if_full_n(screen_tris_out_n2_y_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n2_y_write),
+    .if_dout(screen_tris_out_n2_y_dout),
+    .if_empty_n(screen_tris_out_n2_y_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n2_y_read),
+    .if_num_data_valid(screen_tris_out_n2_y_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n2_y_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_n2_z_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_n2_z_din),
+    .if_full_n(screen_tris_out_n2_z_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_n2_z_write),
+    .if_dout(screen_tris_out_n2_z_dout),
+    .if_empty_n(screen_tris_out_n2_z_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_n2_z_read),
+    .if_num_data_valid(screen_tris_out_n2_z_num_data_valid),
+    .if_fifo_cap(screen_tris_out_n2_z_fifo_cap)
+);
+
+top_kernel_fifo_w32_d2_S screen_tris_out_color_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_color_din),
+    .if_full_n(screen_tris_out_color_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_color_write),
+    .if_dout(screen_tris_out_color_dout),
+    .if_empty_n(screen_tris_out_color_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_color_read),
+    .if_num_data_valid(screen_tris_out_color_num_data_valid),
+    .if_fifo_cap(screen_tris_out_color_fifo_cap)
+);
+
+top_kernel_fifo_w1_d2_S screen_tris_out_is_active_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(k3_bounding_box_U0_screen_tris_out_is_active_din),
+    .if_full_n(screen_tris_out_is_active_full_n),
+    .if_write(k3_bounding_box_U0_screen_tris_out_is_active_write),
+    .if_dout(screen_tris_out_is_active_dout),
+    .if_empty_n(screen_tris_out_is_active_empty_n),
+    .if_read(k4_rasterize_U0_screen_tris_out_is_active_read),
+    .if_num_data_valid(screen_tris_out_is_active_num_data_valid),
+    .if_fifo_cap(screen_tris_out_is_active_fifo_cap)
+);
+
+top_kernel_start_for_k2_perspective_divide_U0 start_for_k2_perspective_divide_U0_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(start_for_k2_perspective_divide_U0_din),
+    .if_full_n(start_for_k2_perspective_divide_U0_full_n),
+    .if_write(k1_vertex_transform_U0_start_write),
+    .if_dout(start_for_k2_perspective_divide_U0_dout),
+    .if_empty_n(start_for_k2_perspective_divide_U0_empty_n),
+    .if_read(k2_perspective_divide_U0_ap_ready)
+);
+
+top_kernel_start_for_k3_bounding_box_U0 start_for_k3_bounding_box_U0_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(start_for_k3_bounding_box_U0_din),
+    .if_full_n(start_for_k3_bounding_box_U0_full_n),
+    .if_write(k2_perspective_divide_U0_start_write),
+    .if_dout(start_for_k3_bounding_box_U0_dout),
+    .if_empty_n(start_for_k3_bounding_box_U0_empty_n),
+    .if_read(k3_bounding_box_U0_ap_ready)
+);
+
+top_kernel_start_for_k4_rasterize_U0 start_for_k4_rasterize_U0_U(
+    .clk(ap_clk),
+    .reset(ap_rst_n_inv),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(start_for_k4_rasterize_U0_din),
+    .if_full_n(start_for_k4_rasterize_U0_full_n),
+    .if_write(k3_bounding_box_U0_start_write),
+    .if_dout(start_for_k4_rasterize_U0_dout),
+    .if_empty_n(start_for_k4_rasterize_U0_empty_n),
+    .if_read(k4_rasterize_U0_ap_ready)
+);
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_sync_reg_channel_write_normal_buffer_z <= 1'b0;
     end else begin
-        if (((Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done & Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue) == 1'b1)) begin
+        if (((k4_rasterize_U0_ap_done & k4_rasterize_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_normal_buffer_z <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_normal_buffer_z <= ap_sync_channel_write_normal_buffer_z;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_screen_tris_is_active <= 1'b0;
-    end else begin
-        if (((k2_perspective_divide_U0_ap_done & k2_perspective_divide_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_screen_tris_is_active <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_screen_tris_is_active <= ap_sync_channel_write_screen_tris_is_active;
         end
     end
 end
@@ -2800,21 +3828,11 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue = ap_sync_channel_write_normal_buffer_z;
-
-assign Block_entry_screen_tris_v0_x_rd_proc_U0_ap_start = screen_tris_is_active_t_empty_n;
-
-assign Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_full_n = normal_buffer_z_i_full_n;
-
-assign ap_channel_done_clip_tris_v2_z = (k1_vertex_transform_U0_ap_done & (ap_sync_reg_channel_write_clip_tris_v2_z ^ 1'b1));
-
-assign ap_channel_done_normal_buffer_z = ((ap_sync_reg_channel_write_normal_buffer_z ^ 1'b1) & Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done);
-
-assign ap_channel_done_screen_tris_is_active = (k2_perspective_divide_U0_ap_done & (ap_sync_reg_channel_write_screen_tris_is_active ^ 1'b1));
+assign ap_channel_done_normal_buffer_z = (k4_rasterize_U0_ap_done & (ap_sync_reg_channel_write_normal_buffer_z ^ 1'b1));
 
 assign ap_done = k5_deferred_lighting_U0_ap_done;
 
-assign ap_idle = (k5_deferred_lighting_U0_ap_idle & k2_perspective_divide_U0_ap_idle & k1_vertex_transform_U0_ap_idle & (normal_buffer_z_t_empty_n ^ 1'b1) & (screen_tris_is_active_t_empty_n ^ 1'b1) & (clip_tris_v2_z_t_empty_n ^ 1'b1) & entry_proc_U0_ap_idle & Block_entry_screen_tris_v0_x_rd_proc_U0_ap_idle);
+assign ap_idle = (k5_deferred_lighting_U0_ap_idle & k4_rasterize_U0_ap_idle & k3_bounding_box_U0_ap_idle & k2_perspective_divide_U0_ap_idle & k1_vertex_transform_U0_ap_idle & (normal_buffer_z_t_empty_n ^ 1'b1) & entry_proc_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
@@ -2822,11 +3840,7 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign ap_sync_channel_write_clip_tris_v2_z = ((k1_vertex_transform_U0_clip_tris_v2_z_full_n & ap_channel_done_clip_tris_v2_z) | ap_sync_reg_channel_write_clip_tris_v2_z);
-
-assign ap_sync_channel_write_normal_buffer_z = ((ap_channel_done_normal_buffer_z & Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_full_n) | ap_sync_reg_channel_write_normal_buffer_z);
-
-assign ap_sync_channel_write_screen_tris_is_active = ((k2_perspective_divide_U0_screen_tris_is_active_full_n & ap_channel_done_screen_tris_is_active) | ap_sync_reg_channel_write_screen_tris_is_active);
+assign ap_sync_channel_write_normal_buffer_z = ((k4_rasterize_U0_normal_buffer_z_full_n & ap_channel_done_normal_buffer_z) | ap_sync_reg_channel_write_normal_buffer_z);
 
 assign ap_sync_entry_proc_U0_ap_ready = (entry_proc_U0_ap_ready | ap_sync_reg_entry_proc_U0_ap_ready);
 
@@ -2852,36 +3866,148 @@ assign gmem1_0_BRESP = 2'd0;
 
 assign gmem1_0_BUSER = 1'd0;
 
-assign k1_vertex_transform_U0_ap_continue = ap_sync_channel_write_clip_tris_v2_z;
+assign gmem2_0_RID = 1'd0;
+
+assign gmem2_0_RLAST = 1'b0;
+
+assign gmem2_0_RRESP = 2'd0;
+
+assign gmem2_0_RUSER = 1'd0;
+
+assign k1_vertex_transform_U0_ap_continue = 1'b1;
 
 assign k1_vertex_transform_U0_ap_start = ((ap_sync_reg_k1_vertex_transform_U0_ap_ready ^ 1'b1) & ap_start & 1'b1);
 
-assign k1_vertex_transform_U0_clip_tris_v2_z_full_n = clip_tris_v2_z_i_full_n;
+assign k2_perspective_divide_U0_ap_continue = 1'b1;
 
-assign k2_perspective_divide_U0_ap_continue = ap_sync_channel_write_screen_tris_is_active;
+assign k2_perspective_divide_U0_ap_start = start_for_k2_perspective_divide_U0_empty_n;
 
-assign k2_perspective_divide_U0_ap_start = clip_tris_v2_z_t_empty_n;
+assign k3_bounding_box_U0_ap_continue = 1'b1;
 
-assign k2_perspective_divide_U0_screen_tris_is_active_full_n = screen_tris_is_active_i_full_n;
+assign k3_bounding_box_U0_ap_start = start_for_k3_bounding_box_U0_empty_n;
+
+assign k3_bounding_box_U0_bounds_max_x_fifo_cap = bounds_max_x_fifo_cap;
+
+assign k3_bounding_box_U0_bounds_max_x_num_data_valid = bounds_max_x_num_data_valid;
+
+assign k3_bounding_box_U0_bounds_max_y_fifo_cap = bounds_max_y_fifo_cap;
+
+assign k3_bounding_box_U0_bounds_max_y_num_data_valid = bounds_max_y_num_data_valid;
+
+assign k3_bounding_box_U0_bounds_min_x_fifo_cap = bounds_min_x_fifo_cap;
+
+assign k3_bounding_box_U0_bounds_min_x_num_data_valid = bounds_min_x_num_data_valid;
+
+assign k3_bounding_box_U0_bounds_min_y_fifo_cap = bounds_min_y_fifo_cap;
+
+assign k3_bounding_box_U0_bounds_min_y_num_data_valid = bounds_min_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_color_fifo_cap = screen_tris_out_color_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_color_num_data_valid = screen_tris_out_color_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_is_active_fifo_cap = screen_tris_out_is_active_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_is_active_num_data_valid = screen_tris_out_is_active_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n0_x_fifo_cap = screen_tris_out_n0_x_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n0_x_num_data_valid = screen_tris_out_n0_x_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n0_y_fifo_cap = screen_tris_out_n0_y_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n0_y_num_data_valid = screen_tris_out_n0_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n0_z_fifo_cap = screen_tris_out_n0_z_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n0_z_num_data_valid = screen_tris_out_n0_z_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n1_x_fifo_cap = screen_tris_out_n1_x_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n1_x_num_data_valid = screen_tris_out_n1_x_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n1_y_fifo_cap = screen_tris_out_n1_y_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n1_y_num_data_valid = screen_tris_out_n1_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n1_z_fifo_cap = screen_tris_out_n1_z_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n1_z_num_data_valid = screen_tris_out_n1_z_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n2_x_fifo_cap = screen_tris_out_n2_x_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n2_x_num_data_valid = screen_tris_out_n2_x_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n2_y_fifo_cap = screen_tris_out_n2_y_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n2_y_num_data_valid = screen_tris_out_n2_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_n2_z_fifo_cap = screen_tris_out_n2_z_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_n2_z_num_data_valid = screen_tris_out_n2_z_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_w_fifo_cap = screen_tris_out_v0_w_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_w_num_data_valid = screen_tris_out_v0_w_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_x_fifo_cap = screen_tris_out_v0_x_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_x_num_data_valid = screen_tris_out_v0_x_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_y_fifo_cap = screen_tris_out_v0_y_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_y_num_data_valid = screen_tris_out_v0_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_z_fifo_cap = screen_tris_out_v0_z_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v0_z_num_data_valid = screen_tris_out_v0_z_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_w_fifo_cap = screen_tris_out_v1_w_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_w_num_data_valid = screen_tris_out_v1_w_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_x_fifo_cap = screen_tris_out_v1_x_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_x_num_data_valid = screen_tris_out_v1_x_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_y_fifo_cap = screen_tris_out_v1_y_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_y_num_data_valid = screen_tris_out_v1_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_z_fifo_cap = screen_tris_out_v1_z_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v1_z_num_data_valid = screen_tris_out_v1_z_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_w_fifo_cap = screen_tris_out_v2_w_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_w_num_data_valid = screen_tris_out_v2_w_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_x_fifo_cap = screen_tris_out_v2_x_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_x_num_data_valid = screen_tris_out_v2_x_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_y_fifo_cap = screen_tris_out_v2_y_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_y_num_data_valid = screen_tris_out_v2_y_num_data_valid;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_z_fifo_cap = screen_tris_out_v2_z_fifo_cap;
+
+assign k3_bounding_box_U0_screen_tris_out_v2_z_num_data_valid = screen_tris_out_v2_z_num_data_valid;
+
+assign k4_rasterize_U0_ap_continue = ap_sync_channel_write_normal_buffer_z;
+
+assign k4_rasterize_U0_ap_start = start_for_k4_rasterize_U0_empty_n;
+
+assign k4_rasterize_U0_normal_buffer_z_full_n = normal_buffer_z_i_full_n;
 
 assign k5_deferred_lighting_U0_ap_continue = 1'b1;
 
 assign k5_deferred_lighting_U0_ap_start = normal_buffer_z_t_empty_n;
 
-assign mvp_matrix_address0 = k1_vertex_transform_U0_mvp_matrix_address0;
+assign start_for_k2_perspective_divide_U0_din = 1'b1;
 
-assign mvp_matrix_address1 = k1_vertex_transform_U0_mvp_matrix_address1;
+assign start_for_k3_bounding_box_U0_din = 1'b1;
 
-assign mvp_matrix_ce0 = k1_vertex_transform_U0_mvp_matrix_ce0;
-
-assign mvp_matrix_ce1 = k1_vertex_transform_U0_mvp_matrix_ce1;
-
-assign mvp_matrix_d0 = 32'd0;
-
-assign mvp_matrix_d1 = 32'd0;
-
-assign mvp_matrix_we0 = 1'b0;
-
-assign mvp_matrix_we1 = 1'b0;
+assign start_for_k4_rasterize_U0_din = 1'b1;
 
 endmodule //top_kernel

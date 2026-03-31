@@ -11,6 +11,8 @@
 
 `uvm_analysis_imp_decl(_axi_wtr_gmem0)
 `uvm_analysis_imp_decl(_axi_rtr_gmem0)
+`uvm_analysis_imp_decl(_axi_wtr_gmem2)
+`uvm_analysis_imp_decl(_axi_rtr_gmem2)
 `uvm_analysis_imp_decl(_axi_wtr_gmem1)
 `uvm_analysis_imp_decl(_axi_rtr_gmem1)
 `uvm_analysis_imp_decl(_axi_wtr_control)
@@ -26,6 +28,8 @@ class top_kernel_subsystem_monitor extends uvm_component;
 
     uvm_analysis_imp_axi_wtr_gmem0#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) gmem0_wtr_imp;
     uvm_analysis_imp_axi_rtr_gmem0#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) gmem0_rtr_imp;
+    uvm_analysis_imp_axi_wtr_gmem2#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) gmem2_wtr_imp;
+    uvm_analysis_imp_axi_rtr_gmem2#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) gmem2_rtr_imp;
     uvm_analysis_imp_axi_wtr_gmem1#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) gmem1_wtr_imp;
     uvm_analysis_imp_axi_rtr_gmem1#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) gmem1_rtr_imp;
     uvm_analysis_imp_axi_wtr_control#(axi_pkg::axi_transfer, top_kernel_subsystem_monitor) control_wtr_imp;
@@ -47,6 +51,8 @@ class top_kernel_subsystem_monitor extends uvm_component;
         super.new(name, parent);
         gmem0_wtr_imp = new("gmem0_wtr_imp", this);
         gmem0_rtr_imp = new("gmem0_rtr_imp", this);
+        gmem2_wtr_imp = new("gmem2_wtr_imp", this);
+        gmem2_rtr_imp = new("gmem2_rtr_imp", this);
         gmem1_wtr_imp = new("gmem1_wtr_imp", this);
         gmem1_rtr_imp = new("gmem1_rtr_imp", this);
         control_wtr_imp = new("control_wtr_imp", this);
@@ -61,6 +67,16 @@ class top_kernel_subsystem_monitor extends uvm_component;
     virtual function void write_axi_rtr_gmem0(axi_transfer tr);
         refm.write_axi_rtr_gmem0(tr);
         scbd.write_axi_rtr_gmem0(tr);
+    endfunction
+
+    virtual function void write_axi_wtr_gmem2(axi_transfer tr);
+        refm.write_axi_wtr_gmem2(tr);
+        scbd.write_axi_wtr_gmem2(tr);
+    endfunction
+
+    virtual function void write_axi_rtr_gmem2(axi_transfer tr);
+        refm.write_axi_rtr_gmem2(tr);
+        scbd.write_axi_rtr_gmem2(tr);
     endfunction
 
     virtual function void write_axi_wtr_gmem1(axi_transfer tr);

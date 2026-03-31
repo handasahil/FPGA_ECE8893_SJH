@@ -28,12 +28,23 @@ generic (
     C_M_AXI_GMEM1_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_RUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM1_BUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM2_ADDR_WIDTH : INTEGER := 64;
+    C_M_AXI_GMEM2_ID_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM2_AWUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM2_DATA_WIDTH : INTEGER := 32;
+    C_M_AXI_GMEM2_WUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM2_ARUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM2_RUSER_WIDTH : INTEGER := 1;
+    C_M_AXI_GMEM2_BUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM0_USER_VALUE : INTEGER := 0;
     C_M_AXI_GMEM0_PROT_VALUE : INTEGER := 0;
     C_M_AXI_GMEM0_CACHE_VALUE : INTEGER := 3;
     C_M_AXI_GMEM1_USER_VALUE : INTEGER := 0;
     C_M_AXI_GMEM1_PROT_VALUE : INTEGER := 0;
-    C_M_AXI_GMEM1_CACHE_VALUE : INTEGER := 3 );
+    C_M_AXI_GMEM1_CACHE_VALUE : INTEGER := 3;
+    C_M_AXI_GMEM2_USER_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM2_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM2_CACHE_VALUE : INTEGER := 3 );
 port (
     s_axi_control_AWVALID : IN STD_LOGIC;
     s_axi_control_AWREADY : OUT STD_LOGIC;
@@ -145,39 +156,75 @@ port (
     m_axi_gmem1_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
     m_axi_gmem1_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM1_ID_WIDTH-1 downto 0);
     m_axi_gmem1_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM1_BUSER_WIDTH-1 downto 0);
-    mvp_matrix_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    mvp_matrix_ce0 : OUT STD_LOGIC;
-    mvp_matrix_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    mvp_matrix_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-    mvp_matrix_we0 : OUT STD_LOGIC;
-    mvp_matrix_address1 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    mvp_matrix_ce1 : OUT STD_LOGIC;
-    mvp_matrix_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    mvp_matrix_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-    mvp_matrix_we1 : OUT STD_LOGIC );
+    m_axi_gmem2_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem2_AWREADY : IN STD_LOGIC;
+    m_axi_gmem2_AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem2_AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ID_WIDTH-1 downto 0);
+    m_axi_gmem2_AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem2_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_AWUSER_WIDTH-1 downto 0);
+    m_axi_gmem2_WVALID : OUT STD_LOGIC;
+    m_axi_gmem2_WREADY : IN STD_LOGIC;
+    m_axi_gmem2_WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_DATA_WIDTH-1 downto 0);
+    m_axi_gmem2_WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_DATA_WIDTH/8-1 downto 0);
+    m_axi_gmem2_WLAST : OUT STD_LOGIC;
+    m_axi_gmem2_WID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ID_WIDTH-1 downto 0);
+    m_axi_gmem2_WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_WUSER_WIDTH-1 downto 0);
+    m_axi_gmem2_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem2_ARREADY : IN STD_LOGIC;
+    m_axi_gmem2_ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ADDR_WIDTH-1 downto 0);
+    m_axi_gmem2_ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ID_WIDTH-1 downto 0);
+    m_axi_gmem2_ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem2_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ARUSER_WIDTH-1 downto 0);
+    m_axi_gmem2_RVALID : IN STD_LOGIC;
+    m_axi_gmem2_RREADY : OUT STD_LOGIC;
+    m_axi_gmem2_RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM2_DATA_WIDTH-1 downto 0);
+    m_axi_gmem2_RLAST : IN STD_LOGIC;
+    m_axi_gmem2_RID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ID_WIDTH-1 downto 0);
+    m_axi_gmem2_RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM2_RUSER_WIDTH-1 downto 0);
+    m_axi_gmem2_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_BVALID : IN STD_LOGIC;
+    m_axi_gmem2_BREADY : OUT STD_LOGIC;
+    m_axi_gmem2_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_BID : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM2_ID_WIDTH-1 downto 0);
+    m_axi_gmem2_BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_GMEM2_BUSER_WIDTH-1 downto 0) );
 end;
 
 
 architecture behav of top_kernel is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=237,HLS_SYN_DSP=0,HLS_SYN_FF=16386,HLS_SYN_LUT=31881,HLS_VERSION=2025_1_1}";
+    "top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=155,HLS_SYN_DSP=0,HLS_SYN_FF=25921,HLS_SYN_LUT=29762,HLS_VERSION=2025_1_1}";
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
     constant ap_const_lv1024_lc_1 : STD_LOGIC_VECTOR (1023 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv128_lc_1 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_lv9_0 : STD_LOGIC_VECTOR (8 downto 0) := "000000000";
-    constant ap_const_lv7_0 : STD_LOGIC_VECTOR (6 downto 0) := "0000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
     signal ap_rst_n_inv : STD_LOGIC;
     signal in_tris : STD_LOGIC_VECTOR (63 downto 0);
+    signal mvp_matrix : STD_LOGIC_VECTOR (63 downto 0);
     signal out_pixels : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_start : STD_LOGIC;
     signal ap_ready : STD_LOGIC;
@@ -204,6 +251,17 @@ architecture behav of top_kernel is
     signal gmem1_0_BRESP : STD_LOGIC_VECTOR (1 downto 0);
     signal gmem1_0_BID : STD_LOGIC_VECTOR (0 downto 0);
     signal gmem1_0_BUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem2_0_AWREADY : STD_LOGIC;
+    signal gmem2_0_WREADY : STD_LOGIC;
+    signal gmem2_0_ARREADY : STD_LOGIC;
+    signal gmem2_0_RVALID : STD_LOGIC;
+    signal gmem2_0_RDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal gmem2_0_RLAST : STD_LOGIC;
+    signal gmem2_0_RID : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem2_0_RFIFONUM : STD_LOGIC_VECTOR (8 downto 0);
+    signal gmem2_0_RUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal gmem2_0_RRESP : STD_LOGIC_VECTOR (1 downto 0);
+    signal gmem2_0_BVALID : STD_LOGIC;
     signal entry_proc_U0_ap_start : STD_LOGIC;
     signal entry_proc_U0_ap_done : STD_LOGIC;
     signal entry_proc_U0_ap_continue : STD_LOGIC;
@@ -216,6 +274,38 @@ architecture behav of top_kernel is
     signal k1_vertex_transform_U0_ap_continue : STD_LOGIC;
     signal k1_vertex_transform_U0_ap_idle : STD_LOGIC;
     signal k1_vertex_transform_U0_ap_ready : STD_LOGIC;
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWVALID : STD_LOGIC;
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_WVALID : STD_LOGIC;
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_WLAST : STD_LOGIC;
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARVALID : STD_LOGIC;
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_RREADY : STD_LOGIC;
+    signal k1_vertex_transform_U0_m_axi_gmem2_0_BREADY : STD_LOGIC;
     signal k1_vertex_transform_U0_m_axi_gmem0_0_AWVALID : STD_LOGIC;
     signal k1_vertex_transform_U0_m_axi_gmem0_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal k1_vertex_transform_U0_m_axi_gmem0_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
@@ -248,296 +338,318 @@ architecture behav of top_kernel is
     signal k1_vertex_transform_U0_m_axi_gmem0_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal k1_vertex_transform_U0_m_axi_gmem0_0_RREADY : STD_LOGIC;
     signal k1_vertex_transform_U0_m_axi_gmem0_0_BREADY : STD_LOGIC;
-    signal k1_vertex_transform_U0_mvp_matrix_address0 : STD_LOGIC_VECTOR (3 downto 0);
-    signal k1_vertex_transform_U0_mvp_matrix_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_mvp_matrix_address1 : STD_LOGIC_VECTOR (3 downto 0);
-    signal k1_vertex_transform_U0_mvp_matrix_ce1 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_is_active_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_is_active_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_is_active_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_is_active_d0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n0_x_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n0_x_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n0_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n0_y_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n0_y_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n0_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n0_z_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n0_z_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n0_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n1_x_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n1_x_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n1_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n1_y_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n1_y_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n1_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n1_z_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n1_z_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n1_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n2_x_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n2_x_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n2_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n2_y_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n2_y_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n2_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_n2_z_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n2_z_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_n2_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_w_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_w_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_w_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_w_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_w_address1 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_w_ce1 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_w_we1 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_w_d1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_x_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_x_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_y_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_y_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v0_z_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_z_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v0_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_w_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_w_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_w_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_w_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_x_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_x_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_y_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_y_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v1_z_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_z_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v1_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_w_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_w_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_w_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_w_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_x_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_x_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_y_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_y_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k1_vertex_transform_U0_clip_tris_v2_z_ce0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_z_we0 : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal ap_channel_done_clip_tris_v2_z : STD_LOGIC;
-    signal k1_vertex_transform_U0_clip_tris_v2_z_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_clip_tris_v2_z : STD_LOGIC := '0';
-    signal ap_sync_channel_write_clip_tris_v2_z : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v0_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v0_x_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v0_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v0_y_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v0_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v0_z_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v0_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v0_w_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v1_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v1_x_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v1_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v1_y_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v1_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v1_z_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v1_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v1_w_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v2_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v2_x_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v2_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v2_y_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v2_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v2_z_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_v2_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_v2_w_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n0_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n0_x_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n0_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n0_y_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n0_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n0_z_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n1_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n1_x_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n1_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n1_y_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n1_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n1_z_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n2_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n2_x_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n2_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n2_y_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_n2_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_n2_z_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_color_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_color_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_clip_tris_is_active_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal k1_vertex_transform_U0_clip_tris_is_active_write : STD_LOGIC;
+    signal k1_vertex_transform_U0_start_out : STD_LOGIC;
+    signal k1_vertex_transform_U0_start_write : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_start : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_done : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_continue : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_idle : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_ready : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v0_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v0_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v0_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v0_w_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v0_w_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v1_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v1_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v1_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v1_w_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v1_w_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v2_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v2_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v2_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_v2_w_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_v2_w_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n0_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n0_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n0_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n1_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n1_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n1_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n2_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n2_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_n2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_n2_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_clip_tris_is_active_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_clip_tris_is_active_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v0_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_x_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v0_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_y_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v0_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_z_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v0_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v1_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v1_x_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v1_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v1_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v1_y_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v1_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v1_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v1_z_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v1_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v2_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v2_x_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v2_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v2_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v2_y_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v2_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_v2_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v2_z_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_v2_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n0_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n0_x_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n0_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n0_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n0_y_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n0_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n0_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n0_z_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n0_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n1_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n1_x_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n1_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n1_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n1_y_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n1_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n1_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n1_z_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n1_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n2_x_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n2_x_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n2_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n2_y_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n2_y_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n2_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_n2_z_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n2_z_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_n2_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_is_active_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal k2_perspective_divide_U0_screen_tris_is_active_ce0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_is_active_we0 : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_is_active_d0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal ap_channel_done_screen_tris_is_active : STD_LOGIC;
-    signal k2_perspective_divide_U0_screen_tris_is_active_full_n : STD_LOGIC;
-    signal ap_sync_reg_channel_write_screen_tris_is_active : STD_LOGIC := '0';
-    signal ap_sync_channel_write_screen_tris_is_active : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_ap_start : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_ap_idle : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_address0 : STD_LOGIC_VECTOR (11 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_we0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_address0 : STD_LOGIC_VECTOR (11 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_we0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_address0 : STD_LOGIC_VECTOR (11 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_we0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_address0 : STD_LOGIC_VECTOR (11 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_we0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_ce0 : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_address0 : STD_LOGIC_VECTOR (6 downto 0);
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_ce0 : STD_LOGIC;
+    signal k2_perspective_divide_U0_start_out : STD_LOGIC;
+    signal k2_perspective_divide_U0_start_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v0_x_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v0_y_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v0_z_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v0_w_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v1_x_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v1_y_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v1_z_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v1_w_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v2_x_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v2_y_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v2_z_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_v2_w_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n0_x_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n0_y_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n0_z_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n1_x_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n1_y_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n1_z_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n2_x_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n2_y_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_n2_z_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_color_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_clip_tris_is_active_read : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_w_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_w_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_w_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n0_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n0_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n0_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n0_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n0_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n0_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n1_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n1_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n1_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n1_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n1_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n1_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n2_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n2_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n2_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n2_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n2_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n2_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_color_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_color_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_is_active_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_is_active_write : STD_LOGIC;
+    signal k3_bounding_box_U0_ap_start : STD_LOGIC;
+    signal k3_bounding_box_U0_ap_done : STD_LOGIC;
+    signal k3_bounding_box_U0_ap_continue : STD_LOGIC;
+    signal k3_bounding_box_U0_ap_idle : STD_LOGIC;
+    signal k3_bounding_box_U0_ap_ready : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v0_x_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v0_y_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v0_z_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v0_w_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v1_x_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v1_y_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v1_z_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v1_w_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v2_x_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v2_y_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v2_z_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_v2_w_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n0_x_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n0_y_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n0_z_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n1_x_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n1_y_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n1_z_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n2_x_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n2_y_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_n2_z_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_color_read : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_in_is_active_read : STD_LOGIC;
+    signal k3_bounding_box_U0_bounds_min_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_min_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_bounds_min_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_min_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_min_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_min_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_bounds_min_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_min_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_max_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_max_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_bounds_max_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_max_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_max_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_max_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_bounds_max_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_bounds_max_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v0_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v0_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_z_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v0_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_w_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v0_w_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v0_w_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v1_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v1_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_z_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v1_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_w_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v1_w_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v1_w_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v2_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v2_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_z_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v2_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_w_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_w_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_v2_w_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_v2_w_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n0_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n0_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_z_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n0_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n0_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n1_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n1_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_z_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n1_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n1_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_x_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_x_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n2_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_y_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_y_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n2_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_z_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_z_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_n2_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_n2_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_color_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_color_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_color_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_color_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_is_active_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_is_active_write : STD_LOGIC;
+    signal k3_bounding_box_U0_screen_tris_out_is_active_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_screen_tris_out_is_active_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k3_bounding_box_U0_start_out : STD_LOGIC;
+    signal k3_bounding_box_U0_start_write : STD_LOGIC;
+    signal k4_rasterize_U0_ap_start : STD_LOGIC;
+    signal k4_rasterize_U0_ap_done : STD_LOGIC;
+    signal k4_rasterize_U0_ap_continue : STD_LOGIC;
+    signal k4_rasterize_U0_ap_idle : STD_LOGIC;
+    signal k4_rasterize_U0_ap_ready : STD_LOGIC;
+    signal k4_rasterize_U0_depth_buffer_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal k4_rasterize_U0_depth_buffer_ce0 : STD_LOGIC;
+    signal k4_rasterize_U0_depth_buffer_we0 : STD_LOGIC;
+    signal k4_rasterize_U0_depth_buffer_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal k4_rasterize_U0_normal_buffer_x_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal k4_rasterize_U0_normal_buffer_x_ce0 : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_x_we0 : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_x_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal k4_rasterize_U0_normal_buffer_y_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal k4_rasterize_U0_normal_buffer_y_ce0 : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_y_we0 : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_y_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal k4_rasterize_U0_normal_buffer_z_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal k4_rasterize_U0_normal_buffer_z_ce0 : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_z_we0 : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_z_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal k4_rasterize_U0_screen_tris_out_v0_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v0_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v0_z_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v0_w_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v1_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v1_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v1_z_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v1_w_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v2_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v2_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v2_z_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_v2_w_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n0_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n0_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n0_z_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n1_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n1_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n1_z_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n2_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n2_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_n2_z_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_color_read : STD_LOGIC;
+    signal k4_rasterize_U0_screen_tris_out_is_active_read : STD_LOGIC;
+    signal k4_rasterize_U0_bounds_min_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_bounds_min_y_read : STD_LOGIC;
+    signal k4_rasterize_U0_bounds_max_x_read : STD_LOGIC;
+    signal k4_rasterize_U0_bounds_max_y_read : STD_LOGIC;
     signal ap_channel_done_normal_buffer_z : STD_LOGIC;
-    signal Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_full_n : STD_LOGIC;
+    signal k4_rasterize_U0_normal_buffer_z_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_normal_buffer_z : STD_LOGIC := '0';
     signal ap_sync_channel_write_normal_buffer_z : STD_LOGIC;
     signal k5_deferred_lighting_U0_ap_start : STD_LOGIC;
@@ -545,6 +657,7 @@ architecture behav of top_kernel is
     signal k5_deferred_lighting_U0_ap_continue : STD_LOGIC;
     signal k5_deferred_lighting_U0_ap_idle : STD_LOGIC;
     signal k5_deferred_lighting_U0_ap_ready : STD_LOGIC;
+    signal k5_deferred_lighting_U0_framebuffer_read : STD_LOGIC;
     signal k5_deferred_lighting_U0_m_axi_gmem1_0_AWVALID : STD_LOGIC;
     signal k5_deferred_lighting_U0_m_axi_gmem1_0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
     signal k5_deferred_lighting_U0_m_axi_gmem1_0_AWID : STD_LOGIC_VECTOR (0 downto 0);
@@ -577,7 +690,6 @@ architecture behav of top_kernel is
     signal k5_deferred_lighting_U0_m_axi_gmem1_0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
     signal k5_deferred_lighting_U0_m_axi_gmem1_0_RREADY : STD_LOGIC;
     signal k5_deferred_lighting_U0_m_axi_gmem1_0_BREADY : STD_LOGIC;
-    signal k5_deferred_lighting_U0_framebuffer_read : STD_LOGIC;
     signal k5_deferred_lighting_U0_depth_buffer_address0 : STD_LOGIC_VECTOR (11 downto 0);
     signal k5_deferred_lighting_U0_depth_buffer_ce0 : STD_LOGIC;
     signal k5_deferred_lighting_U0_normal_buffer_x_address0 : STD_LOGIC_VECTOR (11 downto 0);
@@ -586,170 +698,6 @@ architecture behav of top_kernel is
     signal k5_deferred_lighting_U0_normal_buffer_y_ce0 : STD_LOGIC;
     signal k5_deferred_lighting_U0_normal_buffer_z_address0 : STD_LOGIC_VECTOR (11 downto 0);
     signal k5_deferred_lighting_U0_normal_buffer_z_ce0 : STD_LOGIC;
-    signal clip_tris_is_active_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal clip_tris_is_active_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal clip_tris_is_active_i_full_n : STD_LOGIC;
-    signal clip_tris_is_active_t_empty_n : STD_LOGIC;
-    signal clip_tris_n0_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n0_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n0_x_i_full_n : STD_LOGIC;
-    signal clip_tris_n0_x_t_empty_n : STD_LOGIC;
-    signal clip_tris_n0_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n0_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n0_y_i_full_n : STD_LOGIC;
-    signal clip_tris_n0_y_t_empty_n : STD_LOGIC;
-    signal clip_tris_n0_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n0_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n0_z_i_full_n : STD_LOGIC;
-    signal clip_tris_n0_z_t_empty_n : STD_LOGIC;
-    signal clip_tris_n1_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n1_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n1_x_i_full_n : STD_LOGIC;
-    signal clip_tris_n1_x_t_empty_n : STD_LOGIC;
-    signal clip_tris_n1_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n1_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n1_y_i_full_n : STD_LOGIC;
-    signal clip_tris_n1_y_t_empty_n : STD_LOGIC;
-    signal clip_tris_n1_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n1_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n1_z_i_full_n : STD_LOGIC;
-    signal clip_tris_n1_z_t_empty_n : STD_LOGIC;
-    signal clip_tris_n2_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n2_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n2_x_i_full_n : STD_LOGIC;
-    signal clip_tris_n2_x_t_empty_n : STD_LOGIC;
-    signal clip_tris_n2_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n2_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n2_y_i_full_n : STD_LOGIC;
-    signal clip_tris_n2_y_t_empty_n : STD_LOGIC;
-    signal clip_tris_n2_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n2_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_n2_z_i_full_n : STD_LOGIC;
-    signal clip_tris_n2_z_t_empty_n : STD_LOGIC;
-    signal clip_tris_v0_w_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_w_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_w_i_full_n : STD_LOGIC;
-    signal clip_tris_v0_w_t_empty_n : STD_LOGIC;
-    signal clip_tris_v0_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_x_i_full_n : STD_LOGIC;
-    signal clip_tris_v0_x_t_empty_n : STD_LOGIC;
-    signal clip_tris_v0_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_y_i_full_n : STD_LOGIC;
-    signal clip_tris_v0_y_t_empty_n : STD_LOGIC;
-    signal clip_tris_v0_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v0_z_i_full_n : STD_LOGIC;
-    signal clip_tris_v0_z_t_empty_n : STD_LOGIC;
-    signal clip_tris_v1_w_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_w_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_w_i_full_n : STD_LOGIC;
-    signal clip_tris_v1_w_t_empty_n : STD_LOGIC;
-    signal clip_tris_v1_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_x_i_full_n : STD_LOGIC;
-    signal clip_tris_v1_x_t_empty_n : STD_LOGIC;
-    signal clip_tris_v1_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_y_i_full_n : STD_LOGIC;
-    signal clip_tris_v1_y_t_empty_n : STD_LOGIC;
-    signal clip_tris_v1_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v1_z_i_full_n : STD_LOGIC;
-    signal clip_tris_v1_z_t_empty_n : STD_LOGIC;
-    signal clip_tris_v2_w_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_w_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_w_i_full_n : STD_LOGIC;
-    signal clip_tris_v2_w_t_empty_n : STD_LOGIC;
-    signal clip_tris_v2_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_x_i_full_n : STD_LOGIC;
-    signal clip_tris_v2_x_t_empty_n : STD_LOGIC;
-    signal clip_tris_v2_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_y_i_full_n : STD_LOGIC;
-    signal clip_tris_v2_y_t_empty_n : STD_LOGIC;
-    signal clip_tris_v2_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal clip_tris_v2_z_i_full_n : STD_LOGIC;
-    signal clip_tris_v2_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_v0_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v0_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v0_x_i_full_n : STD_LOGIC;
-    signal screen_tris_v0_x_t_empty_n : STD_LOGIC;
-    signal screen_tris_v0_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v0_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v0_y_i_full_n : STD_LOGIC;
-    signal screen_tris_v0_y_t_empty_n : STD_LOGIC;
-    signal screen_tris_v0_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v0_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v0_z_i_full_n : STD_LOGIC;
-    signal screen_tris_v0_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_v1_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v1_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v1_x_i_full_n : STD_LOGIC;
-    signal screen_tris_v1_x_t_empty_n : STD_LOGIC;
-    signal screen_tris_v1_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v1_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v1_y_i_full_n : STD_LOGIC;
-    signal screen_tris_v1_y_t_empty_n : STD_LOGIC;
-    signal screen_tris_v1_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v1_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v1_z_i_full_n : STD_LOGIC;
-    signal screen_tris_v1_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_v2_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v2_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v2_x_i_full_n : STD_LOGIC;
-    signal screen_tris_v2_x_t_empty_n : STD_LOGIC;
-    signal screen_tris_v2_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v2_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v2_y_i_full_n : STD_LOGIC;
-    signal screen_tris_v2_y_t_empty_n : STD_LOGIC;
-    signal screen_tris_v2_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v2_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_v2_z_i_full_n : STD_LOGIC;
-    signal screen_tris_v2_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_n0_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n0_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n0_x_i_full_n : STD_LOGIC;
-    signal screen_tris_n0_x_t_empty_n : STD_LOGIC;
-    signal screen_tris_n0_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n0_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n0_y_i_full_n : STD_LOGIC;
-    signal screen_tris_n0_y_t_empty_n : STD_LOGIC;
-    signal screen_tris_n0_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n0_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n0_z_i_full_n : STD_LOGIC;
-    signal screen_tris_n0_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_n1_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n1_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n1_x_i_full_n : STD_LOGIC;
-    signal screen_tris_n1_x_t_empty_n : STD_LOGIC;
-    signal screen_tris_n1_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n1_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n1_y_i_full_n : STD_LOGIC;
-    signal screen_tris_n1_y_t_empty_n : STD_LOGIC;
-    signal screen_tris_n1_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n1_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n1_z_i_full_n : STD_LOGIC;
-    signal screen_tris_n1_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_n2_x_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n2_x_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n2_x_i_full_n : STD_LOGIC;
-    signal screen_tris_n2_x_t_empty_n : STD_LOGIC;
-    signal screen_tris_n2_y_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n2_y_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n2_y_i_full_n : STD_LOGIC;
-    signal screen_tris_n2_y_t_empty_n : STD_LOGIC;
-    signal screen_tris_n2_z_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n2_z_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal screen_tris_n2_z_i_full_n : STD_LOGIC;
-    signal screen_tris_n2_z_t_empty_n : STD_LOGIC;
-    signal screen_tris_is_active_i_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal screen_tris_is_active_t_q0 : STD_LOGIC_VECTOR (0 downto 0);
-    signal screen_tris_is_active_i_full_n : STD_LOGIC;
-    signal screen_tris_is_active_t_empty_n : STD_LOGIC;
     signal depth_buffer_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal depth_buffer_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal depth_buffer_i_full_n : STD_LOGIC;
@@ -771,11 +719,388 @@ architecture behav of top_kernel is
     signal out_pixels_c_empty_n : STD_LOGIC;
     signal out_pixels_c_num_data_valid : STD_LOGIC_VECTOR (3 downto 0);
     signal out_pixels_c_fifo_cap : STD_LOGIC_VECTOR (3 downto 0);
+    signal clip_tris_v0_x_full_n : STD_LOGIC;
+    signal clip_tris_v0_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v0_x_empty_n : STD_LOGIC;
+    signal clip_tris_v0_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_y_full_n : STD_LOGIC;
+    signal clip_tris_v0_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v0_y_empty_n : STD_LOGIC;
+    signal clip_tris_v0_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_z_full_n : STD_LOGIC;
+    signal clip_tris_v0_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v0_z_empty_n : STD_LOGIC;
+    signal clip_tris_v0_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_w_full_n : STD_LOGIC;
+    signal clip_tris_v0_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v0_w_empty_n : STD_LOGIC;
+    signal clip_tris_v0_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v0_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_x_full_n : STD_LOGIC;
+    signal clip_tris_v1_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v1_x_empty_n : STD_LOGIC;
+    signal clip_tris_v1_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_y_full_n : STD_LOGIC;
+    signal clip_tris_v1_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v1_y_empty_n : STD_LOGIC;
+    signal clip_tris_v1_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_z_full_n : STD_LOGIC;
+    signal clip_tris_v1_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v1_z_empty_n : STD_LOGIC;
+    signal clip_tris_v1_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_w_full_n : STD_LOGIC;
+    signal clip_tris_v1_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v1_w_empty_n : STD_LOGIC;
+    signal clip_tris_v1_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v1_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_x_full_n : STD_LOGIC;
+    signal clip_tris_v2_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v2_x_empty_n : STD_LOGIC;
+    signal clip_tris_v2_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_y_full_n : STD_LOGIC;
+    signal clip_tris_v2_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v2_y_empty_n : STD_LOGIC;
+    signal clip_tris_v2_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_z_full_n : STD_LOGIC;
+    signal clip_tris_v2_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v2_z_empty_n : STD_LOGIC;
+    signal clip_tris_v2_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_w_full_n : STD_LOGIC;
+    signal clip_tris_v2_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_v2_w_empty_n : STD_LOGIC;
+    signal clip_tris_v2_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_v2_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n0_x_full_n : STD_LOGIC;
+    signal clip_tris_n0_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n0_x_empty_n : STD_LOGIC;
+    signal clip_tris_n0_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n0_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n0_y_full_n : STD_LOGIC;
+    signal clip_tris_n0_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n0_y_empty_n : STD_LOGIC;
+    signal clip_tris_n0_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n0_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n0_z_full_n : STD_LOGIC;
+    signal clip_tris_n0_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n0_z_empty_n : STD_LOGIC;
+    signal clip_tris_n0_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n0_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n1_x_full_n : STD_LOGIC;
+    signal clip_tris_n1_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n1_x_empty_n : STD_LOGIC;
+    signal clip_tris_n1_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n1_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n1_y_full_n : STD_LOGIC;
+    signal clip_tris_n1_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n1_y_empty_n : STD_LOGIC;
+    signal clip_tris_n1_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n1_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n1_z_full_n : STD_LOGIC;
+    signal clip_tris_n1_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n1_z_empty_n : STD_LOGIC;
+    signal clip_tris_n1_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n1_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n2_x_full_n : STD_LOGIC;
+    signal clip_tris_n2_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n2_x_empty_n : STD_LOGIC;
+    signal clip_tris_n2_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n2_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n2_y_full_n : STD_LOGIC;
+    signal clip_tris_n2_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n2_y_empty_n : STD_LOGIC;
+    signal clip_tris_n2_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n2_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n2_z_full_n : STD_LOGIC;
+    signal clip_tris_n2_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_n2_z_empty_n : STD_LOGIC;
+    signal clip_tris_n2_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_n2_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_color_full_n : STD_LOGIC;
+    signal clip_tris_color_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal clip_tris_color_empty_n : STD_LOGIC;
+    signal clip_tris_color_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_color_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_is_active_full_n : STD_LOGIC;
+    signal clip_tris_is_active_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal clip_tris_is_active_empty_n : STD_LOGIC;
+    signal clip_tris_is_active_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal clip_tris_is_active_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_x_full_n : STD_LOGIC;
+    signal screen_tris_in_v0_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v0_x_empty_n : STD_LOGIC;
+    signal screen_tris_in_v0_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_y_full_n : STD_LOGIC;
+    signal screen_tris_in_v0_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v0_y_empty_n : STD_LOGIC;
+    signal screen_tris_in_v0_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_z_full_n : STD_LOGIC;
+    signal screen_tris_in_v0_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v0_z_empty_n : STD_LOGIC;
+    signal screen_tris_in_v0_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_w_full_n : STD_LOGIC;
+    signal screen_tris_in_v0_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v0_w_empty_n : STD_LOGIC;
+    signal screen_tris_in_v0_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v0_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_x_full_n : STD_LOGIC;
+    signal screen_tris_in_v1_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v1_x_empty_n : STD_LOGIC;
+    signal screen_tris_in_v1_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_y_full_n : STD_LOGIC;
+    signal screen_tris_in_v1_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v1_y_empty_n : STD_LOGIC;
+    signal screen_tris_in_v1_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_z_full_n : STD_LOGIC;
+    signal screen_tris_in_v1_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v1_z_empty_n : STD_LOGIC;
+    signal screen_tris_in_v1_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_w_full_n : STD_LOGIC;
+    signal screen_tris_in_v1_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v1_w_empty_n : STD_LOGIC;
+    signal screen_tris_in_v1_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v1_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_x_full_n : STD_LOGIC;
+    signal screen_tris_in_v2_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v2_x_empty_n : STD_LOGIC;
+    signal screen_tris_in_v2_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_y_full_n : STD_LOGIC;
+    signal screen_tris_in_v2_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v2_y_empty_n : STD_LOGIC;
+    signal screen_tris_in_v2_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_z_full_n : STD_LOGIC;
+    signal screen_tris_in_v2_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v2_z_empty_n : STD_LOGIC;
+    signal screen_tris_in_v2_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_w_full_n : STD_LOGIC;
+    signal screen_tris_in_v2_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_v2_w_empty_n : STD_LOGIC;
+    signal screen_tris_in_v2_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_v2_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n0_x_full_n : STD_LOGIC;
+    signal screen_tris_in_n0_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n0_x_empty_n : STD_LOGIC;
+    signal screen_tris_in_n0_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n0_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n0_y_full_n : STD_LOGIC;
+    signal screen_tris_in_n0_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n0_y_empty_n : STD_LOGIC;
+    signal screen_tris_in_n0_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n0_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n0_z_full_n : STD_LOGIC;
+    signal screen_tris_in_n0_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n0_z_empty_n : STD_LOGIC;
+    signal screen_tris_in_n0_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n0_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n1_x_full_n : STD_LOGIC;
+    signal screen_tris_in_n1_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n1_x_empty_n : STD_LOGIC;
+    signal screen_tris_in_n1_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n1_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n1_y_full_n : STD_LOGIC;
+    signal screen_tris_in_n1_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n1_y_empty_n : STD_LOGIC;
+    signal screen_tris_in_n1_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n1_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n1_z_full_n : STD_LOGIC;
+    signal screen_tris_in_n1_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n1_z_empty_n : STD_LOGIC;
+    signal screen_tris_in_n1_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n1_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n2_x_full_n : STD_LOGIC;
+    signal screen_tris_in_n2_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n2_x_empty_n : STD_LOGIC;
+    signal screen_tris_in_n2_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n2_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n2_y_full_n : STD_LOGIC;
+    signal screen_tris_in_n2_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n2_y_empty_n : STD_LOGIC;
+    signal screen_tris_in_n2_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n2_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n2_z_full_n : STD_LOGIC;
+    signal screen_tris_in_n2_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_n2_z_empty_n : STD_LOGIC;
+    signal screen_tris_in_n2_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_n2_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_color_full_n : STD_LOGIC;
+    signal screen_tris_in_color_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_in_color_empty_n : STD_LOGIC;
+    signal screen_tris_in_color_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_color_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_is_active_full_n : STD_LOGIC;
+    signal screen_tris_in_is_active_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal screen_tris_in_is_active_empty_n : STD_LOGIC;
+    signal screen_tris_in_is_active_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_in_is_active_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_min_x_full_n : STD_LOGIC;
+    signal bounds_min_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal bounds_min_x_empty_n : STD_LOGIC;
+    signal bounds_min_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_min_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_min_y_full_n : STD_LOGIC;
+    signal bounds_min_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal bounds_min_y_empty_n : STD_LOGIC;
+    signal bounds_min_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_min_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_max_x_full_n : STD_LOGIC;
+    signal bounds_max_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal bounds_max_x_empty_n : STD_LOGIC;
+    signal bounds_max_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_max_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_max_y_full_n : STD_LOGIC;
+    signal bounds_max_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal bounds_max_y_empty_n : STD_LOGIC;
+    signal bounds_max_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal bounds_max_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_x_full_n : STD_LOGIC;
+    signal screen_tris_out_v0_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v0_x_empty_n : STD_LOGIC;
+    signal screen_tris_out_v0_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_y_full_n : STD_LOGIC;
+    signal screen_tris_out_v0_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v0_y_empty_n : STD_LOGIC;
+    signal screen_tris_out_v0_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_z_full_n : STD_LOGIC;
+    signal screen_tris_out_v0_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v0_z_empty_n : STD_LOGIC;
+    signal screen_tris_out_v0_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_w_full_n : STD_LOGIC;
+    signal screen_tris_out_v0_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v0_w_empty_n : STD_LOGIC;
+    signal screen_tris_out_v0_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v0_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_x_full_n : STD_LOGIC;
+    signal screen_tris_out_v1_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v1_x_empty_n : STD_LOGIC;
+    signal screen_tris_out_v1_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_y_full_n : STD_LOGIC;
+    signal screen_tris_out_v1_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v1_y_empty_n : STD_LOGIC;
+    signal screen_tris_out_v1_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_z_full_n : STD_LOGIC;
+    signal screen_tris_out_v1_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v1_z_empty_n : STD_LOGIC;
+    signal screen_tris_out_v1_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_w_full_n : STD_LOGIC;
+    signal screen_tris_out_v1_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v1_w_empty_n : STD_LOGIC;
+    signal screen_tris_out_v1_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v1_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_x_full_n : STD_LOGIC;
+    signal screen_tris_out_v2_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v2_x_empty_n : STD_LOGIC;
+    signal screen_tris_out_v2_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_y_full_n : STD_LOGIC;
+    signal screen_tris_out_v2_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v2_y_empty_n : STD_LOGIC;
+    signal screen_tris_out_v2_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_z_full_n : STD_LOGIC;
+    signal screen_tris_out_v2_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v2_z_empty_n : STD_LOGIC;
+    signal screen_tris_out_v2_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_w_full_n : STD_LOGIC;
+    signal screen_tris_out_v2_w_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_v2_w_empty_n : STD_LOGIC;
+    signal screen_tris_out_v2_w_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_v2_w_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n0_x_full_n : STD_LOGIC;
+    signal screen_tris_out_n0_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n0_x_empty_n : STD_LOGIC;
+    signal screen_tris_out_n0_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n0_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n0_y_full_n : STD_LOGIC;
+    signal screen_tris_out_n0_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n0_y_empty_n : STD_LOGIC;
+    signal screen_tris_out_n0_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n0_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n0_z_full_n : STD_LOGIC;
+    signal screen_tris_out_n0_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n0_z_empty_n : STD_LOGIC;
+    signal screen_tris_out_n0_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n0_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n1_x_full_n : STD_LOGIC;
+    signal screen_tris_out_n1_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n1_x_empty_n : STD_LOGIC;
+    signal screen_tris_out_n1_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n1_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n1_y_full_n : STD_LOGIC;
+    signal screen_tris_out_n1_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n1_y_empty_n : STD_LOGIC;
+    signal screen_tris_out_n1_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n1_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n1_z_full_n : STD_LOGIC;
+    signal screen_tris_out_n1_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n1_z_empty_n : STD_LOGIC;
+    signal screen_tris_out_n1_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n1_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n2_x_full_n : STD_LOGIC;
+    signal screen_tris_out_n2_x_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n2_x_empty_n : STD_LOGIC;
+    signal screen_tris_out_n2_x_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n2_x_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n2_y_full_n : STD_LOGIC;
+    signal screen_tris_out_n2_y_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n2_y_empty_n : STD_LOGIC;
+    signal screen_tris_out_n2_y_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n2_y_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n2_z_full_n : STD_LOGIC;
+    signal screen_tris_out_n2_z_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_n2_z_empty_n : STD_LOGIC;
+    signal screen_tris_out_n2_z_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_n2_z_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_color_full_n : STD_LOGIC;
+    signal screen_tris_out_color_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal screen_tris_out_color_empty_n : STD_LOGIC;
+    signal screen_tris_out_color_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_color_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_is_active_full_n : STD_LOGIC;
+    signal screen_tris_out_is_active_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal screen_tris_out_is_active_empty_n : STD_LOGIC;
+    signal screen_tris_out_is_active_num_data_valid : STD_LOGIC_VECTOR (2 downto 0);
+    signal screen_tris_out_is_active_fifo_cap : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_sync_ready : STD_LOGIC;
     signal ap_sync_reg_entry_proc_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_entry_proc_U0_ap_ready : STD_LOGIC;
     signal ap_sync_reg_k1_vertex_transform_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_k1_vertex_transform_U0_ap_ready : STD_LOGIC;
+    signal start_for_k2_perspective_divide_U0_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_k2_perspective_divide_U0_full_n : STD_LOGIC;
+    signal start_for_k2_perspective_divide_U0_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_k2_perspective_divide_U0_empty_n : STD_LOGIC;
+    signal start_for_k3_bounding_box_U0_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_k3_bounding_box_U0_full_n : STD_LOGIC;
+    signal start_for_k3_bounding_box_U0_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_k3_bounding_box_U0_empty_n : STD_LOGIC;
+    signal start_for_k4_rasterize_U0_din : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_k4_rasterize_U0_full_n : STD_LOGIC;
+    signal start_for_k4_rasterize_U0_dout : STD_LOGIC_VECTOR (0 downto 0);
+    signal start_for_k4_rasterize_U0_empty_n : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
     component top_kernel_entry_proc IS
@@ -801,10 +1126,57 @@ architecture behav of top_kernel is
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
+        start_full_n : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
+        m_axi_gmem2_0_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem2_0_AWREADY : IN STD_LOGIC;
+        m_axi_gmem2_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem2_0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem2_0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_WVALID : OUT STD_LOGIC;
+        m_axi_gmem2_0_WREADY : IN STD_LOGIC;
+        m_axi_gmem2_0_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem2_0_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_WLAST : OUT STD_LOGIC;
+        m_axi_gmem2_0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem2_0_ARREADY : IN STD_LOGIC;
+        m_axi_gmem2_0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem2_0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem2_0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_RVALID : IN STD_LOGIC;
+        m_axi_gmem2_0_RREADY : OUT STD_LOGIC;
+        m_axi_gmem2_0_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem2_0_RLAST : IN STD_LOGIC;
+        m_axi_gmem2_0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_RFIFONUM : IN STD_LOGIC_VECTOR (8 downto 0);
+        m_axi_gmem2_0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_0_BVALID : IN STD_LOGIC;
+        m_axi_gmem2_0_BREADY : OUT STD_LOGIC;
+        m_axi_gmem2_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_0_AWVALID : OUT STD_LOGIC;
         m_axi_gmem0_0_AWREADY : IN STD_LOGIC;
         m_axi_gmem0_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
@@ -851,105 +1223,125 @@ architecture behav of top_kernel is
         m_axi_gmem0_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem0_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem0_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        clip_tris_v0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_x_full_n : IN STD_LOGIC;
+        clip_tris_v0_x_write : OUT STD_LOGIC;
+        clip_tris_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_y_full_n : IN STD_LOGIC;
+        clip_tris_v0_y_write : OUT STD_LOGIC;
+        clip_tris_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_z_full_n : IN STD_LOGIC;
+        clip_tris_v0_z_write : OUT STD_LOGIC;
+        clip_tris_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_w_full_n : IN STD_LOGIC;
+        clip_tris_v0_w_write : OUT STD_LOGIC;
+        clip_tris_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_x_full_n : IN STD_LOGIC;
+        clip_tris_v1_x_write : OUT STD_LOGIC;
+        clip_tris_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_y_full_n : IN STD_LOGIC;
+        clip_tris_v1_y_write : OUT STD_LOGIC;
+        clip_tris_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_z_full_n : IN STD_LOGIC;
+        clip_tris_v1_z_write : OUT STD_LOGIC;
+        clip_tris_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_w_full_n : IN STD_LOGIC;
+        clip_tris_v1_w_write : OUT STD_LOGIC;
+        clip_tris_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_x_full_n : IN STD_LOGIC;
+        clip_tris_v2_x_write : OUT STD_LOGIC;
+        clip_tris_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_y_full_n : IN STD_LOGIC;
+        clip_tris_v2_y_write : OUT STD_LOGIC;
+        clip_tris_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_z_full_n : IN STD_LOGIC;
+        clip_tris_v2_z_write : OUT STD_LOGIC;
+        clip_tris_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_w_full_n : IN STD_LOGIC;
+        clip_tris_v2_w_write : OUT STD_LOGIC;
+        clip_tris_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n0_x_full_n : IN STD_LOGIC;
+        clip_tris_n0_x_write : OUT STD_LOGIC;
+        clip_tris_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n0_y_full_n : IN STD_LOGIC;
+        clip_tris_n0_y_write : OUT STD_LOGIC;
+        clip_tris_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n0_z_full_n : IN STD_LOGIC;
+        clip_tris_n0_z_write : OUT STD_LOGIC;
+        clip_tris_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n1_x_full_n : IN STD_LOGIC;
+        clip_tris_n1_x_write : OUT STD_LOGIC;
+        clip_tris_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n1_y_full_n : IN STD_LOGIC;
+        clip_tris_n1_y_write : OUT STD_LOGIC;
+        clip_tris_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n1_z_full_n : IN STD_LOGIC;
+        clip_tris_n1_z_write : OUT STD_LOGIC;
+        clip_tris_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n2_x_full_n : IN STD_LOGIC;
+        clip_tris_n2_x_write : OUT STD_LOGIC;
+        clip_tris_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n2_y_full_n : IN STD_LOGIC;
+        clip_tris_n2_y_write : OUT STD_LOGIC;
+        clip_tris_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n2_z_full_n : IN STD_LOGIC;
+        clip_tris_n2_z_write : OUT STD_LOGIC;
+        clip_tris_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_color_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_color_full_n : IN STD_LOGIC;
+        clip_tris_color_write : OUT STD_LOGIC;
+        clip_tris_color_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_color_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_is_active_din : OUT STD_LOGIC_VECTOR (0 downto 0);
+        clip_tris_is_active_full_n : IN STD_LOGIC;
+        clip_tris_is_active_write : OUT STD_LOGIC;
+        clip_tris_is_active_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_is_active_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        start_out : OUT STD_LOGIC;
+        start_write : OUT STD_LOGIC;
         in_tris : IN STD_LOGIC_VECTOR (63 downto 0);
-        mvp_matrix_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-        mvp_matrix_ce0 : OUT STD_LOGIC;
-        mvp_matrix_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        mvp_matrix_address1 : OUT STD_LOGIC_VECTOR (3 downto 0);
-        mvp_matrix_ce1 : OUT STD_LOGIC;
-        mvp_matrix_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_is_active_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_is_active_ce0 : OUT STD_LOGIC;
-        clip_tris_is_active_we0 : OUT STD_LOGIC;
-        clip_tris_is_active_d0 : OUT STD_LOGIC_VECTOR (0 downto 0);
-        clip_tris_n0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n0_x_ce0 : OUT STD_LOGIC;
-        clip_tris_n0_x_we0 : OUT STD_LOGIC;
-        clip_tris_n0_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n0_y_ce0 : OUT STD_LOGIC;
-        clip_tris_n0_y_we0 : OUT STD_LOGIC;
-        clip_tris_n0_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n0_z_ce0 : OUT STD_LOGIC;
-        clip_tris_n0_z_we0 : OUT STD_LOGIC;
-        clip_tris_n0_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n1_x_ce0 : OUT STD_LOGIC;
-        clip_tris_n1_x_we0 : OUT STD_LOGIC;
-        clip_tris_n1_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n1_y_ce0 : OUT STD_LOGIC;
-        clip_tris_n1_y_we0 : OUT STD_LOGIC;
-        clip_tris_n1_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n1_z_ce0 : OUT STD_LOGIC;
-        clip_tris_n1_z_we0 : OUT STD_LOGIC;
-        clip_tris_n1_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n2_x_ce0 : OUT STD_LOGIC;
-        clip_tris_n2_x_we0 : OUT STD_LOGIC;
-        clip_tris_n2_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n2_y_ce0 : OUT STD_LOGIC;
-        clip_tris_n2_y_we0 : OUT STD_LOGIC;
-        clip_tris_n2_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n2_z_ce0 : OUT STD_LOGIC;
-        clip_tris_n2_z_we0 : OUT STD_LOGIC;
-        clip_tris_n2_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_w_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_w_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_w_we0 : OUT STD_LOGIC;
-        clip_tris_v0_w_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_w_address1 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_w_ce1 : OUT STD_LOGIC;
-        clip_tris_v0_w_we1 : OUT STD_LOGIC;
-        clip_tris_v0_w_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_x_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_x_we0 : OUT STD_LOGIC;
-        clip_tris_v0_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_y_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_y_we0 : OUT STD_LOGIC;
-        clip_tris_v0_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_z_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_z_we0 : OUT STD_LOGIC;
-        clip_tris_v0_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_w_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_w_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_w_we0 : OUT STD_LOGIC;
-        clip_tris_v1_w_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_x_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_x_we0 : OUT STD_LOGIC;
-        clip_tris_v1_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_y_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_y_we0 : OUT STD_LOGIC;
-        clip_tris_v1_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_z_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_z_we0 : OUT STD_LOGIC;
-        clip_tris_v1_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_w_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_w_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_w_we0 : OUT STD_LOGIC;
-        clip_tris_v2_w_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_x_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_x_we0 : OUT STD_LOGIC;
-        clip_tris_v2_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_y_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_y_we0 : OUT STD_LOGIC;
-        clip_tris_v2_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_z_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_z_we0 : OUT STD_LOGIC;
-        clip_tris_v2_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+        mvp : IN STD_LOGIC_VECTOR (63 downto 0) );
     end component;
 
 
@@ -958,156 +1350,512 @@ architecture behav of top_kernel is
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
+        start_full_n : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        clip_tris_v0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_x_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_y_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_z_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v0_w_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v0_w_ce0 : OUT STD_LOGIC;
-        clip_tris_v0_w_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_x_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_y_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_z_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v1_w_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v1_w_ce0 : OUT STD_LOGIC;
-        clip_tris_v1_w_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_x_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_y_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_z_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_v2_w_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_v2_w_ce0 : OUT STD_LOGIC;
-        clip_tris_v2_w_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n0_x_ce0 : OUT STD_LOGIC;
-        clip_tris_n0_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n0_y_ce0 : OUT STD_LOGIC;
-        clip_tris_n0_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n0_z_ce0 : OUT STD_LOGIC;
-        clip_tris_n0_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n1_x_ce0 : OUT STD_LOGIC;
-        clip_tris_n1_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n1_y_ce0 : OUT STD_LOGIC;
-        clip_tris_n1_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n1_z_ce0 : OUT STD_LOGIC;
-        clip_tris_n1_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n2_x_ce0 : OUT STD_LOGIC;
-        clip_tris_n2_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n2_y_ce0 : OUT STD_LOGIC;
-        clip_tris_n2_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_n2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_n2_z_ce0 : OUT STD_LOGIC;
-        clip_tris_n2_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        clip_tris_is_active_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        clip_tris_is_active_ce0 : OUT STD_LOGIC;
-        clip_tris_is_active_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        screen_tris_v0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v0_x_ce0 : OUT STD_LOGIC;
-        screen_tris_v0_x_we0 : OUT STD_LOGIC;
-        screen_tris_v0_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v0_y_ce0 : OUT STD_LOGIC;
-        screen_tris_v0_y_we0 : OUT STD_LOGIC;
-        screen_tris_v0_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v0_z_ce0 : OUT STD_LOGIC;
-        screen_tris_v0_z_we0 : OUT STD_LOGIC;
-        screen_tris_v0_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v1_x_ce0 : OUT STD_LOGIC;
-        screen_tris_v1_x_we0 : OUT STD_LOGIC;
-        screen_tris_v1_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v1_y_ce0 : OUT STD_LOGIC;
-        screen_tris_v1_y_we0 : OUT STD_LOGIC;
-        screen_tris_v1_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v1_z_ce0 : OUT STD_LOGIC;
-        screen_tris_v1_z_we0 : OUT STD_LOGIC;
-        screen_tris_v1_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v2_x_ce0 : OUT STD_LOGIC;
-        screen_tris_v2_x_we0 : OUT STD_LOGIC;
-        screen_tris_v2_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v2_y_ce0 : OUT STD_LOGIC;
-        screen_tris_v2_y_we0 : OUT STD_LOGIC;
-        screen_tris_v2_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v2_z_ce0 : OUT STD_LOGIC;
-        screen_tris_v2_z_we0 : OUT STD_LOGIC;
-        screen_tris_v2_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n0_x_ce0 : OUT STD_LOGIC;
-        screen_tris_n0_x_we0 : OUT STD_LOGIC;
-        screen_tris_n0_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n0_y_ce0 : OUT STD_LOGIC;
-        screen_tris_n0_y_we0 : OUT STD_LOGIC;
-        screen_tris_n0_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n0_z_ce0 : OUT STD_LOGIC;
-        screen_tris_n0_z_we0 : OUT STD_LOGIC;
-        screen_tris_n0_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n1_x_ce0 : OUT STD_LOGIC;
-        screen_tris_n1_x_we0 : OUT STD_LOGIC;
-        screen_tris_n1_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n1_y_ce0 : OUT STD_LOGIC;
-        screen_tris_n1_y_we0 : OUT STD_LOGIC;
-        screen_tris_n1_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n1_z_ce0 : OUT STD_LOGIC;
-        screen_tris_n1_z_we0 : OUT STD_LOGIC;
-        screen_tris_n1_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n2_x_ce0 : OUT STD_LOGIC;
-        screen_tris_n2_x_we0 : OUT STD_LOGIC;
-        screen_tris_n2_x_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n2_y_ce0 : OUT STD_LOGIC;
-        screen_tris_n2_y_we0 : OUT STD_LOGIC;
-        screen_tris_n2_y_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n2_z_ce0 : OUT STD_LOGIC;
-        screen_tris_n2_z_we0 : OUT STD_LOGIC;
-        screen_tris_n2_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_is_active_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_is_active_ce0 : OUT STD_LOGIC;
-        screen_tris_is_active_we0 : OUT STD_LOGIC;
-        screen_tris_is_active_d0 : OUT STD_LOGIC_VECTOR (0 downto 0) );
+        start_out : OUT STD_LOGIC;
+        start_write : OUT STD_LOGIC;
+        clip_tris_v0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_x_empty_n : IN STD_LOGIC;
+        clip_tris_v0_x_read : OUT STD_LOGIC;
+        clip_tris_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_y_empty_n : IN STD_LOGIC;
+        clip_tris_v0_y_read : OUT STD_LOGIC;
+        clip_tris_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_z_empty_n : IN STD_LOGIC;
+        clip_tris_v0_z_read : OUT STD_LOGIC;
+        clip_tris_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v0_w_empty_n : IN STD_LOGIC;
+        clip_tris_v0_w_read : OUT STD_LOGIC;
+        clip_tris_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_x_empty_n : IN STD_LOGIC;
+        clip_tris_v1_x_read : OUT STD_LOGIC;
+        clip_tris_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_y_empty_n : IN STD_LOGIC;
+        clip_tris_v1_y_read : OUT STD_LOGIC;
+        clip_tris_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_z_empty_n : IN STD_LOGIC;
+        clip_tris_v1_z_read : OUT STD_LOGIC;
+        clip_tris_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v1_w_empty_n : IN STD_LOGIC;
+        clip_tris_v1_w_read : OUT STD_LOGIC;
+        clip_tris_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_x_empty_n : IN STD_LOGIC;
+        clip_tris_v2_x_read : OUT STD_LOGIC;
+        clip_tris_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_y_empty_n : IN STD_LOGIC;
+        clip_tris_v2_y_read : OUT STD_LOGIC;
+        clip_tris_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_z_empty_n : IN STD_LOGIC;
+        clip_tris_v2_z_read : OUT STD_LOGIC;
+        clip_tris_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_v2_w_empty_n : IN STD_LOGIC;
+        clip_tris_v2_w_read : OUT STD_LOGIC;
+        clip_tris_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n0_x_empty_n : IN STD_LOGIC;
+        clip_tris_n0_x_read : OUT STD_LOGIC;
+        clip_tris_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n0_y_empty_n : IN STD_LOGIC;
+        clip_tris_n0_y_read : OUT STD_LOGIC;
+        clip_tris_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n0_z_empty_n : IN STD_LOGIC;
+        clip_tris_n0_z_read : OUT STD_LOGIC;
+        clip_tris_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n1_x_empty_n : IN STD_LOGIC;
+        clip_tris_n1_x_read : OUT STD_LOGIC;
+        clip_tris_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n1_y_empty_n : IN STD_LOGIC;
+        clip_tris_n1_y_read : OUT STD_LOGIC;
+        clip_tris_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n1_z_empty_n : IN STD_LOGIC;
+        clip_tris_n1_z_read : OUT STD_LOGIC;
+        clip_tris_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n2_x_empty_n : IN STD_LOGIC;
+        clip_tris_n2_x_read : OUT STD_LOGIC;
+        clip_tris_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n2_y_empty_n : IN STD_LOGIC;
+        clip_tris_n2_y_read : OUT STD_LOGIC;
+        clip_tris_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_n2_z_empty_n : IN STD_LOGIC;
+        clip_tris_n2_z_read : OUT STD_LOGIC;
+        clip_tris_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_color_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        clip_tris_color_empty_n : IN STD_LOGIC;
+        clip_tris_color_read : OUT STD_LOGIC;
+        clip_tris_color_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_color_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_is_active_dout : IN STD_LOGIC_VECTOR (0 downto 0);
+        clip_tris_is_active_empty_n : IN STD_LOGIC;
+        clip_tris_is_active_read : OUT STD_LOGIC;
+        clip_tris_is_active_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        clip_tris_is_active_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_x_full_n : IN STD_LOGIC;
+        screen_tris_in_v0_x_write : OUT STD_LOGIC;
+        screen_tris_in_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_y_full_n : IN STD_LOGIC;
+        screen_tris_in_v0_y_write : OUT STD_LOGIC;
+        screen_tris_in_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_z_full_n : IN STD_LOGIC;
+        screen_tris_in_v0_z_write : OUT STD_LOGIC;
+        screen_tris_in_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_w_full_n : IN STD_LOGIC;
+        screen_tris_in_v0_w_write : OUT STD_LOGIC;
+        screen_tris_in_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_x_full_n : IN STD_LOGIC;
+        screen_tris_in_v1_x_write : OUT STD_LOGIC;
+        screen_tris_in_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_y_full_n : IN STD_LOGIC;
+        screen_tris_in_v1_y_write : OUT STD_LOGIC;
+        screen_tris_in_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_z_full_n : IN STD_LOGIC;
+        screen_tris_in_v1_z_write : OUT STD_LOGIC;
+        screen_tris_in_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_w_full_n : IN STD_LOGIC;
+        screen_tris_in_v1_w_write : OUT STD_LOGIC;
+        screen_tris_in_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_x_full_n : IN STD_LOGIC;
+        screen_tris_in_v2_x_write : OUT STD_LOGIC;
+        screen_tris_in_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_y_full_n : IN STD_LOGIC;
+        screen_tris_in_v2_y_write : OUT STD_LOGIC;
+        screen_tris_in_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_z_full_n : IN STD_LOGIC;
+        screen_tris_in_v2_z_write : OUT STD_LOGIC;
+        screen_tris_in_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_w_full_n : IN STD_LOGIC;
+        screen_tris_in_v2_w_write : OUT STD_LOGIC;
+        screen_tris_in_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_x_full_n : IN STD_LOGIC;
+        screen_tris_in_n0_x_write : OUT STD_LOGIC;
+        screen_tris_in_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_y_full_n : IN STD_LOGIC;
+        screen_tris_in_n0_y_write : OUT STD_LOGIC;
+        screen_tris_in_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_z_full_n : IN STD_LOGIC;
+        screen_tris_in_n0_z_write : OUT STD_LOGIC;
+        screen_tris_in_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_x_full_n : IN STD_LOGIC;
+        screen_tris_in_n1_x_write : OUT STD_LOGIC;
+        screen_tris_in_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_y_full_n : IN STD_LOGIC;
+        screen_tris_in_n1_y_write : OUT STD_LOGIC;
+        screen_tris_in_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_z_full_n : IN STD_LOGIC;
+        screen_tris_in_n1_z_write : OUT STD_LOGIC;
+        screen_tris_in_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_x_full_n : IN STD_LOGIC;
+        screen_tris_in_n2_x_write : OUT STD_LOGIC;
+        screen_tris_in_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_y_full_n : IN STD_LOGIC;
+        screen_tris_in_n2_y_write : OUT STD_LOGIC;
+        screen_tris_in_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_z_full_n : IN STD_LOGIC;
+        screen_tris_in_n2_z_write : OUT STD_LOGIC;
+        screen_tris_in_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_color_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_color_full_n : IN STD_LOGIC;
+        screen_tris_in_color_write : OUT STD_LOGIC;
+        screen_tris_in_color_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_color_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_is_active_din : OUT STD_LOGIC_VECTOR (0 downto 0);
+        screen_tris_in_is_active_full_n : IN STD_LOGIC;
+        screen_tris_in_is_active_write : OUT STD_LOGIC;
+        screen_tris_in_is_active_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_is_active_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
     end component;
 
 
-    component top_kernel_Block_entry_screen_tris_v0_x_rd_proc IS
+    component top_kernel_k3_bounding_box IS
+    port (
+        ap_clk : IN STD_LOGIC;
+        ap_rst : IN STD_LOGIC;
+        ap_start : IN STD_LOGIC;
+        start_full_n : IN STD_LOGIC;
+        ap_done : OUT STD_LOGIC;
+        ap_continue : IN STD_LOGIC;
+        ap_idle : OUT STD_LOGIC;
+        ap_ready : OUT STD_LOGIC;
+        screen_tris_in_v0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_x_empty_n : IN STD_LOGIC;
+        screen_tris_in_v0_x_read : OUT STD_LOGIC;
+        screen_tris_in_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_y_empty_n : IN STD_LOGIC;
+        screen_tris_in_v0_y_read : OUT STD_LOGIC;
+        screen_tris_in_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_z_empty_n : IN STD_LOGIC;
+        screen_tris_in_v0_z_read : OUT STD_LOGIC;
+        screen_tris_in_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_w_empty_n : IN STD_LOGIC;
+        screen_tris_in_v0_w_read : OUT STD_LOGIC;
+        screen_tris_in_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_x_empty_n : IN STD_LOGIC;
+        screen_tris_in_v1_x_read : OUT STD_LOGIC;
+        screen_tris_in_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_y_empty_n : IN STD_LOGIC;
+        screen_tris_in_v1_y_read : OUT STD_LOGIC;
+        screen_tris_in_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_z_empty_n : IN STD_LOGIC;
+        screen_tris_in_v1_z_read : OUT STD_LOGIC;
+        screen_tris_in_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_w_empty_n : IN STD_LOGIC;
+        screen_tris_in_v1_w_read : OUT STD_LOGIC;
+        screen_tris_in_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_x_empty_n : IN STD_LOGIC;
+        screen_tris_in_v2_x_read : OUT STD_LOGIC;
+        screen_tris_in_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_y_empty_n : IN STD_LOGIC;
+        screen_tris_in_v2_y_read : OUT STD_LOGIC;
+        screen_tris_in_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_z_empty_n : IN STD_LOGIC;
+        screen_tris_in_v2_z_read : OUT STD_LOGIC;
+        screen_tris_in_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_w_empty_n : IN STD_LOGIC;
+        screen_tris_in_v2_w_read : OUT STD_LOGIC;
+        screen_tris_in_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_x_empty_n : IN STD_LOGIC;
+        screen_tris_in_n0_x_read : OUT STD_LOGIC;
+        screen_tris_in_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_y_empty_n : IN STD_LOGIC;
+        screen_tris_in_n0_y_read : OUT STD_LOGIC;
+        screen_tris_in_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_z_empty_n : IN STD_LOGIC;
+        screen_tris_in_n0_z_read : OUT STD_LOGIC;
+        screen_tris_in_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_x_empty_n : IN STD_LOGIC;
+        screen_tris_in_n1_x_read : OUT STD_LOGIC;
+        screen_tris_in_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_y_empty_n : IN STD_LOGIC;
+        screen_tris_in_n1_y_read : OUT STD_LOGIC;
+        screen_tris_in_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_z_empty_n : IN STD_LOGIC;
+        screen_tris_in_n1_z_read : OUT STD_LOGIC;
+        screen_tris_in_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_x_empty_n : IN STD_LOGIC;
+        screen_tris_in_n2_x_read : OUT STD_LOGIC;
+        screen_tris_in_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_y_empty_n : IN STD_LOGIC;
+        screen_tris_in_n2_y_read : OUT STD_LOGIC;
+        screen_tris_in_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_z_empty_n : IN STD_LOGIC;
+        screen_tris_in_n2_z_read : OUT STD_LOGIC;
+        screen_tris_in_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_color_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_color_empty_n : IN STD_LOGIC;
+        screen_tris_in_color_read : OUT STD_LOGIC;
+        screen_tris_in_color_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_color_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_is_active_dout : IN STD_LOGIC_VECTOR (0 downto 0);
+        screen_tris_in_is_active_empty_n : IN STD_LOGIC;
+        screen_tris_in_is_active_read : OUT STD_LOGIC;
+        screen_tris_in_is_active_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_is_active_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_min_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_x_full_n : IN STD_LOGIC;
+        bounds_min_x_write : OUT STD_LOGIC;
+        bounds_min_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_y_full_n : IN STD_LOGIC;
+        bounds_min_y_write : OUT STD_LOGIC;
+        bounds_min_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_x_full_n : IN STD_LOGIC;
+        bounds_max_x_write : OUT STD_LOGIC;
+        bounds_max_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_y_full_n : IN STD_LOGIC;
+        bounds_max_y_write : OUT STD_LOGIC;
+        bounds_max_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_x_full_n : IN STD_LOGIC;
+        screen_tris_out_v0_x_write : OUT STD_LOGIC;
+        screen_tris_out_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_y_full_n : IN STD_LOGIC;
+        screen_tris_out_v0_y_write : OUT STD_LOGIC;
+        screen_tris_out_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_z_full_n : IN STD_LOGIC;
+        screen_tris_out_v0_z_write : OUT STD_LOGIC;
+        screen_tris_out_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_w_full_n : IN STD_LOGIC;
+        screen_tris_out_v0_w_write : OUT STD_LOGIC;
+        screen_tris_out_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_x_full_n : IN STD_LOGIC;
+        screen_tris_out_v1_x_write : OUT STD_LOGIC;
+        screen_tris_out_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_y_full_n : IN STD_LOGIC;
+        screen_tris_out_v1_y_write : OUT STD_LOGIC;
+        screen_tris_out_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_z_full_n : IN STD_LOGIC;
+        screen_tris_out_v1_z_write : OUT STD_LOGIC;
+        screen_tris_out_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_w_full_n : IN STD_LOGIC;
+        screen_tris_out_v1_w_write : OUT STD_LOGIC;
+        screen_tris_out_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_x_full_n : IN STD_LOGIC;
+        screen_tris_out_v2_x_write : OUT STD_LOGIC;
+        screen_tris_out_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_y_full_n : IN STD_LOGIC;
+        screen_tris_out_v2_y_write : OUT STD_LOGIC;
+        screen_tris_out_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_z_full_n : IN STD_LOGIC;
+        screen_tris_out_v2_z_write : OUT STD_LOGIC;
+        screen_tris_out_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_w_full_n : IN STD_LOGIC;
+        screen_tris_out_v2_w_write : OUT STD_LOGIC;
+        screen_tris_out_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_x_full_n : IN STD_LOGIC;
+        screen_tris_out_n0_x_write : OUT STD_LOGIC;
+        screen_tris_out_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_y_full_n : IN STD_LOGIC;
+        screen_tris_out_n0_y_write : OUT STD_LOGIC;
+        screen_tris_out_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_z_full_n : IN STD_LOGIC;
+        screen_tris_out_n0_z_write : OUT STD_LOGIC;
+        screen_tris_out_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_x_full_n : IN STD_LOGIC;
+        screen_tris_out_n1_x_write : OUT STD_LOGIC;
+        screen_tris_out_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_y_full_n : IN STD_LOGIC;
+        screen_tris_out_n1_y_write : OUT STD_LOGIC;
+        screen_tris_out_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_z_full_n : IN STD_LOGIC;
+        screen_tris_out_n1_z_write : OUT STD_LOGIC;
+        screen_tris_out_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_x_full_n : IN STD_LOGIC;
+        screen_tris_out_n2_x_write : OUT STD_LOGIC;
+        screen_tris_out_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_y_full_n : IN STD_LOGIC;
+        screen_tris_out_n2_y_write : OUT STD_LOGIC;
+        screen_tris_out_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_z_full_n : IN STD_LOGIC;
+        screen_tris_out_n2_z_write : OUT STD_LOGIC;
+        screen_tris_out_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_color_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_color_full_n : IN STD_LOGIC;
+        screen_tris_out_color_write : OUT STD_LOGIC;
+        screen_tris_out_color_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_color_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_is_active_din : OUT STD_LOGIC_VECTOR (0 downto 0);
+        screen_tris_out_is_active_full_n : IN STD_LOGIC;
+        screen_tris_out_is_active_write : OUT STD_LOGIC;
+        screen_tris_out_is_active_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_is_active_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        start_out : OUT STD_LOGIC;
+        start_write : OUT STD_LOGIC );
+    end component;
+
+
+    component top_kernel_k4_rasterize IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
@@ -1132,63 +1880,141 @@ architecture behav of top_kernel is
         normal_buffer_z_ce0 : OUT STD_LOGIC;
         normal_buffer_z_we0 : OUT STD_LOGIC;
         normal_buffer_z_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_is_active_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_is_active_ce0 : OUT STD_LOGIC;
-        screen_tris_is_active_q0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        screen_tris_n0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n0_x_ce0 : OUT STD_LOGIC;
-        screen_tris_n0_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n0_y_ce0 : OUT STD_LOGIC;
-        screen_tris_n0_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n0_z_ce0 : OUT STD_LOGIC;
-        screen_tris_n0_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n1_x_ce0 : OUT STD_LOGIC;
-        screen_tris_n1_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n1_y_ce0 : OUT STD_LOGIC;
-        screen_tris_n1_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n1_z_ce0 : OUT STD_LOGIC;
-        screen_tris_n1_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n2_x_ce0 : OUT STD_LOGIC;
-        screen_tris_n2_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n2_y_ce0 : OUT STD_LOGIC;
-        screen_tris_n2_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_n2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_n2_z_ce0 : OUT STD_LOGIC;
-        screen_tris_n2_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v0_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v0_x_ce0 : OUT STD_LOGIC;
-        screen_tris_v0_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v0_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v0_y_ce0 : OUT STD_LOGIC;
-        screen_tris_v0_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v0_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v0_z_ce0 : OUT STD_LOGIC;
-        screen_tris_v0_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v1_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v1_x_ce0 : OUT STD_LOGIC;
-        screen_tris_v1_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v1_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v1_y_ce0 : OUT STD_LOGIC;
-        screen_tris_v1_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v1_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v1_z_ce0 : OUT STD_LOGIC;
-        screen_tris_v1_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v2_x_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v2_x_ce0 : OUT STD_LOGIC;
-        screen_tris_v2_x_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v2_y_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v2_y_ce0 : OUT STD_LOGIC;
-        screen_tris_v2_y_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        screen_tris_v2_z_address0 : OUT STD_LOGIC_VECTOR (6 downto 0);
-        screen_tris_v2_z_ce0 : OUT STD_LOGIC;
-        screen_tris_v2_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0) );
+        screen_tris_out_v0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_x_empty_n : IN STD_LOGIC;
+        screen_tris_out_v0_x_read : OUT STD_LOGIC;
+        screen_tris_out_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_y_empty_n : IN STD_LOGIC;
+        screen_tris_out_v0_y_read : OUT STD_LOGIC;
+        screen_tris_out_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_z_empty_n : IN STD_LOGIC;
+        screen_tris_out_v0_z_read : OUT STD_LOGIC;
+        screen_tris_out_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v0_w_empty_n : IN STD_LOGIC;
+        screen_tris_out_v0_w_read : OUT STD_LOGIC;
+        screen_tris_out_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_x_empty_n : IN STD_LOGIC;
+        screen_tris_out_v1_x_read : OUT STD_LOGIC;
+        screen_tris_out_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_y_empty_n : IN STD_LOGIC;
+        screen_tris_out_v1_y_read : OUT STD_LOGIC;
+        screen_tris_out_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_z_empty_n : IN STD_LOGIC;
+        screen_tris_out_v1_z_read : OUT STD_LOGIC;
+        screen_tris_out_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v1_w_empty_n : IN STD_LOGIC;
+        screen_tris_out_v1_w_read : OUT STD_LOGIC;
+        screen_tris_out_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_x_empty_n : IN STD_LOGIC;
+        screen_tris_out_v2_x_read : OUT STD_LOGIC;
+        screen_tris_out_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_y_empty_n : IN STD_LOGIC;
+        screen_tris_out_v2_y_read : OUT STD_LOGIC;
+        screen_tris_out_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_z_empty_n : IN STD_LOGIC;
+        screen_tris_out_v2_z_read : OUT STD_LOGIC;
+        screen_tris_out_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_w_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_v2_w_empty_n : IN STD_LOGIC;
+        screen_tris_out_v2_w_read : OUT STD_LOGIC;
+        screen_tris_out_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_x_empty_n : IN STD_LOGIC;
+        screen_tris_out_n0_x_read : OUT STD_LOGIC;
+        screen_tris_out_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n0_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_y_empty_n : IN STD_LOGIC;
+        screen_tris_out_n0_y_read : OUT STD_LOGIC;
+        screen_tris_out_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n0_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n0_z_empty_n : IN STD_LOGIC;
+        screen_tris_out_n0_z_read : OUT STD_LOGIC;
+        screen_tris_out_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n1_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_x_empty_n : IN STD_LOGIC;
+        screen_tris_out_n1_x_read : OUT STD_LOGIC;
+        screen_tris_out_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n1_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_y_empty_n : IN STD_LOGIC;
+        screen_tris_out_n1_y_read : OUT STD_LOGIC;
+        screen_tris_out_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n1_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n1_z_empty_n : IN STD_LOGIC;
+        screen_tris_out_n1_z_read : OUT STD_LOGIC;
+        screen_tris_out_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n2_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_x_empty_n : IN STD_LOGIC;
+        screen_tris_out_n2_x_read : OUT STD_LOGIC;
+        screen_tris_out_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n2_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_y_empty_n : IN STD_LOGIC;
+        screen_tris_out_n2_y_read : OUT STD_LOGIC;
+        screen_tris_out_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n2_z_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_n2_z_empty_n : IN STD_LOGIC;
+        screen_tris_out_n2_z_read : OUT STD_LOGIC;
+        screen_tris_out_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_color_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_out_color_empty_n : IN STD_LOGIC;
+        screen_tris_out_color_read : OUT STD_LOGIC;
+        screen_tris_out_color_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_color_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_is_active_dout : IN STD_LOGIC_VECTOR (0 downto 0);
+        screen_tris_out_is_active_empty_n : IN STD_LOGIC;
+        screen_tris_out_is_active_read : OUT STD_LOGIC;
+        screen_tris_out_is_active_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_out_is_active_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_min_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_x_empty_n : IN STD_LOGIC;
+        bounds_min_x_read : OUT STD_LOGIC;
+        bounds_min_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_min_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_min_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_min_y_empty_n : IN STD_LOGIC;
+        bounds_min_y_read : OUT STD_LOGIC;
+        bounds_min_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_min_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_max_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_x_empty_n : IN STD_LOGIC;
+        bounds_max_x_read : OUT STD_LOGIC;
+        bounds_max_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_max_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_max_y_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        bounds_max_y_empty_n : IN STD_LOGIC;
+        bounds_max_y_read : OUT STD_LOGIC;
+        bounds_max_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
+        bounds_max_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
     end component;
 
 
@@ -1201,6 +2027,11 @@ architecture behav of top_kernel is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
+        framebuffer_dout : IN STD_LOGIC_VECTOR (63 downto 0);
+        framebuffer_empty_n : IN STD_LOGIC;
+        framebuffer_read : OUT STD_LOGIC;
+        framebuffer_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
+        framebuffer_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
         m_axi_gmem1_0_AWVALID : OUT STD_LOGIC;
         m_axi_gmem1_0_AWREADY : IN STD_LOGIC;
         m_axi_gmem1_0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
@@ -1247,11 +2078,6 @@ architecture behav of top_kernel is
         m_axi_gmem1_0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
         m_axi_gmem1_0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
         m_axi_gmem1_0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
-        framebuffer_dout : IN STD_LOGIC_VECTOR (63 downto 0);
-        framebuffer_empty_n : IN STD_LOGIC;
-        framebuffer_read : OUT STD_LOGIC;
-        framebuffer_num_data_valid : IN STD_LOGIC_VECTOR (3 downto 0);
-        framebuffer_fifo_cap : IN STD_LOGIC_VECTOR (3 downto 0);
         depth_buffer_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
         depth_buffer_ce0 : OUT STD_LOGIC;
         depth_buffer_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -1264,95 +2090,6 @@ architecture behav of top_kernel is
         normal_buffer_z_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
         normal_buffer_z_ce0 : OUT STD_LOGIC;
         normal_buffer_z_q0 : IN STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component top_kernel_clip_tris_is_active_RAM_AUTO_1R1W IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        i_address0 : IN STD_LOGIC_VECTOR (6 downto 0);
-        i_ce0 : IN STD_LOGIC;
-        i_we0 : IN STD_LOGIC;
-        i_d0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        i_q0 : OUT STD_LOGIC_VECTOR (0 downto 0);
-        t_address0 : IN STD_LOGIC_VECTOR (6 downto 0);
-        t_ce0 : IN STD_LOGIC;
-        t_we0 : IN STD_LOGIC;
-        t_d0 : IN STD_LOGIC_VECTOR (0 downto 0);
-        t_q0 : OUT STD_LOGIC_VECTOR (0 downto 0);
-        i_ce : IN STD_LOGIC;
-        t_ce : IN STD_LOGIC;
-        i_full_n : OUT STD_LOGIC;
-        i_write : IN STD_LOGIC;
-        t_empty_n : OUT STD_LOGIC;
-        t_read : IN STD_LOGIC );
-    end component;
-
-
-    component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        i_address0 : IN STD_LOGIC_VECTOR (6 downto 0);
-        i_ce0 : IN STD_LOGIC;
-        i_we0 : IN STD_LOGIC;
-        i_d0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        i_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        t_address0 : IN STD_LOGIC_VECTOR (6 downto 0);
-        t_ce0 : IN STD_LOGIC;
-        t_we0 : IN STD_LOGIC;
-        t_d0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        t_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        i_ce : IN STD_LOGIC;
-        t_ce : IN STD_LOGIC;
-        i_full_n : OUT STD_LOGIC;
-        i_write : IN STD_LOGIC;
-        t_empty_n : OUT STD_LOGIC;
-        t_read : IN STD_LOGIC );
-    end component;
-
-
-    component top_kernel_clip_tris_v0_w_RAM_AUTO_1R1W IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        i_address0 : IN STD_LOGIC_VECTOR (6 downto 0);
-        i_ce0 : IN STD_LOGIC;
-        i_we0 : IN STD_LOGIC;
-        i_d0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        i_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        i_address1 : IN STD_LOGIC_VECTOR (6 downto 0);
-        i_ce1 : IN STD_LOGIC;
-        i_we1 : IN STD_LOGIC;
-        i_d1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        t_address0 : IN STD_LOGIC_VECTOR (6 downto 0);
-        t_ce0 : IN STD_LOGIC;
-        t_we0 : IN STD_LOGIC;
-        t_d0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        t_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        t_address1 : IN STD_LOGIC_VECTOR (6 downto 0);
-        t_ce1 : IN STD_LOGIC;
-        t_we1 : IN STD_LOGIC;
-        t_d1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        i_ce : IN STD_LOGIC;
-        t_ce : IN STD_LOGIC;
-        i_full_n : OUT STD_LOGIC;
-        i_write : IN STD_LOGIC;
-        t_empty_n : OUT STD_LOGIC;
-        t_read : IN STD_LOGIC );
     end component;
 
 
@@ -1383,7 +2120,7 @@ architecture behav of top_kernel is
     end component;
 
 
-    component top_kernel_fifo_w64_d5_S IS
+    component top_kernel_fifo_w64_d6_S IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
@@ -1397,6 +2134,85 @@ architecture behav of top_kernel is
         if_read : IN STD_LOGIC;
         if_num_data_valid : OUT STD_LOGIC_VECTOR (3 downto 0);
         if_fifo_cap : OUT STD_LOGIC_VECTOR (3 downto 0) );
+    end component;
+
+
+    component top_kernel_fifo_w32_d2_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (31 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (31 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC;
+        if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
+        if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
+    end component;
+
+
+    component top_kernel_fifo_w1_d2_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC;
+        if_num_data_valid : OUT STD_LOGIC_VECTOR (2 downto 0);
+        if_fifo_cap : OUT STD_LOGIC_VECTOR (2 downto 0) );
+    end component;
+
+
+    component top_kernel_start_for_k2_perspective_divide_U0 IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component top_kernel_start_for_k3_bounding_box_U0 IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component top_kernel_start_for_k4_rasterize_U0 IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (0 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (0 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
     end component;
 
 
@@ -1426,6 +2242,7 @@ architecture behav of top_kernel is
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
         in_tris : OUT STD_LOGIC_VECTOR (63 downto 0);
+        mvp_matrix : OUT STD_LOGIC_VECTOR (63 downto 0);
         out_pixels : OUT STD_LOGIC_VECTOR (63 downto 0);
         ap_start : OUT STD_LOGIC;
         interrupt : OUT STD_LOGIC;
@@ -1623,6 +2440,100 @@ architecture behav of top_kernel is
     end component;
 
 
+    component top_kernel_gmem2_m_axi IS
+    generic (
+        CONSERVATIVE : INTEGER;
+        USER_MAXREQS : INTEGER;
+        MAX_READ_BURST_LENGTH : INTEGER;
+        MAX_WRITE_BURST_LENGTH : INTEGER;
+        C_M_AXI_ID_WIDTH : INTEGER;
+        C_M_AXI_ADDR_WIDTH : INTEGER;
+        C_M_AXI_DATA_WIDTH : INTEGER;
+        C_M_AXI_AWUSER_WIDTH : INTEGER;
+        C_M_AXI_ARUSER_WIDTH : INTEGER;
+        C_M_AXI_WUSER_WIDTH : INTEGER;
+        C_M_AXI_RUSER_WIDTH : INTEGER;
+        C_M_AXI_BUSER_WIDTH : INTEGER;
+        C_USER_VALUE : INTEGER;
+        C_PROT_VALUE : INTEGER;
+        C_CACHE_VALUE : INTEGER;
+        CH0_NUM_READ_OUTSTANDING : INTEGER;
+        CH0_NUM_WRITE_OUTSTANDING : INTEGER;
+        CH0_USER_RFIFONUM_WIDTH : INTEGER;
+        CH0_USER_DW : INTEGER;
+        CH0_USER_AW : INTEGER;
+        NUM_READ_OUTSTANDING : INTEGER;
+        NUM_WRITE_OUTSTANDING : INTEGER );
+    port (
+        AWVALID : OUT STD_LOGIC;
+        AWREADY : IN STD_LOGIC;
+        AWADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        AWID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        AWLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        AWUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_AWUSER_WIDTH-1 downto 0);
+        WVALID : OUT STD_LOGIC;
+        WREADY : IN STD_LOGIC;
+        WDATA : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        WSTRB : OUT STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH/8-1 downto 0);
+        WLAST : OUT STD_LOGIC;
+        WID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        WUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_WUSER_WIDTH-1 downto 0);
+        ARVALID : OUT STD_LOGIC;
+        ARREADY : IN STD_LOGIC;
+        ARADDR : OUT STD_LOGIC_VECTOR (C_M_AXI_ADDR_WIDTH-1 downto 0);
+        ARID : OUT STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        ARLEN : OUT STD_LOGIC_VECTOR (7 downto 0);
+        ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        ARUSER : OUT STD_LOGIC_VECTOR (C_M_AXI_ARUSER_WIDTH-1 downto 0);
+        RVALID : IN STD_LOGIC;
+        RREADY : OUT STD_LOGIC;
+        RDATA : IN STD_LOGIC_VECTOR (C_M_AXI_DATA_WIDTH-1 downto 0);
+        RLAST : IN STD_LOGIC;
+        RID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        RUSER : IN STD_LOGIC_VECTOR (C_M_AXI_RUSER_WIDTH-1 downto 0);
+        RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BVALID : IN STD_LOGIC;
+        BREADY : OUT STD_LOGIC;
+        BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        BID : IN STD_LOGIC_VECTOR (C_M_AXI_ID_WIDTH-1 downto 0);
+        BUSER : IN STD_LOGIC_VECTOR (C_M_AXI_BUSER_WIDTH-1 downto 0);
+        ACLK : IN STD_LOGIC;
+        ARESET : IN STD_LOGIC;
+        ACLK_EN : IN STD_LOGIC;
+        I_CH0_ARVALID : IN STD_LOGIC;
+        I_CH0_ARREADY : OUT STD_LOGIC;
+        I_CH0_ARADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_ARLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_RVALID : OUT STD_LOGIC;
+        I_CH0_RREADY : IN STD_LOGIC;
+        I_CH0_RDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_RFIFONUM : OUT STD_LOGIC_VECTOR (8 downto 0);
+        I_CH0_AWVALID : IN STD_LOGIC;
+        I_CH0_AWREADY : OUT STD_LOGIC;
+        I_CH0_AWADDR : IN STD_LOGIC_VECTOR (63 downto 0);
+        I_CH0_AWLEN : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_WVALID : IN STD_LOGIC;
+        I_CH0_WREADY : OUT STD_LOGIC;
+        I_CH0_WDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        I_CH0_WSTRB : IN STD_LOGIC_VECTOR (3 downto 0);
+        I_CH0_BVALID : OUT STD_LOGIC;
+        I_CH0_BREADY : IN STD_LOGIC );
+    end component;
+
+
 
 begin
     control_s_axi_U : component top_kernel_control_s_axi
@@ -1651,6 +2562,7 @@ begin
         ARESET => ap_rst_n_inv,
         ACLK_EN => ap_const_logic_1,
         in_tris => in_tris,
+        mvp_matrix => mvp_matrix,
         out_pixels => out_pixels,
         ap_start => ap_start,
         interrupt => interrupt,
@@ -1842,6 +2754,98 @@ begin
         I_CH0_BVALID => gmem1_0_BVALID,
         I_CH0_BREADY => k5_deferred_lighting_U0_m_axi_gmem1_0_BREADY);
 
+    gmem2_m_axi_U : component top_kernel_gmem2_m_axi
+    generic map (
+        CONSERVATIVE => 1,
+        USER_MAXREQS => 7,
+        MAX_READ_BURST_LENGTH => 16,
+        MAX_WRITE_BURST_LENGTH => 16,
+        C_M_AXI_ID_WIDTH => C_M_AXI_GMEM2_ID_WIDTH,
+        C_M_AXI_ADDR_WIDTH => C_M_AXI_GMEM2_ADDR_WIDTH,
+        C_M_AXI_DATA_WIDTH => C_M_AXI_GMEM2_DATA_WIDTH,
+        C_M_AXI_AWUSER_WIDTH => C_M_AXI_GMEM2_AWUSER_WIDTH,
+        C_M_AXI_ARUSER_WIDTH => C_M_AXI_GMEM2_ARUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH => C_M_AXI_GMEM2_WUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH => C_M_AXI_GMEM2_RUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH => C_M_AXI_GMEM2_BUSER_WIDTH,
+        C_USER_VALUE => C_M_AXI_GMEM2_USER_VALUE,
+        C_PROT_VALUE => C_M_AXI_GMEM2_PROT_VALUE,
+        C_CACHE_VALUE => C_M_AXI_GMEM2_CACHE_VALUE,
+        CH0_NUM_READ_OUTSTANDING => 16,
+        CH0_NUM_WRITE_OUTSTANDING => 16,
+        CH0_USER_RFIFONUM_WIDTH => 9,
+        CH0_USER_DW => 32,
+        CH0_USER_AW => 64,
+        NUM_READ_OUTSTANDING => 16,
+        NUM_WRITE_OUTSTANDING => 0)
+    port map (
+        AWVALID => m_axi_gmem2_AWVALID,
+        AWREADY => m_axi_gmem2_AWREADY,
+        AWADDR => m_axi_gmem2_AWADDR,
+        AWID => m_axi_gmem2_AWID,
+        AWLEN => m_axi_gmem2_AWLEN,
+        AWSIZE => m_axi_gmem2_AWSIZE,
+        AWBURST => m_axi_gmem2_AWBURST,
+        AWLOCK => m_axi_gmem2_AWLOCK,
+        AWCACHE => m_axi_gmem2_AWCACHE,
+        AWPROT => m_axi_gmem2_AWPROT,
+        AWQOS => m_axi_gmem2_AWQOS,
+        AWREGION => m_axi_gmem2_AWREGION,
+        AWUSER => m_axi_gmem2_AWUSER,
+        WVALID => m_axi_gmem2_WVALID,
+        WREADY => m_axi_gmem2_WREADY,
+        WDATA => m_axi_gmem2_WDATA,
+        WSTRB => m_axi_gmem2_WSTRB,
+        WLAST => m_axi_gmem2_WLAST,
+        WID => m_axi_gmem2_WID,
+        WUSER => m_axi_gmem2_WUSER,
+        ARVALID => m_axi_gmem2_ARVALID,
+        ARREADY => m_axi_gmem2_ARREADY,
+        ARADDR => m_axi_gmem2_ARADDR,
+        ARID => m_axi_gmem2_ARID,
+        ARLEN => m_axi_gmem2_ARLEN,
+        ARSIZE => m_axi_gmem2_ARSIZE,
+        ARBURST => m_axi_gmem2_ARBURST,
+        ARLOCK => m_axi_gmem2_ARLOCK,
+        ARCACHE => m_axi_gmem2_ARCACHE,
+        ARPROT => m_axi_gmem2_ARPROT,
+        ARQOS => m_axi_gmem2_ARQOS,
+        ARREGION => m_axi_gmem2_ARREGION,
+        ARUSER => m_axi_gmem2_ARUSER,
+        RVALID => m_axi_gmem2_RVALID,
+        RREADY => m_axi_gmem2_RREADY,
+        RDATA => m_axi_gmem2_RDATA,
+        RLAST => m_axi_gmem2_RLAST,
+        RID => m_axi_gmem2_RID,
+        RUSER => m_axi_gmem2_RUSER,
+        RRESP => m_axi_gmem2_RRESP,
+        BVALID => m_axi_gmem2_BVALID,
+        BREADY => m_axi_gmem2_BREADY,
+        BRESP => m_axi_gmem2_BRESP,
+        BID => m_axi_gmem2_BID,
+        BUSER => m_axi_gmem2_BUSER,
+        ACLK => ap_clk,
+        ARESET => ap_rst_n_inv,
+        ACLK_EN => ap_const_logic_1,
+        I_CH0_ARVALID => k1_vertex_transform_U0_m_axi_gmem2_0_ARVALID,
+        I_CH0_ARREADY => gmem2_0_ARREADY,
+        I_CH0_ARADDR => k1_vertex_transform_U0_m_axi_gmem2_0_ARADDR,
+        I_CH0_ARLEN => k1_vertex_transform_U0_m_axi_gmem2_0_ARLEN,
+        I_CH0_RVALID => gmem2_0_RVALID,
+        I_CH0_RREADY => k1_vertex_transform_U0_m_axi_gmem2_0_RREADY,
+        I_CH0_RDATA => gmem2_0_RDATA,
+        I_CH0_RFIFONUM => gmem2_0_RFIFONUM,
+        I_CH0_AWVALID => ap_const_logic_0,
+        I_CH0_AWREADY => gmem2_0_AWREADY,
+        I_CH0_AWADDR => ap_const_lv64_0,
+        I_CH0_AWLEN => ap_const_lv32_0,
+        I_CH0_WVALID => ap_const_logic_0,
+        I_CH0_WREADY => gmem2_0_WREADY,
+        I_CH0_WDATA => ap_const_lv32_0,
+        I_CH0_WSTRB => ap_const_lv4_0,
+        I_CH0_BVALID => gmem2_0_BVALID,
+        I_CH0_BREADY => ap_const_logic_0);
+
     entry_proc_U0 : component top_kernel_entry_proc
     port map (
         ap_clk => ap_clk,
@@ -1863,10 +2867,57 @@ begin
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
         ap_start => k1_vertex_transform_U0_ap_start,
+        start_full_n => start_for_k2_perspective_divide_U0_full_n,
         ap_done => k1_vertex_transform_U0_ap_done,
         ap_continue => k1_vertex_transform_U0_ap_continue,
         ap_idle => k1_vertex_transform_U0_ap_idle,
         ap_ready => k1_vertex_transform_U0_ap_ready,
+        m_axi_gmem2_0_AWVALID => k1_vertex_transform_U0_m_axi_gmem2_0_AWVALID,
+        m_axi_gmem2_0_AWREADY => ap_const_logic_0,
+        m_axi_gmem2_0_AWADDR => k1_vertex_transform_U0_m_axi_gmem2_0_AWADDR,
+        m_axi_gmem2_0_AWID => k1_vertex_transform_U0_m_axi_gmem2_0_AWID,
+        m_axi_gmem2_0_AWLEN => k1_vertex_transform_U0_m_axi_gmem2_0_AWLEN,
+        m_axi_gmem2_0_AWSIZE => k1_vertex_transform_U0_m_axi_gmem2_0_AWSIZE,
+        m_axi_gmem2_0_AWBURST => k1_vertex_transform_U0_m_axi_gmem2_0_AWBURST,
+        m_axi_gmem2_0_AWLOCK => k1_vertex_transform_U0_m_axi_gmem2_0_AWLOCK,
+        m_axi_gmem2_0_AWCACHE => k1_vertex_transform_U0_m_axi_gmem2_0_AWCACHE,
+        m_axi_gmem2_0_AWPROT => k1_vertex_transform_U0_m_axi_gmem2_0_AWPROT,
+        m_axi_gmem2_0_AWQOS => k1_vertex_transform_U0_m_axi_gmem2_0_AWQOS,
+        m_axi_gmem2_0_AWREGION => k1_vertex_transform_U0_m_axi_gmem2_0_AWREGION,
+        m_axi_gmem2_0_AWUSER => k1_vertex_transform_U0_m_axi_gmem2_0_AWUSER,
+        m_axi_gmem2_0_WVALID => k1_vertex_transform_U0_m_axi_gmem2_0_WVALID,
+        m_axi_gmem2_0_WREADY => ap_const_logic_0,
+        m_axi_gmem2_0_WDATA => k1_vertex_transform_U0_m_axi_gmem2_0_WDATA,
+        m_axi_gmem2_0_WSTRB => k1_vertex_transform_U0_m_axi_gmem2_0_WSTRB,
+        m_axi_gmem2_0_WLAST => k1_vertex_transform_U0_m_axi_gmem2_0_WLAST,
+        m_axi_gmem2_0_WID => k1_vertex_transform_U0_m_axi_gmem2_0_WID,
+        m_axi_gmem2_0_WUSER => k1_vertex_transform_U0_m_axi_gmem2_0_WUSER,
+        m_axi_gmem2_0_ARVALID => k1_vertex_transform_U0_m_axi_gmem2_0_ARVALID,
+        m_axi_gmem2_0_ARREADY => gmem2_0_ARREADY,
+        m_axi_gmem2_0_ARADDR => k1_vertex_transform_U0_m_axi_gmem2_0_ARADDR,
+        m_axi_gmem2_0_ARID => k1_vertex_transform_U0_m_axi_gmem2_0_ARID,
+        m_axi_gmem2_0_ARLEN => k1_vertex_transform_U0_m_axi_gmem2_0_ARLEN,
+        m_axi_gmem2_0_ARSIZE => k1_vertex_transform_U0_m_axi_gmem2_0_ARSIZE,
+        m_axi_gmem2_0_ARBURST => k1_vertex_transform_U0_m_axi_gmem2_0_ARBURST,
+        m_axi_gmem2_0_ARLOCK => k1_vertex_transform_U0_m_axi_gmem2_0_ARLOCK,
+        m_axi_gmem2_0_ARCACHE => k1_vertex_transform_U0_m_axi_gmem2_0_ARCACHE,
+        m_axi_gmem2_0_ARPROT => k1_vertex_transform_U0_m_axi_gmem2_0_ARPROT,
+        m_axi_gmem2_0_ARQOS => k1_vertex_transform_U0_m_axi_gmem2_0_ARQOS,
+        m_axi_gmem2_0_ARREGION => k1_vertex_transform_U0_m_axi_gmem2_0_ARREGION,
+        m_axi_gmem2_0_ARUSER => k1_vertex_transform_U0_m_axi_gmem2_0_ARUSER,
+        m_axi_gmem2_0_RVALID => gmem2_0_RVALID,
+        m_axi_gmem2_0_RREADY => k1_vertex_transform_U0_m_axi_gmem2_0_RREADY,
+        m_axi_gmem2_0_RDATA => gmem2_0_RDATA,
+        m_axi_gmem2_0_RLAST => gmem2_0_RLAST,
+        m_axi_gmem2_0_RID => gmem2_0_RID,
+        m_axi_gmem2_0_RFIFONUM => gmem2_0_RFIFONUM,
+        m_axi_gmem2_0_RUSER => gmem2_0_RUSER,
+        m_axi_gmem2_0_RRESP => gmem2_0_RRESP,
+        m_axi_gmem2_0_BVALID => ap_const_logic_0,
+        m_axi_gmem2_0_BREADY => k1_vertex_transform_U0_m_axi_gmem2_0_BREADY,
+        m_axi_gmem2_0_BRESP => ap_const_lv2_0,
+        m_axi_gmem2_0_BID => ap_const_lv1_0,
+        m_axi_gmem2_0_BUSER => ap_const_lv1_0,
         m_axi_gmem0_0_AWVALID => k1_vertex_transform_U0_m_axi_gmem0_0_AWVALID,
         m_axi_gmem0_0_AWREADY => ap_const_logic_0,
         m_axi_gmem0_0_AWADDR => k1_vertex_transform_U0_m_axi_gmem0_0_AWADDR,
@@ -1913,340 +2964,792 @@ begin
         m_axi_gmem0_0_BRESP => ap_const_lv2_0,
         m_axi_gmem0_0_BID => ap_const_lv1_0,
         m_axi_gmem0_0_BUSER => ap_const_lv1_0,
+        clip_tris_v0_x_din => k1_vertex_transform_U0_clip_tris_v0_x_din,
+        clip_tris_v0_x_full_n => clip_tris_v0_x_full_n,
+        clip_tris_v0_x_write => k1_vertex_transform_U0_clip_tris_v0_x_write,
+        clip_tris_v0_x_num_data_valid => clip_tris_v0_x_num_data_valid,
+        clip_tris_v0_x_fifo_cap => clip_tris_v0_x_fifo_cap,
+        clip_tris_v0_y_din => k1_vertex_transform_U0_clip_tris_v0_y_din,
+        clip_tris_v0_y_full_n => clip_tris_v0_y_full_n,
+        clip_tris_v0_y_write => k1_vertex_transform_U0_clip_tris_v0_y_write,
+        clip_tris_v0_y_num_data_valid => clip_tris_v0_y_num_data_valid,
+        clip_tris_v0_y_fifo_cap => clip_tris_v0_y_fifo_cap,
+        clip_tris_v0_z_din => k1_vertex_transform_U0_clip_tris_v0_z_din,
+        clip_tris_v0_z_full_n => clip_tris_v0_z_full_n,
+        clip_tris_v0_z_write => k1_vertex_transform_U0_clip_tris_v0_z_write,
+        clip_tris_v0_z_num_data_valid => clip_tris_v0_z_num_data_valid,
+        clip_tris_v0_z_fifo_cap => clip_tris_v0_z_fifo_cap,
+        clip_tris_v0_w_din => k1_vertex_transform_U0_clip_tris_v0_w_din,
+        clip_tris_v0_w_full_n => clip_tris_v0_w_full_n,
+        clip_tris_v0_w_write => k1_vertex_transform_U0_clip_tris_v0_w_write,
+        clip_tris_v0_w_num_data_valid => clip_tris_v0_w_num_data_valid,
+        clip_tris_v0_w_fifo_cap => clip_tris_v0_w_fifo_cap,
+        clip_tris_v1_x_din => k1_vertex_transform_U0_clip_tris_v1_x_din,
+        clip_tris_v1_x_full_n => clip_tris_v1_x_full_n,
+        clip_tris_v1_x_write => k1_vertex_transform_U0_clip_tris_v1_x_write,
+        clip_tris_v1_x_num_data_valid => clip_tris_v1_x_num_data_valid,
+        clip_tris_v1_x_fifo_cap => clip_tris_v1_x_fifo_cap,
+        clip_tris_v1_y_din => k1_vertex_transform_U0_clip_tris_v1_y_din,
+        clip_tris_v1_y_full_n => clip_tris_v1_y_full_n,
+        clip_tris_v1_y_write => k1_vertex_transform_U0_clip_tris_v1_y_write,
+        clip_tris_v1_y_num_data_valid => clip_tris_v1_y_num_data_valid,
+        clip_tris_v1_y_fifo_cap => clip_tris_v1_y_fifo_cap,
+        clip_tris_v1_z_din => k1_vertex_transform_U0_clip_tris_v1_z_din,
+        clip_tris_v1_z_full_n => clip_tris_v1_z_full_n,
+        clip_tris_v1_z_write => k1_vertex_transform_U0_clip_tris_v1_z_write,
+        clip_tris_v1_z_num_data_valid => clip_tris_v1_z_num_data_valid,
+        clip_tris_v1_z_fifo_cap => clip_tris_v1_z_fifo_cap,
+        clip_tris_v1_w_din => k1_vertex_transform_U0_clip_tris_v1_w_din,
+        clip_tris_v1_w_full_n => clip_tris_v1_w_full_n,
+        clip_tris_v1_w_write => k1_vertex_transform_U0_clip_tris_v1_w_write,
+        clip_tris_v1_w_num_data_valid => clip_tris_v1_w_num_data_valid,
+        clip_tris_v1_w_fifo_cap => clip_tris_v1_w_fifo_cap,
+        clip_tris_v2_x_din => k1_vertex_transform_U0_clip_tris_v2_x_din,
+        clip_tris_v2_x_full_n => clip_tris_v2_x_full_n,
+        clip_tris_v2_x_write => k1_vertex_transform_U0_clip_tris_v2_x_write,
+        clip_tris_v2_x_num_data_valid => clip_tris_v2_x_num_data_valid,
+        clip_tris_v2_x_fifo_cap => clip_tris_v2_x_fifo_cap,
+        clip_tris_v2_y_din => k1_vertex_transform_U0_clip_tris_v2_y_din,
+        clip_tris_v2_y_full_n => clip_tris_v2_y_full_n,
+        clip_tris_v2_y_write => k1_vertex_transform_U0_clip_tris_v2_y_write,
+        clip_tris_v2_y_num_data_valid => clip_tris_v2_y_num_data_valid,
+        clip_tris_v2_y_fifo_cap => clip_tris_v2_y_fifo_cap,
+        clip_tris_v2_z_din => k1_vertex_transform_U0_clip_tris_v2_z_din,
+        clip_tris_v2_z_full_n => clip_tris_v2_z_full_n,
+        clip_tris_v2_z_write => k1_vertex_transform_U0_clip_tris_v2_z_write,
+        clip_tris_v2_z_num_data_valid => clip_tris_v2_z_num_data_valid,
+        clip_tris_v2_z_fifo_cap => clip_tris_v2_z_fifo_cap,
+        clip_tris_v2_w_din => k1_vertex_transform_U0_clip_tris_v2_w_din,
+        clip_tris_v2_w_full_n => clip_tris_v2_w_full_n,
+        clip_tris_v2_w_write => k1_vertex_transform_U0_clip_tris_v2_w_write,
+        clip_tris_v2_w_num_data_valid => clip_tris_v2_w_num_data_valid,
+        clip_tris_v2_w_fifo_cap => clip_tris_v2_w_fifo_cap,
+        clip_tris_n0_x_din => k1_vertex_transform_U0_clip_tris_n0_x_din,
+        clip_tris_n0_x_full_n => clip_tris_n0_x_full_n,
+        clip_tris_n0_x_write => k1_vertex_transform_U0_clip_tris_n0_x_write,
+        clip_tris_n0_x_num_data_valid => clip_tris_n0_x_num_data_valid,
+        clip_tris_n0_x_fifo_cap => clip_tris_n0_x_fifo_cap,
+        clip_tris_n0_y_din => k1_vertex_transform_U0_clip_tris_n0_y_din,
+        clip_tris_n0_y_full_n => clip_tris_n0_y_full_n,
+        clip_tris_n0_y_write => k1_vertex_transform_U0_clip_tris_n0_y_write,
+        clip_tris_n0_y_num_data_valid => clip_tris_n0_y_num_data_valid,
+        clip_tris_n0_y_fifo_cap => clip_tris_n0_y_fifo_cap,
+        clip_tris_n0_z_din => k1_vertex_transform_U0_clip_tris_n0_z_din,
+        clip_tris_n0_z_full_n => clip_tris_n0_z_full_n,
+        clip_tris_n0_z_write => k1_vertex_transform_U0_clip_tris_n0_z_write,
+        clip_tris_n0_z_num_data_valid => clip_tris_n0_z_num_data_valid,
+        clip_tris_n0_z_fifo_cap => clip_tris_n0_z_fifo_cap,
+        clip_tris_n1_x_din => k1_vertex_transform_U0_clip_tris_n1_x_din,
+        clip_tris_n1_x_full_n => clip_tris_n1_x_full_n,
+        clip_tris_n1_x_write => k1_vertex_transform_U0_clip_tris_n1_x_write,
+        clip_tris_n1_x_num_data_valid => clip_tris_n1_x_num_data_valid,
+        clip_tris_n1_x_fifo_cap => clip_tris_n1_x_fifo_cap,
+        clip_tris_n1_y_din => k1_vertex_transform_U0_clip_tris_n1_y_din,
+        clip_tris_n1_y_full_n => clip_tris_n1_y_full_n,
+        clip_tris_n1_y_write => k1_vertex_transform_U0_clip_tris_n1_y_write,
+        clip_tris_n1_y_num_data_valid => clip_tris_n1_y_num_data_valid,
+        clip_tris_n1_y_fifo_cap => clip_tris_n1_y_fifo_cap,
+        clip_tris_n1_z_din => k1_vertex_transform_U0_clip_tris_n1_z_din,
+        clip_tris_n1_z_full_n => clip_tris_n1_z_full_n,
+        clip_tris_n1_z_write => k1_vertex_transform_U0_clip_tris_n1_z_write,
+        clip_tris_n1_z_num_data_valid => clip_tris_n1_z_num_data_valid,
+        clip_tris_n1_z_fifo_cap => clip_tris_n1_z_fifo_cap,
+        clip_tris_n2_x_din => k1_vertex_transform_U0_clip_tris_n2_x_din,
+        clip_tris_n2_x_full_n => clip_tris_n2_x_full_n,
+        clip_tris_n2_x_write => k1_vertex_transform_U0_clip_tris_n2_x_write,
+        clip_tris_n2_x_num_data_valid => clip_tris_n2_x_num_data_valid,
+        clip_tris_n2_x_fifo_cap => clip_tris_n2_x_fifo_cap,
+        clip_tris_n2_y_din => k1_vertex_transform_U0_clip_tris_n2_y_din,
+        clip_tris_n2_y_full_n => clip_tris_n2_y_full_n,
+        clip_tris_n2_y_write => k1_vertex_transform_U0_clip_tris_n2_y_write,
+        clip_tris_n2_y_num_data_valid => clip_tris_n2_y_num_data_valid,
+        clip_tris_n2_y_fifo_cap => clip_tris_n2_y_fifo_cap,
+        clip_tris_n2_z_din => k1_vertex_transform_U0_clip_tris_n2_z_din,
+        clip_tris_n2_z_full_n => clip_tris_n2_z_full_n,
+        clip_tris_n2_z_write => k1_vertex_transform_U0_clip_tris_n2_z_write,
+        clip_tris_n2_z_num_data_valid => clip_tris_n2_z_num_data_valid,
+        clip_tris_n2_z_fifo_cap => clip_tris_n2_z_fifo_cap,
+        clip_tris_color_din => k1_vertex_transform_U0_clip_tris_color_din,
+        clip_tris_color_full_n => clip_tris_color_full_n,
+        clip_tris_color_write => k1_vertex_transform_U0_clip_tris_color_write,
+        clip_tris_color_num_data_valid => clip_tris_color_num_data_valid,
+        clip_tris_color_fifo_cap => clip_tris_color_fifo_cap,
+        clip_tris_is_active_din => k1_vertex_transform_U0_clip_tris_is_active_din,
+        clip_tris_is_active_full_n => clip_tris_is_active_full_n,
+        clip_tris_is_active_write => k1_vertex_transform_U0_clip_tris_is_active_write,
+        clip_tris_is_active_num_data_valid => clip_tris_is_active_num_data_valid,
+        clip_tris_is_active_fifo_cap => clip_tris_is_active_fifo_cap,
+        start_out => k1_vertex_transform_U0_start_out,
+        start_write => k1_vertex_transform_U0_start_write,
         in_tris => in_tris,
-        mvp_matrix_address0 => k1_vertex_transform_U0_mvp_matrix_address0,
-        mvp_matrix_ce0 => k1_vertex_transform_U0_mvp_matrix_ce0,
-        mvp_matrix_q0 => mvp_matrix_q0,
-        mvp_matrix_address1 => k1_vertex_transform_U0_mvp_matrix_address1,
-        mvp_matrix_ce1 => k1_vertex_transform_U0_mvp_matrix_ce1,
-        mvp_matrix_q1 => mvp_matrix_q1,
-        clip_tris_is_active_address0 => k1_vertex_transform_U0_clip_tris_is_active_address0,
-        clip_tris_is_active_ce0 => k1_vertex_transform_U0_clip_tris_is_active_ce0,
-        clip_tris_is_active_we0 => k1_vertex_transform_U0_clip_tris_is_active_we0,
-        clip_tris_is_active_d0 => k1_vertex_transform_U0_clip_tris_is_active_d0,
-        clip_tris_n0_x_address0 => k1_vertex_transform_U0_clip_tris_n0_x_address0,
-        clip_tris_n0_x_ce0 => k1_vertex_transform_U0_clip_tris_n0_x_ce0,
-        clip_tris_n0_x_we0 => k1_vertex_transform_U0_clip_tris_n0_x_we0,
-        clip_tris_n0_x_d0 => k1_vertex_transform_U0_clip_tris_n0_x_d0,
-        clip_tris_n0_y_address0 => k1_vertex_transform_U0_clip_tris_n0_y_address0,
-        clip_tris_n0_y_ce0 => k1_vertex_transform_U0_clip_tris_n0_y_ce0,
-        clip_tris_n0_y_we0 => k1_vertex_transform_U0_clip_tris_n0_y_we0,
-        clip_tris_n0_y_d0 => k1_vertex_transform_U0_clip_tris_n0_y_d0,
-        clip_tris_n0_z_address0 => k1_vertex_transform_U0_clip_tris_n0_z_address0,
-        clip_tris_n0_z_ce0 => k1_vertex_transform_U0_clip_tris_n0_z_ce0,
-        clip_tris_n0_z_we0 => k1_vertex_transform_U0_clip_tris_n0_z_we0,
-        clip_tris_n0_z_d0 => k1_vertex_transform_U0_clip_tris_n0_z_d0,
-        clip_tris_n1_x_address0 => k1_vertex_transform_U0_clip_tris_n1_x_address0,
-        clip_tris_n1_x_ce0 => k1_vertex_transform_U0_clip_tris_n1_x_ce0,
-        clip_tris_n1_x_we0 => k1_vertex_transform_U0_clip_tris_n1_x_we0,
-        clip_tris_n1_x_d0 => k1_vertex_transform_U0_clip_tris_n1_x_d0,
-        clip_tris_n1_y_address0 => k1_vertex_transform_U0_clip_tris_n1_y_address0,
-        clip_tris_n1_y_ce0 => k1_vertex_transform_U0_clip_tris_n1_y_ce0,
-        clip_tris_n1_y_we0 => k1_vertex_transform_U0_clip_tris_n1_y_we0,
-        clip_tris_n1_y_d0 => k1_vertex_transform_U0_clip_tris_n1_y_d0,
-        clip_tris_n1_z_address0 => k1_vertex_transform_U0_clip_tris_n1_z_address0,
-        clip_tris_n1_z_ce0 => k1_vertex_transform_U0_clip_tris_n1_z_ce0,
-        clip_tris_n1_z_we0 => k1_vertex_transform_U0_clip_tris_n1_z_we0,
-        clip_tris_n1_z_d0 => k1_vertex_transform_U0_clip_tris_n1_z_d0,
-        clip_tris_n2_x_address0 => k1_vertex_transform_U0_clip_tris_n2_x_address0,
-        clip_tris_n2_x_ce0 => k1_vertex_transform_U0_clip_tris_n2_x_ce0,
-        clip_tris_n2_x_we0 => k1_vertex_transform_U0_clip_tris_n2_x_we0,
-        clip_tris_n2_x_d0 => k1_vertex_transform_U0_clip_tris_n2_x_d0,
-        clip_tris_n2_y_address0 => k1_vertex_transform_U0_clip_tris_n2_y_address0,
-        clip_tris_n2_y_ce0 => k1_vertex_transform_U0_clip_tris_n2_y_ce0,
-        clip_tris_n2_y_we0 => k1_vertex_transform_U0_clip_tris_n2_y_we0,
-        clip_tris_n2_y_d0 => k1_vertex_transform_U0_clip_tris_n2_y_d0,
-        clip_tris_n2_z_address0 => k1_vertex_transform_U0_clip_tris_n2_z_address0,
-        clip_tris_n2_z_ce0 => k1_vertex_transform_U0_clip_tris_n2_z_ce0,
-        clip_tris_n2_z_we0 => k1_vertex_transform_U0_clip_tris_n2_z_we0,
-        clip_tris_n2_z_d0 => k1_vertex_transform_U0_clip_tris_n2_z_d0,
-        clip_tris_v0_w_address0 => k1_vertex_transform_U0_clip_tris_v0_w_address0,
-        clip_tris_v0_w_ce0 => k1_vertex_transform_U0_clip_tris_v0_w_ce0,
-        clip_tris_v0_w_we0 => k1_vertex_transform_U0_clip_tris_v0_w_we0,
-        clip_tris_v0_w_d0 => k1_vertex_transform_U0_clip_tris_v0_w_d0,
-        clip_tris_v0_w_address1 => k1_vertex_transform_U0_clip_tris_v0_w_address1,
-        clip_tris_v0_w_ce1 => k1_vertex_transform_U0_clip_tris_v0_w_ce1,
-        clip_tris_v0_w_we1 => k1_vertex_transform_U0_clip_tris_v0_w_we1,
-        clip_tris_v0_w_d1 => k1_vertex_transform_U0_clip_tris_v0_w_d1,
-        clip_tris_v0_x_address0 => k1_vertex_transform_U0_clip_tris_v0_x_address0,
-        clip_tris_v0_x_ce0 => k1_vertex_transform_U0_clip_tris_v0_x_ce0,
-        clip_tris_v0_x_we0 => k1_vertex_transform_U0_clip_tris_v0_x_we0,
-        clip_tris_v0_x_d0 => k1_vertex_transform_U0_clip_tris_v0_x_d0,
-        clip_tris_v0_y_address0 => k1_vertex_transform_U0_clip_tris_v0_y_address0,
-        clip_tris_v0_y_ce0 => k1_vertex_transform_U0_clip_tris_v0_y_ce0,
-        clip_tris_v0_y_we0 => k1_vertex_transform_U0_clip_tris_v0_y_we0,
-        clip_tris_v0_y_d0 => k1_vertex_transform_U0_clip_tris_v0_y_d0,
-        clip_tris_v0_z_address0 => k1_vertex_transform_U0_clip_tris_v0_z_address0,
-        clip_tris_v0_z_ce0 => k1_vertex_transform_U0_clip_tris_v0_z_ce0,
-        clip_tris_v0_z_we0 => k1_vertex_transform_U0_clip_tris_v0_z_we0,
-        clip_tris_v0_z_d0 => k1_vertex_transform_U0_clip_tris_v0_z_d0,
-        clip_tris_v1_w_address0 => k1_vertex_transform_U0_clip_tris_v1_w_address0,
-        clip_tris_v1_w_ce0 => k1_vertex_transform_U0_clip_tris_v1_w_ce0,
-        clip_tris_v1_w_we0 => k1_vertex_transform_U0_clip_tris_v1_w_we0,
-        clip_tris_v1_w_d0 => k1_vertex_transform_U0_clip_tris_v1_w_d0,
-        clip_tris_v1_x_address0 => k1_vertex_transform_U0_clip_tris_v1_x_address0,
-        clip_tris_v1_x_ce0 => k1_vertex_transform_U0_clip_tris_v1_x_ce0,
-        clip_tris_v1_x_we0 => k1_vertex_transform_U0_clip_tris_v1_x_we0,
-        clip_tris_v1_x_d0 => k1_vertex_transform_U0_clip_tris_v1_x_d0,
-        clip_tris_v1_y_address0 => k1_vertex_transform_U0_clip_tris_v1_y_address0,
-        clip_tris_v1_y_ce0 => k1_vertex_transform_U0_clip_tris_v1_y_ce0,
-        clip_tris_v1_y_we0 => k1_vertex_transform_U0_clip_tris_v1_y_we0,
-        clip_tris_v1_y_d0 => k1_vertex_transform_U0_clip_tris_v1_y_d0,
-        clip_tris_v1_z_address0 => k1_vertex_transform_U0_clip_tris_v1_z_address0,
-        clip_tris_v1_z_ce0 => k1_vertex_transform_U0_clip_tris_v1_z_ce0,
-        clip_tris_v1_z_we0 => k1_vertex_transform_U0_clip_tris_v1_z_we0,
-        clip_tris_v1_z_d0 => k1_vertex_transform_U0_clip_tris_v1_z_d0,
-        clip_tris_v2_w_address0 => k1_vertex_transform_U0_clip_tris_v2_w_address0,
-        clip_tris_v2_w_ce0 => k1_vertex_transform_U0_clip_tris_v2_w_ce0,
-        clip_tris_v2_w_we0 => k1_vertex_transform_U0_clip_tris_v2_w_we0,
-        clip_tris_v2_w_d0 => k1_vertex_transform_U0_clip_tris_v2_w_d0,
-        clip_tris_v2_x_address0 => k1_vertex_transform_U0_clip_tris_v2_x_address0,
-        clip_tris_v2_x_ce0 => k1_vertex_transform_U0_clip_tris_v2_x_ce0,
-        clip_tris_v2_x_we0 => k1_vertex_transform_U0_clip_tris_v2_x_we0,
-        clip_tris_v2_x_d0 => k1_vertex_transform_U0_clip_tris_v2_x_d0,
-        clip_tris_v2_y_address0 => k1_vertex_transform_U0_clip_tris_v2_y_address0,
-        clip_tris_v2_y_ce0 => k1_vertex_transform_U0_clip_tris_v2_y_ce0,
-        clip_tris_v2_y_we0 => k1_vertex_transform_U0_clip_tris_v2_y_we0,
-        clip_tris_v2_y_d0 => k1_vertex_transform_U0_clip_tris_v2_y_d0,
-        clip_tris_v2_z_address0 => k1_vertex_transform_U0_clip_tris_v2_z_address0,
-        clip_tris_v2_z_ce0 => k1_vertex_transform_U0_clip_tris_v2_z_ce0,
-        clip_tris_v2_z_we0 => k1_vertex_transform_U0_clip_tris_v2_z_we0,
-        clip_tris_v2_z_d0 => k1_vertex_transform_U0_clip_tris_v2_z_d0);
+        mvp => mvp_matrix);
 
     k2_perspective_divide_U0 : component top_kernel_k2_perspective_divide
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
         ap_start => k2_perspective_divide_U0_ap_start,
+        start_full_n => start_for_k3_bounding_box_U0_full_n,
         ap_done => k2_perspective_divide_U0_ap_done,
         ap_continue => k2_perspective_divide_U0_ap_continue,
         ap_idle => k2_perspective_divide_U0_ap_idle,
         ap_ready => k2_perspective_divide_U0_ap_ready,
-        clip_tris_v0_x_address0 => k2_perspective_divide_U0_clip_tris_v0_x_address0,
-        clip_tris_v0_x_ce0 => k2_perspective_divide_U0_clip_tris_v0_x_ce0,
-        clip_tris_v0_x_q0 => clip_tris_v0_x_t_q0,
-        clip_tris_v0_y_address0 => k2_perspective_divide_U0_clip_tris_v0_y_address0,
-        clip_tris_v0_y_ce0 => k2_perspective_divide_U0_clip_tris_v0_y_ce0,
-        clip_tris_v0_y_q0 => clip_tris_v0_y_t_q0,
-        clip_tris_v0_z_address0 => k2_perspective_divide_U0_clip_tris_v0_z_address0,
-        clip_tris_v0_z_ce0 => k2_perspective_divide_U0_clip_tris_v0_z_ce0,
-        clip_tris_v0_z_q0 => clip_tris_v0_z_t_q0,
-        clip_tris_v0_w_address0 => k2_perspective_divide_U0_clip_tris_v0_w_address0,
-        clip_tris_v0_w_ce0 => k2_perspective_divide_U0_clip_tris_v0_w_ce0,
-        clip_tris_v0_w_q0 => clip_tris_v0_w_t_q0,
-        clip_tris_v1_x_address0 => k2_perspective_divide_U0_clip_tris_v1_x_address0,
-        clip_tris_v1_x_ce0 => k2_perspective_divide_U0_clip_tris_v1_x_ce0,
-        clip_tris_v1_x_q0 => clip_tris_v1_x_t_q0,
-        clip_tris_v1_y_address0 => k2_perspective_divide_U0_clip_tris_v1_y_address0,
-        clip_tris_v1_y_ce0 => k2_perspective_divide_U0_clip_tris_v1_y_ce0,
-        clip_tris_v1_y_q0 => clip_tris_v1_y_t_q0,
-        clip_tris_v1_z_address0 => k2_perspective_divide_U0_clip_tris_v1_z_address0,
-        clip_tris_v1_z_ce0 => k2_perspective_divide_U0_clip_tris_v1_z_ce0,
-        clip_tris_v1_z_q0 => clip_tris_v1_z_t_q0,
-        clip_tris_v1_w_address0 => k2_perspective_divide_U0_clip_tris_v1_w_address0,
-        clip_tris_v1_w_ce0 => k2_perspective_divide_U0_clip_tris_v1_w_ce0,
-        clip_tris_v1_w_q0 => clip_tris_v1_w_t_q0,
-        clip_tris_v2_x_address0 => k2_perspective_divide_U0_clip_tris_v2_x_address0,
-        clip_tris_v2_x_ce0 => k2_perspective_divide_U0_clip_tris_v2_x_ce0,
-        clip_tris_v2_x_q0 => clip_tris_v2_x_t_q0,
-        clip_tris_v2_y_address0 => k2_perspective_divide_U0_clip_tris_v2_y_address0,
-        clip_tris_v2_y_ce0 => k2_perspective_divide_U0_clip_tris_v2_y_ce0,
-        clip_tris_v2_y_q0 => clip_tris_v2_y_t_q0,
-        clip_tris_v2_z_address0 => k2_perspective_divide_U0_clip_tris_v2_z_address0,
-        clip_tris_v2_z_ce0 => k2_perspective_divide_U0_clip_tris_v2_z_ce0,
-        clip_tris_v2_z_q0 => clip_tris_v2_z_t_q0,
-        clip_tris_v2_w_address0 => k2_perspective_divide_U0_clip_tris_v2_w_address0,
-        clip_tris_v2_w_ce0 => k2_perspective_divide_U0_clip_tris_v2_w_ce0,
-        clip_tris_v2_w_q0 => clip_tris_v2_w_t_q0,
-        clip_tris_n0_x_address0 => k2_perspective_divide_U0_clip_tris_n0_x_address0,
-        clip_tris_n0_x_ce0 => k2_perspective_divide_U0_clip_tris_n0_x_ce0,
-        clip_tris_n0_x_q0 => clip_tris_n0_x_t_q0,
-        clip_tris_n0_y_address0 => k2_perspective_divide_U0_clip_tris_n0_y_address0,
-        clip_tris_n0_y_ce0 => k2_perspective_divide_U0_clip_tris_n0_y_ce0,
-        clip_tris_n0_y_q0 => clip_tris_n0_y_t_q0,
-        clip_tris_n0_z_address0 => k2_perspective_divide_U0_clip_tris_n0_z_address0,
-        clip_tris_n0_z_ce0 => k2_perspective_divide_U0_clip_tris_n0_z_ce0,
-        clip_tris_n0_z_q0 => clip_tris_n0_z_t_q0,
-        clip_tris_n1_x_address0 => k2_perspective_divide_U0_clip_tris_n1_x_address0,
-        clip_tris_n1_x_ce0 => k2_perspective_divide_U0_clip_tris_n1_x_ce0,
-        clip_tris_n1_x_q0 => clip_tris_n1_x_t_q0,
-        clip_tris_n1_y_address0 => k2_perspective_divide_U0_clip_tris_n1_y_address0,
-        clip_tris_n1_y_ce0 => k2_perspective_divide_U0_clip_tris_n1_y_ce0,
-        clip_tris_n1_y_q0 => clip_tris_n1_y_t_q0,
-        clip_tris_n1_z_address0 => k2_perspective_divide_U0_clip_tris_n1_z_address0,
-        clip_tris_n1_z_ce0 => k2_perspective_divide_U0_clip_tris_n1_z_ce0,
-        clip_tris_n1_z_q0 => clip_tris_n1_z_t_q0,
-        clip_tris_n2_x_address0 => k2_perspective_divide_U0_clip_tris_n2_x_address0,
-        clip_tris_n2_x_ce0 => k2_perspective_divide_U0_clip_tris_n2_x_ce0,
-        clip_tris_n2_x_q0 => clip_tris_n2_x_t_q0,
-        clip_tris_n2_y_address0 => k2_perspective_divide_U0_clip_tris_n2_y_address0,
-        clip_tris_n2_y_ce0 => k2_perspective_divide_U0_clip_tris_n2_y_ce0,
-        clip_tris_n2_y_q0 => clip_tris_n2_y_t_q0,
-        clip_tris_n2_z_address0 => k2_perspective_divide_U0_clip_tris_n2_z_address0,
-        clip_tris_n2_z_ce0 => k2_perspective_divide_U0_clip_tris_n2_z_ce0,
-        clip_tris_n2_z_q0 => clip_tris_n2_z_t_q0,
-        clip_tris_is_active_address0 => k2_perspective_divide_U0_clip_tris_is_active_address0,
-        clip_tris_is_active_ce0 => k2_perspective_divide_U0_clip_tris_is_active_ce0,
-        clip_tris_is_active_q0 => clip_tris_is_active_t_q0,
-        screen_tris_v0_x_address0 => k2_perspective_divide_U0_screen_tris_v0_x_address0,
-        screen_tris_v0_x_ce0 => k2_perspective_divide_U0_screen_tris_v0_x_ce0,
-        screen_tris_v0_x_we0 => k2_perspective_divide_U0_screen_tris_v0_x_we0,
-        screen_tris_v0_x_d0 => k2_perspective_divide_U0_screen_tris_v0_x_d0,
-        screen_tris_v0_y_address0 => k2_perspective_divide_U0_screen_tris_v0_y_address0,
-        screen_tris_v0_y_ce0 => k2_perspective_divide_U0_screen_tris_v0_y_ce0,
-        screen_tris_v0_y_we0 => k2_perspective_divide_U0_screen_tris_v0_y_we0,
-        screen_tris_v0_y_d0 => k2_perspective_divide_U0_screen_tris_v0_y_d0,
-        screen_tris_v0_z_address0 => k2_perspective_divide_U0_screen_tris_v0_z_address0,
-        screen_tris_v0_z_ce0 => k2_perspective_divide_U0_screen_tris_v0_z_ce0,
-        screen_tris_v0_z_we0 => k2_perspective_divide_U0_screen_tris_v0_z_we0,
-        screen_tris_v0_z_d0 => k2_perspective_divide_U0_screen_tris_v0_z_d0,
-        screen_tris_v1_x_address0 => k2_perspective_divide_U0_screen_tris_v1_x_address0,
-        screen_tris_v1_x_ce0 => k2_perspective_divide_U0_screen_tris_v1_x_ce0,
-        screen_tris_v1_x_we0 => k2_perspective_divide_U0_screen_tris_v1_x_we0,
-        screen_tris_v1_x_d0 => k2_perspective_divide_U0_screen_tris_v1_x_d0,
-        screen_tris_v1_y_address0 => k2_perspective_divide_U0_screen_tris_v1_y_address0,
-        screen_tris_v1_y_ce0 => k2_perspective_divide_U0_screen_tris_v1_y_ce0,
-        screen_tris_v1_y_we0 => k2_perspective_divide_U0_screen_tris_v1_y_we0,
-        screen_tris_v1_y_d0 => k2_perspective_divide_U0_screen_tris_v1_y_d0,
-        screen_tris_v1_z_address0 => k2_perspective_divide_U0_screen_tris_v1_z_address0,
-        screen_tris_v1_z_ce0 => k2_perspective_divide_U0_screen_tris_v1_z_ce0,
-        screen_tris_v1_z_we0 => k2_perspective_divide_U0_screen_tris_v1_z_we0,
-        screen_tris_v1_z_d0 => k2_perspective_divide_U0_screen_tris_v1_z_d0,
-        screen_tris_v2_x_address0 => k2_perspective_divide_U0_screen_tris_v2_x_address0,
-        screen_tris_v2_x_ce0 => k2_perspective_divide_U0_screen_tris_v2_x_ce0,
-        screen_tris_v2_x_we0 => k2_perspective_divide_U0_screen_tris_v2_x_we0,
-        screen_tris_v2_x_d0 => k2_perspective_divide_U0_screen_tris_v2_x_d0,
-        screen_tris_v2_y_address0 => k2_perspective_divide_U0_screen_tris_v2_y_address0,
-        screen_tris_v2_y_ce0 => k2_perspective_divide_U0_screen_tris_v2_y_ce0,
-        screen_tris_v2_y_we0 => k2_perspective_divide_U0_screen_tris_v2_y_we0,
-        screen_tris_v2_y_d0 => k2_perspective_divide_U0_screen_tris_v2_y_d0,
-        screen_tris_v2_z_address0 => k2_perspective_divide_U0_screen_tris_v2_z_address0,
-        screen_tris_v2_z_ce0 => k2_perspective_divide_U0_screen_tris_v2_z_ce0,
-        screen_tris_v2_z_we0 => k2_perspective_divide_U0_screen_tris_v2_z_we0,
-        screen_tris_v2_z_d0 => k2_perspective_divide_U0_screen_tris_v2_z_d0,
-        screen_tris_n0_x_address0 => k2_perspective_divide_U0_screen_tris_n0_x_address0,
-        screen_tris_n0_x_ce0 => k2_perspective_divide_U0_screen_tris_n0_x_ce0,
-        screen_tris_n0_x_we0 => k2_perspective_divide_U0_screen_tris_n0_x_we0,
-        screen_tris_n0_x_d0 => k2_perspective_divide_U0_screen_tris_n0_x_d0,
-        screen_tris_n0_y_address0 => k2_perspective_divide_U0_screen_tris_n0_y_address0,
-        screen_tris_n0_y_ce0 => k2_perspective_divide_U0_screen_tris_n0_y_ce0,
-        screen_tris_n0_y_we0 => k2_perspective_divide_U0_screen_tris_n0_y_we0,
-        screen_tris_n0_y_d0 => k2_perspective_divide_U0_screen_tris_n0_y_d0,
-        screen_tris_n0_z_address0 => k2_perspective_divide_U0_screen_tris_n0_z_address0,
-        screen_tris_n0_z_ce0 => k2_perspective_divide_U0_screen_tris_n0_z_ce0,
-        screen_tris_n0_z_we0 => k2_perspective_divide_U0_screen_tris_n0_z_we0,
-        screen_tris_n0_z_d0 => k2_perspective_divide_U0_screen_tris_n0_z_d0,
-        screen_tris_n1_x_address0 => k2_perspective_divide_U0_screen_tris_n1_x_address0,
-        screen_tris_n1_x_ce0 => k2_perspective_divide_U0_screen_tris_n1_x_ce0,
-        screen_tris_n1_x_we0 => k2_perspective_divide_U0_screen_tris_n1_x_we0,
-        screen_tris_n1_x_d0 => k2_perspective_divide_U0_screen_tris_n1_x_d0,
-        screen_tris_n1_y_address0 => k2_perspective_divide_U0_screen_tris_n1_y_address0,
-        screen_tris_n1_y_ce0 => k2_perspective_divide_U0_screen_tris_n1_y_ce0,
-        screen_tris_n1_y_we0 => k2_perspective_divide_U0_screen_tris_n1_y_we0,
-        screen_tris_n1_y_d0 => k2_perspective_divide_U0_screen_tris_n1_y_d0,
-        screen_tris_n1_z_address0 => k2_perspective_divide_U0_screen_tris_n1_z_address0,
-        screen_tris_n1_z_ce0 => k2_perspective_divide_U0_screen_tris_n1_z_ce0,
-        screen_tris_n1_z_we0 => k2_perspective_divide_U0_screen_tris_n1_z_we0,
-        screen_tris_n1_z_d0 => k2_perspective_divide_U0_screen_tris_n1_z_d0,
-        screen_tris_n2_x_address0 => k2_perspective_divide_U0_screen_tris_n2_x_address0,
-        screen_tris_n2_x_ce0 => k2_perspective_divide_U0_screen_tris_n2_x_ce0,
-        screen_tris_n2_x_we0 => k2_perspective_divide_U0_screen_tris_n2_x_we0,
-        screen_tris_n2_x_d0 => k2_perspective_divide_U0_screen_tris_n2_x_d0,
-        screen_tris_n2_y_address0 => k2_perspective_divide_U0_screen_tris_n2_y_address0,
-        screen_tris_n2_y_ce0 => k2_perspective_divide_U0_screen_tris_n2_y_ce0,
-        screen_tris_n2_y_we0 => k2_perspective_divide_U0_screen_tris_n2_y_we0,
-        screen_tris_n2_y_d0 => k2_perspective_divide_U0_screen_tris_n2_y_d0,
-        screen_tris_n2_z_address0 => k2_perspective_divide_U0_screen_tris_n2_z_address0,
-        screen_tris_n2_z_ce0 => k2_perspective_divide_U0_screen_tris_n2_z_ce0,
-        screen_tris_n2_z_we0 => k2_perspective_divide_U0_screen_tris_n2_z_we0,
-        screen_tris_n2_z_d0 => k2_perspective_divide_U0_screen_tris_n2_z_d0,
-        screen_tris_is_active_address0 => k2_perspective_divide_U0_screen_tris_is_active_address0,
-        screen_tris_is_active_ce0 => k2_perspective_divide_U0_screen_tris_is_active_ce0,
-        screen_tris_is_active_we0 => k2_perspective_divide_U0_screen_tris_is_active_we0,
-        screen_tris_is_active_d0 => k2_perspective_divide_U0_screen_tris_is_active_d0);
+        start_out => k2_perspective_divide_U0_start_out,
+        start_write => k2_perspective_divide_U0_start_write,
+        clip_tris_v0_x_dout => clip_tris_v0_x_dout,
+        clip_tris_v0_x_empty_n => clip_tris_v0_x_empty_n,
+        clip_tris_v0_x_read => k2_perspective_divide_U0_clip_tris_v0_x_read,
+        clip_tris_v0_x_num_data_valid => clip_tris_v0_x_num_data_valid,
+        clip_tris_v0_x_fifo_cap => clip_tris_v0_x_fifo_cap,
+        clip_tris_v0_y_dout => clip_tris_v0_y_dout,
+        clip_tris_v0_y_empty_n => clip_tris_v0_y_empty_n,
+        clip_tris_v0_y_read => k2_perspective_divide_U0_clip_tris_v0_y_read,
+        clip_tris_v0_y_num_data_valid => clip_tris_v0_y_num_data_valid,
+        clip_tris_v0_y_fifo_cap => clip_tris_v0_y_fifo_cap,
+        clip_tris_v0_z_dout => clip_tris_v0_z_dout,
+        clip_tris_v0_z_empty_n => clip_tris_v0_z_empty_n,
+        clip_tris_v0_z_read => k2_perspective_divide_U0_clip_tris_v0_z_read,
+        clip_tris_v0_z_num_data_valid => clip_tris_v0_z_num_data_valid,
+        clip_tris_v0_z_fifo_cap => clip_tris_v0_z_fifo_cap,
+        clip_tris_v0_w_dout => clip_tris_v0_w_dout,
+        clip_tris_v0_w_empty_n => clip_tris_v0_w_empty_n,
+        clip_tris_v0_w_read => k2_perspective_divide_U0_clip_tris_v0_w_read,
+        clip_tris_v0_w_num_data_valid => clip_tris_v0_w_num_data_valid,
+        clip_tris_v0_w_fifo_cap => clip_tris_v0_w_fifo_cap,
+        clip_tris_v1_x_dout => clip_tris_v1_x_dout,
+        clip_tris_v1_x_empty_n => clip_tris_v1_x_empty_n,
+        clip_tris_v1_x_read => k2_perspective_divide_U0_clip_tris_v1_x_read,
+        clip_tris_v1_x_num_data_valid => clip_tris_v1_x_num_data_valid,
+        clip_tris_v1_x_fifo_cap => clip_tris_v1_x_fifo_cap,
+        clip_tris_v1_y_dout => clip_tris_v1_y_dout,
+        clip_tris_v1_y_empty_n => clip_tris_v1_y_empty_n,
+        clip_tris_v1_y_read => k2_perspective_divide_U0_clip_tris_v1_y_read,
+        clip_tris_v1_y_num_data_valid => clip_tris_v1_y_num_data_valid,
+        clip_tris_v1_y_fifo_cap => clip_tris_v1_y_fifo_cap,
+        clip_tris_v1_z_dout => clip_tris_v1_z_dout,
+        clip_tris_v1_z_empty_n => clip_tris_v1_z_empty_n,
+        clip_tris_v1_z_read => k2_perspective_divide_U0_clip_tris_v1_z_read,
+        clip_tris_v1_z_num_data_valid => clip_tris_v1_z_num_data_valid,
+        clip_tris_v1_z_fifo_cap => clip_tris_v1_z_fifo_cap,
+        clip_tris_v1_w_dout => clip_tris_v1_w_dout,
+        clip_tris_v1_w_empty_n => clip_tris_v1_w_empty_n,
+        clip_tris_v1_w_read => k2_perspective_divide_U0_clip_tris_v1_w_read,
+        clip_tris_v1_w_num_data_valid => clip_tris_v1_w_num_data_valid,
+        clip_tris_v1_w_fifo_cap => clip_tris_v1_w_fifo_cap,
+        clip_tris_v2_x_dout => clip_tris_v2_x_dout,
+        clip_tris_v2_x_empty_n => clip_tris_v2_x_empty_n,
+        clip_tris_v2_x_read => k2_perspective_divide_U0_clip_tris_v2_x_read,
+        clip_tris_v2_x_num_data_valid => clip_tris_v2_x_num_data_valid,
+        clip_tris_v2_x_fifo_cap => clip_tris_v2_x_fifo_cap,
+        clip_tris_v2_y_dout => clip_tris_v2_y_dout,
+        clip_tris_v2_y_empty_n => clip_tris_v2_y_empty_n,
+        clip_tris_v2_y_read => k2_perspective_divide_U0_clip_tris_v2_y_read,
+        clip_tris_v2_y_num_data_valid => clip_tris_v2_y_num_data_valid,
+        clip_tris_v2_y_fifo_cap => clip_tris_v2_y_fifo_cap,
+        clip_tris_v2_z_dout => clip_tris_v2_z_dout,
+        clip_tris_v2_z_empty_n => clip_tris_v2_z_empty_n,
+        clip_tris_v2_z_read => k2_perspective_divide_U0_clip_tris_v2_z_read,
+        clip_tris_v2_z_num_data_valid => clip_tris_v2_z_num_data_valid,
+        clip_tris_v2_z_fifo_cap => clip_tris_v2_z_fifo_cap,
+        clip_tris_v2_w_dout => clip_tris_v2_w_dout,
+        clip_tris_v2_w_empty_n => clip_tris_v2_w_empty_n,
+        clip_tris_v2_w_read => k2_perspective_divide_U0_clip_tris_v2_w_read,
+        clip_tris_v2_w_num_data_valid => clip_tris_v2_w_num_data_valid,
+        clip_tris_v2_w_fifo_cap => clip_tris_v2_w_fifo_cap,
+        clip_tris_n0_x_dout => clip_tris_n0_x_dout,
+        clip_tris_n0_x_empty_n => clip_tris_n0_x_empty_n,
+        clip_tris_n0_x_read => k2_perspective_divide_U0_clip_tris_n0_x_read,
+        clip_tris_n0_x_num_data_valid => clip_tris_n0_x_num_data_valid,
+        clip_tris_n0_x_fifo_cap => clip_tris_n0_x_fifo_cap,
+        clip_tris_n0_y_dout => clip_tris_n0_y_dout,
+        clip_tris_n0_y_empty_n => clip_tris_n0_y_empty_n,
+        clip_tris_n0_y_read => k2_perspective_divide_U0_clip_tris_n0_y_read,
+        clip_tris_n0_y_num_data_valid => clip_tris_n0_y_num_data_valid,
+        clip_tris_n0_y_fifo_cap => clip_tris_n0_y_fifo_cap,
+        clip_tris_n0_z_dout => clip_tris_n0_z_dout,
+        clip_tris_n0_z_empty_n => clip_tris_n0_z_empty_n,
+        clip_tris_n0_z_read => k2_perspective_divide_U0_clip_tris_n0_z_read,
+        clip_tris_n0_z_num_data_valid => clip_tris_n0_z_num_data_valid,
+        clip_tris_n0_z_fifo_cap => clip_tris_n0_z_fifo_cap,
+        clip_tris_n1_x_dout => clip_tris_n1_x_dout,
+        clip_tris_n1_x_empty_n => clip_tris_n1_x_empty_n,
+        clip_tris_n1_x_read => k2_perspective_divide_U0_clip_tris_n1_x_read,
+        clip_tris_n1_x_num_data_valid => clip_tris_n1_x_num_data_valid,
+        clip_tris_n1_x_fifo_cap => clip_tris_n1_x_fifo_cap,
+        clip_tris_n1_y_dout => clip_tris_n1_y_dout,
+        clip_tris_n1_y_empty_n => clip_tris_n1_y_empty_n,
+        clip_tris_n1_y_read => k2_perspective_divide_U0_clip_tris_n1_y_read,
+        clip_tris_n1_y_num_data_valid => clip_tris_n1_y_num_data_valid,
+        clip_tris_n1_y_fifo_cap => clip_tris_n1_y_fifo_cap,
+        clip_tris_n1_z_dout => clip_tris_n1_z_dout,
+        clip_tris_n1_z_empty_n => clip_tris_n1_z_empty_n,
+        clip_tris_n1_z_read => k2_perspective_divide_U0_clip_tris_n1_z_read,
+        clip_tris_n1_z_num_data_valid => clip_tris_n1_z_num_data_valid,
+        clip_tris_n1_z_fifo_cap => clip_tris_n1_z_fifo_cap,
+        clip_tris_n2_x_dout => clip_tris_n2_x_dout,
+        clip_tris_n2_x_empty_n => clip_tris_n2_x_empty_n,
+        clip_tris_n2_x_read => k2_perspective_divide_U0_clip_tris_n2_x_read,
+        clip_tris_n2_x_num_data_valid => clip_tris_n2_x_num_data_valid,
+        clip_tris_n2_x_fifo_cap => clip_tris_n2_x_fifo_cap,
+        clip_tris_n2_y_dout => clip_tris_n2_y_dout,
+        clip_tris_n2_y_empty_n => clip_tris_n2_y_empty_n,
+        clip_tris_n2_y_read => k2_perspective_divide_U0_clip_tris_n2_y_read,
+        clip_tris_n2_y_num_data_valid => clip_tris_n2_y_num_data_valid,
+        clip_tris_n2_y_fifo_cap => clip_tris_n2_y_fifo_cap,
+        clip_tris_n2_z_dout => clip_tris_n2_z_dout,
+        clip_tris_n2_z_empty_n => clip_tris_n2_z_empty_n,
+        clip_tris_n2_z_read => k2_perspective_divide_U0_clip_tris_n2_z_read,
+        clip_tris_n2_z_num_data_valid => clip_tris_n2_z_num_data_valid,
+        clip_tris_n2_z_fifo_cap => clip_tris_n2_z_fifo_cap,
+        clip_tris_color_dout => clip_tris_color_dout,
+        clip_tris_color_empty_n => clip_tris_color_empty_n,
+        clip_tris_color_read => k2_perspective_divide_U0_clip_tris_color_read,
+        clip_tris_color_num_data_valid => clip_tris_color_num_data_valid,
+        clip_tris_color_fifo_cap => clip_tris_color_fifo_cap,
+        clip_tris_is_active_dout => clip_tris_is_active_dout,
+        clip_tris_is_active_empty_n => clip_tris_is_active_empty_n,
+        clip_tris_is_active_read => k2_perspective_divide_U0_clip_tris_is_active_read,
+        clip_tris_is_active_num_data_valid => clip_tris_is_active_num_data_valid,
+        clip_tris_is_active_fifo_cap => clip_tris_is_active_fifo_cap,
+        screen_tris_in_v0_x_din => k2_perspective_divide_U0_screen_tris_in_v0_x_din,
+        screen_tris_in_v0_x_full_n => screen_tris_in_v0_x_full_n,
+        screen_tris_in_v0_x_write => k2_perspective_divide_U0_screen_tris_in_v0_x_write,
+        screen_tris_in_v0_x_num_data_valid => screen_tris_in_v0_x_num_data_valid,
+        screen_tris_in_v0_x_fifo_cap => screen_tris_in_v0_x_fifo_cap,
+        screen_tris_in_v0_y_din => k2_perspective_divide_U0_screen_tris_in_v0_y_din,
+        screen_tris_in_v0_y_full_n => screen_tris_in_v0_y_full_n,
+        screen_tris_in_v0_y_write => k2_perspective_divide_U0_screen_tris_in_v0_y_write,
+        screen_tris_in_v0_y_num_data_valid => screen_tris_in_v0_y_num_data_valid,
+        screen_tris_in_v0_y_fifo_cap => screen_tris_in_v0_y_fifo_cap,
+        screen_tris_in_v0_z_din => k2_perspective_divide_U0_screen_tris_in_v0_z_din,
+        screen_tris_in_v0_z_full_n => screen_tris_in_v0_z_full_n,
+        screen_tris_in_v0_z_write => k2_perspective_divide_U0_screen_tris_in_v0_z_write,
+        screen_tris_in_v0_z_num_data_valid => screen_tris_in_v0_z_num_data_valid,
+        screen_tris_in_v0_z_fifo_cap => screen_tris_in_v0_z_fifo_cap,
+        screen_tris_in_v0_w_din => k2_perspective_divide_U0_screen_tris_in_v0_w_din,
+        screen_tris_in_v0_w_full_n => screen_tris_in_v0_w_full_n,
+        screen_tris_in_v0_w_write => k2_perspective_divide_U0_screen_tris_in_v0_w_write,
+        screen_tris_in_v0_w_num_data_valid => screen_tris_in_v0_w_num_data_valid,
+        screen_tris_in_v0_w_fifo_cap => screen_tris_in_v0_w_fifo_cap,
+        screen_tris_in_v1_x_din => k2_perspective_divide_U0_screen_tris_in_v1_x_din,
+        screen_tris_in_v1_x_full_n => screen_tris_in_v1_x_full_n,
+        screen_tris_in_v1_x_write => k2_perspective_divide_U0_screen_tris_in_v1_x_write,
+        screen_tris_in_v1_x_num_data_valid => screen_tris_in_v1_x_num_data_valid,
+        screen_tris_in_v1_x_fifo_cap => screen_tris_in_v1_x_fifo_cap,
+        screen_tris_in_v1_y_din => k2_perspective_divide_U0_screen_tris_in_v1_y_din,
+        screen_tris_in_v1_y_full_n => screen_tris_in_v1_y_full_n,
+        screen_tris_in_v1_y_write => k2_perspective_divide_U0_screen_tris_in_v1_y_write,
+        screen_tris_in_v1_y_num_data_valid => screen_tris_in_v1_y_num_data_valid,
+        screen_tris_in_v1_y_fifo_cap => screen_tris_in_v1_y_fifo_cap,
+        screen_tris_in_v1_z_din => k2_perspective_divide_U0_screen_tris_in_v1_z_din,
+        screen_tris_in_v1_z_full_n => screen_tris_in_v1_z_full_n,
+        screen_tris_in_v1_z_write => k2_perspective_divide_U0_screen_tris_in_v1_z_write,
+        screen_tris_in_v1_z_num_data_valid => screen_tris_in_v1_z_num_data_valid,
+        screen_tris_in_v1_z_fifo_cap => screen_tris_in_v1_z_fifo_cap,
+        screen_tris_in_v1_w_din => k2_perspective_divide_U0_screen_tris_in_v1_w_din,
+        screen_tris_in_v1_w_full_n => screen_tris_in_v1_w_full_n,
+        screen_tris_in_v1_w_write => k2_perspective_divide_U0_screen_tris_in_v1_w_write,
+        screen_tris_in_v1_w_num_data_valid => screen_tris_in_v1_w_num_data_valid,
+        screen_tris_in_v1_w_fifo_cap => screen_tris_in_v1_w_fifo_cap,
+        screen_tris_in_v2_x_din => k2_perspective_divide_U0_screen_tris_in_v2_x_din,
+        screen_tris_in_v2_x_full_n => screen_tris_in_v2_x_full_n,
+        screen_tris_in_v2_x_write => k2_perspective_divide_U0_screen_tris_in_v2_x_write,
+        screen_tris_in_v2_x_num_data_valid => screen_tris_in_v2_x_num_data_valid,
+        screen_tris_in_v2_x_fifo_cap => screen_tris_in_v2_x_fifo_cap,
+        screen_tris_in_v2_y_din => k2_perspective_divide_U0_screen_tris_in_v2_y_din,
+        screen_tris_in_v2_y_full_n => screen_tris_in_v2_y_full_n,
+        screen_tris_in_v2_y_write => k2_perspective_divide_U0_screen_tris_in_v2_y_write,
+        screen_tris_in_v2_y_num_data_valid => screen_tris_in_v2_y_num_data_valid,
+        screen_tris_in_v2_y_fifo_cap => screen_tris_in_v2_y_fifo_cap,
+        screen_tris_in_v2_z_din => k2_perspective_divide_U0_screen_tris_in_v2_z_din,
+        screen_tris_in_v2_z_full_n => screen_tris_in_v2_z_full_n,
+        screen_tris_in_v2_z_write => k2_perspective_divide_U0_screen_tris_in_v2_z_write,
+        screen_tris_in_v2_z_num_data_valid => screen_tris_in_v2_z_num_data_valid,
+        screen_tris_in_v2_z_fifo_cap => screen_tris_in_v2_z_fifo_cap,
+        screen_tris_in_v2_w_din => k2_perspective_divide_U0_screen_tris_in_v2_w_din,
+        screen_tris_in_v2_w_full_n => screen_tris_in_v2_w_full_n,
+        screen_tris_in_v2_w_write => k2_perspective_divide_U0_screen_tris_in_v2_w_write,
+        screen_tris_in_v2_w_num_data_valid => screen_tris_in_v2_w_num_data_valid,
+        screen_tris_in_v2_w_fifo_cap => screen_tris_in_v2_w_fifo_cap,
+        screen_tris_in_n0_x_din => k2_perspective_divide_U0_screen_tris_in_n0_x_din,
+        screen_tris_in_n0_x_full_n => screen_tris_in_n0_x_full_n,
+        screen_tris_in_n0_x_write => k2_perspective_divide_U0_screen_tris_in_n0_x_write,
+        screen_tris_in_n0_x_num_data_valid => screen_tris_in_n0_x_num_data_valid,
+        screen_tris_in_n0_x_fifo_cap => screen_tris_in_n0_x_fifo_cap,
+        screen_tris_in_n0_y_din => k2_perspective_divide_U0_screen_tris_in_n0_y_din,
+        screen_tris_in_n0_y_full_n => screen_tris_in_n0_y_full_n,
+        screen_tris_in_n0_y_write => k2_perspective_divide_U0_screen_tris_in_n0_y_write,
+        screen_tris_in_n0_y_num_data_valid => screen_tris_in_n0_y_num_data_valid,
+        screen_tris_in_n0_y_fifo_cap => screen_tris_in_n0_y_fifo_cap,
+        screen_tris_in_n0_z_din => k2_perspective_divide_U0_screen_tris_in_n0_z_din,
+        screen_tris_in_n0_z_full_n => screen_tris_in_n0_z_full_n,
+        screen_tris_in_n0_z_write => k2_perspective_divide_U0_screen_tris_in_n0_z_write,
+        screen_tris_in_n0_z_num_data_valid => screen_tris_in_n0_z_num_data_valid,
+        screen_tris_in_n0_z_fifo_cap => screen_tris_in_n0_z_fifo_cap,
+        screen_tris_in_n1_x_din => k2_perspective_divide_U0_screen_tris_in_n1_x_din,
+        screen_tris_in_n1_x_full_n => screen_tris_in_n1_x_full_n,
+        screen_tris_in_n1_x_write => k2_perspective_divide_U0_screen_tris_in_n1_x_write,
+        screen_tris_in_n1_x_num_data_valid => screen_tris_in_n1_x_num_data_valid,
+        screen_tris_in_n1_x_fifo_cap => screen_tris_in_n1_x_fifo_cap,
+        screen_tris_in_n1_y_din => k2_perspective_divide_U0_screen_tris_in_n1_y_din,
+        screen_tris_in_n1_y_full_n => screen_tris_in_n1_y_full_n,
+        screen_tris_in_n1_y_write => k2_perspective_divide_U0_screen_tris_in_n1_y_write,
+        screen_tris_in_n1_y_num_data_valid => screen_tris_in_n1_y_num_data_valid,
+        screen_tris_in_n1_y_fifo_cap => screen_tris_in_n1_y_fifo_cap,
+        screen_tris_in_n1_z_din => k2_perspective_divide_U0_screen_tris_in_n1_z_din,
+        screen_tris_in_n1_z_full_n => screen_tris_in_n1_z_full_n,
+        screen_tris_in_n1_z_write => k2_perspective_divide_U0_screen_tris_in_n1_z_write,
+        screen_tris_in_n1_z_num_data_valid => screen_tris_in_n1_z_num_data_valid,
+        screen_tris_in_n1_z_fifo_cap => screen_tris_in_n1_z_fifo_cap,
+        screen_tris_in_n2_x_din => k2_perspective_divide_U0_screen_tris_in_n2_x_din,
+        screen_tris_in_n2_x_full_n => screen_tris_in_n2_x_full_n,
+        screen_tris_in_n2_x_write => k2_perspective_divide_U0_screen_tris_in_n2_x_write,
+        screen_tris_in_n2_x_num_data_valid => screen_tris_in_n2_x_num_data_valid,
+        screen_tris_in_n2_x_fifo_cap => screen_tris_in_n2_x_fifo_cap,
+        screen_tris_in_n2_y_din => k2_perspective_divide_U0_screen_tris_in_n2_y_din,
+        screen_tris_in_n2_y_full_n => screen_tris_in_n2_y_full_n,
+        screen_tris_in_n2_y_write => k2_perspective_divide_U0_screen_tris_in_n2_y_write,
+        screen_tris_in_n2_y_num_data_valid => screen_tris_in_n2_y_num_data_valid,
+        screen_tris_in_n2_y_fifo_cap => screen_tris_in_n2_y_fifo_cap,
+        screen_tris_in_n2_z_din => k2_perspective_divide_U0_screen_tris_in_n2_z_din,
+        screen_tris_in_n2_z_full_n => screen_tris_in_n2_z_full_n,
+        screen_tris_in_n2_z_write => k2_perspective_divide_U0_screen_tris_in_n2_z_write,
+        screen_tris_in_n2_z_num_data_valid => screen_tris_in_n2_z_num_data_valid,
+        screen_tris_in_n2_z_fifo_cap => screen_tris_in_n2_z_fifo_cap,
+        screen_tris_in_color_din => k2_perspective_divide_U0_screen_tris_in_color_din,
+        screen_tris_in_color_full_n => screen_tris_in_color_full_n,
+        screen_tris_in_color_write => k2_perspective_divide_U0_screen_tris_in_color_write,
+        screen_tris_in_color_num_data_valid => screen_tris_in_color_num_data_valid,
+        screen_tris_in_color_fifo_cap => screen_tris_in_color_fifo_cap,
+        screen_tris_in_is_active_din => k2_perspective_divide_U0_screen_tris_in_is_active_din,
+        screen_tris_in_is_active_full_n => screen_tris_in_is_active_full_n,
+        screen_tris_in_is_active_write => k2_perspective_divide_U0_screen_tris_in_is_active_write,
+        screen_tris_in_is_active_num_data_valid => screen_tris_in_is_active_num_data_valid,
+        screen_tris_in_is_active_fifo_cap => screen_tris_in_is_active_fifo_cap);
 
-    Block_entry_screen_tris_v0_x_rd_proc_U0 : component top_kernel_Block_entry_screen_tris_v0_x_rd_proc
+    k3_bounding_box_U0 : component top_kernel_k3_bounding_box
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
-        ap_start => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_start,
-        ap_done => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done,
-        ap_continue => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue,
-        ap_idle => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_idle,
-        ap_ready => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready,
-        depth_buffer_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_address0,
-        depth_buffer_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_ce0,
-        depth_buffer_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_we0,
-        depth_buffer_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_d0,
-        normal_buffer_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_address0,
-        normal_buffer_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_ce0,
-        normal_buffer_x_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_we0,
-        normal_buffer_x_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_d0,
-        normal_buffer_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_address0,
-        normal_buffer_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_ce0,
-        normal_buffer_y_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_we0,
-        normal_buffer_y_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_d0,
-        normal_buffer_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_address0,
-        normal_buffer_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_ce0,
-        normal_buffer_z_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_we0,
-        normal_buffer_z_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_d0,
-        screen_tris_is_active_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_address0,
-        screen_tris_is_active_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_ce0,
-        screen_tris_is_active_q0 => screen_tris_is_active_t_q0,
-        screen_tris_n0_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_address0,
-        screen_tris_n0_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_ce0,
-        screen_tris_n0_x_q0 => screen_tris_n0_x_t_q0,
-        screen_tris_n0_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_address0,
-        screen_tris_n0_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_ce0,
-        screen_tris_n0_y_q0 => screen_tris_n0_y_t_q0,
-        screen_tris_n0_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_address0,
-        screen_tris_n0_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_ce0,
-        screen_tris_n0_z_q0 => screen_tris_n0_z_t_q0,
-        screen_tris_n1_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_address0,
-        screen_tris_n1_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_ce0,
-        screen_tris_n1_x_q0 => screen_tris_n1_x_t_q0,
-        screen_tris_n1_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_address0,
-        screen_tris_n1_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_ce0,
-        screen_tris_n1_y_q0 => screen_tris_n1_y_t_q0,
-        screen_tris_n1_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_address0,
-        screen_tris_n1_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_ce0,
-        screen_tris_n1_z_q0 => screen_tris_n1_z_t_q0,
-        screen_tris_n2_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_address0,
-        screen_tris_n2_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_ce0,
-        screen_tris_n2_x_q0 => screen_tris_n2_x_t_q0,
-        screen_tris_n2_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_address0,
-        screen_tris_n2_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_ce0,
-        screen_tris_n2_y_q0 => screen_tris_n2_y_t_q0,
-        screen_tris_n2_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_address0,
-        screen_tris_n2_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_ce0,
-        screen_tris_n2_z_q0 => screen_tris_n2_z_t_q0,
-        screen_tris_v0_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_address0,
-        screen_tris_v0_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_ce0,
-        screen_tris_v0_x_q0 => screen_tris_v0_x_t_q0,
-        screen_tris_v0_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_address0,
-        screen_tris_v0_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_ce0,
-        screen_tris_v0_y_q0 => screen_tris_v0_y_t_q0,
-        screen_tris_v0_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_address0,
-        screen_tris_v0_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_ce0,
-        screen_tris_v0_z_q0 => screen_tris_v0_z_t_q0,
-        screen_tris_v1_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_address0,
-        screen_tris_v1_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_ce0,
-        screen_tris_v1_x_q0 => screen_tris_v1_x_t_q0,
-        screen_tris_v1_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_address0,
-        screen_tris_v1_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_ce0,
-        screen_tris_v1_y_q0 => screen_tris_v1_y_t_q0,
-        screen_tris_v1_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_address0,
-        screen_tris_v1_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_ce0,
-        screen_tris_v1_z_q0 => screen_tris_v1_z_t_q0,
-        screen_tris_v2_x_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_address0,
-        screen_tris_v2_x_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_ce0,
-        screen_tris_v2_x_q0 => screen_tris_v2_x_t_q0,
-        screen_tris_v2_y_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_address0,
-        screen_tris_v2_y_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_ce0,
-        screen_tris_v2_y_q0 => screen_tris_v2_y_t_q0,
-        screen_tris_v2_z_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_address0,
-        screen_tris_v2_z_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_ce0,
-        screen_tris_v2_z_q0 => screen_tris_v2_z_t_q0);
+        ap_start => k3_bounding_box_U0_ap_start,
+        start_full_n => start_for_k4_rasterize_U0_full_n,
+        ap_done => k3_bounding_box_U0_ap_done,
+        ap_continue => k3_bounding_box_U0_ap_continue,
+        ap_idle => k3_bounding_box_U0_ap_idle,
+        ap_ready => k3_bounding_box_U0_ap_ready,
+        screen_tris_in_v0_x_dout => screen_tris_in_v0_x_dout,
+        screen_tris_in_v0_x_empty_n => screen_tris_in_v0_x_empty_n,
+        screen_tris_in_v0_x_read => k3_bounding_box_U0_screen_tris_in_v0_x_read,
+        screen_tris_in_v0_x_num_data_valid => screen_tris_in_v0_x_num_data_valid,
+        screen_tris_in_v0_x_fifo_cap => screen_tris_in_v0_x_fifo_cap,
+        screen_tris_in_v0_y_dout => screen_tris_in_v0_y_dout,
+        screen_tris_in_v0_y_empty_n => screen_tris_in_v0_y_empty_n,
+        screen_tris_in_v0_y_read => k3_bounding_box_U0_screen_tris_in_v0_y_read,
+        screen_tris_in_v0_y_num_data_valid => screen_tris_in_v0_y_num_data_valid,
+        screen_tris_in_v0_y_fifo_cap => screen_tris_in_v0_y_fifo_cap,
+        screen_tris_in_v0_z_dout => screen_tris_in_v0_z_dout,
+        screen_tris_in_v0_z_empty_n => screen_tris_in_v0_z_empty_n,
+        screen_tris_in_v0_z_read => k3_bounding_box_U0_screen_tris_in_v0_z_read,
+        screen_tris_in_v0_z_num_data_valid => screen_tris_in_v0_z_num_data_valid,
+        screen_tris_in_v0_z_fifo_cap => screen_tris_in_v0_z_fifo_cap,
+        screen_tris_in_v0_w_dout => screen_tris_in_v0_w_dout,
+        screen_tris_in_v0_w_empty_n => screen_tris_in_v0_w_empty_n,
+        screen_tris_in_v0_w_read => k3_bounding_box_U0_screen_tris_in_v0_w_read,
+        screen_tris_in_v0_w_num_data_valid => screen_tris_in_v0_w_num_data_valid,
+        screen_tris_in_v0_w_fifo_cap => screen_tris_in_v0_w_fifo_cap,
+        screen_tris_in_v1_x_dout => screen_tris_in_v1_x_dout,
+        screen_tris_in_v1_x_empty_n => screen_tris_in_v1_x_empty_n,
+        screen_tris_in_v1_x_read => k3_bounding_box_U0_screen_tris_in_v1_x_read,
+        screen_tris_in_v1_x_num_data_valid => screen_tris_in_v1_x_num_data_valid,
+        screen_tris_in_v1_x_fifo_cap => screen_tris_in_v1_x_fifo_cap,
+        screen_tris_in_v1_y_dout => screen_tris_in_v1_y_dout,
+        screen_tris_in_v1_y_empty_n => screen_tris_in_v1_y_empty_n,
+        screen_tris_in_v1_y_read => k3_bounding_box_U0_screen_tris_in_v1_y_read,
+        screen_tris_in_v1_y_num_data_valid => screen_tris_in_v1_y_num_data_valid,
+        screen_tris_in_v1_y_fifo_cap => screen_tris_in_v1_y_fifo_cap,
+        screen_tris_in_v1_z_dout => screen_tris_in_v1_z_dout,
+        screen_tris_in_v1_z_empty_n => screen_tris_in_v1_z_empty_n,
+        screen_tris_in_v1_z_read => k3_bounding_box_U0_screen_tris_in_v1_z_read,
+        screen_tris_in_v1_z_num_data_valid => screen_tris_in_v1_z_num_data_valid,
+        screen_tris_in_v1_z_fifo_cap => screen_tris_in_v1_z_fifo_cap,
+        screen_tris_in_v1_w_dout => screen_tris_in_v1_w_dout,
+        screen_tris_in_v1_w_empty_n => screen_tris_in_v1_w_empty_n,
+        screen_tris_in_v1_w_read => k3_bounding_box_U0_screen_tris_in_v1_w_read,
+        screen_tris_in_v1_w_num_data_valid => screen_tris_in_v1_w_num_data_valid,
+        screen_tris_in_v1_w_fifo_cap => screen_tris_in_v1_w_fifo_cap,
+        screen_tris_in_v2_x_dout => screen_tris_in_v2_x_dout,
+        screen_tris_in_v2_x_empty_n => screen_tris_in_v2_x_empty_n,
+        screen_tris_in_v2_x_read => k3_bounding_box_U0_screen_tris_in_v2_x_read,
+        screen_tris_in_v2_x_num_data_valid => screen_tris_in_v2_x_num_data_valid,
+        screen_tris_in_v2_x_fifo_cap => screen_tris_in_v2_x_fifo_cap,
+        screen_tris_in_v2_y_dout => screen_tris_in_v2_y_dout,
+        screen_tris_in_v2_y_empty_n => screen_tris_in_v2_y_empty_n,
+        screen_tris_in_v2_y_read => k3_bounding_box_U0_screen_tris_in_v2_y_read,
+        screen_tris_in_v2_y_num_data_valid => screen_tris_in_v2_y_num_data_valid,
+        screen_tris_in_v2_y_fifo_cap => screen_tris_in_v2_y_fifo_cap,
+        screen_tris_in_v2_z_dout => screen_tris_in_v2_z_dout,
+        screen_tris_in_v2_z_empty_n => screen_tris_in_v2_z_empty_n,
+        screen_tris_in_v2_z_read => k3_bounding_box_U0_screen_tris_in_v2_z_read,
+        screen_tris_in_v2_z_num_data_valid => screen_tris_in_v2_z_num_data_valid,
+        screen_tris_in_v2_z_fifo_cap => screen_tris_in_v2_z_fifo_cap,
+        screen_tris_in_v2_w_dout => screen_tris_in_v2_w_dout,
+        screen_tris_in_v2_w_empty_n => screen_tris_in_v2_w_empty_n,
+        screen_tris_in_v2_w_read => k3_bounding_box_U0_screen_tris_in_v2_w_read,
+        screen_tris_in_v2_w_num_data_valid => screen_tris_in_v2_w_num_data_valid,
+        screen_tris_in_v2_w_fifo_cap => screen_tris_in_v2_w_fifo_cap,
+        screen_tris_in_n0_x_dout => screen_tris_in_n0_x_dout,
+        screen_tris_in_n0_x_empty_n => screen_tris_in_n0_x_empty_n,
+        screen_tris_in_n0_x_read => k3_bounding_box_U0_screen_tris_in_n0_x_read,
+        screen_tris_in_n0_x_num_data_valid => screen_tris_in_n0_x_num_data_valid,
+        screen_tris_in_n0_x_fifo_cap => screen_tris_in_n0_x_fifo_cap,
+        screen_tris_in_n0_y_dout => screen_tris_in_n0_y_dout,
+        screen_tris_in_n0_y_empty_n => screen_tris_in_n0_y_empty_n,
+        screen_tris_in_n0_y_read => k3_bounding_box_U0_screen_tris_in_n0_y_read,
+        screen_tris_in_n0_y_num_data_valid => screen_tris_in_n0_y_num_data_valid,
+        screen_tris_in_n0_y_fifo_cap => screen_tris_in_n0_y_fifo_cap,
+        screen_tris_in_n0_z_dout => screen_tris_in_n0_z_dout,
+        screen_tris_in_n0_z_empty_n => screen_tris_in_n0_z_empty_n,
+        screen_tris_in_n0_z_read => k3_bounding_box_U0_screen_tris_in_n0_z_read,
+        screen_tris_in_n0_z_num_data_valid => screen_tris_in_n0_z_num_data_valid,
+        screen_tris_in_n0_z_fifo_cap => screen_tris_in_n0_z_fifo_cap,
+        screen_tris_in_n1_x_dout => screen_tris_in_n1_x_dout,
+        screen_tris_in_n1_x_empty_n => screen_tris_in_n1_x_empty_n,
+        screen_tris_in_n1_x_read => k3_bounding_box_U0_screen_tris_in_n1_x_read,
+        screen_tris_in_n1_x_num_data_valid => screen_tris_in_n1_x_num_data_valid,
+        screen_tris_in_n1_x_fifo_cap => screen_tris_in_n1_x_fifo_cap,
+        screen_tris_in_n1_y_dout => screen_tris_in_n1_y_dout,
+        screen_tris_in_n1_y_empty_n => screen_tris_in_n1_y_empty_n,
+        screen_tris_in_n1_y_read => k3_bounding_box_U0_screen_tris_in_n1_y_read,
+        screen_tris_in_n1_y_num_data_valid => screen_tris_in_n1_y_num_data_valid,
+        screen_tris_in_n1_y_fifo_cap => screen_tris_in_n1_y_fifo_cap,
+        screen_tris_in_n1_z_dout => screen_tris_in_n1_z_dout,
+        screen_tris_in_n1_z_empty_n => screen_tris_in_n1_z_empty_n,
+        screen_tris_in_n1_z_read => k3_bounding_box_U0_screen_tris_in_n1_z_read,
+        screen_tris_in_n1_z_num_data_valid => screen_tris_in_n1_z_num_data_valid,
+        screen_tris_in_n1_z_fifo_cap => screen_tris_in_n1_z_fifo_cap,
+        screen_tris_in_n2_x_dout => screen_tris_in_n2_x_dout,
+        screen_tris_in_n2_x_empty_n => screen_tris_in_n2_x_empty_n,
+        screen_tris_in_n2_x_read => k3_bounding_box_U0_screen_tris_in_n2_x_read,
+        screen_tris_in_n2_x_num_data_valid => screen_tris_in_n2_x_num_data_valid,
+        screen_tris_in_n2_x_fifo_cap => screen_tris_in_n2_x_fifo_cap,
+        screen_tris_in_n2_y_dout => screen_tris_in_n2_y_dout,
+        screen_tris_in_n2_y_empty_n => screen_tris_in_n2_y_empty_n,
+        screen_tris_in_n2_y_read => k3_bounding_box_U0_screen_tris_in_n2_y_read,
+        screen_tris_in_n2_y_num_data_valid => screen_tris_in_n2_y_num_data_valid,
+        screen_tris_in_n2_y_fifo_cap => screen_tris_in_n2_y_fifo_cap,
+        screen_tris_in_n2_z_dout => screen_tris_in_n2_z_dout,
+        screen_tris_in_n2_z_empty_n => screen_tris_in_n2_z_empty_n,
+        screen_tris_in_n2_z_read => k3_bounding_box_U0_screen_tris_in_n2_z_read,
+        screen_tris_in_n2_z_num_data_valid => screen_tris_in_n2_z_num_data_valid,
+        screen_tris_in_n2_z_fifo_cap => screen_tris_in_n2_z_fifo_cap,
+        screen_tris_in_color_dout => screen_tris_in_color_dout,
+        screen_tris_in_color_empty_n => screen_tris_in_color_empty_n,
+        screen_tris_in_color_read => k3_bounding_box_U0_screen_tris_in_color_read,
+        screen_tris_in_color_num_data_valid => screen_tris_in_color_num_data_valid,
+        screen_tris_in_color_fifo_cap => screen_tris_in_color_fifo_cap,
+        screen_tris_in_is_active_dout => screen_tris_in_is_active_dout,
+        screen_tris_in_is_active_empty_n => screen_tris_in_is_active_empty_n,
+        screen_tris_in_is_active_read => k3_bounding_box_U0_screen_tris_in_is_active_read,
+        screen_tris_in_is_active_num_data_valid => screen_tris_in_is_active_num_data_valid,
+        screen_tris_in_is_active_fifo_cap => screen_tris_in_is_active_fifo_cap,
+        bounds_min_x_din => k3_bounding_box_U0_bounds_min_x_din,
+        bounds_min_x_full_n => bounds_min_x_full_n,
+        bounds_min_x_write => k3_bounding_box_U0_bounds_min_x_write,
+        bounds_min_x_num_data_valid => k3_bounding_box_U0_bounds_min_x_num_data_valid,
+        bounds_min_x_fifo_cap => k3_bounding_box_U0_bounds_min_x_fifo_cap,
+        bounds_min_y_din => k3_bounding_box_U0_bounds_min_y_din,
+        bounds_min_y_full_n => bounds_min_y_full_n,
+        bounds_min_y_write => k3_bounding_box_U0_bounds_min_y_write,
+        bounds_min_y_num_data_valid => k3_bounding_box_U0_bounds_min_y_num_data_valid,
+        bounds_min_y_fifo_cap => k3_bounding_box_U0_bounds_min_y_fifo_cap,
+        bounds_max_x_din => k3_bounding_box_U0_bounds_max_x_din,
+        bounds_max_x_full_n => bounds_max_x_full_n,
+        bounds_max_x_write => k3_bounding_box_U0_bounds_max_x_write,
+        bounds_max_x_num_data_valid => k3_bounding_box_U0_bounds_max_x_num_data_valid,
+        bounds_max_x_fifo_cap => k3_bounding_box_U0_bounds_max_x_fifo_cap,
+        bounds_max_y_din => k3_bounding_box_U0_bounds_max_y_din,
+        bounds_max_y_full_n => bounds_max_y_full_n,
+        bounds_max_y_write => k3_bounding_box_U0_bounds_max_y_write,
+        bounds_max_y_num_data_valid => k3_bounding_box_U0_bounds_max_y_num_data_valid,
+        bounds_max_y_fifo_cap => k3_bounding_box_U0_bounds_max_y_fifo_cap,
+        screen_tris_out_v0_x_din => k3_bounding_box_U0_screen_tris_out_v0_x_din,
+        screen_tris_out_v0_x_full_n => screen_tris_out_v0_x_full_n,
+        screen_tris_out_v0_x_write => k3_bounding_box_U0_screen_tris_out_v0_x_write,
+        screen_tris_out_v0_x_num_data_valid => k3_bounding_box_U0_screen_tris_out_v0_x_num_data_valid,
+        screen_tris_out_v0_x_fifo_cap => k3_bounding_box_U0_screen_tris_out_v0_x_fifo_cap,
+        screen_tris_out_v0_y_din => k3_bounding_box_U0_screen_tris_out_v0_y_din,
+        screen_tris_out_v0_y_full_n => screen_tris_out_v0_y_full_n,
+        screen_tris_out_v0_y_write => k3_bounding_box_U0_screen_tris_out_v0_y_write,
+        screen_tris_out_v0_y_num_data_valid => k3_bounding_box_U0_screen_tris_out_v0_y_num_data_valid,
+        screen_tris_out_v0_y_fifo_cap => k3_bounding_box_U0_screen_tris_out_v0_y_fifo_cap,
+        screen_tris_out_v0_z_din => k3_bounding_box_U0_screen_tris_out_v0_z_din,
+        screen_tris_out_v0_z_full_n => screen_tris_out_v0_z_full_n,
+        screen_tris_out_v0_z_write => k3_bounding_box_U0_screen_tris_out_v0_z_write,
+        screen_tris_out_v0_z_num_data_valid => k3_bounding_box_U0_screen_tris_out_v0_z_num_data_valid,
+        screen_tris_out_v0_z_fifo_cap => k3_bounding_box_U0_screen_tris_out_v0_z_fifo_cap,
+        screen_tris_out_v0_w_din => k3_bounding_box_U0_screen_tris_out_v0_w_din,
+        screen_tris_out_v0_w_full_n => screen_tris_out_v0_w_full_n,
+        screen_tris_out_v0_w_write => k3_bounding_box_U0_screen_tris_out_v0_w_write,
+        screen_tris_out_v0_w_num_data_valid => k3_bounding_box_U0_screen_tris_out_v0_w_num_data_valid,
+        screen_tris_out_v0_w_fifo_cap => k3_bounding_box_U0_screen_tris_out_v0_w_fifo_cap,
+        screen_tris_out_v1_x_din => k3_bounding_box_U0_screen_tris_out_v1_x_din,
+        screen_tris_out_v1_x_full_n => screen_tris_out_v1_x_full_n,
+        screen_tris_out_v1_x_write => k3_bounding_box_U0_screen_tris_out_v1_x_write,
+        screen_tris_out_v1_x_num_data_valid => k3_bounding_box_U0_screen_tris_out_v1_x_num_data_valid,
+        screen_tris_out_v1_x_fifo_cap => k3_bounding_box_U0_screen_tris_out_v1_x_fifo_cap,
+        screen_tris_out_v1_y_din => k3_bounding_box_U0_screen_tris_out_v1_y_din,
+        screen_tris_out_v1_y_full_n => screen_tris_out_v1_y_full_n,
+        screen_tris_out_v1_y_write => k3_bounding_box_U0_screen_tris_out_v1_y_write,
+        screen_tris_out_v1_y_num_data_valid => k3_bounding_box_U0_screen_tris_out_v1_y_num_data_valid,
+        screen_tris_out_v1_y_fifo_cap => k3_bounding_box_U0_screen_tris_out_v1_y_fifo_cap,
+        screen_tris_out_v1_z_din => k3_bounding_box_U0_screen_tris_out_v1_z_din,
+        screen_tris_out_v1_z_full_n => screen_tris_out_v1_z_full_n,
+        screen_tris_out_v1_z_write => k3_bounding_box_U0_screen_tris_out_v1_z_write,
+        screen_tris_out_v1_z_num_data_valid => k3_bounding_box_U0_screen_tris_out_v1_z_num_data_valid,
+        screen_tris_out_v1_z_fifo_cap => k3_bounding_box_U0_screen_tris_out_v1_z_fifo_cap,
+        screen_tris_out_v1_w_din => k3_bounding_box_U0_screen_tris_out_v1_w_din,
+        screen_tris_out_v1_w_full_n => screen_tris_out_v1_w_full_n,
+        screen_tris_out_v1_w_write => k3_bounding_box_U0_screen_tris_out_v1_w_write,
+        screen_tris_out_v1_w_num_data_valid => k3_bounding_box_U0_screen_tris_out_v1_w_num_data_valid,
+        screen_tris_out_v1_w_fifo_cap => k3_bounding_box_U0_screen_tris_out_v1_w_fifo_cap,
+        screen_tris_out_v2_x_din => k3_bounding_box_U0_screen_tris_out_v2_x_din,
+        screen_tris_out_v2_x_full_n => screen_tris_out_v2_x_full_n,
+        screen_tris_out_v2_x_write => k3_bounding_box_U0_screen_tris_out_v2_x_write,
+        screen_tris_out_v2_x_num_data_valid => k3_bounding_box_U0_screen_tris_out_v2_x_num_data_valid,
+        screen_tris_out_v2_x_fifo_cap => k3_bounding_box_U0_screen_tris_out_v2_x_fifo_cap,
+        screen_tris_out_v2_y_din => k3_bounding_box_U0_screen_tris_out_v2_y_din,
+        screen_tris_out_v2_y_full_n => screen_tris_out_v2_y_full_n,
+        screen_tris_out_v2_y_write => k3_bounding_box_U0_screen_tris_out_v2_y_write,
+        screen_tris_out_v2_y_num_data_valid => k3_bounding_box_U0_screen_tris_out_v2_y_num_data_valid,
+        screen_tris_out_v2_y_fifo_cap => k3_bounding_box_U0_screen_tris_out_v2_y_fifo_cap,
+        screen_tris_out_v2_z_din => k3_bounding_box_U0_screen_tris_out_v2_z_din,
+        screen_tris_out_v2_z_full_n => screen_tris_out_v2_z_full_n,
+        screen_tris_out_v2_z_write => k3_bounding_box_U0_screen_tris_out_v2_z_write,
+        screen_tris_out_v2_z_num_data_valid => k3_bounding_box_U0_screen_tris_out_v2_z_num_data_valid,
+        screen_tris_out_v2_z_fifo_cap => k3_bounding_box_U0_screen_tris_out_v2_z_fifo_cap,
+        screen_tris_out_v2_w_din => k3_bounding_box_U0_screen_tris_out_v2_w_din,
+        screen_tris_out_v2_w_full_n => screen_tris_out_v2_w_full_n,
+        screen_tris_out_v2_w_write => k3_bounding_box_U0_screen_tris_out_v2_w_write,
+        screen_tris_out_v2_w_num_data_valid => k3_bounding_box_U0_screen_tris_out_v2_w_num_data_valid,
+        screen_tris_out_v2_w_fifo_cap => k3_bounding_box_U0_screen_tris_out_v2_w_fifo_cap,
+        screen_tris_out_n0_x_din => k3_bounding_box_U0_screen_tris_out_n0_x_din,
+        screen_tris_out_n0_x_full_n => screen_tris_out_n0_x_full_n,
+        screen_tris_out_n0_x_write => k3_bounding_box_U0_screen_tris_out_n0_x_write,
+        screen_tris_out_n0_x_num_data_valid => k3_bounding_box_U0_screen_tris_out_n0_x_num_data_valid,
+        screen_tris_out_n0_x_fifo_cap => k3_bounding_box_U0_screen_tris_out_n0_x_fifo_cap,
+        screen_tris_out_n0_y_din => k3_bounding_box_U0_screen_tris_out_n0_y_din,
+        screen_tris_out_n0_y_full_n => screen_tris_out_n0_y_full_n,
+        screen_tris_out_n0_y_write => k3_bounding_box_U0_screen_tris_out_n0_y_write,
+        screen_tris_out_n0_y_num_data_valid => k3_bounding_box_U0_screen_tris_out_n0_y_num_data_valid,
+        screen_tris_out_n0_y_fifo_cap => k3_bounding_box_U0_screen_tris_out_n0_y_fifo_cap,
+        screen_tris_out_n0_z_din => k3_bounding_box_U0_screen_tris_out_n0_z_din,
+        screen_tris_out_n0_z_full_n => screen_tris_out_n0_z_full_n,
+        screen_tris_out_n0_z_write => k3_bounding_box_U0_screen_tris_out_n0_z_write,
+        screen_tris_out_n0_z_num_data_valid => k3_bounding_box_U0_screen_tris_out_n0_z_num_data_valid,
+        screen_tris_out_n0_z_fifo_cap => k3_bounding_box_U0_screen_tris_out_n0_z_fifo_cap,
+        screen_tris_out_n1_x_din => k3_bounding_box_U0_screen_tris_out_n1_x_din,
+        screen_tris_out_n1_x_full_n => screen_tris_out_n1_x_full_n,
+        screen_tris_out_n1_x_write => k3_bounding_box_U0_screen_tris_out_n1_x_write,
+        screen_tris_out_n1_x_num_data_valid => k3_bounding_box_U0_screen_tris_out_n1_x_num_data_valid,
+        screen_tris_out_n1_x_fifo_cap => k3_bounding_box_U0_screen_tris_out_n1_x_fifo_cap,
+        screen_tris_out_n1_y_din => k3_bounding_box_U0_screen_tris_out_n1_y_din,
+        screen_tris_out_n1_y_full_n => screen_tris_out_n1_y_full_n,
+        screen_tris_out_n1_y_write => k3_bounding_box_U0_screen_tris_out_n1_y_write,
+        screen_tris_out_n1_y_num_data_valid => k3_bounding_box_U0_screen_tris_out_n1_y_num_data_valid,
+        screen_tris_out_n1_y_fifo_cap => k3_bounding_box_U0_screen_tris_out_n1_y_fifo_cap,
+        screen_tris_out_n1_z_din => k3_bounding_box_U0_screen_tris_out_n1_z_din,
+        screen_tris_out_n1_z_full_n => screen_tris_out_n1_z_full_n,
+        screen_tris_out_n1_z_write => k3_bounding_box_U0_screen_tris_out_n1_z_write,
+        screen_tris_out_n1_z_num_data_valid => k3_bounding_box_U0_screen_tris_out_n1_z_num_data_valid,
+        screen_tris_out_n1_z_fifo_cap => k3_bounding_box_U0_screen_tris_out_n1_z_fifo_cap,
+        screen_tris_out_n2_x_din => k3_bounding_box_U0_screen_tris_out_n2_x_din,
+        screen_tris_out_n2_x_full_n => screen_tris_out_n2_x_full_n,
+        screen_tris_out_n2_x_write => k3_bounding_box_U0_screen_tris_out_n2_x_write,
+        screen_tris_out_n2_x_num_data_valid => k3_bounding_box_U0_screen_tris_out_n2_x_num_data_valid,
+        screen_tris_out_n2_x_fifo_cap => k3_bounding_box_U0_screen_tris_out_n2_x_fifo_cap,
+        screen_tris_out_n2_y_din => k3_bounding_box_U0_screen_tris_out_n2_y_din,
+        screen_tris_out_n2_y_full_n => screen_tris_out_n2_y_full_n,
+        screen_tris_out_n2_y_write => k3_bounding_box_U0_screen_tris_out_n2_y_write,
+        screen_tris_out_n2_y_num_data_valid => k3_bounding_box_U0_screen_tris_out_n2_y_num_data_valid,
+        screen_tris_out_n2_y_fifo_cap => k3_bounding_box_U0_screen_tris_out_n2_y_fifo_cap,
+        screen_tris_out_n2_z_din => k3_bounding_box_U0_screen_tris_out_n2_z_din,
+        screen_tris_out_n2_z_full_n => screen_tris_out_n2_z_full_n,
+        screen_tris_out_n2_z_write => k3_bounding_box_U0_screen_tris_out_n2_z_write,
+        screen_tris_out_n2_z_num_data_valid => k3_bounding_box_U0_screen_tris_out_n2_z_num_data_valid,
+        screen_tris_out_n2_z_fifo_cap => k3_bounding_box_U0_screen_tris_out_n2_z_fifo_cap,
+        screen_tris_out_color_din => k3_bounding_box_U0_screen_tris_out_color_din,
+        screen_tris_out_color_full_n => screen_tris_out_color_full_n,
+        screen_tris_out_color_write => k3_bounding_box_U0_screen_tris_out_color_write,
+        screen_tris_out_color_num_data_valid => k3_bounding_box_U0_screen_tris_out_color_num_data_valid,
+        screen_tris_out_color_fifo_cap => k3_bounding_box_U0_screen_tris_out_color_fifo_cap,
+        screen_tris_out_is_active_din => k3_bounding_box_U0_screen_tris_out_is_active_din,
+        screen_tris_out_is_active_full_n => screen_tris_out_is_active_full_n,
+        screen_tris_out_is_active_write => k3_bounding_box_U0_screen_tris_out_is_active_write,
+        screen_tris_out_is_active_num_data_valid => k3_bounding_box_U0_screen_tris_out_is_active_num_data_valid,
+        screen_tris_out_is_active_fifo_cap => k3_bounding_box_U0_screen_tris_out_is_active_fifo_cap,
+        start_out => k3_bounding_box_U0_start_out,
+        start_write => k3_bounding_box_U0_start_write);
+
+    k4_rasterize_U0 : component top_kernel_k4_rasterize
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst_n_inv,
+        ap_start => k4_rasterize_U0_ap_start,
+        ap_done => k4_rasterize_U0_ap_done,
+        ap_continue => k4_rasterize_U0_ap_continue,
+        ap_idle => k4_rasterize_U0_ap_idle,
+        ap_ready => k4_rasterize_U0_ap_ready,
+        depth_buffer_address0 => k4_rasterize_U0_depth_buffer_address0,
+        depth_buffer_ce0 => k4_rasterize_U0_depth_buffer_ce0,
+        depth_buffer_we0 => k4_rasterize_U0_depth_buffer_we0,
+        depth_buffer_d0 => k4_rasterize_U0_depth_buffer_d0,
+        normal_buffer_x_address0 => k4_rasterize_U0_normal_buffer_x_address0,
+        normal_buffer_x_ce0 => k4_rasterize_U0_normal_buffer_x_ce0,
+        normal_buffer_x_we0 => k4_rasterize_U0_normal_buffer_x_we0,
+        normal_buffer_x_d0 => k4_rasterize_U0_normal_buffer_x_d0,
+        normal_buffer_y_address0 => k4_rasterize_U0_normal_buffer_y_address0,
+        normal_buffer_y_ce0 => k4_rasterize_U0_normal_buffer_y_ce0,
+        normal_buffer_y_we0 => k4_rasterize_U0_normal_buffer_y_we0,
+        normal_buffer_y_d0 => k4_rasterize_U0_normal_buffer_y_d0,
+        normal_buffer_z_address0 => k4_rasterize_U0_normal_buffer_z_address0,
+        normal_buffer_z_ce0 => k4_rasterize_U0_normal_buffer_z_ce0,
+        normal_buffer_z_we0 => k4_rasterize_U0_normal_buffer_z_we0,
+        normal_buffer_z_d0 => k4_rasterize_U0_normal_buffer_z_d0,
+        screen_tris_out_v0_x_dout => screen_tris_out_v0_x_dout,
+        screen_tris_out_v0_x_empty_n => screen_tris_out_v0_x_empty_n,
+        screen_tris_out_v0_x_read => k4_rasterize_U0_screen_tris_out_v0_x_read,
+        screen_tris_out_v0_x_num_data_valid => screen_tris_out_v0_x_num_data_valid,
+        screen_tris_out_v0_x_fifo_cap => screen_tris_out_v0_x_fifo_cap,
+        screen_tris_out_v0_y_dout => screen_tris_out_v0_y_dout,
+        screen_tris_out_v0_y_empty_n => screen_tris_out_v0_y_empty_n,
+        screen_tris_out_v0_y_read => k4_rasterize_U0_screen_tris_out_v0_y_read,
+        screen_tris_out_v0_y_num_data_valid => screen_tris_out_v0_y_num_data_valid,
+        screen_tris_out_v0_y_fifo_cap => screen_tris_out_v0_y_fifo_cap,
+        screen_tris_out_v0_z_dout => screen_tris_out_v0_z_dout,
+        screen_tris_out_v0_z_empty_n => screen_tris_out_v0_z_empty_n,
+        screen_tris_out_v0_z_read => k4_rasterize_U0_screen_tris_out_v0_z_read,
+        screen_tris_out_v0_z_num_data_valid => screen_tris_out_v0_z_num_data_valid,
+        screen_tris_out_v0_z_fifo_cap => screen_tris_out_v0_z_fifo_cap,
+        screen_tris_out_v0_w_dout => screen_tris_out_v0_w_dout,
+        screen_tris_out_v0_w_empty_n => screen_tris_out_v0_w_empty_n,
+        screen_tris_out_v0_w_read => k4_rasterize_U0_screen_tris_out_v0_w_read,
+        screen_tris_out_v0_w_num_data_valid => screen_tris_out_v0_w_num_data_valid,
+        screen_tris_out_v0_w_fifo_cap => screen_tris_out_v0_w_fifo_cap,
+        screen_tris_out_v1_x_dout => screen_tris_out_v1_x_dout,
+        screen_tris_out_v1_x_empty_n => screen_tris_out_v1_x_empty_n,
+        screen_tris_out_v1_x_read => k4_rasterize_U0_screen_tris_out_v1_x_read,
+        screen_tris_out_v1_x_num_data_valid => screen_tris_out_v1_x_num_data_valid,
+        screen_tris_out_v1_x_fifo_cap => screen_tris_out_v1_x_fifo_cap,
+        screen_tris_out_v1_y_dout => screen_tris_out_v1_y_dout,
+        screen_tris_out_v1_y_empty_n => screen_tris_out_v1_y_empty_n,
+        screen_tris_out_v1_y_read => k4_rasterize_U0_screen_tris_out_v1_y_read,
+        screen_tris_out_v1_y_num_data_valid => screen_tris_out_v1_y_num_data_valid,
+        screen_tris_out_v1_y_fifo_cap => screen_tris_out_v1_y_fifo_cap,
+        screen_tris_out_v1_z_dout => screen_tris_out_v1_z_dout,
+        screen_tris_out_v1_z_empty_n => screen_tris_out_v1_z_empty_n,
+        screen_tris_out_v1_z_read => k4_rasterize_U0_screen_tris_out_v1_z_read,
+        screen_tris_out_v1_z_num_data_valid => screen_tris_out_v1_z_num_data_valid,
+        screen_tris_out_v1_z_fifo_cap => screen_tris_out_v1_z_fifo_cap,
+        screen_tris_out_v1_w_dout => screen_tris_out_v1_w_dout,
+        screen_tris_out_v1_w_empty_n => screen_tris_out_v1_w_empty_n,
+        screen_tris_out_v1_w_read => k4_rasterize_U0_screen_tris_out_v1_w_read,
+        screen_tris_out_v1_w_num_data_valid => screen_tris_out_v1_w_num_data_valid,
+        screen_tris_out_v1_w_fifo_cap => screen_tris_out_v1_w_fifo_cap,
+        screen_tris_out_v2_x_dout => screen_tris_out_v2_x_dout,
+        screen_tris_out_v2_x_empty_n => screen_tris_out_v2_x_empty_n,
+        screen_tris_out_v2_x_read => k4_rasterize_U0_screen_tris_out_v2_x_read,
+        screen_tris_out_v2_x_num_data_valid => screen_tris_out_v2_x_num_data_valid,
+        screen_tris_out_v2_x_fifo_cap => screen_tris_out_v2_x_fifo_cap,
+        screen_tris_out_v2_y_dout => screen_tris_out_v2_y_dout,
+        screen_tris_out_v2_y_empty_n => screen_tris_out_v2_y_empty_n,
+        screen_tris_out_v2_y_read => k4_rasterize_U0_screen_tris_out_v2_y_read,
+        screen_tris_out_v2_y_num_data_valid => screen_tris_out_v2_y_num_data_valid,
+        screen_tris_out_v2_y_fifo_cap => screen_tris_out_v2_y_fifo_cap,
+        screen_tris_out_v2_z_dout => screen_tris_out_v2_z_dout,
+        screen_tris_out_v2_z_empty_n => screen_tris_out_v2_z_empty_n,
+        screen_tris_out_v2_z_read => k4_rasterize_U0_screen_tris_out_v2_z_read,
+        screen_tris_out_v2_z_num_data_valid => screen_tris_out_v2_z_num_data_valid,
+        screen_tris_out_v2_z_fifo_cap => screen_tris_out_v2_z_fifo_cap,
+        screen_tris_out_v2_w_dout => screen_tris_out_v2_w_dout,
+        screen_tris_out_v2_w_empty_n => screen_tris_out_v2_w_empty_n,
+        screen_tris_out_v2_w_read => k4_rasterize_U0_screen_tris_out_v2_w_read,
+        screen_tris_out_v2_w_num_data_valid => screen_tris_out_v2_w_num_data_valid,
+        screen_tris_out_v2_w_fifo_cap => screen_tris_out_v2_w_fifo_cap,
+        screen_tris_out_n0_x_dout => screen_tris_out_n0_x_dout,
+        screen_tris_out_n0_x_empty_n => screen_tris_out_n0_x_empty_n,
+        screen_tris_out_n0_x_read => k4_rasterize_U0_screen_tris_out_n0_x_read,
+        screen_tris_out_n0_x_num_data_valid => screen_tris_out_n0_x_num_data_valid,
+        screen_tris_out_n0_x_fifo_cap => screen_tris_out_n0_x_fifo_cap,
+        screen_tris_out_n0_y_dout => screen_tris_out_n0_y_dout,
+        screen_tris_out_n0_y_empty_n => screen_tris_out_n0_y_empty_n,
+        screen_tris_out_n0_y_read => k4_rasterize_U0_screen_tris_out_n0_y_read,
+        screen_tris_out_n0_y_num_data_valid => screen_tris_out_n0_y_num_data_valid,
+        screen_tris_out_n0_y_fifo_cap => screen_tris_out_n0_y_fifo_cap,
+        screen_tris_out_n0_z_dout => screen_tris_out_n0_z_dout,
+        screen_tris_out_n0_z_empty_n => screen_tris_out_n0_z_empty_n,
+        screen_tris_out_n0_z_read => k4_rasterize_U0_screen_tris_out_n0_z_read,
+        screen_tris_out_n0_z_num_data_valid => screen_tris_out_n0_z_num_data_valid,
+        screen_tris_out_n0_z_fifo_cap => screen_tris_out_n0_z_fifo_cap,
+        screen_tris_out_n1_x_dout => screen_tris_out_n1_x_dout,
+        screen_tris_out_n1_x_empty_n => screen_tris_out_n1_x_empty_n,
+        screen_tris_out_n1_x_read => k4_rasterize_U0_screen_tris_out_n1_x_read,
+        screen_tris_out_n1_x_num_data_valid => screen_tris_out_n1_x_num_data_valid,
+        screen_tris_out_n1_x_fifo_cap => screen_tris_out_n1_x_fifo_cap,
+        screen_tris_out_n1_y_dout => screen_tris_out_n1_y_dout,
+        screen_tris_out_n1_y_empty_n => screen_tris_out_n1_y_empty_n,
+        screen_tris_out_n1_y_read => k4_rasterize_U0_screen_tris_out_n1_y_read,
+        screen_tris_out_n1_y_num_data_valid => screen_tris_out_n1_y_num_data_valid,
+        screen_tris_out_n1_y_fifo_cap => screen_tris_out_n1_y_fifo_cap,
+        screen_tris_out_n1_z_dout => screen_tris_out_n1_z_dout,
+        screen_tris_out_n1_z_empty_n => screen_tris_out_n1_z_empty_n,
+        screen_tris_out_n1_z_read => k4_rasterize_U0_screen_tris_out_n1_z_read,
+        screen_tris_out_n1_z_num_data_valid => screen_tris_out_n1_z_num_data_valid,
+        screen_tris_out_n1_z_fifo_cap => screen_tris_out_n1_z_fifo_cap,
+        screen_tris_out_n2_x_dout => screen_tris_out_n2_x_dout,
+        screen_tris_out_n2_x_empty_n => screen_tris_out_n2_x_empty_n,
+        screen_tris_out_n2_x_read => k4_rasterize_U0_screen_tris_out_n2_x_read,
+        screen_tris_out_n2_x_num_data_valid => screen_tris_out_n2_x_num_data_valid,
+        screen_tris_out_n2_x_fifo_cap => screen_tris_out_n2_x_fifo_cap,
+        screen_tris_out_n2_y_dout => screen_tris_out_n2_y_dout,
+        screen_tris_out_n2_y_empty_n => screen_tris_out_n2_y_empty_n,
+        screen_tris_out_n2_y_read => k4_rasterize_U0_screen_tris_out_n2_y_read,
+        screen_tris_out_n2_y_num_data_valid => screen_tris_out_n2_y_num_data_valid,
+        screen_tris_out_n2_y_fifo_cap => screen_tris_out_n2_y_fifo_cap,
+        screen_tris_out_n2_z_dout => screen_tris_out_n2_z_dout,
+        screen_tris_out_n2_z_empty_n => screen_tris_out_n2_z_empty_n,
+        screen_tris_out_n2_z_read => k4_rasterize_U0_screen_tris_out_n2_z_read,
+        screen_tris_out_n2_z_num_data_valid => screen_tris_out_n2_z_num_data_valid,
+        screen_tris_out_n2_z_fifo_cap => screen_tris_out_n2_z_fifo_cap,
+        screen_tris_out_color_dout => screen_tris_out_color_dout,
+        screen_tris_out_color_empty_n => screen_tris_out_color_empty_n,
+        screen_tris_out_color_read => k4_rasterize_U0_screen_tris_out_color_read,
+        screen_tris_out_color_num_data_valid => screen_tris_out_color_num_data_valid,
+        screen_tris_out_color_fifo_cap => screen_tris_out_color_fifo_cap,
+        screen_tris_out_is_active_dout => screen_tris_out_is_active_dout,
+        screen_tris_out_is_active_empty_n => screen_tris_out_is_active_empty_n,
+        screen_tris_out_is_active_read => k4_rasterize_U0_screen_tris_out_is_active_read,
+        screen_tris_out_is_active_num_data_valid => screen_tris_out_is_active_num_data_valid,
+        screen_tris_out_is_active_fifo_cap => screen_tris_out_is_active_fifo_cap,
+        bounds_min_x_dout => bounds_min_x_dout,
+        bounds_min_x_empty_n => bounds_min_x_empty_n,
+        bounds_min_x_read => k4_rasterize_U0_bounds_min_x_read,
+        bounds_min_x_num_data_valid => bounds_min_x_num_data_valid,
+        bounds_min_x_fifo_cap => bounds_min_x_fifo_cap,
+        bounds_min_y_dout => bounds_min_y_dout,
+        bounds_min_y_empty_n => bounds_min_y_empty_n,
+        bounds_min_y_read => k4_rasterize_U0_bounds_min_y_read,
+        bounds_min_y_num_data_valid => bounds_min_y_num_data_valid,
+        bounds_min_y_fifo_cap => bounds_min_y_fifo_cap,
+        bounds_max_x_dout => bounds_max_x_dout,
+        bounds_max_x_empty_n => bounds_max_x_empty_n,
+        bounds_max_x_read => k4_rasterize_U0_bounds_max_x_read,
+        bounds_max_x_num_data_valid => bounds_max_x_num_data_valid,
+        bounds_max_x_fifo_cap => bounds_max_x_fifo_cap,
+        bounds_max_y_dout => bounds_max_y_dout,
+        bounds_max_y_empty_n => bounds_max_y_empty_n,
+        bounds_max_y_read => k4_rasterize_U0_bounds_max_y_read,
+        bounds_max_y_num_data_valid => bounds_max_y_num_data_valid,
+        bounds_max_y_fifo_cap => bounds_max_y_fifo_cap);
 
     k5_deferred_lighting_U0 : component top_kernel_k5_deferred_lighting
     port map (
@@ -2257,6 +3760,11 @@ begin
         ap_continue => k5_deferred_lighting_U0_ap_continue,
         ap_idle => k5_deferred_lighting_U0_ap_idle,
         ap_ready => k5_deferred_lighting_U0_ap_ready,
+        framebuffer_dout => out_pixels_c_dout,
+        framebuffer_empty_n => out_pixels_c_empty_n,
+        framebuffer_read => k5_deferred_lighting_U0_framebuffer_read,
+        framebuffer_num_data_valid => out_pixels_c_num_data_valid,
+        framebuffer_fifo_cap => out_pixels_c_fifo_cap,
         m_axi_gmem1_0_AWVALID => k5_deferred_lighting_U0_m_axi_gmem1_0_AWVALID,
         m_axi_gmem1_0_AWREADY => gmem1_0_AWREADY,
         m_axi_gmem1_0_AWADDR => k5_deferred_lighting_U0_m_axi_gmem1_0_AWADDR,
@@ -2303,11 +3811,6 @@ begin
         m_axi_gmem1_0_BRESP => gmem1_0_BRESP,
         m_axi_gmem1_0_BID => gmem1_0_BID,
         m_axi_gmem1_0_BUSER => gmem1_0_BUSER,
-        framebuffer_dout => out_pixels_c_dout,
-        framebuffer_empty_n => out_pixels_c_empty_n,
-        framebuffer_read => k5_deferred_lighting_U0_framebuffer_read,
-        framebuffer_num_data_valid => out_pixels_c_num_data_valid,
-        framebuffer_fifo_cap => out_pixels_c_fifo_cap,
         depth_buffer_address0 => k5_deferred_lighting_U0_depth_buffer_address0,
         depth_buffer_ce0 => k5_deferred_lighting_U0_depth_buffer_ce0,
         depth_buffer_q0 => depth_buffer_t_q0,
@@ -2321,1039 +3824,6 @@ begin
         normal_buffer_z_ce0 => k5_deferred_lighting_U0_normal_buffer_z_ce0,
         normal_buffer_z_q0 => normal_buffer_z_t_q0);
 
-    clip_tris_is_active_U : component top_kernel_clip_tris_is_active_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 1,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_is_active_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_is_active_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_is_active_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_is_active_d0,
-        i_q0 => clip_tris_is_active_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_is_active_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_is_active_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
-        t_q0 => clip_tris_is_active_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_is_active_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_is_active_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n0_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n0_x_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n0_x_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n0_x_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n0_x_d0,
-        i_q0 => clip_tris_n0_x_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n0_x_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n0_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n0_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n0_x_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n0_x_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n0_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n0_y_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n0_y_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n0_y_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n0_y_d0,
-        i_q0 => clip_tris_n0_y_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n0_y_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n0_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n0_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n0_y_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n0_y_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n0_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n0_z_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n0_z_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n0_z_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n0_z_d0,
-        i_q0 => clip_tris_n0_z_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n0_z_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n0_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n0_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n0_z_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n0_z_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n1_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n1_x_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n1_x_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n1_x_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n1_x_d0,
-        i_q0 => clip_tris_n1_x_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n1_x_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n1_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n1_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n1_x_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n1_x_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n1_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n1_y_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n1_y_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n1_y_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n1_y_d0,
-        i_q0 => clip_tris_n1_y_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n1_y_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n1_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n1_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n1_y_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n1_y_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n1_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n1_z_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n1_z_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n1_z_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n1_z_d0,
-        i_q0 => clip_tris_n1_z_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n1_z_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n1_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n1_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n1_z_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n1_z_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n2_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n2_x_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n2_x_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n2_x_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n2_x_d0,
-        i_q0 => clip_tris_n2_x_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n2_x_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n2_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n2_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n2_x_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n2_x_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n2_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n2_y_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n2_y_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n2_y_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n2_y_d0,
-        i_q0 => clip_tris_n2_y_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n2_y_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n2_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n2_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n2_y_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n2_y_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_n2_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_n2_z_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_n2_z_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_n2_z_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_n2_z_d0,
-        i_q0 => clip_tris_n2_z_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_n2_z_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_n2_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_n2_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_n2_z_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_n2_z_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v0_w_U : component top_kernel_clip_tris_v0_w_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v0_w_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v0_w_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v0_w_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v0_w_d0,
-        i_q0 => clip_tris_v0_w_i_q0,
-        i_address1 => k1_vertex_transform_U0_clip_tris_v0_w_address1,
-        i_ce1 => k1_vertex_transform_U0_clip_tris_v0_w_ce1,
-        i_we1 => k1_vertex_transform_U0_clip_tris_v0_w_we1,
-        i_d1 => k1_vertex_transform_U0_clip_tris_v0_w_d1,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v0_w_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v0_w_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v0_w_t_q0,
-        t_address1 => ap_const_lv7_0,
-        t_ce1 => ap_const_logic_0,
-        t_we1 => ap_const_logic_0,
-        t_d1 => ap_const_lv32_0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v0_w_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v0_w_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v0_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v0_x_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v0_x_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v0_x_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v0_x_d0,
-        i_q0 => clip_tris_v0_x_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v0_x_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v0_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v0_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v0_x_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v0_x_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v0_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v0_y_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v0_y_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v0_y_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v0_y_d0,
-        i_q0 => clip_tris_v0_y_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v0_y_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v0_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v0_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v0_y_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v0_y_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v0_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v0_z_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v0_z_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v0_z_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v0_z_d0,
-        i_q0 => clip_tris_v0_z_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v0_z_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v0_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v0_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v0_z_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v0_z_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v1_w_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v1_w_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v1_w_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v1_w_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v1_w_d0,
-        i_q0 => clip_tris_v1_w_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v1_w_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v1_w_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v1_w_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v1_w_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v1_w_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v1_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v1_x_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v1_x_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v1_x_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v1_x_d0,
-        i_q0 => clip_tris_v1_x_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v1_x_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v1_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v1_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v1_x_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v1_x_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v1_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v1_y_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v1_y_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v1_y_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v1_y_d0,
-        i_q0 => clip_tris_v1_y_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v1_y_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v1_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v1_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v1_y_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v1_y_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v1_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v1_z_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v1_z_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v1_z_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v1_z_d0,
-        i_q0 => clip_tris_v1_z_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v1_z_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v1_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v1_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v1_z_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v1_z_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v2_w_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v2_w_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v2_w_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v2_w_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v2_w_d0,
-        i_q0 => clip_tris_v2_w_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v2_w_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v2_w_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v2_w_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v2_w_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v2_w_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v2_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v2_x_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v2_x_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v2_x_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v2_x_d0,
-        i_q0 => clip_tris_v2_x_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v2_x_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v2_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v2_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v2_x_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v2_x_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v2_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v2_y_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v2_y_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v2_y_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v2_y_d0,
-        i_q0 => clip_tris_v2_y_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v2_y_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v2_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v2_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v2_y_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v2_y_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    clip_tris_v2_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k1_vertex_transform_U0_clip_tris_v2_z_address0,
-        i_ce0 => k1_vertex_transform_U0_clip_tris_v2_z_ce0,
-        i_we0 => k1_vertex_transform_U0_clip_tris_v2_z_we0,
-        i_d0 => k1_vertex_transform_U0_clip_tris_v2_z_d0,
-        i_q0 => clip_tris_v2_z_i_q0,
-        t_address0 => k2_perspective_divide_U0_clip_tris_v2_z_address0,
-        t_ce0 => k2_perspective_divide_U0_clip_tris_v2_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => clip_tris_v2_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => clip_tris_v2_z_i_full_n,
-        i_write => ap_channel_done_clip_tris_v2_z,
-        t_empty_n => clip_tris_v2_z_t_empty_n,
-        t_read => k2_perspective_divide_U0_ap_ready);
-
-    screen_tris_v0_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v0_x_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v0_x_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v0_x_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v0_x_d0,
-        i_q0 => screen_tris_v0_x_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v0_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v0_x_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v0_x_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v0_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v0_y_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v0_y_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v0_y_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v0_y_d0,
-        i_q0 => screen_tris_v0_y_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v0_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v0_y_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v0_y_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v0_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v0_z_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v0_z_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v0_z_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v0_z_d0,
-        i_q0 => screen_tris_v0_z_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v0_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v0_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v0_z_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v0_z_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v1_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v1_x_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v1_x_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v1_x_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v1_x_d0,
-        i_q0 => screen_tris_v1_x_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v1_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v1_x_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v1_x_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v1_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v1_y_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v1_y_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v1_y_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v1_y_d0,
-        i_q0 => screen_tris_v1_y_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v1_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v1_y_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v1_y_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v1_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v1_z_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v1_z_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v1_z_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v1_z_d0,
-        i_q0 => screen_tris_v1_z_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v1_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v1_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v1_z_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v1_z_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v2_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v2_x_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v2_x_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v2_x_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v2_x_d0,
-        i_q0 => screen_tris_v2_x_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v2_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v2_x_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v2_x_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v2_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v2_y_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v2_y_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v2_y_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v2_y_d0,
-        i_q0 => screen_tris_v2_y_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v2_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v2_y_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v2_y_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_v2_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_v2_z_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_v2_z_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_v2_z_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_v2_z_d0,
-        i_q0 => screen_tris_v2_z_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_v2_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_v2_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_v2_z_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_v2_z_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n0_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n0_x_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n0_x_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n0_x_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n0_x_d0,
-        i_q0 => screen_tris_n0_x_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n0_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n0_x_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n0_x_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n0_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n0_y_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n0_y_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n0_y_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n0_y_d0,
-        i_q0 => screen_tris_n0_y_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n0_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n0_y_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n0_y_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n0_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n0_z_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n0_z_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n0_z_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n0_z_d0,
-        i_q0 => screen_tris_n0_z_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n0_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n0_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n0_z_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n0_z_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n1_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n1_x_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n1_x_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n1_x_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n1_x_d0,
-        i_q0 => screen_tris_n1_x_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n1_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n1_x_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n1_x_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n1_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n1_y_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n1_y_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n1_y_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n1_y_d0,
-        i_q0 => screen_tris_n1_y_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n1_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n1_y_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n1_y_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n1_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n1_z_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n1_z_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n1_z_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n1_z_d0,
-        i_q0 => screen_tris_n1_z_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n1_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n1_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n1_z_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n1_z_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n2_x_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n2_x_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n2_x_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n2_x_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n2_x_d0,
-        i_q0 => screen_tris_n2_x_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_x_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n2_x_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n2_x_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n2_x_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n2_y_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n2_y_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n2_y_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n2_y_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n2_y_d0,
-        i_q0 => screen_tris_n2_y_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_y_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n2_y_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n2_y_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n2_y_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_n2_z_U : component top_kernel_clip_tris_n0_x_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 32,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_n2_z_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_n2_z_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_n2_z_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_n2_z_d0,
-        i_q0 => screen_tris_n2_z_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_n2_z_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv32_0,
-        t_q0 => screen_tris_n2_z_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_n2_z_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_n2_z_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
-    screen_tris_is_active_U : component top_kernel_clip_tris_is_active_RAM_AUTO_1R1W
-    generic map (
-        DataWidth => 1,
-        AddressRange => 128,
-        AddressWidth => 7)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst_n_inv,
-        i_address0 => k2_perspective_divide_U0_screen_tris_is_active_address0,
-        i_ce0 => k2_perspective_divide_U0_screen_tris_is_active_ce0,
-        i_we0 => k2_perspective_divide_U0_screen_tris_is_active_we0,
-        i_d0 => k2_perspective_divide_U0_screen_tris_is_active_d0,
-        i_q0 => screen_tris_is_active_i_q0,
-        t_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_address0,
-        t_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_screen_tris_is_active_ce0,
-        t_we0 => ap_const_logic_0,
-        t_d0 => ap_const_lv1_0,
-        t_q0 => screen_tris_is_active_t_q0,
-        i_ce => ap_const_logic_1,
-        t_ce => ap_const_logic_1,
-        i_full_n => screen_tris_is_active_i_full_n,
-        i_write => ap_channel_done_screen_tris_is_active,
-        t_empty_n => screen_tris_is_active_t_empty_n,
-        t_read => Block_entry_screen_tris_v0_x_rd_proc_U0_ap_ready);
-
     depth_buffer_U : component top_kernel_depth_buffer_RAM_AUTO_1R1W
     generic map (
         DataWidth => 32,
@@ -3362,10 +3832,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        i_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_address0,
-        i_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_ce0,
-        i_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_we0,
-        i_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_depth_buffer_d0,
+        i_address0 => k4_rasterize_U0_depth_buffer_address0,
+        i_ce0 => k4_rasterize_U0_depth_buffer_ce0,
+        i_we0 => k4_rasterize_U0_depth_buffer_we0,
+        i_d0 => k4_rasterize_U0_depth_buffer_d0,
         i_q0 => depth_buffer_i_q0,
         t_address0 => k5_deferred_lighting_U0_depth_buffer_address0,
         t_ce0 => k5_deferred_lighting_U0_depth_buffer_ce0,
@@ -3387,10 +3857,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        i_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_address0,
-        i_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_ce0,
-        i_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_we0,
-        i_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_x_d0,
+        i_address0 => k4_rasterize_U0_normal_buffer_x_address0,
+        i_ce0 => k4_rasterize_U0_normal_buffer_x_ce0,
+        i_we0 => k4_rasterize_U0_normal_buffer_x_we0,
+        i_d0 => k4_rasterize_U0_normal_buffer_x_d0,
         i_q0 => normal_buffer_x_i_q0,
         t_address0 => k5_deferred_lighting_U0_normal_buffer_x_address0,
         t_ce0 => k5_deferred_lighting_U0_normal_buffer_x_ce0,
@@ -3412,10 +3882,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        i_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_address0,
-        i_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_ce0,
-        i_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_we0,
-        i_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_y_d0,
+        i_address0 => k4_rasterize_U0_normal_buffer_y_address0,
+        i_ce0 => k4_rasterize_U0_normal_buffer_y_ce0,
+        i_we0 => k4_rasterize_U0_normal_buffer_y_we0,
+        i_d0 => k4_rasterize_U0_normal_buffer_y_d0,
         i_q0 => normal_buffer_y_i_q0,
         t_address0 => k5_deferred_lighting_U0_normal_buffer_y_address0,
         t_ce0 => k5_deferred_lighting_U0_normal_buffer_y_ce0,
@@ -3437,10 +3907,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
-        i_address0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_address0,
-        i_ce0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_ce0,
-        i_we0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_we0,
-        i_d0 => Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_d0,
+        i_address0 => k4_rasterize_U0_normal_buffer_z_address0,
+        i_ce0 => k4_rasterize_U0_normal_buffer_z_ce0,
+        i_we0 => k4_rasterize_U0_normal_buffer_z_we0,
+        i_d0 => k4_rasterize_U0_normal_buffer_z_d0,
         i_q0 => normal_buffer_z_i_q0,
         t_address0 => k5_deferred_lighting_U0_normal_buffer_z_address0,
         t_ce0 => k5_deferred_lighting_U0_normal_buffer_z_ce0,
@@ -3454,7 +3924,7 @@ begin
         t_empty_n => normal_buffer_z_t_empty_n,
         t_read => k5_deferred_lighting_U0_ap_ready);
 
-    out_pixels_c_U : component top_kernel_fifo_w64_d5_S
+    out_pixels_c_U : component top_kernel_fifo_w64_d6_S
     port map (
         clk => ap_clk,
         reset => ap_rst_n_inv,
@@ -3469,24 +3939,1142 @@ begin
         if_num_data_valid => out_pixels_c_num_data_valid,
         if_fifo_cap => out_pixels_c_fifo_cap);
 
+    clip_tris_v0_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v0_x_din,
+        if_full_n => clip_tris_v0_x_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v0_x_write,
+        if_dout => clip_tris_v0_x_dout,
+        if_empty_n => clip_tris_v0_x_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v0_x_read,
+        if_num_data_valid => clip_tris_v0_x_num_data_valid,
+        if_fifo_cap => clip_tris_v0_x_fifo_cap);
+
+    clip_tris_v0_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v0_y_din,
+        if_full_n => clip_tris_v0_y_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v0_y_write,
+        if_dout => clip_tris_v0_y_dout,
+        if_empty_n => clip_tris_v0_y_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v0_y_read,
+        if_num_data_valid => clip_tris_v0_y_num_data_valid,
+        if_fifo_cap => clip_tris_v0_y_fifo_cap);
+
+    clip_tris_v0_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v0_z_din,
+        if_full_n => clip_tris_v0_z_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v0_z_write,
+        if_dout => clip_tris_v0_z_dout,
+        if_empty_n => clip_tris_v0_z_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v0_z_read,
+        if_num_data_valid => clip_tris_v0_z_num_data_valid,
+        if_fifo_cap => clip_tris_v0_z_fifo_cap);
+
+    clip_tris_v0_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v0_w_din,
+        if_full_n => clip_tris_v0_w_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v0_w_write,
+        if_dout => clip_tris_v0_w_dout,
+        if_empty_n => clip_tris_v0_w_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v0_w_read,
+        if_num_data_valid => clip_tris_v0_w_num_data_valid,
+        if_fifo_cap => clip_tris_v0_w_fifo_cap);
+
+    clip_tris_v1_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v1_x_din,
+        if_full_n => clip_tris_v1_x_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v1_x_write,
+        if_dout => clip_tris_v1_x_dout,
+        if_empty_n => clip_tris_v1_x_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v1_x_read,
+        if_num_data_valid => clip_tris_v1_x_num_data_valid,
+        if_fifo_cap => clip_tris_v1_x_fifo_cap);
+
+    clip_tris_v1_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v1_y_din,
+        if_full_n => clip_tris_v1_y_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v1_y_write,
+        if_dout => clip_tris_v1_y_dout,
+        if_empty_n => clip_tris_v1_y_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v1_y_read,
+        if_num_data_valid => clip_tris_v1_y_num_data_valid,
+        if_fifo_cap => clip_tris_v1_y_fifo_cap);
+
+    clip_tris_v1_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v1_z_din,
+        if_full_n => clip_tris_v1_z_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v1_z_write,
+        if_dout => clip_tris_v1_z_dout,
+        if_empty_n => clip_tris_v1_z_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v1_z_read,
+        if_num_data_valid => clip_tris_v1_z_num_data_valid,
+        if_fifo_cap => clip_tris_v1_z_fifo_cap);
+
+    clip_tris_v1_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v1_w_din,
+        if_full_n => clip_tris_v1_w_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v1_w_write,
+        if_dout => clip_tris_v1_w_dout,
+        if_empty_n => clip_tris_v1_w_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v1_w_read,
+        if_num_data_valid => clip_tris_v1_w_num_data_valid,
+        if_fifo_cap => clip_tris_v1_w_fifo_cap);
+
+    clip_tris_v2_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v2_x_din,
+        if_full_n => clip_tris_v2_x_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v2_x_write,
+        if_dout => clip_tris_v2_x_dout,
+        if_empty_n => clip_tris_v2_x_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v2_x_read,
+        if_num_data_valid => clip_tris_v2_x_num_data_valid,
+        if_fifo_cap => clip_tris_v2_x_fifo_cap);
+
+    clip_tris_v2_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v2_y_din,
+        if_full_n => clip_tris_v2_y_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v2_y_write,
+        if_dout => clip_tris_v2_y_dout,
+        if_empty_n => clip_tris_v2_y_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v2_y_read,
+        if_num_data_valid => clip_tris_v2_y_num_data_valid,
+        if_fifo_cap => clip_tris_v2_y_fifo_cap);
+
+    clip_tris_v2_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v2_z_din,
+        if_full_n => clip_tris_v2_z_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v2_z_write,
+        if_dout => clip_tris_v2_z_dout,
+        if_empty_n => clip_tris_v2_z_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v2_z_read,
+        if_num_data_valid => clip_tris_v2_z_num_data_valid,
+        if_fifo_cap => clip_tris_v2_z_fifo_cap);
+
+    clip_tris_v2_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_v2_w_din,
+        if_full_n => clip_tris_v2_w_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_v2_w_write,
+        if_dout => clip_tris_v2_w_dout,
+        if_empty_n => clip_tris_v2_w_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_v2_w_read,
+        if_num_data_valid => clip_tris_v2_w_num_data_valid,
+        if_fifo_cap => clip_tris_v2_w_fifo_cap);
+
+    clip_tris_n0_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n0_x_din,
+        if_full_n => clip_tris_n0_x_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n0_x_write,
+        if_dout => clip_tris_n0_x_dout,
+        if_empty_n => clip_tris_n0_x_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n0_x_read,
+        if_num_data_valid => clip_tris_n0_x_num_data_valid,
+        if_fifo_cap => clip_tris_n0_x_fifo_cap);
+
+    clip_tris_n0_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n0_y_din,
+        if_full_n => clip_tris_n0_y_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n0_y_write,
+        if_dout => clip_tris_n0_y_dout,
+        if_empty_n => clip_tris_n0_y_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n0_y_read,
+        if_num_data_valid => clip_tris_n0_y_num_data_valid,
+        if_fifo_cap => clip_tris_n0_y_fifo_cap);
+
+    clip_tris_n0_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n0_z_din,
+        if_full_n => clip_tris_n0_z_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n0_z_write,
+        if_dout => clip_tris_n0_z_dout,
+        if_empty_n => clip_tris_n0_z_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n0_z_read,
+        if_num_data_valid => clip_tris_n0_z_num_data_valid,
+        if_fifo_cap => clip_tris_n0_z_fifo_cap);
+
+    clip_tris_n1_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n1_x_din,
+        if_full_n => clip_tris_n1_x_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n1_x_write,
+        if_dout => clip_tris_n1_x_dout,
+        if_empty_n => clip_tris_n1_x_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n1_x_read,
+        if_num_data_valid => clip_tris_n1_x_num_data_valid,
+        if_fifo_cap => clip_tris_n1_x_fifo_cap);
+
+    clip_tris_n1_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n1_y_din,
+        if_full_n => clip_tris_n1_y_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n1_y_write,
+        if_dout => clip_tris_n1_y_dout,
+        if_empty_n => clip_tris_n1_y_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n1_y_read,
+        if_num_data_valid => clip_tris_n1_y_num_data_valid,
+        if_fifo_cap => clip_tris_n1_y_fifo_cap);
+
+    clip_tris_n1_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n1_z_din,
+        if_full_n => clip_tris_n1_z_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n1_z_write,
+        if_dout => clip_tris_n1_z_dout,
+        if_empty_n => clip_tris_n1_z_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n1_z_read,
+        if_num_data_valid => clip_tris_n1_z_num_data_valid,
+        if_fifo_cap => clip_tris_n1_z_fifo_cap);
+
+    clip_tris_n2_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n2_x_din,
+        if_full_n => clip_tris_n2_x_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n2_x_write,
+        if_dout => clip_tris_n2_x_dout,
+        if_empty_n => clip_tris_n2_x_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n2_x_read,
+        if_num_data_valid => clip_tris_n2_x_num_data_valid,
+        if_fifo_cap => clip_tris_n2_x_fifo_cap);
+
+    clip_tris_n2_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n2_y_din,
+        if_full_n => clip_tris_n2_y_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n2_y_write,
+        if_dout => clip_tris_n2_y_dout,
+        if_empty_n => clip_tris_n2_y_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n2_y_read,
+        if_num_data_valid => clip_tris_n2_y_num_data_valid,
+        if_fifo_cap => clip_tris_n2_y_fifo_cap);
+
+    clip_tris_n2_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_n2_z_din,
+        if_full_n => clip_tris_n2_z_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_n2_z_write,
+        if_dout => clip_tris_n2_z_dout,
+        if_empty_n => clip_tris_n2_z_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_n2_z_read,
+        if_num_data_valid => clip_tris_n2_z_num_data_valid,
+        if_fifo_cap => clip_tris_n2_z_fifo_cap);
+
+    clip_tris_color_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_color_din,
+        if_full_n => clip_tris_color_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_color_write,
+        if_dout => clip_tris_color_dout,
+        if_empty_n => clip_tris_color_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_color_read,
+        if_num_data_valid => clip_tris_color_num_data_valid,
+        if_fifo_cap => clip_tris_color_fifo_cap);
+
+    clip_tris_is_active_U : component top_kernel_fifo_w1_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k1_vertex_transform_U0_clip_tris_is_active_din,
+        if_full_n => clip_tris_is_active_full_n,
+        if_write => k1_vertex_transform_U0_clip_tris_is_active_write,
+        if_dout => clip_tris_is_active_dout,
+        if_empty_n => clip_tris_is_active_empty_n,
+        if_read => k2_perspective_divide_U0_clip_tris_is_active_read,
+        if_num_data_valid => clip_tris_is_active_num_data_valid,
+        if_fifo_cap => clip_tris_is_active_fifo_cap);
+
+    screen_tris_in_v0_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v0_x_din,
+        if_full_n => screen_tris_in_v0_x_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v0_x_write,
+        if_dout => screen_tris_in_v0_x_dout,
+        if_empty_n => screen_tris_in_v0_x_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v0_x_read,
+        if_num_data_valid => screen_tris_in_v0_x_num_data_valid,
+        if_fifo_cap => screen_tris_in_v0_x_fifo_cap);
+
+    screen_tris_in_v0_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v0_y_din,
+        if_full_n => screen_tris_in_v0_y_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v0_y_write,
+        if_dout => screen_tris_in_v0_y_dout,
+        if_empty_n => screen_tris_in_v0_y_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v0_y_read,
+        if_num_data_valid => screen_tris_in_v0_y_num_data_valid,
+        if_fifo_cap => screen_tris_in_v0_y_fifo_cap);
+
+    screen_tris_in_v0_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v0_z_din,
+        if_full_n => screen_tris_in_v0_z_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v0_z_write,
+        if_dout => screen_tris_in_v0_z_dout,
+        if_empty_n => screen_tris_in_v0_z_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v0_z_read,
+        if_num_data_valid => screen_tris_in_v0_z_num_data_valid,
+        if_fifo_cap => screen_tris_in_v0_z_fifo_cap);
+
+    screen_tris_in_v0_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v0_w_din,
+        if_full_n => screen_tris_in_v0_w_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v0_w_write,
+        if_dout => screen_tris_in_v0_w_dout,
+        if_empty_n => screen_tris_in_v0_w_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v0_w_read,
+        if_num_data_valid => screen_tris_in_v0_w_num_data_valid,
+        if_fifo_cap => screen_tris_in_v0_w_fifo_cap);
+
+    screen_tris_in_v1_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v1_x_din,
+        if_full_n => screen_tris_in_v1_x_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v1_x_write,
+        if_dout => screen_tris_in_v1_x_dout,
+        if_empty_n => screen_tris_in_v1_x_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v1_x_read,
+        if_num_data_valid => screen_tris_in_v1_x_num_data_valid,
+        if_fifo_cap => screen_tris_in_v1_x_fifo_cap);
+
+    screen_tris_in_v1_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v1_y_din,
+        if_full_n => screen_tris_in_v1_y_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v1_y_write,
+        if_dout => screen_tris_in_v1_y_dout,
+        if_empty_n => screen_tris_in_v1_y_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v1_y_read,
+        if_num_data_valid => screen_tris_in_v1_y_num_data_valid,
+        if_fifo_cap => screen_tris_in_v1_y_fifo_cap);
+
+    screen_tris_in_v1_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v1_z_din,
+        if_full_n => screen_tris_in_v1_z_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v1_z_write,
+        if_dout => screen_tris_in_v1_z_dout,
+        if_empty_n => screen_tris_in_v1_z_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v1_z_read,
+        if_num_data_valid => screen_tris_in_v1_z_num_data_valid,
+        if_fifo_cap => screen_tris_in_v1_z_fifo_cap);
+
+    screen_tris_in_v1_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v1_w_din,
+        if_full_n => screen_tris_in_v1_w_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v1_w_write,
+        if_dout => screen_tris_in_v1_w_dout,
+        if_empty_n => screen_tris_in_v1_w_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v1_w_read,
+        if_num_data_valid => screen_tris_in_v1_w_num_data_valid,
+        if_fifo_cap => screen_tris_in_v1_w_fifo_cap);
+
+    screen_tris_in_v2_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v2_x_din,
+        if_full_n => screen_tris_in_v2_x_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v2_x_write,
+        if_dout => screen_tris_in_v2_x_dout,
+        if_empty_n => screen_tris_in_v2_x_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v2_x_read,
+        if_num_data_valid => screen_tris_in_v2_x_num_data_valid,
+        if_fifo_cap => screen_tris_in_v2_x_fifo_cap);
+
+    screen_tris_in_v2_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v2_y_din,
+        if_full_n => screen_tris_in_v2_y_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v2_y_write,
+        if_dout => screen_tris_in_v2_y_dout,
+        if_empty_n => screen_tris_in_v2_y_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v2_y_read,
+        if_num_data_valid => screen_tris_in_v2_y_num_data_valid,
+        if_fifo_cap => screen_tris_in_v2_y_fifo_cap);
+
+    screen_tris_in_v2_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v2_z_din,
+        if_full_n => screen_tris_in_v2_z_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v2_z_write,
+        if_dout => screen_tris_in_v2_z_dout,
+        if_empty_n => screen_tris_in_v2_z_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v2_z_read,
+        if_num_data_valid => screen_tris_in_v2_z_num_data_valid,
+        if_fifo_cap => screen_tris_in_v2_z_fifo_cap);
+
+    screen_tris_in_v2_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_v2_w_din,
+        if_full_n => screen_tris_in_v2_w_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_v2_w_write,
+        if_dout => screen_tris_in_v2_w_dout,
+        if_empty_n => screen_tris_in_v2_w_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_v2_w_read,
+        if_num_data_valid => screen_tris_in_v2_w_num_data_valid,
+        if_fifo_cap => screen_tris_in_v2_w_fifo_cap);
+
+    screen_tris_in_n0_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n0_x_din,
+        if_full_n => screen_tris_in_n0_x_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n0_x_write,
+        if_dout => screen_tris_in_n0_x_dout,
+        if_empty_n => screen_tris_in_n0_x_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n0_x_read,
+        if_num_data_valid => screen_tris_in_n0_x_num_data_valid,
+        if_fifo_cap => screen_tris_in_n0_x_fifo_cap);
+
+    screen_tris_in_n0_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n0_y_din,
+        if_full_n => screen_tris_in_n0_y_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n0_y_write,
+        if_dout => screen_tris_in_n0_y_dout,
+        if_empty_n => screen_tris_in_n0_y_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n0_y_read,
+        if_num_data_valid => screen_tris_in_n0_y_num_data_valid,
+        if_fifo_cap => screen_tris_in_n0_y_fifo_cap);
+
+    screen_tris_in_n0_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n0_z_din,
+        if_full_n => screen_tris_in_n0_z_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n0_z_write,
+        if_dout => screen_tris_in_n0_z_dout,
+        if_empty_n => screen_tris_in_n0_z_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n0_z_read,
+        if_num_data_valid => screen_tris_in_n0_z_num_data_valid,
+        if_fifo_cap => screen_tris_in_n0_z_fifo_cap);
+
+    screen_tris_in_n1_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n1_x_din,
+        if_full_n => screen_tris_in_n1_x_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n1_x_write,
+        if_dout => screen_tris_in_n1_x_dout,
+        if_empty_n => screen_tris_in_n1_x_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n1_x_read,
+        if_num_data_valid => screen_tris_in_n1_x_num_data_valid,
+        if_fifo_cap => screen_tris_in_n1_x_fifo_cap);
+
+    screen_tris_in_n1_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n1_y_din,
+        if_full_n => screen_tris_in_n1_y_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n1_y_write,
+        if_dout => screen_tris_in_n1_y_dout,
+        if_empty_n => screen_tris_in_n1_y_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n1_y_read,
+        if_num_data_valid => screen_tris_in_n1_y_num_data_valid,
+        if_fifo_cap => screen_tris_in_n1_y_fifo_cap);
+
+    screen_tris_in_n1_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n1_z_din,
+        if_full_n => screen_tris_in_n1_z_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n1_z_write,
+        if_dout => screen_tris_in_n1_z_dout,
+        if_empty_n => screen_tris_in_n1_z_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n1_z_read,
+        if_num_data_valid => screen_tris_in_n1_z_num_data_valid,
+        if_fifo_cap => screen_tris_in_n1_z_fifo_cap);
+
+    screen_tris_in_n2_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n2_x_din,
+        if_full_n => screen_tris_in_n2_x_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n2_x_write,
+        if_dout => screen_tris_in_n2_x_dout,
+        if_empty_n => screen_tris_in_n2_x_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n2_x_read,
+        if_num_data_valid => screen_tris_in_n2_x_num_data_valid,
+        if_fifo_cap => screen_tris_in_n2_x_fifo_cap);
+
+    screen_tris_in_n2_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n2_y_din,
+        if_full_n => screen_tris_in_n2_y_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n2_y_write,
+        if_dout => screen_tris_in_n2_y_dout,
+        if_empty_n => screen_tris_in_n2_y_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n2_y_read,
+        if_num_data_valid => screen_tris_in_n2_y_num_data_valid,
+        if_fifo_cap => screen_tris_in_n2_y_fifo_cap);
+
+    screen_tris_in_n2_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_n2_z_din,
+        if_full_n => screen_tris_in_n2_z_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_n2_z_write,
+        if_dout => screen_tris_in_n2_z_dout,
+        if_empty_n => screen_tris_in_n2_z_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_n2_z_read,
+        if_num_data_valid => screen_tris_in_n2_z_num_data_valid,
+        if_fifo_cap => screen_tris_in_n2_z_fifo_cap);
+
+    screen_tris_in_color_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_color_din,
+        if_full_n => screen_tris_in_color_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_color_write,
+        if_dout => screen_tris_in_color_dout,
+        if_empty_n => screen_tris_in_color_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_color_read,
+        if_num_data_valid => screen_tris_in_color_num_data_valid,
+        if_fifo_cap => screen_tris_in_color_fifo_cap);
+
+    screen_tris_in_is_active_U : component top_kernel_fifo_w1_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k2_perspective_divide_U0_screen_tris_in_is_active_din,
+        if_full_n => screen_tris_in_is_active_full_n,
+        if_write => k2_perspective_divide_U0_screen_tris_in_is_active_write,
+        if_dout => screen_tris_in_is_active_dout,
+        if_empty_n => screen_tris_in_is_active_empty_n,
+        if_read => k3_bounding_box_U0_screen_tris_in_is_active_read,
+        if_num_data_valid => screen_tris_in_is_active_num_data_valid,
+        if_fifo_cap => screen_tris_in_is_active_fifo_cap);
+
+    bounds_min_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_bounds_min_x_din,
+        if_full_n => bounds_min_x_full_n,
+        if_write => k3_bounding_box_U0_bounds_min_x_write,
+        if_dout => bounds_min_x_dout,
+        if_empty_n => bounds_min_x_empty_n,
+        if_read => k4_rasterize_U0_bounds_min_x_read,
+        if_num_data_valid => bounds_min_x_num_data_valid,
+        if_fifo_cap => bounds_min_x_fifo_cap);
+
+    bounds_min_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_bounds_min_y_din,
+        if_full_n => bounds_min_y_full_n,
+        if_write => k3_bounding_box_U0_bounds_min_y_write,
+        if_dout => bounds_min_y_dout,
+        if_empty_n => bounds_min_y_empty_n,
+        if_read => k4_rasterize_U0_bounds_min_y_read,
+        if_num_data_valid => bounds_min_y_num_data_valid,
+        if_fifo_cap => bounds_min_y_fifo_cap);
+
+    bounds_max_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_bounds_max_x_din,
+        if_full_n => bounds_max_x_full_n,
+        if_write => k3_bounding_box_U0_bounds_max_x_write,
+        if_dout => bounds_max_x_dout,
+        if_empty_n => bounds_max_x_empty_n,
+        if_read => k4_rasterize_U0_bounds_max_x_read,
+        if_num_data_valid => bounds_max_x_num_data_valid,
+        if_fifo_cap => bounds_max_x_fifo_cap);
+
+    bounds_max_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_bounds_max_y_din,
+        if_full_n => bounds_max_y_full_n,
+        if_write => k3_bounding_box_U0_bounds_max_y_write,
+        if_dout => bounds_max_y_dout,
+        if_empty_n => bounds_max_y_empty_n,
+        if_read => k4_rasterize_U0_bounds_max_y_read,
+        if_num_data_valid => bounds_max_y_num_data_valid,
+        if_fifo_cap => bounds_max_y_fifo_cap);
+
+    screen_tris_out_v0_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v0_x_din,
+        if_full_n => screen_tris_out_v0_x_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v0_x_write,
+        if_dout => screen_tris_out_v0_x_dout,
+        if_empty_n => screen_tris_out_v0_x_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v0_x_read,
+        if_num_data_valid => screen_tris_out_v0_x_num_data_valid,
+        if_fifo_cap => screen_tris_out_v0_x_fifo_cap);
+
+    screen_tris_out_v0_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v0_y_din,
+        if_full_n => screen_tris_out_v0_y_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v0_y_write,
+        if_dout => screen_tris_out_v0_y_dout,
+        if_empty_n => screen_tris_out_v0_y_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v0_y_read,
+        if_num_data_valid => screen_tris_out_v0_y_num_data_valid,
+        if_fifo_cap => screen_tris_out_v0_y_fifo_cap);
+
+    screen_tris_out_v0_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v0_z_din,
+        if_full_n => screen_tris_out_v0_z_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v0_z_write,
+        if_dout => screen_tris_out_v0_z_dout,
+        if_empty_n => screen_tris_out_v0_z_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v0_z_read,
+        if_num_data_valid => screen_tris_out_v0_z_num_data_valid,
+        if_fifo_cap => screen_tris_out_v0_z_fifo_cap);
+
+    screen_tris_out_v0_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v0_w_din,
+        if_full_n => screen_tris_out_v0_w_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v0_w_write,
+        if_dout => screen_tris_out_v0_w_dout,
+        if_empty_n => screen_tris_out_v0_w_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v0_w_read,
+        if_num_data_valid => screen_tris_out_v0_w_num_data_valid,
+        if_fifo_cap => screen_tris_out_v0_w_fifo_cap);
+
+    screen_tris_out_v1_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v1_x_din,
+        if_full_n => screen_tris_out_v1_x_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v1_x_write,
+        if_dout => screen_tris_out_v1_x_dout,
+        if_empty_n => screen_tris_out_v1_x_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v1_x_read,
+        if_num_data_valid => screen_tris_out_v1_x_num_data_valid,
+        if_fifo_cap => screen_tris_out_v1_x_fifo_cap);
+
+    screen_tris_out_v1_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v1_y_din,
+        if_full_n => screen_tris_out_v1_y_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v1_y_write,
+        if_dout => screen_tris_out_v1_y_dout,
+        if_empty_n => screen_tris_out_v1_y_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v1_y_read,
+        if_num_data_valid => screen_tris_out_v1_y_num_data_valid,
+        if_fifo_cap => screen_tris_out_v1_y_fifo_cap);
+
+    screen_tris_out_v1_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v1_z_din,
+        if_full_n => screen_tris_out_v1_z_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v1_z_write,
+        if_dout => screen_tris_out_v1_z_dout,
+        if_empty_n => screen_tris_out_v1_z_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v1_z_read,
+        if_num_data_valid => screen_tris_out_v1_z_num_data_valid,
+        if_fifo_cap => screen_tris_out_v1_z_fifo_cap);
+
+    screen_tris_out_v1_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v1_w_din,
+        if_full_n => screen_tris_out_v1_w_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v1_w_write,
+        if_dout => screen_tris_out_v1_w_dout,
+        if_empty_n => screen_tris_out_v1_w_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v1_w_read,
+        if_num_data_valid => screen_tris_out_v1_w_num_data_valid,
+        if_fifo_cap => screen_tris_out_v1_w_fifo_cap);
+
+    screen_tris_out_v2_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v2_x_din,
+        if_full_n => screen_tris_out_v2_x_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v2_x_write,
+        if_dout => screen_tris_out_v2_x_dout,
+        if_empty_n => screen_tris_out_v2_x_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v2_x_read,
+        if_num_data_valid => screen_tris_out_v2_x_num_data_valid,
+        if_fifo_cap => screen_tris_out_v2_x_fifo_cap);
+
+    screen_tris_out_v2_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v2_y_din,
+        if_full_n => screen_tris_out_v2_y_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v2_y_write,
+        if_dout => screen_tris_out_v2_y_dout,
+        if_empty_n => screen_tris_out_v2_y_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v2_y_read,
+        if_num_data_valid => screen_tris_out_v2_y_num_data_valid,
+        if_fifo_cap => screen_tris_out_v2_y_fifo_cap);
+
+    screen_tris_out_v2_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v2_z_din,
+        if_full_n => screen_tris_out_v2_z_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v2_z_write,
+        if_dout => screen_tris_out_v2_z_dout,
+        if_empty_n => screen_tris_out_v2_z_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v2_z_read,
+        if_num_data_valid => screen_tris_out_v2_z_num_data_valid,
+        if_fifo_cap => screen_tris_out_v2_z_fifo_cap);
+
+    screen_tris_out_v2_w_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_v2_w_din,
+        if_full_n => screen_tris_out_v2_w_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_v2_w_write,
+        if_dout => screen_tris_out_v2_w_dout,
+        if_empty_n => screen_tris_out_v2_w_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_v2_w_read,
+        if_num_data_valid => screen_tris_out_v2_w_num_data_valid,
+        if_fifo_cap => screen_tris_out_v2_w_fifo_cap);
+
+    screen_tris_out_n0_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n0_x_din,
+        if_full_n => screen_tris_out_n0_x_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n0_x_write,
+        if_dout => screen_tris_out_n0_x_dout,
+        if_empty_n => screen_tris_out_n0_x_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n0_x_read,
+        if_num_data_valid => screen_tris_out_n0_x_num_data_valid,
+        if_fifo_cap => screen_tris_out_n0_x_fifo_cap);
+
+    screen_tris_out_n0_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n0_y_din,
+        if_full_n => screen_tris_out_n0_y_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n0_y_write,
+        if_dout => screen_tris_out_n0_y_dout,
+        if_empty_n => screen_tris_out_n0_y_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n0_y_read,
+        if_num_data_valid => screen_tris_out_n0_y_num_data_valid,
+        if_fifo_cap => screen_tris_out_n0_y_fifo_cap);
+
+    screen_tris_out_n0_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n0_z_din,
+        if_full_n => screen_tris_out_n0_z_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n0_z_write,
+        if_dout => screen_tris_out_n0_z_dout,
+        if_empty_n => screen_tris_out_n0_z_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n0_z_read,
+        if_num_data_valid => screen_tris_out_n0_z_num_data_valid,
+        if_fifo_cap => screen_tris_out_n0_z_fifo_cap);
+
+    screen_tris_out_n1_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n1_x_din,
+        if_full_n => screen_tris_out_n1_x_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n1_x_write,
+        if_dout => screen_tris_out_n1_x_dout,
+        if_empty_n => screen_tris_out_n1_x_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n1_x_read,
+        if_num_data_valid => screen_tris_out_n1_x_num_data_valid,
+        if_fifo_cap => screen_tris_out_n1_x_fifo_cap);
+
+    screen_tris_out_n1_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n1_y_din,
+        if_full_n => screen_tris_out_n1_y_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n1_y_write,
+        if_dout => screen_tris_out_n1_y_dout,
+        if_empty_n => screen_tris_out_n1_y_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n1_y_read,
+        if_num_data_valid => screen_tris_out_n1_y_num_data_valid,
+        if_fifo_cap => screen_tris_out_n1_y_fifo_cap);
+
+    screen_tris_out_n1_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n1_z_din,
+        if_full_n => screen_tris_out_n1_z_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n1_z_write,
+        if_dout => screen_tris_out_n1_z_dout,
+        if_empty_n => screen_tris_out_n1_z_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n1_z_read,
+        if_num_data_valid => screen_tris_out_n1_z_num_data_valid,
+        if_fifo_cap => screen_tris_out_n1_z_fifo_cap);
+
+    screen_tris_out_n2_x_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n2_x_din,
+        if_full_n => screen_tris_out_n2_x_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n2_x_write,
+        if_dout => screen_tris_out_n2_x_dout,
+        if_empty_n => screen_tris_out_n2_x_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n2_x_read,
+        if_num_data_valid => screen_tris_out_n2_x_num_data_valid,
+        if_fifo_cap => screen_tris_out_n2_x_fifo_cap);
+
+    screen_tris_out_n2_y_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n2_y_din,
+        if_full_n => screen_tris_out_n2_y_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n2_y_write,
+        if_dout => screen_tris_out_n2_y_dout,
+        if_empty_n => screen_tris_out_n2_y_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n2_y_read,
+        if_num_data_valid => screen_tris_out_n2_y_num_data_valid,
+        if_fifo_cap => screen_tris_out_n2_y_fifo_cap);
+
+    screen_tris_out_n2_z_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_n2_z_din,
+        if_full_n => screen_tris_out_n2_z_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_n2_z_write,
+        if_dout => screen_tris_out_n2_z_dout,
+        if_empty_n => screen_tris_out_n2_z_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_n2_z_read,
+        if_num_data_valid => screen_tris_out_n2_z_num_data_valid,
+        if_fifo_cap => screen_tris_out_n2_z_fifo_cap);
+
+    screen_tris_out_color_U : component top_kernel_fifo_w32_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_color_din,
+        if_full_n => screen_tris_out_color_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_color_write,
+        if_dout => screen_tris_out_color_dout,
+        if_empty_n => screen_tris_out_color_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_color_read,
+        if_num_data_valid => screen_tris_out_color_num_data_valid,
+        if_fifo_cap => screen_tris_out_color_fifo_cap);
+
+    screen_tris_out_is_active_U : component top_kernel_fifo_w1_d2_S
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => k3_bounding_box_U0_screen_tris_out_is_active_din,
+        if_full_n => screen_tris_out_is_active_full_n,
+        if_write => k3_bounding_box_U0_screen_tris_out_is_active_write,
+        if_dout => screen_tris_out_is_active_dout,
+        if_empty_n => screen_tris_out_is_active_empty_n,
+        if_read => k4_rasterize_U0_screen_tris_out_is_active_read,
+        if_num_data_valid => screen_tris_out_is_active_num_data_valid,
+        if_fifo_cap => screen_tris_out_is_active_fifo_cap);
+
+    start_for_k2_perspective_divide_U0_U : component top_kernel_start_for_k2_perspective_divide_U0
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => start_for_k2_perspective_divide_U0_din,
+        if_full_n => start_for_k2_perspective_divide_U0_full_n,
+        if_write => k1_vertex_transform_U0_start_write,
+        if_dout => start_for_k2_perspective_divide_U0_dout,
+        if_empty_n => start_for_k2_perspective_divide_U0_empty_n,
+        if_read => k2_perspective_divide_U0_ap_ready);
+
+    start_for_k3_bounding_box_U0_U : component top_kernel_start_for_k3_bounding_box_U0
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => start_for_k3_bounding_box_U0_din,
+        if_full_n => start_for_k3_bounding_box_U0_full_n,
+        if_write => k2_perspective_divide_U0_start_write,
+        if_dout => start_for_k3_bounding_box_U0_dout,
+        if_empty_n => start_for_k3_bounding_box_U0_empty_n,
+        if_read => k3_bounding_box_U0_ap_ready);
+
+    start_for_k4_rasterize_U0_U : component top_kernel_start_for_k4_rasterize_U0
+    port map (
+        clk => ap_clk,
+        reset => ap_rst_n_inv,
+        if_read_ce => ap_const_logic_1,
+        if_write_ce => ap_const_logic_1,
+        if_din => start_for_k4_rasterize_U0_din,
+        if_full_n => start_for_k4_rasterize_U0_full_n,
+        if_write => k3_bounding_box_U0_start_write,
+        if_dout => start_for_k4_rasterize_U0_dout,
+        if_empty_n => start_for_k4_rasterize_U0_empty_n,
+        if_read => k4_rasterize_U0_ap_ready);
 
 
 
-
-    ap_sync_reg_channel_write_clip_tris_v2_z_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_clip_tris_v2_z <= ap_const_logic_0;
-            else
-                if (((k1_vertex_transform_U0_ap_done and k1_vertex_transform_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_clip_tris_v2_z <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_clip_tris_v2_z <= ap_sync_channel_write_clip_tris_v2_z;
-                end if; 
-            end if;
-        end if;
-    end process;
 
 
     ap_sync_reg_channel_write_normal_buffer_z_assign_proc : process(ap_clk)
@@ -3495,26 +5083,10 @@ begin
             if (ap_rst_n_inv = '1') then
                 ap_sync_reg_channel_write_normal_buffer_z <= ap_const_logic_0;
             else
-                if (((Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done and Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue) = ap_const_logic_1)) then 
+                if (((k4_rasterize_U0_ap_done and k4_rasterize_U0_ap_continue) = ap_const_logic_1)) then 
                     ap_sync_reg_channel_write_normal_buffer_z <= ap_const_logic_0;
                 else 
                     ap_sync_reg_channel_write_normal_buffer_z <= ap_sync_channel_write_normal_buffer_z;
-                end if; 
-            end if;
-        end if;
-    end process;
-
-
-    ap_sync_reg_channel_write_screen_tris_is_active_assign_proc : process(ap_clk)
-    begin
-        if (ap_clk'event and ap_clk =  '1') then
-            if (ap_rst_n_inv = '1') then
-                ap_sync_reg_channel_write_screen_tris_is_active <= ap_const_logic_0;
-            else
-                if (((k2_perspective_divide_U0_ap_done and k2_perspective_divide_U0_ap_continue) = ap_const_logic_1)) then 
-                    ap_sync_reg_channel_write_screen_tris_is_active <= ap_const_logic_0;
-                else 
-                    ap_sync_reg_channel_write_screen_tris_is_active <= ap_sync_channel_write_screen_tris_is_active;
                 end if; 
             end if;
         end if;
@@ -3552,14 +5124,9 @@ begin
         end if;
     end process;
 
-    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_continue <= ap_sync_channel_write_normal_buffer_z;
-    Block_entry_screen_tris_v0_x_rd_proc_U0_ap_start <= screen_tris_is_active_t_empty_n;
-    Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_full_n <= normal_buffer_z_i_full_n;
-    ap_channel_done_clip_tris_v2_z <= (k1_vertex_transform_U0_ap_done and (ap_sync_reg_channel_write_clip_tris_v2_z xor ap_const_logic_1));
-    ap_channel_done_normal_buffer_z <= ((ap_sync_reg_channel_write_normal_buffer_z xor ap_const_logic_1) and Block_entry_screen_tris_v0_x_rd_proc_U0_ap_done);
-    ap_channel_done_screen_tris_is_active <= (k2_perspective_divide_U0_ap_done and (ap_sync_reg_channel_write_screen_tris_is_active xor ap_const_logic_1));
+    ap_channel_done_normal_buffer_z <= (k4_rasterize_U0_ap_done and (ap_sync_reg_channel_write_normal_buffer_z xor ap_const_logic_1));
     ap_done <= k5_deferred_lighting_U0_ap_done;
-    ap_idle <= (k5_deferred_lighting_U0_ap_idle and k2_perspective_divide_U0_ap_idle and k1_vertex_transform_U0_ap_idle and (normal_buffer_z_t_empty_n xor ap_const_logic_1) and (screen_tris_is_active_t_empty_n xor ap_const_logic_1) and (clip_tris_v2_z_t_empty_n xor ap_const_logic_1) and entry_proc_U0_ap_idle and Block_entry_screen_tris_v0_x_rd_proc_U0_ap_idle);
+    ap_idle <= (k5_deferred_lighting_U0_ap_idle and k4_rasterize_U0_ap_idle and k3_bounding_box_U0_ap_idle and k2_perspective_divide_U0_ap_idle and k1_vertex_transform_U0_ap_idle and (normal_buffer_z_t_empty_n xor ap_const_logic_1) and entry_proc_U0_ap_idle);
     ap_ready <= ap_sync_ready;
 
     ap_rst_n_inv_assign_proc : process(ap_rst_n)
@@ -3567,9 +5134,7 @@ begin
                 ap_rst_n_inv <= not(ap_rst_n);
     end process;
 
-    ap_sync_channel_write_clip_tris_v2_z <= ((k1_vertex_transform_U0_clip_tris_v2_z_full_n and ap_channel_done_clip_tris_v2_z) or ap_sync_reg_channel_write_clip_tris_v2_z);
-    ap_sync_channel_write_normal_buffer_z <= ((ap_channel_done_normal_buffer_z and Block_entry_screen_tris_v0_x_rd_proc_U0_normal_buffer_z_full_n) or ap_sync_reg_channel_write_normal_buffer_z);
-    ap_sync_channel_write_screen_tris_is_active <= ((k2_perspective_divide_U0_screen_tris_is_active_full_n and ap_channel_done_screen_tris_is_active) or ap_sync_reg_channel_write_screen_tris_is_active);
+    ap_sync_channel_write_normal_buffer_z <= ((k4_rasterize_U0_normal_buffer_z_full_n and ap_channel_done_normal_buffer_z) or ap_sync_reg_channel_write_normal_buffer_z);
     ap_sync_entry_proc_U0_ap_ready <= (entry_proc_U0_ap_ready or ap_sync_reg_entry_proc_U0_ap_ready);
     ap_sync_k1_vertex_transform_U0_ap_ready <= (k1_vertex_transform_U0_ap_ready or ap_sync_reg_k1_vertex_transform_U0_ap_ready);
     ap_sync_ready <= (ap_sync_k1_vertex_transform_U0_ap_ready and ap_sync_entry_proc_U0_ap_ready);
@@ -3582,20 +5147,76 @@ begin
     gmem1_0_BID <= ap_const_lv1_0;
     gmem1_0_BRESP <= ap_const_lv2_0;
     gmem1_0_BUSER <= ap_const_lv1_0;
-    k1_vertex_transform_U0_ap_continue <= ap_sync_channel_write_clip_tris_v2_z;
+    gmem2_0_RID <= ap_const_lv1_0;
+    gmem2_0_RLAST <= ap_const_logic_0;
+    gmem2_0_RRESP <= ap_const_lv2_0;
+    gmem2_0_RUSER <= ap_const_lv1_0;
+    k1_vertex_transform_U0_ap_continue <= ap_const_logic_1;
     k1_vertex_transform_U0_ap_start <= ((ap_sync_reg_k1_vertex_transform_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
-    k1_vertex_transform_U0_clip_tris_v2_z_full_n <= clip_tris_v2_z_i_full_n;
-    k2_perspective_divide_U0_ap_continue <= ap_sync_channel_write_screen_tris_is_active;
-    k2_perspective_divide_U0_ap_start <= clip_tris_v2_z_t_empty_n;
-    k2_perspective_divide_U0_screen_tris_is_active_full_n <= screen_tris_is_active_i_full_n;
+    k2_perspective_divide_U0_ap_continue <= ap_const_logic_1;
+    k2_perspective_divide_U0_ap_start <= start_for_k2_perspective_divide_U0_empty_n;
+    k3_bounding_box_U0_ap_continue <= ap_const_logic_1;
+    k3_bounding_box_U0_ap_start <= start_for_k3_bounding_box_U0_empty_n;
+    k3_bounding_box_U0_bounds_max_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_max_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_bounds_max_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_max_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_bounds_max_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_max_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_bounds_max_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_max_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_bounds_min_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_min_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_bounds_min_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_min_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_bounds_min_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_min_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_bounds_min_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_min_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_color_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_color_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_color_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_color_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_is_active_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_is_active_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_is_active_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_is_active_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n0_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n0_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n0_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n0_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n0_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n0_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n0_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n0_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n0_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n0_z_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n0_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n0_z_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n1_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n1_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n1_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n1_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n1_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n1_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n1_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n1_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n1_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n1_z_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n1_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n1_z_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n2_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n2_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n2_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n2_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n2_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n2_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n2_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n2_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n2_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n2_z_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_n2_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_n2_z_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_w_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_w_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_w_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_w_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_z_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v0_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v0_z_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_w_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_w_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_w_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_w_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_z_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v1_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v1_z_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_w_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_w_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_w_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_w_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_x_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_x_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_y_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_y_num_data_valid),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_z_fifo_cap),3))),32));
+    k3_bounding_box_U0_screen_tris_out_v2_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_out_v2_z_num_data_valid),3))),32));
+    k4_rasterize_U0_ap_continue <= ap_sync_channel_write_normal_buffer_z;
+    k4_rasterize_U0_ap_start <= start_for_k4_rasterize_U0_empty_n;
+    k4_rasterize_U0_normal_buffer_z_full_n <= normal_buffer_z_i_full_n;
     k5_deferred_lighting_U0_ap_continue <= ap_const_logic_1;
     k5_deferred_lighting_U0_ap_start <= normal_buffer_z_t_empty_n;
-    mvp_matrix_address0 <= k1_vertex_transform_U0_mvp_matrix_address0;
-    mvp_matrix_address1 <= k1_vertex_transform_U0_mvp_matrix_address1;
-    mvp_matrix_ce0 <= k1_vertex_transform_U0_mvp_matrix_ce0;
-    mvp_matrix_ce1 <= k1_vertex_transform_U0_mvp_matrix_ce1;
-    mvp_matrix_d0 <= ap_const_lv32_0;
-    mvp_matrix_d1 <= ap_const_lv32_0;
-    mvp_matrix_we0 <= ap_const_logic_0;
-    mvp_matrix_we1 <= ap_const_logic_0;
+    start_for_k2_perspective_divide_U0_din <= (0=>ap_const_logic_1, others=>'-');
+    start_for_k3_bounding_box_U0_din <= (0=>ap_const_logic_1, others=>'-');
+    start_for_k4_rasterize_U0_din <= (0=>ap_const_logic_1, others=>'-');
 end behav;
