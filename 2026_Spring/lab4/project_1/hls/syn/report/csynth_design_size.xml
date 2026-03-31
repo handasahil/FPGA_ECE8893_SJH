@@ -2,42 +2,42 @@
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 68681, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">, 44222, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll,  8269, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,  3778, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,  3595, user inline pragmas are applied</column>
-            <column name="">(4) simplification,  3397, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll,  5011, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  2230, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,  2109, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  2016, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition,  3395, user array partition pragmas are applied</column>
-            <column name="">(2) simplification,  3395, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate ,  3412, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape,  3429, apply array reshape pragmas</column>
-            <column name="">(5) access patterns,  3435, array access pattern optmizations</column>
+            <column name="">(1) array partition,  2018, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  2018, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  2035, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  2052, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  2058, array access pattern optmizations</column>
             <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
-            <column name="">(1) loop simplification,  3401, loop and instruction simplification</column>
-            <column name="">(2) parallelization,  3401, loops are unrolled or pipelined to meet performance targets</column>
-            <column name="">(3) array partition,  3399, arrays are partitioned to meet performance targets</column>
-            <column name="">(4) simplification,  3399, simplification of design after performance transformations</column>
+            <column name="">(1) loop simplification,  2024, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  2024, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  2022, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  2022, simplification of design after performance transformations</column>
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
-            <column name="">(1) lowering,  3482, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,  3505, high level synthesis optimizations</column>
+            <column name="">(1) lowering,  2105, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  2130, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="top_kernel" col1="top.cpp:369" col2="68681" col3="3397" col4="3435" col5="3399" col6="3505">
-                    <row id="1" col0="k1_vertex_transform" col1="top.cpp:7" col2="6113" col3="747" col4="779" col5="747" col6="825"/>
-                    <row id="2" col0="k2_perspective_divide" col1="top.cpp:37" col2="21825" col3="844" col4="844" col5="844" col6="847"/>
-                    <row id="4" col0="k3_bounding_box" col1="top.cpp:128" col2="2209" col3="111" col4="111" col5="111" col6=""/>
-                    <row id="3" col0="k4_rasterize" col1="top.cpp:166" col2="27585" col3="1448" col4="1448" col5="1446" col6=""/>
-                    <row id="5" col0="k5_deferred_lighting" col1="top.cpp:299" col2="10940" col3="236" col4="240" col5="238" col6="239"/>
+                <row id="0" col0="top_kernel" col1="top.cpp:205" col2="44222" col3="2016" col4="2058" col5="2022" col6="2130">
+                    <row id="3" col0="k1_vertex_transform" col1="top.cpp:7" col2="6113" col3="747" col4="779" col5="747" col6="825"/>
+                    <row id="2" col0="k2_perspective_divide" col1="top.cpp:37" col2="7936" col3="392" col4="396" col5="396" col6="391"/>
+                    <row id="4" col0="k3_bounding_box" col1="top.cpp:73" col2="2209" col3="111" col4="111" col5="111" col6=""/>
+                    <row id="5" col0="k4_rasterize" col1="top.cpp:110" col2="18111" col3="623" col4="623" col5="621" col6=""/>
+                    <row id="1" col0="k5_deferred_lighting" col1="top.cpp:175" col2="9844" col3="132" col4="136" col5="134" col6="139"/>
                 </row>
             </rows>
             <notes/>

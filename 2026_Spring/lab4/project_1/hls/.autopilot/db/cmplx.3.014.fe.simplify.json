@@ -1,41 +1,23 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "3 1 2 4 5",
+    "calls": "2 4 1 5 3",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 369,
+    "fileloc": 205,
     "instructions": 13,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 3399
+    "total_instructions": 2022
   },
   "1": {
-    "basicblocks": 14,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 44,
-    "file": "top.cpp",
-    "fileloc": 37,
-    "instructions": 844,
-    "loads": {
-      "G": 23
-    },
-    "memory_accesses": 55,
-    "name": "k2_perspective_divide",
-    "stores": {
-      "G": 32
-    },
-    "total_instructions": 844
-  },
-  "2": {
     "basicblocks": 22,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 11,
     "file": "top.cpp",
-    "fileloc": 128,
+    "fileloc": 73,
     "instructions": 111,
     "loads": {
       "G": 7
@@ -47,7 +29,7 @@
     },
     "total_instructions": 111
   },
-  "3": {
+  "2": {
     "basicblocks": 5,
     "calls": "",
     "control_depth": 2,
@@ -65,37 +47,59 @@
     },
     "total_instructions": 747
   },
-  "4": {
-    "basicblocks": 22,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 89,
-    "file": "top.cpp",
-    "fileloc": 166,
-    "instructions": 1446,
-    "loads": {
-      "G": 24
-    },
-    "memory_accesses": 21,
-    "name": "k4_rasterize",
-    "stores": {
-      "G": 8
-    },
-    "total_instructions": 1446
-  },
-  "5": {
+  "3": {
     "basicblocks": 7,
     "calls": "",
     "control_depth": 2,
-    "def_use_depth": 59,
+    "def_use_depth": 43,
     "file": "top.cpp",
-    "fileloc": 299,
-    "instructions": 238,
+    "fileloc": 175,
+    "instructions": 134,
     "loads": {
       "G": 4
     },
     "memory_accesses": 5,
     "name": "k5_deferred_lighting",
-    "total_instructions": 238
+    "total_instructions": 134
+  },
+  "4": {
+    "basicblocks": 10,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 37,
+    "file": "top.cpp",
+    "fileloc": 37,
+    "instructions": 396,
+    "loads": {
+      "G": 23,
+      "L": 13
+    },
+    "memory_accesses": 7,
+    "name": "k2_perspective_divide",
+    "stores": {
+      "G": 35,
+      "L": 15
+    },
+    "total_instructions": 396
+  },
+  "5": {
+    "basicblocks": 26,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 49,
+    "file": "top.cpp",
+    "fileloc": 110,
+    "instructions": 621,
+    "loads": {
+      "G": 23,
+      "L": 5
+    },
+    "memory_accesses": 29,
+    "name": "k4_rasterize",
+    "stores": {
+      "G": 4,
+      "L": 8
+    },
+    "total_instructions": 621
   }
 }

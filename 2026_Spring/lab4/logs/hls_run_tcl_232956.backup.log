@@ -1,0 +1,84 @@
+  **** HLS Build v2025.1.1 6214317
+Sourcing Tcl script '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/script.tcl'
+INFO: [HLS 200-1510] Running: open_component project_1 
+INFO: [HLS 200-10] Creating and opening component '/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2176] Writing Vitis IDE component file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/vitis-comp.json
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+INFO: [HLS 200-1510] Running: set_top top_kernel 
+INFO: [HLS 200-1510] Running: add_files top.cpp 
+INFO: [HLS 200-10] Adding design file 'top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb host.cpp 
+INFO: [HLS 200-10] Adding test bench file 'host.cpp' to the project
+INFO: [HLS 200-1510] Running: config_unroll -tripcount_threshold 0 
+INFO: [XFORM 203-502] Automatic unrolling disabled.
+INFO: [HLS 200-1510] Running: config_compile -pipeline_loops 0 
+INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e 
+INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.64 seconds. CPU system time: 0.2 seconds. Elapsed time: 9.39 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:207:18)
+Resolution: For help on HLS 214-111 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:208:21)
+Resolution: For help on HLS 214-111 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:209:24)
+Resolution: For help on HLS 214-111 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:212:19)
+Resolution: For help on HLS 214-111 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:213:17)
+Resolution: For help on HLS 214-111 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 200-471] Dataflow form checks found 5 issue(s) in file top.cpp
+Resolution: For help on HLS 200-471 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-471.html
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.47 seconds. CPU system time: 1.22 seconds. Elapsed time: 10.83 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 44,174 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 4,971 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,198 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,079 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,986 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,988 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,988 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,005 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,022 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,028 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,994 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,994 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,992 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,992 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,075 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,094 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_19_2' is marked as complete unroll implied by the pipeline pragma (top.cpp:19:30)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_19_2' (top.cpp:19:30) in function 'k1_vertex_transform' completely with a factor of 3 (top.cpp:9:0)
+INFO: [HLS 214-241] Aggregating bram variable 'mvp_matrix' with compact=bit mode in 32-bits (top.cpp:200:0)
+INFO: [HLS 214-241] Aggregating maxi variable 'out_pixels' with compact=none mode in 32-bits
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_42_1'. (top.cpp:42:22)
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_122_3'. (top.cpp:122:23)
+INFO: [HLS 214-115] Multiple burst writes of length 4096 and bit width 32 in loop 'VITIS_LOOP_176_1'(top.cpp:176:23) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:176:23)
+WARNING: [HLS 214-475] Merging processes 'k4_rasterize' and 'k3_bounding_box' in function 'top_kernel' due to reads on 'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])::screen_tris (.v0.x)' (top.cpp:200:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.93 seconds. CPU system time: 1.13 seconds. Elapsed time: 9.38 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 0.000 MB.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 128 for loop 'VITIS_LOOP_122_3' (top.cpp:122:32) in function 'k4_rasterize'.
+ERROR: [HLS 200-968] Internal global variable 'depth_buffer' failed dataflow checking: it can only be read in one process function.
+INFO: [HLS 200-992] Internal global variable 'depth_buffer' has read and write operations in process function 'Block_entry_screen_tris (.v0.x)_rd_proc' (top.cpp:218:5) (around top.cpp:218).
+Resolution: For help on HLS 200-992 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-992.html
+INFO: [HLS 200-992] Internal global variable 'depth_buffer' has read operations in process function 'k5_deferred_lighting' (top.cpp:176:37) (around top.cpp:220).
+Resolution: For help on HLS 200-992 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-992.html
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+ERROR: [HLS 200-70] Pre-synthesis failed.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:30; Allocated memory: 0.000 MB.
+command 'ap_source' returned error code
+    while executing
+"source /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/script.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 22.07 seconds. Total CPU system time: 4.08 seconds. Total elapsed time: 36.91 seconds; peak allocated memory: 0.000 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

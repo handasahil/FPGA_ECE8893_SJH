@@ -1,0 +1,126 @@
+<stg><name>Block_entry_screen_tris (.v0.x)_rd_proc</name>
+
+
+<trans_list>
+
+<trans id="10" from="1" to="2">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="11" from="2" to="3">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="12" from="3" to="4">
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="5" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="15" op_4_bw="15" op_5_bw="1" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32">
+<![CDATA[
+entry:0 %call_ln225 = call void @k3_bounding_box, i16 %bounds_max_x, i16 %bounds_max_y, i15 %bounds_min_x, i15 %bounds_min_y, i1 %screen_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y
+
+]]></Node>
+<StgValue><ssdm name="call_ln225"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="6" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="28" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="15" op_4_bw="15" op_5_bw="1" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32">
+<![CDATA[
+entry:0 %call_ln225 = call void @k3_bounding_box, i16 %bounds_max_x, i16 %bounds_max_y, i15 %bounds_min_x, i15 %bounds_min_y, i1 %screen_tris_is_active, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y
+
+]]></Node>
+<StgValue><ssdm name="call_ln225"/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="7" st_id="3" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="1" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="15" op_25_bw="16" op_26_bw="15" op_27_bw="16" op_28_bw="0" op_29_bw="0">
+<![CDATA[
+entry:1 %call_ln226 = call void @k4_rasterize, i32 %depth_buffer, i32 %normal_buffer_x, i32 %normal_buffer_y, i32 %normal_buffer_z, i1 %screen_tris_is_active, i32 %screen_tris_n0_x, i32 %screen_tris_n0_y, i32 %screen_tris_n0_z, i32 %screen_tris_n1_x, i32 %screen_tris_n1_y, i32 %screen_tris_n1_z, i32 %screen_tris_n2_x, i32 %screen_tris_n2_y, i32 %screen_tris_n2_z, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v0_z, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v1_z, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y, i32 %screen_tris_v2_z, i15 %bounds_min_y, i16 %bounds_max_y, i15 %bounds_min_x, i16 %bounds_max_x
+
+]]></Node>
+<StgValue><ssdm name="call_ln226"/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="8" st_id="4" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="29" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="1" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="15" op_25_bw="16" op_26_bw="15" op_27_bw="16" op_28_bw="0" op_29_bw="0">
+<![CDATA[
+entry:1 %call_ln226 = call void @k4_rasterize, i32 %depth_buffer, i32 %normal_buffer_x, i32 %normal_buffer_y, i32 %normal_buffer_z, i1 %screen_tris_is_active, i32 %screen_tris_n0_x, i32 %screen_tris_n0_y, i32 %screen_tris_n0_z, i32 %screen_tris_n1_x, i32 %screen_tris_n1_y, i32 %screen_tris_n1_z, i32 %screen_tris_n2_x, i32 %screen_tris_n2_y, i32 %screen_tris_n2_z, i32 %screen_tris_v0_x, i32 %screen_tris_v0_y, i32 %screen_tris_v0_z, i32 %screen_tris_v1_x, i32 %screen_tris_v1_y, i32 %screen_tris_v1_z, i32 %screen_tris_v2_x, i32 %screen_tris_v2_y, i32 %screen_tris_v2_z, i15 %bounds_min_y, i16 %bounds_max_y, i15 %bounds_min_x, i16 %bounds_max_x
+
+]]></Node>
+<StgValue><ssdm name="call_ln226"/></StgValue>
+</operation>
+
+<operation id="9" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="30" bw="0">
+<![CDATA[
+entry:2 %ret_ln225 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln225"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

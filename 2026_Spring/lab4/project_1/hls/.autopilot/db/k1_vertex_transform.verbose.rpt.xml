@@ -1,0 +1,279 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'k1_vertex_transform'" level="0">
+<item name = "Date">Mon Mar 30 23:31:10 2026
+</item>
+<item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
+<item name = "Project">project_1</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu3eg-sbva484-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">2336, 2336, 23.360 us, 23.360 us, 2336, 2336, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_k1_vertex_transform_Pipeline_VITIS_LOOP_10_1_fu_263">k1_vertex_transform_Pipeline_VITIS_LOOP_10_1, 2327, 2327, 23.270 us, 23.270 us, 2304, 2304, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 12, 6840, 17390, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 166, -</column>
+<column name="Register">-, -, 588, -, -</column>
+<specialColumn name="Available">432, 360, 141120, 70560, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 3, 5, 24, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_k1_vertex_transform_Pipeline_VITIS_LOOP_10_1_fu_263">k1_vertex_transform_Pipeline_VITIS_LOOP_10_1, 0, 12, 6840, 17390, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">59, 11, 1, 11</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="mvp_matrix_address0_local">49, 9, 4, 36</column>
+<column name="mvp_matrix_address1_local">49, 9, 4, 36</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">10, 0, 10, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="grp_k1_vertex_transform_Pipeline_VITIS_LOOP_10_1_fu_263_ap_start_reg">1, 0, 1, 0</column>
+<column name="in_tris_read_reg_483">64, 0, 64, 0</column>
+<column name="mvp_matrix_load_10_reg_453">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_11_reg_458">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_12_reg_473">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_13_reg_478">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_14_reg_488">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_15_reg_493">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_1_reg_358">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_2_reg_373">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_3_reg_378">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_4_reg_393">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_5_reg_398">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_6_reg_413">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_7_reg_418">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_8_reg_433">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_9_reg_438">32, 0, 32, 0</column>
+<column name="mvp_matrix_load_reg_353">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, k1_vertex_transform, return value</column>
+<column name="m_axi_gmem0_0_AWVALID">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWREADY">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWADDR">out, 64, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWID">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWLEN">out, 32, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWSIZE">out, 3, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWBURST">out, 2, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWLOCK">out, 2, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWCACHE">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWPROT">out, 3, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWQOS">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWREGION">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_AWUSER">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WVALID">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WREADY">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WDATA">out, 1024, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WSTRB">out, 128, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WLAST">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WID">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_WUSER">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARVALID">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARREADY">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARADDR">out, 64, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARID">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARLEN">out, 32, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARSIZE">out, 3, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARBURST">out, 2, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARLOCK">out, 2, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARCACHE">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARPROT">out, 3, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARQOS">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARREGION">out, 4, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_ARUSER">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RVALID">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RREADY">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RDATA">in, 1024, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RLAST">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RID">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RFIFONUM">in, 9, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RUSER">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_RRESP">in, 2, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_BVALID">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_BREADY">out, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_BRESP">in, 2, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_BID">in, 1, m_axi, gmem0, pointer</column>
+<column name="m_axi_gmem0_0_BUSER">in, 1, m_axi, gmem0, pointer</column>
+<column name="in_tris">in, 64, ap_none, in_tris, scalar</column>
+<column name="mvp_matrix_address0">out, 4, ap_memory, mvp_matrix, array</column>
+<column name="mvp_matrix_ce0">out, 1, ap_memory, mvp_matrix, array</column>
+<column name="mvp_matrix_q0">in, 32, ap_memory, mvp_matrix, array</column>
+<column name="mvp_matrix_address1">out, 4, ap_memory, mvp_matrix, array</column>
+<column name="mvp_matrix_ce1">out, 1, ap_memory, mvp_matrix, array</column>
+<column name="mvp_matrix_q1">in, 32, ap_memory, mvp_matrix, array</column>
+<column name="clip_tris_is_active_address0">out, 7, ap_memory, clip_tris_is_active, array</column>
+<column name="clip_tris_is_active_ce0">out, 1, ap_memory, clip_tris_is_active, array</column>
+<column name="clip_tris_is_active_we0">out, 1, ap_memory, clip_tris_is_active, array</column>
+<column name="clip_tris_is_active_d0">out, 1, ap_memory, clip_tris_is_active, array</column>
+<column name="clip_tris_n0_x_address0">out, 7, ap_memory, clip_tris_n0_x, array</column>
+<column name="clip_tris_n0_x_ce0">out, 1, ap_memory, clip_tris_n0_x, array</column>
+<column name="clip_tris_n0_x_we0">out, 1, ap_memory, clip_tris_n0_x, array</column>
+<column name="clip_tris_n0_x_d0">out, 32, ap_memory, clip_tris_n0_x, array</column>
+<column name="clip_tris_n0_y_address0">out, 7, ap_memory, clip_tris_n0_y, array</column>
+<column name="clip_tris_n0_y_ce0">out, 1, ap_memory, clip_tris_n0_y, array</column>
+<column name="clip_tris_n0_y_we0">out, 1, ap_memory, clip_tris_n0_y, array</column>
+<column name="clip_tris_n0_y_d0">out, 32, ap_memory, clip_tris_n0_y, array</column>
+<column name="clip_tris_n0_z_address0">out, 7, ap_memory, clip_tris_n0_z, array</column>
+<column name="clip_tris_n0_z_ce0">out, 1, ap_memory, clip_tris_n0_z, array</column>
+<column name="clip_tris_n0_z_we0">out, 1, ap_memory, clip_tris_n0_z, array</column>
+<column name="clip_tris_n0_z_d0">out, 32, ap_memory, clip_tris_n0_z, array</column>
+<column name="clip_tris_n1_x_address0">out, 7, ap_memory, clip_tris_n1_x, array</column>
+<column name="clip_tris_n1_x_ce0">out, 1, ap_memory, clip_tris_n1_x, array</column>
+<column name="clip_tris_n1_x_we0">out, 1, ap_memory, clip_tris_n1_x, array</column>
+<column name="clip_tris_n1_x_d0">out, 32, ap_memory, clip_tris_n1_x, array</column>
+<column name="clip_tris_n1_y_address0">out, 7, ap_memory, clip_tris_n1_y, array</column>
+<column name="clip_tris_n1_y_ce0">out, 1, ap_memory, clip_tris_n1_y, array</column>
+<column name="clip_tris_n1_y_we0">out, 1, ap_memory, clip_tris_n1_y, array</column>
+<column name="clip_tris_n1_y_d0">out, 32, ap_memory, clip_tris_n1_y, array</column>
+<column name="clip_tris_n1_z_address0">out, 7, ap_memory, clip_tris_n1_z, array</column>
+<column name="clip_tris_n1_z_ce0">out, 1, ap_memory, clip_tris_n1_z, array</column>
+<column name="clip_tris_n1_z_we0">out, 1, ap_memory, clip_tris_n1_z, array</column>
+<column name="clip_tris_n1_z_d0">out, 32, ap_memory, clip_tris_n1_z, array</column>
+<column name="clip_tris_n2_x_address0">out, 7, ap_memory, clip_tris_n2_x, array</column>
+<column name="clip_tris_n2_x_ce0">out, 1, ap_memory, clip_tris_n2_x, array</column>
+<column name="clip_tris_n2_x_we0">out, 1, ap_memory, clip_tris_n2_x, array</column>
+<column name="clip_tris_n2_x_d0">out, 32, ap_memory, clip_tris_n2_x, array</column>
+<column name="clip_tris_n2_y_address0">out, 7, ap_memory, clip_tris_n2_y, array</column>
+<column name="clip_tris_n2_y_ce0">out, 1, ap_memory, clip_tris_n2_y, array</column>
+<column name="clip_tris_n2_y_we0">out, 1, ap_memory, clip_tris_n2_y, array</column>
+<column name="clip_tris_n2_y_d0">out, 32, ap_memory, clip_tris_n2_y, array</column>
+<column name="clip_tris_n2_z_address0">out, 7, ap_memory, clip_tris_n2_z, array</column>
+<column name="clip_tris_n2_z_ce0">out, 1, ap_memory, clip_tris_n2_z, array</column>
+<column name="clip_tris_n2_z_we0">out, 1, ap_memory, clip_tris_n2_z, array</column>
+<column name="clip_tris_n2_z_d0">out, 32, ap_memory, clip_tris_n2_z, array</column>
+<column name="clip_tris_v0_w_address0">out, 7, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_ce0">out, 1, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_we0">out, 1, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_d0">out, 32, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_address1">out, 7, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_ce1">out, 1, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_we1">out, 1, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_w_d1">out, 32, ap_memory, clip_tris_v0_w, array</column>
+<column name="clip_tris_v0_x_address0">out, 7, ap_memory, clip_tris_v0_x, array</column>
+<column name="clip_tris_v0_x_ce0">out, 1, ap_memory, clip_tris_v0_x, array</column>
+<column name="clip_tris_v0_x_we0">out, 1, ap_memory, clip_tris_v0_x, array</column>
+<column name="clip_tris_v0_x_d0">out, 32, ap_memory, clip_tris_v0_x, array</column>
+<column name="clip_tris_v0_y_address0">out, 7, ap_memory, clip_tris_v0_y, array</column>
+<column name="clip_tris_v0_y_ce0">out, 1, ap_memory, clip_tris_v0_y, array</column>
+<column name="clip_tris_v0_y_we0">out, 1, ap_memory, clip_tris_v0_y, array</column>
+<column name="clip_tris_v0_y_d0">out, 32, ap_memory, clip_tris_v0_y, array</column>
+<column name="clip_tris_v0_z_address0">out, 7, ap_memory, clip_tris_v0_z, array</column>
+<column name="clip_tris_v0_z_ce0">out, 1, ap_memory, clip_tris_v0_z, array</column>
+<column name="clip_tris_v0_z_we0">out, 1, ap_memory, clip_tris_v0_z, array</column>
+<column name="clip_tris_v0_z_d0">out, 32, ap_memory, clip_tris_v0_z, array</column>
+<column name="clip_tris_v1_w_address0">out, 7, ap_memory, clip_tris_v1_w, array</column>
+<column name="clip_tris_v1_w_ce0">out, 1, ap_memory, clip_tris_v1_w, array</column>
+<column name="clip_tris_v1_w_we0">out, 1, ap_memory, clip_tris_v1_w, array</column>
+<column name="clip_tris_v1_w_d0">out, 32, ap_memory, clip_tris_v1_w, array</column>
+<column name="clip_tris_v1_x_address0">out, 7, ap_memory, clip_tris_v1_x, array</column>
+<column name="clip_tris_v1_x_ce0">out, 1, ap_memory, clip_tris_v1_x, array</column>
+<column name="clip_tris_v1_x_we0">out, 1, ap_memory, clip_tris_v1_x, array</column>
+<column name="clip_tris_v1_x_d0">out, 32, ap_memory, clip_tris_v1_x, array</column>
+<column name="clip_tris_v1_y_address0">out, 7, ap_memory, clip_tris_v1_y, array</column>
+<column name="clip_tris_v1_y_ce0">out, 1, ap_memory, clip_tris_v1_y, array</column>
+<column name="clip_tris_v1_y_we0">out, 1, ap_memory, clip_tris_v1_y, array</column>
+<column name="clip_tris_v1_y_d0">out, 32, ap_memory, clip_tris_v1_y, array</column>
+<column name="clip_tris_v1_z_address0">out, 7, ap_memory, clip_tris_v1_z, array</column>
+<column name="clip_tris_v1_z_ce0">out, 1, ap_memory, clip_tris_v1_z, array</column>
+<column name="clip_tris_v1_z_we0">out, 1, ap_memory, clip_tris_v1_z, array</column>
+<column name="clip_tris_v1_z_d0">out, 32, ap_memory, clip_tris_v1_z, array</column>
+<column name="clip_tris_v2_w_address0">out, 7, ap_memory, clip_tris_v2_w, array</column>
+<column name="clip_tris_v2_w_ce0">out, 1, ap_memory, clip_tris_v2_w, array</column>
+<column name="clip_tris_v2_w_we0">out, 1, ap_memory, clip_tris_v2_w, array</column>
+<column name="clip_tris_v2_w_d0">out, 32, ap_memory, clip_tris_v2_w, array</column>
+<column name="clip_tris_v2_x_address0">out, 7, ap_memory, clip_tris_v2_x, array</column>
+<column name="clip_tris_v2_x_ce0">out, 1, ap_memory, clip_tris_v2_x, array</column>
+<column name="clip_tris_v2_x_we0">out, 1, ap_memory, clip_tris_v2_x, array</column>
+<column name="clip_tris_v2_x_d0">out, 32, ap_memory, clip_tris_v2_x, array</column>
+<column name="clip_tris_v2_y_address0">out, 7, ap_memory, clip_tris_v2_y, array</column>
+<column name="clip_tris_v2_y_ce0">out, 1, ap_memory, clip_tris_v2_y, array</column>
+<column name="clip_tris_v2_y_we0">out, 1, ap_memory, clip_tris_v2_y, array</column>
+<column name="clip_tris_v2_y_d0">out, 32, ap_memory, clip_tris_v2_y, array</column>
+<column name="clip_tris_v2_z_address0">out, 7, ap_memory, clip_tris_v2_z, array</column>
+<column name="clip_tris_v2_z_ce0">out, 1, ap_memory, clip_tris_v2_z, array</column>
+<column name="clip_tris_v2_z_we0">out, 1, ap_memory, clip_tris_v2_z, array</column>
+<column name="clip_tris_v2_z_d0">out, 32, ap_memory, clip_tris_v2_z, array</column>
+</table>
+</item>
+</section>
+</profile>

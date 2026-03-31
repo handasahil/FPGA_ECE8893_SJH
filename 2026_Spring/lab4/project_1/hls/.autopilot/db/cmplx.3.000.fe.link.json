@@ -1,17 +1,53 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "1 2 4 3 5",
+    "calls": "3 2 4 5 1",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 369,
+    "fileloc": 205,
     "instructions": 9,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 68681
+    "total_instructions": 44222
   },
   "1": {
+    "basicblocks": 20,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 2,
+    "file": "top.cpp",
+    "fileloc": 175,
+    "instructions": 200,
+    "loads": {
+      "L": 5
+    },
+    "memory_accesses": 30,
+    "name": "k5_deferred_lighting",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 9844
+  },
+  "2": {
+    "basicblocks": 20,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 2,
+    "file": "top.cpp",
+    "fileloc": 37,
+    "instructions": 238,
+    "loads": {
+      "L": 11
+    },
+    "memory_accesses": 26,
+    "name": "k2_perspective_divide",
+    "stores": {
+      "L": 10
+    },
+    "total_instructions": 7936
+  },
+  "3": {
     "basicblocks": 15,
     "calls": "",
     "control_depth": 1,
@@ -29,49 +65,13 @@
     },
     "total_instructions": 6113
   },
-  "2": {
-    "basicblocks": 24,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 2,
-    "file": "top.cpp",
-    "fileloc": 37,
-    "instructions": 703,
-    "loads": {
-      "L": 32
-    },
-    "memory_accesses": 129,
-    "name": "k2_perspective_divide",
-    "stores": {
-      "L": 31
-    },
-    "total_instructions": 21825
-  },
-  "3": {
-    "basicblocks": 49,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 3,
-    "file": "top.cpp",
-    "fileloc": 166,
-    "instructions": 1159,
-    "loads": {
-      "L": 23
-    },
-    "memory_accesses": 132,
-    "name": "k4_rasterize",
-    "stores": {
-      "L": 18
-    },
-    "total_instructions": 27585
-  },
   "4": {
     "basicblocks": 38,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 3,
     "file": "top.cpp",
-    "fileloc": 128,
+    "fileloc": 73,
     "instructions": 273,
     "loads": {
       "L": 13
@@ -84,21 +84,21 @@
     "total_instructions": 2209
   },
   "5": {
-    "basicblocks": 22,
+    "basicblocks": 61,
     "calls": "",
     "control_depth": 3,
-    "def_use_depth": 2,
+    "def_use_depth": 3,
     "file": "top.cpp",
-    "fileloc": 299,
-    "instructions": 322,
+    "fileloc": 110,
+    "instructions": 784,
     "loads": {
-      "L": 16
+      "L": 19
     },
-    "memory_accesses": 56,
-    "name": "k5_deferred_lighting",
+    "memory_accesses": 87,
+    "name": "k4_rasterize",
     "stores": {
-      "L": 16
+      "L": 14
     },
-    "total_instructions": 10940
+    "total_instructions": 18111
   }
 }
