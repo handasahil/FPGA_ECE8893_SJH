@@ -1,23 +1,42 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "3 1 4 2 5",
+    "calls": "1 2 3 4 5",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 499,
-    "instructions": 10,
+    "fileloc": 369,
+    "instructions": 9,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 10593
+    "total_instructions": 8269
   },
   "1": {
+    "basicblocks": 944,
+    "calls": "",
+    "control_depth": 5,
+    "def_use_depth": 12,
+    "file": "top.cpp",
+    "fileloc": 7,
+    "instructions": 2047,
+    "loads": {
+      "L": 81
+    },
+    "memory_accesses": 140,
+    "name": "k1_vertex_transform",
+    "stores": {
+      "G": 35,
+      "L": 24
+    },
+    "total_instructions": 2047
+  },
+  "2": {
     "basicblocks": 811,
     "calls": "",
     "control_depth": 6,
     "def_use_depth": 17,
     "file": "top.cpp",
-    "fileloc": 110,
+    "fileloc": 37,
     "instructions": 1685,
     "loads": {
       "G": 39,
@@ -31,49 +50,13 @@
     },
     "total_instructions": 2036
   },
-  "2": {
-    "basicblocks": 1895,
-    "calls": "",
-    "control_depth": 8,
-    "def_use_depth": 35,
-    "file": "top.cpp",
-    "fileloc": 296,
-    "instructions": 3465,
-    "loads": {
-      "G": 24
-    },
-    "memory_accesses": 22,
-    "name": "k4_rasterize",
-    "stores": {
-      "G": 8
-    },
-    "total_instructions": 3465
-  },
   "3": {
-    "basicblocks": 2095,
-    "calls": "",
-    "control_depth": 5,
-    "def_use_depth": 27,
-    "file": "top.cpp",
-    "fileloc": 7,
-    "instructions": 4370,
-    "loads": {
-      "L": 98
-    },
-    "memory_accesses": 133,
-    "name": "k1_vertex_transform",
-    "stores": {
-      "G": 35
-    },
-    "total_instructions": 4370
-  },
-  "4": {
     "basicblocks": 88,
     "calls": "",
     "control_depth": 4,
     "def_use_depth": 8,
     "file": "top.cpp",
-    "fileloc": 201,
+    "fileloc": 128,
     "instructions": 238,
     "loads": {
       "G": 21
@@ -85,13 +68,31 @@
     },
     "total_instructions": 238
   },
+  "4": {
+    "basicblocks": 1895,
+    "calls": "",
+    "control_depth": 8,
+    "def_use_depth": 35,
+    "file": "top.cpp",
+    "fileloc": 166,
+    "instructions": 3465,
+    "loads": {
+      "G": 24
+    },
+    "memory_accesses": 22,
+    "name": "k4_rasterize",
+    "stores": {
+      "G": 8
+    },
+    "total_instructions": 3465
+  },
   "5": {
     "basicblocks": 246,
     "calls": "",
     "control_depth": 5,
     "def_use_depth": 29,
     "file": "top.cpp",
-    "fileloc": 429,
+    "fileloc": 299,
     "instructions": 474,
     "loads": {
       "G": 4

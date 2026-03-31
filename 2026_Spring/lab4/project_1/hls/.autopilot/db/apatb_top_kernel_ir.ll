@@ -11,7 +11,7 @@ target triple = "fpga64-xilinx-none"
 %"struct.ssdm_int<32, true>" = type { i32 }
 
 ; Function Attrs: noinline
-define void @apatb_top_kernel_ir(%struct.Triangle* noalias nonnull readonly "fpga.decayed.dim.hint"="128" "maxi" %in_tris, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nonnull readonly "fpga.decayed.dim.hint"="4" "maxi" %mvp_matrix, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nocapture nonnull "fpga.decayed.dim.hint"="64" "maxi" %out_pixels) local_unnamed_addr #0 {
+define void @apatb_top_kernel_ir(%struct.Triangle* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="128" "maxi" %in_tris, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="4" %mvp_matrix, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nocapture nonnull "fpga.decayed.dim.hint"="64" "maxi" %out_pixels) local_unnamed_addr #0 {
 entry:
   %0 = bitcast %struct.Triangle* %in_tris to [128 x %struct.Triangle]*
   %1 = call i8* @malloc(i64 11776)
@@ -33,8 +33,8 @@ entry:
 define internal fastcc void @copy_in([128 x %struct.Triangle]* readonly, [128 x %struct.Triangle]*, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly, [4 x [4 x i32]]* align 512, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly, [64 x [64 x i32]]*) unnamed_addr #1 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a128struct.Triangle([128 x %struct.Triangle]* %1, [128 x %struct.Triangle]* %0)
-  call fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.247"([4 x [4 x i32]]* align 512 %3, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %2)
-  call fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x i32]]* %5, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %4)
+  call fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x i32]]* align 512 %3, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %2)
+  call fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.245"([64 x [64 x i32]]* %5, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %4)
   ret void
 }
 
@@ -177,15 +177,15 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [4 x [4 x i32]]* readonly align 512 %src) unnamed_addr #2 {
+define internal fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x i32]]* align 512 %dst, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src) unnamed_addr #2 {
 entry:
-  %0 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, null
-  %1 = icmp eq [4 x [4 x i32]]* %src, null
+  %0 = icmp eq [4 x [4 x i32]]* %dst, null
+  %1 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
   %2 = or i1 %0, %1
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %dst, [4 x [4 x i32]]* nonnull %src, i64 4)
+  call void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x i32]]* nonnull %dst, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %src, i64 4)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -193,10 +193,10 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [4 x [4 x i32]]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x i32]]* %dst, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [4 x [4 x i32]]* %src, null
-  %1 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, null
+  %0 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
+  %1 = icmp eq [4 x [4 x i32]]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -209,9 +209,9 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, i64 0, i64 %for.loop.idx2
-  %3 = getelementptr [4 x [4 x i32]], [4 x [4 x i32]]* %src, i64 0, i64 %for.loop.idx2
-  call void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst.addr, [4 x i32]* %3, i64 4)
+  %3 = getelementptr [4 x [4 x i32]], [4 x [4 x i32]]* %dst, i64 0, i64 %for.loop.idx2
+  %src.addr = getelementptr [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, i64 0, i64 %for.loop.idx2
+  call void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x i32]* %3, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src.addr, i64 4)
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
   %exitcond = icmp ne i64 %for.loop.idx.next, %num
   br i1 %exitcond, label %for.loop, label %copy.split
@@ -224,10 +224,10 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, [4 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x i32]* %dst, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [4 x i32]* %src, null
-  %1 = icmp eq [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, null
+  %0 = icmp eq [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, null
+  %1 = icmp eq [4 x i32]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -240,87 +240,8 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx8 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %3 = getelementptr [4 x i32], [4 x i32]* %src, i64 0, i64 %for.loop.idx8
-  %dst.addr.0.0.06 = getelementptr [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"], [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
-  %4 = load i32, i32* %3, align 4
-  store i32 %4, i32* %dst.addr.0.0.06, align 4
-  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx8, 1
-  %exitcond = icmp ne i64 %for.loop.idx.next, %num
-  br i1 %exitcond, label %for.loop, label %copy.split
-
-copy.split:                                       ; preds = %for.loop, %copy
-  br label %ret
-
-ret:                                              ; preds = %copy.split, %entry
-  ret void
-}
-
-; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x i32]]* %dst, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src) unnamed_addr #2 {
-entry:
-  %0 = icmp eq [64 x [64 x i32]]* %dst, null
-  %1 = icmp eq [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
-  %2 = or i1 %0, %1
-  br i1 %2, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x i32]]* nonnull %dst, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %src, i64 64)
-  br label %ret
-
-ret:                                              ; preds = %copy, %entry
-  ret void
-}
-
-; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x i32]]* %dst, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src, i64 %num) local_unnamed_addr #3 {
-entry:
-  %0 = icmp eq [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
-  %1 = icmp eq [64 x [64 x i32]]* %dst, null
-  %2 = or i1 %1, %0
-  br i1 %2, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  %for.loop.cond1 = icmp sgt i64 %num, 0
-  br i1 %for.loop.cond1, label %for.loop.lr.ph, label %copy.split
-
-for.loop.lr.ph:                                   ; preds = %copy
-  br label %for.loop
-
-for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
-  %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %3 = getelementptr [64 x [64 x i32]], [64 x [64 x i32]]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, i64 0, i64 %for.loop.idx2
-  call void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x i32]* %3, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src.addr, i64 64)
-  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
-  %exitcond = icmp ne i64 %for.loop.idx.next, %num
-  br i1 %exitcond, label %for.loop, label %copy.split
-
-copy.split:                                       ; preds = %for.loop, %copy
-  br label %ret
-
-ret:                                              ; preds = %copy.split, %entry
-  ret void
-}
-
-; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x i32]* %dst, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* readonly %src, i64 %num) local_unnamed_addr #3 {
-entry:
-  %0 = icmp eq [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, null
-  %1 = icmp eq [64 x i32]* %dst, null
-  %2 = or i1 %1, %0
-  br i1 %2, label %ret, label %copy
-
-copy:                                             ; preds = %entry
-  %for.loop.cond7 = icmp sgt i64 %num, 0
-  br i1 %for.loop.cond7, label %for.loop.lr.ph, label %copy.split
-
-for.loop.lr.ph:                                   ; preds = %copy
-  br label %for.loop
-
-for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
-  %for.loop.idx8 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %src.addr.0.0.05 = getelementptr [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"], [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
-  %3 = getelementptr [64 x i32], [64 x i32]* %dst, i64 0, i64 %for.loop.idx8
+  %src.addr.0.0.05 = getelementptr [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"], [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %3 = getelementptr [4 x i32], [4 x i32]* %dst, i64 0, i64 %for.loop.idx8
   %4 = load i32, i32* %src.addr.0.0.05, align 4
   store i32 %4, i32* %3, align 4
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx8, 1
@@ -335,20 +256,7 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([128 x %struct.Triangle]*, [128 x %struct.Triangle]* readonly, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]*, [4 x [4 x i32]]* readonly align 512, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]*, [64 x [64 x i32]]* readonly) unnamed_addr #4 {
-entry:
-  call fastcc void @onebyonecpy_hls.p0a128struct.Triangle([128 x %struct.Triangle]* %0, [128 x %struct.Triangle]* %1)
-  call fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %2, [4 x [4 x i32]]* align 512 %3)
-  call fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.233"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %4, [64 x [64 x i32]]* %5)
-  ret void
-}
-
-declare i8* @malloc(i64) local_unnamed_addr
-
-declare void @free(i8*) local_unnamed_addr
-
-; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.233"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [64 x [64 x i32]]* readonly %src) unnamed_addr #2 {
+define internal fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [64 x [64 x i32]]* readonly %src) unnamed_addr #2 {
 entry:
   %0 = icmp eq [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, null
   %1 = icmp eq [64 x [64 x i32]]* %src, null
@@ -356,7 +264,7 @@ entry:
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.236"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %dst, [64 x [64 x i32]]* nonnull %src, i64 64)
+  call void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %dst, [64 x [64 x i32]]* nonnull %src, i64 64)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -364,7 +272,7 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.236"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [64 x [64 x i32]]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [64 x [64 x i32]]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
   %0 = icmp eq [64 x [64 x i32]]* %src, null
   %1 = icmp eq [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, null
@@ -382,7 +290,7 @@ for.loop:                                         ; preds = %for.loop, %for.loop
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
   %dst.addr = getelementptr [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, i64 0, i64 %for.loop.idx2
   %3 = getelementptr [64 x [64 x i32]], [64 x [64 x i32]]* %src, i64 0, i64 %for.loop.idx2
-  call void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.239"([64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst.addr, [64 x i32]* %3, i64 64)
+  call void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst.addr, [64 x i32]* %3, i64 64)
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
   %exitcond = icmp ne i64 %for.loop.idx.next, %num
   br i1 %exitcond, label %for.loop, label %copy.split
@@ -395,7 +303,7 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.239"([64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, [64 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, [64 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
   %0 = icmp eq [64 x i32]* %src, null
   %1 = icmp eq [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, null
@@ -427,15 +335,28 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.247"([4 x [4 x i32]]* align 512 %dst, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src) unnamed_addr #2 {
+define internal fastcc void @copy_out([128 x %struct.Triangle]*, [128 x %struct.Triangle]* readonly, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]*, [4 x [4 x i32]]* readonly align 512, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]*, [64 x [64 x i32]]* readonly) unnamed_addr #4 {
 entry:
-  %0 = icmp eq [4 x [4 x i32]]* %dst, null
-  %1 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
+  call fastcc void @onebyonecpy_hls.p0a128struct.Triangle([128 x %struct.Triangle]* %0, [128 x %struct.Triangle]* %1)
+  call fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.231"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %2, [4 x [4 x i32]]* align 512 %3)
+  call fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %4, [64 x [64 x i32]]* %5)
+  ret void
+}
+
+declare i8* @malloc(i64) local_unnamed_addr
+
+declare void @free(i8*) local_unnamed_addr
+
+; Function Attrs: argmemonly noinline norecurse willreturn
+define internal fastcc void @"onebyonecpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.231"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [4 x [4 x i32]]* readonly align 512 %src) unnamed_addr #2 {
+entry:
+  %0 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, null
+  %1 = icmp eq [4 x [4 x i32]]* %src, null
   %2 = or i1 %0, %1
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.250"([4 x [4 x i32]]* nonnull %dst, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %src, i64 4)
+  call void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.234"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %dst, [4 x [4 x i32]]* nonnull %src, i64 4)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -443,10 +364,10 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.250"([4 x [4 x i32]]* %dst, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a4a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.234"([4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, [4 x [4 x i32]]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
-  %1 = icmp eq [4 x [4 x i32]]* %dst, null
+  %0 = icmp eq [4 x [4 x i32]]* %src, null
+  %1 = icmp eq [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -459,9 +380,9 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %3 = getelementptr [4 x [4 x i32]], [4 x [4 x i32]]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, i64 0, i64 %for.loop.idx2
-  call void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.253"([4 x i32]* %3, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src.addr, i64 4)
+  %dst.addr = getelementptr [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %dst, i64 0, i64 %for.loop.idx2
+  %3 = getelementptr [4 x [4 x i32]], [4 x [4 x i32]]* %src, i64 0, i64 %for.loop.idx2
+  call void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.237"([4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst.addr, [4 x i32]* %3, i64 4)
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
   %exitcond = icmp ne i64 %for.loop.idx.next, %num
   br i1 %exitcond, label %for.loop, label %copy.split
@@ -474,10 +395,10 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.253"([4 x i32]* %dst, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a4struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.237"([4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, [4 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, null
-  %1 = icmp eq [4 x i32]* %dst, null
+  %0 = icmp eq [4 x i32]* %src, null
+  %1 = icmp eq [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -490,8 +411,87 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx8 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %src.addr.0.0.05 = getelementptr [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"], [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
-  %3 = getelementptr [4 x i32], [4 x i32]* %dst, i64 0, i64 %for.loop.idx8
+  %3 = getelementptr [4 x i32], [4 x i32]* %src, i64 0, i64 %for.loop.idx8
+  %dst.addr.0.0.06 = getelementptr [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"], [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %dst, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %4 = load i32, i32* %3, align 4
+  store i32 %4, i32* %dst.addr.0.0.06, align 4
+  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx8, 1
+  %exitcond = icmp ne i64 %for.loop.idx.next, %num
+  br i1 %exitcond, label %for.loop, label %copy.split
+
+copy.split:                                       ; preds = %for.loop, %copy
+  br label %ret
+
+ret:                                              ; preds = %copy.split, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
+define internal fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.245"([64 x [64 x i32]]* %dst, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src) unnamed_addr #2 {
+entry:
+  %0 = icmp eq [64 x [64 x i32]]* %dst, null
+  %1 = icmp eq [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
+  %2 = or i1 %0, %1
+  br i1 %2, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  call void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.248"([64 x [64 x i32]]* nonnull %dst, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* nonnull %src, i64 64)
+  br label %ret
+
+ret:                                              ; preds = %copy, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
+define void @"arraycpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.248"([64 x [64 x i32]]* %dst, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* readonly %src, i64 %num) local_unnamed_addr #3 {
+entry:
+  %0 = icmp eq [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, null
+  %1 = icmp eq [64 x [64 x i32]]* %dst, null
+  %2 = or i1 %1, %0
+  br i1 %2, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %for.loop.cond1 = icmp sgt i64 %num, 0
+  br i1 %for.loop.cond1, label %for.loop.lr.ph, label %copy.split
+
+for.loop.lr.ph:                                   ; preds = %copy
+  br label %for.loop
+
+for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
+  %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
+  %3 = getelementptr [64 x [64 x i32]], [64 x [64 x i32]]* %dst, i64 0, i64 %for.loop.idx2
+  %src.addr = getelementptr [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]], [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %src, i64 0, i64 %for.loop.idx2
+  call void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.251"([64 x i32]* %3, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src.addr, i64 64)
+  %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
+  %exitcond = icmp ne i64 %for.loop.idx.next, %num
+  br i1 %exitcond, label %for.loop, label %copy.split
+
+copy.split:                                       ; preds = %for.loop, %copy
+  br label %ret
+
+ret:                                              ; preds = %copy.split, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
+define void @"arraycpy_hls.p0a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.251"([64 x i32]* %dst, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* readonly %src, i64 %num) local_unnamed_addr #3 {
+entry:
+  %0 = icmp eq [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, null
+  %1 = icmp eq [64 x i32]* %dst, null
+  %2 = or i1 %1, %0
+  br i1 %2, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %for.loop.cond7 = icmp sgt i64 %num, 0
+  br i1 %for.loop.cond7, label %for.loop.lr.ph, label %copy.split
+
+for.loop.lr.ph:                                   ; preds = %copy
+  br label %for.loop
+
+for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
+  %for.loop.idx8 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
+  %src.addr.0.0.05 = getelementptr [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"], [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* %src, i64 0, i64 %for.loop.idx8, i32 0, i32 0, i32 0
+  %3 = getelementptr [64 x i32], [64 x i32]* %dst, i64 0, i64 %for.loop.idx8
   %4 = load i32, i32* %src.addr.0.0.05, align 4
   store i32 %4, i32* %3, align 4
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx8, 1
@@ -510,11 +510,11 @@ declare void @apatb_top_kernel_hw([128 x %struct.Triangle]*, [4 x [4 x i32]]*, [
 ; Function Attrs: argmemonly noinline norecurse willreturn
 define internal fastcc void @copy_back([128 x %struct.Triangle]*, [128 x %struct.Triangle]* readonly, [4 x [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]*, [4 x [4 x i32]]* readonly align 512, [64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]*, [64 x [64 x i32]]* readonly) unnamed_addr #4 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>.233"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %4, [64 x [64 x i32]]* %5)
+  call fastcc void @"onebyonecpy_hls.p0a64a64struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"([64 x [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]]* %4, [64 x [64 x i32]]* %5)
   ret void
 }
 
-declare void @top_kernel_hw_stub(%struct.Triangle* noalias nonnull readonly, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nonnull readonly, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nocapture nonnull)
+declare void @top_kernel_hw_stub(%struct.Triangle* noalias nocapture nonnull readonly, [4 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nocapture nonnull readonly, [64 x %"struct.ap_fixed<32, 16, AP_RND, AP_SAT, 0>"]* noalias nocapture nonnull)
 
 define void @top_kernel_hw_stub_wrapper([128 x %struct.Triangle]*, [4 x [4 x i32]]*, [64 x [64 x i32]]*) #5 {
 entry:

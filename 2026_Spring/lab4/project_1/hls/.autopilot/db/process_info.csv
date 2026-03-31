@@ -1,6 +1,0 @@
-,AESL_inst_top_kernel,,module_status1.csv
-,grp_k1_vertex_transform_fu_180,,module_status2.csv
-,grp_k2_perspective_divide_fu_236,,module_status3.csv
-,grp_k3_bounding_box_fu_322,,module_status4.csv
-,grp_k4_rasterize_fu_348,,module_status5.csv
-,grp_k5_deferred_lighting_fu_406,,module_status6.csv

@@ -6245,97 +6245,24 @@ static void k1_vertex_transform(const Triangle in_tris[128],
                                 const data_t mvp[4][4],
                                 Triangle clip_tris[128]) {
     VITIS_LOOP_10_1: for (int i = 0; i < 128; i++) {
+#pragma HLS pipeline II=1
 
-        clip_tris[i] = in_tris[i];
+ clip_tris[i] = in_tris[i];
 
         if (in_tris[i].is_active) {
+            Vec4 verts[3] = {in_tris[i].v0, in_tris[i].v1, in_tris[i].v2};
+            Vec4 out_verts[3];
 
+            VITIS_LOOP_19_2: for (int v = 0; v < 3; v++) {
+                out_verts[v].x = verts[v].x * mvp[0][0] + verts[v].y * mvp[0][1] + verts[v].z * mvp[0][2] + verts[v].w * mvp[0][3];
+                out_verts[v].y = verts[v].x * mvp[1][0] + verts[v].y * mvp[1][1] + verts[v].z * mvp[1][2] + verts[v].w * mvp[1][3];
+                out_verts[v].z = verts[v].x * mvp[2][0] + verts[v].y * mvp[2][1] + verts[v].z * mvp[2][2] + verts[v].w * mvp[2][3];
+                out_verts[v].w = verts[v].x * mvp[3][0] + verts[v].y * mvp[3][1] + verts[v].z * mvp[3][2] + verts[v].w * mvp[3][3];
+            }
 
-            data_t v0_x;
-            v0_x = in_tris[i].v0.x * mvp[0][0];
-            v0_x += in_tris[i].v0.y * mvp[0][1];
-            v0_x += in_tris[i].v0.z * mvp[0][2];
-            v0_x += in_tris[i].v0.w * mvp[0][3];
-            clip_tris[i].v0.x = v0_x;
-
-            data_t v0_y;
-            v0_y = in_tris[i].v0.x * mvp[1][0];
-            v0_y += in_tris[i].v0.y * mvp[1][1];
-            v0_y += in_tris[i].v0.z * mvp[1][2];
-            v0_y += in_tris[i].v0.w * mvp[1][3];
-            clip_tris[i].v0.y = v0_y;
-
-            data_t v0_z;
-            v0_z = in_tris[i].v0.x * mvp[2][0];
-            v0_z += in_tris[i].v0.y * mvp[2][1];
-            v0_z += in_tris[i].v0.z * mvp[2][2];
-            v0_z += in_tris[i].v0.w * mvp[2][3];
-            clip_tris[i].v0.z = v0_z;
-
-            data_t v0_w;
-            v0_w = in_tris[i].v0.x * mvp[3][0];
-            v0_w += in_tris[i].v0.y * mvp[3][1];
-            v0_w += in_tris[i].v0.z * mvp[3][2];
-            v0_w += in_tris[i].v0.w * mvp[3][3];
-            clip_tris[i].v0.w = v0_w;
-
-
-            data_t v1_x;
-            v1_x = in_tris[i].v1.x * mvp[0][0];
-            v1_x += in_tris[i].v1.y * mvp[0][1];
-            v1_x += in_tris[i].v1.z * mvp[0][2];
-            v1_x += in_tris[i].v1.w * mvp[0][3];
-            clip_tris[i].v1.x = v1_x;
-
-            data_t v1_y;
-            v1_y = in_tris[i].v1.x * mvp[1][0];
-            v1_y += in_tris[i].v1.y * mvp[1][1];
-            v1_y += in_tris[i].v1.z * mvp[1][2];
-            v1_y += in_tris[i].v1.w * mvp[1][3];
-            clip_tris[i].v1.y = v1_y;
-
-            data_t v1_z;
-            v1_z = in_tris[i].v1.x * mvp[2][0];
-            v1_z += in_tris[i].v1.y * mvp[2][1];
-            v1_z += in_tris[i].v1.z * mvp[2][2];
-            v1_z += in_tris[i].v1.w * mvp[2][3];
-            clip_tris[i].v1.z = v1_z;
-
-            data_t v1_w;
-            v1_w = in_tris[i].v1.x * mvp[3][0];
-            v1_w += in_tris[i].v1.y * mvp[3][1];
-            v1_w += in_tris[i].v1.z * mvp[3][2];
-            v1_w += in_tris[i].v1.w * mvp[3][3];
-            clip_tris[i].v1.w = v1_w;
-
-
-            data_t v2_x;
-            v2_x = in_tris[i].v2.x * mvp[0][0];
-            v2_x += in_tris[i].v2.y * mvp[0][1];
-            v2_x += in_tris[i].v2.z * mvp[0][2];
-            v2_x += in_tris[i].v2.w * mvp[0][3];
-            clip_tris[i].v2.x = v2_x;
-
-            data_t v2_y;
-            v2_y = in_tris[i].v2.x * mvp[1][0];
-            v2_y += in_tris[i].v2.y * mvp[1][1];
-            v2_y += in_tris[i].v2.z * mvp[1][2];
-            v2_y += in_tris[i].v2.w * mvp[1][3];
-            clip_tris[i].v2.y = v2_y;
-
-            data_t v2_z;
-            v2_z = in_tris[i].v2.x * mvp[2][0];
-            v2_z += in_tris[i].v2.y * mvp[2][1];
-            v2_z += in_tris[i].v2.z * mvp[2][2];
-            v2_z += in_tris[i].v2.w * mvp[2][3];
-            clip_tris[i].v2.z = v2_z;
-
-            data_t v2_w;
-            v2_w = in_tris[i].v2.x * mvp[3][0];
-            v2_w += in_tris[i].v2.y * mvp[3][1];
-            v2_w += in_tris[i].v2.z * mvp[3][2];
-            v2_w += in_tris[i].v2.w * mvp[3][3];
-            clip_tris[i].v2.w = v2_w;
+            clip_tris[i].v0 = out_verts[0];
+            clip_tris[i].v1 = out_verts[1];
+            clip_tris[i].v2 = out_verts[2];
         }
     }
 }
@@ -6350,7 +6277,7 @@ static void k2_perspective_divide(const Triangle clip_tris[128],
     data_t half_w = (data_t)(64 / 2.0);
     data_t half_h = (data_t)(64 / 2.0);
 
-    VITIS_LOOP_116_1: for (int i = 0; i < 128; i++) {
+    VITIS_LOOP_43_1: for (int i = 0; i < 128; i++) {
 
         screen_tris[i] = clip_tris[i];
 
@@ -6437,91 +6364,34 @@ static void k2_perspective_divide(const Triangle clip_tris[128],
 
 static void k3_bounding_box(const Triangle screen_tris[128],
                             BoundingBox bounds[128]) {
-    VITIS_LOOP_203_1: for (int i = 0; i < 128; i++) {
-        if (screen_tris[i].is_active) {
+    VITIS_LOOP_130_1: for (int i = 0; i < 128; i++) {
+#pragma HLS pipeline II=1
+ if (screen_tris[i].is_active) {
+            data_t min_x = screen_tris[i].v0.x;
+            data_t max_x = screen_tris[i].v0.x;
+            data_t min_y = screen_tris[i].v0.y;
+            data_t max_y = screen_tris[i].v0.y;
 
 
-            data_t min_x;
-            min_x = screen_tris[i].v0.x;
-            if (screen_tris[i].v1.x < min_x) {
-                min_x = screen_tris[i].v1.x;
-            }
-            if (screen_tris[i].v2.x < min_x) {
-                min_x = screen_tris[i].v2.x;
-            }
+            if (screen_tris[i].v1.x < min_x) min_x = screen_tris[i].v1.x;
+            if (screen_tris[i].v2.x < min_x) min_x = screen_tris[i].v2.x;
+            if (screen_tris[i].v1.x > max_x) max_x = screen_tris[i].v1.x;
+            if (screen_tris[i].v2.x > max_x) max_x = screen_tris[i].v2.x;
 
 
-            data_t max_x;
-            max_x = screen_tris[i].v0.x;
-            if (screen_tris[i].v1.x > max_x) {
-                max_x = screen_tris[i].v1.x;
-            }
-            if (screen_tris[i].v2.x > max_x) {
-                max_x = screen_tris[i].v2.x;
-            }
+            if (screen_tris[i].v1.y < min_y) min_y = screen_tris[i].v1.y;
+            if (screen_tris[i].v2.y < min_y) min_y = screen_tris[i].v2.y;
+            if (screen_tris[i].v1.y > max_y) max_y = screen_tris[i].v1.y;
+            if (screen_tris[i].v2.y > max_y) max_y = screen_tris[i].v2.y;
 
 
-            data_t min_y;
-            min_y = screen_tris[i].v0.y;
-            if (screen_tris[i].v1.y < min_y) {
-                min_y = screen_tris[i].v1.y;
-            }
-            if (screen_tris[i].v2.y < min_y) {
-                min_y = screen_tris[i].v2.y;
-            }
-
-
-            data_t max_y;
-            max_y = screen_tris[i].v0.y;
-            if (screen_tris[i].v1.y > max_y) {
-                max_y = screen_tris[i].v1.y;
-            }
-            if (screen_tris[i].v2.y > max_y) {
-                max_y = screen_tris[i].v2.y;
-            }
-
-
-            int final_min_x;
-            if (min_x < (data_t)0) {
-                final_min_x = 0;
-            } else {
-                final_min_x = (int)min_x;
-            }
-            bounds[i].min_x = final_min_x;
-
-
-            int final_max_x;
-            if (max_x > (data_t)(64 - 1)) {
-                final_max_x = 64 - 1;
-            } else {
-                final_max_x = (int)max_x;
-            }
-            bounds[i].max_x = final_max_x;
-
-
-            int final_min_y;
-            if (min_y < (data_t)0) {
-                final_min_y = 0;
-            } else {
-                final_min_y = (int)min_y;
-            }
-            bounds[i].min_y = final_min_y;
-
-
-            int final_max_y;
-            if (max_y > (data_t)(64 - 1)) {
-                final_max_y = 64 - 1;
-            } else {
-                final_max_y = (int)max_y;
-            }
-            bounds[i].max_y = final_max_y;
-
+            bounds[i].min_x = (min_x < (data_t)0) ? 0 : (int)min_x;
+            bounds[i].max_x = (max_x > (data_t)(64 - 1)) ? (64 - 1) : (int)max_x;
+            bounds[i].min_y = (min_y < (data_t)0) ? 0 : (int)min_y;
+            bounds[i].max_y = (max_y > (data_t)(64 - 1)) ? (64 - 1) : (int)max_y;
         } else {
-
-            bounds[i].min_x = 0;
-            bounds[i].max_x = 0;
-            bounds[i].min_y = 0;
-            bounds[i].max_y = 0;
+            bounds[i].min_x = 0; bounds[i].max_x = 0;
+            bounds[i].min_y = 0; bounds[i].max_y = 0;
         }
     }
 }
@@ -6534,8 +6404,8 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
                          data_t depth_buffer[64][64], Vec3 normal_buffer[64][64]) {
 
 
-    VITIS_LOOP_300_1: for (int y = 0; y < 64; y++) {
-        VITIS_LOOP_301_2: for (int x = 0; x < 64; x++) {
+    VITIS_LOOP_170_1: for (int y = 0; y < 64; y++) {
+        VITIS_LOOP_171_2: for (int x = 0; x < 64; x++) {
             depth_buffer[y][x] = (data_t)9999.0;
             normal_buffer[y][x].x = (data_t)0;
             normal_buffer[y][x].y = (data_t)0;
@@ -6543,7 +6413,7 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
         }
     }
 
-    VITIS_LOOP_309_3: for (int i = 0; i < 128; i++) {
+    VITIS_LOOP_179_3: for (int i = 0; i < 128; i++) {
         if (!tris[i].is_active) {
             continue;
         }
@@ -6572,8 +6442,8 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
 
         data_t inv_area = (data_t)1.0 / area;
 
-        VITIS_LOOP_338_4: for (int y = bounds[i].min_y; y <= bounds[i].max_y; y++) {
-            VITIS_LOOP_339_5: for (int x = bounds[i].min_x; x <= bounds[i].max_x; x++) {
+        VITIS_LOOP_208_4: for (int y = bounds[i].min_y; y <= bounds[i].max_y; y++) {
+            VITIS_LOOP_209_5: for (int x = bounds[i].min_x; x <= bounds[i].max_x; x++) {
 
                 data_t px = (data_t)x + (data_t)0.5;
                 data_t py = (data_t)y + (data_t)0.5;
@@ -6674,8 +6544,8 @@ static void k5_deferred_lighting(const data_t depth_buffer[64][64],
 
     data_t ambient = (data_t)0.1;
 
-    VITIS_LOOP_440_1: for (int y = 0; y < 64; y++) {
-        VITIS_LOOP_441_2: for (int x = 0; x < 64; x++) {
+    VITIS_LOOP_310_1: for (int y = 0; y < 64; y++) {
+        VITIS_LOOP_311_2: for (int x = 0; x < 64; x++) {
 
             data_t current_depth;
             current_depth = depth_buffer[y][x];
@@ -6738,12 +6608,12 @@ __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const Triangle in_t
                 data_t out_pixels[64][64]) {
 #line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/script.tcl"
 #pragma HLSDIRECTIVE TOP name=top_kernel
-# 501 "top.cpp"
+# 371 "top.cpp"
 
 #pragma HLS interface m_axi port=in_tris offset=slave bundle=gmem0
-#pragma HLS interface m_axi port=mvp_matrix offset=slave bundle=gmem2
 #pragma HLS interface m_axi port=out_pixels offset=slave bundle=gmem1
 #pragma HLS interface s_axilite port=return
+#pragma HLS DATAFLOW
 
 
  static Triangle clip_tris[128];

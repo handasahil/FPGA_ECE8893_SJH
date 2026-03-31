@@ -17,7 +17,7 @@ set DataType "void"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
 set PortName "mvp_matrix"
-set BitWidth "64"
+set BitWidth "32"
 set ArrayOpt ""
 set Const "0"
 set Volatile "1"

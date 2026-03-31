@@ -11,7 +11,6 @@
     <config>
         <config_unroll tripcount_threshold="0"/>
         <config_compile pipeline_loops="0"/>
-        <config_export flow="impl" format="ip_catalog"/>
     </config>
     <targetInfo>
         <TargetInfo value="xczu3eg:-sbva484:-1-e"/>
@@ -19,14 +18,5 @@
     <libraryList>
         <library value="xilinx/zynquplus/zynquplus" name="DefaultPlatform"/>
     </libraryList>
-    <clockList>
-        <clock name="default" period="10ns" default="false"/>
-    </clockList>
-    <Simulation argv="">
-        <SimFlow name="cosim" setup="false" dumpTrace="none" optimizeCompile="false" ldflags="" mflags="" compiledLibrary="" toolName="xsim">
-            <Rtl name="verilog" active="true"/>
-            <Rtl name="vhdl" active="false"/>
-        </SimFlow>
-    </Simulation>
 </AutoPilot:solution>
 

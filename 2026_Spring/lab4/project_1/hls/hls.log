@@ -20,193 +20,49 @@ INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-e
 INFO: [HLS 200-1611] Setting target device to 'xczu3eg-sbva484-1-e'
 INFO: [HLS 200-1510] Running: csynth_design 
 INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.74 seconds. CPU system time: 0.18 seconds. Elapsed time: 9.48 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.7 seconds. CPU system time: 0.14 seconds. Elapsed time: 9.39 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Analyzing design file 'top.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 11 seconds. CPU system time: 1.2 seconds. Elapsed time: 12.4 seconds; current allocated memory: 0.000 MB.
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:378:18)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:379:21)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:380:24)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:383:19)
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (top.cpp:384:17)
+WARNING: [HLS 200-471] Dataflow form checks found 5 issue(s) in file top.cpp
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 10.33 seconds. CPU system time: 1.25 seconds. Elapsed time: 11.71 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 93,587 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 10,593 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 5,147 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 5,007 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,701 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,700 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,700 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,717 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,734 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,718 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,684 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,684 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,682 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,682 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,803 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
-INFO: [HLS 200-1995] There were 4,821 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 68,681 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 8,269 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,778 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,595 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,397 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,395 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,395 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,412 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,429 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,435 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,401 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,401 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,399 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,399 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,482 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 3,505 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_19_2' is marked as complete unroll implied by the pipeline pragma (top.cpp:19:30)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_19_2' (top.cpp:19:30) in function 'k1_vertex_transform' completely with a factor of 3 (top.cpp:9:0)
+INFO: [HLS 214-241] Aggregating bram variable 'mvp_matrix' with compact=bit mode in 32-bits (top.cpp:371:0)
 INFO: [HLS 214-241] Aggregating maxi variable 'out_pixels' with compact=none mode in 32-bits
-INFO: [HLS 214-241] Aggregating maxi variable 'mvp_matrix' with compact=none mode in 32-bits (top.cpp:501:0)
-INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_309_3'. (top.cpp:309:23)
-INFO: [HLS 214-115] Multiple burst reads of length 16 and bit width 32 has been inferred on bundle 'gmem2'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:18:36)
-INFO: [HLS 214-115] Multiple burst writes of length 4096 and bit width 32 in loop 'VITIS_LOOP_440_1'(top.cpp:440:23) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:440:23)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 8.06 seconds. CPU system time: 1.22 seconds. Elapsed time: 9.78 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_179_3'. (top.cpp:179:23)
+INFO: [HLS 214-115] Multiple burst writes of length 4096 and bit width 32 in loop 'VITIS_LOOP_310_1'(top.cpp:310:23) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (top.cpp:310:23)
+WARNING: [HLS 214-475] Merging processes 'k4_rasterize' and 'k3_bounding_box' in function 'top_kernel' due to reads on 'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])::screen_tris (.v0.x)' (top.cpp:371:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 7.07 seconds. CPU system time: 1.25 seconds. Elapsed time: 9.54 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 0.000 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.29 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 0.000 MB.
-WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 128 for loop 'VITIS_LOOP_309_3' (top.cpp:309:32) in function 'k4_rasterize'.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:441:36) to (top.cpp:441:27) in function 'k5_deferred_lighting'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (top.cpp:208:39) to (top.cpp:282:9) in function 'k3_bounding_box'... converting 13 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1.53 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.58 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1.39 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.45 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'top_kernel' ...
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'k1_vertex_transform' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.56 seconds. CPU system time: 0.09 seconds. Elapsed time: 1.67 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.56 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.72 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'k2_perspective_divide' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.71 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.84 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'k3_bounding_box' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'k4_rasterize' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.01 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.04 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'k5_deferred_lighting' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.43 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'top_kernel' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 0.000 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'k1_vertex_transform' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 12 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'k1_vertex_transform'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.59 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.64 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'k2_perspective_divide' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 3 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sdiv_34ns_32s_34_38_seq_1': 3 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'k2_perspective_divide'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.43 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.78 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'k3_bounding_box' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Finished creating RTL model for 'k3_bounding_box'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.45 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.56 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'k4_rasterize' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32s_63_1_1': 3 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_64_1_1': 6 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sdiv_34ns_32s_34_38_seq_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'k4_rasterize'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.36 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.42 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'k5_deferred_lighting' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_17s_49_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'k5_deferred_lighting'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.8 seconds. CPU system time: 0.09 seconds. Elapsed time: 1.01 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'top_kernel' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem0' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem2' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/gmem1' to 'm_axi'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/in_tris' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/mvp_matrix' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'top_kernel/out_pixels' to 's_axilite & ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'top_kernel' to 's_axilite & ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'in_tris', 'mvp_matrix', 'out_pixels' and 'return' to AXI-Lite port control.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'top_kernel'.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_clip_tris_v0_x_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_clip_tris_is_active_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_bounds_min_x_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_bounds_max_x_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'top_kernel_depth_buffer_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.3 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.42 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.74 seconds. CPU system time: 0.1 seconds. Elapsed time: 1.25 seconds; current allocated memory: 0.000 MB.
-INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2.06 seconds. CPU system time: 0.18 seconds. Elapsed time: 2.53 seconds; current allocated memory: 0.000 MB.
-INFO: [VHDL 208-304] Generating VHDL RTL for top_kernel.
-INFO: [VLOG 209-307] Generating Verilog RTL for top_kernel.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:49; Allocated memory: 0.000 MB.
-INFO: [HLS 200-1510] Running: cosim_design 
-INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
-INFO: [COSIM 212-47] Using XSIM for RTL simulation.
-INFO: [COSIM 212-14] Instrumenting C test bench ...
-INFO: [COSIM 212-302] Starting C TB testing ... 
-INFO: [COSIM 212-333] Generating C post check test bench ...
-INFO: [COSIM 212-12] Generating RTL test bench ...
-INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
-INFO: [COSIM 212-323] Starting verilog simulation. 
-INFO: [COSIM 212-15] Starting XSIM ...
-INFO: [COSIM 212-316] Starting C post checking ...
-INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
-INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
-INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:02:01; Allocated memory: 0.000 MB.
-INFO: [HLS 200-1510] Running: export_design -format ip_catalog -flow impl 
-INFO: [HLS 200-1915] Writing HLS config ini file /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls_config.cfg
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
-INFO: [HLS 200-802] Generated output file project_1/hls/impl/export.zip
-INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:21:13; Allocated memory: 0.000 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 0.000 MB.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 128 for loop 'VITIS_LOOP_179_3' (top.cpp:179:32) in function 'k4_rasterize'.
+ERROR: [HLS 200-968] Internal global variable 'depth_buffer' failed dataflow checking: it can only be read in one process function.
+INFO: [HLS 200-992] Internal global variable 'depth_buffer' has read and write operations in process function 'Block_entry_screen_tris (.v0.x)_rd_proc' (top.cpp:389:5) (around top.cpp:389).
+INFO: [HLS 200-992] Internal global variable 'depth_buffer' has read operations in process function 'k5_deferred_lighting' (top.cpp:310:29) (around top.cpp:391).
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+ERROR: [HLS 200-70] Pre-synthesis failed.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:31; Allocated memory: 0.000 MB.
