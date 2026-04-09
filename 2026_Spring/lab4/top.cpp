@@ -132,8 +132,6 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
     // 1. Create LOCAL memories for the Read-Modify-Write operations
     data_t local_depth[HEIGHT][WIDTH];
     Vec3 local_normal[HEIGHT][WIDTH];
-    #pragma HLS array_partition variable=local_depth cyclic factor=2 dim=2
-    #pragma HLS array_partition variable=local_normal cyclic factor=2 dim=2
 
     // 2. Initialize the local buffers
     for (int y = 0; y < HEIGHT; y++) {
@@ -166,7 +164,6 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
         for (int y = curr_bounds.min_y; y <= curr_bounds.max_y; y++) {
             for (int x = curr_bounds.min_x; x <= curr_bounds.max_x; x++) {
             #pragma HLS pipeline II=1
-            #pragma HLS unroll factor=2
             
                 data_t px = (data_t)x + (data_t)0.5;
                 data_t py = (data_t)y + (data_t)0.5;
@@ -215,7 +212,6 @@ static void k5_deferred_lighting(const data_t depth_buffer[HEIGHT][WIDTH],
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
         #pragma HLS pipeline II=1
-        #pragma HLS unroll factor=2
             if (depth_buffer[y][x] == (data_t)9999.0) {
                 // Background color
                 framebuffer[y][x] = (data_t)0.0; 
