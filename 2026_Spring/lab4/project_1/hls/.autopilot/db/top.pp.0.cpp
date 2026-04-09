@@ -6280,15 +6280,16 @@ static void k2_perspective_divide(const Triangle clip_tris[128],
     const data_t half_h = (data_t)(64 / 2.0);
 
     VITIS_LOOP_45_1: for (int i = 0; i < 128; i++) {
+#pragma HLS pipeline II=1
 
 
-        Triangle curr_tri = clip_tris[i];
+ Triangle curr_tri = clip_tris[i];
 
 
         if (curr_tri.is_active) {
             Vec4 verts[3] = {curr_tri.v0, curr_tri.v1, curr_tri.v2};
 
-            VITIS_LOOP_54_2: for (int v = 0; v < 3; v++) {
+            VITIS_LOOP_55_2: for (int v = 0; v < 3; v++) {
 
                 data_t w_inv = (verts[v].w != (data_t)0) ? (data_t)((data_t)1.0 / verts[v].w) : (data_t)1.0;
 
@@ -6319,7 +6320,7 @@ static void k3_bounding_box(const Triangle screen_tris_in[128],
                             Triangle screen_tris_out[128],
                             BoundingBox bounds[128]) {
 
-    VITIS_LOOP_85_1: for (int i = 0; i < 128; i++) {
+    VITIS_LOOP_86_1: for (int i = 0; i < 128; i++) {
 #pragma HLS pipeline II=1
 
 
@@ -6370,15 +6371,15 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
     Vec3 local_normal[64][64];
 
 
-    VITIS_LOOP_136_1: for (int y = 0; y < 64; y++) {
-        VITIS_LOOP_137_2: for (int x = 0; x < 64; x++) {
+    VITIS_LOOP_137_1: for (int y = 0; y < 64; y++) {
+        VITIS_LOOP_138_2: for (int x = 0; x < 64; x++) {
             local_depth[y][x] = (data_t)9999.0;
             local_normal[y][x] = {(data_t)0, (data_t)0, (data_t)0};
         }
     }
 
 
-    VITIS_LOOP_144_3: for (int i = 0; i < 128; i++) {
+    VITIS_LOOP_145_3: for (int i = 0; i < 128; i++) {
 
 
 
@@ -6397,8 +6398,8 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
         data_t inv_area = (data_t)1.0 / area;
 
 
-        VITIS_LOOP_163_4: for (int y = curr_bounds.min_y; y <= curr_bounds.max_y; y++) {
-            VITIS_LOOP_164_5: for (int x = curr_bounds.min_x; x <= curr_bounds.max_x; x++) {
+        VITIS_LOOP_164_4: for (int y = curr_bounds.min_y; y <= curr_bounds.max_y; y++) {
+            VITIS_LOOP_165_5: for (int x = curr_bounds.min_x; x <= curr_bounds.max_x; x++) {
 #pragma HLS pipeline II=1
 
  data_t px = (data_t)x + (data_t)0.5;
@@ -6425,8 +6426,8 @@ static void k4_rasterize(const Triangle tris[128], const BoundingBox bounds[128]
     }
 
 
-    VITIS_LOOP_191_6: for (int y = 0; y < 64; y++) {
-        VITIS_LOOP_192_7: for (int x = 0; x < 64; x++) {
+    VITIS_LOOP_192_6: for (int y = 0; y < 64; y++) {
+        VITIS_LOOP_193_7: for (int x = 0; x < 64; x++) {
             depth_buffer_out[y][x] = local_depth[y][x];
             normal_buffer_out[y][x] = local_normal[y][x];
         }
@@ -6445,8 +6446,8 @@ static void k5_deferred_lighting(const data_t depth_buffer[64][64],
     Vec3 light_dir = {(data_t)0.577, (data_t)-0.577, (data_t)0.577};
     const data_t ambient = (data_t)0.1;
 
-    VITIS_LOOP_211_1: for (int y = 0; y < 64; y++) {
-        VITIS_LOOP_212_2: for (int x = 0; x < 64; x++) {
+    VITIS_LOOP_212_1: for (int y = 0; y < 64; y++) {
+        VITIS_LOOP_213_2: for (int x = 0; x < 64; x++) {
 #pragma HLS pipeline II=1
  if (depth_buffer[y][x] == (data_t)9999.0) {
 
@@ -6473,7 +6474,7 @@ __attribute__((sdx_kernel("top_kernel", 0))) void top_kernel(const Triangle in_t
                 data_t out_pixels[64][64]) {
 #line 22 "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/script.tcl"
 #pragma HLSDIRECTIVE TOP name=top_kernel
-# 236 "top.cpp"
+# 237 "top.cpp"
 
 #pragma HLS interface m_axi port=in_tris offset=slave bundle=gmem0
 #pragma HLS interface m_axi port=mvp_matrix offset=slave bundle=gmem2

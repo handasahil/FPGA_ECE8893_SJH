@@ -6,32 +6,32 @@
 </RunData>
 <TimingReport>
   <TargetClockPeriod>10.000</TargetClockPeriod>
-  <AchievedClockPeriod>8.862</AchievedClockPeriod>
+  <AchievedClockPeriod>8.546</AchievedClockPeriod>
   <CLOCK_NAME>ap_clk</CLOCK_NAME>
-  <CP_FINAL>8.862</CP_FINAL>
-  <CP_ROUTE>8.862</CP_ROUTE>
-  <CP_SYNTH>6.513</CP_SYNTH>
+  <CP_FINAL>8.546</CP_FINAL>
+  <CP_ROUTE>8.546</CP_ROUTE>
+  <CP_SYNTH>6.516</CP_SYNTH>
   <CP_TARGET>10.000</CP_TARGET>
-  <SLACK_FINAL>1.138</SLACK_FINAL>
-  <SLACK_ROUTE>1.138</SLACK_ROUTE>
-  <SLACK_SYNTH>3.487</SLACK_SYNTH>
+  <SLACK_FINAL>1.454</SLACK_FINAL>
+  <SLACK_ROUTE>1.454</SLACK_ROUTE>
+  <SLACK_SYNTH>3.484</SLACK_SYNTH>
   <TIMING_MET>TRUE</TIMING_MET>
   <TNS_FINAL>0.000</TNS_FINAL>
   <TNS_ROUTE>0.000</TNS_ROUTE>
   <TNS_SYNTH>0.000</TNS_SYNTH>
-  <WNS_FINAL>1.138</WNS_FINAL>
-  <WNS_ROUTE>1.138</WNS_ROUTE>
-  <WNS_SYNTH>3.487</WNS_SYNTH>
+  <WNS_FINAL>1.454</WNS_FINAL>
+  <WNS_ROUTE>1.454</WNS_ROUTE>
+  <WNS_SYNTH>3.484</WNS_SYNTH>
 </TimingReport>
 <AreaReport>
   <Resources>
-    <BRAM>130</BRAM>
-    <CLB>3437</CLB>
-    <DSP>144</DSP>
-    <FF>18765</FF>
+    <BRAM>122</BRAM>
+    <CLB>5185</CLB>
+    <DSP>168</DSP>
+    <FF>36956</FF>
     <LATCH>0</LATCH>
-    <LUT>15101</LUT>
-    <SRL>212</SRL>
+    <LUT>22449</LUT>
+    <SRL>1476</SRL>
     <URAM>0</URAM>
   </Resources>
   <AvailableResources>
@@ -46,7 +46,7 @@
 <RtlModules>
   <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="top_kernel" TOP_CELL="bd_0_i/hls_inst/inst">
     <SubModules count="90">bounds_max_x_U bounds_max_y_U bounds_min_x_U bounds_min_y_U clip_tris_color_U clip_tris_is_active_U clip_tris_n0_x_U clip_tris_n0_y_U clip_tris_n0_z_U clip_tris_n1_x_U clip_tris_n1_y_U clip_tris_n1_z_U clip_tris_n2_x_U clip_tris_n2_y_U clip_tris_n2_z_U clip_tris_v0_w_U clip_tris_v0_x_U clip_tris_v0_y_U clip_tris_v0_z_U clip_tris_v1_w_U clip_tris_v1_x_U clip_tris_v1_y_U clip_tris_v1_z_U clip_tris_v2_w_U clip_tris_v2_x_U clip_tris_v2_y_U clip_tris_v2_z_U control_s_axi_U depth_buffer_U gmem0_m_axi_U gmem1_m_axi_U gmem2_m_axi_U k1_vertex_transform_U0 k2_perspective_divide_U0 k3_bounding_box_U0 k4_rasterize_U0 k5_deferred_lighting_U0 normal_buffer_x_U normal_buffer_y_U normal_buffer_z_U out_pixels_c_U screen_tris_in_color_U screen_tris_in_is_active_U screen_tris_in_n0_x_U screen_tris_in_n0_y_U screen_tris_in_n0_z_U screen_tris_in_n1_x_U screen_tris_in_n1_y_U screen_tris_in_n1_z_U screen_tris_in_n2_x_U screen_tris_in_n2_y_U screen_tris_in_n2_z_U screen_tris_in_v0_w_U screen_tris_in_v0_x_U screen_tris_in_v0_y_U screen_tris_in_v0_z_U screen_tris_in_v1_w_U screen_tris_in_v1_x_U screen_tris_in_v1_y_U screen_tris_in_v1_z_U screen_tris_in_v2_w_U screen_tris_in_v2_x_U screen_tris_in_v2_y_U screen_tris_in_v2_z_U screen_tris_out_color_U screen_tris_out_is_active_U screen_tris_out_n0_x_U screen_tris_out_n0_y_U screen_tris_out_n0_z_U screen_tris_out_n1_x_U screen_tris_out_n1_y_U screen_tris_out_n1_z_U screen_tris_out_n2_x_U screen_tris_out_n2_y_U screen_tris_out_n2_z_U screen_tris_out_v0_w_U screen_tris_out_v0_x_U screen_tris_out_v0_y_U screen_tris_out_v0_z_U screen_tris_out_v1_w_U screen_tris_out_v1_x_U screen_tris_out_v1_y_U screen_tris_out_v1_z_U screen_tris_out_v2_w_U screen_tris_out_v2_x_U screen_tris_out_v2_y_U screen_tris_out_v2_z_U start_for_k2_perspective_divide_U0_U start_for_k3_bounding_box_U0_U start_for_k4_rasterize_U0_U</SubModules>
-    <Resources BRAM="130" DSP="144" FF="18765" LUT="15101" LogicLUT="14889" RAMB18="6" RAMB36="62" SRL="212"/>
+    <Resources BRAM="122" DSP="168" FF="36956" LUT="22449" LogicLUT="20973" RAMB18="6" RAMB36="58" SRL="1476"/>
   </RtlModule>
   <RtlModule CELL="inst/bounds_max_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
@@ -88,40 +88,40 @@
     <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/clip_tris_v0_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="24" LogicLUT="24"/>
+    <Resources FF="70" LUT="32" LogicLUT="32"/>
   </RtlModule>
   <RtlModule CELL="inst/clip_tris_v0_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="46" LogicLUT="46"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/clip_tris_v0_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="46" LogicLUT="46"/>
-  </RtlModule>
-  <RtlModule CELL="inst/clip_tris_v0_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="40" LogicLUT="40"/>
-  </RtlModule>
-  <RtlModule CELL="inst/clip_tris_v1_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="40" LogicLUT="40"/>
-  </RtlModule>
-  <RtlModule CELL="inst/clip_tris_v1_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="72" LogicLUT="72"/>
-  </RtlModule>
-  <RtlModule CELL="inst/clip_tris_v1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="73" LogicLUT="73"/>
-  </RtlModule>
-  <RtlModule CELL="inst/clip_tris_v1_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="72" LogicLUT="72"/>
-  </RtlModule>
-  <RtlModule CELL="inst/clip_tris_v2_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
+  <RtlModule CELL="inst/clip_tris_v0_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
+  </RtlModule>
+  <RtlModule CELL="inst/clip_tris_v1_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="33" LogicLUT="33"/>
+  </RtlModule>
+  <RtlModule CELL="inst/clip_tris_v1_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
+  </RtlModule>
+  <RtlModule CELL="inst/clip_tris_v1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="26" LogicLUT="26"/>
+  </RtlModule>
+  <RtlModule CELL="inst/clip_tris_v1_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
+  </RtlModule>
+  <RtlModule CELL="inst/clip_tris_v2_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="31" LogicLUT="31"/>
+  </RtlModule>
   <RtlModule CELL="inst/clip_tris_v2_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="40" LogicLUT="40"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/clip_tris_v2_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="42" LogicLUT="42"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/clip_tris_v2_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="40" LogicLUT="40"/>
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/control_s_axi_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_control_s_axi">
     <Resources FF="245" LUT="225" LogicLUT="225"/>
@@ -129,37 +129,39 @@
   <RtlModule CELL="inst/depth_buffer_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_depth_buffer_RAM_AUTO_1R1W">
   </RtlModule>
   <RtlModule CELL="inst/gmem0_m_axi_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_gmem0_m_axi">
-    <Resources BRAM="29" FF="2689" LUT="1430" LogicLUT="1396" RAMB18="1" RAMB36="14" SRL="34"/>
+    <Resources BRAM="29" FF="2689" LUT="1429" LogicLUT="1395" RAMB18="1" RAMB36="14" SRL="34"/>
   </RtlModule>
   <RtlModule CELL="inst/gmem1_m_axi_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_gmem1_m_axi">
-    <Resources FF="998" LUT="639" LogicLUT="540" SRL="99"/>
+    <Resources FF="998" LUT="638" LogicLUT="539" SRL="99"/>
   </RtlModule>
   <RtlModule CELL="inst/gmem2_m_axi_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_gmem2_m_axi">
-    <Resources BRAM="1" FF="742" LUT="467" LogicLUT="434" RAMB18="1" SRL="33"/>
+    <Resources BRAM="1" FF="834" LUT="499" LogicLUT="466" RAMB18="1" SRL="33"/>
   </RtlModule>
   <RtlModule CELL="inst/k1_vertex_transform_U0" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_k1_vertex_transform">
     <SubModules count="4">flow_control_loop_pipe_U mul_32s_32s_64_1_1_U3 mul_32s_32s_64_1_1_U4 mul_32s_32s_64_1_1_U5</SubModules>
-    <Resources DSP="12" FF="5878" LUT="4899" LogicLUT="4899"/>
+    <Resources DSP="12" FF="5878" LUT="5110" LogicLUT="5110"/>
     <LocalResources FF="5877" LUT="3257" LogicLUT="3257"/>
   </RtlModule>
   <RtlModule CELL="inst/k1_vertex_transform_U0/flow_control_loop_pipe_U" DEPTH="2" FILE_NAME="top_kernel_k1_vertex_transform.v" ORIG_REF_NAME="top_kernel_flow_control_loop_pipe">
   </RtlModule>
   <RtlModule CELL="inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3" DEPTH="2" FILE_NAME="top_kernel_k1_vertex_transform.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
-    <Resources DSP="4" LUT="536" LogicLUT="536"/>
+    <Resources DSP="4" LUT="612" LogicLUT="612"/>
   </RtlModule>
   <RtlModule CELL="inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4" DEPTH="2" FILE_NAME="top_kernel_k1_vertex_transform.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
-    <Resources DSP="4" LUT="534" LogicLUT="534"/>
+    <Resources DSP="4" LUT="608" LogicLUT="608"/>
   </RtlModule>
   <RtlModule CELL="inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U5" DEPTH="2" FILE_NAME="top_kernel_k1_vertex_transform.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
-    <Resources DSP="4" LUT="533" LogicLUT="533"/>
+    <Resources DSP="4" LUT="594" LogicLUT="594"/>
   </RtlModule>
   <RtlModule CELL="inst/k2_perspective_divide_U0" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_k2_perspective_divide">
-    <SubModules count="8">mul_32s_32s_64_1_1_U34 mul_32s_32s_64_1_1_U35 mul_32s_32s_64_1_1_U36 sdiv_34ns_32s_34_38_seq_1_U37 verts_w_U verts_x_U verts_y_U verts_z_U</SubModules>
-    <Resources BRAM="8" DSP="12" FF="1146" LUT="545" LogicLUT="544" RAMB36="4" SRL="1"/>
-    <LocalResources FF="976" LUT="28" LogicLUT="28"/>
+    <SubModules count="13">flow_control_loop_pipe_U mul_32s_32s_64_1_1_U34 mul_32s_32s_64_1_1_U35 mul_32s_32s_64_1_1_U36 mul_32s_32s_64_1_1_U37 mul_32s_32s_64_1_1_U38 mul_32s_32s_64_1_1_U39 mul_32s_32s_64_1_1_U40 mul_32s_32s_64_1_1_U41 mul_32s_32s_64_1_1_U42 sdiv_34ns_32s_34_38_1_U43 sdiv_34ns_32s_34_38_1_U44 sdiv_34ns_32s_34_38_1_U45</SubModules>
+    <Resources DSP="36" FF="19245" LUT="7852" LogicLUT="6587" SRL="1265"/>
+    <LocalResources FF="12410" LUT="1707" LogicLUT="547" SRL="1160"/>
+  </RtlModule>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/flow_control_loop_pipe_U" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_flow_control_loop_pipe">
   </RtlModule>
   <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U34" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
-    <Resources DSP="4" LUT="55" LogicLUT="55"/>
+    <Resources DSP="4" LUT="87" LogicLUT="87"/>
   </RtlModule>
   <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U35" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="55" LogicLUT="55"/>
@@ -167,96 +169,112 @@
   <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U36" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="55" LogicLUT="55"/>
   </RtlModule>
-  <RtlModule CELL="inst/k2_perspective_divide_U0/sdiv_34ns_32s_34_38_seq_1_U37" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_sdiv_34ns_32s_34_38_seq_1">
-    <Resources FF="170" LUT="183" LogicLUT="182" SRL="1"/>
-    <LocalResources FF="67" LUT="81" LogicLUT="81"/>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U37" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+    <Resources DSP="4" LUT="90" LogicLUT="90"/>
   </RtlModule>
-  <RtlModule CELL="inst/k2_perspective_divide_U0/verts_w_U" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W">
+  <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U38" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+    <Resources DSP="4" LUT="58" LogicLUT="58"/>
   </RtlModule>
-  <RtlModule CELL="inst/k2_perspective_divide_U0/verts_x_U" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W">
-    <Resources BRAM="2" LUT="51" LogicLUT="51" RAMB36="1"/>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U39" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+    <Resources DSP="4" LUT="58" LogicLUT="58"/>
   </RtlModule>
-  <RtlModule CELL="inst/k2_perspective_divide_U0/verts_y_U" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W">
-    <Resources BRAM="2" LUT="64" LogicLUT="64" RAMB36="1"/>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U40" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+    <Resources DSP="4" LUT="87" LogicLUT="87"/>
   </RtlModule>
-  <RtlModule CELL="inst/k2_perspective_divide_U0/verts_z_U" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W">
+  <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U41" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+    <Resources DSP="4" LUT="55" LogicLUT="55"/>
+  </RtlModule>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/mul_32s_32s_64_1_1_U42" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+    <Resources DSP="4" LUT="55" LogicLUT="55"/>
+  </RtlModule>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/sdiv_34ns_32s_34_38_1_U43" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_sdiv_34ns_32s_34_38_1">
+    <Resources FF="2278" LUT="1845" LogicLUT="1810" SRL="35"/>
+    <LocalResources FF="66" LUT="1082" LogicLUT="1082"/>
+  </RtlModule>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/sdiv_34ns_32s_34_38_1_U44" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_sdiv_34ns_32s_34_38_1">
+    <Resources FF="2278" LUT="1831" LogicLUT="1796" SRL="35"/>
+    <LocalResources FF="66" LUT="1067" LogicLUT="1067"/>
+  </RtlModule>
+  <RtlModule CELL="inst/k2_perspective_divide_U0/sdiv_34ns_32s_34_38_1_U45" DEPTH="2" FILE_NAME="top_kernel_k2_perspective_divide.v" ORIG_REF_NAME="top_kernel_sdiv_34ns_32s_34_38_1">
+    <Resources FF="2278" LUT="1860" LogicLUT="1825" SRL="35"/>
+    <LocalResources FF="66" LUT="1082" LogicLUT="1082"/>
   </RtlModule>
   <RtlModule CELL="inst/k3_bounding_box_U0" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_k3_bounding_box">
     <SubModules count="1">flow_control_loop_pipe_U</SubModules>
-    <Resources FF="623" LUT="516" LogicLUT="516"/>
-    <LocalResources FF="622" LUT="487" LogicLUT="487"/>
+    <Resources FF="623" LUT="630" LogicLUT="630"/>
+    <LocalResources FF="622" LUT="601" LogicLUT="601"/>
   </RtlModule>
   <RtlModule CELL="inst/k3_bounding_box_U0/flow_control_loop_pipe_U" DEPTH="2" FILE_NAME="top_kernel_k3_bounding_box.v" ORIG_REF_NAME="top_kernel_flow_control_loop_pipe">
   </RtlModule>
   <RtlModule CELL="inst/k4_rasterize_U0" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_k4_rasterize">
-    <SubModules count="9">grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520 local_depth_U local_normal_x_U local_normal_y_U local_normal_z_U mul_33s_33s_65_1_1_U192 mul_33s_33s_65_1_1_U193 mul_64ns_64ns_128_1_1_U194 sdiv_34ns_32s_34_38_seq_1_U195</SubModules>
-    <Resources BRAM="32" DSP="120" FF="1992" LUT="3738" LogicLUT="3729" RAMB36="16" SRL="9"/>
-    <LocalResources DSP="8" FF="596" LUT="50" LogicLUT="48" SRL="2"/>
+    <SubModules count="9">grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520 local_depth_U local_normal_x_U local_normal_y_U local_normal_z_U mul_33s_33s_65_1_1_U198 mul_33s_33s_65_1_1_U199 mul_64ns_64ns_128_1_1_U200 sdiv_34ns_32s_34_38_seq_1_U201</SubModules>
+    <Resources BRAM="32" DSP="120" FF="1992" LUT="3736" LogicLUT="3727" RAMB36="16" SRL="9"/>
+    <LocalResources DSP="8" FF="596" LUT="53" LogicLUT="51" SRL="2"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5">
-    <SubModules count="22">flow_control_loop_pipe_sequential_init_U mul_32ns_32s_63_1_1_U141 mul_32ns_32s_63_1_1_U142 mul_32ns_32s_63_1_1_U143 mul_32ns_32s_63_1_1_U144 mul_32s_32s_64_1_1_U145 mul_32s_32s_64_1_1_U146 mul_32s_32s_64_1_1_U147 mul_32s_32s_64_1_1_U148 mul_32s_32s_64_1_1_U149 mul_32s_32s_64_1_1_U150 mul_32s_32s_64_1_1_U151 mul_32s_32s_64_1_1_U152 mul_33s_33s_65_1_1_U153 mul_33s_33s_65_1_1_U154 mul_33s_33s_65_1_1_U155 mul_33s_33s_65_1_1_U156 mul_33s_33s_65_1_1_U157 mul_33s_33s_65_1_1_U158 mul_66s_32s_97_1_1_U159 mul_66s_32s_97_1_1_U160 mul_66s_32s_97_1_1_U161</SubModules>
-    <Resources DSP="96" FF="1226" LUT="3061" LogicLUT="3055" SRL="6"/>
-    <LocalResources FF="1224" LUT="733" LogicLUT="727" SRL="6"/>
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5">
+    <SubModules count="22">flow_control_loop_pipe_sequential_init_U mul_32ns_32s_63_1_1_U147 mul_32ns_32s_63_1_1_U148 mul_32ns_32s_63_1_1_U149 mul_32ns_32s_63_1_1_U150 mul_32s_32s_64_1_1_U151 mul_32s_32s_64_1_1_U152 mul_32s_32s_64_1_1_U153 mul_32s_32s_64_1_1_U154 mul_32s_32s_64_1_1_U155 mul_32s_32s_64_1_1_U156 mul_32s_32s_64_1_1_U157 mul_32s_32s_64_1_1_U158 mul_33s_33s_65_1_1_U159 mul_33s_33s_65_1_1_U160 mul_33s_33s_65_1_1_U161 mul_33s_33s_65_1_1_U162 mul_33s_33s_65_1_1_U163 mul_33s_33s_65_1_1_U164 mul_66s_32s_97_1_1_U165 mul_66s_32s_97_1_1_U166 mul_66s_32s_97_1_1_U167</SubModules>
+    <Resources DSP="96" FF="1226" LUT="3058" LogicLUT="3052" SRL="6"/>
+    <LocalResources FF="1224" LUT="731" LogicLUT="725" SRL="6"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/flow_control_loop_pipe_sequential_init_U" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_flow_control_loop_pipe_sequential_init">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/flow_control_loop_pipe_sequential_init_U" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_flow_control_loop_pipe_sequential_init">
     <Resources FF="2" LUT="55" LogicLUT="55"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32ns_32s_63_1_1_U141" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32ns_32s_63_1_1_U147" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32ns_32s_63_1_1_U142" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32ns_32s_63_1_1_U148" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32ns_32s_63_1_1_U143" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32ns_32s_63_1_1_U149" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32ns_32s_63_1_1_U144" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32ns_32s_63_1_1_U150" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32ns_32s_63_1_1">
     <Resources DSP="4" LUT="68" LogicLUT="68"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U145" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U151" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="111" LogicLUT="111"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U146" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U152" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="111" LogicLUT="111"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U147" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U153" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="111" LogicLUT="111"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U148" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U154" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="130" LogicLUT="130"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U149" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U155" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U150" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U156" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="161" LogicLUT="161"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U151" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U157" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="161" LogicLUT="161"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_32s_32s_64_1_1_U152" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_32s_32s_64_1_1_U158" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_32s_32s_64_1_1">
     <Resources DSP="4" LUT="183" LogicLUT="183"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_33s_33s_65_1_1_U153" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_33s_33s_65_1_1_U159" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
     <Resources DSP="4" LUT="179" LogicLUT="179"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_33s_33s_65_1_1_U154" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_33s_33s_65_1_1_U160" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
     <Resources DSP="4" LUT="114" LogicLUT="114"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_33s_33s_65_1_1_U155" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_33s_33s_65_1_1_U161" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
     <Resources DSP="4" LUT="113" LogicLUT="113"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_33s_33s_65_1_1_U156" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_33s_33s_65_1_1_U162" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_33s_33s_65_1_1_U157" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_33s_33s_65_1_1_U163" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
     <Resources DSP="4" LUT="146" LogicLUT="146"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_33s_33s_65_1_1_U158" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_33s_33s_65_1_1_U164" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
     <Resources DSP="4" LUT="81" LogicLUT="81"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_66s_32s_97_1_1_U159" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_66s_32s_97_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_66s_32s_97_1_1_U165" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_66s_32s_97_1_1">
+    <Resources DSP="8" LUT="120" LogicLUT="120"/>
+  </RtlModule>
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_66s_32s_97_1_1_U166" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_66s_32s_97_1_1">
     <Resources DSP="8" LUT="121" LogicLUT="121"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_66s_32s_97_1_1_U160" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_66s_32s_97_1_1">
-    <Resources DSP="8" LUT="121" LogicLUT="121"/>
-  </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520/mul_66s_32s_97_1_1_U161" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" ORIG_REF_NAME="top_kernel_mul_66s_32s_97_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520/mul_66s_32s_97_1_1_U167" DEPTH="3" FILE_NAME="top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" ORIG_REF_NAME="top_kernel_mul_66s_32s_97_1_1">
     <Resources DSP="8" LUT="121" LogicLUT="121"/>
   </RtlModule>
   <RtlModule CELL="inst/k4_rasterize_U0/local_depth_U" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W">
@@ -267,33 +285,33 @@
   </RtlModule>
   <RtlModule CELL="inst/k4_rasterize_U0/local_normal_z_U" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_k4_rasterize_local_normal_x_RAM_AUTO_1R1W">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/mul_33s_33s_65_1_1_U192" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/mul_33s_33s_65_1_1_U198" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
     <Resources DSP="2" LUT="152" LogicLUT="152"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/mul_33s_33s_65_1_1_U193" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
+  <RtlModule CELL="inst/k4_rasterize_U0/mul_33s_33s_65_1_1_U199" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_mul_33s_33s_65_1_1">
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/mul_64ns_64ns_128_1_1_U194" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_mul_64ns_64ns_128_1_1">
-    <Resources DSP="12" LUT="238" LogicLUT="238"/>
+  <RtlModule CELL="inst/k4_rasterize_U0/mul_64ns_64ns_128_1_1_U200" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_mul_64ns_64ns_128_1_1">
+    <Resources DSP="12" LUT="237" LogicLUT="237"/>
   </RtlModule>
-  <RtlModule CELL="inst/k4_rasterize_U0/sdiv_34ns_32s_34_38_seq_1_U195" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_sdiv_34ns_32s_34_38_seq_1">
-    <Resources FF="170" LUT="185" LogicLUT="184" SRL="1"/>
-    <LocalResources FF="67" LUT="83" LogicLUT="83"/>
+  <RtlModule CELL="inst/k4_rasterize_U0/sdiv_34ns_32s_34_38_seq_1_U201" DEPTH="2" FILE_NAME="top_kernel_k4_rasterize.v" ORIG_REF_NAME="top_kernel_sdiv_34ns_32s_34_38_seq_1">
+    <Resources FF="170" LUT="184" LogicLUT="183" SRL="1"/>
+    <LocalResources FF="67" LUT="82" LogicLUT="82"/>
   </RtlModule>
   <RtlModule CELL="inst/k5_deferred_lighting_U0" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_k5_deferred_lighting">
-    <SubModules count="2">flow_control_loop_pipe_U mul_32s_17s_49_1_1_U230</SubModules>
-    <Resources FF="197" LUT="403" LogicLUT="401" SRL="2"/>
+    <SubModules count="2">flow_control_loop_pipe_U mul_32s_17s_49_1_1_U237</SubModules>
+    <Resources FF="197" LUT="404" LogicLUT="402" SRL="2"/>
     <LocalResources FF="196" LUT="161" LogicLUT="159" SRL="2"/>
   </RtlModule>
   <RtlModule CELL="inst/k5_deferred_lighting_U0/flow_control_loop_pipe_U" DEPTH="2" FILE_NAME="top_kernel_k5_deferred_lighting.v" ORIG_REF_NAME="top_kernel_flow_control_loop_pipe">
-    <Resources FF="1" LUT="52" LogicLUT="52"/>
+    <Resources FF="1" LUT="53" LogicLUT="53"/>
   </RtlModule>
-  <RtlModule CELL="inst/k5_deferred_lighting_U0/mul_32s_17s_49_1_1_U230" DEPTH="2" FILE_NAME="top_kernel_k5_deferred_lighting.v" ORIG_REF_NAME="top_kernel_mul_32s_17s_49_1_1">
+  <RtlModule CELL="inst/k5_deferred_lighting_U0/mul_32s_17s_49_1_1_U237" DEPTH="2" FILE_NAME="top_kernel_k5_deferred_lighting.v" ORIG_REF_NAME="top_kernel_mul_32s_17s_49_1_1">
     <Resources LUT="191" LogicLUT="191"/>
   </RtlModule>
   <RtlModule CELL="inst/normal_buffer_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_depth_buffer_RAM_AUTO_1R1W">
   </RtlModule>
   <RtlModule CELL="inst/normal_buffer_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_depth_buffer_RAM_AUTO_1R1W">
-    <Resources BRAM="15" FF="6" LUT="174" LogicLUT="174" RAMB18="1" RAMB36="7"/>
+    <Resources BRAM="15" FF="6" LUT="173" LogicLUT="173" RAMB18="1" RAMB36="7"/>
   </RtlModule>
   <RtlModule CELL="inst/normal_buffer_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_depth_buffer_RAM_AUTO_1R1W">
   </RtlModule>
@@ -313,7 +331,7 @@
     <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_n1_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="27" LogicLUT="27"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_n1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="24" LogicLUT="24"/>
@@ -336,7 +354,7 @@
     <Resources FF="70" LUT="27" LogicLUT="27"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v0_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="56" LogicLUT="56"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v0_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="24" LogicLUT="24"/>
@@ -344,10 +362,10 @@
   <RtlModule CELL="inst/screen_tris_in_v1_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v1_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="56" LogicLUT="56"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="24" LogicLUT="24"/>
+    <Resources FF="70" LUT="26" LogicLUT="26"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v1_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="24" LogicLUT="24"/>
@@ -355,29 +373,29 @@
   <RtlModule CELL="inst/screen_tris_in_v2_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v2_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="24" LogicLUT="24"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v2_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="24" LogicLUT="24"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_in_v2_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="25" LogicLUT="25"/>
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_color_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_is_active_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w1_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_n0_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="22" LogicLUT="22"/>
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_n0_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="22" LogicLUT="22"/>
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_n0_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="22" LogicLUT="22"/>
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_n1_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="23" LogicLUT="23"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_n1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="22" LogicLUT="22"/>
@@ -397,35 +415,35 @@
   <RtlModule CELL="inst/screen_tris_out_v0_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v0_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="90" LogicLUT="90"/>
+    <Resources FF="70" LUT="27" LogicLUT="27"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v0_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v0_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="23" LogicLUT="23"/>
+    <Resources FF="70" LUT="25" LogicLUT="25"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v1_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v1_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="40" LogicLUT="40"/>
-  </RtlModule>
-  <RtlModule CELL="inst/screen_tris_out_v1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="57" LogicLUT="57"/>
   </RtlModule>
+  <RtlModule CELL="inst/screen_tris_out_v1_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
+    <Resources FF="70" LUT="58" LogicLUT="58"/>
+  </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v1_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="22" LogicLUT="22"/>
+    <Resources FF="70" LUT="24" LogicLUT="24"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v2_w_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v2_x_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="42" LogicLUT="42"/>
+    <Resources FF="70" LUT="60" LogicLUT="60"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v2_y_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
     <Resources FF="70" LUT="57" LogicLUT="57"/>
   </RtlModule>
   <RtlModule CELL="inst/screen_tris_out_v2_z_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_fifo_w32_d2_S">
-    <Resources FF="70" LUT="25" LogicLUT="25"/>
+    <Resources FF="70" LUT="27" LogicLUT="27"/>
   </RtlModule>
   <RtlModule CELL="inst/start_for_k2_perspective_divide_U0_U" DEPTH="1" FILE_NAME="top_kernel.v" ORIG_REF_NAME="top_kernel_start_for_k2_perspective_divide_U0">
   </RtlModule>
@@ -435,127 +453,130 @@
   </RtlModule>
 </RtlModules>
 <TimingPaths>
-  <TPATH DATAPATH_DELAY="8.842" DATAPATH_LOGIC_DELAY="4.417" DATAPATH_NET_DELAY="4.425" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln21_3_reg_4375_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="158" SLACK="1.138" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg/C">
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2407"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_62" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_37" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_9__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry_i_4" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln21_3_reg_4360[15]_i_9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3712"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln21_3_reg_4360_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln21_3_reg_4360_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln21_3_reg_4360_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln21_3_reg_4360_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln21_3_reg_4375[0]_i_6" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln21_3_reg_4375[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln21_3_reg_4375_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2556"/>
+  <TPATH DATAPATH_DELAY="8.529" DATAPATH_LOGIC_DELAY="4.870" DATAPATH_NET_DELAY="3.659" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln23_10_reg_4638_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="156" SLACK="1.454" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2397"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_56__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_25__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel.v" LINE_NUMBER="1361"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_4__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry_i_4__9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln23_7_reg_4617[15]_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3768"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln23_7_reg_4617_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln23_7_reg_4617_reg[23]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln23_7_reg_4617_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln23_7_reg_4617_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln23_10_reg_4638[0]_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln23_10_reg_4638[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln23_10_reg_4638_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2620"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="8.780" DATAPATH_LOGIC_DELAY="4.444" DATAPATH_NET_DELAY="4.336" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_reg_4483_reg[0]/D" LOGIC_LEVELS="20" MAX_FANOUT="158" SLACK="1.201" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg/C">
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2407"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_62" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_37" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_9__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478[7]_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3736"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[7]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln22_reg_4483[0]_i_2" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_reg_4483_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2597"/>
+  <TPATH DATAPATH_DELAY="8.479" DATAPATH_LOGIC_DELAY="4.730" DATAPATH_NET_DELAY="3.749" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln24_9_reg_4740_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="156" SLACK="1.504" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2397"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_56__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_25__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel.v" LINE_NUMBER="1361"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_4__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry_i_4__9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln24_7_reg_4725[15]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3792"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln24_7_reg_4725_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln24_7_reg_4725_reg[23]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln24_7_reg_4725_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln24_7_reg_4725_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln24_9_reg_4740[0]_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln24_9_reg_4740[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln24_9_reg_4740_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2658"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="8.629" DATAPATH_LOGIC_DELAY="4.483" DATAPATH_NET_DELAY="4.146" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln24_reg_4699_reg[0]/D" LOGIC_LEVELS="20" MAX_FANOUT="158" SLACK="1.351" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg/C">
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2407"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_62" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_37" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_9__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry_i_4" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln24_3_reg_4694[15]_i_10" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3784"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln24_3_reg_4694_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln24_3_reg_4694_reg[23]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln24_3_reg_4694_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln24_3_reg_4694_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln24_reg_4699[0]_i_2" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln24_reg_4699_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2659"/>
+  <TPATH DATAPATH_DELAY="8.441" DATAPATH_LOGIC_DELAY="4.877" DATAPATH_NET_DELAY="3.564" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln21_9_reg_4411_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="156" SLACK="1.542" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2397"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_56__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_25__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel.v" LINE_NUMBER="1361"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_4__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry_i_4__9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396[15]_i_9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3720"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[23]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln21_9_reg_4411[0]_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln21_9_reg_4411[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln21_9_reg_4411_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2559"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="8.621" DATAPATH_LOGIC_DELAY="4.476" DATAPATH_NET_DELAY="4.145" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_4_reg_4499_reg[0]/D" LOGIC_LEVELS="20" MAX_FANOUT="158" SLACK="1.360" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg/C">
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2407"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_62" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_37" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_9__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478[7]_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3736"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[7]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln22_4_reg_4499[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_4_reg_4499_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2594"/>
+  <TPATH DATAPATH_DELAY="8.380" DATAPATH_LOGIC_DELAY="4.889" DATAPATH_NET_DELAY="3.491" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_9_reg_4524_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="156" SLACK="1.601" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2397"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_56__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_25__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel.v" LINE_NUMBER="1361"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_4__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry_i_4__9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln22_7_reg_4509[15]_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3744"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln22_7_reg_4509_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln22_7_reg_4509_reg[23]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln22_7_reg_4509_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln22_7_reg_4509_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln22_9_reg_4524[0]_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln22_9_reg_4524[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_9_reg_4524_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2596"/>
   </TPATH>
-  <TPATH DATAPATH_DELAY="8.615" DATAPATH_LOGIC_DELAY="4.480" DATAPATH_NET_DELAY="4.135" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_3_reg_4493_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="158" SLACK="1.364" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg/C">
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter2_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2407"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_62" PRIMITIVE_TYPE="CLB.LUT.LUT5" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_37" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_i_9__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478[7]_i_7" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3736"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[7]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[15]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/add_ln22_3_reg_4478_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3710"/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln22_3_reg_4493[0]_i_6" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U3/and_ln22_3_reg_4493[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="" LINE_NUMBER=""/>
-    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln22_3_reg_4493_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2593"/>
+  <TPATH DATAPATH_DELAY="8.374" DATAPATH_LOGIC_DELAY="4.739" DATAPATH_NET_DELAY="3.635" ENDPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln21_10_reg_4417_reg[0]/D" LOGIC_LEVELS="21" MAX_FANOUT="156" SLACK="1.609" STARTPOINT_PIN="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg/C">
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/ap_enable_reg_pp0_iter1_reg" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2397"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_56__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_25__1" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel.v" LINE_NUMBER="1361"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_i_4__0" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_flow_control_loop_pipe.v" LINE_NUMBER="69"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_A_B_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_PREADD_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_MULTIPLIER_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_M_DATA_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__1/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_ALU_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product__2/DSP_OUTPUT_INST" PRIMITIVE_TYPE="ARITHMETIC.DSP.DSP48E2" FILE_NAME="" LINE_NUMBER=""/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry_i_4__9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_mul_32s_32s_64_1_1.v" LINE_NUMBER="44"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/tmp_product_carry__0" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396[15]_i_9" PRIMITIVE_TYPE="CLB.LUT.LUT2" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3720"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[15]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[23]_i_2" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[23]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/add_ln21_7_reg_4396_reg[31]_i_1" PRIMITIVE_TYPE="CLB.CARRY.CARRY8" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln21_10_reg_4417[0]_i_5" PRIMITIVE_TYPE="CLB.LUT.LUT6" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/mul_32s_32s_64_1_1_U4/and_ln21_10_reg_4417[0]_i_1" PRIMITIVE_TYPE="CLB.LUT.LUT4" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="3716"/>
+    <CELL NAME="bd_0_i/hls_inst/inst/k1_vertex_transform_U0/and_ln21_10_reg_4417_reg[0]" PRIMITIVE_TYPE="REGISTER.SDR.FDRE" FILE_NAME="top_kernel_k1_vertex_transform.v" LINE_NUMBER="2552"/>
   </TPATH>
 </TimingPaths>
 <VivadoReportFiles>

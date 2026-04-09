@@ -207,7 +207,7 @@ end;
 architecture behav of top_kernel is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=155,HLS_SYN_DSP=0,HLS_SYN_FF=25921,HLS_SYN_LUT=29762,HLS_VERSION=2025_1_1}";
+    "top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=155,HLS_SYN_DSP=0,HLS_SYN_FF=49573,HLS_SYN_LUT=38101,HLS_VERSION=2025_1_1}";
     constant C_S_AXI_DATA_WIDTH : INTEGER := 32;
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant C_M_AXI_DATA_WIDTH : INTEGER := 32;
@@ -391,8 +391,6 @@ architecture behav of top_kernel is
     signal k2_perspective_divide_U0_ap_continue : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_idle : STD_LOGIC;
     signal k2_perspective_divide_U0_ap_ready : STD_LOGIC;
-    signal k2_perspective_divide_U0_start_out : STD_LOGIC;
-    signal k2_perspective_divide_U0_start_write : STD_LOGIC;
     signal k2_perspective_divide_U0_clip_tris_v0_x_read : STD_LOGIC;
     signal k2_perspective_divide_U0_clip_tris_v0_y_read : STD_LOGIC;
     signal k2_perspective_divide_U0_clip_tris_v0_z_read : STD_LOGIC;
@@ -418,50 +416,98 @@ architecture behav of top_kernel is
     signal k2_perspective_divide_U0_clip_tris_is_active_read : STD_LOGIC;
     signal k2_perspective_divide_U0_screen_tris_in_v0_x_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_y_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_z_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_w_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v0_w_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v0_w_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v0_w_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_x_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_y_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_z_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_w_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v1_w_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v1_w_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v1_w_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_x_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_y_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_z_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_w_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_v2_w_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_v2_w_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_v2_w_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n0_x_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n0_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n0_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n0_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n0_y_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n0_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n0_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n0_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n0_z_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n0_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n0_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n0_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n1_x_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n1_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n1_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n1_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n1_y_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n1_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n1_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n1_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n1_z_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n1_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n1_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n1_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n2_x_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n2_x_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n2_x_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n2_x_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n2_y_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n2_y_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n2_y_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n2_y_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n2_z_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_n2_z_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_n2_z_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_n2_z_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_color_din : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_color_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_color_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_color_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_is_active_din : STD_LOGIC_VECTOR (0 downto 0);
     signal k2_perspective_divide_U0_screen_tris_in_is_active_write : STD_LOGIC;
+    signal k2_perspective_divide_U0_screen_tris_in_is_active_num_data_valid : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_screen_tris_in_is_active_fifo_cap : STD_LOGIC_VECTOR (31 downto 0);
+    signal k2_perspective_divide_U0_start_out : STD_LOGIC;
+    signal k2_perspective_divide_U0_start_write : STD_LOGIC;
     signal k3_bounding_box_U0_ap_start : STD_LOGIC;
     signal k3_bounding_box_U0_ap_done : STD_LOGIC;
     signal k3_bounding_box_U0_ap_continue : STD_LOGIC;
@@ -1355,8 +1401,6 @@ architecture behav of top_kernel is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        start_out : OUT STD_LOGIC;
-        start_write : OUT STD_LOGIC;
         clip_tris_v0_x_dout : IN STD_LOGIC_VECTOR (31 downto 0);
         clip_tris_v0_x_empty_n : IN STD_LOGIC;
         clip_tris_v0_x_read : OUT STD_LOGIC;
@@ -1475,118 +1519,120 @@ architecture behav of top_kernel is
         screen_tris_in_v0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_x_full_n : IN STD_LOGIC;
         screen_tris_in_v0_x_write : OUT STD_LOGIC;
-        screen_tris_in_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_y_full_n : IN STD_LOGIC;
         screen_tris_in_v0_y_write : OUT STD_LOGIC;
-        screen_tris_in_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_z_full_n : IN STD_LOGIC;
         screen_tris_in_v0_z_write : OUT STD_LOGIC;
-        screen_tris_in_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v0_w_full_n : IN STD_LOGIC;
         screen_tris_in_v0_w_write : OUT STD_LOGIC;
-        screen_tris_in_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v0_w_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v0_w_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_x_full_n : IN STD_LOGIC;
         screen_tris_in_v1_x_write : OUT STD_LOGIC;
-        screen_tris_in_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_y_full_n : IN STD_LOGIC;
         screen_tris_in_v1_y_write : OUT STD_LOGIC;
-        screen_tris_in_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_z_full_n : IN STD_LOGIC;
         screen_tris_in_v1_z_write : OUT STD_LOGIC;
-        screen_tris_in_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v1_w_full_n : IN STD_LOGIC;
         screen_tris_in_v1_w_write : OUT STD_LOGIC;
-        screen_tris_in_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v1_w_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v1_w_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_x_full_n : IN STD_LOGIC;
         screen_tris_in_v2_x_write : OUT STD_LOGIC;
-        screen_tris_in_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_y_full_n : IN STD_LOGIC;
         screen_tris_in_v2_y_write : OUT STD_LOGIC;
-        screen_tris_in_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_z_full_n : IN STD_LOGIC;
         screen_tris_in_v2_z_write : OUT STD_LOGIC;
-        screen_tris_in_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_w_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_v2_w_full_n : IN STD_LOGIC;
         screen_tris_in_v2_w_write : OUT STD_LOGIC;
-        screen_tris_in_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_v2_w_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_v2_w_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n0_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n0_x_full_n : IN STD_LOGIC;
         screen_tris_in_n0_x_write : OUT STD_LOGIC;
-        screen_tris_in_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n0_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n0_y_full_n : IN STD_LOGIC;
         screen_tris_in_n0_y_write : OUT STD_LOGIC;
-        screen_tris_in_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n0_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n0_z_full_n : IN STD_LOGIC;
         screen_tris_in_n0_z_write : OUT STD_LOGIC;
-        screen_tris_in_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n0_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n0_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n1_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n1_x_full_n : IN STD_LOGIC;
         screen_tris_in_n1_x_write : OUT STD_LOGIC;
-        screen_tris_in_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n1_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n1_y_full_n : IN STD_LOGIC;
         screen_tris_in_n1_y_write : OUT STD_LOGIC;
-        screen_tris_in_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n1_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n1_z_full_n : IN STD_LOGIC;
         screen_tris_in_n1_z_write : OUT STD_LOGIC;
-        screen_tris_in_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n1_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n1_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n2_x_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n2_x_full_n : IN STD_LOGIC;
         screen_tris_in_n2_x_write : OUT STD_LOGIC;
-        screen_tris_in_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_x_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_x_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n2_y_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n2_y_full_n : IN STD_LOGIC;
         screen_tris_in_n2_y_write : OUT STD_LOGIC;
-        screen_tris_in_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_y_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_y_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n2_z_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_n2_z_full_n : IN STD_LOGIC;
         screen_tris_in_n2_z_write : OUT STD_LOGIC;
-        screen_tris_in_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_n2_z_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_n2_z_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_color_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_color_full_n : IN STD_LOGIC;
         screen_tris_in_color_write : OUT STD_LOGIC;
-        screen_tris_in_color_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_color_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0);
+        screen_tris_in_color_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_color_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
         screen_tris_in_is_active_din : OUT STD_LOGIC_VECTOR (0 downto 0);
         screen_tris_in_is_active_full_n : IN STD_LOGIC;
         screen_tris_in_is_active_write : OUT STD_LOGIC;
-        screen_tris_in_is_active_num_data_valid : IN STD_LOGIC_VECTOR (2 downto 0);
-        screen_tris_in_is_active_fifo_cap : IN STD_LOGIC_VECTOR (2 downto 0) );
+        screen_tris_in_is_active_num_data_valid : IN STD_LOGIC_VECTOR (31 downto 0);
+        screen_tris_in_is_active_fifo_cap : IN STD_LOGIC_VECTOR (31 downto 0);
+        start_out : OUT STD_LOGIC;
+        start_write : OUT STD_LOGIC );
     end component;
 
 
@@ -3094,8 +3140,6 @@ begin
         ap_continue => k2_perspective_divide_U0_ap_continue,
         ap_idle => k2_perspective_divide_U0_ap_idle,
         ap_ready => k2_perspective_divide_U0_ap_ready,
-        start_out => k2_perspective_divide_U0_start_out,
-        start_write => k2_perspective_divide_U0_start_write,
         clip_tris_v0_x_dout => clip_tris_v0_x_dout,
         clip_tris_v0_x_empty_n => clip_tris_v0_x_empty_n,
         clip_tris_v0_x_read => k2_perspective_divide_U0_clip_tris_v0_x_read,
@@ -3214,118 +3258,120 @@ begin
         screen_tris_in_v0_x_din => k2_perspective_divide_U0_screen_tris_in_v0_x_din,
         screen_tris_in_v0_x_full_n => screen_tris_in_v0_x_full_n,
         screen_tris_in_v0_x_write => k2_perspective_divide_U0_screen_tris_in_v0_x_write,
-        screen_tris_in_v0_x_num_data_valid => screen_tris_in_v0_x_num_data_valid,
-        screen_tris_in_v0_x_fifo_cap => screen_tris_in_v0_x_fifo_cap,
+        screen_tris_in_v0_x_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v0_x_num_data_valid,
+        screen_tris_in_v0_x_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v0_x_fifo_cap,
         screen_tris_in_v0_y_din => k2_perspective_divide_U0_screen_tris_in_v0_y_din,
         screen_tris_in_v0_y_full_n => screen_tris_in_v0_y_full_n,
         screen_tris_in_v0_y_write => k2_perspective_divide_U0_screen_tris_in_v0_y_write,
-        screen_tris_in_v0_y_num_data_valid => screen_tris_in_v0_y_num_data_valid,
-        screen_tris_in_v0_y_fifo_cap => screen_tris_in_v0_y_fifo_cap,
+        screen_tris_in_v0_y_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v0_y_num_data_valid,
+        screen_tris_in_v0_y_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v0_y_fifo_cap,
         screen_tris_in_v0_z_din => k2_perspective_divide_U0_screen_tris_in_v0_z_din,
         screen_tris_in_v0_z_full_n => screen_tris_in_v0_z_full_n,
         screen_tris_in_v0_z_write => k2_perspective_divide_U0_screen_tris_in_v0_z_write,
-        screen_tris_in_v0_z_num_data_valid => screen_tris_in_v0_z_num_data_valid,
-        screen_tris_in_v0_z_fifo_cap => screen_tris_in_v0_z_fifo_cap,
+        screen_tris_in_v0_z_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v0_z_num_data_valid,
+        screen_tris_in_v0_z_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v0_z_fifo_cap,
         screen_tris_in_v0_w_din => k2_perspective_divide_U0_screen_tris_in_v0_w_din,
         screen_tris_in_v0_w_full_n => screen_tris_in_v0_w_full_n,
         screen_tris_in_v0_w_write => k2_perspective_divide_U0_screen_tris_in_v0_w_write,
-        screen_tris_in_v0_w_num_data_valid => screen_tris_in_v0_w_num_data_valid,
-        screen_tris_in_v0_w_fifo_cap => screen_tris_in_v0_w_fifo_cap,
+        screen_tris_in_v0_w_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v0_w_num_data_valid,
+        screen_tris_in_v0_w_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v0_w_fifo_cap,
         screen_tris_in_v1_x_din => k2_perspective_divide_U0_screen_tris_in_v1_x_din,
         screen_tris_in_v1_x_full_n => screen_tris_in_v1_x_full_n,
         screen_tris_in_v1_x_write => k2_perspective_divide_U0_screen_tris_in_v1_x_write,
-        screen_tris_in_v1_x_num_data_valid => screen_tris_in_v1_x_num_data_valid,
-        screen_tris_in_v1_x_fifo_cap => screen_tris_in_v1_x_fifo_cap,
+        screen_tris_in_v1_x_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v1_x_num_data_valid,
+        screen_tris_in_v1_x_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v1_x_fifo_cap,
         screen_tris_in_v1_y_din => k2_perspective_divide_U0_screen_tris_in_v1_y_din,
         screen_tris_in_v1_y_full_n => screen_tris_in_v1_y_full_n,
         screen_tris_in_v1_y_write => k2_perspective_divide_U0_screen_tris_in_v1_y_write,
-        screen_tris_in_v1_y_num_data_valid => screen_tris_in_v1_y_num_data_valid,
-        screen_tris_in_v1_y_fifo_cap => screen_tris_in_v1_y_fifo_cap,
+        screen_tris_in_v1_y_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v1_y_num_data_valid,
+        screen_tris_in_v1_y_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v1_y_fifo_cap,
         screen_tris_in_v1_z_din => k2_perspective_divide_U0_screen_tris_in_v1_z_din,
         screen_tris_in_v1_z_full_n => screen_tris_in_v1_z_full_n,
         screen_tris_in_v1_z_write => k2_perspective_divide_U0_screen_tris_in_v1_z_write,
-        screen_tris_in_v1_z_num_data_valid => screen_tris_in_v1_z_num_data_valid,
-        screen_tris_in_v1_z_fifo_cap => screen_tris_in_v1_z_fifo_cap,
+        screen_tris_in_v1_z_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v1_z_num_data_valid,
+        screen_tris_in_v1_z_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v1_z_fifo_cap,
         screen_tris_in_v1_w_din => k2_perspective_divide_U0_screen_tris_in_v1_w_din,
         screen_tris_in_v1_w_full_n => screen_tris_in_v1_w_full_n,
         screen_tris_in_v1_w_write => k2_perspective_divide_U0_screen_tris_in_v1_w_write,
-        screen_tris_in_v1_w_num_data_valid => screen_tris_in_v1_w_num_data_valid,
-        screen_tris_in_v1_w_fifo_cap => screen_tris_in_v1_w_fifo_cap,
+        screen_tris_in_v1_w_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v1_w_num_data_valid,
+        screen_tris_in_v1_w_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v1_w_fifo_cap,
         screen_tris_in_v2_x_din => k2_perspective_divide_U0_screen_tris_in_v2_x_din,
         screen_tris_in_v2_x_full_n => screen_tris_in_v2_x_full_n,
         screen_tris_in_v2_x_write => k2_perspective_divide_U0_screen_tris_in_v2_x_write,
-        screen_tris_in_v2_x_num_data_valid => screen_tris_in_v2_x_num_data_valid,
-        screen_tris_in_v2_x_fifo_cap => screen_tris_in_v2_x_fifo_cap,
+        screen_tris_in_v2_x_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v2_x_num_data_valid,
+        screen_tris_in_v2_x_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v2_x_fifo_cap,
         screen_tris_in_v2_y_din => k2_perspective_divide_U0_screen_tris_in_v2_y_din,
         screen_tris_in_v2_y_full_n => screen_tris_in_v2_y_full_n,
         screen_tris_in_v2_y_write => k2_perspective_divide_U0_screen_tris_in_v2_y_write,
-        screen_tris_in_v2_y_num_data_valid => screen_tris_in_v2_y_num_data_valid,
-        screen_tris_in_v2_y_fifo_cap => screen_tris_in_v2_y_fifo_cap,
+        screen_tris_in_v2_y_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v2_y_num_data_valid,
+        screen_tris_in_v2_y_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v2_y_fifo_cap,
         screen_tris_in_v2_z_din => k2_perspective_divide_U0_screen_tris_in_v2_z_din,
         screen_tris_in_v2_z_full_n => screen_tris_in_v2_z_full_n,
         screen_tris_in_v2_z_write => k2_perspective_divide_U0_screen_tris_in_v2_z_write,
-        screen_tris_in_v2_z_num_data_valid => screen_tris_in_v2_z_num_data_valid,
-        screen_tris_in_v2_z_fifo_cap => screen_tris_in_v2_z_fifo_cap,
+        screen_tris_in_v2_z_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v2_z_num_data_valid,
+        screen_tris_in_v2_z_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v2_z_fifo_cap,
         screen_tris_in_v2_w_din => k2_perspective_divide_U0_screen_tris_in_v2_w_din,
         screen_tris_in_v2_w_full_n => screen_tris_in_v2_w_full_n,
         screen_tris_in_v2_w_write => k2_perspective_divide_U0_screen_tris_in_v2_w_write,
-        screen_tris_in_v2_w_num_data_valid => screen_tris_in_v2_w_num_data_valid,
-        screen_tris_in_v2_w_fifo_cap => screen_tris_in_v2_w_fifo_cap,
+        screen_tris_in_v2_w_num_data_valid => k2_perspective_divide_U0_screen_tris_in_v2_w_num_data_valid,
+        screen_tris_in_v2_w_fifo_cap => k2_perspective_divide_U0_screen_tris_in_v2_w_fifo_cap,
         screen_tris_in_n0_x_din => k2_perspective_divide_U0_screen_tris_in_n0_x_din,
         screen_tris_in_n0_x_full_n => screen_tris_in_n0_x_full_n,
         screen_tris_in_n0_x_write => k2_perspective_divide_U0_screen_tris_in_n0_x_write,
-        screen_tris_in_n0_x_num_data_valid => screen_tris_in_n0_x_num_data_valid,
-        screen_tris_in_n0_x_fifo_cap => screen_tris_in_n0_x_fifo_cap,
+        screen_tris_in_n0_x_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n0_x_num_data_valid,
+        screen_tris_in_n0_x_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n0_x_fifo_cap,
         screen_tris_in_n0_y_din => k2_perspective_divide_U0_screen_tris_in_n0_y_din,
         screen_tris_in_n0_y_full_n => screen_tris_in_n0_y_full_n,
         screen_tris_in_n0_y_write => k2_perspective_divide_U0_screen_tris_in_n0_y_write,
-        screen_tris_in_n0_y_num_data_valid => screen_tris_in_n0_y_num_data_valid,
-        screen_tris_in_n0_y_fifo_cap => screen_tris_in_n0_y_fifo_cap,
+        screen_tris_in_n0_y_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n0_y_num_data_valid,
+        screen_tris_in_n0_y_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n0_y_fifo_cap,
         screen_tris_in_n0_z_din => k2_perspective_divide_U0_screen_tris_in_n0_z_din,
         screen_tris_in_n0_z_full_n => screen_tris_in_n0_z_full_n,
         screen_tris_in_n0_z_write => k2_perspective_divide_U0_screen_tris_in_n0_z_write,
-        screen_tris_in_n0_z_num_data_valid => screen_tris_in_n0_z_num_data_valid,
-        screen_tris_in_n0_z_fifo_cap => screen_tris_in_n0_z_fifo_cap,
+        screen_tris_in_n0_z_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n0_z_num_data_valid,
+        screen_tris_in_n0_z_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n0_z_fifo_cap,
         screen_tris_in_n1_x_din => k2_perspective_divide_U0_screen_tris_in_n1_x_din,
         screen_tris_in_n1_x_full_n => screen_tris_in_n1_x_full_n,
         screen_tris_in_n1_x_write => k2_perspective_divide_U0_screen_tris_in_n1_x_write,
-        screen_tris_in_n1_x_num_data_valid => screen_tris_in_n1_x_num_data_valid,
-        screen_tris_in_n1_x_fifo_cap => screen_tris_in_n1_x_fifo_cap,
+        screen_tris_in_n1_x_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n1_x_num_data_valid,
+        screen_tris_in_n1_x_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n1_x_fifo_cap,
         screen_tris_in_n1_y_din => k2_perspective_divide_U0_screen_tris_in_n1_y_din,
         screen_tris_in_n1_y_full_n => screen_tris_in_n1_y_full_n,
         screen_tris_in_n1_y_write => k2_perspective_divide_U0_screen_tris_in_n1_y_write,
-        screen_tris_in_n1_y_num_data_valid => screen_tris_in_n1_y_num_data_valid,
-        screen_tris_in_n1_y_fifo_cap => screen_tris_in_n1_y_fifo_cap,
+        screen_tris_in_n1_y_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n1_y_num_data_valid,
+        screen_tris_in_n1_y_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n1_y_fifo_cap,
         screen_tris_in_n1_z_din => k2_perspective_divide_U0_screen_tris_in_n1_z_din,
         screen_tris_in_n1_z_full_n => screen_tris_in_n1_z_full_n,
         screen_tris_in_n1_z_write => k2_perspective_divide_U0_screen_tris_in_n1_z_write,
-        screen_tris_in_n1_z_num_data_valid => screen_tris_in_n1_z_num_data_valid,
-        screen_tris_in_n1_z_fifo_cap => screen_tris_in_n1_z_fifo_cap,
+        screen_tris_in_n1_z_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n1_z_num_data_valid,
+        screen_tris_in_n1_z_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n1_z_fifo_cap,
         screen_tris_in_n2_x_din => k2_perspective_divide_U0_screen_tris_in_n2_x_din,
         screen_tris_in_n2_x_full_n => screen_tris_in_n2_x_full_n,
         screen_tris_in_n2_x_write => k2_perspective_divide_U0_screen_tris_in_n2_x_write,
-        screen_tris_in_n2_x_num_data_valid => screen_tris_in_n2_x_num_data_valid,
-        screen_tris_in_n2_x_fifo_cap => screen_tris_in_n2_x_fifo_cap,
+        screen_tris_in_n2_x_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n2_x_num_data_valid,
+        screen_tris_in_n2_x_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n2_x_fifo_cap,
         screen_tris_in_n2_y_din => k2_perspective_divide_U0_screen_tris_in_n2_y_din,
         screen_tris_in_n2_y_full_n => screen_tris_in_n2_y_full_n,
         screen_tris_in_n2_y_write => k2_perspective_divide_U0_screen_tris_in_n2_y_write,
-        screen_tris_in_n2_y_num_data_valid => screen_tris_in_n2_y_num_data_valid,
-        screen_tris_in_n2_y_fifo_cap => screen_tris_in_n2_y_fifo_cap,
+        screen_tris_in_n2_y_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n2_y_num_data_valid,
+        screen_tris_in_n2_y_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n2_y_fifo_cap,
         screen_tris_in_n2_z_din => k2_perspective_divide_U0_screen_tris_in_n2_z_din,
         screen_tris_in_n2_z_full_n => screen_tris_in_n2_z_full_n,
         screen_tris_in_n2_z_write => k2_perspective_divide_U0_screen_tris_in_n2_z_write,
-        screen_tris_in_n2_z_num_data_valid => screen_tris_in_n2_z_num_data_valid,
-        screen_tris_in_n2_z_fifo_cap => screen_tris_in_n2_z_fifo_cap,
+        screen_tris_in_n2_z_num_data_valid => k2_perspective_divide_U0_screen_tris_in_n2_z_num_data_valid,
+        screen_tris_in_n2_z_fifo_cap => k2_perspective_divide_U0_screen_tris_in_n2_z_fifo_cap,
         screen_tris_in_color_din => k2_perspective_divide_U0_screen_tris_in_color_din,
         screen_tris_in_color_full_n => screen_tris_in_color_full_n,
         screen_tris_in_color_write => k2_perspective_divide_U0_screen_tris_in_color_write,
-        screen_tris_in_color_num_data_valid => screen_tris_in_color_num_data_valid,
-        screen_tris_in_color_fifo_cap => screen_tris_in_color_fifo_cap,
+        screen_tris_in_color_num_data_valid => k2_perspective_divide_U0_screen_tris_in_color_num_data_valid,
+        screen_tris_in_color_fifo_cap => k2_perspective_divide_U0_screen_tris_in_color_fifo_cap,
         screen_tris_in_is_active_din => k2_perspective_divide_U0_screen_tris_in_is_active_din,
         screen_tris_in_is_active_full_n => screen_tris_in_is_active_full_n,
         screen_tris_in_is_active_write => k2_perspective_divide_U0_screen_tris_in_is_active_write,
-        screen_tris_in_is_active_num_data_valid => screen_tris_in_is_active_num_data_valid,
-        screen_tris_in_is_active_fifo_cap => screen_tris_in_is_active_fifo_cap);
+        screen_tris_in_is_active_num_data_valid => k2_perspective_divide_U0_screen_tris_in_is_active_num_data_valid,
+        screen_tris_in_is_active_fifo_cap => k2_perspective_divide_U0_screen_tris_in_is_active_fifo_cap,
+        start_out => k2_perspective_divide_U0_start_out,
+        start_write => k2_perspective_divide_U0_start_write);
 
     k3_bounding_box_U0 : component top_kernel_k3_bounding_box
     port map (
@@ -5155,6 +5201,52 @@ begin
     k1_vertex_transform_U0_ap_start <= ((ap_sync_reg_k1_vertex_transform_U0_ap_ready xor ap_const_logic_1) and ap_start and ap_const_logic_1);
     k2_perspective_divide_U0_ap_continue <= ap_const_logic_1;
     k2_perspective_divide_U0_ap_start <= start_for_k2_perspective_divide_U0_empty_n;
+    k2_perspective_divide_U0_screen_tris_in_color_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_color_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_color_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_color_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_is_active_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_is_active_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_is_active_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_is_active_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n0_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n0_x_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n0_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n0_x_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n0_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n0_y_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n0_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n0_y_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n0_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n0_z_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n0_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n0_z_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n1_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n1_x_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n1_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n1_x_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n1_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n1_y_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n1_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n1_y_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n1_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n1_z_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n1_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n1_z_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n2_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n2_x_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n2_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n2_x_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n2_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n2_y_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n2_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n2_y_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n2_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n2_z_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_n2_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_n2_z_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_w_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_w_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_w_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_w_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_x_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_x_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_y_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_y_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_z_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v0_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v0_z_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_w_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_w_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_w_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_w_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_x_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_x_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_y_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_y_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_z_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v1_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v1_z_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_w_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_w_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_w_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_w_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_x_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_x_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_x_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_y_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_y_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_y_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_y_num_data_valid),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_z_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_z_fifo_cap),3))),32));
+    k2_perspective_divide_U0_screen_tris_in_v2_z_num_data_valid <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(screen_tris_in_v2_z_num_data_valid),3))),32));
     k3_bounding_box_U0_ap_continue <= ap_const_logic_1;
     k3_bounding_box_U0_ap_start <= start_for_k3_bounding_box_U0_empty_n;
     k3_bounding_box_U0_bounds_max_x_fifo_cap <= std_logic_vector(IEEE.numeric_std.resize(unsigned(std_logic_vector(IEEE.numeric_std.resize(unsigned(bounds_max_x_fifo_cap),3))),32));

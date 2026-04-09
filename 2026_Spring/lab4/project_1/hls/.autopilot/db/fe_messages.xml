@@ -1,290 +1,293 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:244:18" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:245:21" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:245:18" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
     <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:246:21" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:247:24" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:256:16" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:257:17" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:247:21" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:248:24" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:257:16" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-111" msg_severity="WARNING" msg_loc="top.cpp:258:17" msg_body="Static scalars and arrays declared inside a dataflow region will be treated like local variables"/>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:10:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="k1_vertex_transform" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:86:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="k2_perspective_divide" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:87:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="k3_bounding_box" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:165:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:166:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="k4_rasterize" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:213:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:214:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="k5_deferred_lighting" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/script.tcl:22:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=top_kernel" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:237:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:238:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in_tris offset=slave bundle=gmem0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:238:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:239:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=mvp_matrix offset=slave bundle=gmem2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:239:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:240:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out_pixels offset=slave bundle=gmem1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:240:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:241:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:241:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:242:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:250:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:251:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=clip_tris depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:251:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:252:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=screen_tris_in depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:252:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:253:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=screen_tris_out depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:253:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="top.cpp:254:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="top_kernel" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=bounds depth=2" ARG_PragmaType="stream" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="top.cpp:55:30" msg_body="Loop 'VITIS_LOOP_55_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_55_2"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="top.cpp:20:30" msg_body="Loop 'VITIS_LOOP_20_2' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="VITIS_LOOP_20_2"/>
     </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="top.cpp:41:0" msg_body="Unrolling loop 'VITIS_LOOP_55_2' (top.cpp:55:30) in function 'k2_perspective_divide' completely with a factor of 3">
+        <args Factor="3" LoopLoc="top.cpp:55:30" LoopName="VITIS_LOOP_55_2"/>
+    </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="top.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_20_2' (top.cpp:20:30) in function 'k1_vertex_transform' completely with a factor of 3">
         <args Factor="3" LoopLoc="top.cpp:20:30" LoopName="VITIS_LOOP_20_2"/>
     </msg>
-    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="top.cpp:236:0" msg_body="Aggregating maxi variable 'mvp_matrix' with compact=none mode in 32-bits">
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="top.cpp:237:0" msg_body="Aggregating maxi variable 'mvp_matrix' with compact=none mode in 32-bits">
         <args AggregateTypeName="compact=none" Bitwidth="32" HwTyName="maxi" Name="mvp_matrix"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="top.cpp:45:22" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_45_1'.">
-        <args LoopName="VITIS_LOOP_45_1"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="top.cpp:145:23" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_145_3'.">
+        <args LoopName="VITIS_LOOP_145_3"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:45:22" msg_body="loop_flatten 0 1 k2_perspective_divide top.cpp:45:22VITIS_LOOP_45_1 top.cpp:45:22">
-        <args LoopLoc="top.cpp:45:22" LoopLoc-DebugLoc="File top.cpp Line 45 Column 22" LoopName="VITIS_LOOP_45_1" PragmaFunction="k2_perspective_divide" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="top.cpp:45:22" PragmaSrcLoc-DebugLoc="File top.cpp Line 45 Column 22" PragmaType="loop_flatten"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:145:23" msg_body="loop_flatten 0 1 k4_rasterize top.cpp:145:23VITIS_LOOP_145_3 top.cpp:145:23">
+        <args LoopLoc="top.cpp:145:23" LoopLoc-DebugLoc="File top.cpp Line 145 Column 23" LoopName="VITIS_LOOP_145_3" PragmaFunction="k4_rasterize" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="top.cpp:145:23" PragmaSrcLoc-DebugLoc="File top.cpp Line 145 Column 23" PragmaType="loop_flatten"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="top.cpp:144:23" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_144_3'.">
-        <args LoopName="VITIS_LOOP_144_3"/>
-    </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="top.cpp:144:23" msg_body="loop_flatten 0 1 k4_rasterize top.cpp:144:23VITIS_LOOP_144_3 top.cpp:144:23">
-        <args LoopLoc="top.cpp:144:23" LoopLoc-DebugLoc="File top.cpp Line 144 Column 23" LoopName="VITIS_LOOP_144_3" PragmaFunction="k4_rasterize" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="top.cpp:144:23" PragmaSrcLoc-DebugLoc="File top.cpp Line 144 Column 23" PragmaType="loop_flatten"/>
-    </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v0.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v1.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.v2.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n0.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n1.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.n2.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.color'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.color'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.color"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:244:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.is_active'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.is_active'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E9clip_tris.is_active"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v0.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v1.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.v2.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n0.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n1.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.n2.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.color'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.color'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.color"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:245:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.is_active'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.is_active'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E14screen_tris_in.is_active"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:248:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:248:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.min_y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:248:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:248:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E6bounds.max_y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v0.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v1.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.w'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.w'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.v2.w"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n0.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n1.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.x'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.x'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.x"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.y'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.y'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.y"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.z'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.z'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.n2.z"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.color'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.color'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.color"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:246:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.is_active'">
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="top.cpp:247:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.is_active'">
         <args Name="_ZZ10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_E15screen_tris_out.is_active"/>
     </msg>
 </xilinx:hls_fe_msgs>

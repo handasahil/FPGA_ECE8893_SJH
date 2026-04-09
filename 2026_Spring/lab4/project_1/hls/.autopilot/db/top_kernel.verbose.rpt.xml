@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'top_kernel'" level="0">
-<item name = "Date">Tue Mar 31 00:59:03 2026
+<item name = "Date">Thu Apr  9 16:15:12 2026
 </item>
 <item name = "Version">2025.1.1 (Build 6214317 on Sep 11 2025)</item>
 <item name = "Project">project_1</item>
@@ -33,7 +33,7 @@
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
 <column name="entry_proc_U0">entry_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 <column name="k1_vertex_transform_U0">k1_vertex_transform, 2071, 2071, 20.710 us, 20.710 us, 2048, 2048, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="k2_perspective_divide_U0">k2_perspective_divide, 385, 16513, 3.850 us, 0.165 ms, 385, 16513, no</column>
+<column name="k2_perspective_divide_U0">k2_perspective_divide, 168, 168, 1.680 us, 1.680 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="k3_bounding_box_U0">k3_bounding_box, 130, 130, 1.300 us, 1.300 us, 128, 128, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 <column name="k4_rasterize_U0">k4_rasterize, ?, ?, ?, ?, ?, ?, no</column>
 <column name="k5_deferred_lighting_U0">k5_deferred_lighting, 4106, 4106, 41.060 us, 41.060 us, 4096, 4096, loop auto-rewind stp (delay=0 clock cycles(s))</column>
@@ -55,12 +55,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 16, -</column>
 <column name="FIFO">-, -, 7326, 4957, -</column>
-<column name="Instance">91, 146, 18592, 24762, 0</column>
+<column name="Instance">91, 170, 42244, 33101, 0</column>
 <column name="Memory">64, -, 0, 0, 0</column>
 <column name="Multiplexer">-, -, 0, 27, -</column>
 <column name="Register">-, -, 3, -, -</column>
 <specialColumn name="Available">432, 360, 141120, 70560, 0</specialColumn>
-<specialColumn name="Utilization (%)">35, 40, 18, 42, 0</specialColumn>
+<specialColumn name="Utilization (%)">35, 47, 35, 53, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -73,7 +73,7 @@
 <column name="gmem1_m_axi_U">gmem1_m_axi, 0, 0, 611, 666, 0</column>
 <column name="gmem2_m_axi_U">gmem2_m_axi, 2, 0, 671, 637, 0</column>
 <column name="k1_vertex_transform_U0">k1_vertex_transform, 0, 12, 6692, 8385, 0</column>
-<column name="k2_perspective_divide_U0">k2_perspective_divide, 0, 12, 1783, 2391, 0</column>
+<column name="k2_perspective_divide_U0">k2_perspective_divide, 0, 36, 25435, 10730, 0</column>
 <column name="k3_bounding_box_U0">k3_bounding_box, 0, 0, 753, 1482, 0</column>
 <column name="k4_rasterize_U0">k4_rasterize, 32, 120, 4880, 6977, 0</column>
 <column name="k5_deferred_lighting_U0">k5_deferred_lighting, 0, 2, 302, 1060, 0</column>

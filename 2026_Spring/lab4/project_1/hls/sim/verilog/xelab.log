@@ -21,8 +21,8 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE889
 INFO: [VRFC 10-311] analyzing module top_kernel_k2_perspective_divide
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k3_bounding_box.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_k3_bounding_box
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k4_rasterize.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_k4_rasterize
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k5_deferred_lighting.v" into library xil_defaultlib
@@ -35,13 +35,9 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE889
 INFO: [VRFC 10-311] analyzing module top_kernel_flow_control_loop_pipe_sequential_init
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_mul_32s_32s_64_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_32s_32s_64_1_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_sdiv_34ns_32s_34_38_seq_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_34ns_32s_34_38_seq_1_divseq
-INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_34ns_32s_34_38_seq_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_sdiv_34ns_32s_34_38_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_34ns_32s_34_38_1_divider
+INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_34ns_32s_34_38_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_sparsemux_7_2_16_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_sparsemux_7_2_16_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_sparsemux_9_3_16_1_1.v" into library xil_defaultlib
@@ -54,6 +50,9 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE889
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_66s_32s_97_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_mul_64ns_64ns_128_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_mul_64ns_64ns_128_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_sdiv_34ns_32s_34_38_seq_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_34ns_32s_34_38_seq_1_divseq
+INFO: [VRFC 10-311] analyzing module top_kernel_sdiv_34ns_32s_34_38_seq_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/sim/verilog/top_kernel_k4_rasterize_local_normal_x_RAM_AUTO_1R1W.v" into library xil_defaultlib
@@ -193,10 +192,8 @@ Compiling module xil_defaultlib.top_kernel_entry_proc
 Compiling module xil_defaultlib.top_kernel_mul_32s_32s_64_1_1(NU...
 Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
 Compiling module xil_defaultlib.top_kernel_k1_vertex_transform
-Compiling module xil_defaultlib.top_kernel_k2_perspective_divide...
-Compiling module xil_defaultlib.top_kernel_k2_perspective_divide...
-Compiling module xil_defaultlib.top_kernel_sdiv_34ns_32s_34_38_s...
-Compiling module xil_defaultlib.top_kernel_sdiv_34ns_32s_34_38_s...
+Compiling module xil_defaultlib.top_kernel_sdiv_34ns_32s_34_38_1...
+Compiling module xil_defaultlib.top_kernel_sdiv_34ns_32s_34_38_1...
 Compiling module xil_defaultlib.top_kernel_k2_perspective_divide
 Compiling module xil_defaultlib.top_kernel_sparsemux_7_2_16_1_1(...
 Compiling module xil_defaultlib.top_kernel_sparsemux_9_3_16_1_1(...
@@ -209,6 +206,8 @@ Compiling module xil_defaultlib.top_kernel_mul_66s_32s_97_1_1(NU...
 Compiling module xil_defaultlib.top_kernel_flow_control_loop_pip...
 Compiling module xil_defaultlib.top_kernel_k4_rasterize_Pipeline...
 Compiling module xil_defaultlib.top_kernel_mul_64ns_64ns_128_1_1...
+Compiling module xil_defaultlib.top_kernel_sdiv_34ns_32s_34_38_s...
+Compiling module xil_defaultlib.top_kernel_sdiv_34ns_32s_34_38_s...
 Compiling module xil_defaultlib.top_kernel_k4_rasterize
 Compiling module xil_defaultlib.top_kernel_mul_32s_17s_49_1_1(NU...
 Compiling module xil_defaultlib.top_kernel_k5_deferred_lighting
@@ -243,7 +242,6 @@ Compiling module xil_defaultlib.AESL_deadlock_detector_2
 Compiling module xil_defaultlib.df_fifo_intf_default
 Compiling module xil_defaultlib.df_process_intf_default
 Compiling module xil_defaultlib.nodf_module_intf_default
-Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=47)
 Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=46)
 Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=16)
 Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)

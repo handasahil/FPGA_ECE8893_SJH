@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'top_kernel'
 ================================================================
-* Date:           Tue Mar 31 00:59:03 2026
+* Date:           Thu Apr  9 16:15:12 2026
 
 * Version:        2025.1.1 (Build 6214317 on Sep 11 2025)
 * Project:        project_1
@@ -34,17 +34,17 @@
 
     + Detail: 
         * Instance: 
-        +--------------------------+-----------------------+---------+---------+-----------+-----------+------+-------+------------------------------------------------+
-        |                          |                       |  Latency (cycles) |   Latency (absolute)  |   Interval   |                    Pipeline                    |
-        |         Instance         |         Module        |   min   |   max   |    min    |    max    |  min |  max  |                      Type                      |
-        +--------------------------+-----------------------+---------+---------+-----------+-----------+------+-------+------------------------------------------------+
-        |entry_proc_U0             |entry_proc             |        0|        0|       0 ns|       0 ns|     0|      0|                                              no|
-        |k1_vertex_transform_U0    |k1_vertex_transform    |     2071|     2071|  20.710 us|  20.710 us|  2048|   2048|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |k2_perspective_divide_U0  |k2_perspective_divide  |      385|    16513|   3.850 us|   0.165 ms|   385|  16513|                                              no|
-        |k3_bounding_box_U0        |k3_bounding_box        |      130|      130|   1.300 us|   1.300 us|   128|    128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |k4_rasterize_U0           |k4_rasterize           |        ?|        ?|          ?|          ?|     ?|      ?|                                              no|
-        |k5_deferred_lighting_U0   |k5_deferred_lighting   |     4106|     4106|  41.060 us|  41.060 us|  4096|   4096|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        +--------------------------+-----------------------+---------+---------+-----------+-----------+------+-------+------------------------------------------------+
+        +--------------------------+-----------------------+---------+---------+-----------+-----------+------+------+------------------------------------------------+
+        |                          |                       |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+        |         Instance         |         Module        |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+        +--------------------------+-----------------------+---------+---------+-----------+-----------+------+------+------------------------------------------------+
+        |entry_proc_U0             |entry_proc             |        0|        0|       0 ns|       0 ns|     0|     0|                                              no|
+        |k1_vertex_transform_U0    |k1_vertex_transform    |     2071|     2071|  20.710 us|  20.710 us|  2048|  2048|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |k2_perspective_divide_U0  |k2_perspective_divide  |      168|      168|   1.680 us|   1.680 us|   128|   128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |k3_bounding_box_U0        |k3_bounding_box        |      130|      130|   1.300 us|   1.300 us|   128|   128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |k4_rasterize_U0           |k4_rasterize           |        ?|        ?|          ?|          ?|     ?|     ?|                                              no|
+        |k5_deferred_lighting_U0   |k5_deferred_lighting   |     4106|     4106|  41.060 us|  41.060 us|  4096|  4096|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        +--------------------------+-----------------------+---------+---------+-----------+-----------+------+------+------------------------------------------------+
 
         * Loop: 
         N/A
@@ -61,36 +61,36 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|     16|    -|
 |FIFO             |        -|    -|    7326|   4957|    -|
-|Instance         |       91|  146|   18592|  24762|    0|
+|Instance         |       91|  170|   42244|  33101|    0|
 |Memory           |       64|    -|       0|      0|    0|
 |Multiplexer      |        -|    -|       0|     27|    -|
 |Register         |        -|    -|       3|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |      155|  146|   25921|  29762|    0|
+|Total            |      155|  170|   49573|  38101|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      432|  360|  141120|  70560|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |       35|   40|      18|     42|    0|
+|Utilization (%)  |       35|   47|      35|     53|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    +--------------------------+-----------------------+---------+-----+------+------+-----+
-    |         Instance         |         Module        | BRAM_18K| DSP |  FF  |  LUT | URAM|
-    +--------------------------+-----------------------+---------+-----+------+------+-----+
-    |control_s_axi_U           |control_s_axi          |        0|    0|   246|   424|    0|
-    |entry_proc_U0             |entry_proc             |        0|    0|     2|    20|    0|
-    |gmem0_m_axi_U             |gmem0_m_axi            |       57|    0|  2652|  2720|    0|
-    |gmem1_m_axi_U             |gmem1_m_axi            |        0|    0|   611|   666|    0|
-    |gmem2_m_axi_U             |gmem2_m_axi            |        2|    0|   671|   637|    0|
-    |k1_vertex_transform_U0    |k1_vertex_transform    |        0|   12|  6692|  8385|    0|
-    |k2_perspective_divide_U0  |k2_perspective_divide  |        0|   12|  1783|  2391|    0|
-    |k3_bounding_box_U0        |k3_bounding_box        |        0|    0|   753|  1482|    0|
-    |k4_rasterize_U0           |k4_rasterize           |       32|  120|  4880|  6977|    0|
-    |k5_deferred_lighting_U0   |k5_deferred_lighting   |        0|    2|   302|  1060|    0|
-    +--------------------------+-----------------------+---------+-----+------+------+-----+
-    |Total                     |                       |       91|  146| 18592| 24762|    0|
-    +--------------------------+-----------------------+---------+-----+------+------+-----+
+    +--------------------------+-----------------------+---------+-----+-------+-------+-----+
+    |         Instance         |         Module        | BRAM_18K| DSP |   FF  |  LUT  | URAM|
+    +--------------------------+-----------------------+---------+-----+-------+-------+-----+
+    |control_s_axi_U           |control_s_axi          |        0|    0|    246|    424|    0|
+    |entry_proc_U0             |entry_proc             |        0|    0|      2|     20|    0|
+    |gmem0_m_axi_U             |gmem0_m_axi            |       57|    0|   2652|   2720|    0|
+    |gmem1_m_axi_U             |gmem1_m_axi            |        0|    0|    611|    666|    0|
+    |gmem2_m_axi_U             |gmem2_m_axi            |        2|    0|    671|    637|    0|
+    |k1_vertex_transform_U0    |k1_vertex_transform    |        0|   12|   6692|   8385|    0|
+    |k2_perspective_divide_U0  |k2_perspective_divide  |        0|   36|  25435|  10730|    0|
+    |k3_bounding_box_U0        |k3_bounding_box        |        0|    0|    753|   1482|    0|
+    |k4_rasterize_U0           |k4_rasterize           |       32|  120|   4880|   6977|    0|
+    |k5_deferred_lighting_U0   |k5_deferred_lighting   |        0|    2|    302|   1060|    0|
+    +--------------------------+-----------------------+---------+-----+-------+-------+-----+
+    |Total                     |                       |       91|  170|  42244|  33101|    0|
+    +--------------------------+-----------------------+---------+-----+-------+-------+-----+
 
     * DSP: 
     N/A

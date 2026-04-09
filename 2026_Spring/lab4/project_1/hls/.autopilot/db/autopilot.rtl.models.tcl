@@ -8,9 +8,7 @@ set SynModuleInfo {
   }
   {SRCNAME k2_perspective_divide MODELNAME k2_perspective_divide RTLNAME top_kernel_k2_perspective_divide
     SUBMODULES {
-      {MODELNAME top_kernel_sdiv_34ns_32s_34_38_seq_1 RTLNAME top_kernel_sdiv_34ns_32s_34_38_seq_1 BINDTYPE op TYPE sdiv IMPL auto_seq LATENCY 37 ALLOW_PRAGMA 1}
-      {MODELNAME top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W RTLNAME top_kernel_k2_perspective_divide_verts_x_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
-      {MODELNAME top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W RTLNAME top_kernel_k2_perspective_divide_verts_w_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_sdiv_34ns_32s_34_38_1 RTLNAME top_kernel_sdiv_34ns_32s_34_38_1 BINDTYPE op TYPE sdiv IMPL auto LATENCY 37 ALLOW_PRAGMA 1}
     }
   }
   {SRCNAME k3_bounding_box MODELNAME k3_bounding_box RTLNAME top_kernel_k3_bounding_box
@@ -19,7 +17,7 @@ set SynModuleInfo {
       {MODELNAME top_kernel_sparsemux_9_3_16_1_1 RTLNAME top_kernel_sparsemux_9_3_16_1_1 BINDTYPE op TYPE sparsemux IMPL onehotencoding_realdef}
     }
   }
-  {SRCNAME k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5 MODELNAME k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5 RTLNAME top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5
+  {SRCNAME k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5 MODELNAME k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5 RTLNAME top_kernel_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5
     SUBMODULES {
       {MODELNAME top_kernel_mul_32ns_32s_63_1_1 RTLNAME top_kernel_mul_32ns_32s_63_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
       {MODELNAME top_kernel_mul_33s_33s_65_1_1 RTLNAME top_kernel_mul_33s_33s_65_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
@@ -30,6 +28,7 @@ set SynModuleInfo {
   {SRCNAME k4_rasterize MODELNAME k4_rasterize RTLNAME top_kernel_k4_rasterize
     SUBMODULES {
       {MODELNAME top_kernel_mul_64ns_64ns_128_1_1 RTLNAME top_kernel_mul_64ns_64ns_128_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME top_kernel_sdiv_34ns_32s_34_38_seq_1 RTLNAME top_kernel_sdiv_34ns_32s_34_38_seq_1 BINDTYPE op TYPE sdiv IMPL auto_seq LATENCY 37 ALLOW_PRAGMA 1}
       {MODELNAME top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W RTLNAME top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
       {MODELNAME top_kernel_k4_rasterize_local_normal_x_RAM_AUTO_1R1W RTLNAME top_kernel_k4_rasterize_local_normal_x_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
     }

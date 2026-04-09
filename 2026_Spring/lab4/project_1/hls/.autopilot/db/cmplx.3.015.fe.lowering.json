@@ -1,62 +1,23 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "2 5 1 4 3",
+    "calls": "3 2 5 1 4",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 234,
+    "fileloc": 235,
     "instructions": 238,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 2165
+    "total_instructions": 2526
   },
   "1": {
-    "basicblocks": 20,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 11,
-    "file": "top.cpp",
-    "fileloc": 81,
-    "instructions": 132,
-    "memory_accesses": 50,
-    "name": "k3_bounding_box",
-    "total_instructions": 132
-  },
-  "2": {
-    "basicblocks": 7,
-    "calls": "",
-    "control_depth": 4,
-    "def_use_depth": 29,
-    "file": "top.cpp",
-    "fileloc": 6,
-    "instructions": 712,
-    "memory_accesses": 45,
-    "name": "k1_vertex_transform",
-    "total_instructions": 712
-  },
-  "3": {
-    "basicblocks": 7,
-    "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 43,
-    "file": "top.cpp",
-    "fileloc": 203,
-    "instructions": 135,
-    "loads": {
-      "G": 4
-    },
-    "memory_accesses": 5,
-    "name": "k5_deferred_lighting",
-    "total_instructions": 135
-  },
-  "4": {
     "basicblocks": 25,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 49,
     "file": "top.cpp",
-    "fileloc": 128,
+    "fileloc": 129,
     "instructions": 601,
     "loads": {
       "L": 5
@@ -69,22 +30,55 @@
     },
     "total_instructions": 601
   },
-  "5": {
-    "basicblocks": 10,
+  "2": {
+    "basicblocks": 14,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 37,
     "file": "top.cpp",
     "fileloc": 40,
-    "instructions": 347,
-    "loads": {
-      "L": 13
-    },
-    "memory_accesses": 7,
+    "instructions": 708,
+    "memory_accesses": 46,
     "name": "k2_perspective_divide",
-    "stores": {
-      "L": 15
+    "total_instructions": 708
+  },
+  "3": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 4,
+    "def_use_depth": 29,
+    "file": "top.cpp",
+    "fileloc": 6,
+    "instructions": 712,
+    "memory_accesses": 45,
+    "name": "k1_vertex_transform",
+    "total_instructions": 712
+  },
+  "4": {
+    "basicblocks": 7,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 43,
+    "file": "top.cpp",
+    "fileloc": 204,
+    "instructions": 135,
+    "loads": {
+      "G": 4
     },
-    "total_instructions": 347
+    "memory_accesses": 5,
+    "name": "k5_deferred_lighting",
+    "total_instructions": 135
+  },
+  "5": {
+    "basicblocks": 20,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 11,
+    "file": "top.cpp",
+    "fileloc": 82,
+    "instructions": 132,
+    "memory_accesses": 50,
+    "name": "k3_bounding_box",
+    "total_instructions": 132
   }
 }

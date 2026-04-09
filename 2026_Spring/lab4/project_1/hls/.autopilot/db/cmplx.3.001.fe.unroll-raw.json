@@ -1,23 +1,41 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "3 5 4 1 2",
+    "calls": "3 1 4 2 5",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 234,
+    "fileloc": 235,
     "instructions": 83,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 5236
+    "total_instructions": 6360
   },
   "1": {
+    "basicblocks": 692,
+    "calls": "",
+    "control_depth": 6,
+    "def_use_depth": 17,
+    "file": "top.cpp",
+    "fileloc": 40,
+    "instructions": 1615,
+    "loads": {
+      "L": 36
+    },
+    "memory_accesses": 118,
+    "name": "k2_perspective_divide",
+    "stores": {
+      "L": 33
+    },
+    "total_instructions": 1966
+  },
+  "2": {
     "basicblocks": 862,
     "calls": "",
     "control_depth": 8,
     "def_use_depth": 24,
     "file": "top.cpp",
-    "fileloc": 128,
+    "fileloc": 129,
     "instructions": 1699,
     "loads": {
       "L": 5
@@ -29,24 +47,6 @@
       "L": 8
     },
     "total_instructions": 1699
-  },
-  "2": {
-    "basicblocks": 140,
-    "calls": "",
-    "control_depth": 5,
-    "def_use_depth": 21,
-    "file": "top.cpp",
-    "fileloc": 203,
-    "instructions": 272,
-    "loads": {
-      "G": 4
-    },
-    "memory_accesses": 6,
-    "name": "k5_deferred_lighting",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 272
   },
   "3": {
     "basicblocks": 944,
@@ -72,28 +72,28 @@
     "control_depth": 4,
     "def_use_depth": 23,
     "file": "top.cpp",
-    "fileloc": 81,
+    "fileloc": 82,
     "instructions": 332,
     "memory_accesses": 50,
     "name": "k3_bounding_box",
     "total_instructions": 332
   },
   "5": {
-    "basicblocks": 237,
+    "basicblocks": 140,
     "calls": "",
-    "control_depth": 7,
-    "def_use_depth": 16,
+    "control_depth": 5,
+    "def_use_depth": 21,
     "file": "top.cpp",
-    "fileloc": 40,
-    "instructions": 725,
+    "fileloc": 204,
+    "instructions": 272,
     "loads": {
-      "L": 20
+      "G": 4
     },
-    "memory_accesses": 16,
-    "name": "k2_perspective_divide",
+    "memory_accesses": 6,
+    "name": "k5_deferred_lighting",
     "stores": {
-      "L": 19
+      "L": 2
     },
-    "total_instructions": 842
+    "total_instructions": 272
   }
 }

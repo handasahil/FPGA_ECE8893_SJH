@@ -445,11 +445,11 @@ set ArgLastReadFirstWriteLatency {
 		bounds_min_y {Type I LastRead 2 FirstWrite -1}
 		bounds_max_x {Type I LastRead 2 FirstWrite -1}
 		bounds_max_y {Type I LastRead 2 FirstWrite -1}}
-	k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5 {
-		sext_ln163_2 {Type I LastRead 0 FirstWrite -1}
-		sext_ln163 {Type I LastRead 0 FirstWrite -1}
+	k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5 {
+		sext_ln164_2 {Type I LastRead 0 FirstWrite -1}
+		sext_ln164 {Type I LastRead 0 FirstWrite -1}
 		curr_bounds_max_x {Type I LastRead 0 FirstWrite -1}
-		mul_ln160 {Type I LastRead 0 FirstWrite -1}
+		mul_ln161 {Type I LastRead 0 FirstWrite -1}
 		curr_tri_v0_z_cast_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i1138_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i1049_i {Type I LastRead 0 FirstWrite -1}
@@ -457,13 +457,13 @@ set ArgLastReadFirstWriteLatency {
 		local_normal_x {Type O LastRead -1 FirstWrite 6}
 		local_normal_y {Type O LastRead -1 FirstWrite 6}
 		local_normal_z {Type O LastRead -1 FirstWrite 6}
-		sext_ln158_2 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_7 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_3 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_6 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_2 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_7 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_3 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_6 {Type I LastRead 0 FirstWrite -1}
 		inv_area_1_cast_i {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_1 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_1 {Type I LastRead 0 FirstWrite -1}
 		curr_tri_n0_x_cast_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i819_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i730_i {Type I LastRead 0 FirstWrite -1}

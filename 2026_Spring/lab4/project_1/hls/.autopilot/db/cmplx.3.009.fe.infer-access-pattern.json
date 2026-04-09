@@ -1,15 +1,15 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "1 2 5 3 4",
+    "calls": "1 3 2 4 5",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 234,
+    "fileloc": 235,
     "instructions": 89,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 2176
+    "total_instructions": 2537
   },
   "1": {
     "basicblocks": 5,
@@ -27,30 +27,36 @@
     "total_instructions": 746
   },
   "2": {
-    "basicblocks": 10,
+    "basicblocks": 20,
     "calls": "",
     "control_depth": 3,
-    "def_use_depth": 37,
+    "def_use_depth": 12,
     "file": "top.cpp",
-    "fileloc": 40,
-    "instructions": 393,
-    "loads": {
-      "L": 13
-    },
-    "memory_accesses": 7,
-    "name": "k2_perspective_divide",
-    "stores": {
-      "L": 15
-    },
-    "total_instructions": 393
+    "fileloc": 82,
+    "instructions": 182,
+    "memory_accesses": 50,
+    "name": "k3_bounding_box",
+    "total_instructions": 182
   },
   "3": {
+    "basicblocks": 14,
+    "calls": "",
+    "control_depth": 3,
+    "def_use_depth": 38,
+    "file": "top.cpp",
+    "fileloc": 40,
+    "instructions": 754,
+    "memory_accesses": 46,
+    "name": "k2_perspective_divide",
+    "total_instructions": 754
+  },
+  "4": {
     "basicblocks": 27,
     "calls": "",
     "control_depth": 3,
     "def_use_depth": 49,
     "file": "top.cpp",
-    "fileloc": 128,
+    "fileloc": 129,
     "instructions": 630,
     "loads": {
       "L": 5
@@ -63,13 +69,13 @@
     },
     "total_instructions": 630
   },
-  "4": {
+  "5": {
     "basicblocks": 7,
     "calls": "",
     "control_depth": 2,
     "def_use_depth": 44,
     "file": "top.cpp",
-    "fileloc": 203,
+    "fileloc": 204,
     "instructions": 135,
     "loads": {
       "G": 4
@@ -77,17 +83,5 @@
     "memory_accesses": 5,
     "name": "k5_deferred_lighting",
     "total_instructions": 136
-  },
-  "5": {
-    "basicblocks": 20,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 12,
-    "file": "top.cpp",
-    "fileloc": 81,
-    "instructions": 182,
-    "memory_accesses": 50,
-    "name": "k3_bounding_box",
-    "total_instructions": 182
   }
 }

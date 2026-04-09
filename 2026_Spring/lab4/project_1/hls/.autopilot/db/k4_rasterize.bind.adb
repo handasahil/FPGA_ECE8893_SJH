@@ -1139,7 +1139,7 @@
 						<name>y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
+						<lineNumber>137</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -1155,7 +1155,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>136</second>
+										<second>137</second>
 									</item>
 								</second>
 							</item>
@@ -1195,7 +1195,7 @@
 						<name>local_depth</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>132</lineNumber>
+						<lineNumber>133</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -1211,7 +1211,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>132</second>
+										<second>133</second>
 									</item>
 								</second>
 							</item>
@@ -1251,7 +1251,7 @@
 						<name>local_normal_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>133</lineNumber>
+						<lineNumber>134</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -1267,7 +1267,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>133</second>
+										<second>134</second>
 									</item>
 								</second>
 							</item>
@@ -1307,7 +1307,7 @@
 						<name>local_normal_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>133</lineNumber>
+						<lineNumber>134</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -1323,7 +1323,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>133</second>
+										<second>134</second>
 									</item>
 								</second>
 							</item>
@@ -1363,7 +1363,7 @@
 						<name>local_normal_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>133</lineNumber>
+						<lineNumber>134</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -1379,7 +1379,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>133</second>
+										<second>134</second>
 									</item>
 								</second>
 							</item>
@@ -1416,10 +1416,10 @@
 					<Obj>
 						<type>0</type>
 						<id>145</id>
-						<name>y_write_ln136</name>
+						<name>y_write_ln137</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
+						<lineNumber>137</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -1435,7 +1435,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>136</second>
+										<second>137</second>
 									</item>
 								</second>
 							</item>
@@ -1473,405 +1473,6 @@
 					<Obj>
 						<type>0</type>
 						<id>146</id>
-						<name>br_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>377</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>7</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_39">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>148</id>
-						<name>y_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>y</originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>378</item>
-					<item>3047</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>8</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_40">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>149</id>
-						<name>icmp_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>seteq</opType>
-						<implIndex>auto</implIndex>
-						<coreName>Cmp</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>9</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>379</item>
-					<item>381</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.89</m_delay>
-				<m_topoIndex>9</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_41">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>150</id>
-						<name>add_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>add</opType>
-						<implIndex>fabric</implIndex>
-						<coreName>Adder</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>382</item>
-					<item>384</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.89</m_delay>
-				<m_topoIndex>10</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_42">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>151</id>
-						<name>br_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>385</item>
-					<item>386</item>
-					<item>387</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>11</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_43">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>153</id>
-						<name>trunc_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>393</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>12</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_44">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>154</id>
-						<name>tmp_s</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>138</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>138</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>12</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>395</item>
-					<item>396</item>
-					<item>398</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>13</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_45">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>157</id>
 						<name>br_ln137</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -1912,23 +1513,23 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>399</item>
+					<item>377</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.48</m_delay>
-				<m_topoIndex>14</m_topoIndex>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>7</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_46">
+			<item class_id_reference="9" object_id="_39">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>159</id>
-						<name>x</name>
+						<id>148</id>
+						<name>y_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
 						<lineNumber>137</lineNumber>
@@ -1952,7 +1553,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>x</originalName>
+						<originalName>y</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
@@ -1966,27 +1567,25 @@
 					<bitwidth>7</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>4</count>
+					<count>2</count>
 					<item_version>0</item_version>
-					<item>400</item>
-					<item>401</item>
-					<item>402</item>
-					<item>403</item>
+					<item>378</item>
+					<item>3047</item>
 				</oprand_edges>
-				<opcode>phi</opcode>
+				<opcode>load</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>18</m_topoIndex>
+				<m_topoIndex>8</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_47">
+			<item class_id_reference="9" object_id="_40">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>160</id>
+						<id>149</id>
 						<name>icmp_ln137</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -2027,8 +1626,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>404</item>
-					<item>405</item>
+					<item>379</item>
+					<item>381</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
 				<m_Display>0</m_Display>
@@ -2036,14 +1635,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.89</m_delay>
-				<m_topoIndex>19</m_topoIndex>
+				<m_topoIndex>9</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_48">
+			<item class_id_reference="9" object_id="_41">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>161</id>
+						<id>150</id>
 						<name>add_ln137</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -2084,8 +1683,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>406</item>
-					<item>407</item>
+					<item>382</item>
+					<item>384</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 				<m_Display>0</m_Display>
@@ -2093,14 +1692,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.89</m_delay>
-				<m_topoIndex>20</m_topoIndex>
+				<m_topoIndex>10</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_49">
+			<item class_id_reference="9" object_id="_42">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>162</id>
+						<id>151</id>
 						<name>br_ln137</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -2141,9 +1740,9 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>408</item>
-					<item>409</item>
-					<item>410</item>
+					<item>385</item>
+					<item>386</item>
+					<item>387</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
@@ -2151,15 +1750,129 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>21</m_topoIndex>
+				<m_topoIndex>11</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_50">
+			<item class_id_reference="9" object_id="_43">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>164</id>
-						<name>zext_ln138</name>
+						<id>153</id>
+						<name>trunc_ln137</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>137</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>137</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>393</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>12</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_44">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>154</id>
+						<name>tmp_s</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>139</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>139</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>12</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>395</item>
+					<item>396</item>
+					<item>398</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>13</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_45">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>157</id>
+						<name>br_ln138</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
 						<lineNumber>138</lineNumber>
@@ -2179,6 +1892,293 @@
 											<second>k4_rasterize</second>
 										</first>
 										<second>138</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>399</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.48</m_delay>
+				<m_topoIndex>14</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_46">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>159</id>
+						<name>x</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>138</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>138</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>x</originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>400</item>
+					<item>401</item>
+					<item>402</item>
+					<item>403</item>
+				</oprand_edges>
+				<opcode>phi</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>18</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_47">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>160</id>
+						<name>icmp_ln138</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>138</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>138</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>seteq</opType>
+						<implIndex>auto</implIndex>
+						<coreName>Cmp</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>9</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>404</item>
+					<item>405</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.89</m_delay>
+				<m_topoIndex>19</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_48">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>161</id>
+						<name>add_ln138</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>138</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>138</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>add</opType>
+						<implIndex>fabric</implIndex>
+						<coreName>Adder</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>406</item>
+					<item>407</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.89</m_delay>
+				<m_topoIndex>20</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_49">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>162</id>
+						<name>br_ln138</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>138</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>138</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>408</item>
+					<item>409</item>
+					<item>410</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>21</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_50">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>164</id>
+						<name>zext_ln139</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>139</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>139</second>
 									</item>
 								</second>
 							</item>
@@ -2215,10 +2215,10 @@
 					<Obj>
 						<type>0</type>
 						<id>165</id>
-						<name>add_ln138</name>
+						<name>add_ln139</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>138</lineNumber>
+						<lineNumber>139</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2234,7 +2234,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>138</second>
+										<second>139</second>
 									</item>
 								</second>
 							</item>
@@ -2272,10 +2272,10 @@
 					<Obj>
 						<type>0</type>
 						<id>166</id>
-						<name>zext_ln138_1</name>
+						<name>zext_ln139_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>138</lineNumber>
+						<lineNumber>139</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2291,7 +2291,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>138</second>
+										<second>139</second>
 									</item>
 								</second>
 							</item>
@@ -2331,7 +2331,7 @@
 						<name>local_depth_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>138</lineNumber>
+						<lineNumber>139</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2347,7 +2347,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>138</second>
+										<second>139</second>
 									</item>
 								</second>
 							</item>
@@ -2389,7 +2389,7 @@
 						<name>local_normal_x_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>139</lineNumber>
+						<lineNumber>140</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2405,7 +2405,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>139</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2447,7 +2447,7 @@
 						<name>local_normal_y_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>139</lineNumber>
+						<lineNumber>140</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2463,7 +2463,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>139</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2505,7 +2505,7 @@
 						<name>local_normal_z_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>139</lineNumber>
+						<lineNumber>140</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2521,7 +2521,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>139</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2560,10 +2560,10 @@
 					<Obj>
 						<type>0</type>
 						<id>173</id>
-						<name>local_depth_addr_write_ln138</name>
+						<name>local_depth_addr_write_ln139</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>138</lineNumber>
+						<lineNumber>139</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2579,7 +2579,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>138</second>
+										<second>139</second>
 									</item>
 								</second>
 							</item>
@@ -2617,10 +2617,10 @@
 					<Obj>
 						<type>0</type>
 						<id>174</id>
-						<name>local_normal_x_addr_write_ln139</name>
+						<name>local_normal_x_addr_write_ln140</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>139</lineNumber>
+						<lineNumber>140</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2636,7 +2636,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>139</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2674,10 +2674,10 @@
 					<Obj>
 						<type>0</type>
 						<id>175</id>
-						<name>local_normal_y_addr_write_ln139</name>
+						<name>local_normal_y_addr_write_ln140</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>139</lineNumber>
+						<lineNumber>140</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2693,7 +2693,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>139</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2731,10 +2731,10 @@
 					<Obj>
 						<type>0</type>
 						<id>176</id>
-						<name>local_normal_z_addr_write_ln139</name>
+						<name>local_normal_z_addr_write_ln140</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>139</lineNumber>
+						<lineNumber>140</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2750,7 +2750,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>139</second>
+										<second>140</second>
 									</item>
 								</second>
 							</item>
@@ -2788,6 +2788,121 @@
 					<Obj>
 						<type>0</type>
 						<id>177</id>
+						<name>br_ln138</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>138</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>138</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>438</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>33</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_62">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>179</id>
+						<name>y_write_ln137</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>137</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>137</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>439</item>
+					<item>440</item>
+					<item>3048</item>
+					<item>3049</item>
+				</oprand_edges>
+				<opcode>store</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.48</m_delay>
+				<m_topoIndex>34</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_63">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>180</id>
 						<name>br_ln137</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -2828,121 +2943,6 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>438</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>33</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_62">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>179</id>
-						<name>y_write_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>439</item>
-					<item>440</item>
-					<item>3048</item>
-					<item>3049</item>
-				</oprand_edges>
-				<opcode>store</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.48</m_delay>
-				<m_topoIndex>34</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_63">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>180</id>
-						<name>br_ln136</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>136</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>136</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
 					<item>441</item>
 				</oprand_edges>
 				<opcode>br</opcode>
@@ -2962,7 +2962,7 @@
 						<name>i</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -2978,7 +2978,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3015,10 +3015,10 @@
 					<Obj>
 						<type>0</type>
 						<id>183</id>
-						<name>i_write_ln144</name>
+						<name>i_write_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3034,7 +3034,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3072,10 +3072,10 @@
 					<Obj>
 						<type>0</type>
 						<id>184</id>
-						<name>br_ln144</name>
+						<name>br_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3091,7 +3091,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3131,7 +3131,7 @@
 						<name>i_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3147,7 +3147,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3185,10 +3185,10 @@
 					<Obj>
 						<type>0</type>
 						<id>187</id>
-						<name>icmp_ln144</name>
+						<name>icmp_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3204,7 +3204,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3242,10 +3242,10 @@
 					<Obj>
 						<type>0</type>
 						<id>189</id>
-						<name>add_ln144</name>
+						<name>add_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3261,7 +3261,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3299,10 +3299,10 @@
 					<Obj>
 						<type>0</type>
 						<id>190</id>
-						<name>br_ln144</name>
+						<name>br_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3318,7 +3318,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -3360,7 +3360,7 @@
 						<name>curr_tri_v0_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3376,7 +3376,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3417,7 +3417,7 @@
 						<name>curr_tri_v0_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3433,7 +3433,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3474,7 +3474,7 @@
 						<name>curr_tri_v0_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3490,7 +3490,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3531,7 +3531,7 @@
 						<name>p_0120</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3547,7 +3547,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3588,7 +3588,7 @@
 						<name>curr_tri_v1_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3604,7 +3604,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3645,7 +3645,7 @@
 						<name>curr_tri_v1_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3661,7 +3661,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3702,7 +3702,7 @@
 						<name>curr_tri_v1_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3718,7 +3718,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3759,7 +3759,7 @@
 						<name>p_0124</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3775,7 +3775,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3816,7 +3816,7 @@
 						<name>curr_tri_v2_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3832,7 +3832,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3873,7 +3873,7 @@
 						<name>curr_tri_v2_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3889,7 +3889,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3930,7 +3930,7 @@
 						<name>curr_tri_v2_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -3946,7 +3946,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -3987,7 +3987,7 @@
 						<name>p_0128</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4003,7 +4003,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4044,7 +4044,7 @@
 						<name>curr_tri_n0_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4060,7 +4060,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4101,7 +4101,7 @@
 						<name>curr_tri_n0_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4117,7 +4117,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4158,7 +4158,7 @@
 						<name>curr_tri_n0_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4174,7 +4174,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4215,7 +4215,7 @@
 						<name>curr_tri_n1_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4231,7 +4231,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4272,7 +4272,7 @@
 						<name>curr_tri_n1_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4288,7 +4288,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4329,7 +4329,7 @@
 						<name>curr_tri_n1_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4345,7 +4345,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4386,7 +4386,7 @@
 						<name>curr_tri_n2_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4402,7 +4402,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4443,7 +4443,7 @@
 						<name>curr_tri_n2_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4459,7 +4459,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4500,7 +4500,7 @@
 						<name>curr_tri_n2_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4516,7 +4516,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4557,7 +4557,7 @@
 						<name>p_0138</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4573,7 +4573,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4614,7 +4614,7 @@
 						<name>curr_tri_is_active</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>148</lineNumber>
+						<lineNumber>149</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4630,7 +4630,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>148</second>
+										<second>149</second>
 									</item>
 								</second>
 							</item>
@@ -4671,7 +4671,7 @@
 						<name>curr_bounds_min_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>149</lineNumber>
+						<lineNumber>150</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4687,7 +4687,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>149</second>
+										<second>150</second>
 									</item>
 								</second>
 							</item>
@@ -4728,7 +4728,7 @@
 						<name>curr_bounds_min_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>149</lineNumber>
+						<lineNumber>150</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4744,7 +4744,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>149</second>
+										<second>150</second>
 									</item>
 								</second>
 							</item>
@@ -4785,7 +4785,7 @@
 						<name>curr_bounds_max_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>149</lineNumber>
+						<lineNumber>150</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4801,7 +4801,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>149</second>
+										<second>150</second>
 									</item>
 								</second>
 							</item>
@@ -4842,7 +4842,7 @@
 						<name>curr_bounds_max_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>149</lineNumber>
+						<lineNumber>150</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4858,7 +4858,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>149</second>
+										<second>150</second>
 									</item>
 								</second>
 							</item>
@@ -4896,10 +4896,10 @@
 					<Obj>
 						<type>0</type>
 						<id>220</id>
-						<name>br_ln151</name>
+						<name>br_ln152</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>151</lineNumber>
+						<lineNumber>152</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4915,7 +4915,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>151</second>
+										<second>152</second>
 									</item>
 								</second>
 							</item>
@@ -4954,10 +4954,10 @@
 					<Obj>
 						<type>0</type>
 						<id>222</id>
-						<name>sext_ln158</name>
+						<name>sext_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -4973,7 +4973,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5010,10 +5010,10 @@
 					<Obj>
 						<type>0</type>
 						<id>223</id>
-						<name>sext_ln158_1</name>
+						<name>sext_ln159_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5029,7 +5029,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5066,10 +5066,10 @@
 					<Obj>
 						<type>0</type>
 						<id>224</id>
-						<name>sub_ln158</name>
+						<name>sub_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5085,7 +5085,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5123,10 +5123,10 @@
 					<Obj>
 						<type>0</type>
 						<id>225</id>
-						<name>sext_ln158_2</name>
+						<name>sext_ln159_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5142,7 +5142,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5179,10 +5179,10 @@
 					<Obj>
 						<type>0</type>
 						<id>226</id>
-						<name>sext_ln158_3</name>
+						<name>sext_ln159_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5198,7 +5198,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5235,10 +5235,10 @@
 					<Obj>
 						<type>0</type>
 						<id>227</id>
-						<name>sub_ln158_1</name>
+						<name>sub_ln159_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5254,7 +5254,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5292,10 +5292,10 @@
 					<Obj>
 						<type>0</type>
 						<id>228</id>
-						<name>sext_ln158_4</name>
+						<name>sext_ln159_4</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5311,7 +5311,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5348,10 +5348,10 @@
 					<Obj>
 						<type>0</type>
 						<id>229</id>
-						<name>sext_ln158_5</name>
+						<name>sext_ln159_5</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5367,7 +5367,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5404,10 +5404,10 @@
 					<Obj>
 						<type>0</type>
 						<id>230</id>
-						<name>mul_ln158</name>
+						<name>mul_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5423,7 +5423,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5461,10 +5461,10 @@
 					<Obj>
 						<type>0</type>
 						<id>231</id>
-						<name>sext_ln158_6</name>
+						<name>sext_ln159_6</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5480,7 +5480,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5517,10 +5517,10 @@
 					<Obj>
 						<type>0</type>
 						<id>232</id>
-						<name>sub_ln158_2</name>
+						<name>sub_ln159_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5536,7 +5536,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5574,10 +5574,10 @@
 					<Obj>
 						<type>0</type>
 						<id>233</id>
-						<name>sext_ln158_7</name>
+						<name>sext_ln159_7</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5593,7 +5593,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5630,10 +5630,10 @@
 					<Obj>
 						<type>0</type>
 						<id>234</id>
-						<name>sub_ln158_3</name>
+						<name>sub_ln159_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5649,7 +5649,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5687,10 +5687,10 @@
 					<Obj>
 						<type>0</type>
 						<id>235</id>
-						<name>sext_ln158_8</name>
+						<name>sext_ln159_8</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5706,7 +5706,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5743,10 +5743,10 @@
 					<Obj>
 						<type>0</type>
 						<id>236</id>
-						<name>sext_ln158_9</name>
+						<name>sext_ln159_9</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5762,7 +5762,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5799,10 +5799,10 @@
 					<Obj>
 						<type>0</type>
 						<id>237</id>
-						<name>mul_ln158_1</name>
+						<name>mul_ln159_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5818,7 +5818,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5856,10 +5856,10 @@
 					<Obj>
 						<type>0</type>
 						<id>238</id>
-						<name>sext_ln158_10</name>
+						<name>sext_ln159_10</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5875,7 +5875,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5912,10 +5912,10 @@
 					<Obj>
 						<type>0</type>
 						<id>239</id>
-						<name>sext_ln158_11</name>
+						<name>sext_ln159_11</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5931,7 +5931,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -5968,10 +5968,10 @@
 					<Obj>
 						<type>0</type>
 						<id>240</id>
-						<name>sub_ln158_4</name>
+						<name>sub_ln159_4</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -5987,7 +5987,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6028,7 +6028,7 @@
 						<name>tmp</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6044,7 +6044,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6086,7 +6086,7 @@
 						<name>area</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6102,7 +6102,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6145,7 +6145,7 @@
 						<name>tmp_61</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6161,7 +6161,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6203,7 +6203,7 @@
 						<name>tmp_62</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6219,7 +6219,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6258,10 +6258,10 @@
 					<Obj>
 						<type>0</type>
 						<id>245</id>
-						<name>zext_ln158</name>
+						<name>zext_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6277,7 +6277,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6317,7 +6317,7 @@
 						<name>area_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6333,7 +6333,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6374,7 +6374,7 @@
 						<name>tmp_63</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6390,7 +6390,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6429,10 +6429,10 @@
 					<Obj>
 						<type>0</type>
 						<id>248</id>
-						<name>xor_ln158</name>
+						<name>xor_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6448,7 +6448,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6486,10 +6486,10 @@
 					<Obj>
 						<type>0</type>
 						<id>249</id>
-						<name>and_ln158</name>
+						<name>and_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6505,7 +6505,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6546,7 +6546,7 @@
 						<name>tmp_64</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6562,7 +6562,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6604,7 +6604,7 @@
 						<name>tmp_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
+						<lineNumber>159</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -6620,7 +6620,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>158</second>
+										<second>159</second>
 									</item>
 								</second>
 							</item>
@@ -6660,1152 +6660,6 @@
 					<Obj>
 						<type>0</type>
 						<id>252</id>
-						<name>icmp_ln158</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>seteq</opType>
-						<implIndex>auto</implIndex>
-						<coreName>Cmp</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>9</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>583</item>
-					<item>585</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.02</m_delay>
-				<m_topoIndex>101</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_130">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>253</id>
-						<name>tmp_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>18</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>4</count>
-					<item_version>0</item_version>
-					<item>587</item>
-					<item>588</item>
-					<item>589</item>
-					<item>590</item>
-				</oprand_edges>
-				<opcode>partselect</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>102</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_131">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>254</id>
-						<name>icmp_ln158_1</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>seteq</opType>
-						<implIndex>auto</implIndex>
-						<coreName>Cmp</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>9</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>591</item>
-					<item>593</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.03</m_delay>
-				<m_topoIndex>103</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_132">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>255</id>
-						<name>icmp_ln158_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>seteq</opType>
-						<implIndex>auto</implIndex>
-						<coreName>Cmp</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>9</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>594</item>
-					<item>596</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.03</m_delay>
-				<m_topoIndex>104</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_133">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>256</id>
-						<name>select_ln158</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>select</opType>
-						<implIndex>auto_sel</implIndex>
-						<coreName>Sel</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>73</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>597</item>
-					<item>598</item>
-					<item>599</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>105</m_topoIndex>
-				<m_clusterGroupNumber>3</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_134">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>257</id>
-						<name>xor_ln158_1</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>xor</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>600</item>
-					<item>601</item>
-				</oprand_edges>
-				<opcode>xor</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>106</m_topoIndex>
-				<m_clusterGroupNumber>2</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_135">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>258</id>
-						<name>and_ln158_1</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>and</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>602</item>
-					<item>603</item>
-				</oprand_edges>
-				<opcode>and</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>107</m_topoIndex>
-				<m_clusterGroupNumber>2</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_136">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>259</id>
-						<name>select_ln158_1</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>select</opType>
-						<implIndex>auto_sel</implIndex>
-						<coreName>Sel</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>73</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>604</item>
-					<item>605</item>
-					<item>606</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>108</m_topoIndex>
-				<m_clusterGroupNumber>2</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_137">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>260</id>
-						<name>and_ln158_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>and</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>607</item>
-					<item>608</item>
-				</oprand_edges>
-				<opcode>and</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>109</m_topoIndex>
-				<m_clusterGroupNumber>4</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_138">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>261</id>
-						<name>xor_ln158_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>xor</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>609</item>
-					<item>610</item>
-				</oprand_edges>
-				<opcode>xor</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>110</m_topoIndex>
-				<m_clusterGroupNumber>3</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_139">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>262</id>
-						<name>or_ln158</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>or</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>611</item>
-					<item>612</item>
-				</oprand_edges>
-				<opcode>or</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>111</m_topoIndex>
-				<m_clusterGroupNumber>3</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_140">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>263</id>
-						<name>xor_ln158_3</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>xor</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>613</item>
-					<item>614</item>
-				</oprand_edges>
-				<opcode>xor</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>112</m_topoIndex>
-				<m_clusterGroupNumber>3</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_141">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>264</id>
-						<name>and_ln158_3</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>and</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>615</item>
-					<item>616</item>
-				</oprand_edges>
-				<opcode>and</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.33</m_delay>
-				<m_topoIndex>113</m_topoIndex>
-				<m_clusterGroupNumber>3</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_142">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>265</id>
-						<name>and_ln158_4</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>and</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>617</item>
-					<item>618</item>
-				</oprand_edges>
-				<opcode>and</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.33</m_delay>
-				<m_topoIndex>114</m_topoIndex>
-				<m_clusterGroupNumber>2</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_143">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>266</id>
-						<name>or_ln158_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>or</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>619</item>
-					<item>620</item>
-				</oprand_edges>
-				<opcode>or</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>115</m_topoIndex>
-				<m_clusterGroupNumber>4</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_144">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>267</id>
-						<name>xor_ln158_4</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>xor</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>621</item>
-					<item>622</item>
-				</oprand_edges>
-				<opcode>xor</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>116</m_topoIndex>
-				<m_clusterGroupNumber>4</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_145">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>268</id>
-						<name>and_ln158_5</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>and</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>623</item>
-					<item>624</item>
-				</oprand_edges>
-				<opcode>and</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>117</m_topoIndex>
-				<m_clusterGroupNumber>4</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_146">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>269</id>
-						<name>select_ln158_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>select</opType>
-						<implIndex>auto_sel</implIndex>
-						<coreName>Sel</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>73</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>625</item>
-					<item>627</item>
-					<item>629</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>118</m_topoIndex>
-				<m_clusterGroupNumber>5</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_147">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>270</id>
-						<name>or_ln158_1</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>or</opType>
-						<implIndex>auto</implIndex>
-						<coreName>LogicGate</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>74</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>630</item>
-					<item>631</item>
-				</oprand_edges>
-				<opcode>or</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.33</m_delay>
-				<m_topoIndex>119</m_topoIndex>
-				<m_clusterGroupNumber>4</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_148">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>271</id>
-						<name>area_2</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>158</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>158</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>area</originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>select</opType>
-						<implIndex>auto_sel</implIndex>
-						<coreName>Sel</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>73</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>32</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>632</item>
-					<item>633</item>
-					<item>634</item>
-				</oprand_edges>
-				<opcode>select</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.52</m_delay>
-				<m_topoIndex>120</m_topoIndex>
-				<m_clusterGroupNumber>5</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_149">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>272</id>
 						<name>icmp_ln159</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -7846,24 +6700,24 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>635</item>
-					<item>636</item>
+					<item>583</item>
+					<item>585</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.20</m_delay>
-				<m_topoIndex>121</m_topoIndex>
+				<m_delay>1.02</m_delay>
+				<m_topoIndex>101</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_150">
+			<item class_id_reference="9" object_id="_130">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>273</id>
-						<name>br_ln159</name>
+						<id>253</id>
+						<name>tmp_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
 						<lineNumber>159</lineNumber>
@@ -7883,6 +6737,1152 @@
 											<second>k4_rasterize</second>
 										</first>
 										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>18</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>587</item>
+					<item>588</item>
+					<item>589</item>
+					<item>590</item>
+				</oprand_edges>
+				<opcode>partselect</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>102</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_131">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>254</id>
+						<name>icmp_ln159_1</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>seteq</opType>
+						<implIndex>auto</implIndex>
+						<coreName>Cmp</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>9</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>591</item>
+					<item>593</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.03</m_delay>
+				<m_topoIndex>103</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_132">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>255</id>
+						<name>icmp_ln159_2</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>seteq</opType>
+						<implIndex>auto</implIndex>
+						<coreName>Cmp</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>9</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>594</item>
+					<item>596</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.03</m_delay>
+				<m_topoIndex>104</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_133">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>256</id>
+						<name>select_ln159</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>select</opType>
+						<implIndex>auto_sel</implIndex>
+						<coreName>Sel</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>73</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>597</item>
+					<item>598</item>
+					<item>599</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>105</m_topoIndex>
+				<m_clusterGroupNumber>3</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_134">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>257</id>
+						<name>xor_ln159_1</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>xor</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>600</item>
+					<item>601</item>
+				</oprand_edges>
+				<opcode>xor</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>106</m_topoIndex>
+				<m_clusterGroupNumber>2</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_135">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>258</id>
+						<name>and_ln159_1</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>and</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>602</item>
+					<item>603</item>
+				</oprand_edges>
+				<opcode>and</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>107</m_topoIndex>
+				<m_clusterGroupNumber>2</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_136">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>259</id>
+						<name>select_ln159_1</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>select</opType>
+						<implIndex>auto_sel</implIndex>
+						<coreName>Sel</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>73</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>604</item>
+					<item>605</item>
+					<item>606</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>108</m_topoIndex>
+				<m_clusterGroupNumber>2</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_137">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>260</id>
+						<name>and_ln159_2</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>and</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>607</item>
+					<item>608</item>
+				</oprand_edges>
+				<opcode>and</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>109</m_topoIndex>
+				<m_clusterGroupNumber>4</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_138">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>261</id>
+						<name>xor_ln159_2</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>xor</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>609</item>
+					<item>610</item>
+				</oprand_edges>
+				<opcode>xor</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>110</m_topoIndex>
+				<m_clusterGroupNumber>3</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_139">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>262</id>
+						<name>or_ln159</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>or</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>611</item>
+					<item>612</item>
+				</oprand_edges>
+				<opcode>or</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>111</m_topoIndex>
+				<m_clusterGroupNumber>3</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_140">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>263</id>
+						<name>xor_ln159_3</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>xor</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>613</item>
+					<item>614</item>
+				</oprand_edges>
+				<opcode>xor</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>112</m_topoIndex>
+				<m_clusterGroupNumber>3</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_141">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>264</id>
+						<name>and_ln159_3</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>and</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>615</item>
+					<item>616</item>
+				</oprand_edges>
+				<opcode>and</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.33</m_delay>
+				<m_topoIndex>113</m_topoIndex>
+				<m_clusterGroupNumber>3</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_142">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>265</id>
+						<name>and_ln159_4</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>and</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>617</item>
+					<item>618</item>
+				</oprand_edges>
+				<opcode>and</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.33</m_delay>
+				<m_topoIndex>114</m_topoIndex>
+				<m_clusterGroupNumber>2</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_143">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>266</id>
+						<name>or_ln159_2</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>or</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>619</item>
+					<item>620</item>
+				</oprand_edges>
+				<opcode>or</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>115</m_topoIndex>
+				<m_clusterGroupNumber>4</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_144">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>267</id>
+						<name>xor_ln159_4</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>xor</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>621</item>
+					<item>622</item>
+				</oprand_edges>
+				<opcode>xor</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>116</m_topoIndex>
+				<m_clusterGroupNumber>4</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_145">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>268</id>
+						<name>and_ln159_5</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>and</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>623</item>
+					<item>624</item>
+				</oprand_edges>
+				<opcode>and</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>117</m_topoIndex>
+				<m_clusterGroupNumber>4</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_146">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>269</id>
+						<name>select_ln159_2</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>select</opType>
+						<implIndex>auto_sel</implIndex>
+						<coreName>Sel</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>73</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>625</item>
+					<item>627</item>
+					<item>629</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>118</m_topoIndex>
+				<m_clusterGroupNumber>5</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_147">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>270</id>
+						<name>or_ln159_1</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>or</opType>
+						<implIndex>auto</implIndex>
+						<coreName>LogicGate</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>74</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>630</item>
+					<item>631</item>
+				</oprand_edges>
+				<opcode>or</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.33</m_delay>
+				<m_topoIndex>119</m_topoIndex>
+				<m_clusterGroupNumber>4</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_148">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>271</id>
+						<name>area_2</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>159</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>159</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>area</originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>select</opType>
+						<implIndex>auto_sel</implIndex>
+						<coreName>Sel</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>73</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>32</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>632</item>
+					<item>633</item>
+					<item>634</item>
+				</oprand_edges>
+				<opcode>select</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.52</m_delay>
+				<m_topoIndex>120</m_topoIndex>
+				<m_clusterGroupNumber>5</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_149">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>272</id>
+						<name>icmp_ln160</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>160</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>160</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>seteq</opType>
+						<implIndex>auto</implIndex>
+						<coreName>Cmp</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>9</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>635</item>
+					<item>636</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>1.20</m_delay>
+				<m_topoIndex>121</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_150">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>273</id>
+						<name>br_ln160</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>160</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>160</second>
 									</item>
 								</second>
 							</item>
@@ -7921,10 +7921,10 @@
 					<Obj>
 						<type>0</type>
 						<id>275</id>
-						<name>sext_ln160</name>
+						<name>sext_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -7940,7 +7940,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -7977,10 +7977,10 @@
 					<Obj>
 						<type>0</type>
 						<id>276</id>
-						<name>sdiv_ln160</name>
+						<name>sdiv_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -7996,7 +7996,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8037,7 +8037,7 @@
 						<name>tmp_65</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8053,7 +8053,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8095,7 +8095,7 @@
 						<name>inv_area</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8111,7 +8111,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8151,7 +8151,7 @@
 						<name>tmp_66</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8167,7 +8167,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8209,7 +8209,7 @@
 						<name>tmp_1_i</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8225,7 +8225,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8265,10 +8265,10 @@
 					<Obj>
 						<type>0</type>
 						<id>281</id>
-						<name>icmp_ln160</name>
+						<name>icmp_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8284,7 +8284,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8322,10 +8322,10 @@
 					<Obj>
 						<type>0</type>
 						<id>282</id>
-						<name>icmp_ln160_1</name>
+						<name>icmp_ln161_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8341,7 +8341,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8379,10 +8379,10 @@
 					<Obj>
 						<type>0</type>
 						<id>283</id>
-						<name>or_ln160</name>
+						<name>or_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8398,7 +8398,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8436,10 +8436,10 @@
 					<Obj>
 						<type>0</type>
 						<id>284</id>
-						<name>xor_ln160</name>
+						<name>xor_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8455,7 +8455,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8493,10 +8493,10 @@
 					<Obj>
 						<type>0</type>
 						<id>285</id>
-						<name>and_ln160</name>
+						<name>and_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8512,7 +8512,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8550,10 +8550,10 @@
 					<Obj>
 						<type>0</type>
 						<id>286</id>
-						<name>xor_ln160_1</name>
+						<name>xor_ln161_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8569,7 +8569,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8607,10 +8607,10 @@
 					<Obj>
 						<type>0</type>
 						<id>287</id>
-						<name>or_ln160_1</name>
+						<name>or_ln161_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8626,7 +8626,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8664,10 +8664,10 @@
 					<Obj>
 						<type>0</type>
 						<id>288</id>
-						<name>and_ln160_1</name>
+						<name>and_ln161_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8683,7 +8683,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8721,10 +8721,10 @@
 					<Obj>
 						<type>0</type>
 						<id>289</id>
-						<name>select_ln160</name>
+						<name>select_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8740,7 +8740,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8779,10 +8779,10 @@
 					<Obj>
 						<type>0</type>
 						<id>290</id>
-						<name>or_ln160_2</name>
+						<name>or_ln161_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8798,7 +8798,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8839,7 +8839,7 @@
 						<name>inv_area_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8855,7 +8855,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -8894,10 +8894,10 @@
 					<Obj>
 						<type>0</type>
 						<id>292</id>
-						<name>sext_ln163</name>
+						<name>sext_ln164</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8913,7 +8913,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -8950,10 +8950,10 @@
 					<Obj>
 						<type>0</type>
 						<id>293</id>
-						<name>sext_ln163_24</name>
+						<name>sext_ln164_24</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -8969,7 +8969,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9006,10 +9006,10 @@
 					<Obj>
 						<type>0</type>
 						<id>294</id>
-						<name>sext_ln163_25</name>
+						<name>sext_ln164_25</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9025,7 +9025,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9062,10 +9062,10 @@
 					<Obj>
 						<type>0</type>
 						<id>295</id>
-						<name>sext_ln163_26</name>
+						<name>sext_ln164_26</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9081,7 +9081,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9118,10 +9118,10 @@
 					<Obj>
 						<type>0</type>
 						<id>296</id>
-						<name>sext_ln163_27</name>
+						<name>sext_ln164_27</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9137,7 +9137,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9174,10 +9174,10 @@
 					<Obj>
 						<type>0</type>
 						<id>297</id>
-						<name>sext_ln163_28</name>
+						<name>sext_ln164_28</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9193,7 +9193,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9230,10 +9230,10 @@
 					<Obj>
 						<type>0</type>
 						<id>298</id>
-						<name>add_ln163_1</name>
+						<name>add_ln164_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9249,7 +9249,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9290,7 +9290,7 @@
 						<name>empty</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9306,7 +9306,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9347,7 +9347,7 @@
 						<name>smax</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9363,7 +9363,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9402,10 +9402,10 @@
 					<Obj>
 						<type>0</type>
 						<id>301</id>
-						<name>sext_ln163_29</name>
+						<name>sext_ln164_29</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9421,7 +9421,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9458,10 +9458,10 @@
 					<Obj>
 						<type>0</type>
 						<id>302</id>
-						<name>sub_ln163</name>
+						<name>sub_ln164</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9477,7 +9477,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9515,10 +9515,10 @@
 					<Obj>
 						<type>0</type>
 						<id>303</id>
-						<name>add_ln163</name>
+						<name>add_ln164</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9534,7 +9534,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9572,10 +9572,10 @@
 					<Obj>
 						<type>0</type>
 						<id>304</id>
-						<name>empty_127</name>
+						<name>empty_126</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9591,7 +9591,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9632,7 +9632,7 @@
 						<name>smax1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9648,7 +9648,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9687,10 +9687,10 @@
 					<Obj>
 						<type>0</type>
 						<id>306</id>
-						<name>sext_ln163_30</name>
+						<name>sext_ln164_30</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9706,7 +9706,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9743,10 +9743,10 @@
 					<Obj>
 						<type>0</type>
 						<id>307</id>
-						<name>sub_ln163_1</name>
+						<name>sub_ln164_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>163</lineNumber>
+						<lineNumber>164</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9762,7 +9762,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>163</second>
+										<second>164</second>
 									</item>
 								</second>
 							</item>
@@ -9800,10 +9800,10 @@
 					<Obj>
 						<type>0</type>
 						<id>308</id>
-						<name>sext_ln160_1</name>
+						<name>sext_ln161_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9819,7 +9819,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -9856,10 +9856,10 @@
 					<Obj>
 						<type>0</type>
 						<id>309</id>
-						<name>zext_ln160</name>
+						<name>zext_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9875,7 +9875,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -9912,10 +9912,10 @@
 					<Obj>
 						<type>0</type>
 						<id>310</id>
-						<name>sext_ln160_2</name>
+						<name>sext_ln161_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9931,7 +9931,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -9968,10 +9968,10 @@
 					<Obj>
 						<type>0</type>
 						<id>311</id>
-						<name>zext_ln160_1</name>
+						<name>zext_ln161_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -9987,7 +9987,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -10024,10 +10024,10 @@
 					<Obj>
 						<type>0</type>
 						<id>312</id>
-						<name>mul_ln160</name>
+						<name>mul_ln161</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>160</lineNumber>
+						<lineNumber>161</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -10043,7 +10043,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>160</second>
+										<second>161</second>
 									</item>
 								</second>
 							</item>
@@ -10081,10 +10081,10 @@
 					<Obj>
 						<type>0</type>
 						<id>313</id>
-						<name>_ln149</name>
+						<name>_ln150</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>149</lineNumber>
+						<lineNumber>150</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -10100,7 +10100,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>149</second>
+										<second>150</second>
 									</item>
 								</second>
 							</item>
@@ -10206,10 +10206,10 @@
 					<Obj>
 						<type>0</type>
 						<id>316</id>
-						<name>i_write_ln144</name>
+						<name>i_write_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -10225,7 +10225,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -10265,10 +10265,10 @@
 					<Obj>
 						<type>0</type>
 						<id>317</id>
-						<name>br_ln144</name>
+						<name>br_ln145</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>144</lineNumber>
+						<lineNumber>145</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -10284,7 +10284,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>144</second>
+										<second>145</second>
 									</item>
 								</second>
 							</item>
@@ -10324,7 +10324,7 @@
 						<name>y_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
+						<lineNumber>192</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -10340,7 +10340,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>191</second>
+										<second>192</second>
 									</item>
 								</second>
 							</item>
@@ -10377,10 +10377,10 @@
 					<Obj>
 						<type>0</type>
 						<id>320</id>
-						<name>y_1_write_ln191</name>
+						<name>y_1_write_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
+						<lineNumber>192</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -10396,7 +10396,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>191</second>
+										<second>192</second>
 									</item>
 								</second>
 							</item>
@@ -10434,405 +10434,6 @@
 					<Obj>
 						<type>0</type>
 						<id>321</id>
-						<name>br_ln191</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>191</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>455</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>86</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_196">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>323</id>
-						<name>y_3</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>191</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName>y</originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>751</item>
-					<item>3053</item>
-				</oprand_edges>
-				<opcode>load</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>165</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_197">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>324</id>
-						<name>icmp_ln191</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>191</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>seteq</opType>
-						<implIndex>auto</implIndex>
-						<coreName>Cmp</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>9</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>752</item>
-					<item>753</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.89</m_delay>
-				<m_topoIndex>166</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_198">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>325</id>
-						<name>add_ln191</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>191</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control>auto</control>
-						<opType>add</opType>
-						<implIndex>fabric</implIndex>
-						<coreName>Adder</coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>1</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>7</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
-					<item>754</item>
-					<item>755</item>
-				</oprand_edges>
-				<opcode>add</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.89</m_delay>
-				<m_topoIndex>167</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_199">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>326</id>
-						<name>br_ln191</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>191</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>0</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>756</item>
-					<item>757</item>
-					<item>758</item>
-				</oprand_edges>
-				<opcode>br</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>168</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_200">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>328</id>
-						<name>trunc_ln191</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>191</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>6</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>1</count>
-					<item_version>0</item_version>
-					<item>759</item>
-				</oprand_edges>
-				<opcode>trunc</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>169</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_201">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>329</id>
-						<name>tmp_13</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
-						<contextFuncName>k4_rasterize</contextFuncName>
-						<contextNormFuncName>k4_rasterize</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k4_rasterize</second>
-										</first>
-										<second>193</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>12</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>3</count>
-					<item_version>0</item_version>
-					<item>760</item>
-					<item>761</item>
-					<item>762</item>
-				</oprand_edges>
-				<opcode>bitconcatenate</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.00</m_delay>
-				<m_topoIndex>170</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_202">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>332</id>
 						<name>br_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -10873,23 +10474,23 @@
 				<oprand_edges>
 					<count>1</count>
 					<item_version>0</item_version>
-					<item>763</item>
+					<item>455</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.48</m_delay>
-				<m_topoIndex>171</m_topoIndex>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>86</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_203">
+			<item class_id_reference="9" object_id="_196">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>334</id>
-						<name>x_1</name>
+						<id>323</id>
+						<name>y_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
 						<lineNumber>192</lineNumber>
@@ -10913,7 +10514,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>x</originalName>
+						<originalName>y</originalName>
 						<rtlName></rtlName>
 						<control></control>
 						<opType></opType>
@@ -10927,27 +10528,25 @@
 					<bitwidth>7</bitwidth>
 				</Value>
 				<oprand_edges>
-					<count>4</count>
+					<count>2</count>
 					<item_version>0</item_version>
-					<item>764</item>
-					<item>765</item>
-					<item>766</item>
-					<item>767</item>
+					<item>751</item>
+					<item>3053</item>
 				</oprand_edges>
-				<opcode>phi</opcode>
+				<opcode>load</opcode>
 				<m_Display>0</m_Display>
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>173</m_topoIndex>
+				<m_topoIndex>165</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_204">
+			<item class_id_reference="9" object_id="_197">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>335</id>
+						<id>324</id>
 						<name>icmp_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -10988,8 +10587,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>768</item>
-					<item>769</item>
+					<item>752</item>
+					<item>753</item>
 				</oprand_edges>
 				<opcode>icmp</opcode>
 				<m_Display>0</m_Display>
@@ -10997,14 +10596,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.89</m_delay>
-				<m_topoIndex>174</m_topoIndex>
+				<m_topoIndex>166</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_205">
+			<item class_id_reference="9" object_id="_198">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>336</id>
+						<id>325</id>
 						<name>add_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -11045,8 +10644,8 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>770</item>
-					<item>771</item>
+					<item>754</item>
+					<item>755</item>
 				</oprand_edges>
 				<opcode>add</opcode>
 				<m_Display>0</m_Display>
@@ -11054,14 +10653,14 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.89</m_delay>
-				<m_topoIndex>175</m_topoIndex>
+				<m_topoIndex>167</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_206">
+			<item class_id_reference="9" object_id="_199">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>337</id>
+						<id>326</id>
 						<name>br_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -11102,9 +10701,9 @@
 				<oprand_edges>
 					<count>3</count>
 					<item_version>0</item_version>
-					<item>772</item>
-					<item>773</item>
-					<item>774</item>
+					<item>756</item>
+					<item>757</item>
+					<item>758</item>
 				</oprand_edges>
 				<opcode>br</opcode>
 				<m_Display>0</m_Display>
@@ -11112,15 +10711,129 @@
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
 				<m_delay>0.00</m_delay>
-				<m_topoIndex>176</m_topoIndex>
+				<m_topoIndex>168</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
-			<item class_id_reference="9" object_id="_207">
+			<item class_id_reference="9" object_id="_200">
 				<Value>
 					<Obj>
 						<type>0</type>
-						<id>339</id>
-						<name>zext_ln193</name>
+						<id>328</id>
+						<name>trunc_ln192</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>192</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>192</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>6</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>759</item>
+				</oprand_edges>
+				<opcode>trunc</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>169</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_201">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>329</id>
+						<name>tmp_13</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>194</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>194</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>12</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>760</item>
+					<item>761</item>
+					<item>762</item>
+				</oprand_edges>
+				<opcode>bitconcatenate</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>170</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_202">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>332</id>
+						<name>br_ln193</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
 						<lineNumber>193</lineNumber>
@@ -11140,6 +10853,293 @@
 											<second>k4_rasterize</second>
 										</first>
 										<second>193</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>1</count>
+					<item_version>0</item_version>
+					<item>763</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.48</m_delay>
+				<m_topoIndex>171</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_203">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>334</id>
+						<name>x_1</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>193</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>193</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName>x</originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>4</count>
+					<item_version>0</item_version>
+					<item>764</item>
+					<item>765</item>
+					<item>766</item>
+					<item>767</item>
+				</oprand_edges>
+				<opcode>phi</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>173</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_204">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>335</id>
+						<name>icmp_ln193</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>193</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>193</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>seteq</opType>
+						<implIndex>auto</implIndex>
+						<coreName>Cmp</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>9</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>768</item>
+					<item>769</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.89</m_delay>
+				<m_topoIndex>174</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_205">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>336</id>
+						<name>add_ln193</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>193</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>193</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control>auto</control>
+						<opType>add</opType>
+						<implIndex>fabric</implIndex>
+						<coreName>Adder</coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>1</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>7</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>770</item>
+					<item>771</item>
+				</oprand_edges>
+				<opcode>add</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.89</m_delay>
+				<m_topoIndex>175</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_206">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>337</id>
+						<name>br_ln193</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>193</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>193</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>0</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>3</count>
+					<item_version>0</item_version>
+					<item>772</item>
+					<item>773</item>
+					<item>774</item>
+				</oprand_edges>
+				<opcode>br</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.00</m_delay>
+				<m_topoIndex>176</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_207">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>339</id>
+						<name>zext_ln194</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>194</lineNumber>
+						<contextFuncName>k4_rasterize</contextFuncName>
+						<contextNormFuncName>k4_rasterize</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k4_rasterize</second>
+										</first>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11176,10 +11176,10 @@
 					<Obj>
 						<type>0</type>
 						<id>340</id>
-						<name>add_ln193</name>
+						<name>add_ln194</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
+						<lineNumber>194</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11195,7 +11195,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>193</second>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11233,10 +11233,10 @@
 					<Obj>
 						<type>0</type>
 						<id>341</id>
-						<name>zext_ln193_1</name>
+						<name>zext_ln194_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
+						<lineNumber>194</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11252,7 +11252,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>193</second>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11292,7 +11292,7 @@
 						<name>depth_buffer_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
+						<lineNumber>194</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11308,7 +11308,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>193</second>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11350,7 +11350,7 @@
 						<name>normal_buffer_x_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11366,7 +11366,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11408,7 +11408,7 @@
 						<name>normal_buffer_y_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11424,7 +11424,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11466,7 +11466,7 @@
 						<name>normal_buffer_z_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11482,7 +11482,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11524,7 +11524,7 @@
 						<name>local_depth_addr_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
+						<lineNumber>194</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11540,7 +11540,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>193</second>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11582,7 +11582,7 @@
 						<name>local_normal_x_addr_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11598,7 +11598,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11640,7 +11640,7 @@
 						<name>local_normal_y_addr_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11656,7 +11656,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11698,7 +11698,7 @@
 						<name>local_normal_z_addr_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11714,7 +11714,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11756,7 +11756,7 @@
 						<name>local_depth_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
+						<lineNumber>194</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11772,7 +11772,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>193</second>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11809,10 +11809,10 @@
 					<Obj>
 						<type>0</type>
 						<id>353</id>
-						<name>depth_buffer_addr_write_ln193</name>
+						<name>depth_buffer_addr_write_ln194</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>193</lineNumber>
+						<lineNumber>194</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11828,7 +11828,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>193</second>
+										<second>194</second>
 									</item>
 								</second>
 							</item>
@@ -11869,7 +11869,7 @@
 						<name>local_normal_x_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11885,7 +11885,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11925,7 +11925,7 @@
 						<name>local_normal_y_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11941,7 +11941,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -11981,7 +11981,7 @@
 						<name>local_normal_z_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -11997,7 +11997,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -12034,10 +12034,10 @@
 					<Obj>
 						<type>0</type>
 						<id>357</id>
-						<name>normal_buffer_x_addr_write_ln194</name>
+						<name>normal_buffer_x_addr_write_ln195</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -12053,7 +12053,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -12091,10 +12091,10 @@
 					<Obj>
 						<type>0</type>
 						<id>358</id>
-						<name>normal_buffer_y_addr_write_ln194</name>
+						<name>normal_buffer_y_addr_write_ln195</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -12110,7 +12110,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -12148,10 +12148,10 @@
 					<Obj>
 						<type>0</type>
 						<id>359</id>
-						<name>normal_buffer_z_addr_write_ln194</name>
+						<name>normal_buffer_z_addr_write_ln195</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>194</lineNumber>
+						<lineNumber>195</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -12167,7 +12167,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>194</second>
+										<second>195</second>
 									</item>
 								</second>
 							</item>
@@ -12205,10 +12205,10 @@
 					<Obj>
 						<type>0</type>
 						<id>360</id>
-						<name>br_ln192</name>
+						<name>br_ln193</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>192</lineNumber>
+						<lineNumber>193</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -12224,7 +12224,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>192</second>
+										<second>193</second>
 									</item>
 								</second>
 							</item>
@@ -12261,10 +12261,10 @@
 					<Obj>
 						<type>0</type>
 						<id>362</id>
-						<name>y_1_write_ln191</name>
+						<name>y_1_write_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
+						<lineNumber>192</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -12280,7 +12280,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>191</second>
+										<second>192</second>
 									</item>
 								</second>
 							</item>
@@ -12320,10 +12320,10 @@
 					<Obj>
 						<type>0</type>
 						<id>363</id>
-						<name>br_ln191</name>
+						<name>br_ln192</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>191</lineNumber>
+						<lineNumber>192</lineNumber>
 						<contextFuncName>k4_rasterize</contextFuncName>
 						<contextNormFuncName>k4_rasterize</contextNormFuncName>
 						<inlineStackInfo>
@@ -12339,7 +12339,7 @@
 											<first>top.cpp</first>
 											<second>k4_rasterize</second>
 										</first>
-										<second>191</second>
+										<second>192</second>
 									</item>
 								</second>
 							</item>
@@ -13382,7 +13382,7 @@
 					<Obj>
 						<type>2</type>
 						<id>718</id>
-						<name>k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5</name>
+						<name>k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -13406,7 +13406,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5&gt;</content>
+				<content>&lt;constant:k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
@@ -13453,7 +13453,7 @@
 				<Obj>
 					<type>3</type>
 					<id>152</id>
-					<name>VITIS_LOOP_137_2.i</name>
+					<name>VITIS_LOOP_138_2.i</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -13487,7 +13487,7 @@
 				<Obj>
 					<type>3</type>
 					<id>158</id>
-					<name>VITIS_LOOP_137_2.split.i</name>
+					<name>VITIS_LOOP_138_2.split.i</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -13937,7 +13937,7 @@
 				<Obj>
 					<type>3</type>
 					<id>322</id>
-					<name>VITIS_LOOP_192_7.i.preheader</name>
+					<name>VITIS_LOOP_193_7.i.preheader</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -13970,7 +13970,7 @@
 				<Obj>
 					<type>3</type>
 					<id>327</id>
-					<name>VITIS_LOOP_192_7.i</name>
+					<name>VITIS_LOOP_193_7.i</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -14004,7 +14004,7 @@
 				<Obj>
 					<type>3</type>
 					<id>333</id>
-					<name>VITIS_LOOP_192_7.split.i</name>
+					<name>VITIS_LOOP_193_7.split.i</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -17071,8 +17071,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_687">
 			<mId>3</mId>
-			<mTag>VITIS_LOOP_136_1</mTag>
-			<mNormTag>VITIS_LOOP_136_1</mNormTag>
+			<mTag>VITIS_LOOP_137_1</mTag>
+			<mNormTag>VITIS_LOOP_137_1</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>3</count>
@@ -17120,8 +17120,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_689">
 			<mId>5</mId>
-			<mTag>VITIS_LOOP_137_2</mTag>
-			<mNormTag>VITIS_LOOP_137_2</mNormTag>
+			<mTag>VITIS_LOOP_138_2</mTag>
+			<mNormTag>VITIS_LOOP_138_2</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>
@@ -17190,8 +17190,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_692">
 			<mId>8</mId>
-			<mTag>VITIS_LOOP_144_3</mTag>
-			<mNormTag>VITIS_LOOP_144_3</mNormTag>
+			<mTag>VITIS_LOOP_145_3</mTag>
+			<mNormTag>VITIS_LOOP_145_3</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>
@@ -17240,8 +17240,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_694">
 			<mId>10</mId>
-			<mTag>VITIS_LOOP_191_6</mTag>
-			<mNormTag>VITIS_LOOP_191_6</mNormTag>
+			<mTag>VITIS_LOOP_192_6</mTag>
+			<mNormTag>VITIS_LOOP_192_6</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>3</count>
@@ -17289,8 +17289,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_696">
 			<mId>12</mId>
-			<mTag>VITIS_LOOP_192_7</mTag>
-			<mNormTag>VITIS_LOOP_192_7</mNormTag>
+			<mTag>VITIS_LOOP_193_7</mTag>
+			<mNormTag>VITIS_LOOP_193_7</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>
@@ -23344,7 +23344,7 @@
 		<count>129</count>
 		<item_version>0</item_version>
 		<item class_id="48" tracking_level="0" version="0">
-			<first>add_ln136_fu_577</first>
+			<first>add_ln137_fu_577</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23352,7 +23352,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln137_fu_606</first>
+			<first>add_ln138_fu_606</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23360,7 +23360,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln138_fu_616</first>
+			<first>add_ln139_fu_616</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23368,7 +23368,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln144_fu_642</first>
+			<first>add_ln145_fu_642</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23376,7 +23376,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln163_1_fu_981</first>
+			<first>add_ln164_1_fu_981</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23384,7 +23384,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln163_fu_1011</first>
+			<first>add_ln164_fu_1011</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23392,7 +23392,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln191_fu_1171</first>
+			<first>add_ln192_fu_1171</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23400,7 +23400,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln192_fu_1195</first>
+			<first>add_ln193_fu_1195</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23408,7 +23408,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln193_fu_1205</first>
+			<first>add_ln194_fu_1205</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23416,7 +23416,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln158_1_fu_857</first>
+			<first>and_ln159_1_fu_857</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23424,7 +23424,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln158_2_fu_871</first>
+			<first>and_ln159_2_fu_871</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23432,7 +23432,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln158_3_fu_895</first>
+			<first>and_ln159_3_fu_895</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23440,7 +23440,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln158_4_fu_901</first>
+			<first>and_ln159_4_fu_901</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23448,7 +23448,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln158_5_fu_919</first>
+			<first>and_ln159_5_fu_919</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23456,7 +23456,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln158_fu_791</first>
+			<first>and_ln159_fu_791</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23464,7 +23464,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln160_1_fu_1129</first>
+			<first>and_ln161_1_fu_1129</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23472,7 +23472,7 @@
 			</second>
 		</item>
 		<item>
-			<first>and_ln160_fu_1111</first>
+			<first>and_ln161_fu_1111</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23512,7 +23512,7 @@
 			</second>
 		</item>
 		<item>
-			<first>empty_127_fu_1017</first>
+			<first>empty_126_fu_1017</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23536,7 +23536,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln136_fu_571</first>
+			<first>icmp_ln137_fu_571</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23544,7 +23544,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln137_fu_600</first>
+			<first>icmp_ln138_fu_600</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23552,7 +23552,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln144_fu_636</first>
+			<first>icmp_ln145_fu_636</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23560,7 +23560,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln158_1_fu_831</first>
+			<first>icmp_ln159_1_fu_831</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23568,7 +23568,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln158_2_fu_837</first>
+			<first>icmp_ln159_2_fu_837</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23576,7 +23576,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln158_fu_815</first>
+			<first>icmp_ln159_fu_815</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23584,7 +23584,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln159_fu_947</first>
+			<first>icmp_ln160_fu_947</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23592,7 +23592,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln160_1_fu_1093</first>
+			<first>icmp_ln161_1_fu_1093</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23600,7 +23600,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln160_fu_1087</first>
+			<first>icmp_ln161_fu_1087</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23608,7 +23608,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln191_fu_1165</first>
+			<first>icmp_ln192_fu_1165</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23616,7 +23616,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln192_fu_1189</first>
+			<first>icmp_ln193_fu_1189</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23736,7 +23736,7 @@
 			</second>
 		</item>
 		<item>
-			<first>mul_ln158_1_fu_555</first>
+			<first>mul_ln159_1_fu_555</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23744,7 +23744,7 @@
 			</second>
 		</item>
 		<item>
-			<first>mul_ln158_fu_551</first>
+			<first>mul_ln159_fu_551</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23752,7 +23752,7 @@
 			</second>
 		</item>
 		<item>
-			<first>mul_ln160_fu_559</first>
+			<first>mul_ln161_fu_559</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23784,7 +23784,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln158_1_fu_933</first>
+			<first>or_ln159_1_fu_933</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23792,7 +23792,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln158_2_fu_907</first>
+			<first>or_ln159_2_fu_907</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23800,7 +23800,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln158_fu_883</first>
+			<first>or_ln159_fu_883</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23808,7 +23808,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln160_1_fu_1123</first>
+			<first>or_ln161_1_fu_1123</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23816,7 +23816,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln160_2_fu_1143</first>
+			<first>or_ln161_2_fu_1143</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23824,7 +23824,7 @@
 			</second>
 		</item>
 		<item>
-			<first>or_ln160_fu_1099</first>
+			<first>or_ln161_fu_1099</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23832,7 +23832,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln158_1_fu_863</first>
+			<first>select_ln159_1_fu_863</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23840,7 +23840,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln158_2_fu_925</first>
+			<first>select_ln159_2_fu_925</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23848,7 +23848,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln158_fu_843</first>
+			<first>select_ln159_fu_843</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23856,7 +23856,7 @@
 			</second>
 		</item>
 		<item>
-			<first>select_ln160_fu_1135</first>
+			<first>select_ln161_fu_1135</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23864,7 +23864,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_10_fu_721</first>
+			<first>sext_ln159_10_fu_721</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23872,7 +23872,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_11_fu_724</first>
+			<first>sext_ln159_11_fu_724</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23880,7 +23880,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_1_fu_652</first>
+			<first>sext_ln159_1_fu_652</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23888,7 +23888,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_2_fu_662</first>
+			<first>sext_ln159_2_fu_662</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23896,7 +23896,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_3_fu_666</first>
+			<first>sext_ln159_3_fu_666</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23904,7 +23904,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_4_fu_676</first>
+			<first>sext_ln159_4_fu_676</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23912,7 +23912,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_5_fu_681</first>
+			<first>sext_ln159_5_fu_681</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23920,7 +23920,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_6_fu_686</first>
+			<first>sext_ln159_6_fu_686</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23928,7 +23928,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_7_fu_696</first>
+			<first>sext_ln159_7_fu_696</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23936,7 +23936,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_8_fu_706</first>
+			<first>sext_ln159_8_fu_706</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23944,7 +23944,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_9_fu_711</first>
+			<first>sext_ln159_9_fu_711</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23952,7 +23952,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln158_fu_648</first>
+			<first>sext_ln159_fu_648</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23960,7 +23960,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln160_1_fu_1041</first>
+			<first>sext_ln161_1_fu_1041</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23968,7 +23968,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln160_2_fu_1049</first>
+			<first>sext_ln161_2_fu_1049</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23976,7 +23976,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln160_fu_953</first>
+			<first>sext_ln161_fu_953</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23984,7 +23984,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_24_fu_966</first>
+			<first>sext_ln164_24_fu_966</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -23992,7 +23992,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_25_fu_969</first>
+			<first>sext_ln164_25_fu_969</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24000,7 +24000,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_26_fu_972</first>
+			<first>sext_ln164_26_fu_972</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24008,7 +24008,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_27_fu_975</first>
+			<first>sext_ln164_27_fu_975</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24016,7 +24016,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_28_fu_978</first>
+			<first>sext_ln164_28_fu_978</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24024,7 +24024,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_29_fu_1001</first>
+			<first>sext_ln164_29_fu_1001</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24032,7 +24032,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_30_fu_1031</first>
+			<first>sext_ln164_30_fu_1031</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24040,7 +24040,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln163_fu_963</first>
+			<first>sext_ln164_fu_963</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24064,7 +24064,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln158_1_fu_670</first>
+			<first>sub_ln159_1_fu_670</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24072,7 +24072,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln158_2_fu_690</first>
+			<first>sub_ln159_2_fu_690</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24080,7 +24080,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln158_3_fu_700</first>
+			<first>sub_ln159_3_fu_700</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24088,7 +24088,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln158_4_fu_727</first>
+			<first>sub_ln159_4_fu_727</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24096,7 +24096,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln158_fu_656</first>
+			<first>sub_ln159_fu_656</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24104,7 +24104,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln163_1_fu_1035</first>
+			<first>sub_ln164_1_fu_1035</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24112,7 +24112,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln163_fu_1005</first>
+			<first>sub_ln164_fu_1005</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24216,7 +24216,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln136_fu_583</first>
+			<first>trunc_ln137_fu_583</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24224,7 +24224,7 @@
 			</second>
 		</item>
 		<item>
-			<first>trunc_ln191_fu_1177</first>
+			<first>trunc_ln192_fu_1177</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24248,7 +24248,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln158_1_fu_851</first>
+			<first>xor_ln159_1_fu_851</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24256,7 +24256,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln158_2_fu_877</first>
+			<first>xor_ln159_2_fu_877</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24264,7 +24264,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln158_3_fu_889</first>
+			<first>xor_ln159_3_fu_889</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24272,7 +24272,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln158_4_fu_913</first>
+			<first>xor_ln159_4_fu_913</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24280,7 +24280,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln158_fu_785</first>
+			<first>xor_ln159_fu_785</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24288,7 +24288,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln160_1_fu_1117</first>
+			<first>xor_ln161_1_fu_1117</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24296,7 +24296,7 @@
 			</second>
 		</item>
 		<item>
-			<first>xor_ln160_fu_1105</first>
+			<first>xor_ln161_fu_1105</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24320,7 +24320,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln138_1_fu_621</first>
+			<first>zext_ln139_1_fu_621</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24328,7 +24328,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln138_fu_612</first>
+			<first>zext_ln139_fu_612</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24336,7 +24336,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln158_fu_767</first>
+			<first>zext_ln159_fu_767</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24344,7 +24344,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln160_1_fu_1052</first>
+			<first>zext_ln161_1_fu_1052</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24352,7 +24352,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln160_fu_1044</first>
+			<first>zext_ln161_fu_1044</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24360,7 +24360,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln193_1_fu_1210</first>
+			<first>zext_ln194_1_fu_1210</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24368,7 +24368,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln193_fu_1201</first>
+			<first>zext_ln194_fu_1201</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24425,7 +24425,7 @@
 			</second>
 		</item>
 		<item>
-			<first>grp_k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5_fu_520</first>
+			<first>grp_k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5_fu_520</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -24662,7 +24662,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln136_store_fu_563</first>
+			<first>store_ln137_store_fu_563</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24670,7 +24670,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln136_store_fu_629</first>
+			<first>store_ln137_store_fu_629</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24678,7 +24678,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln144_store_fu_1158</first>
+			<first>store_ln145_store_fu_1158</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24686,7 +24686,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln144_store_fu_595</first>
+			<first>store_ln145_store_fu_595</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24694,7 +24694,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln191_store_fu_1218</first>
+			<first>store_ln192_store_fu_1218</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -24702,7 +24702,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln191_store_fu_716</first>
+			<first>store_ln192_store_fu_716</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25266,7 +25266,7 @@
 		<count>48</count>
 		<item_version>0</item_version>
 		<item>
-			<first>add_ln136_reg_1232</first>
+			<first>add_ln137_reg_1232</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25274,7 +25274,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln137_reg_1252</first>
+			<first>add_ln138_reg_1252</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25282,7 +25282,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln144_reg_1260</first>
+			<first>add_ln145_reg_1260</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25290,7 +25290,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln191_reg_1433</first>
+			<first>add_ln192_reg_1433</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25298,7 +25298,7 @@
 			</second>
 		</item>
 		<item>
-			<first>add_ln192_reg_1446</first>
+			<first>add_ln193_reg_1446</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25498,7 +25498,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln159_reg_1401</first>
+			<first>icmp_ln160_reg_1401</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25546,7 +25546,7 @@
 			</second>
 		</item>
 		<item>
-			<first>mul_ln158_1_reg_1389</first>
+			<first>mul_ln159_1_reg_1389</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25554,7 +25554,7 @@
 			</second>
 		</item>
 		<item>
-			<first>mul_ln158_reg_1384</first>
+			<first>mul_ln159_reg_1384</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25562,7 +25562,7 @@
 			</second>
 		</item>
 		<item>
-			<first>mul_ln160_reg_1420</first>
+			<first>mul_ln161_reg_1420</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25570,7 +25570,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sext_ln160_reg_1405</first>
+			<first>sext_ln161_reg_1405</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25578,7 +25578,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln163_1_reg_1415</first>
+			<first>sub_ln164_1_reg_1415</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25586,7 +25586,7 @@
 			</second>
 		</item>
 		<item>
-			<first>sub_ln163_reg_1410</first>
+			<first>sub_ln164_reg_1410</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -25642,7 +25642,7 @@
 			</second>
 		</item>
 		<item>
-			<first>zext_ln193_1_reg_1451</first>
+			<first>zext_ln194_1_reg_1451</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

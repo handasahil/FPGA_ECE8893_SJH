@@ -6,6 +6,12 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
+set name top_kernel_sdiv_34ns_32s_34_38_seq_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {sdiv} IMPL {auto_seq} LATENCY 37 ALLOW_PRAGMA 1
+}
+
+
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler top_kernel_k4_rasterize_local_depth_RAM_AUTO_1R1W BINDTYPE {storage} TYPE {ram} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
@@ -27,7 +33,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 199 \
+    id 206 \
     name depth_buffer \
     reset_level 1 \
     sync_rst true \
@@ -46,7 +52,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 200 \
+    id 207 \
     name normal_buffer_x \
     reset_level 1 \
     sync_rst true \
@@ -65,7 +71,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 201 \
+    id 208 \
     name normal_buffer_y \
     reset_level 1 \
     sync_rst true \
@@ -84,7 +90,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 202 \
+    id 209 \
     name normal_buffer_z \
     reset_level 1 \
     sync_rst true \
@@ -102,7 +108,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 203 \
+    id 210 \
     name screen_tris_out_v0_x \
     type fifo \
     dir I \
@@ -117,7 +123,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 204 \
+    id 211 \
     name screen_tris_out_v0_y \
     type fifo \
     dir I \
@@ -132,7 +138,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 205 \
+    id 212 \
     name screen_tris_out_v0_z \
     type fifo \
     dir I \
@@ -147,7 +153,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 206 \
+    id 213 \
     name screen_tris_out_v0_w \
     type fifo \
     dir I \
@@ -162,7 +168,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 207 \
+    id 214 \
     name screen_tris_out_v1_x \
     type fifo \
     dir I \
@@ -177,7 +183,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 208 \
+    id 215 \
     name screen_tris_out_v1_y \
     type fifo \
     dir I \
@@ -192,7 +198,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 209 \
+    id 216 \
     name screen_tris_out_v1_z \
     type fifo \
     dir I \
@@ -207,7 +213,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 210 \
+    id 217 \
     name screen_tris_out_v1_w \
     type fifo \
     dir I \
@@ -222,7 +228,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 211 \
+    id 218 \
     name screen_tris_out_v2_x \
     type fifo \
     dir I \
@@ -237,7 +243,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 212 \
+    id 219 \
     name screen_tris_out_v2_y \
     type fifo \
     dir I \
@@ -252,7 +258,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 213 \
+    id 220 \
     name screen_tris_out_v2_z \
     type fifo \
     dir I \
@@ -267,7 +273,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 214 \
+    id 221 \
     name screen_tris_out_v2_w \
     type fifo \
     dir I \
@@ -282,7 +288,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 215 \
+    id 222 \
     name screen_tris_out_n0_x \
     type fifo \
     dir I \
@@ -297,7 +303,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 216 \
+    id 223 \
     name screen_tris_out_n0_y \
     type fifo \
     dir I \
@@ -312,7 +318,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 217 \
+    id 224 \
     name screen_tris_out_n0_z \
     type fifo \
     dir I \
@@ -327,7 +333,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 218 \
+    id 225 \
     name screen_tris_out_n1_x \
     type fifo \
     dir I \
@@ -342,7 +348,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 219 \
+    id 226 \
     name screen_tris_out_n1_y \
     type fifo \
     dir I \
@@ -357,7 +363,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 220 \
+    id 227 \
     name screen_tris_out_n1_z \
     type fifo \
     dir I \
@@ -372,7 +378,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 221 \
+    id 228 \
     name screen_tris_out_n2_x \
     type fifo \
     dir I \
@@ -387,7 +393,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 222 \
+    id 229 \
     name screen_tris_out_n2_y \
     type fifo \
     dir I \
@@ -402,7 +408,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 223 \
+    id 230 \
     name screen_tris_out_n2_z \
     type fifo \
     dir I \
@@ -417,7 +423,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 224 \
+    id 231 \
     name screen_tris_out_color \
     type fifo \
     dir I \
@@ -432,7 +438,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 225 \
+    id 232 \
     name screen_tris_out_is_active \
     type fifo \
     dir I \
@@ -447,7 +453,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 226 \
+    id 233 \
     name bounds_min_x \
     type fifo \
     dir I \
@@ -462,7 +468,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 227 \
+    id 234 \
     name bounds_min_y \
     type fifo \
     dir I \
@@ -477,7 +483,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 228 \
+    id 235 \
     name bounds_max_x \
     type fifo \
     dir I \
@@ -492,7 +498,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 229 \
+    id 236 \
     name bounds_max_y \
     type fifo \
     dir I \

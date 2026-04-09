@@ -1,50 +1,35 @@
 {
   "0": {
     "basicblocks": 1,
-    "calls": "3 5 1 4 2",
+    "calls": "2 1 3 5 4",
     "control_depth": 0,
     "def_use_depth": 0,
     "file": "top.cpp",
-    "fileloc": 234,
+    "fileloc": 235,
     "instructions": 168,
     "memory_accesses": 0,
     "name": "top_kernel",
-    "total_instructions": 2406
+    "total_instructions": 2776
   },
   "1": {
-    "basicblocks": 21,
+    "basicblocks": 15,
     "calls": "",
     "control_depth": 4,
-    "def_use_depth": 11,
+    "def_use_depth": 37,
     "file": "top.cpp",
-    "fileloc": 81,
-    "instructions": 236,
+    "fileloc": 40,
+    "instructions": 804,
     "loads": {
       "L": 23
     },
-    "memory_accesses": 100,
-    "name": "k3_bounding_box",
+    "memory_accesses": 92,
+    "name": "k2_perspective_divide",
     "stores": {
-      "L": 27
+      "L": 23
     },
-    "total_instructions": 236
+    "total_instructions": 804
   },
   "2": {
-    "basicblocks": 9,
-    "calls": "",
-    "control_depth": 2,
-    "def_use_depth": 43,
-    "file": "top.cpp",
-    "fileloc": 203,
-    "instructions": 140,
-    "loads": {
-      "G": 4
-    },
-    "memory_accesses": 5,
-    "name": "k5_deferred_lighting",
-    "total_instructions": 140
-  },
-  "3": {
     "basicblocks": 8,
     "calls": "",
     "control_depth": 2,
@@ -59,13 +44,46 @@
     },
     "total_instructions": 760
   },
+  "3": {
+    "basicblocks": 21,
+    "calls": "",
+    "control_depth": 4,
+    "def_use_depth": 11,
+    "file": "top.cpp",
+    "fileloc": 82,
+    "instructions": 236,
+    "loads": {
+      "L": 23
+    },
+    "memory_accesses": 100,
+    "name": "k3_bounding_box",
+    "stores": {
+      "L": 27
+    },
+    "total_instructions": 236
+  },
   "4": {
+    "basicblocks": 9,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 43,
+    "file": "top.cpp",
+    "fileloc": 204,
+    "instructions": 140,
+    "loads": {
+      "G": 4
+    },
+    "memory_accesses": 5,
+    "name": "k5_deferred_lighting",
+    "total_instructions": 140
+  },
+  "5": {
     "basicblocks": 30,
     "calls": "",
     "control_depth": 4,
     "def_use_depth": 49,
     "file": "top.cpp",
-    "fileloc": 128,
+    "fileloc": 129,
     "instructions": 668,
     "loads": {
       "L": 28
@@ -77,23 +95,5 @@
       "L": 8
     },
     "total_instructions": 668
-  },
-  "5": {
-    "basicblocks": 12,
-    "calls": "",
-    "control_depth": 3,
-    "def_use_depth": 37,
-    "file": "top.cpp",
-    "fileloc": 40,
-    "instructions": 434,
-    "loads": {
-      "L": 36
-    },
-    "memory_accesses": 7,
-    "name": "k2_perspective_divide",
-    "stores": {
-      "L": 38
-    },
-    "total_instructions": 434
   }
 }

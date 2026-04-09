@@ -65,102 +65,102 @@ Diagnostics:
         Length:          0
         ReplacementText: 'VITIS_LOOP_45_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_54_2:  '
-    FileOffset:      54
+    Message:         'Added loop label VITIS_LOOP_55_2:  '
+    FileOffset:      55
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          954787
+        Offset:          954806
         Length:          0
-        ReplacementText: 'VITIS_LOOP_54_2: '
+        ReplacementText: 'VITIS_LOOP_55_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_85_1:  '
-    FileOffset:      85
+    Message:         'Added loop label VITIS_LOOP_86_1:  '
+    FileOffset:      86
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          955569
+        Offset:          955588
         Length:          0
-        ReplacementText: 'VITIS_LOOP_85_1: '
+        ReplacementText: 'VITIS_LOOP_86_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_136_1:  '
-    FileOffset:      136
-    FilePath:        top.cpp
-    Replacements:    
-      - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          957204
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_136_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_137_2:  '
+    Message:         'Added loop label VITIS_LOOP_137_1:  '
     FileOffset:      137
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          957243
+        Offset:          957223
         Length:          0
-        ReplacementText: 'VITIS_LOOP_137_2: '
+        ReplacementText: 'VITIS_LOOP_137_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_144_3:  '
-    FileOffset:      144
+    Message:         'Added loop label VITIS_LOOP_138_2:  '
+    FileOffset:      138
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          957412
+        Offset:          957262
         Length:          0
-        ReplacementText: 'VITIS_LOOP_144_3: '
+        ReplacementText: 'VITIS_LOOP_138_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_163_4:  '
-    FileOffset:      163
+    Message:         'Added loop label VITIS_LOOP_145_3:  '
+    FileOffset:      145
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          957907
+        Offset:          957431
         Length:          0
-        ReplacementText: 'VITIS_LOOP_163_4: '
+        ReplacementText: 'VITIS_LOOP_145_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_164_5:  '
+    Message:         'Added loop label VITIS_LOOP_164_4:  '
     FileOffset:      164
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          957982
+        Offset:          957926
         Length:          0
-        ReplacementText: 'VITIS_LOOP_164_5: '
+        ReplacementText: 'VITIS_LOOP_164_4: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_191_6:  '
-    FileOffset:      191
+    Message:         'Added loop label VITIS_LOOP_165_5:  '
+    FileOffset:      165
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          959101
+        Offset:          958001
         Length:          0
-        ReplacementText: 'VITIS_LOOP_191_6: '
+        ReplacementText: 'VITIS_LOOP_165_5: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_192_7:  '
+    Message:         'Added loop label VITIS_LOOP_192_6:  '
     FileOffset:      192
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          959140
+        Offset:          959120
         Length:          0
-        ReplacementText: 'VITIS_LOOP_192_7: '
+        ReplacementText: 'VITIS_LOOP_192_6: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_211_1:  '
-    FileOffset:      211
+    Message:         'Added loop label VITIS_LOOP_193_7:  '
+    FileOffset:      193
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          959608
+        Offset:          959159
         Length:          0
-        ReplacementText: 'VITIS_LOOP_211_1: '
+        ReplacementText: 'VITIS_LOOP_193_7: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_212_2:  '
+    Message:         'Added loop label VITIS_LOOP_212_1:  '
     FileOffset:      212
     FilePath:        top.cpp
     Replacements:    
       - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
-        Offset:          959647
+        Offset:          959627
         Length:          0
-        ReplacementText: 'VITIS_LOOP_212_2: '
+        ReplacementText: 'VITIS_LOOP_212_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_213_2:  '
+    FileOffset:      213
+    FilePath:        top.cpp
+    Replacements:    
+      - FilePath:        /nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4/project_1/hls/.autopilot/db/top.pp.0.cpp
+        Offset:          959666
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_213_2: '
 ...

@@ -59324,6 +59324,7 @@ static void k2_perspective_divide(const Triangle clip_tris[128],
     const data_t half_h = (data_t)(64 / 2.0);
 
     for (int i = 0; i < 128; i++) {
+#pragma HLS pipeline II=1
 
 
         Triangle curr_tri = clip_tris[i];

@@ -469,52 +469,52 @@ set ArgLastReadFirstWriteLatency {
 		clip_tris_color {Type O LastRead -1 FirstWrite 37}
 		clip_tris_is_active {Type O LastRead -1 FirstWrite 37}}
 	k2_perspective_divide {
-		clip_tris_v0_x {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v0_y {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v0_z {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v0_w {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v1_x {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v1_y {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v1_z {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v1_w {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v2_x {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v2_y {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v2_z {Type I LastRead 1 FirstWrite -1}
-		clip_tris_v2_w {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n0_x {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n0_y {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n0_z {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n1_x {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n1_y {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n1_z {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n2_x {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n2_y {Type I LastRead 1 FirstWrite -1}
-		clip_tris_n2_z {Type I LastRead 1 FirstWrite -1}
-		clip_tris_color {Type I LastRead 1 FirstWrite -1}
-		clip_tris_is_active {Type I LastRead 1 FirstWrite -1}
-		screen_tris_in_v0_x {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v0_y {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v0_z {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v0_w {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v1_x {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v1_y {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v1_z {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v1_w {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v2_x {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v2_y {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v2_z {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_v2_w {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n0_x {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n0_y {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n0_z {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n1_x {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n1_y {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n1_z {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n2_x {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n2_y {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_n2_z {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_color {Type O LastRead -1 FirstWrite 6}
-		screen_tris_in_is_active {Type O LastRead -1 FirstWrite 6}}
+		clip_tris_v0_x {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v0_y {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v0_z {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v0_w {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v1_x {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v1_y {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v1_z {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v1_w {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v2_x {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v2_y {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v2_z {Type I LastRead 0 FirstWrite -1}
+		clip_tris_v2_w {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n0_x {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n0_y {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n0_z {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n1_x {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n1_y {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n1_z {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n2_x {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n2_y {Type I LastRead 0 FirstWrite -1}
+		clip_tris_n2_z {Type I LastRead 0 FirstWrite -1}
+		clip_tris_color {Type I LastRead 0 FirstWrite -1}
+		clip_tris_is_active {Type I LastRead 0 FirstWrite -1}
+		screen_tris_in_v0_x {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v0_y {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v0_z {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v0_w {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v1_x {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v1_y {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v1_z {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v1_w {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v2_x {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v2_y {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v2_z {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_v2_w {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n0_x {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n0_y {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n0_z {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n1_x {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n1_y {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n1_z {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n2_x {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n2_y {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_n2_z {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_color {Type O LastRead -1 FirstWrite 39}
+		screen_tris_in_is_active {Type O LastRead -1 FirstWrite 39}}
 	k3_bounding_box {
 		screen_tris_in_v0_x {Type I LastRead 0 FirstWrite -1}
 		screen_tris_in_v0_y {Type I LastRead 0 FirstWrite -1}
@@ -598,11 +598,11 @@ set ArgLastReadFirstWriteLatency {
 		bounds_min_y {Type I LastRead 2 FirstWrite -1}
 		bounds_max_x {Type I LastRead 2 FirstWrite -1}
 		bounds_max_y {Type I LastRead 2 FirstWrite -1}}
-	k4_rasterize_Pipeline_VITIS_LOOP_163_4_VITIS_LOOP_164_5 {
-		sext_ln163_2 {Type I LastRead 0 FirstWrite -1}
-		sext_ln163 {Type I LastRead 0 FirstWrite -1}
+	k4_rasterize_Pipeline_VITIS_LOOP_164_4_VITIS_LOOP_165_5 {
+		sext_ln164_2 {Type I LastRead 0 FirstWrite -1}
+		sext_ln164 {Type I LastRead 0 FirstWrite -1}
 		curr_bounds_max_x {Type I LastRead 0 FirstWrite -1}
-		mul_ln160 {Type I LastRead 0 FirstWrite -1}
+		mul_ln161 {Type I LastRead 0 FirstWrite -1}
 		curr_tri_v0_z_cast_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i1138_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i1049_i {Type I LastRead 0 FirstWrite -1}
@@ -610,13 +610,13 @@ set ArgLastReadFirstWriteLatency {
 		local_normal_x {Type O LastRead -1 FirstWrite 6}
 		local_normal_y {Type O LastRead -1 FirstWrite 6}
 		local_normal_z {Type O LastRead -1 FirstWrite 6}
-		sext_ln158_2 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_7 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_3 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158 {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_6 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_2 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_7 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_3 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_6 {Type I LastRead 0 FirstWrite -1}
 		inv_area_1_cast_i {Type I LastRead 0 FirstWrite -1}
-		sext_ln158_1 {Type I LastRead 0 FirstWrite -1}
+		sext_ln159_1 {Type I LastRead 0 FirstWrite -1}
 		curr_tri_n0_x_cast_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i819_i {Type I LastRead 0 FirstWrite -1}
 		conv7_i730_i {Type I LastRead 0 FirstWrite -1}

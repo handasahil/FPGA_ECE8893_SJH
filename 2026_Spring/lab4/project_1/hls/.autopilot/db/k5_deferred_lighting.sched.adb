@@ -362,7 +362,7 @@
 					<Obj>
 						<type>0</type>
 						<id>10</id>
-						<name>sext_ln21130</name>
+						<name>sext_ln21230</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -620,10 +620,10 @@
 					<Obj>
 						<type>0</type>
 						<id>19</id>
-						<name>icmp_ln21228</name>
+						<name>icmp_ln21328</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>213</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -639,7 +639,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>212</second>
+										<second>213</second>
 									</item>
 								</second>
 							</item>
@@ -769,7 +769,7 @@
 						<name>trunc_ln</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -785,7 +785,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -825,10 +825,10 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>sext_ln211</name>
+						<name>sext_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -844,7 +844,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -884,7 +884,7 @@
 						<name>gmem1_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -900,7 +900,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -941,7 +941,7 @@
 						<name>empty</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -957,7 +957,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -996,10 +996,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>sext_ln21130_write_ln211</name>
+						<name>sext_ln21230_write_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1015,7 +1015,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1098,7 +1098,7 @@
 						<name>indvar_flatten25_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1114,7 +1114,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1155,7 +1155,7 @@
 						<name>y26_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1171,7 +1171,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1212,7 +1212,7 @@
 						<name>x27_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1228,7 +1228,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1266,10 +1266,10 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>sext_ln21130_load</name>
+						<name>sext_ln21230_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1285,7 +1285,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1323,10 +1323,10 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>add_ln211</name>
+						<name>add_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1342,7 +1342,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1380,10 +1380,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>select_ln211</name>
+						<name>select_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1399,7 +1399,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1441,7 +1441,7 @@
 						<name>y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1457,7 +1457,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -1496,10 +1496,10 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>trunc_ln214</name>
+						<name>trunc_ln215</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1515,7 +1515,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -1555,7 +1555,7 @@
 						<name>tmp</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1571,7 +1571,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -1610,10 +1610,10 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>zext_ln214</name>
+						<name>zext_ln215</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1629,7 +1629,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -1666,10 +1666,10 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>add_ln214</name>
+						<name>add_ln215</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1685,7 +1685,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -1723,10 +1723,10 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>zext_ln214_1</name>
+						<name>zext_ln215_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1742,7 +1742,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -1782,7 +1782,7 @@
 						<name>depth_buffer_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1798,7 +1798,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -1840,7 +1840,7 @@
 						<name>normal_buffer_x_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>218</lineNumber>
+						<lineNumber>219</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1856,7 +1856,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>218</second>
+										<second>219</second>
 									</item>
 								</second>
 							</item>
@@ -1898,7 +1898,7 @@
 						<name>normal_buffer_y_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>218</lineNumber>
+						<lineNumber>219</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1914,7 +1914,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>218</second>
+										<second>219</second>
 									</item>
 								</second>
 							</item>
@@ -1956,7 +1956,7 @@
 						<name>normal_buffer_z_addr</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>218</lineNumber>
+						<lineNumber>219</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -1972,7 +1972,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>218</second>
+										<second>219</second>
 									</item>
 								</second>
 							</item>
@@ -2014,7 +2014,7 @@
 						<name>depth_buffer_load</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2030,7 +2030,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -2067,10 +2067,10 @@
 					<Obj>
 						<type>0</type>
 						<id>50</id>
-						<name>icmp_ln214</name>
+						<name>icmp_ln215</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2086,7 +2086,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -2127,7 +2127,7 @@
 						<name>n_x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>218</lineNumber>
+						<lineNumber>219</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2143,7 +2143,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>218</second>
+										<second>219</second>
 									</item>
 								</second>
 							</item>
@@ -2183,7 +2183,7 @@
 						<name>n_y</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>218</lineNumber>
+						<lineNumber>219</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2199,7 +2199,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>218</second>
+										<second>219</second>
 									</item>
 								</second>
 							</item>
@@ -2239,7 +2239,7 @@
 						<name>n_z</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>218</lineNumber>
+						<lineNumber>219</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2255,7 +2255,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>218</second>
+										<second>219</second>
 									</item>
 								</second>
 							</item>
@@ -2292,10 +2292,10 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>sext_ln221</name>
+						<name>sext_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2311,7 +2311,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2348,10 +2348,10 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>sext_ln221_1</name>
+						<name>sext_ln222_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2367,7 +2367,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2404,10 +2404,10 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>mul_ln221</name>
+						<name>mul_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2423,7 +2423,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2461,10 +2461,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>sext_ln221_2</name>
+						<name>sext_ln222_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2480,7 +2480,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2517,10 +2517,10 @@
 					<Obj>
 						<type>0</type>
 						<id>58</id>
-						<name>add_ln221</name>
+						<name>add_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2536,7 +2536,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2577,7 +2577,7 @@
 						<name>tmp_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2593,7 +2593,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2632,10 +2632,10 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>sext_ln221_3</name>
+						<name>sext_ln222_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2651,7 +2651,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2691,7 +2691,7 @@
 						<name>tmp_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2707,7 +2707,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2746,10 +2746,10 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>sext_ln221_4</name>
+						<name>sext_ln222_4</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2765,7 +2765,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2802,10 +2802,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>add_ln221_2</name>
+						<name>add_ln222_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2821,7 +2821,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2862,7 +2862,7 @@
 						<name>tmp_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2878,7 +2878,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2917,10 +2917,10 @@
 					<Obj>
 						<type>0</type>
 						<id>65</id>
-						<name>sext_ln221_5</name>
+						<name>sext_ln222_5</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2936,7 +2936,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -2973,10 +2973,10 @@
 					<Obj>
 						<type>0</type>
 						<id>66</id>
-						<name>add_ln221_3</name>
+						<name>add_ln222_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -2992,7 +2992,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3033,7 +3033,7 @@
 						<name>tmp_4</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3049,7 +3049,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3088,10 +3088,10 @@
 					<Obj>
 						<type>0</type>
 						<id>68</id>
-						<name>sext_ln221_6</name>
+						<name>sext_ln222_6</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3107,7 +3107,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3144,10 +3144,10 @@
 					<Obj>
 						<type>0</type>
 						<id>69</id>
-						<name>sub_ln221</name>
+						<name>sub_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3163,7 +3163,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3204,7 +3204,7 @@
 						<name>tmp_5</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3220,7 +3220,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3259,10 +3259,10 @@
 					<Obj>
 						<type>0</type>
 						<id>71</id>
-						<name>sext_ln221_7</name>
+						<name>sext_ln222_7</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3278,7 +3278,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3315,10 +3315,10 @@
 					<Obj>
 						<type>0</type>
 						<id>72</id>
-						<name>sub_ln221_1</name>
+						<name>sub_ln222_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3334,7 +3334,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3375,7 +3375,7 @@
 						<name>tmp_6</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3391,7 +3391,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3430,10 +3430,10 @@
 					<Obj>
 						<type>0</type>
 						<id>74</id>
-						<name>sext_ln221_8</name>
+						<name>sext_ln222_8</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3449,7 +3449,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3486,10 +3486,10 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>sub_ln221_2</name>
+						<name>sub_ln222_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3505,7 +3505,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3543,10 +3543,10 @@
 					<Obj>
 						<type>0</type>
 						<id>76</id>
-						<name>add_ln221_1</name>
+						<name>add_ln222_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3562,7 +3562,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3603,7 +3603,7 @@
 						<name>tmp_7</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3619,7 +3619,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3661,7 +3661,7 @@
 						<name>diffuse</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3677,7 +3677,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3720,7 +3720,7 @@
 						<name>tmp_8</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3736,7 +3736,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3778,7 +3778,7 @@
 						<name>tmp_9</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3794,7 +3794,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3833,10 +3833,10 @@
 					<Obj>
 						<type>0</type>
 						<id>81</id>
-						<name>zext_ln221</name>
+						<name>zext_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3852,7 +3852,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3892,7 +3892,7 @@
 						<name>diffuse_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3908,7 +3908,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -3949,7 +3949,7 @@
 						<name>tmp_10</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -3965,7 +3965,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4004,10 +4004,10 @@
 					<Obj>
 						<type>0</type>
 						<id>84</id>
-						<name>xor_ln221</name>
+						<name>xor_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4023,7 +4023,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4061,10 +4061,10 @@
 					<Obj>
 						<type>0</type>
 						<id>85</id>
-						<name>or_ln221_2</name>
+						<name>or_ln222_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4080,7 +4080,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4118,10 +4118,10 @@
 					<Obj>
 						<type>0</type>
 						<id>86</id>
-						<name>xor_ln221_1</name>
+						<name>xor_ln222_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4137,7 +4137,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4175,10 +4175,10 @@
 					<Obj>
 						<type>0</type>
 						<id>87</id>
-						<name>xor_ln221_2</name>
+						<name>xor_ln222_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4194,7 +4194,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4232,10 +4232,10 @@
 					<Obj>
 						<type>0</type>
 						<id>88</id>
-						<name>xor_ln221_3</name>
+						<name>xor_ln222_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4251,7 +4251,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4289,10 +4289,10 @@
 					<Obj>
 						<type>0</type>
 						<id>89</id>
-						<name>or_ln221</name>
+						<name>or_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4308,7 +4308,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4346,10 +4346,10 @@
 					<Obj>
 						<type>0</type>
 						<id>90</id>
-						<name>and_ln221</name>
+						<name>and_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4365,7 +4365,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4403,10 +4403,10 @@
 					<Obj>
 						<type>0</type>
 						<id>91</id>
-						<name>or_ln221_3</name>
+						<name>or_ln222_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4422,7 +4422,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4460,10 +4460,10 @@
 					<Obj>
 						<type>0</type>
 						<id>92</id>
-						<name>xor_ln221_4</name>
+						<name>xor_ln222_4</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4479,7 +4479,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4517,10 +4517,10 @@
 					<Obj>
 						<type>0</type>
 						<id>93</id>
-						<name>and_ln221_1</name>
+						<name>and_ln222_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4536,7 +4536,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4574,10 +4574,10 @@
 					<Obj>
 						<type>0</type>
 						<id>94</id>
-						<name>select_ln221</name>
+						<name>select_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4593,7 +4593,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4632,10 +4632,10 @@
 					<Obj>
 						<type>0</type>
 						<id>95</id>
-						<name>or_ln221_1</name>
+						<name>or_ln222_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4651,7 +4651,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4692,7 +4692,7 @@
 						<name>diffuse_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4708,7 +4708,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4747,10 +4747,10 @@
 					<Obj>
 						<type>0</type>
 						<id>97</id>
-						<name>trunc_ln221</name>
+						<name>trunc_ln222</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>221</lineNumber>
+						<lineNumber>222</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4766,7 +4766,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>221</second>
+										<second>222</second>
 									</item>
 								</second>
 							</item>
@@ -4806,7 +4806,7 @@
 						<name>tmp_11</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>222</lineNumber>
+						<lineNumber>223</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4822,7 +4822,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>222</second>
+										<second>223</second>
 									</item>
 								</second>
 							</item>
@@ -4864,7 +4864,7 @@
 						<name>diffuse_3</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>222</lineNumber>
+						<lineNumber>223</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4880,7 +4880,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>222</second>
+										<second>223</second>
 									</item>
 								</second>
 							</item>
@@ -4919,10 +4919,10 @@
 					<Obj>
 						<type>0</type>
 						<id>100</id>
-						<name>zext_ln224</name>
+						<name>zext_ln225</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>224</lineNumber>
+						<lineNumber>225</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4938,7 +4938,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>224</second>
+										<second>225</second>
 									</item>
 								</second>
 							</item>
@@ -4978,7 +4978,7 @@
 						<name>final_intensity</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>224</lineNumber>
+						<lineNumber>225</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -4994,7 +4994,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>224</second>
+										<second>225</second>
 									</item>
 								</second>
 							</item>
@@ -5032,10 +5032,10 @@
 					<Obj>
 						<type>0</type>
 						<id>102</id>
-						<name>trunc_ln224</name>
+						<name>trunc_ln225</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>224</lineNumber>
+						<lineNumber>225</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5051,7 +5051,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>224</second>
+										<second>225</second>
 									</item>
 								</second>
 							</item>
@@ -5091,7 +5091,7 @@
 						<name>tmp_12</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>224</lineNumber>
+						<lineNumber>225</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5107,7 +5107,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>224</second>
+										<second>225</second>
 									</item>
 								</second>
 							</item>
@@ -5149,7 +5149,7 @@
 						<name>final_intensity_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>224</lineNumber>
+						<lineNumber>225</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5165,7 +5165,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>224</second>
+										<second>225</second>
 									</item>
 								</second>
 							</item>
@@ -5204,10 +5204,10 @@
 					<Obj>
 						<type>0</type>
 						<id>105</id>
-						<name>trunc_ln224_1</name>
+						<name>trunc_ln225_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>224</lineNumber>
+						<lineNumber>225</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5223,7 +5223,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>224</second>
+										<second>225</second>
 									</item>
 								</second>
 							</item>
@@ -5260,10 +5260,10 @@
 					<Obj>
 						<type>0</type>
 						<id>106</id>
-						<name>icmp_ln225</name>
+						<name>icmp_ln226</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>225</lineNumber>
+						<lineNumber>226</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5279,7 +5279,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>225</second>
+										<second>226</second>
 									</item>
 								</second>
 							</item>
@@ -5320,7 +5320,7 @@
 						<name>final_intensity_2</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5336,7 +5336,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5378,7 +5378,7 @@
 						<name>p_shl</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5394,7 +5394,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5436,7 +5436,7 @@
 						<name>tmp_13</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5452,7 +5452,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5491,10 +5491,10 @@
 					<Obj>
 						<type>0</type>
 						<id>110</id>
-						<name>zext_ln228</name>
+						<name>zext_ln229</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5510,7 +5510,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5547,10 +5547,10 @@
 					<Obj>
 						<type>0</type>
 						<id>111</id>
-						<name>sub_ln228</name>
+						<name>sub_ln229</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5566,7 +5566,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5604,10 +5604,10 @@
 					<Obj>
 						<type>0</type>
 						<id>112</id>
-						<name>trunc_ln228_1</name>
+						<name>trunc_ln229_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5623,7 +5623,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5666,7 +5666,7 @@
 						<name>tmp_14</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5682,7 +5682,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5721,10 +5721,10 @@
 					<Obj>
 						<type>0</type>
 						<id>114</id>
-						<name>zext_ln228_1</name>
+						<name>zext_ln229_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5740,7 +5740,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5777,10 +5777,10 @@
 					<Obj>
 						<type>0</type>
 						<id>115</id>
-						<name>add_ln228</name>
+						<name>add_ln229</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>228</lineNumber>
+						<lineNumber>229</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5796,7 +5796,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>228</second>
+										<second>229</second>
 									</item>
 								</second>
 							</item>
@@ -5837,7 +5837,7 @@
 						<name>storemerge_i</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>214</lineNumber>
+						<lineNumber>215</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5853,7 +5853,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>214</second>
+										<second>215</second>
 									</item>
 								</second>
 							</item>
@@ -5892,10 +5892,10 @@
 					<Obj>
 						<type>0</type>
 						<id>117</id>
-						<name>zext_ln211</name>
+						<name>zext_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5911,7 +5911,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -5951,7 +5951,7 @@
 						<name>gmem1_addr_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -5967,7 +5967,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -6005,10 +6005,10 @@
 					<Obj>
 						<type>0</type>
 						<id>119</id>
-						<name>gmem1_addr_1_write_ln211</name>
+						<name>gmem1_addr_1_write_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6024,7 +6024,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -6068,7 +6068,7 @@
 						<name>x</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>213</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6084,7 +6084,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>212</second>
+										<second>213</second>
 									</item>
 								</second>
 							</item>
@@ -6122,10 +6122,10 @@
 					<Obj>
 						<type>0</type>
 						<id>121</id>
-						<name>add_ln211_1</name>
+						<name>add_ln212_1</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6141,7 +6141,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -6179,6 +6179,63 @@
 					<Obj>
 						<type>0</type>
 						<id>122</id>
+						<name>icmp_ln213</name>
+						<fileName>top.cpp</fileName>
+						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
+						<lineNumber>213</lineNumber>
+						<contextFuncName>k5_deferred_lighting</contextFuncName>
+						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
+						<inlineStackInfo>
+							<count>1</count>
+							<item_version>0</item_version>
+							<item>
+								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
+								<second>
+									<count>1</count>
+									<item_version>0</item_version>
+									<item>
+										<first>
+											<first>top.cpp</first>
+											<second>k5_deferred_lighting</second>
+										</first>
+										<second>213</second>
+									</item>
+								</second>
+							</item>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<control></control>
+						<opType></opType>
+						<implIndex></implIndex>
+						<coreName></coreName>
+						<isStorage>0</isStorage>
+						<storageDepth>0</storageDepth>
+						<coreId>4294967295</coreId>
+						<rtlModuleName></rtlModuleName>
+					</Obj>
+					<bitwidth>1</bitwidth>
+				</Value>
+				<oprand_edges>
+					<count>2</count>
+					<item_version>0</item_version>
+					<item>408</item>
+					<item>410</item>
+				</oprand_edges>
+				<opcode>icmp</opcode>
+				<m_Display>0</m_Display>
+				<m_isOnCriticalPath>0</m_isOnCriticalPath>
+				<m_isLCDNode>0</m_isLCDNode>
+				<m_isStartOfPath>0</m_isStartOfPath>
+				<m_delay>0.89</m_delay>
+				<m_topoIndex>33</m_topoIndex>
+				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
+			</item>
+			<item class_id_reference="9" object_id="_115">
+				<Value>
+					<Obj>
+						<type>0</type>
+						<id>123</id>
 						<name>icmp_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
@@ -6219,63 +6276,6 @@
 				<oprand_edges>
 					<count>2</count>
 					<item_version>0</item_version>
-					<item>408</item>
-					<item>410</item>
-				</oprand_edges>
-				<opcode>icmp</opcode>
-				<m_Display>0</m_Display>
-				<m_isOnCriticalPath>0</m_isOnCriticalPath>
-				<m_isLCDNode>0</m_isLCDNode>
-				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.89</m_delay>
-				<m_topoIndex>33</m_topoIndex>
-				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
-			</item>
-			<item class_id_reference="9" object_id="_115">
-				<Value>
-					<Obj>
-						<type>0</type>
-						<id>123</id>
-						<name>icmp_ln211</name>
-						<fileName>top.cpp</fileName>
-						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
-						<contextFuncName>k5_deferred_lighting</contextFuncName>
-						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
-						<inlineStackInfo>
-							<count>1</count>
-							<item_version>0</item_version>
-							<item>
-								<first>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</first>
-								<second>
-									<count>1</count>
-									<item_version>0</item_version>
-									<item>
-										<first>
-											<first>top.cpp</first>
-											<second>k5_deferred_lighting</second>
-										</first>
-										<second>211</second>
-									</item>
-								</second>
-							</item>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<control></control>
-						<opType></opType>
-						<implIndex></implIndex>
-						<coreName></coreName>
-						<isStorage>0</isStorage>
-						<storageDepth>0</storageDepth>
-						<coreId>4294967295</coreId>
-						<rtlModuleName></rtlModuleName>
-					</Obj>
-					<bitwidth>1</bitwidth>
-				</Value>
-				<oprand_edges>
-					<count>2</count>
-					<item_version>0</item_version>
 					<item>411</item>
 					<item>413</item>
 				</oprand_edges>
@@ -6293,10 +6293,10 @@
 					<Obj>
 						<type>0</type>
 						<id>124</id>
-						<name>br_ln211</name>
+						<name>br_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6312,7 +6312,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -6351,10 +6351,10 @@
 					<Obj>
 						<type>0</type>
 						<id>126</id>
-						<name>empty_124</name>
+						<name>empty_123</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>232</lineNumber>
+						<lineNumber>233</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6370,7 +6370,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>232</second>
+										<second>233</second>
 									</item>
 								</second>
 							</item>
@@ -6451,10 +6451,10 @@
 					<Obj>
 						<type>0</type>
 						<id>129</id>
-						<name>x27_write_ln212</name>
+						<name>x27_write_ln213</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>213</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6470,7 +6470,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>212</second>
+										<second>213</second>
 									</item>
 								</second>
 							</item>
@@ -6510,10 +6510,10 @@
 					<Obj>
 						<type>0</type>
 						<id>130</id>
-						<name>y26_write_ln211</name>
+						<name>y26_write_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6529,7 +6529,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -6569,10 +6569,10 @@
 					<Obj>
 						<type>0</type>
 						<id>131</id>
-						<name>indvar_flatten25_write_ln211</name>
+						<name>indvar_flatten25_write_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6588,7 +6588,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -6628,10 +6628,10 @@
 					<Obj>
 						<type>0</type>
 						<id>132</id>
-						<name>br_ln211</name>
+						<name>br_ln212</name>
 						<fileName>top.cpp</fileName>
 						<fileDirectory>/nethome/shanda34/FPGA_ECE8893_SJH/2026_Spring/lab4</fileDirectory>
-						<lineNumber>211</lineNumber>
+						<lineNumber>212</lineNumber>
 						<contextFuncName>k5_deferred_lighting</contextFuncName>
 						<contextNormFuncName>k5_deferred_lighting</contextNormFuncName>
 						<inlineStackInfo>
@@ -6647,7 +6647,7 @@
 											<first>top.cpp</first>
 											<second>k5_deferred_lighting</second>
 										</first>
-										<second>211</second>
+										<second>212</second>
 									</item>
 								</second>
 							</item>
@@ -9867,8 +9867,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_406">
 			<mId>3</mId>
-			<mTag>VITIS_LOOP_211_1_VITIS_LOOP_212_2</mTag>
-			<mNormTag>VITIS_LOOP_211_1_VITIS_LOOP_212_2</mNormTag>
+			<mTag>VITIS_LOOP_212_1_VITIS_LOOP_213_2</mTag>
+			<mNormTag>VITIS_LOOP_212_1_VITIS_LOOP_213_2</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>
@@ -10798,7 +10798,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="33" tracking_level="1" version="0" object_id="_408">
-			<region_name>VITIS_LOOP_211_1_VITIS_LOOP_212_2</region_name>
+			<region_name>VITIS_LOOP_212_1_VITIS_LOOP_213_2</region_name>
 			<basic_blocks>
 				<count>5</count>
 				<item_version>0</item_version>

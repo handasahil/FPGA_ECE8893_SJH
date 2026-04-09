@@ -1,0 +1,6 @@
+List of CLB Tiles
+CLEM_X14Y140
+CLEL_R_X14Y140
+
+List of Congested Nets
+

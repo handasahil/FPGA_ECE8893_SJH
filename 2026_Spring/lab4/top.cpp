@@ -43,6 +43,7 @@ static void k2_perspective_divide(const Triangle clip_tris[MAX_TRIS],
     const data_t half_h = (data_t)(HEIGHT / 2.0);
 
     for (int i = 0; i < MAX_TRIS; i++) {
+        #pragma HLS pipeline II=1
         
         // THE FIX: Pop the triangle from the FIFO EXACTLY ONCE
         Triangle curr_tri = clip_tris[i];
@@ -131,6 +132,8 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
     // 1. Create LOCAL memories for the Read-Modify-Write operations
     data_t local_depth[HEIGHT][WIDTH];
     Vec3 local_normal[HEIGHT][WIDTH];
+    #pragma HLS array_partition variable=local_depth cyclic factor=2 dim=2
+    #pragma HLS array_partition variable=local_normal cyclic factor=2 dim=2
 
     // 2. Initialize the local buffers
     for (int y = 0; y < HEIGHT; y++) {
@@ -163,6 +166,7 @@ static void k4_rasterize(const Triangle tris[MAX_TRIS], const BoundingBox bounds
         for (int y = curr_bounds.min_y; y <= curr_bounds.max_y; y++) {
             for (int x = curr_bounds.min_x; x <= curr_bounds.max_x; x++) {
             #pragma HLS pipeline II=1
+            #pragma HLS unroll factor=2
             
                 data_t px = (data_t)x + (data_t)0.5;
                 data_t py = (data_t)y + (data_t)0.5;
@@ -211,6 +215,7 @@ static void k5_deferred_lighting(const data_t depth_buffer[HEIGHT][WIDTH],
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
         #pragma HLS pipeline II=1
+        #pragma HLS unroll factor=2
             if (depth_buffer[y][x] == (data_t)9999.0) {
                 // Background color
                 framebuffer[y][x] = (data_t)0.0; 
@@ -247,10 +252,10 @@ void top_kernel(const Triangle in_tris[MAX_TRIS],
     static BoundingBox bounds[MAX_TRIS];
 
     // 2. Apply the stream pragmas
-    #pragma HLS stream variable=clip_tris depth=2 
-    #pragma HLS stream variable=screen_tris_in depth=2 
-    #pragma HLS stream variable=screen_tris_out depth=2 
-    #pragma HLS stream variable=bounds depth=2 
+    #pragma HLS stream variable=clip_tris depth=16 
+    #pragma HLS stream variable=screen_tris_in depth=16 
+    #pragma HLS stream variable=screen_tris_out depth=64 
+    #pragma HLS stream variable=bounds depth=64
     
     // G-Buffers
     static data_t depth_buffer[HEIGHT][WIDTH];

@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=155,HLS_SYN_DSP=0,HLS_SYN_FF=25921,HLS_SYN_LUT=29762,HLS_VERSION=2025_1_1}" *)
+(* CORE_GENERATION_INFO="top_kernel_top_kernel,hls_ip_2025_1_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xczu3eg-sbva484-1-e,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=7.300000,HLS_SYN_LAT=-1,HLS_SYN_TPT=-1,HLS_SYN_MEM=155,HLS_SYN_DSP=0,HLS_SYN_FF=49573,HLS_SYN_LUT=38101,HLS_VERSION=2025_1_1}" *)
 
 module top_kernel (
         s_axi_control_AWVALID,
@@ -536,8 +536,6 @@ wire    k2_perspective_divide_U0_ap_done;
 wire    k2_perspective_divide_U0_ap_continue;
 wire    k2_perspective_divide_U0_ap_idle;
 wire    k2_perspective_divide_U0_ap_ready;
-wire    k2_perspective_divide_U0_start_out;
-wire    k2_perspective_divide_U0_start_write;
 wire    k2_perspective_divide_U0_clip_tris_v0_x_read;
 wire    k2_perspective_divide_U0_clip_tris_v0_y_read;
 wire    k2_perspective_divide_U0_clip_tris_v0_z_read;
@@ -563,50 +561,98 @@ wire    k2_perspective_divide_U0_clip_tris_color_read;
 wire    k2_perspective_divide_U0_clip_tris_is_active_read;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_x_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v0_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_x_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_x_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_y_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v0_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_y_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_y_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_z_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v0_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_z_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_z_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_w_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v0_w_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_w_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v0_w_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_x_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v1_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_x_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_x_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_y_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v1_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_y_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_y_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_z_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v1_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_z_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_z_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_w_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v1_w_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_w_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v1_w_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_x_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v2_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_x_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_x_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_y_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v2_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_y_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_y_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_z_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v2_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_z_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_z_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_w_din;
 wire    k2_perspective_divide_U0_screen_tris_in_v2_w_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_w_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_v2_w_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_x_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n0_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_x_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_x_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_y_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n0_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_y_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_y_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_z_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n0_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_z_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n0_z_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_x_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n1_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_x_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_x_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_y_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n1_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_y_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_y_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_z_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n1_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_z_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n1_z_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_x_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n2_x_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_x_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_x_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_y_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n2_y_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_y_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_y_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_z_din;
 wire    k2_perspective_divide_U0_screen_tris_in_n2_z_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_z_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_n2_z_fifo_cap;
 wire   [31:0] k2_perspective_divide_U0_screen_tris_in_color_din;
 wire    k2_perspective_divide_U0_screen_tris_in_color_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_color_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_color_fifo_cap;
 wire   [0:0] k2_perspective_divide_U0_screen_tris_in_is_active_din;
 wire    k2_perspective_divide_U0_screen_tris_in_is_active_write;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_is_active_num_data_valid;
+wire   [31:0] k2_perspective_divide_U0_screen_tris_in_is_active_fifo_cap;
+wire    k2_perspective_divide_U0_start_out;
+wire    k2_perspective_divide_U0_start_write;
 wire    k3_bounding_box_U0_ap_start;
 wire    k3_bounding_box_U0_ap_done;
 wire    k3_bounding_box_U0_ap_continue;
@@ -1812,8 +1858,6 @@ top_kernel_k2_perspective_divide k2_perspective_divide_U0(
     .ap_continue(k2_perspective_divide_U0_ap_continue),
     .ap_idle(k2_perspective_divide_U0_ap_idle),
     .ap_ready(k2_perspective_divide_U0_ap_ready),
-    .start_out(k2_perspective_divide_U0_start_out),
-    .start_write(k2_perspective_divide_U0_start_write),
     .clip_tris_v0_x_dout(clip_tris_v0_x_dout),
     .clip_tris_v0_x_empty_n(clip_tris_v0_x_empty_n),
     .clip_tris_v0_x_read(k2_perspective_divide_U0_clip_tris_v0_x_read),
@@ -1932,118 +1976,120 @@ top_kernel_k2_perspective_divide k2_perspective_divide_U0(
     .screen_tris_in_v0_x_din(k2_perspective_divide_U0_screen_tris_in_v0_x_din),
     .screen_tris_in_v0_x_full_n(screen_tris_in_v0_x_full_n),
     .screen_tris_in_v0_x_write(k2_perspective_divide_U0_screen_tris_in_v0_x_write),
-    .screen_tris_in_v0_x_num_data_valid(screen_tris_in_v0_x_num_data_valid),
-    .screen_tris_in_v0_x_fifo_cap(screen_tris_in_v0_x_fifo_cap),
+    .screen_tris_in_v0_x_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v0_x_num_data_valid),
+    .screen_tris_in_v0_x_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v0_x_fifo_cap),
     .screen_tris_in_v0_y_din(k2_perspective_divide_U0_screen_tris_in_v0_y_din),
     .screen_tris_in_v0_y_full_n(screen_tris_in_v0_y_full_n),
     .screen_tris_in_v0_y_write(k2_perspective_divide_U0_screen_tris_in_v0_y_write),
-    .screen_tris_in_v0_y_num_data_valid(screen_tris_in_v0_y_num_data_valid),
-    .screen_tris_in_v0_y_fifo_cap(screen_tris_in_v0_y_fifo_cap),
+    .screen_tris_in_v0_y_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v0_y_num_data_valid),
+    .screen_tris_in_v0_y_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v0_y_fifo_cap),
     .screen_tris_in_v0_z_din(k2_perspective_divide_U0_screen_tris_in_v0_z_din),
     .screen_tris_in_v0_z_full_n(screen_tris_in_v0_z_full_n),
     .screen_tris_in_v0_z_write(k2_perspective_divide_U0_screen_tris_in_v0_z_write),
-    .screen_tris_in_v0_z_num_data_valid(screen_tris_in_v0_z_num_data_valid),
-    .screen_tris_in_v0_z_fifo_cap(screen_tris_in_v0_z_fifo_cap),
+    .screen_tris_in_v0_z_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v0_z_num_data_valid),
+    .screen_tris_in_v0_z_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v0_z_fifo_cap),
     .screen_tris_in_v0_w_din(k2_perspective_divide_U0_screen_tris_in_v0_w_din),
     .screen_tris_in_v0_w_full_n(screen_tris_in_v0_w_full_n),
     .screen_tris_in_v0_w_write(k2_perspective_divide_U0_screen_tris_in_v0_w_write),
-    .screen_tris_in_v0_w_num_data_valid(screen_tris_in_v0_w_num_data_valid),
-    .screen_tris_in_v0_w_fifo_cap(screen_tris_in_v0_w_fifo_cap),
+    .screen_tris_in_v0_w_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v0_w_num_data_valid),
+    .screen_tris_in_v0_w_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v0_w_fifo_cap),
     .screen_tris_in_v1_x_din(k2_perspective_divide_U0_screen_tris_in_v1_x_din),
     .screen_tris_in_v1_x_full_n(screen_tris_in_v1_x_full_n),
     .screen_tris_in_v1_x_write(k2_perspective_divide_U0_screen_tris_in_v1_x_write),
-    .screen_tris_in_v1_x_num_data_valid(screen_tris_in_v1_x_num_data_valid),
-    .screen_tris_in_v1_x_fifo_cap(screen_tris_in_v1_x_fifo_cap),
+    .screen_tris_in_v1_x_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v1_x_num_data_valid),
+    .screen_tris_in_v1_x_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v1_x_fifo_cap),
     .screen_tris_in_v1_y_din(k2_perspective_divide_U0_screen_tris_in_v1_y_din),
     .screen_tris_in_v1_y_full_n(screen_tris_in_v1_y_full_n),
     .screen_tris_in_v1_y_write(k2_perspective_divide_U0_screen_tris_in_v1_y_write),
-    .screen_tris_in_v1_y_num_data_valid(screen_tris_in_v1_y_num_data_valid),
-    .screen_tris_in_v1_y_fifo_cap(screen_tris_in_v1_y_fifo_cap),
+    .screen_tris_in_v1_y_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v1_y_num_data_valid),
+    .screen_tris_in_v1_y_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v1_y_fifo_cap),
     .screen_tris_in_v1_z_din(k2_perspective_divide_U0_screen_tris_in_v1_z_din),
     .screen_tris_in_v1_z_full_n(screen_tris_in_v1_z_full_n),
     .screen_tris_in_v1_z_write(k2_perspective_divide_U0_screen_tris_in_v1_z_write),
-    .screen_tris_in_v1_z_num_data_valid(screen_tris_in_v1_z_num_data_valid),
-    .screen_tris_in_v1_z_fifo_cap(screen_tris_in_v1_z_fifo_cap),
+    .screen_tris_in_v1_z_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v1_z_num_data_valid),
+    .screen_tris_in_v1_z_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v1_z_fifo_cap),
     .screen_tris_in_v1_w_din(k2_perspective_divide_U0_screen_tris_in_v1_w_din),
     .screen_tris_in_v1_w_full_n(screen_tris_in_v1_w_full_n),
     .screen_tris_in_v1_w_write(k2_perspective_divide_U0_screen_tris_in_v1_w_write),
-    .screen_tris_in_v1_w_num_data_valid(screen_tris_in_v1_w_num_data_valid),
-    .screen_tris_in_v1_w_fifo_cap(screen_tris_in_v1_w_fifo_cap),
+    .screen_tris_in_v1_w_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v1_w_num_data_valid),
+    .screen_tris_in_v1_w_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v1_w_fifo_cap),
     .screen_tris_in_v2_x_din(k2_perspective_divide_U0_screen_tris_in_v2_x_din),
     .screen_tris_in_v2_x_full_n(screen_tris_in_v2_x_full_n),
     .screen_tris_in_v2_x_write(k2_perspective_divide_U0_screen_tris_in_v2_x_write),
-    .screen_tris_in_v2_x_num_data_valid(screen_tris_in_v2_x_num_data_valid),
-    .screen_tris_in_v2_x_fifo_cap(screen_tris_in_v2_x_fifo_cap),
+    .screen_tris_in_v2_x_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v2_x_num_data_valid),
+    .screen_tris_in_v2_x_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v2_x_fifo_cap),
     .screen_tris_in_v2_y_din(k2_perspective_divide_U0_screen_tris_in_v2_y_din),
     .screen_tris_in_v2_y_full_n(screen_tris_in_v2_y_full_n),
     .screen_tris_in_v2_y_write(k2_perspective_divide_U0_screen_tris_in_v2_y_write),
-    .screen_tris_in_v2_y_num_data_valid(screen_tris_in_v2_y_num_data_valid),
-    .screen_tris_in_v2_y_fifo_cap(screen_tris_in_v2_y_fifo_cap),
+    .screen_tris_in_v2_y_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v2_y_num_data_valid),
+    .screen_tris_in_v2_y_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v2_y_fifo_cap),
     .screen_tris_in_v2_z_din(k2_perspective_divide_U0_screen_tris_in_v2_z_din),
     .screen_tris_in_v2_z_full_n(screen_tris_in_v2_z_full_n),
     .screen_tris_in_v2_z_write(k2_perspective_divide_U0_screen_tris_in_v2_z_write),
-    .screen_tris_in_v2_z_num_data_valid(screen_tris_in_v2_z_num_data_valid),
-    .screen_tris_in_v2_z_fifo_cap(screen_tris_in_v2_z_fifo_cap),
+    .screen_tris_in_v2_z_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v2_z_num_data_valid),
+    .screen_tris_in_v2_z_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v2_z_fifo_cap),
     .screen_tris_in_v2_w_din(k2_perspective_divide_U0_screen_tris_in_v2_w_din),
     .screen_tris_in_v2_w_full_n(screen_tris_in_v2_w_full_n),
     .screen_tris_in_v2_w_write(k2_perspective_divide_U0_screen_tris_in_v2_w_write),
-    .screen_tris_in_v2_w_num_data_valid(screen_tris_in_v2_w_num_data_valid),
-    .screen_tris_in_v2_w_fifo_cap(screen_tris_in_v2_w_fifo_cap),
+    .screen_tris_in_v2_w_num_data_valid(k2_perspective_divide_U0_screen_tris_in_v2_w_num_data_valid),
+    .screen_tris_in_v2_w_fifo_cap(k2_perspective_divide_U0_screen_tris_in_v2_w_fifo_cap),
     .screen_tris_in_n0_x_din(k2_perspective_divide_U0_screen_tris_in_n0_x_din),
     .screen_tris_in_n0_x_full_n(screen_tris_in_n0_x_full_n),
     .screen_tris_in_n0_x_write(k2_perspective_divide_U0_screen_tris_in_n0_x_write),
-    .screen_tris_in_n0_x_num_data_valid(screen_tris_in_n0_x_num_data_valid),
-    .screen_tris_in_n0_x_fifo_cap(screen_tris_in_n0_x_fifo_cap),
+    .screen_tris_in_n0_x_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n0_x_num_data_valid),
+    .screen_tris_in_n0_x_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n0_x_fifo_cap),
     .screen_tris_in_n0_y_din(k2_perspective_divide_U0_screen_tris_in_n0_y_din),
     .screen_tris_in_n0_y_full_n(screen_tris_in_n0_y_full_n),
     .screen_tris_in_n0_y_write(k2_perspective_divide_U0_screen_tris_in_n0_y_write),
-    .screen_tris_in_n0_y_num_data_valid(screen_tris_in_n0_y_num_data_valid),
-    .screen_tris_in_n0_y_fifo_cap(screen_tris_in_n0_y_fifo_cap),
+    .screen_tris_in_n0_y_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n0_y_num_data_valid),
+    .screen_tris_in_n0_y_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n0_y_fifo_cap),
     .screen_tris_in_n0_z_din(k2_perspective_divide_U0_screen_tris_in_n0_z_din),
     .screen_tris_in_n0_z_full_n(screen_tris_in_n0_z_full_n),
     .screen_tris_in_n0_z_write(k2_perspective_divide_U0_screen_tris_in_n0_z_write),
-    .screen_tris_in_n0_z_num_data_valid(screen_tris_in_n0_z_num_data_valid),
-    .screen_tris_in_n0_z_fifo_cap(screen_tris_in_n0_z_fifo_cap),
+    .screen_tris_in_n0_z_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n0_z_num_data_valid),
+    .screen_tris_in_n0_z_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n0_z_fifo_cap),
     .screen_tris_in_n1_x_din(k2_perspective_divide_U0_screen_tris_in_n1_x_din),
     .screen_tris_in_n1_x_full_n(screen_tris_in_n1_x_full_n),
     .screen_tris_in_n1_x_write(k2_perspective_divide_U0_screen_tris_in_n1_x_write),
-    .screen_tris_in_n1_x_num_data_valid(screen_tris_in_n1_x_num_data_valid),
-    .screen_tris_in_n1_x_fifo_cap(screen_tris_in_n1_x_fifo_cap),
+    .screen_tris_in_n1_x_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n1_x_num_data_valid),
+    .screen_tris_in_n1_x_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n1_x_fifo_cap),
     .screen_tris_in_n1_y_din(k2_perspective_divide_U0_screen_tris_in_n1_y_din),
     .screen_tris_in_n1_y_full_n(screen_tris_in_n1_y_full_n),
     .screen_tris_in_n1_y_write(k2_perspective_divide_U0_screen_tris_in_n1_y_write),
-    .screen_tris_in_n1_y_num_data_valid(screen_tris_in_n1_y_num_data_valid),
-    .screen_tris_in_n1_y_fifo_cap(screen_tris_in_n1_y_fifo_cap),
+    .screen_tris_in_n1_y_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n1_y_num_data_valid),
+    .screen_tris_in_n1_y_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n1_y_fifo_cap),
     .screen_tris_in_n1_z_din(k2_perspective_divide_U0_screen_tris_in_n1_z_din),
     .screen_tris_in_n1_z_full_n(screen_tris_in_n1_z_full_n),
     .screen_tris_in_n1_z_write(k2_perspective_divide_U0_screen_tris_in_n1_z_write),
-    .screen_tris_in_n1_z_num_data_valid(screen_tris_in_n1_z_num_data_valid),
-    .screen_tris_in_n1_z_fifo_cap(screen_tris_in_n1_z_fifo_cap),
+    .screen_tris_in_n1_z_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n1_z_num_data_valid),
+    .screen_tris_in_n1_z_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n1_z_fifo_cap),
     .screen_tris_in_n2_x_din(k2_perspective_divide_U0_screen_tris_in_n2_x_din),
     .screen_tris_in_n2_x_full_n(screen_tris_in_n2_x_full_n),
     .screen_tris_in_n2_x_write(k2_perspective_divide_U0_screen_tris_in_n2_x_write),
-    .screen_tris_in_n2_x_num_data_valid(screen_tris_in_n2_x_num_data_valid),
-    .screen_tris_in_n2_x_fifo_cap(screen_tris_in_n2_x_fifo_cap),
+    .screen_tris_in_n2_x_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n2_x_num_data_valid),
+    .screen_tris_in_n2_x_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n2_x_fifo_cap),
     .screen_tris_in_n2_y_din(k2_perspective_divide_U0_screen_tris_in_n2_y_din),
     .screen_tris_in_n2_y_full_n(screen_tris_in_n2_y_full_n),
     .screen_tris_in_n2_y_write(k2_perspective_divide_U0_screen_tris_in_n2_y_write),
-    .screen_tris_in_n2_y_num_data_valid(screen_tris_in_n2_y_num_data_valid),
-    .screen_tris_in_n2_y_fifo_cap(screen_tris_in_n2_y_fifo_cap),
+    .screen_tris_in_n2_y_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n2_y_num_data_valid),
+    .screen_tris_in_n2_y_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n2_y_fifo_cap),
     .screen_tris_in_n2_z_din(k2_perspective_divide_U0_screen_tris_in_n2_z_din),
     .screen_tris_in_n2_z_full_n(screen_tris_in_n2_z_full_n),
     .screen_tris_in_n2_z_write(k2_perspective_divide_U0_screen_tris_in_n2_z_write),
-    .screen_tris_in_n2_z_num_data_valid(screen_tris_in_n2_z_num_data_valid),
-    .screen_tris_in_n2_z_fifo_cap(screen_tris_in_n2_z_fifo_cap),
+    .screen_tris_in_n2_z_num_data_valid(k2_perspective_divide_U0_screen_tris_in_n2_z_num_data_valid),
+    .screen_tris_in_n2_z_fifo_cap(k2_perspective_divide_U0_screen_tris_in_n2_z_fifo_cap),
     .screen_tris_in_color_din(k2_perspective_divide_U0_screen_tris_in_color_din),
     .screen_tris_in_color_full_n(screen_tris_in_color_full_n),
     .screen_tris_in_color_write(k2_perspective_divide_U0_screen_tris_in_color_write),
-    .screen_tris_in_color_num_data_valid(screen_tris_in_color_num_data_valid),
-    .screen_tris_in_color_fifo_cap(screen_tris_in_color_fifo_cap),
+    .screen_tris_in_color_num_data_valid(k2_perspective_divide_U0_screen_tris_in_color_num_data_valid),
+    .screen_tris_in_color_fifo_cap(k2_perspective_divide_U0_screen_tris_in_color_fifo_cap),
     .screen_tris_in_is_active_din(k2_perspective_divide_U0_screen_tris_in_is_active_din),
     .screen_tris_in_is_active_full_n(screen_tris_in_is_active_full_n),
     .screen_tris_in_is_active_write(k2_perspective_divide_U0_screen_tris_in_is_active_write),
-    .screen_tris_in_is_active_num_data_valid(screen_tris_in_is_active_num_data_valid),
-    .screen_tris_in_is_active_fifo_cap(screen_tris_in_is_active_fifo_cap)
+    .screen_tris_in_is_active_num_data_valid(k2_perspective_divide_U0_screen_tris_in_is_active_num_data_valid),
+    .screen_tris_in_is_active_fifo_cap(k2_perspective_divide_U0_screen_tris_in_is_active_fifo_cap),
+    .start_out(k2_perspective_divide_U0_start_out),
+    .start_write(k2_perspective_divide_U0_start_write)
 );
 
 top_kernel_k3_bounding_box k3_bounding_box_U0(
@@ -3881,6 +3927,98 @@ assign k1_vertex_transform_U0_ap_start = ((ap_sync_reg_k1_vertex_transform_U0_ap
 assign k2_perspective_divide_U0_ap_continue = 1'b1;
 
 assign k2_perspective_divide_U0_ap_start = start_for_k2_perspective_divide_U0_empty_n;
+
+assign k2_perspective_divide_U0_screen_tris_in_color_fifo_cap = screen_tris_in_color_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_color_num_data_valid = screen_tris_in_color_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_is_active_fifo_cap = screen_tris_in_is_active_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_is_active_num_data_valid = screen_tris_in_is_active_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n0_x_fifo_cap = screen_tris_in_n0_x_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n0_x_num_data_valid = screen_tris_in_n0_x_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n0_y_fifo_cap = screen_tris_in_n0_y_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n0_y_num_data_valid = screen_tris_in_n0_y_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n0_z_fifo_cap = screen_tris_in_n0_z_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n0_z_num_data_valid = screen_tris_in_n0_z_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n1_x_fifo_cap = screen_tris_in_n1_x_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n1_x_num_data_valid = screen_tris_in_n1_x_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n1_y_fifo_cap = screen_tris_in_n1_y_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n1_y_num_data_valid = screen_tris_in_n1_y_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n1_z_fifo_cap = screen_tris_in_n1_z_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n1_z_num_data_valid = screen_tris_in_n1_z_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n2_x_fifo_cap = screen_tris_in_n2_x_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n2_x_num_data_valid = screen_tris_in_n2_x_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n2_y_fifo_cap = screen_tris_in_n2_y_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n2_y_num_data_valid = screen_tris_in_n2_y_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_n2_z_fifo_cap = screen_tris_in_n2_z_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_n2_z_num_data_valid = screen_tris_in_n2_z_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_w_fifo_cap = screen_tris_in_v0_w_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_w_num_data_valid = screen_tris_in_v0_w_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_x_fifo_cap = screen_tris_in_v0_x_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_x_num_data_valid = screen_tris_in_v0_x_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_y_fifo_cap = screen_tris_in_v0_y_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_y_num_data_valid = screen_tris_in_v0_y_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_z_fifo_cap = screen_tris_in_v0_z_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v0_z_num_data_valid = screen_tris_in_v0_z_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_w_fifo_cap = screen_tris_in_v1_w_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_w_num_data_valid = screen_tris_in_v1_w_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_x_fifo_cap = screen_tris_in_v1_x_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_x_num_data_valid = screen_tris_in_v1_x_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_y_fifo_cap = screen_tris_in_v1_y_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_y_num_data_valid = screen_tris_in_v1_y_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_z_fifo_cap = screen_tris_in_v1_z_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v1_z_num_data_valid = screen_tris_in_v1_z_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_w_fifo_cap = screen_tris_in_v2_w_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_w_num_data_valid = screen_tris_in_v2_w_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_x_fifo_cap = screen_tris_in_v2_x_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_x_num_data_valid = screen_tris_in_v2_x_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_y_fifo_cap = screen_tris_in_v2_y_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_y_num_data_valid = screen_tris_in_v2_y_num_data_valid;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_z_fifo_cap = screen_tris_in_v2_z_fifo_cap;
+
+assign k2_perspective_divide_U0_screen_tris_in_v2_z_num_data_valid = screen_tris_in_v2_z_num_data_valid;
 
 assign k3_bounding_box_U0_ap_continue = 1'b1;
 

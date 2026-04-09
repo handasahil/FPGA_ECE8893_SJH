@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.1.1
-| Date         : Tue Mar 31 01:13:19 2026
+| Date         : Thu Apr  9 16:32:14 2026
 | Host         : ece-linlabsrv01
 | Design       : checkpoint_bd_0_wrapper
 | Device       : xczu3eg-sbva484-1-E-
@@ -19,15 +19,14 @@ Number of global clocks: 1
 	Number of BUFG_GT: 0
 	Number of BUFG_PS: 0
 	Number of BUFG_FABRIC: 0
-	Running suboptimal placement checker for 1 clocks (and their loads) which do not have the CLOCK_LOW_FANOUT property but have a fanout less than 2000...
 ********************************
 Clock Net Route Info (CRP Input)
 ********************************
-Clock 1: bd_0_i/hls_inst/inst/gmem0_m_axi_U/bus_read/rs_rdata/load_p1_bufg_place
+Clock 1: bd_0_i/hls_inst/inst/k2_perspective_divide_U0/sdiv_34ns_32s_34_38_1_U45/top_kernel_sdiv_34ns_32s_34_38_1_divider_u/ap_enable_reg_pp0_iter39_reg_bufg_place
 	Clock source type: BUFGCE
-	Clock source region: X1Y2
-	Clock regions with locked loads: X0Y2 
-	initial rect ((0, 2), (1, 2))
+	Clock source region: X1Y1
+	Clock regions with locked loads: X0Y0 X0Y1 X0Y2 X1Y0 X1Y1 X1Y2 
+	initial rect ((0, 0), (1, 2))
 
 
 
@@ -48,15 +47,14 @@ Number of global clocks: 1
 	Number of BUFG_GT: 0
 	Number of BUFG_PS: 0
 	Number of BUFG_FABRIC: 0
-	Running suboptimal placement checker for 1 clocks (and their loads) which do not have the CLOCK_LOW_FANOUT property but have a fanout less than 2000...
 ********************************
 Clock Net Route Info (CRP Input)
 ********************************
-Clock 1: bd_0_i/hls_inst/inst/gmem0_m_axi_U/bus_read/rs_rdata/load_p1
+Clock 1: bd_0_i/hls_inst/inst/k2_perspective_divide_U0/sdiv_34ns_32s_34_38_1_U45/top_kernel_sdiv_34ns_32s_34_38_1_divider_u/ap_enable_reg_pp0_iter39_reg
 	Clock source type: BUFGCE
-	Clock source region: X1Y2
-	Clock regions with locked loads: X0Y2 
-	initial rect ((0, 2), (1, 2))
+	Clock source region: X1Y1
+	Clock regions with locked loads: X0Y0 X0Y1 X0Y2 X1Y0 X1Y1 X1Y2 
+	initial rect ((0, 0), (1, 2))
 
 
 

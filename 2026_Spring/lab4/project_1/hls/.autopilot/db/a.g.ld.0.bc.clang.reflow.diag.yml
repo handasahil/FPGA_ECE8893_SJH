@@ -1,27 +1,14 @@
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 260, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 261, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - Callee:          'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
     DebugLoc:        { File: top.cpp, Line: 8, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
-  - String:          ' because it should never be inlined (cost=never)'
-...
---- !Missed
-Pass:            inline
-Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 261, Column: 5 }
-Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
-Args:            
-  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
-    DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
-  - String:          ' not inlined into '
-  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -30,11 +17,11 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 262, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k3_bounding_box(Triangle const*, Triangle*, BoundingBox*)'
-    DebugLoc:        { File: top.cpp, Line: 83, Column: 0 }
+  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -43,11 +30,11 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 263, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 129, Column: 0 }
+  - Callee:          'k3_bounding_box(Triangle const*, Triangle*, BoundingBox*)'
+    DebugLoc:        { File: top.cpp, Line: 84, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -56,12 +43,35 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 264, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 205, Column: 0 }
+  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 130, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 265, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 206, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: top.cpp, Line: 55, Column: 30 }
+Function:        _ZL21k2_perspective_dividePK8TrianglePS_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_55_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
@@ -72,6 +82,22 @@ Args:
   - String:          'Loop '''
   - LoopName:        VITIS_LOOP_20_2
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
+Function:        _ZL21k2_perspective_dividePK8TrianglePS_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_55_2
+  - String:          ''' ('
+  - LoopLoc:         'top.cpp:55:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          k2_perspective_divide
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
@@ -92,27 +118,14 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 260, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 261, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - Callee:          'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*)'
     DebugLoc:        { File: top.cpp, Line: 8, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
-  - String:          ' because it should never be inlined (cost=never)'
-...
---- !Missed
-Pass:            inline
-Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 261, Column: 5 }
-Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
-Args:            
-  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
-    DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
-  - String:          ' not inlined into '
-  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -121,11 +134,11 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 262, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k3_bounding_box(Triangle const*, Triangle*, BoundingBox*)'
-    DebugLoc:        { File: top.cpp, Line: 83, Column: 0 }
+  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*)'
+    DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -134,11 +147,11 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 263, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 129, Column: 0 }
+  - Callee:          'k3_bounding_box(Triangle const*, Triangle*, BoundingBox*)'
+    DebugLoc:        { File: top.cpp, Line: 84, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -147,11 +160,24 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 264, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 205, Column: 0 }
+  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 130, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 265, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 206, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -160,7 +186,7 @@ Name:            NeverInline
 Function:        apatb_top_kernel_ir
 Args:            
   - Callee:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_top_kernel_ir
   - String:          ' because it should never be inlined (cost=never)'
@@ -183,7 +209,7 @@ Args:
 --- !Passed
 Pass:            reflow-aggr
 Name:            AggrSucc
-DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Aggregating '
@@ -317,7 +343,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: top.cpp, Line: 211, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 212, Column: 23 }
 Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_
 Args:            
   - String:          'Sequential '
@@ -331,12 +357,12 @@ Args:
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_211_1
+  - LoopName:        VITIS_LOOP_212_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:211:23'
+  - LoopLoc:         'top.cpp:212:23'
   - String:          ' '
   - Function:        'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 205, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 206, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
@@ -367,7 +393,7 @@ Args:
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: top.cpp, Line: 211, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 212, Column: 23 }
 Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_
 Args:            
   - String:          'Could not widen since type '
@@ -376,67 +402,35 @@ Args:
   - Threshold:       '0'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: top.cpp, Line: 211, Column: 23 }
+    DebugLoc:        { File: top.cpp, Line: 212, Column: 23 }
   - OrigDirection:   write
   - OrigID:          framebuffer1seq
   - ArrayName:       framebuffer
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_212_2
+  - LoopName:        VITIS_LOOP_213_2
   - String:          ' '
-  - LoopLoc:         'top.cpp:212:27'
+  - LoopLoc:         'top.cpp:213:27'
   - String:          ' '
   - Function:        'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 205, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 206, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-loop-flatten-cost-model
 Name:            FlattenOffInference
-DebugLoc:        { File: top.cpp, Line: 45, Column: 22 }
-Function:        _ZL21k2_perspective_dividePK8TrianglePS_
-Args:            
-  - String:          'Automatically disabling loop flattening for loop '''
-  - LoopName:        VITIS_LOOP_45_1
-  - String:          '''.'
-...
---- !Passed
-Pass:            reflow-loop-flatten-cost-model
-Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: top.cpp, Line: 45, Column: 22 }
-Function:        _ZL21k2_perspective_dividePK8TrianglePS_
-Args:            
-  - PragmaType:      loop_flatten
-  - String:          ' '
-  - PragmaOptions:   off
-  - String:          ' '
-  - PragmaIsAuto:    '1'
-  - String:          ' '
-  - PragmaFunction:  k2_perspective_divide
-  - String:          ' '
-  - PragmaSrcLoc:    'top.cpp:45:22'
-    DebugLoc:        { File: top.cpp, Line: 45, Column: 22 }
-  - LoopName:        VITIS_LOOP_45_1
-  - String:          ' '
-  - LoopLoc:         'top.cpp:45:22'
-    DebugLoc:        { File: top.cpp, Line: 45, Column: 22 }
-  - String:          ' '
-...
---- !Passed
-Pass:            reflow-loop-flatten-cost-model
-Name:            FlattenOffInference
-DebugLoc:        { File: top.cpp, Line: 144, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
 Function:        _ZL12k4_rasterizePK8TrianglePK11BoundingBoxPA64_8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_4Vec3
 Args:            
   - String:          'Automatically disabling loop flattening for loop '''
-  - LoopName:        VITIS_LOOP_144_3
+  - LoopName:        VITIS_LOOP_145_3
   - String:          '''.'
 ...
 --- !Passed
 Pass:            reflow-loop-flatten-cost-model
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: top.cpp, Line: 144, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
 Function:        _ZL12k4_rasterizePK8TrianglePK11BoundingBoxPA64_8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_4Vec3
 Args:            
   - PragmaType:      loop_flatten
@@ -447,18 +441,18 @@ Args:
   - String:          ' '
   - PragmaFunction:  k4_rasterize
   - String:          ' '
-  - PragmaSrcLoc:    'top.cpp:144:23'
-    DebugLoc:        { File: top.cpp, Line: 144, Column: 23 }
-  - LoopName:        VITIS_LOOP_144_3
+  - PragmaSrcLoc:    'top.cpp:145:23'
+    DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
+  - LoopName:        VITIS_LOOP_145_3
   - String:          ' '
-  - LoopLoc:         'top.cpp:144:23'
-    DebugLoc:        { File: top.cpp, Line: 144, Column: 23 }
+  - LoopLoc:         'top.cpp:145:23'
+    DebugLoc:        { File: top.cpp, Line: 145, Column: 23 }
   - String:          ' '
 ...
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -468,7 +462,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -478,7 +472,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -488,7 +482,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -498,7 +492,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -508,7 +502,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -518,7 +512,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -528,7 +522,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -538,7 +532,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -548,7 +542,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -558,7 +552,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -568,7 +562,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -578,7 +572,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -588,7 +582,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -598,7 +592,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -608,7 +602,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -618,7 +612,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -628,7 +622,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -638,7 +632,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -648,7 +642,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -658,7 +652,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -668,7 +662,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -678,7 +672,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 244, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -688,7 +682,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -698,7 +692,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -708,7 +702,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -718,7 +712,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -728,7 +722,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -738,7 +732,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -748,7 +742,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -758,7 +752,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -768,7 +762,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -778,7 +772,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -788,7 +782,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -798,7 +792,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -808,7 +802,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -818,7 +812,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -828,7 +822,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -838,7 +832,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -848,7 +842,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -858,7 +852,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -868,7 +862,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -878,7 +872,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -888,7 +882,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -898,7 +892,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -908,7 +902,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 245, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -918,7 +912,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 248, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -928,7 +922,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 248, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -938,7 +932,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 248, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -948,7 +942,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 248, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -958,7 +952,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -968,7 +962,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -978,7 +972,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -988,7 +982,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -998,7 +992,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1008,7 +1002,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1018,7 +1012,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1028,7 +1022,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1038,7 +1032,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1048,7 +1042,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1058,7 +1052,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1068,7 +1062,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1078,7 +1072,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1088,7 +1082,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1098,7 +1092,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1108,7 +1102,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1118,7 +1112,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1128,7 +1122,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1138,7 +1132,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1148,7 +1142,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1158,7 +1152,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1168,7 +1162,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1178,7 +1172,7 @@ Args:
 --- !Missed
 Pass:            pasta-interface-builder
 Name:            UnsupportArrayToStream
-DebugLoc:        { File: top.cpp, Line: 246, Column: 0 }
+DebugLoc:        { File: top.cpp, Line: 247, Column: 0 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
@@ -1227,7 +1221,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: top.cpp, Line: 211, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 212, Column: 23 }
 Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_.1
 Args:            
   - String:          'Multiple burst '
@@ -1244,18 +1238,18 @@ Args:
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_211_1
+  - LoopName:        VITIS_LOOP_212_1
   - String:          ' '
-  - LoopLoc:         'top.cpp:211:23'
+  - LoopLoc:         'top.cpp:212:23'
   - String:          ' '
   - Function:        'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64]) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 205, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 206, Column: 0 }
   - String:          ' '
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: top.cpp, Line: 211, Column: 23 }
+DebugLoc:        { File: top.cpp, Line: 212, Column: 23 }
 Function:        _ZL20k5_deferred_lightingPA64_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_K4Vec3PA64_S2_.1
 Args:            
   - String:          'Multiple burst '
@@ -1265,9 +1259,9 @@ Args:
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_211_1
+  - LoopName:        VITIS_LOOP_212_1
   - String:          '''('
-  - LoopLoc:         'top.cpp:211:23'
+  - LoopLoc:         'top.cpp:212:23'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem1
@@ -1277,27 +1271,14 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 260, Column: 5 }
+DebugLoc:        { File: top.cpp, Line: 261, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
   - Callee:          'k1_vertex_transform(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], Triangle*) (.1)'
     DebugLoc:        { File: top.cpp, Line: 8, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
-  - String:          ' because it should never be inlined (cost=never)'
-...
---- !Missed
-Pass:            inline
-Name:            NeverInline
-DebugLoc:        { File: top.cpp, Line: 261, Column: 5 }
-Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
-Args:            
-  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
-  - String:          ' not inlined into '
-  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -1306,11 +1287,11 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 262, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k3_bounding_box(Triangle const*, Triangle*, BoundingBox*) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 83, Column: 0 }
+  - Callee:          'k2_perspective_divide(Triangle const*, Triangle*) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 41, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -1319,11 +1300,11 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 263, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64]) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 129, Column: 0 }
+  - Callee:          'k3_bounding_box(Triangle const*, Triangle*, BoundingBox*) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 84, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -1332,10 +1313,23 @@ Name:            NeverInline
 DebugLoc:        { File: top.cpp, Line: 264, Column: 5 }
 Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
 Args:            
-  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64]) (.1)'
-    DebugLoc:        { File: top.cpp, Line: 205, Column: 0 }
+  - Callee:          'k4_rasterize(Triangle const*, BoundingBox const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64], Vec3 (*) [64]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 130, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
-    DebugLoc:        { File: top.cpp, Line: 236, Column: 0 }
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: top.cpp, Line: 265, Column: 5 }
+Function:        _Z10top_kernelPK8TrianglePA4_K8ap_fixedILi32ELi16EL9ap_q_mode0EL9ap_o_mode0ELi0EEPA64_S5_
+Args:            
+  - Callee:          'k5_deferred_lighting(ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [64], Vec3 const (*) [64], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64]) (.1)'
+    DebugLoc:        { File: top.cpp, Line: 206, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'top_kernel(Triangle const*, ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> const (*) [4], ap_fixed<32, 16, (ap_q_mode)0, (ap_o_mode)0, 0> (*) [64])'
+    DebugLoc:        { File: top.cpp, Line: 237, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
